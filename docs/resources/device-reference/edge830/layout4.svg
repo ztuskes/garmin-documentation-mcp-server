@@ -1,0 +1,13 @@
+<svg width="246" height="322" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="edge830-4fieldsa-4-mask">
+      <rect width="100%" height="100%" fill="black"/>
+      <rect width="100%" height="100%" style="fill:white"/>
+    </mask>
+  </defs>
+  <rect x="0" y="0" width="246" height="79" mask="url(#edge830-4fieldsa-4-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="81" width="246" height="78" mask="url(#edge830-4fieldsa-4-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="161" width="246" height="78" mask="url(#edge830-4fieldsa-4-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="241" width="246" height="79" mask="url(#edge830-4fieldsa-4-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+      <rect width="100%" height="100%" style="stroke-width:1;stroke:rgb(0,0,0);fill:none"/>
+</svg>

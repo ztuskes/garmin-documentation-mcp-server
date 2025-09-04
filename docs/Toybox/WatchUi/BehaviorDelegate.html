@@ -1,0 +1,759 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.WatchUi.BehaviorDelegate </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.WatchUi.BehaviorDelegate";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.WatchUi.BehaviorDelegate</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.WatchUi.InputDelegate</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/InputDelegate.html">Toybox.WatchUi.InputDelegate</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/BehaviorDelegate.html">Toybox.WatchUi.BehaviorDelegate</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+BehaviorDelegate handles behavior input events.
+</p><p>
+A BehaviorDelegate differs from an
+<a href='../../Toybox/WatchUi/InputDelegate.html'>InputDelegate</a> in that it acts upon
+device-independent behaviors, such as "next page" and "previous page"
+instead of device-specific button presses. For example, these behaviors
+might be mapped to swipe left and swipe right inputs on touch screen
+devices, while on non-touch screen devices these behaviors might be mapped
+to physical buttons.
+</p><p>
+Since BehaviorDelegate extends InputDelegate, so it can also act on basic
+inputs as well. If a BehaviorDelegate returns <code>true</code> for a function
+(indicating the input was used) then the InputDelegate function that
+corresponds to the behavior will not be called.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/InputDelegate.html">Toybox.WatchUi.InputDelegate</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.WatchUi;
+
+class MyBehaviorDelegate extends BehaviorDelegate {
+    // Detect Menu behavior
+    function onMenu() {
+        System.println("Menu behavior triggered");
+        return false; // allow InputDelegate function to be called
+    }
+    // Detect Menu button input
+    function onKey(keyEvent) {
+        System.println(keyEvent.getKey()); // e.g. KEY_MENU = 7
+        return true;
+    }
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch Face</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>()
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onActionMenu-instance_function" title="onActionMenu (Instance Function)"><strong>onActionMenu</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Represents the <em>Action</em> <em>Menu</em> behavior.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onBack-instance_function" title="onBack (Instance Function)"><strong>onBack</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Represents the <em>Back</em> behavior.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onMenu-instance_function" title="onMenu (Instance Function)"><strong>onMenu</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Represents the <em>Menu</em> behavior.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onNextMode-instance_function" title="onNextMode (Instance Function)"><strong>onNextMode</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Represents the <em>Next</em> behavior.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onNextPage-instance_function" title="onNextPage (Instance Function)"><strong>onNextPage</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Represents the <em>Next</em> <em>Page</em> behavior.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onPreviousMode-instance_function" title="onPreviousMode (Instance Function)"><strong>onPreviousMode</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Represents the <em>Previous</em> <em>Mode</em> behavior.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onPreviousPage-instance_function" title="onPreviousPage (Instance Function)"><strong>onPreviousPage</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Represents the <em>Previous</em> <em>Page</em> behavior.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onSelect-instance_function" title="onSelect (Instance Function)"><strong>onSelect</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Represents the <em>Selection</em> behavior.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize()</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onActionMenu-instance_function">
+    <strong>onActionMenu()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Represents the <em>Action</em> <em>Menu</em> behavior.
+</p><p>
+This will be triggered when action menu is pushed.
+Invoke <a href='../../Toybox/WatchUi.html#showActionMenu-instance_function'>WatchUi.showActionMenu</a> to push an action menu.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.1
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onBack-instance_function">
+    <strong>onBack()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Represents the <em>Back</em> behavior.
+</p><p>
+This is typically triggered by the back button
+(<a href='../../Toybox/WatchUi.html#KEY_ESC-const'>KEY_ESC</a>).
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Some devices interpret <a href='../../Toybox/WatchUi.html#SWIPE_RIGHT-const'>SWIPE_RIGHT</a> <a href='../../Toybox/WatchUi/SwipeEvent.html'>SwipeEvents</a> as <a href='../../Toybox/WatchUi.html#KEY_ESC-const'>KEY_ESC</a> events.  On these devices, returning <code>false</code> will cause <a href='../../Toybox/WatchUi/InputDelegate.html#onKey-instance_function'>onKey()</a> to be called rather than <a href='../../Toybox/WatchUi/InputDelegate.html#onSwipe-instance_function'>onSwipe()</a>.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onMenu-instance_function">
+    <strong>onMenu()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Represents the <em>Menu</em> behavior.
+</p><p>
+This is typically triggered by the menu button
+(<a href='../../Toybox/WatchUi.html#KEY_MENU-const'>KEY_MENU</a>).
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onNextMode-instance_function">
+    <strong>onNextMode()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Represents the <em>Next</em> behavior.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onNextPage-instance_function">
+    <strong>onNextPage()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Represents the <em>Next</em> <em>Page</em> behavior.
+</p><p>
+This is typically triggered by the down button
+(<a href='../../Toybox/WatchUi.html#KEY_DOWN-const'>KEY_DOWN</a>) or by a
+<a href='../../Toybox/WatchUi.html#SWIPE_UP-const'>SWIPE_UP</a>
+<a href='../../Toybox/WatchUi/SwipeEvent.html'>SwipeEvent</a> on a touch screen.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onPreviousMode-instance_function">
+    <strong>onPreviousMode()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Represents the <em>Previous</em> <em>Mode</em> behavior.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onPreviousPage-instance_function">
+    <strong>onPreviousPage()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Represents the <em>Previous</em> <em>Page</em> behavior.
+</p><p>
+This is typically triggered by the up button
+(<a href='../../Toybox/WatchUi.html#KEY_UP-const'>KEY_UP</a>)) or by a
+<a href='../../Toybox/WatchUi.html#SWIPE_DOWN-const'>SWIPE_DOWN</a>
+<a href='../../Toybox/WatchUi/SwipeEvent.html'>SwipeEvent</a> on a touch screen.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onSelect-instance_function">
+    <strong>onSelect()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Represents the <em>Selection</em> behavior.
+</p><p>
+This is typically triggered by the Start/Enter button
+(<a href='../../Toybox/WatchUi.html#KEY_ENTER-const'>KEY_ENTER</a>) or by a
+<a href='../../Toybox/WatchUi.html#CLICK_TYPE_TAP-const'>CLICK_TYPE_TAP</a>
+<a href='../../Toybox/WatchUi/ClickEvent.html'>ClickEvent</a> on a touch screen.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

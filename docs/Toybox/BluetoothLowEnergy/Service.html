@@ -1,0 +1,379 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.BluetoothLowEnergy.Service </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.BluetoothLowEnergy.Service";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.BluetoothLowEnergy.Service</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/BluetoothLowEnergy/Service.html">Toybox.BluetoothLowEnergy.Service</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Encapsulates a service provided by a device
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getCharacteristic-instance_function" title="getCharacteristic (Instance Function)"><strong>getCharacteristic</strong></a>(uuid as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>)    as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">BluetoothLowEnergy.Characteristic</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Retrieves the Characteristic with a specified UUID.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getCharacteristics-instance_function" title="getCharacteristics (Instance Function)"><strong>getCharacteristics</strong></a>()    as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Iterator.html">BluetoothLowEnergy.Iterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Retrieves an Iterator over the Characteristics in a Service This will only provide Characteristics that have been registered using <a href='../../Toybox/BluetoothLowEnergy.html#registerProfile-instance_function'>registerProfile()</a>.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getDevice-instance_function" title="getDevice (Instance Function)"><strong>getDevice</strong></a>()    as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Device.html">BluetoothLowEnergy.Device</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Retrieves the Service's Device Retrieve the Device that this service belongs to.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getUuid-instance_function" title="getUuid (Instance Function)"><strong>getUuid</strong></a>()    as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Returns the UUID of the service.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getCharacteristic-instance_function">
+    <strong>getCharacteristic(uuid as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">BluetoothLowEnergy.Characteristic</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Retrieves the Characteristic with a specified UUID
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">uuid</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+the UUID to search for.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">BluetoothLowEnergy.Characteristic</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The Characteristic represented by the UUID provided or, <code>null</code> if the characteristic does not exist or the UUID has not be registered.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getCharacteristics-instance_function">
+    <strong>getCharacteristics()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Iterator.html">BluetoothLowEnergy.Iterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Retrieves an Iterator over the Characteristics in a Service
+</p><p>
+This will only provide Characteristics that have been registered
+using <a href='../../Toybox/BluetoothLowEnergy.html#registerProfile-instance_function'>registerProfile()</a>
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Iterator.html">BluetoothLowEnergy.Iterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Iterator of <a href='../../Toybox/BluetoothLowEnergy/Characteristic.html'>Characteristic</a> objects for the Characteristics discovered in the Service
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getDevice-instance_function">
+    <strong>getDevice()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Device.html">BluetoothLowEnergy.Device</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Retrieves the Service's Device
+</p><p>
+Retrieve the Device that this service belongs to
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Device.html">BluetoothLowEnergy.Device</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Parent characteristic object
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getUuid-instance_function">
+    <strong>getUuid()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Returns the UUID of the service
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+the UUID of the service
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

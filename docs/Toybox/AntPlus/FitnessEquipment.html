@@ -1,0 +1,722 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.AntPlus.FitnessEquipment </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.AntPlus.FitnessEquipment";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.AntPlus.FitnessEquipment</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.AntPlus.Device</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/AntPlus/Device.html">Toybox.AntPlus.Device</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/AntPlus/FitnessEquipment.html">Toybox.AntPlus.FitnessEquipment</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Represents a Fitness Equipment Device instance.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.AntPlus;
+
+// Assuming Valid FitnessEquipmentListener object "MyFitnessEquipmentListener"
+
+// Initialize the AntPlus.FitnessEquipmentListener object
+listener = new MyFitnessEquipmentListener();
+
+// Initialize the AntPlus.BikePower object with a listener
+fitnessEquipment = new AntPlus.FitnessEquipment(listener);
+
+fitnessEquipment.setTrainerMode(TRAINER_MODE_BASIC_RESISTANCE);
+fitnessEquipment.controlEquipment(TRAINER_RESISTANCE, 30); //sets basic resistance to 30% of maximum.
+// ...etc</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li>
+  </ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#controlEquipment-instance_function" title="controlEquipment (Instance Function)"><strong>controlEquipment</strong></a>(setting as <span class="type"><a href="../../Toybox/AntPlus.html#TrainerValue-module">AntPlus.TrainerValue</a></span>, data as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <span class="type"><a href="../../Toybox/AntPlus.html#TrainerMode-module">AntPlus.TrainerMode</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Control the fitness Equipment Note: Setting a value related to a specific training mode will cause the fitness equipment to change to that mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getEquipmentData-instance_function" title="getEquipmentData (Instance Function)"><strong>getEquipmentData</strong></a>()    as <span class="type"><a href="../../Toybox/AntPlus/FitnessEquipmentData.html">AntPlus.FitnessEquipmentData</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current training data from the FE.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getResistanceSettings-instance_function" title="getResistanceSettings (Instance Function)"><strong>getResistanceSettings</strong></a>()    as <span class="type"><a href="../../Toybox/AntPlus/ResistanceSettings.html">AntPlus.ResistanceSettings</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the resistance percentage setting of the fitness equipment for basic resistance training mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getSimulationSettings-instance_function" title="getSimulationSettings (Instance Function)"><strong>getSimulationSettings</strong></a>()    as <span class="type"><a href="../../Toybox/AntPlus/SimulationSettings.html">AntPlus.SimulationSettings</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the wind and track resistance simulation settings.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getTargetPowerSettings-instance_function" title="getTargetPowerSettings (Instance Function)"><strong>getTargetPowerSettings</strong></a>()    as <span class="type"><a href="../../Toybox/AntPlus/TargetPowerSettings.html">AntPlus.TargetPowerSettings</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the target power setting of the fitness equipment for target power training mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getTrainerMode-instance_function" title="getTrainerMode (Instance Function)"><strong>getTrainerMode</strong></a>()    as <span class="type"><a href="../../Toybox/AntPlus/FitnessEquipmentMode.html">AntPlus.FitnessEquipmentMode</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current training mode and supported modes of the fitness equipment.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getUserSettings-instance_function" title="getUserSettings (Instance Function)"><strong>getUserSettings</strong></a>()    as <span class="type"><a href="../../Toybox/AntPlus/UserSettings.html">AntPlus.UserSettings</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the user configuration settings of the fitness equipment for simulation training mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(listener as <span class="type"><a href="../../Toybox/AntPlus/FitnessEquipmentListener.html">AntPlus.FitnessEquipmentListener</a></span> or <b>Null</b>)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setTrainerMode-instance_function" title="setTrainerMode (Instance Function)"><strong>setTrainerMode</strong></a>(mode as <span class="type"><a href="../../Toybox/AntPlus.html#TrainerMode-module">AntPlus.TrainerMode</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the trainer mode.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="controlEquipment-instance_function">
+    <strong>controlEquipment(setting as <span class="type"><a href="../../Toybox/AntPlus.html#TrainerValue-module">AntPlus.TrainerValue</a></span>, data as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <span class="type"><a href="../../Toybox/AntPlus.html#TrainerMode-module">AntPlus.TrainerMode</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Control the fitness Equipment
+Note: Setting a value related to a specific training mode will cause the fitness equipment to change to that mode.
+For example, controlEquipment(TRAINER_TARGET_POWER, 100) will set the fitness equipment to target power mode with target power set to 100W if
+such mode is supported.
+Values out of range will be set to within the nearest range boundary value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">setting</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/AntPlus.html#TRAINER_MODE-const'>TRAINER_*</a> value.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">data</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value of the setting to be sent or <a href='../../Toybox/AntPlus.html#TRAINER_MODE_BASIC_RESISTANCE-const'>TRAINER_MODE_*</a> enum value if setting mode.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getEquipmentData-instance_function">
+    <strong>getEquipmentData()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/AntPlus/FitnessEquipmentData.html">AntPlus.FitnessEquipmentData</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current training data from the FE
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/AntPlus/FitnessEquipmentData.html">AntPlus.FitnessEquipmentData</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Fitness Equipment training data
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getResistanceSettings-instance_function">
+    <strong>getResistanceSettings()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/AntPlus/ResistanceSettings.html">AntPlus.ResistanceSettings</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the resistance percentage setting of the fitness equipment
+for basic resistance training mode.
+You should set resistance values and be in basic resistance training mode before
+calling this method, otherwise <code>null</code> or default values may be returned.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/AntPlus/ResistanceSettings.html">AntPlus.ResistanceSettings</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Fitness Equipment resistance Setting
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getSimulationSettings-instance_function">
+    <strong>getSimulationSettings()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/AntPlus/SimulationSettings.html">AntPlus.SimulationSettings</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the wind and track resistance simulation settings.
+You should set wind and track settings, as well as be in simulation training mode
+before calling this method or <code>null</code> or default values may be returned.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/AntPlus/SimulationSettings.html">AntPlus.SimulationSettings</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Fitness Equipment simulation settings
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getTargetPowerSettings-instance_function">
+    <strong>getTargetPowerSettings()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/AntPlus/TargetPowerSettings.html">AntPlus.TargetPowerSettings</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the target power setting of the fitness equipment for
+target power training mode.
+You should set the target power and be in target power training mode before calling
+this method, otherwise <code>null</code> or default values may be returned.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/AntPlus/TargetPowerSettings.html">AntPlus.TargetPowerSettings</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Fitness Equipment target power Setting
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getTrainerMode-instance_function">
+    <strong>getTrainerMode()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/AntPlus/FitnessEquipmentMode.html">AntPlus.FitnessEquipmentMode</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current training mode and supported modes of the fitness equipment
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/AntPlus/FitnessEquipmentMode.html">AntPlus.FitnessEquipmentMode</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Fitness Equipment training mode
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getUserSettings-instance_function">
+    <strong>getUserSettings()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/AntPlus/UserSettings.html">AntPlus.UserSettings</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the user configuration settings of the fitness equipment for simulation
+training mode.
+You should set user settings values and be in simulation mode before
+calling this method, otherwise <code>null</code> or default values may be returned.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/AntPlus/UserSettings.html">AntPlus.UserSettings</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Fitness Equipment user profile settings
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(listener as <span class="type"><a href="../../Toybox/AntPlus/FitnessEquipmentListener.html">AntPlus.FitnessEquipmentListener</a></span> or <b>Null</b>)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">listener</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/AntPlus/FitnessEquipmentListener.html">AntPlus.FitnessEquipmentListener</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The fitness equipment instance optionally takes an extension of the <a href='../../Toybox/AntPlus/FitnessEquipmentListener.html'>FitnessEquipmentListener</a> class as a parameter. <code>null</code> can be passed in instead if the user plans to only poll for data using the get* methods.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setTrainerMode-instance_function">
+    <strong>setTrainerMode(mode as <span class="type"><a href="../../Toybox/AntPlus.html#TrainerMode-module">AntPlus.TrainerMode</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the trainer mode.
+You should check the capable modes of the fitness equipment, as
+the command will be ignored by the fitness equipment if the mode is not
+supported.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">mode</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The <a href='../../Toybox/AntPlus.html#TRAINER_MODE_BASIC_RESISTANCE-const'>TRAINER_MODE_*</a> enum value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

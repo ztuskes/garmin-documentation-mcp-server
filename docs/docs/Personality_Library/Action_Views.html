@@ -1,0 +1,85 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="DC.type" content="topic"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="action-views"><link rel="stylesheet" type="text/css" href="../../branding/commonltr.css"><link rel="stylesheet" type="text/css" href="../../branding/style.css"><title>Action Views</title></head><body id="action-views"><header role="banner"><div>
+<link href="../../resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
+<script src="../../resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="../../resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+</div></header><nav role="toc"><ul><li><a href="../../docs/Readme/Intro.html">Introduction</a></li><li><a href="../../docs/Connect_IQ_Basics/Welcome_to_the_Jungle.html">Welcome to Connect IQ</a></li><li><a href="../../docs/Monkey_C/Basic_Syntax.html">Hello Monkey C!</a></li><li><a href="../../docs/Core_Topics/Overview.html">Core Topics</a></li><li><a href="../../docs/User_Experience_Guidelines/Overview.html">User Experience Guidelines</a></li><li><a href="../../docs/Personality_Library/Personality_UI.html">Personality UI</a><ul><li><a href="../../docs/Personality_Library/Colors.html">Color</a></li><li><a href="../../docs/Personality_Library/Iconography.html">Iconography</a></li><li><a href="../../docs/Personality_Library/Typography.html">Typography</a></li><li><a href="../../docs/Personality_Library/Input_Hints.html">Input Hints</a></li><li><a href="../../docs/Personality_Library/Prompts.html">Prompts</a></li><li><a href="../../docs/Personality_Library/Confirmations.html">Confirmations</a></li><li><a href="../../docs/Personality_Library/Toasts.html">Toasts</a></li><li class="active"><a href="../../docs/Personality_Library/Action_Views.html">Action Views</a></li><li><a href="../../docs/Personality_Library/Page_Loops.html">Page Loops</a></li><li><a href="../../docs/Personality_Library/Progress_Bars.html">Progress Indicators</a></li></ul></li><li><a href="../../docs/Connect_IQ_FAQ/Overview.html">Connect IQ FAQ</a></li><li><a href="../../docs/Reference_Guides/Overview.html">Reference Guides</a></li><li><a href="../../docs/App_Review_Guidelines/Overview.html">Garmin Connect IQ App Review Guidelines</a></li><li><a href="../../docs/Monetization/Overview.html">Connect IQ Monetization System</a></li><li><a href="../../docs/Device_Reference/Overview.html">Device Reference</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Action Views</h1><div class="body"><p class="p">Action views are screens that provide both information and a contextual menu of actions. These actions might be steps or tasks that can be performed on the visible information.</p><img class="image" id="action-views__GUID-A7622C13-BE61-4E19-91D9-6C1A92472675__IMAGE_D60FCA6AB63345AAA79406659DEC40A4" src="../../resources/personality-library/personality_ui_action_hinthigh.jpg" alt="Front views of devices displaying action hints"><br><p class="p">Each product has a standard hint about how to access the contextual action menu.</p></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="example"><h2 class="title topictitle2" id="ariaid-title2">Example</h2><div class="body"><pre class="pre codeblock xml"><code>&lt;!-- layout.xml --&gt;
+
+        &lt;!-- ActionMenu hint --&gt;
+        &lt;bitmap id="actionMenu" personality="
+            system_icon_dark__hint_action_menu
+            system_loc__hint_action_menu" /&gt;</code></pre><p class="p">Action menus do not support iconography.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title3" id="example-1"><h2 class="title topictitle2" id="ariaid-title3">Example</h2><div class="body"><pre class="pre codeblock xml"><code>&lt;!-- menu.xml --&gt;
+
+&lt;action-menu id="ActionMenu"&gt;
+    &lt;action-menu-item id="edit" label="@Strings.edit" /&gt;
+    &lt;action-menu-item id="dismiss" label="@Strings.dismiss" /&gt;
+&lt;/action-menu&gt;</code></pre><pre class="pre codeblock typescript"><code>// InputDelegate.mc
+
+    function onKey(evt as KeyEvent) as Boolean {
+        if (Styles.system_input__action_menu has :button &amp;&amp;
+            evt.getKey() == Styles.system_input__action_menu.button) {
+            showActionMenu();
+            return true;
+        }
+        return false;
+    }
+
+    function onTap(evt as ClickEvent) as Boolean {
+        if (!(Styles.system_input__action_menu has :button) &amp;&amp;
+            $.isInActionArea(evt.getCoordinates())) {
+            showActionMenu();
+            return true;
+        }
+        return false;
+    }
+
+    function onActionMenu() as Boolean {
+        showActionMenu();
+        return true;
+    }
+
+    function showActionMenu() as Void{
+        WatchUi.showActionMenu(new WatchUi.ActionMenu(),
+            new MyActionMenuDelegate());
+    }</code></pre><p class="p">The <code class="ph codeph">system_input__action_menu</code> will let you know if the product uses a button or a touch area to trigger the contextual information.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title4" id="example-2"><h2 class="title topictitle2" id="ariaid-title4">Example</h2><div class="body"><pre class="pre codeblock typescript"><code>// Helper: isInActionArea
+
+//! Function to see if a tap falls within the touch area for
+//! a action menu.
+//! @param x X coord of tap
+//! @param y Y coord of tap
+//! @return true if tapped, false otherwise
+function isInActionArea(coord as Array&lt;Numeric&gt;) as Boolean {
+    if (Styles.system_input__action_menu has :x1 &amp;&amp;
+        Styles.system_input__action_menu has :y1 &amp;&amp;
+        Styles.system_input__action_menu has :x2 &amp;&amp;
+        Styles.system_input__action_menu has :y2) {
+
+        var x = coord[0];
+        var y = coord[1];
+
+        if (x &gt;= Styles.system_input__action_menu.x1 &amp;&amp;
+            x &lt;= Styles.system_input__action_menu.x2 &amp;&amp;
+            y &gt;= Styles.system_input__action_menu.y1 &amp;&amp;
+            y &lt;= Styles.system_input__action_menu.y2) {
+            return true;
+        }
+    }
+    return false;
+}</code></pre></div></article><article class="topic nested1" aria-labelledby="ariaid-title5" id="edge-2022-personality"><h2 class="title topictitle2" id="ariaid-title5">Edge 2022 Personality</h2><div class="body"><p class="p">Products with the Edge 2022 personality have an optional configurable control bar that provides contextual actions. You can configure this bar to have an action menu using the <a class="xref" href="https://developer.garmin.com/connect-iq/api-docs/Toybox/WatchUi/View.html#setControlBar-instance_function" target="_blank">View.setControlBar()</a> API.</p></div><article class="topic nested2" aria-labelledby="ariaid-title6" id="example-3"><h3 class="title topictitle3" id="ariaid-title6">Example</h3><div class="body"><pre class="pre codeblock typescript"><code>// View.mc
+
+        if (View has :setControlBar) {
+            setControlBar({:title=&gt;Rez.Strings.infoPrompt,
+                :leftButton=&gt;WatchUi.CONTROL_BAR_LEFT_BUTTON_BACK,
+                :rightButton=&gt;WatchUi.CONTROL_BAR_RIGHT_BUTTON_MENU
+                });
+        }</code></pre><p class="p">By using <code class="ph codeph">has</code> in the above example, you can share this code with other products.</p></div></article></article></article></main><footer role="contentinfo"><div>
+<p class="disclaimer">
+Connect IQ System None API 8.2.3 Documentation. Copyright 2025 Garmin International. All Rights Reserved.
+</p>
+</div></footer></body></html>

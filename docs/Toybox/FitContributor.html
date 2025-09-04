@@ -1,0 +1,397 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.FitContributor </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.FitContributor";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.FitContributor</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The FitContributor module allows Applications and Data Fields to record
+<a href='../Toybox/FitContributor/Field.html'>Field</a> data into FIT files on the device's file
+system during an activity. This is useful for recording data that is not already
+calculated by the device, which can be synced to a service like Garmin Connect.
+</p><p>
+There are three FitContributor message types available:
+</p>
+
+<dl><dt>MESG_TYPE_SESSION</dt><dd>
+<p>
+Session data is written once per recording session at the end of the recording,
+and is used for data that pertains to the entire session (e.g. average speed).
+</p>
+
+</dl></dd>
+<dl><dt>MESG_TYPE_LAP</dt><dd>
+<p>
+Lap data is written once for every lap in the session, and used for data that
+pertains to each lap (e.g. average lap speed).
+</p>
+
+</dl></dd>
+<dl><dt>MESG_TYPE_RECORD</dt><dd>
+<p>
+Depending on the device, record data is written once per second or when new
+data is available (Smart Recording), but is never written faster than once per
+second. This message type is used for instantaneous values (e.g. current speed).
+</p>
+
+</dl></dd>
+<p>
+Data type constants are also available for use with the
+<a href='../Toybox/ActivityRecording/Session.html#createField-instance_function'>createField()</a> method.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../Toybox/ActivityRecording/Session.html#createField-instance_function">Session.createField()</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="http://www.thisisant.com/resources/fit">Learn more about the FIT format</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Using a FitContributor Field in a SimpleDataField app</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.FitContributor;
+using Toybox.WatchUi;
+class BananasEarnedView extends WatchUi.SimpleDataField
+{
+    var bananasEarnedField = null;
+    var totalBananas = 0.0;
+
+    const CALORIES_PER_BANANA = 105.0;
+    const BANANAS_FIELD_ID = 0;
+
+    function initialize() {
+        SimpleDataField.initialize();
+
+        // Create the custom FIT data field we want to record.
+        bananasEarnedField = createField(
+            "bananas_earned",
+            BANANAS_FIELD_ID,
+            FitContributor.DATA_TYPE_FLOAT,
+            {:mesgType=&gt;Fit.MESG_TYPE_RECORD, :units=&gt;"B"}
+        );
+
+        bananasEarnedField.setData(0.0);
+    }
+
+    function compute(info) {
+        if (info != null && info.calories != null) {
+            // Calculate and set data to be written to the Field
+            totalBananas = (info.calories / CALORIES_PER_BANANA).toFloat();
+            bananasEarnedField.setData(totalBananas);
+        }
+        // Display the data on the screen of the device
+        return totalBananas;
+    }
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li>
+  </ul>
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+  <!-- Permissions -->
+  <p class="tag_title">Requires Permission:</p>
+  <ul class="required_permissions">
+      <li>
+    <div class="inline">
+      <p>FitContributor</p>
+    </div>
+  </li>
+  </ul>
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/FitContributor/Field.html">Field</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="MessageType-module" class="">
+    <h3>MessageType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="MESG_TYPE_SESSION-const">
+    <td class="enumTableCell">MESG_TYPE_SESSION</td>
+      <td class="enumTableCell">18</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The message type for session messages.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MESG_TYPE_LAP-const">
+    <td class="enumTableCell">MESG_TYPE_LAP</td>
+      <td class="enumTableCell">19</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The message type for lap messages.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MESG_TYPE_RECORD-const">
+    <td class="enumTableCell">MESG_TYPE_RECORD</td>
+      <td class="enumTableCell">20</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The message type for record messages.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="DataType-module" class="">
+    <h3>DataType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="DATA_TYPE_SINT8-const">
+    <td class="enumTableCell">DATA_TYPE_SINT8</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="DATA_TYPE_UINT8-const">
+    <td class="enumTableCell">DATA_TYPE_UINT8</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="DATA_TYPE_SINT16-const">
+    <td class="enumTableCell">DATA_TYPE_SINT16</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="DATA_TYPE_UINT16-const">
+    <td class="enumTableCell">DATA_TYPE_UINT16</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="DATA_TYPE_SINT32-const">
+    <td class="enumTableCell">DATA_TYPE_SINT32</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="DATA_TYPE_UINT32-const">
+    <td class="enumTableCell">DATA_TYPE_UINT32</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="DATA_TYPE_STRING-const">
+    <td class="enumTableCell">DATA_TYPE_STRING</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="DATA_TYPE_FLOAT-const">
+    <td class="enumTableCell">DATA_TYPE_FLOAT</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="DATA_TYPE_DOUBLE-const">
+    <td class="enumTableCell">DATA_TYPE_DOUBLE</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+
+
+
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

@@ -1,0 +1,3264 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Activity </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Activity";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Activity</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Activity module provides a way to retrieve available info for the current
+activity.
+</p><p>
+Activity Info is automatically provided by the
+<a href='../Toybox/WatchUi/DataField.html#compute-instance_function'>compute()</a> method in Data Fields. The
+<a href='../Toybox/Activity.html#getActivityInfo-instance_function'>getActivityInfo()</a> method is available for
+use within apps or in other cases, such as data field initialization.
+</p><p>
+This module also provides two sets of constants:
+</p>
+
+<ul>
+<li>
+<p>
+<strong>SWIM_STROKE:</strong> Indicates the <a href='../Toybox/Activity/Info.html#swimStrokeType-var'>swimStrokeType()</a>, such as freestyle, backstroke, or butterfly.
+</p>
+
+</li>
+<li>
+<p>
+<strong>TIMER_STATE:</strong> Indicates the  activity recording <a href='../Toybox/Activity/Info.html#timerState-var'>timerState()</a>, such as stopped, started, paused, etc.
+</p>
+
+</li>
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Activity/Info.html">Info</a></span>, <span class="type"><a href="../Toybox/Activity/ProfileInfo.html">ProfileInfo</a></span>, <span class="type"><a href="../Toybox/Activity/WorkoutIntervalStep.html">WorkoutIntervalStep</a></span>, <span class="type"><a href="../Toybox/Activity/WorkoutStep.html">WorkoutStep</a></span>, <span class="type"><a href="../Toybox/Activity/WorkoutStepInfo.html">WorkoutStepInfo</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="SwimStrokeType-module" class="">
+    <h3>SwimStrokeType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SWIM_STROKE_FREESTYLE-const">
+    <td class="enumTableCell">SWIM_STROKE_FREESTYLE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Freestyle stroke
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SWIM_STROKE_BACKSTROKE-const">
+    <td class="enumTableCell">SWIM_STROKE_BACKSTROKE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Backstroke
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SWIM_STROKE_BREASTSTROKE-const">
+    <td class="enumTableCell">SWIM_STROKE_BREASTSTROKE</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Breaststroke
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SWIM_STROKE_BUTTERFLY-const">
+    <td class="enumTableCell">SWIM_STROKE_BUTTERFLY</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Butterfly stroke
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SWIM_STROKE_DRILL-const">
+    <td class="enumTableCell">SWIM_STROKE_DRILL</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Drill mode
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SWIM_STROKE_MIXED-const">
+    <td class="enumTableCell">SWIM_STROKE_MIXED</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Mixed stroke mode
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SWIM_STROKE_IM-const">
+    <td class="enumTableCell">SWIM_STROKE_IM</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Mixed interval with equal number of butterfly, backstroke, breaststroke,
+and freestyle, in that order.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="TimerState-module" class="">
+    <h3>TimerState</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="TIMER_STATE_OFF-const">
+    <td class="enumTableCell">TIMER_STATE_OFF</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 2.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The timer is off. There is not an active recording
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TIMER_STATE_STOPPED-const">
+    <td class="enumTableCell">TIMER_STATE_STOPPED</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 2.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The timer is stopped. The recording is active, with the timer stopped.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TIMER_STATE_PAUSED-const">
+    <td class="enumTableCell">TIMER_STATE_PAUSED</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 2.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The timer is paused. The recording is active with the timer paused.
+This state occurs when the timer is active, but has been stopped with
+the Auto-Pause feature.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TIMER_STATE_ON-const">
+    <td class="enumTableCell">TIMER_STATE_ON</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 2.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The timer is on. The recording is active and the timer is running.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="Sport-module" class="">
+    <h3>Sport</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SPORT_GENERIC-const">
+    <td class="enumTableCell">SPORT_GENERIC</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_RUNNING-const">
+    <td class="enumTableCell">SPORT_RUNNING</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_CYCLING-const">
+    <td class="enumTableCell">SPORT_CYCLING</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_TRANSITION-const">
+    <td class="enumTableCell">SPORT_TRANSITION</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_FITNESS_EQUIPMENT-const">
+    <td class="enumTableCell">SPORT_FITNESS_EQUIPMENT</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_SWIMMING-const">
+    <td class="enumTableCell">SPORT_SWIMMING</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_BASKETBALL-const">
+    <td class="enumTableCell">SPORT_BASKETBALL</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_SOCCER-const">
+    <td class="enumTableCell">SPORT_SOCCER</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_TENNIS-const">
+    <td class="enumTableCell">SPORT_TENNIS</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_AMERICAN_FOOTBALL-const">
+    <td class="enumTableCell">SPORT_AMERICAN_FOOTBALL</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_TRAINING-const">
+    <td class="enumTableCell">SPORT_TRAINING</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_WALKING-const">
+    <td class="enumTableCell">SPORT_WALKING</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_CROSS_COUNTRY_SKIING-const">
+    <td class="enumTableCell">SPORT_CROSS_COUNTRY_SKIING</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_ALPINE_SKIING-const">
+    <td class="enumTableCell">SPORT_ALPINE_SKIING</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SNOWBOARDING-const">
+    <td class="enumTableCell">SPORT_SNOWBOARDING</td>
+      <td class="enumTableCell">14</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_ROWING-const">
+    <td class="enumTableCell">SPORT_ROWING</td>
+      <td class="enumTableCell">15</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_MOUNTAINEERING-const">
+    <td class="enumTableCell">SPORT_MOUNTAINEERING</td>
+      <td class="enumTableCell">16</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_HIKING-const">
+    <td class="enumTableCell">SPORT_HIKING</td>
+      <td class="enumTableCell">17</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_MULTISPORT-const">
+    <td class="enumTableCell">SPORT_MULTISPORT</td>
+      <td class="enumTableCell">18</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_PADDLING-const">
+    <td class="enumTableCell">SPORT_PADDLING</td>
+      <td class="enumTableCell">19</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_FLYING-const">
+    <td class="enumTableCell">SPORT_FLYING</td>
+      <td class="enumTableCell">20</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_E_BIKING-const">
+    <td class="enumTableCell">SPORT_E_BIKING</td>
+      <td class="enumTableCell">21</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_MOTORCYCLING-const">
+    <td class="enumTableCell">SPORT_MOTORCYCLING</td>
+      <td class="enumTableCell">22</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_BOATING-const">
+    <td class="enumTableCell">SPORT_BOATING</td>
+      <td class="enumTableCell">23</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_DRIVING-const">
+    <td class="enumTableCell">SPORT_DRIVING</td>
+      <td class="enumTableCell">24</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_GOLF-const">
+    <td class="enumTableCell">SPORT_GOLF</td>
+      <td class="enumTableCell">25</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_HANG_GLIDING-const">
+    <td class="enumTableCell">SPORT_HANG_GLIDING</td>
+      <td class="enumTableCell">26</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_HORSEBACK_RIDING-const">
+    <td class="enumTableCell">SPORT_HORSEBACK_RIDING</td>
+      <td class="enumTableCell">27</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_HUNTING-const">
+    <td class="enumTableCell">SPORT_HUNTING</td>
+      <td class="enumTableCell">28</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_FISHING-const">
+    <td class="enumTableCell">SPORT_FISHING</td>
+      <td class="enumTableCell">29</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_INLINE_SKATING-const">
+    <td class="enumTableCell">SPORT_INLINE_SKATING</td>
+      <td class="enumTableCell">30</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_ROCK_CLIMBING-const">
+    <td class="enumTableCell">SPORT_ROCK_CLIMBING</td>
+      <td class="enumTableCell">31</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SAILING-const">
+    <td class="enumTableCell">SPORT_SAILING</td>
+      <td class="enumTableCell">32</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_ICE_SKATING-const">
+    <td class="enumTableCell">SPORT_ICE_SKATING</td>
+      <td class="enumTableCell">33</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SKY_DIVING-const">
+    <td class="enumTableCell">SPORT_SKY_DIVING</td>
+      <td class="enumTableCell">34</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_SNOWSHOEING-const">
+    <td class="enumTableCell">SPORT_SNOWSHOEING</td>
+      <td class="enumTableCell">35</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SNOWMOBILING-const">
+    <td class="enumTableCell">SPORT_SNOWMOBILING</td>
+      <td class="enumTableCell">36</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_STAND_UP_PADDLEBOARDING-const">
+    <td class="enumTableCell">SPORT_STAND_UP_PADDLEBOARDING</td>
+      <td class="enumTableCell">37</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SURFING-const">
+    <td class="enumTableCell">SPORT_SURFING</td>
+      <td class="enumTableCell">38</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_WAKEBOARDING-const">
+    <td class="enumTableCell">SPORT_WAKEBOARDING</td>
+      <td class="enumTableCell">39</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_WATER_SKIING-const">
+    <td class="enumTableCell">SPORT_WATER_SKIING</td>
+      <td class="enumTableCell">40</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_KAYAKING-const">
+    <td class="enumTableCell">SPORT_KAYAKING</td>
+      <td class="enumTableCell">41</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_RAFTING-const">
+    <td class="enumTableCell">SPORT_RAFTING</td>
+      <td class="enumTableCell">42</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_WINDSURFING-const">
+    <td class="enumTableCell">SPORT_WINDSURFING</td>
+      <td class="enumTableCell">43</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_KITESURFING-const">
+    <td class="enumTableCell">SPORT_KITESURFING</td>
+      <td class="enumTableCell">44</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_TACTICAL-const">
+    <td class="enumTableCell">SPORT_TACTICAL</td>
+      <td class="enumTableCell">45</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_JUMPMASTER-const">
+    <td class="enumTableCell">SPORT_JUMPMASTER</td>
+      <td class="enumTableCell">46</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_BOXING-const">
+    <td class="enumTableCell">SPORT_BOXING</td>
+      <td class="enumTableCell">47</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_FLOOR_CLIMBING-const">
+    <td class="enumTableCell">SPORT_FLOOR_CLIMBING</td>
+      <td class="enumTableCell">48</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_BASEBALL-const">
+    <td class="enumTableCell">SPORT_BASEBALL</td>
+      <td class="enumTableCell">49</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SOFTBALL_FAST_PITCH-const">
+    <td class="enumTableCell">SPORT_SOFTBALL_FAST_PITCH</td>
+      <td class="enumTableCell">50</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_SOFTBALL_SLOW_PITCH-const">
+    <td class="enumTableCell">SPORT_SOFTBALL_SLOW_PITCH</td>
+      <td class="enumTableCell">51</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SHOOTING-const">
+    <td class="enumTableCell">SPORT_SHOOTING</td>
+      <td class="enumTableCell">56</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_AUTO_RACING-const">
+    <td class="enumTableCell">SPORT_AUTO_RACING</td>
+      <td class="enumTableCell">57</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_WINTER_SPORT-const">
+    <td class="enumTableCell">SPORT_WINTER_SPORT</td>
+      <td class="enumTableCell">58</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_GRINDING-const">
+    <td class="enumTableCell">SPORT_GRINDING</td>
+      <td class="enumTableCell">59</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_HEALTH_MONITORING-const">
+    <td class="enumTableCell">SPORT_HEALTH_MONITORING</td>
+      <td class="enumTableCell">60</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_MARINE-const">
+    <td class="enumTableCell">SPORT_MARINE</td>
+      <td class="enumTableCell">61</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_HIIT-const">
+    <td class="enumTableCell">SPORT_HIIT</td>
+      <td class="enumTableCell">62</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_VIDEO_GAMING-const">
+    <td class="enumTableCell">SPORT_VIDEO_GAMING</td>
+      <td class="enumTableCell">63</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_RACKET-const">
+    <td class="enumTableCell">SPORT_RACKET</td>
+      <td class="enumTableCell">64</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_WHEELCHAIR_PUSH_WALK-const">
+    <td class="enumTableCell">SPORT_WHEELCHAIR_PUSH_WALK</td>
+      <td class="enumTableCell">65</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_WHEELCHAIR_PUSH_RUN-const">
+    <td class="enumTableCell">SPORT_WHEELCHAIR_PUSH_RUN</td>
+      <td class="enumTableCell">66</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_MEDITATION-const">
+    <td class="enumTableCell">SPORT_MEDITATION</td>
+      <td class="enumTableCell">67</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_PARA_SPORT-const">
+    <td class="enumTableCell">SPORT_PARA_SPORT</td>
+      <td class="enumTableCell">68</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_DISC_GOLF-const">
+    <td class="enumTableCell">SPORT_DISC_GOLF</td>
+      <td class="enumTableCell">69</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_TEAM_SPORT-const">
+    <td class="enumTableCell">SPORT_TEAM_SPORT</td>
+      <td class="enumTableCell">70</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_CRICKET-const">
+    <td class="enumTableCell">SPORT_CRICKET</td>
+      <td class="enumTableCell">71</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_RUGBY-const">
+    <td class="enumTableCell">SPORT_RUGBY</td>
+      <td class="enumTableCell">72</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_HOCKEY-const">
+    <td class="enumTableCell">SPORT_HOCKEY</td>
+      <td class="enumTableCell">73</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_LACROSSE-const">
+    <td class="enumTableCell">SPORT_LACROSSE</td>
+      <td class="enumTableCell">74</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_VOLLEYBALL-const">
+    <td class="enumTableCell">SPORT_VOLLEYBALL</td>
+      <td class="enumTableCell">75</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_WATER_TUBING-const">
+    <td class="enumTableCell">SPORT_WATER_TUBING</td>
+      <td class="enumTableCell">76</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_WAKESURFING-const">
+    <td class="enumTableCell">SPORT_WAKESURFING</td>
+      <td class="enumTableCell">77</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_INVALID-const">
+    <td class="enumTableCell">SPORT_INVALID</td>
+      <td class="enumTableCell">255</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="SubSport-module" class="">
+    <h3>SubSport</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SUB_SPORT_GENERIC-const">
+    <td class="enumTableCell">SUB_SPORT_GENERIC</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_TREADMILL-const">
+    <td class="enumTableCell">SUB_SPORT_TREADMILL</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_STREET-const">
+    <td class="enumTableCell">SUB_SPORT_STREET</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_TRAIL-const">
+    <td class="enumTableCell">SUB_SPORT_TRAIL</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_TRACK-const">
+    <td class="enumTableCell">SUB_SPORT_TRACK</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_SPIN-const">
+    <td class="enumTableCell">SUB_SPORT_SPIN</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_INDOOR_CYCLING-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_CYCLING</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_ROAD-const">
+    <td class="enumTableCell">SUB_SPORT_ROAD</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_MOUNTAIN-const">
+    <td class="enumTableCell">SUB_SPORT_MOUNTAIN</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_DOWNHILL-const">
+    <td class="enumTableCell">SUB_SPORT_DOWNHILL</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_RECUMBENT-const">
+    <td class="enumTableCell">SUB_SPORT_RECUMBENT</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_CYCLOCROSS-const">
+    <td class="enumTableCell">SUB_SPORT_CYCLOCROSS</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_HAND_CYCLING-const">
+    <td class="enumTableCell">SUB_SPORT_HAND_CYCLING</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_TRACK_CYCLING-const">
+    <td class="enumTableCell">SUB_SPORT_TRACK_CYCLING</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_INDOOR_ROWING-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_ROWING</td>
+      <td class="enumTableCell">14</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_ELLIPTICAL-const">
+    <td class="enumTableCell">SUB_SPORT_ELLIPTICAL</td>
+      <td class="enumTableCell">15</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_STAIR_CLIMBING-const">
+    <td class="enumTableCell">SUB_SPORT_STAIR_CLIMBING</td>
+      <td class="enumTableCell">16</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_LAP_SWIMMING-const">
+    <td class="enumTableCell">SUB_SPORT_LAP_SWIMMING</td>
+      <td class="enumTableCell">17</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_OPEN_WATER-const">
+    <td class="enumTableCell">SUB_SPORT_OPEN_WATER</td>
+      <td class="enumTableCell">18</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_FLEXIBILITY_TRAINING-const">
+    <td class="enumTableCell">SUB_SPORT_FLEXIBILITY_TRAINING</td>
+      <td class="enumTableCell">19</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_STRENGTH_TRAINING-const">
+    <td class="enumTableCell">SUB_SPORT_STRENGTH_TRAINING</td>
+      <td class="enumTableCell">20</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_WARM_UP-const">
+    <td class="enumTableCell">SUB_SPORT_WARM_UP</td>
+      <td class="enumTableCell">21</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_MATCH-const">
+    <td class="enumTableCell">SUB_SPORT_MATCH</td>
+      <td class="enumTableCell">22</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_EXERCISE-const">
+    <td class="enumTableCell">SUB_SPORT_EXERCISE</td>
+      <td class="enumTableCell">23</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_CHALLENGE-const">
+    <td class="enumTableCell">SUB_SPORT_CHALLENGE</td>
+      <td class="enumTableCell">24</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_INDOOR_SKIING-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_SKIING</td>
+      <td class="enumTableCell">25</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_CARDIO_TRAINING-const">
+    <td class="enumTableCell">SUB_SPORT_CARDIO_TRAINING</td>
+      <td class="enumTableCell">26</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_INDOOR_WALKING-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_WALKING</td>
+      <td class="enumTableCell">27</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_E_BIKE_FITNESS-const">
+    <td class="enumTableCell">SUB_SPORT_E_BIKE_FITNESS</td>
+      <td class="enumTableCell">28</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_BMX-const">
+    <td class="enumTableCell">SUB_SPORT_BMX</td>
+      <td class="enumTableCell">29</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_CASUAL_WALKING-const">
+    <td class="enumTableCell">SUB_SPORT_CASUAL_WALKING</td>
+      <td class="enumTableCell">30</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_SPEED_WALKING-const">
+    <td class="enumTableCell">SUB_SPORT_SPEED_WALKING</td>
+      <td class="enumTableCell">31</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_BIKE_TO_RUN_TRANSITION-const">
+    <td class="enumTableCell">SUB_SPORT_BIKE_TO_RUN_TRANSITION</td>
+      <td class="enumTableCell">32</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_RUN_TO_BIKE_TRANSITION-const">
+    <td class="enumTableCell">SUB_SPORT_RUN_TO_BIKE_TRANSITION</td>
+      <td class="enumTableCell">33</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_SWIM_TO_BIKE_TRANSITION-const">
+    <td class="enumTableCell">SUB_SPORT_SWIM_TO_BIKE_TRANSITION</td>
+      <td class="enumTableCell">34</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_ATV-const">
+    <td class="enumTableCell">SUB_SPORT_ATV</td>
+      <td class="enumTableCell">35</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_MOTOCROSS-const">
+    <td class="enumTableCell">SUB_SPORT_MOTOCROSS</td>
+      <td class="enumTableCell">36</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_BACKCOUNTRY-const">
+    <td class="enumTableCell">SUB_SPORT_BACKCOUNTRY</td>
+      <td class="enumTableCell">37</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_RESORT-const">
+    <td class="enumTableCell">SUB_SPORT_RESORT</td>
+      <td class="enumTableCell">38</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_RC_DRONE-const">
+    <td class="enumTableCell">SUB_SPORT_RC_DRONE</td>
+      <td class="enumTableCell">39</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_WINGSUIT-const">
+    <td class="enumTableCell">SUB_SPORT_WINGSUIT</td>
+      <td class="enumTableCell">40</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_WHITEWATER-const">
+    <td class="enumTableCell">SUB_SPORT_WHITEWATER</td>
+      <td class="enumTableCell">41</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_SKATE_SKIING-const">
+    <td class="enumTableCell">SUB_SPORT_SKATE_SKIING</td>
+      <td class="enumTableCell">42</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_YOGA-const">
+    <td class="enumTableCell">SUB_SPORT_YOGA</td>
+      <td class="enumTableCell">43</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_PILATES-const">
+    <td class="enumTableCell">SUB_SPORT_PILATES</td>
+      <td class="enumTableCell">44</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_INDOOR_RUNNING-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_RUNNING</td>
+      <td class="enumTableCell">45</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_GRAVEL_CYCLING-const">
+    <td class="enumTableCell">SUB_SPORT_GRAVEL_CYCLING</td>
+      <td class="enumTableCell">46</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_E_BIKE_MOUNTAIN-const">
+    <td class="enumTableCell">SUB_SPORT_E_BIKE_MOUNTAIN</td>
+      <td class="enumTableCell">47</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_COMMUTING-const">
+    <td class="enumTableCell">SUB_SPORT_COMMUTING</td>
+      <td class="enumTableCell">48</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_MIXED_SURFACE-const">
+    <td class="enumTableCell">SUB_SPORT_MIXED_SURFACE</td>
+      <td class="enumTableCell">49</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_NAVIGATE-const">
+    <td class="enumTableCell">SUB_SPORT_NAVIGATE</td>
+      <td class="enumTableCell">50</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_TRACK_ME-const">
+    <td class="enumTableCell">SUB_SPORT_TRACK_ME</td>
+      <td class="enumTableCell">51</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_MAP-const">
+    <td class="enumTableCell">SUB_SPORT_MAP</td>
+      <td class="enumTableCell">52</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_SINGLE_GAS_DIVING-const">
+    <td class="enumTableCell">SUB_SPORT_SINGLE_GAS_DIVING</td>
+      <td class="enumTableCell">53</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_MULTI_GAS_DIVING-const">
+    <td class="enumTableCell">SUB_SPORT_MULTI_GAS_DIVING</td>
+      <td class="enumTableCell">54</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_GAUGE_DIVING-const">
+    <td class="enumTableCell">SUB_SPORT_GAUGE_DIVING</td>
+      <td class="enumTableCell">55</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_APNEA_DIVING-const">
+    <td class="enumTableCell">SUB_SPORT_APNEA_DIVING</td>
+      <td class="enumTableCell">56</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_APNEA_HUNTING-const">
+    <td class="enumTableCell">SUB_SPORT_APNEA_HUNTING</td>
+      <td class="enumTableCell">57</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_VIRTUAL_ACTIVITY-const">
+    <td class="enumTableCell">SUB_SPORT_VIRTUAL_ACTIVITY</td>
+      <td class="enumTableCell">58</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_OBSTACLE-const">
+    <td class="enumTableCell">SUB_SPORT_OBSTACLE</td>
+      <td class="enumTableCell">59</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_ASSISTANCE-const">
+    <td class="enumTableCell">SUB_SPORT_ASSISTANCE</td>
+      <td class="enumTableCell">60</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_INCIDENT_DETECTED-const">
+    <td class="enumTableCell">SUB_SPORT_INCIDENT_DETECTED</td>
+      <td class="enumTableCell">61</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_BREATHING-const">
+    <td class="enumTableCell">SUB_SPORT_BREATHING</td>
+      <td class="enumTableCell">62</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_CCR_DIVING-const">
+    <td class="enumTableCell">SUB_SPORT_CCR_DIVING</td>
+      <td class="enumTableCell">63</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_AREA_CALC-const">
+    <td class="enumTableCell">SUB_SPORT_AREA_CALC</td>
+      <td class="enumTableCell">64</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_SAIL_RACE-const">
+    <td class="enumTableCell">SUB_SPORT_SAIL_RACE</td>
+      <td class="enumTableCell">65</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_EXPEDITION-const">
+    <td class="enumTableCell">SUB_SPORT_EXPEDITION</td>
+      <td class="enumTableCell">66</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_ULTRA-const">
+    <td class="enumTableCell">SUB_SPORT_ULTRA</td>
+      <td class="enumTableCell">67</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_INDOOR_CLIMBING-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_CLIMBING</td>
+      <td class="enumTableCell">68</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_BOULDERING-const">
+    <td class="enumTableCell">SUB_SPORT_BOULDERING</td>
+      <td class="enumTableCell">69</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_HIIT-const">
+    <td class="enumTableCell">SUB_SPORT_HIIT</td>
+      <td class="enumTableCell">70</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_INDOOR_GRINDING-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_GRINDING</td>
+      <td class="enumTableCell">71</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_HUNTING_WITH_DOGS-const">
+    <td class="enumTableCell">SUB_SPORT_HUNTING_WITH_DOGS</td>
+      <td class="enumTableCell">72</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_AMRAP-const">
+    <td class="enumTableCell">SUB_SPORT_AMRAP</td>
+      <td class="enumTableCell">73</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_EMOM-const">
+    <td class="enumTableCell">SUB_SPORT_EMOM</td>
+      <td class="enumTableCell">74</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_TABATA-const">
+    <td class="enumTableCell">SUB_SPORT_TABATA</td>
+      <td class="enumTableCell">75</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_FALL_DETECTED-const">
+    <td class="enumTableCell">SUB_SPORT_FALL_DETECTED</td>
+      <td class="enumTableCell">76</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_ESPORT-const">
+    <td class="enumTableCell">SUB_SPORT_ESPORT</td>
+      <td class="enumTableCell">77</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_TRIATHLON-const">
+    <td class="enumTableCell">SUB_SPORT_TRIATHLON</td>
+      <td class="enumTableCell">78</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_DUATHLON-const">
+    <td class="enumTableCell">SUB_SPORT_DUATHLON</td>
+      <td class="enumTableCell">79</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_BRICK-const">
+    <td class="enumTableCell">SUB_SPORT_BRICK</td>
+      <td class="enumTableCell">80</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_SWIM_RUN-const">
+    <td class="enumTableCell">SUB_SPORT_SWIM_RUN</td>
+      <td class="enumTableCell">81</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_ADVENTURE_RACE-const">
+    <td class="enumTableCell">SUB_SPORT_ADVENTURE_RACE</td>
+      <td class="enumTableCell">82</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_TRUCKER_WORKOUT-const">
+    <td class="enumTableCell">SUB_SPORT_TRUCKER_WORKOUT</td>
+      <td class="enumTableCell">83</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_PICKLEBALL-const">
+    <td class="enumTableCell">SUB_SPORT_PICKLEBALL</td>
+      <td class="enumTableCell">84</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_PADEL-const">
+    <td class="enumTableCell">SUB_SPORT_PADEL</td>
+      <td class="enumTableCell">85</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_INDOOR_WHEELCHAIR_WALK-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_WHEELCHAIR_WALK</td>
+      <td class="enumTableCell">86</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_INDOOR_WHEELCHAIR_RUN-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_WHEELCHAIR_RUN</td>
+      <td class="enumTableCell">87</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_INDOOR_HAND_CYCLING-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_HAND_CYCLING</td>
+      <td class="enumTableCell">88</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_ANCHOR-const">
+    <td class="enumTableCell">SUB_SPORT_ANCHOR</td>
+      <td class="enumTableCell">89</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_FIELD-const">
+    <td class="enumTableCell">SUB_SPORT_FIELD</td>
+      <td class="enumTableCell">90</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_ICE-const">
+    <td class="enumTableCell">SUB_SPORT_ICE</td>
+      <td class="enumTableCell">91</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_ULTIMATE-const">
+    <td class="enumTableCell">SUB_SPORT_ULTIMATE</td>
+      <td class="enumTableCell">92</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_PLATFORM-const">
+    <td class="enumTableCell">SUB_SPORT_PLATFORM</td>
+      <td class="enumTableCell">93</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_SQUASH-const">
+    <td class="enumTableCell">SUB_SPORT_SQUASH</td>
+      <td class="enumTableCell">94</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_BADMINTON-const">
+    <td class="enumTableCell">SUB_SPORT_BADMINTON</td>
+      <td class="enumTableCell">95</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_RACQUETBALL-const">
+    <td class="enumTableCell">SUB_SPORT_RACQUETBALL</td>
+      <td class="enumTableCell">96</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_TABLE_TENNIS-const">
+    <td class="enumTableCell">SUB_SPORT_TABLE_TENNIS</td>
+      <td class="enumTableCell">97</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_INVALID-const">
+    <td class="enumTableCell">SUB_SPORT_INVALID</td>
+      <td class="enumTableCell">255</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="WorkoutIntensity-module" class="">
+    <h3>WorkoutIntensity</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="WORKOUT_INTENSITY_ACTIVE-const">
+    <td class="enumTableCell">WORKOUT_INTENSITY_ACTIVE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_INTENSITY_REST-const">
+    <td class="enumTableCell">WORKOUT_INTENSITY_REST</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_INTENSITY_WARMUP-const">
+    <td class="enumTableCell">WORKOUT_INTENSITY_WARMUP</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_INTENSITY_COOLDOWN-const">
+    <td class="enumTableCell">WORKOUT_INTENSITY_COOLDOWN</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_INTENSITY_RECOVERY-const">
+    <td class="enumTableCell">WORKOUT_INTENSITY_RECOVERY</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_INTENSITY_INTERVAL-const">
+    <td class="enumTableCell">WORKOUT_INTENSITY_INTERVAL</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_INTENSITY_INVALID-const">
+    <td class="enumTableCell">WORKOUT_INTENSITY_INVALID</td>
+      <td class="enumTableCell">255</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="WorkoutStepDurationType-module" class="">
+    <h3>WorkoutStepDurationType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_TIME-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_TIME</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_DISTANCE-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_DISTANCE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_HR_LESS_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_HR_LESS_THAN</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_HR_GREATER_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_HR_GREATER_THAN</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_CALORIES-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_CALORIES</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_OPEN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_OPEN</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_REPEAT_UNTIL_STEPS_COMPLETE-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPEAT_UNTIL_STEPS_COMPLETE</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_REPEAT_UNTIL_TIME-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPEAT_UNTIL_TIME</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_REPEAT_UNTIL_DISTANCE-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPEAT_UNTIL_DISTANCE</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_REPEAT_UNTIL_CALORIES-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPEAT_UNTIL_CALORIES</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_REPEAT_UNTIL_HR_LESS_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPEAT_UNTIL_HR_LESS_THAN</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_REPEAT_UNTIL_HR_GREATER_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPEAT_UNTIL_HR_GREATER_THAN</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_REPEAT_UNTIL_POWER_LESS_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPEAT_UNTIL_POWER_LESS_THAN</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_REPEAT_UNTIL_POWER_GREATER_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPEAT_UNTIL_POWER_GREATER_THAN</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_POWER_LESS_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_POWER_LESS_THAN</td>
+      <td class="enumTableCell">14</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_POWER_GREATER_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_POWER_GREATER_THAN</td>
+      <td class="enumTableCell">15</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_TRAINING_PEAKS_TRAINING_STRESS_SCORE-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_TRAINING_PEAKS_TRAINING_STRESS_SCORE</td>
+      <td class="enumTableCell">16</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_REPEAT_UNTIL_POWER_LAST_LAP_LESS_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPEAT_UNTIL_POWER_LAST_LAP_LESS_THAN</td>
+      <td class="enumTableCell">17</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_REPEAT_UNTIL_MAX_POWER_LAST_LAP_LESS_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPEAT_UNTIL_MAX_POWER_LAST_LAP_LESS_THAN</td>
+      <td class="enumTableCell">18</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_POWER_3S_LESS_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_POWER_3S_LESS_THAN</td>
+      <td class="enumTableCell">19</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_POWER_10S_LESS_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_POWER_10S_LESS_THAN</td>
+      <td class="enumTableCell">20</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_POWER_30S_LESS_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_POWER_30S_LESS_THAN</td>
+      <td class="enumTableCell">21</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_POWER_3S_GREATER_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_POWER_3S_GREATER_THAN</td>
+      <td class="enumTableCell">22</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_POWER_10S_GREATER_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_POWER_10S_GREATER_THAN</td>
+      <td class="enumTableCell">23</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_POWER_30S_GREATER_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_POWER_30S_GREATER_THAN</td>
+      <td class="enumTableCell">24</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_POWER_LAP_LESS_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_POWER_LAP_LESS_THAN</td>
+      <td class="enumTableCell">25</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_POWER_LAP_GREATER_THAN-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_POWER_LAP_GREATER_THAN</td>
+      <td class="enumTableCell">26</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_REPEAT_UNTIL_TRAINING_PEAKS_TRAINING_STRESS_SCORE-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPEAT_UNTIL_TRAINING_PEAKS_TRAINING_STRESS_SCORE</td>
+      <td class="enumTableCell">27</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_REPETITION_TIME-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPETITION_TIME</td>
+      <td class="enumTableCell">28</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_DURATION_REPS-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_REPS</td>
+      <td class="enumTableCell">29</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_DURATION_INVALID-const">
+    <td class="enumTableCell">WORKOUT_STEP_DURATION_INVALID</td>
+      <td class="enumTableCell">255</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="WorkoutStepTargetType-module" class="">
+    <h3>WorkoutStepTargetType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="WORKOUT_STEP_TARGET_SPEED-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_SPEED</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_TARGET_HEART_RATE-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_HEART_RATE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_TARGET_OPEN-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_OPEN</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_TARGET_CADENCE-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_CADENCE</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_TARGET_POWER-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_POWER</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_TARGET_GRADE-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_GRADE</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_TARGET_RESISTANCE-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_RESISTANCE</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_TARGET_POWER_3S-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_POWER_3S</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_TARGET_POWER_10S-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_POWER_10S</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_TARGET_POWER_30S-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_POWER_30S</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_TARGET_POWER_LAP-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_POWER_LAP</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_TARGET_SWIM_STROKE-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_SWIM_STROKE</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_TARGET_SPEED_LAP-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_SPEED_LAP</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_TARGET_HEART_RATE_LAP-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_HEART_RATE_LAP</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_TARGET_INHALE_DURATION-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_INHALE_DURATION</td>
+      <td class="enumTableCell">14</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_TARGET_INHALE_HOLD_DURATION-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_INHALE_HOLD_DURATION</td>
+      <td class="enumTableCell">15</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_TARGET_EXHALE_DURATION-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_EXHALE_DURATION</td>
+      <td class="enumTableCell">16</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_TARGET_EXHALE_HOLD_DURATION-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_EXHALE_HOLD_DURATION</td>
+      <td class="enumTableCell">17</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WORKOUT_STEP_TARGET_POWER_CURVE-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_POWER_CURVE</td>
+      <td class="enumTableCell">18</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WORKOUT_STEP_TARGET_INVALID-const">
+    <td class="enumTableCell">WORKOUT_STEP_TARGET_INVALID</td>
+      <td class="enumTableCell">255</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getActivityInfo-instance_function" title="getActivityInfo (Instance Function)"><strong>getActivityInfo</strong></a>()    as <span class="type"><a href="../Toybox/Activity/Info.html">Activity.Info</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current Activity Info.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getCurrentWorkoutStep-instance_function" title="getCurrentWorkoutStep (Instance Function)"><strong>getCurrentWorkoutStep</strong></a>()    as <span class="type"><a href="../Toybox/Activity/WorkoutStepInfo.html">Activity.WorkoutStepInfo</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get information about the current workout step.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getNextWorkoutStep-instance_function" title="getNextWorkoutStep (Instance Function)"><strong>getNextWorkoutStep</strong></a>()    as <span class="type"><a href="../Toybox/Activity/WorkoutStepInfo.html">Activity.WorkoutStepInfo</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get information about the next workout step.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getProfileInfo-instance_function" title="getProfileInfo (Instance Function)"><strong>getProfileInfo</strong></a>()    as <span class="type"><a href="../Toybox/Activity/ProfileInfo.html">Activity.ProfileInfo</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get information about the current profile.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getActivityInfo-instance_function">
+    <strong>getActivityInfo()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Activity/Info.html">Activity.Info</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current Activity Info.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Activity/Info.html">Activity.Info</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The current Activity Info or <code>null</code> if there is no current activity.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getCurrentWorkoutStep-instance_function">
+    <strong>getCurrentWorkoutStep()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Activity/WorkoutStepInfo.html">Activity.WorkoutStepInfo</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get information about the current workout step.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Activity/WorkoutStepInfo.html">Activity.WorkoutStepInfo</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+if a workout is active, <code>null</code> otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/OperationNotAllowedException.html">Lang.OperationNotAllowedException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if called from a data field app
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getNextWorkoutStep-instance_function">
+    <strong>getNextWorkoutStep()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Activity/WorkoutStepInfo.html">Activity.WorkoutStepInfo</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get information about the next workout step.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Activity/WorkoutStepInfo.html">Activity.WorkoutStepInfo</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+if a workout is active and there is a next step, <code>null</code> otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/OperationNotAllowedException.html">Lang.OperationNotAllowedException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if called from a data field app
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getProfileInfo-instance_function">
+    <strong>getProfileInfo()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Activity/ProfileInfo.html">Activity.ProfileInfo</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get information about the current profile.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Activity/ProfileInfo.html">Activity.ProfileInfo</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+the current profile
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:12 PM
+</p>
+
+</body>

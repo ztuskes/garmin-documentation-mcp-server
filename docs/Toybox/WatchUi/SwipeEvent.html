@@ -1,0 +1,232 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.WatchUi.SwipeEvent </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.WatchUi.SwipeEvent";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.WatchUi.SwipeEvent</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/SwipeEvent.html">Toybox.WatchUi.SwipeEvent</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+SwipeEvent is an object sent to <a href='../../Toybox/WatchUi/InputDelegate.html'>InputDelegate</a>
+when there is swipe interaction with the device's touch screen.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/InputDelegate.html">Toybox.WatchUi.InputDelegate</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.WatchUi;
+
+class InputDelegate extends WatchUi.BehaviorDelegate {
+    function onSwipe(swipeEvent) {
+        System.println(swipeEvent.getDirection()); // e.g. SWIPE_RIGHT = 1
+        return true;
+    }
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch Face</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getDirection-instance_function" title="getDirection (Instance Function)"><strong>getDirection</strong></a>()    as <span class="type"><a href="../../Toybox/WatchUi.html#SwipeDirection-module">WatchUi.SwipeDirection</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the direction of the swipe.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getDirection-instance_function">
+    <strong>getDirection()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/WatchUi.html#SwipeDirection-module">WatchUi.SwipeDirection</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the direction of the swipe.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/WatchUi.html#SwipeDirection-module">WatchUi.SwipeDirection</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A <a href='../../Toybox/WatchUi.html#SWIPE_UP-const'>WatchUi.SWIPE_*</a> value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

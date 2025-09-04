@@ -1,0 +1,472 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.WatchUi.Bitmap </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.WatchUi.Bitmap";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.WatchUi.Bitmap</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.WatchUi.Drawable</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Drawable.html">Toybox.WatchUi.Drawable</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Bitmap.html">Toybox.WatchUi.Bitmap</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Bitmap is the class representation of a bitmap resource.
+</p><p>
+A Bitmap can be constructed using the resource compiler and loaded
+through the resource (Rez) module.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Drawable.html">Toybox.WatchUi.Drawable</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>// The bitmap.xml file contents:
+// &lt;resources&gt;
+//     &lt;bitmap id="myBitmap" filename="images/myBitmap.png" /&gt;
+// &lt;/resources&gt;
+
+using Toybox.Graphics;
+using Toybox.WatchUi;
+
+class MyWatchView extends WatchUi.View {
+
+    var myBitmap;
+
+    function initialize() {
+        View.initialize();
+        myBitmap = new WatchUi.Bitmap({
+            :rezId=&gt;Rez.Drawables.myBitmap,
+            :locX=&gt;10,
+            :locY=&gt;30
+        });
+    }
+
+    // Update the view
+    function onUpdate(dc) {
+        myBitmap.draw(dc);
+    }
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#draw-instance_function" title="draw (Instance Function)"><strong>draw</strong></a>(dc as <span class="type"><a href="../../Toybox/Graphics/Dc.html">Graphics.Dc</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw a Bitmap to the device context (<a href='../../Toybox/Graphics/Dc.html'>Dc</a>).
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getDimensions-instance_function" title="getDimensions (Instance Function)"><strong>getDimensions</strong></a>()    as [ <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span> ]
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the dimensions of a Bitmap.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(options as { :rezId as <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>, :identifier as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>, :locX as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :locY as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :visible as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> })
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setBitmap-instance_function" title="setBitmap (Instance Function)"><strong>setBitmap</strong></a>(bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the resource associated with the Bitmap.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="draw-instance_function">
+    <strong>draw(dc as <span class="type"><a href="../../Toybox/Graphics/Dc.html">Graphics.Dc</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw a Bitmap to the device context (<a href='../../Toybox/Graphics/Dc.html'>Dc</a>).
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">dc</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/Dc.html">Graphics.Dc</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The device context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getDimensions-instance_function">
+    <strong>getDimensions()</strong> <span class="type"> as [ <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span> ]</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the dimensions of a Bitmap.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A two element array containing the width and height of the Bitmap object
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(options as { :rezId as <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>, :identifier as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>, :locX as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :locY as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :visible as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> })</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary containing the options for the Bitmap object
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:rezId</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The resource identifier for the Bitmap object
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:bitmap</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The BitmapResource, BufferedBitmap, BitmapReference, or BufferedBitmapReference object to use
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Drawable.html#initialize-instance_function">Drawable.initialize()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setBitmap-instance_function">
+    <strong>setBitmap(bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the resource associated with the Bitmap.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+A <code>null</code> value passed for the bitmap parameter is only supported with ConnectIQ 5.0.0 and later.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">bitmap</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>, <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The ResourceId or the Bitmap object.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if bitmap is not a valid type
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:15 PM
+</p>
+
+</body>

@@ -1,0 +1,1877 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Sensor </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Sensor";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Sensor</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Sensor module provides access to sensor data.
+</p><p>
+Sensor allows Apps to register for updates to the current sensor data. It also
+enables apps to control the ANT+ sensors supported natively by the device,
+which are described by the provided SENSOR_* constants.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Using heart rate sensors to display current heart rate</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Sensor;
+function initialize() {
+    Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
+    Sensor.enableSensorEvents(method(:onSensor));
+}
+
+function onSensor(sensorInfo) {
+    System.println("Heart Rate: " + sensorInfo.heartRate);
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Background</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 45</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Garmin Swim™ 2</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+  <!-- Permissions -->
+  <p class="tag_title">Requires Permission:</p>
+  <ul class="required_permissions">
+      <li>
+    <div class="inline">
+      <p>Sensor</p>
+    </div>
+  </li>
+  </ul>
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Sensor/AccelerometerData.html">AccelerometerData</a></span>, <span class="type"><a href="../Toybox/Sensor/GyroscopeData.html">GyroscopeData</a></span>, <span class="type"><a href="../Toybox/Sensor/HeartRateData.html">HeartRateData</a></span>, <span class="type"><a href="../Toybox/Sensor/Info.html">Info</a></span>, <span class="type"><a href="../Toybox/Sensor/MagnetometerData.html">MagnetometerData</a></span>, <span class="type"><a href="../Toybox/Sensor/SensorData.html">SensorData</a></span>, <span class="type"><a href="../Toybox/Sensor/SensorDelegate.html">SensorDelegate</a></span>, <span class="type"><a href="../Toybox/Sensor/SensorInfo.html">SensorInfo</a></span>, <span class="type"><a href="../Toybox/Sensor/SensorInfoIterator.html">SensorInfoIterator</a></span>, <span class="type"><a href="../Toybox/Sensor/TooManySensorDataListenersException.html">TooManySensorDataListenersException</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="RemoteSensorType-module" class="">
+    <h3>RemoteSensorType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SENSOR_BIKESPEED-const">
+    <td class="enumTableCell">SENSOR_BIKESPEED</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SENSOR_BIKECADENCE-const">
+    <td class="enumTableCell">SENSOR_BIKECADENCE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SENSOR_BIKEPOWER-const">
+    <td class="enumTableCell">SENSOR_BIKEPOWER</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SENSOR_FOOTPOD-const">
+    <td class="enumTableCell">SENSOR_FOOTPOD</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SENSOR_HEARTRATE-const">
+    <td class="enumTableCell">SENSOR_HEARTRATE</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SENSOR_TEMPERATURE-const">
+    <td class="enumTableCell">SENSOR_TEMPERATURE</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SENSOR_GENERIC-const">
+    <td class="enumTableCell">SENSOR_GENERIC</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 5.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="OnboardSensorType-module" class="">
+    <h3>OnboardSensorType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SENSOR_PULSE_OXIMETRY-const">
+    <td class="enumTableCell">SENSOR_PULSE_OXIMETRY</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SENSOR_ONBOARD_PULSE_OXIMETRY-const">
+    <td class="enumTableCell">SENSOR_ONBOARD_PULSE_OXIMETRY</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SENSOR_ONBOARD_HEARTRATE-const">
+    <td class="enumTableCell">SENSOR_ONBOARD_HEARTRATE</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="SensorTechnology-module" class="">
+    <h3>SensorTechnology</h3>
+  </dt>
+  <p>
+The sensor technology
+</p><p>
+Describes the technology used to communicate with the sensor.
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SENSOR_TECHNOLOGY_ANT-const">
+    <td class="enumTableCell">SENSOR_TECHNOLOGY_ANT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+ANT Sensor
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SENSOR_TECHNOLOGY_BLE-const">
+    <td class="enumTableCell">SENSOR_TECHNOLOGY_BLE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Bluetooth Low Energy Sensor
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SENSOR_TECHNOLOGY_ONBOARD-const">
+    <td class="enumTableCell">SENSOR_TECHNOLOGY_ONBOARD</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Onboard Sensor
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+<h2>Typedef Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#SensorType-named_type" title="SensorType (Named Type)"><strong>SensorType</strong></a> as <span class="type"><a href="../Toybox/Sensor.html#RemoteSensorType-module">Sensor.RemoteSensorType</a></span> or <span class="type"><a href="../Toybox/Sensor.html#OnboardSensorType-module">Sensor.OnboardSensorType</a></span>
+    </span>
+
+
+
+</li>
+</ul>
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#disableSensorType-instance_function" title="disableSensorType (Instance Function)"><strong>disableSensorType</strong></a>(sensorType as <span class="type"><a href="../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span>)    as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Disable the given sensor type for use.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#enableSensorEvents-instance_function" title="enableSensorEvents (Instance Function)"><strong>enableSensorEvents</strong></a>(listener as <b>Null</b> or <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(info as <span class="type"><a href="../Toybox/Sensor/Info.html">Sensor.Info</a></span>) as <b>Void</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Request sensor events from enabled sensors.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#enableSensorType-instance_function" title="enableSensorType (Instance Function)"><strong>enableSensorType</strong></a>(sensorType as <span class="type"><a href="../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span>)    as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Enable the given sensor type for use.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getInfo-instance_function" title="getInfo (Instance Function)"><strong>getInfo</strong></a>()    as <span class="type"><a href="../Toybox/Sensor/Info.html">Sensor.Info</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current Sensor <a href='../Toybox/Sensor/Info.html'>Sensor.Info</a>.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getMaxSampleRate-instance_function" title="getMaxSampleRate (Instance Function)"><strong>getMaxSampleRate</strong></a>()    as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the maximum sample rate supported by the system.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getMaxSampleRateForSensorType-instance_function" title="getMaxSampleRateForSensorType (Instance Function)"><strong>getMaxSampleRateForSensorType</strong></a>(sensorDataType as <span class="type"><a href="../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>)    as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the maximum sample rate supported for given sensor data type.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getRegisteredSensors-instance_function" title="getRegisteredSensors (Instance Function)"><strong>getRegisteredSensors</strong></a>(sensorType as <span class="type"><a href="../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span> or <b>Null</b>)    as <span class="type"><a href="../Toybox/Sensor/SensorInfoIterator.html">Sensor.SensorInfoIterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Retrieve the sensors that are currently registered.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#notifyError-instance_function" title="notifyError (Instance Function)"><strong>notifyError</strong></a>(string as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Let the system know the app has encountered an error.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#notifyNewSensor-instance_function" title="notifyNewSensor (Instance Function)"><strong>notifyNewSensor</strong></a>(sensor as <span class="type"><a href="../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>, configurationRequired as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Let the system know the app has discovered a new sensor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#notifyPairComplete-instance_function" title="notifyPairComplete (Instance Function)"><strong>notifyPairComplete</strong></a>(sensor as <span class="type"><a href="../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Let the system know the app has finished pairing a sensor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#notifyScanComplete-instance_function" title="notifyScanComplete (Instance Function)"><strong>notifyScanComplete</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Let the system know the app has finished scanning for sensors.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#notifyUnpairComplete-instance_function" title="notifyUnpairComplete (Instance Function)"><strong>notifyUnpairComplete</strong></a>(sensor as <span class="type"><a href="../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Let the system know the app has finished unpairing a sensor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#registerSensorDataListener-instance_function" title="registerSensorDataListener (Instance Function)"><strong>registerSensorDataListener</strong></a>(listener as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(data as <span class="type"><a href="../Toybox/Sensor/SensorData.html">Sensor.SensorData</a></span>) as <b>Void</b>, options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :accelerometer as { :enabled as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :sampleRate as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :includePower as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :includePitch as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :includeRoll as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :includeTimestamps as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> }, :gyroscope as { :enabled as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :sampleRate as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :includeTimestamps as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> }, :magnetometer as { :enabled as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :sampleRate as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :includeTimestamps as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> }, :heartBeatIntervals as { :enabled as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> }, :synchronous as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> })    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Register a callback to fetch high-frequency data from various sensors.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setEnabledSensors-instance_function" title="setEnabledSensors (Instance Function)"><strong>setEnabledSensors</strong></a>(sensors as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span>&gt;)    as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span>&gt;
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Enable sensors for use.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#unregisterSensorDataListener-instance_function" title="unregisterSensorDataListener (Instance Function)"><strong>unregisterSensorDataListener</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Unregister a previously registered data listener.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="typedef_details" class="attr_details">
+    <h2>Typedef Details</h2>
+    <div class="details">
+<h3 class="signature" id="SensorType-named_type">
+
+<strong>SensorType</strong> as <span class="type"><a href="../Toybox/Sensor.html#RemoteSensorType-module">Sensor.RemoteSensorType</a></span> or <span class="type"><a href="../Toybox/Sensor.html#OnboardSensorType-module">Sensor.OnboardSensorType</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+ </div>
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="disableSensorType-instance_function">
+    <strong>disableSensorType(sensorType as <span class="type"><a href="../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Disable the given sensor type for use.
+</p><p>
+Unlike the existing setEnabledSensors() function, this will not enable/disable
+other sensor types.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Will cause an app crash if called from a data field app
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> on success, otherwise <code>false</code>.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="enableSensorEvents-instance_function">
+    <strong>enableSensorEvents(listener as <b>Null</b> or <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(info as <span class="type"><a href="../Toybox/Sensor/Info.html">Sensor.Info</a></span>) as <b>Void</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Request sensor events from enabled sensors.
+</p><p>
+Sensor events are retrieved from any enabled sensors at a rate of 1 Hz.
+The data retrieved from enabled sensors is passed to the listener
+<a href='../Toybox/Lang/Method.html'>Method</a> provided as a parameter to this method.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Will cause an app crash if called from a data field app
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">listener</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A reference to a listener Method:
+</p>
+
+<ul>
+<li>
+<p>
+Called when sensor updates are received
+</p>
+
+</li>
+<li>
+<p>
+Receives a Sensor.info object
+</p>
+
+</li>
+<li>
+<p>
+Use <code>null</code> to specify no listener
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Sensor;
+// Given an onSensor listener method is defined
+Sensor.enableSensorEvents(method(:onSensor));</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="enableSensorType-instance_function">
+    <strong>enableSensorType(sensorType as <span class="type"><a href="../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Enable the given sensor type for use.
+</p><p>
+Unlike the existing setEnabledSensors() function, this will not enable/disable
+other sensor types.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Will cause an app crash if called from a data field app
+</p>
+
+
+  </div>
+</div><div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Multitasking: Sensor states can not be changed while in inacitve mode and sensor enabled during active mode will be disabled when app becomes inactive, and re-enabled automatically when is active again. These state changes are denoted by calls to AppBase.onActive() and AppBase.onInactive().
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> on success, otherwise <code>false</code>.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getInfo-instance_function">
+    <strong>getInfo()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Sensor/Info.html">Sensor.Info</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current Sensor <a href='../Toybox/Sensor/Info.html'>Sensor.Info</a>.
+</p><p>
+This is useful for retrieving the current sensor info either on demand
+or periodically within a <a href='../Toybox/Timer/Timer.html'>Timer</a>.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Will cause an app crash if called from a data field app
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Get accelerometer data once per second</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Sensor;
+using Toybox.System;
+using Toybox.Timer;
+var dataTimer = new Timer.Timer();
+dataTimer.start(method(:timerCallback), 1000, true); // A one-second timer
+function timerCallback() {
+    var sensorInfo = Sensor.getInfo();
+    if (sensorInfo has :accel && sensorInfo.accel != null) {
+        var accel = sensorInfo.accel;
+        var xAccel = accel[0];
+        var yAccel = accel[1];
+        System.println("x: " + xAccel + ", y: " + yAccel);
+    }
+}</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Sensor/Info.html">Sensor.Info</a></span>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Timer/Timer.html">Toybox.Timer.Timer</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getMaxSampleRate-instance_function">
+    <strong>getMaxSampleRate()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the maximum sample rate supported by the system.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Will cause an app crash if called from a data field app
+</p>
+
+
+  </div>
+</div><div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+This function can produce different results after the app transitions to the active state after being inactive. These state changes are denoted by calls to AppBase.onActive() and AppBase.onInactive().
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Sensor;
+var maxSample = Sensor.getMaxSampleRate();</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The max sample rate as a number
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getMaxSampleRateForSensorType-instance_function">
+    <strong>getMaxSampleRateForSensorType(sensorDataType as <span class="type"><a href="../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the maximum sample rate supported for given sensor data type.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Will cause an app crash if called from a data field app
+</p>
+
+
+  </div>
+</div><div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+This function can produce different results after the app transitions to the active state after being inactive. These state changes are denoted by calls to AppBase.onActive() and AppBase.onInactive().
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">sensorDataType</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Symbol of the sensor data type to get the max rate for, allowed symbols are <code>accelerometer</code>, <code>gyroscope</code>, and <code>magnetometer</code>.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Sensor;
+var maxSample = Sensor.getMaxSampleRateForSensorType(:accelerometer);</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ G2</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The max sample rate as a Number
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.5
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getRegisteredSensors-instance_function">
+    <strong>getRegisteredSensors(sensorType as <span class="type"><a href="../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Sensor/SensorInfoIterator.html">Sensor.SensorInfoIterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Retrieve the sensors that are currently registered.
+</p><p>
+This function returns an iterator for the sensors that are considered to be
+`registered` if pairing information has been provided for it in Sensor settings.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">sensorType</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, null)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A SENSOR_* value that describes the sensor type to enumerate, or <code>null</code> to get all sensors.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Sensor/SensorInfoIterator.html">Sensor.SensorInfoIterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An iterator of the sensors that are currently registered.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="notifyError-instance_function">
+    <strong>notifyError(string as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Let the system know the app has encountered an error
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>D2™ Mach 1</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="notifyNewSensor-instance_function">
+    <strong>notifyNewSensor(sensor as <span class="type"><a href="../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>, configurationRequired as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Let the system know the app has discovered a new sensor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">sensor</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A sensorinfo object containing the information about the sensor.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">configurationRequired</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+flag indicating whether or not the sensor require custom configuration. A value of True will prompt the app for a custom configuration view through <a href='../Toybox/Application/AppBase.html#getSensorConfigurationView-instance_function'>AppBase.getSensorConfigurationView()</a> during the pairing process.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>D2™ Mach 1</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="notifyPairComplete-instance_function">
+    <strong>notifyPairComplete(sensor as <span class="type"><a href="../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Let the system know the app has finished pairing a sensor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">sensor</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A sensorinfo object containing the information about the sensor.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>D2™ Mach 1</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="notifyScanComplete-instance_function">
+    <strong>notifyScanComplete()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Let the system know the app has finished scanning for sensors
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>D2™ Mach 1</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="notifyUnpairComplete-instance_function">
+    <strong>notifyUnpairComplete(sensor as <span class="type"><a href="../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Let the system know the app has finished unpairing a sensor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">sensor</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A sensorinfo object containing the information about the sensor.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>D2™ Mach 1</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="registerSensorDataListener-instance_function">
+    <strong>registerSensorDataListener(listener as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(data as <span class="type"><a href="../Toybox/Sensor/SensorData.html">Sensor.SensorData</a></span>) as <b>Void</b>, options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :accelerometer as { :enabled as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :sampleRate as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :includePower as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :includePitch as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :includeRoll as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :includeTimestamps as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> }, :gyroscope as { :enabled as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :sampleRate as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :includeTimestamps as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> }, :magnetometer as { :enabled as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :sampleRate as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :includeTimestamps as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> }, :heartBeatIntervals as { :enabled as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> }, :synchronous as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> })</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Register a callback to fetch high-frequency data from various sensors.
+</p><p>
+The callback will get invoked each time a new set of sensor data over
+the length of time specified in the period option is available.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Only one data request is allowed to be registered at a time. Subsequent calls to this function for the same sensor type will override previously registered requests.
+</p>
+
+
+  </div>
+</div><div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Magnetometer data is not supported in synchronous data request.
+</p>
+
+
+  </div>
+</div><div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Will cause an app crash if called from a data field app
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">listener</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A method that takes a single <a href='../Toybox/Sensor/SensorData.html'>SensorData</a> object as a parameter that will contain the requested data.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary of options. The allowed values depend on sensor type.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:period</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Period of time to request samples in seconds. Maximum is 4 seconds.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:synchronous</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Set to <code>true</code> to request synchronized sensor data.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:accelerometer</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Options for accelerometer data.
+</p>
+
+<ul>
+<li>
+<p>
+:enabled (<a href='../Toybox/Lang/Boolean.html'>Toybox::Lang::Boolean</a>) Set to <code>true</code> to fetch data from the accelerometer.
+</p>
+
+</li>
+<li>
+<p>
+:sampleRate (<a href='../Toybox/Lang/Number.html'>Toybox::Lang::Number</a>) Samples per second to request in Hz.
+</p>
+
+</li>
+<li>
+<p>
+:includePower (<a href='../Toybox/Lang/Boolean.html'>Toybox::Lang::Boolean</a>) Valid only when <code>:accelerometer=>:enabled</code> is set to <code>true</code>. Requests that the <a href='../Toybox/Sensor/AccelerometerData.html#power-var'>power Array</a> be computed.
+</p>
+
+</li>
+<li>
+<p>
+:includePitch (<a href='../Toybox/Lang/Boolean.html'>Toybox::Lang::Boolean</a>) Valid only when <code>:accelerometer=>:enabled</code> is set to <code>true</code>. Requests that the <a href='../Toybox/Sensor/AccelerometerData.html#pitch-var'>pitch Array</a> be computed.
+</p>
+
+</li>
+<li>
+<p>
+:includeRoll (<a href='../Toybox/Lang/Boolean.html'>Toybox::Lang::Boolean</a>) Valid only when <code>:accelerometer=>:enabled</code> is set to <code>true</code>. Requests that the <a href='../Toybox/Sensor/AccelerometerData.html#roll-var'>roll Array</a> be computed.
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:heartBeatIntervals</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Options for Heart Beat Interval data.
+</p>
+
+<ul>
+<li>
+<p>
+:enabled (<a href='../Toybox/Lang/Boolean.html'>Toybox::Lang::Boolean</a>) Set to <code>true</code> to fetch heart beat interval data.
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:gyroscope</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Options for gyroscope data.
+</p>
+
+<ul>
+<li>
+<p>
+:enabled (<a href='../Toybox/Lang/Boolean.html'>Toybox::Lang::Boolean</a>) Set to <code>true</code> to fetch data from the gyroscope.
+</p>
+
+</li>
+<li>
+<p>
+:sampleRate (<a href='../Toybox/Lang/Number.html'>Toybox::Lang::Number</a>) Samples per second to request in Hz.
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:magnetometer</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Options for magnetometer data.
+</p>
+
+<ul>
+<li>
+<p>
+:enabled (<a href='../Toybox/Lang/Boolean.html'>Toybox::Lang::Boolean</a>) Set to <code>true</code> to fetch data from the magnetometer.
+</p>
+
+</li>
+<li>
+<p>
+:sampleRate (<a href='../Toybox/Lang/Number.html'>Toybox::Lang::Number</a>) Samples per second to request in Hz.
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Sensor;
+// initialize accelerometer
+var options = {
+    :period =&gt; 1,               // 1 second sample time
+    :accelerometer =&gt; {
+        :enabled =&gt; true,       // Enable the accelerometer
+        :sampleRate =&gt; 25       // 25 samples
+    },
+    :heartBeatIntervals =&gt; {
+        :enabled =&gt; true
+    }
+};
+// Using the callback setup in Toybox.SensorHistory.SensorData
+Sensor.registerSensorDataListener(method(:accelCallback), options);</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li>
+  </ul>
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/ActivityRecording.html#createSession-instance_function">ActivityRecording.createSession()</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/Sensor/SensorData.html">Toybox.Sensor.SensorData</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <div class="inline">
+<p>
+<a href='../Toybox/Sensor/TooManySensorDataListenersException.html'>Toybox::Sensor::TooManySensorDataListenersException</a> Thrown if more than one listener is tried to register for sensor data.
+</p>
+
+
+        </div>
+    </li><li>
+        <div class="inline">
+<p>
+<a href='../Toybox/Lang/InvalidOptionsException.html'>Toybox::Lang::InvalidOptionsException</a> Thrown if any required options are excluded, if provided options are out of range, or are of the wrong type.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setEnabledSensors-instance_function">
+    <strong>setEnabledSensors(sensors as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span>&gt;)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span>&gt;</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Enable sensors for use.
+</p><p>
+This will enable both connected ANT+ sensors and system sensors if possible.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Will cause an app crash if called from a data field app
+</p>
+
+
+  </div>
+</div><div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Multitasking: Sensor states can not be changed while in inacitve mode and sensor enabled during active mode will be disabled when app becomes inactive, and re-enabled automatically when is active again. These state changes are denoted by calls to AppBase.onActive() and AppBase.onInactive().
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">sensors</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The sensors to enable:
+</p>
+
+<ul>
+<li>
+<p>
+An Array of SENSOR_* types to enable
+</p>
+
+</li>
+<li>
+<p>
+An empty array ([]) to disable all sensors
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Enable a heart rate sensor</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Sensor;
+Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An Array of requested sensors that are available
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="unregisterSensorDataListener-instance_function">
+    <strong>unregisterSensorDataListener()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Unregister a previously registered data listener.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Will cause an app crash if called from a data field app
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>// Assuming use of registerSensorDataListener() example and mSession
+using Toybox.Sensor;
+
+Sensor.unregisterSensorDataListener(); // Unregister Listener
+mSession.stop();                       // Stop Activity Recording</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li>
+  </ul>
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Sensor.html#registerSensorDataListener-instance_function">Sensor.registerSensorDataListener()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

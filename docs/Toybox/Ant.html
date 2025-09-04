@@ -1,0 +1,869 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Ant </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Ant";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Ant</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+This module provide the interface for the ANT wireless protocol.
+</p><p>
+The ANT wireless protocol is a low level communications protocol that provides
+very efficient transfer of data by directly controlling the radio on the device.
+The ANT module provides a list of constants to be used with different Class
+objects and Methods provided within the module. These include:
+</p>
+
+<ul>
+<li>
+<p>
+<a href='../Toybox/Ant.html#MSG_ID_RF_EVENT-const'>MSG_ID_*</a> Constants - Message IDs
+</p>
+
+</li>
+<li>
+<p>
+<a href='../Toybox/Ant.html#MSG_CODE_RESPONSE_NO_ERROR-const'>MSG_CODE_*</a> Constants - Message Codes for the response event
+</p>
+
+</li>
+<li>
+<p>
+<a href='../Toybox/Ant.html#NETWORK_PUBLIC-const'>NETWORK_*</a> Constants - Network Types
+</p>
+
+</li>
+<li>
+<p>
+<a href='../Toybox/Ant.html#CHANNEL_TYPE_TX_NOT_RX-const'>CHANNEL_TYPE_*</a> Constants - Channel Types
+</p>
+
+</li>
+<li>
+<p>
+<a href='../Toybox/Ant.html#BURST_ERROR_OUT_OF_MEMORY-const'>BURST_ERROR_*</a> Constants - Burst Error types
+</p>
+
+</li>
+</ul>
+<p>
+ANT resources and documentation
+can be found at the links below.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="https://developer.garmin.com/connect-iq/core-topics/ant-and-ant-plus/">Core Topics - ANT and ANT Plus</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="https://www.thisisant.com/developer/ant/ant-basics/#104_tab">ANT Basics</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="https://www.thisisant.com/developer/resources/downloads/">ANT Downloads & Resources</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Background</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 45</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Garmin Swim™ 2</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+  <!-- Permissions -->
+  <p class="tag_title">Requires Permission:</p>
+  <ul class="required_permissions">
+      <li>
+    <div class="inline">
+      <p>Ant</p>
+    </div>
+  </li>
+  </ul>
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Ant/BurstListener.html">BurstListener</a></span>, <span class="type"><a href="../Toybox/Ant/BurstPayload.html">BurstPayload</a></span>, <span class="type"><a href="../Toybox/Ant/BurstPayloadIterator.html">BurstPayloadIterator</a></span>, <span class="type"><a href="../Toybox/Ant/ChannelAssignment.html">ChannelAssignment</a></span>, <span class="type"><a href="../Toybox/Ant/CryptoConfig.html">CryptoConfig</a></span>, <span class="type"><a href="../Toybox/Ant/DeviceConfig.html">DeviceConfig</a></span>, <span class="type"><a href="../Toybox/Ant/EncryptionInvalidSettingsException.html">EncryptionInvalidSettingsException</a></span>, <span class="type"><a href="../Toybox/Ant/GenericChannel.html">GenericChannel</a></span>, <span class="type"><a href="../Toybox/Ant/Message.html">Message</a></span>, <span class="type"><a href="../Toybox/Ant/UnableToAcquireChannelException.html">UnableToAcquireChannelException</a></span>, <span class="type"><a href="../Toybox/Ant/UnableToAcquireEncryptedChannelException.html">UnableToAcquireEncryptedChannelException</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="MessageId-module" class="">
+    <h3>MessageId</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="MSG_ID_RF_EVENT-const">
+    <td class="enumTableCell">MSG_ID_RF_EVENT</td>
+      <td class="enumTableCell">0x01</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_ID_UNASSIGN_CHANNEL-const">
+    <td class="enumTableCell">MSG_ID_UNASSIGN_CHANNEL</td>
+      <td class="enumTableCell">0x41</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_ID_ASSIGN_CHANNEL-const">
+    <td class="enumTableCell">MSG_ID_ASSIGN_CHANNEL</td>
+      <td class="enumTableCell">0x42</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_ID_CHANNEL_ID-const">
+    <td class="enumTableCell">MSG_ID_CHANNEL_ID</td>
+      <td class="enumTableCell">0x51</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_ID_CHANNEL_PERIOD-const">
+    <td class="enumTableCell">MSG_ID_CHANNEL_PERIOD</td>
+      <td class="enumTableCell">0x43</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_ID_SEARCH_TIMEOUT-const">
+    <td class="enumTableCell">MSG_ID_SEARCH_TIMEOUT</td>
+      <td class="enumTableCell">0x44</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_ID_CHANNEL_RF_FREQUENCY-const">
+    <td class="enumTableCell">MSG_ID_CHANNEL_RF_FREQUENCY</td>
+      <td class="enumTableCell">0x45</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_ID_NETWORK_KEY-const">
+    <td class="enumTableCell">MSG_ID_NETWORK_KEY</td>
+      <td class="enumTableCell">0x46</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_ID_TRANSMIT_POWER-const">
+    <td class="enumTableCell">MSG_ID_TRANSMIT_POWER</td>
+      <td class="enumTableCell">0x47</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_ID_CHANNEL_TRANSMIT_POWER-const">
+    <td class="enumTableCell">MSG_ID_CHANNEL_TRANSMIT_POWER</td>
+      <td class="enumTableCell">0x60</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_ID_LOW_PRIORITY_SEARCH_TIMEOUT-const">
+    <td class="enumTableCell">MSG_ID_LOW_PRIORITY_SEARCH_TIMEOUT</td>
+      <td class="enumTableCell">0x63</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_ID_LIB_CONFIG-const">
+    <td class="enumTableCell">MSG_ID_LIB_CONFIG</td>
+      <td class="enumTableCell">0x6E</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_ID_PROXIMITY_SEARCH-const">
+    <td class="enumTableCell">MSG_ID_PROXIMITY_SEARCH</td>
+      <td class="enumTableCell">0x71</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_ID_RESET_SYSTEM-const">
+    <td class="enumTableCell">MSG_ID_RESET_SYSTEM</td>
+      <td class="enumTableCell">0x4A</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_ID_OPEN_CHANNEL-const">
+    <td class="enumTableCell">MSG_ID_OPEN_CHANNEL</td>
+      <td class="enumTableCell">0x4B</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_ID_CLOSE_CHANNEL-const">
+    <td class="enumTableCell">MSG_ID_CLOSE_CHANNEL</td>
+      <td class="enumTableCell">0x4C</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_ID_BROADCAST_DATA-const">
+    <td class="enumTableCell">MSG_ID_BROADCAST_DATA</td>
+      <td class="enumTableCell">0x4E</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_ID_ACKNOWLEDGED_DATA-const">
+    <td class="enumTableCell">MSG_ID_ACKNOWLEDGED_DATA</td>
+      <td class="enumTableCell">0x4F</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_ID_CHANNEL_RESPONSE_EVENT-const">
+    <td class="enumTableCell">MSG_ID_CHANNEL_RESPONSE_EVENT</td>
+      <td class="enumTableCell">0x40</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="MessageCode-module" class="">
+    <h3>MessageCode</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="MSG_CODE_RESPONSE_NO_ERROR-const">
+    <td class="enumTableCell">MSG_CODE_RESPONSE_NO_ERROR</td>
+      <td class="enumTableCell">0x00</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_CODE_EVENT_RX_SEARCH_TIMEOUT-const">
+    <td class="enumTableCell">MSG_CODE_EVENT_RX_SEARCH_TIMEOUT</td>
+      <td class="enumTableCell">0x01</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_CODE_EVENT_RX_FAIL-const">
+    <td class="enumTableCell">MSG_CODE_EVENT_RX_FAIL</td>
+      <td class="enumTableCell">0x02</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_CODE_EVENT_TX-const">
+    <td class="enumTableCell">MSG_CODE_EVENT_TX</td>
+      <td class="enumTableCell">0x03</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_CODE_EVENT_TRANSFER_RX_FAILED-const">
+    <td class="enumTableCell">MSG_CODE_EVENT_TRANSFER_RX_FAILED</td>
+      <td class="enumTableCell">0x04</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_CODE_EVENT_TRANSFER_TX_COMPLETED-const">
+    <td class="enumTableCell">MSG_CODE_EVENT_TRANSFER_TX_COMPLETED</td>
+      <td class="enumTableCell">0x05</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_CODE_EVENT_TRANSFER_TX_FAILED-const">
+    <td class="enumTableCell">MSG_CODE_EVENT_TRANSFER_TX_FAILED</td>
+      <td class="enumTableCell">0x06</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_CODE_EVENT_CHANNEL_CLOSED-const">
+    <td class="enumTableCell">MSG_CODE_EVENT_CHANNEL_CLOSED</td>
+      <td class="enumTableCell">0x07</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_CODE_EVENT_RX_FAIL_GO_TO_SEARCH-const">
+    <td class="enumTableCell">MSG_CODE_EVENT_RX_FAIL_GO_TO_SEARCH</td>
+      <td class="enumTableCell">0x08</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_CODE_CHANNEL_IN_WRONG_STATE-const">
+    <td class="enumTableCell">MSG_CODE_CHANNEL_IN_WRONG_STATE</td>
+      <td class="enumTableCell">0x15</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_CODE_CHANNEL_ID_NOT_SET-const">
+    <td class="enumTableCell">MSG_CODE_CHANNEL_ID_NOT_SET</td>
+      <td class="enumTableCell">0x18</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_CODE_TRANSFER_IN_PROGRESS-const">
+    <td class="enumTableCell">MSG_CODE_TRANSFER_IN_PROGRESS</td>
+      <td class="enumTableCell">0x1F</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_CODE_INVALID_MESSAGE-const">
+    <td class="enumTableCell">MSG_CODE_INVALID_MESSAGE</td>
+      <td class="enumTableCell">0x28</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_CODE_EVENT_QUE_OVERFLOW-const">
+    <td class="enumTableCell">MSG_CODE_EVENT_QUE_OVERFLOW</td>
+      <td class="enumTableCell">0x35</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_CODE_EVENT_CRYPTO_NEGOTIATION_SUCCESS-const">
+    <td class="enumTableCell">MSG_CODE_EVENT_CRYPTO_NEGOTIATION_SUCCESS</td>
+      <td class="enumTableCell">0x38</td>
+      <td class="enumTableCell"><p>
+API Level 2.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MSG_CODE_EVENT_CRYPTO_NEGOTIATION_FAIL-const">
+    <td class="enumTableCell">MSG_CODE_EVENT_CRYPTO_NEGOTIATION_FAIL</td>
+      <td class="enumTableCell">0x39</td>
+      <td class="enumTableCell"><p>
+API Level 2.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MSG_CODE_EVENT_CONNECTION_REJECTED-const">
+    <td class="enumTableCell">MSG_CODE_EVENT_CONNECTION_REJECTED</td>
+      <td class="enumTableCell">0xFF</td>
+      <td class="enumTableCell"><p>
+API Level 5.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Ant connection is rejected by the user.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="NetworkType-module" class="">
+    <h3>NetworkType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="NETWORK_PUBLIC-const">
+    <td class="enumTableCell">NETWORK_PUBLIC</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="NETWORK_PLUS-const">
+    <td class="enumTableCell">NETWORK_PLUS</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="NETWORK_PRIVATE-const">
+    <td class="enumTableCell">NETWORK_PRIVATE</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ChannelType-module" class="">
+    <h3>ChannelType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="CHANNEL_TYPE_TX_NOT_RX-const">
+    <td class="enumTableCell">CHANNEL_TYPE_TX_NOT_RX</td>
+      <td class="enumTableCell">0x10</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Bidirectional Transmit (Master)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CHANNEL_TYPE_RX_NOT_TX-const">
+    <td class="enumTableCell">CHANNEL_TYPE_RX_NOT_TX</td>
+      <td class="enumTableCell">0x00</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Bidirectional Receive (Slave)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="CHANNEL_TYPE_RX_ONLY-const">
+    <td class="enumTableCell">CHANNEL_TYPE_RX_ONLY</td>
+      <td class="enumTableCell">0x40</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Receive Only (Slave)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CHANNEL_TYPE_SHARED_BIDIRECTIONAL_RECEIVE-const">
+    <td class="enumTableCell">CHANNEL_TYPE_SHARED_BIDIRECTIONAL_RECEIVE</td>
+      <td class="enumTableCell">0x20</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Shared Bidirectional Receive (Slave)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="CHANNEL_TYPE_SHARED_BIDIRECTIONAL_TRANSMIT-const">
+    <td class="enumTableCell">CHANNEL_TYPE_SHARED_BIDIRECTIONAL_TRANSMIT</td>
+      <td class="enumTableCell">0x30</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Shared Bidirectional Transmit (Master)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="BurstError-module" class="">
+    <h3>BurstError</h3>
+  </dt>
+  <p>
+Error codes passed to the failure functions in the BurstListener
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="BURST_ERROR_OUT_OF_MEMORY-const">
+    <td class="enumTableCell">BURST_ERROR_OUT_OF_MEMORY</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+There was not enough memory available to send/receive a burst message
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BURST_ERROR_SEQUENCE_NUMBER_FAIL-const">
+    <td class="enumTableCell">BURST_ERROR_SEQUENCE_NUMBER_FAIL</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A burst packet was received out of order and the entire message was dropped
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BURST_ERROR_RF_FAIL-const">
+    <td class="enumTableCell">BURST_ERROR_RF_FAIL</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A burst failed over the air
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BURST_ERROR_TRANSFER_IN_PROGRESS-const">
+    <td class="enumTableCell">BURST_ERROR_TRANSFER_IN_PROGRESS</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Burst was blocked by another burst from the native system code
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+
+
+
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:12 PM
+</p>
+
+</body>

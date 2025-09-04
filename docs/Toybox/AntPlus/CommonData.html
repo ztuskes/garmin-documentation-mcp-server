@@ -1,0 +1,267 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.AntPlus.CommonData </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.AntPlus.CommonData";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.AntPlus.CommonData</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/AntPlus/CommonData.html">Toybox.AntPlus.CommonData</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The CommonData object represents the information shared across all common
+data types.
+</p><p>
+Fields may return <code>null</code> so you should <code>null</code> check values before using
+them.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+  <h2>Direct Known Subclasses</h2>
+  <p class="sub_classes">
+    <span class="type"><a href="../../Toybox/AntPlus/BatteryStatus.html">AntPlus.BatteryStatus</a></span>, <span class="type"><a href="../../Toybox/AntPlus/BikeLight.html">AntPlus.BikeLight</a></span>, <span class="type"><a href="../../Toybox/AntPlus/ManufacturerInfo.html">AntPlus.ManufacturerInfo</a></span>, <span class="type"><a href="../../Toybox/AntPlus/ProductInfo.html">AntPlus.ProductInfo</a></span>
+  </p>
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#identifier-var" title="identifier (Var)"><strong>identifier</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Component Identifier.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#numComponents-var" title="numComponents (Var)"><strong>numComponents</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Number of components in the system.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="identifier-var" class="details">
+<h3 class="signature" id="identifier-var">
+
+var identifier  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Component Identifier.
+</p><p>
+Component IDs are defined on a by-ANT+-profile basis.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The identifier as a Number
+</p>
+
+<ul>
+<li>
+<p>
+<code>null</code> if single-component
+</p>
+
+</li>
+<li>
+<p>
+Light index for bike lights.
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="numComponents-var" class="details">
+<h3 class="signature" id="numComponents-var">
+
+var numComponents  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Number of components in the system.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The number of components
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt>
+ </div>
+
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

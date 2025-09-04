@@ -1,0 +1,638 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Notifications </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Notifications";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Notifications</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>D2™ Mach 1</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+  <!-- Permissions -->
+  <p class="tag_title">Requires Permission:</p>
+  <ul class="required_permissions">
+      <li>
+    <div class="inline">
+      <p>Notifications</p>
+    </div>
+  </li>
+  </ul>
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Notifications/NotificationMessage.html">NotificationMessage</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="NotificationMessageType-module" class="">
+    <h3>NotificationMessageType</h3>
+  </dt>
+  <p>
+Notification message types
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="NOTIFICATION_MESSAGE_TYPE_DISMISSED-const">
+    <td class="enumTableCell">NOTIFICATION_MESSAGE_TYPE_DISMISSED</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 5.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The notification was dismissed by the user
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="NOTIFICATION_MESSAGE_TYPE_SELECTED-const">
+    <td class="enumTableCell">NOTIFICATION_MESSAGE_TYPE_SELECTED</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 5.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The notification action was selected by the user
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+<h2>Typedef Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Action-named_type" title="Action (Named Type)"><strong>Action</strong></a> as { :label as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, :data as <span class="type"><a href="../Toybox/Notifications.html#NotificationDataType-named_type">Notifications.NotificationDataType</a></span> }
+    </span>
+
+
+
+    <span class="summary_desc">
+        <div class="inline">
+            <p>
+A notification action.
+</p>
+
+
+        </div>
+    </span>
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#NotificationDataType-named_type" title="NotificationDataType (Named Type)"><strong>NotificationDataType</strong></a> as <span class="type"><a href="../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span> or <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span>&gt; or <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span>, <span class="type"><a href="../Toybox/Notifications.html#NotificationDataType-named_type">Notifications.NotificationDataType</a></span>&gt;
+    </span>
+
+
+
+    <span class="summary_desc">
+        <div class="inline">
+            <p>
+</p>
+
+
+        </div>
+    </span>
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#NotificationMessageCallback-named_type" title="NotificationMessageCallback (Named Type)"><strong>NotificationMessageCallback</strong></a> as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(message as <span class="type"><a href="../Toybox/Notifications/NotificationMessage.html">Notifications.NotificationMessage</a></span>) as <b>Void</b>
+    </span>
+
+
+
+    <span class="summary_desc">
+        <div class="inline">
+            <p>
+</p>
+
+
+        </div>
+    </span>
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#ShowNotificationOptions-named_type" title="ShowNotificationOptions (Named Type)"><strong>ShowNotificationOptions</strong></a> as { :icon as <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span> or <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :body as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :data as <span class="type"><a href="../Toybox/Notifications.html#NotificationDataType-named_type">Notifications.NotificationDataType</a></span>, :actions as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Notifications.html#Action-named_type">Notifications.Action</a></span>&gt;, :dismissPrevious as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> }
+    </span>
+
+
+
+    <span class="summary_desc">
+        <div class="inline">
+            <p>
+Notification options.
+</p>
+
+
+        </div>
+    </span>
+</li>
+</ul>
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#registerForNotificationMessages-instance_function" title="registerForNotificationMessages (Instance Function)"><strong>registerForNotificationMessages</strong></a>(callback as <span class="type"><a href="../Toybox/Notifications.html#NotificationMessageCallback-named_type">Notifications.NotificationMessageCallback</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Register a callback for receiving notification messages.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#showNotification-instance_function" title="showNotification (Instance Function)"><strong>showNotification</strong></a>(title as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, subTitle as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, options as <span class="type"><a href="../Toybox/Notifications.html#ShowNotificationOptions-named_type">Notifications.ShowNotificationOptions</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Push a notification to the display.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="typedef_details" class="attr_details">
+    <h2>Typedef Details</h2>
+    <div class="details">
+<h3 class="signature" id="Action-named_type">
+
+<strong>Action</strong> as { :label as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, :data as <span class="type"><a href="../Toybox/Notifications.html#NotificationDataType-named_type">Notifications.NotificationDataType</a></span> }
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+A notification action
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="NotificationDataType-named_type">
+
+<strong>NotificationDataType</strong> as <span class="type"><a href="../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span> or <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span>&gt; or <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span>, <span class="type"><a href="../Toybox/Notifications.html#NotificationDataType-named_type">Notifications.NotificationDataType</a></span>&gt;
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="NotificationMessageCallback-named_type">
+
+<strong>NotificationMessageCallback</strong> as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(message as <span class="type"><a href="../Toybox/Notifications/NotificationMessage.html">Notifications.NotificationMessage</a></span>) as <b>Void</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="ShowNotificationOptions-named_type">
+
+<strong>ShowNotificationOptions</strong> as { :icon as <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span> or <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :body as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :data as <span class="type"><a href="../Toybox/Notifications.html#NotificationDataType-named_type">Notifications.NotificationDataType</a></span>, :actions as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Notifications.html#Action-named_type">Notifications.Action</a></span>&gt;, :dismissPrevious as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> }
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Notification options
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+ </div>
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="registerForNotificationMessages-instance_function">
+    <strong>registerForNotificationMessages(callback as <span class="type"><a href="../Toybox/Notifications.html#NotificationMessageCallback-named_type">Notifications.NotificationMessageCallback</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Register a callback for receiving notification messages.
+</p><p>
+The callback will be called once for each notification message. If there are
+messages queued for the app when this function is called, the callback will
+immediately be called once for each pending message.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">callback</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A reference to a callback, which must receive a <code>data</code> argument of the type <a href='../Toybox/Notifications/NotificationMessage.html'>NotificationMessage</a>.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Communications;
+
+// set up phoneMessageCallback
+function notificationMessageCallback(aMessage as NotificationMessage) as Void {
+   System.println(aMessage.type);
+   System.println(aMessage.data);
+   System.println(aMessage.action);
+}
+
+// register callback to start receiving notifications when users interact with notifications or toasts
+Notifications.registerForNotificationMessages(self.method(:notificationMessageCallback));
+</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="showNotification-instance_function">
+    <strong>showNotification(title as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, subTitle as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, options as <span class="type"><a href="../Toybox/Notifications.html#ShowNotificationOptions-named_type">Notifications.ShowNotificationOptions</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Push a notification to the display
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">title</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The title of the notification.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">subTitle</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The subTitle of the notification.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary of options.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:body</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The body of the notification.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:data</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Notifications.html#NotificationDataType-named_type">Notifications.NotificationDataType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The data associated with the notification. Will be passed back to the application for context when a notification action is selected.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:icon</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>, <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The icon to display with this notification. If no icon is provided and the system requires an icon, the app icon will be used.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:actions</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An array of action strings to display, and the data for those strings when the action is selected. The selected action will be passed to the application for context when the notification action is selected.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:dismissPrevious</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+If true, dismiss all prior notifications that the app has posted. Note that this defaults to true if not provided.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code> Notifications.showNotification("Jeff", "Something Happened", {
+     :icon =&gt; Rez.Drawables.EmergencyIcon,
+     :data =&gt; {},
+     :actions =&gt; [
+        { :label =&gt; Rez.Strings.ReplyAction, :data =&gt; MY_NOTIFICATION_ID_REPLY },
+        { :label =&gt; Rez.Strings.ForwardAction, :data =&gt; MY_NOTIFICATION_ID_FORWARD },
+     ],
+});</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

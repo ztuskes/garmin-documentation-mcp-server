@@ -1,0 +1,3233 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.WatchUi </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.WatchUi";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.WatchUi</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The WatchUi module contains user interface elements available within apps.
+</p><p>
+WatchUi provides several classes that represent Views, or what is displayed
+on the screen of a device. Also available are UI elements like on-screen
+menus, progress bars, buttons, and various pickers. More abstract classes
+represent all drawable objects, such as bitmaps and text.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+  <!-- Note -->
+  <div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+All keys in the key types enum listed after EXTENDED_KEYS (16) were added after ConnectIQ version 1.1.2. Before evaluating these keys, check for the availability of these keys with a <code>has</code> check: if (Toybox.WatchUi has :EXTENDED_KEYS) <a href='../index.html'>...</a>
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Background (supported since API Level 5.1.0)</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch Face</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/WatchUi/ActionMenu.html">ActionMenu</a></span>, <span class="type"><a href="../Toybox/WatchUi/ActionMenuDelegate.html">ActionMenuDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/ActionMenuItem.html">ActionMenuItem</a></span>, <span class="type"><a href="../Toybox/WatchUi/AnimationDelegate.html">AnimationDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/AnimationLayer.html">AnimationLayer</a></span>, <span class="type"><a href="../Toybox/WatchUi/AnimationResource.html">AnimationResource</a></span>, <span class="type"><a href="../Toybox/WatchUi/BehaviorDelegate.html">BehaviorDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/Bitmap.html">Bitmap</a></span>, <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">BitmapResource</a></span>, <span class="type"><a href="../Toybox/WatchUi/Button.html">Button</a></span>, <span class="type"><a href="../Toybox/WatchUi/CheckboxMenu.html">CheckboxMenu</a></span>, <span class="type"><a href="../Toybox/WatchUi/CheckboxMenuItem.html">CheckboxMenuItem</a></span>, <span class="type"><a href="../Toybox/WatchUi/ClickEvent.html">ClickEvent</a></span>, <span class="type"><a href="../Toybox/WatchUi/ComplicationDrawableRef.html">ComplicationDrawableRef</a></span>, <span class="type"><a href="../Toybox/WatchUi/Confirmation.html">Confirmation</a></span>, <span class="type"><a href="../Toybox/WatchUi/ConfirmationDelegate.html">ConfirmationDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/CustomMenu.html">CustomMenu</a></span>, <span class="type"><a href="../Toybox/WatchUi/CustomMenuItem.html">CustomMenuItem</a></span>, <span class="type"><a href="../Toybox/WatchUi/DataField.html">DataField</a></span>, <span class="type"><a href="../Toybox/WatchUi/DataFieldAlert.html">DataFieldAlert</a></span>, <span class="type"><a href="../Toybox/WatchUi/DragEvent.html">DragEvent</a></span>, <span class="type"><a href="../Toybox/WatchUi/Drawable.html">Drawable</a></span>, <span class="type"><a href="../Toybox/WatchUi/FlickEvent.html">FlickEvent</a></span>, <span class="type"><a href="../Toybox/WatchUi/FontResource.html">FontResource</a></span>, <span class="type"><a href="../Toybox/WatchUi/GlanceView.html">GlanceView</a></span>, <span class="type"><a href="../Toybox/WatchUi/GlanceViewDelegate.html">GlanceViewDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/IconMenuItem.html">IconMenuItem</a></span>, <span class="type"><a href="../Toybox/WatchUi/InputDelegate.html">InputDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/InvalidMenuItemTypeException.html">InvalidMenuItemTypeException</a></span>, <span class="type"><a href="../Toybox/WatchUi/InvalidPointException.html">InvalidPointException</a></span>, <span class="type"><a href="../Toybox/WatchUi/InvalidSelectableStateException.html">InvalidSelectableStateException</a></span>, <span class="type"><a href="../Toybox/WatchUi/KeyEvent.html">KeyEvent</a></span>, <span class="type"><a href="../Toybox/WatchUi/Layer.html">Layer</a></span>, <span class="type"><a href="../Toybox/WatchUi/MapMarker.html">MapMarker</a></span>, <span class="type"><a href="../Toybox/WatchUi/MapPolyline.html">MapPolyline</a></span>, <span class="type"><a href="../Toybox/WatchUi/MapTrackView.html">MapTrackView</a></span>, <span class="type"><a href="../Toybox/WatchUi/MapView.html">MapView</a></span>, <span class="type"><a href="../Toybox/WatchUi/Menu.html">Menu</a></span>, <span class="type"><a href="../Toybox/WatchUi/Menu2.html">Menu2</a></span>, <span class="type"><a href="../Toybox/WatchUi/Menu2InputDelegate.html">Menu2InputDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/MenuInputDelegate.html">MenuInputDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/MenuItem.html">MenuItem</a></span>, <span class="type"><a href="../Toybox/WatchUi/NumberPicker.html">NumberPicker</a></span>, <span class="type"><a href="../Toybox/WatchUi/NumberPickerDelegate.html">NumberPickerDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/Picker.html">Picker</a></span>, <span class="type"><a href="../Toybox/WatchUi/PickerDelegate.html">PickerDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/PickerFactory.html">PickerFactory</a></span>, <span class="type"><a href="../Toybox/WatchUi/ProgressBar.html">ProgressBar</a></span>, <span class="type"><a href="../Toybox/WatchUi/ReviewResponseToken.html">ReviewResponseToken</a></span>, <span class="type"><a href="../Toybox/WatchUi/Selectable.html">Selectable</a></span>, <span class="type"><a href="../Toybox/WatchUi/SelectableEvent.html">SelectableEvent</a></span>, <span class="type"><a href="../Toybox/WatchUi/SimpleDataField.html">SimpleDataField</a></span>, <span class="type"><a href="../Toybox/WatchUi/SwipeEvent.html">SwipeEvent</a></span>, <span class="type"><a href="../Toybox/WatchUi/Text.html">Text</a></span>, <span class="type"><a href="../Toybox/WatchUi/TextArea.html">TextArea</a></span>, <span class="type"><a href="../Toybox/WatchUi/TextPicker.html">TextPicker</a></span>, <span class="type"><a href="../Toybox/WatchUi/TextPickerDelegate.html">TextPickerDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/ToggleMenuItem.html">ToggleMenuItem</a></span>, <span class="type"><a href="../Toybox/WatchUi/View.html">View</a></span>, <span class="type"><a href="../Toybox/WatchUi/ViewLoop.html">ViewLoop</a></span>, <span class="type"><a href="../Toybox/WatchUi/ViewLoopDelegate.html">ViewLoopDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/ViewLoopFactory.html">ViewLoopFactory</a></span>, <span class="type"><a href="../Toybox/WatchUi/WatchFace.html">WatchFace</a></span>, <span class="type"><a href="../Toybox/WatchUi/WatchFaceDelegate.html">WatchFaceDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/WatchFacePowerInfo.html">WatchFacePowerInfo</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="Key-module" class="">
+    <h3>Key</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="KEY_POWER-const">
+    <td class="enumTableCell">KEY_POWER</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The power key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_LIGHT-const">
+    <td class="enumTableCell">KEY_LIGHT</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The light key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="KEY_ZIN-const">
+    <td class="enumTableCell">KEY_ZIN</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The zoom in key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_ZOUT-const">
+    <td class="enumTableCell">KEY_ZOUT</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The zoom out key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="KEY_ENTER-const">
+    <td class="enumTableCell">KEY_ENTER</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The enter key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_ESC-const">
+    <td class="enumTableCell">KEY_ESC</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The escape key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="KEY_FIND-const">
+    <td class="enumTableCell">KEY_FIND</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The find key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_MENU-const">
+    <td class="enumTableCell">KEY_MENU</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The menu key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="KEY_DOWN-const">
+    <td class="enumTableCell">KEY_DOWN</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The down key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_DOWN_LEFT-const">
+    <td class="enumTableCell">KEY_DOWN_LEFT</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The down left key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="KEY_DOWN_RIGHT-const">
+    <td class="enumTableCell">KEY_DOWN_RIGHT</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The down key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_LEFT-const">
+    <td class="enumTableCell">KEY_LEFT</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The left key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="KEY_RIGHT-const">
+    <td class="enumTableCell">KEY_RIGHT</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The right key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_UP-const">
+    <td class="enumTableCell">KEY_UP</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The up key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="KEY_UP_LEFT-const">
+    <td class="enumTableCell">KEY_UP_LEFT</td>
+      <td class="enumTableCell">14</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The up-left
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_UP_RIGHT-const">
+    <td class="enumTableCell">KEY_UP_RIGHT</td>
+      <td class="enumTableCell">15</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The up-right key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="EXTENDED_KEYS-const">
+    <td class="enumTableCell">EXTENDED_KEYS</td>
+      <td class="enumTableCell">16</td>
+      <td class="enumTableCell"><p>
+API Level 1.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates extended key support
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_PAGE-const">
+    <td class="enumTableCell">KEY_PAGE</td>
+      <td class="enumTableCell">17</td>
+      <td class="enumTableCell"><p>
+API Level 1.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The page key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="KEY_START-const">
+    <td class="enumTableCell">KEY_START</td>
+      <td class="enumTableCell">18</td>
+      <td class="enumTableCell"><p>
+API Level 1.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The start key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_LAP-const">
+    <td class="enumTableCell">KEY_LAP</td>
+      <td class="enumTableCell">19</td>
+      <td class="enumTableCell"><p>
+API Level 1.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The lap key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="KEY_RESET-const">
+    <td class="enumTableCell">KEY_RESET</td>
+      <td class="enumTableCell">20</td>
+      <td class="enumTableCell"><p>
+API Level 1.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The reset key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_SPORT-const">
+    <td class="enumTableCell">KEY_SPORT</td>
+      <td class="enumTableCell">21</td>
+      <td class="enumTableCell"><p>
+API Level 1.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The sport key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="KEY_CLOCK-const">
+    <td class="enumTableCell">KEY_CLOCK</td>
+      <td class="enumTableCell">22</td>
+      <td class="enumTableCell"><p>
+API Level 1.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The clock key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_MODE-const">
+    <td class="enumTableCell">KEY_MODE</td>
+      <td class="enumTableCell">23</td>
+      <td class="enumTableCell"><p>
+API Level 1.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The mode key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="KEY_ACTION_MENU-const">
+    <td class="enumTableCell">KEY_ACTION_MENU</td>
+      <td class="enumTableCell">24</td>
+      <td class="enumTableCell"><p>
+API Level 5.1.1
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The action menu key
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="AnimationType-module" class="">
+    <h3>AnimationType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="ANIM_TYPE_LINEAR-const">
+    <td class="enumTableCell">ANIM_TYPE_LINEAR</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Animation with a constant speed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="ANIM_TYPE_EASE_IN-const">
+    <td class="enumTableCell">ANIM_TYPE_EASE_IN</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Animation that increases in speed from start to end
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="ANIM_TYPE_EASE_OUT-const">
+    <td class="enumTableCell">ANIM_TYPE_EASE_OUT</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Animation that decreases in speed from start to end
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="ANIM_TYPE_EASE_IN_OUT-const">
+    <td class="enumTableCell">ANIM_TYPE_EASE_IN_OUT</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Animation that increases in speed from the start, then decreases in
+speed toward the end
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="KeyPressType-module" class="">
+    <h3>KeyPressType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="PRESS_TYPE_DOWN-const">
+    <td class="enumTableCell">PRESS_TYPE_DOWN</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The key is pressed down
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="PRESS_TYPE_UP-const">
+    <td class="enumTableCell">PRESS_TYPE_UP</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The key is released
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="PRESS_TYPE_ACTION-const">
+    <td class="enumTableCell">PRESS_TYPE_ACTION</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The key's action is performed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ClickType-module" class="">
+    <h3>ClickType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="CLICK_TYPE_TAP-const">
+    <td class="enumTableCell">CLICK_TYPE_TAP</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A tap on the screen
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CLICK_TYPE_HOLD-const">
+    <td class="enumTableCell">CLICK_TYPE_HOLD</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A press and hold on the screen
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="CLICK_TYPE_RELEASE-const">
+    <td class="enumTableCell">CLICK_TYPE_RELEASE</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A release of a hold on the screen
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="MapMarkerIcon-module" class="">
+    <h3>MapMarkerIcon</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="MAP_MARKER_ICON_PIN-const">
+    <td class="enumTableCell">MAP_MARKER_ICON_PIN</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The default Garmin map marker pin icon
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="MapMode-module" class="">
+    <h3>MapMode</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="MAP_MODE_PREVIEW-const">
+    <td class="enumTableCell">MAP_MODE_PREVIEW</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The preview mode for a <a href='../Toybox/WatchUi/MapView.html'>MapView</a>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MAP_MODE_BROWSE-const">
+    <td class="enumTableCell">MAP_MODE_BROWSE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The browse mode for a <a href='../Toybox/WatchUi/MapView.html'>MapView</a>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="SwipeDirection-module" class="">
+    <h3>SwipeDirection</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SWIPE_UP-const">
+    <td class="enumTableCell">SWIPE_UP</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A swipe in the upward direction
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SWIPE_RIGHT-const">
+    <td class="enumTableCell">SWIPE_RIGHT</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A swipe towards the right
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SWIPE_DOWN-const">
+    <td class="enumTableCell">SWIPE_DOWN</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A swipe in the downward direction
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SWIPE_LEFT-const">
+    <td class="enumTableCell">SWIPE_LEFT</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A swipe towards the left
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="DragType-module" class="">
+    <h3>DragType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="DRAG_TYPE_START-const">
+    <td class="enumTableCell">DRAG_TYPE_START</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Start of a screen drag
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="DRAG_TYPE_CONTINUE-const">
+    <td class="enumTableCell">DRAG_TYPE_CONTINUE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Continuation of a screen drag
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="DRAG_TYPE_STOP-const">
+    <td class="enumTableCell">DRAG_TYPE_STOP</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Stop of a screen drag
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ControlBarLeftButton-module" class="">
+    <h3>ControlBarLeftButton</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.1.2
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="CONTROL_BAR_LEFT_BUTTON_BACK-const">
+    <td class="enumTableCell">CONTROL_BAR_LEFT_BUTTON_BACK</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CONTROL_BAR_LEFT_BUTTON_CANCEL-const">
+    <td class="enumTableCell">CONTROL_BAR_LEFT_BUTTON_CANCEL</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ControlBarRightButton-module" class="">
+    <h3>ControlBarRightButton</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.1.2
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="CONTROL_BAR_RIGHT_BUTTON_ACCEPT-const">
+    <td class="enumTableCell">CONTROL_BAR_RIGHT_BUTTON_ACCEPT</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CONTROL_BAR_RIGHT_BUTTON_MENU-const">
+    <td class="enumTableCell">CONTROL_BAR_RIGHT_BUTTON_MENU</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.2
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="AnalogClockState-module" class="">
+    <h3>AnalogClockState</h3>
+  </dt>
+  <p>
+Set the state for analog clock hands
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="ANALOG_CLOCK_STATE_RESTING-const">
+    <td class="enumTableCell">ANALOG_CLOCK_STATE_RESTING</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Set the clock hands to resting position
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="ANALOG_CLOCK_STATE_SYSTEM_TIME-const">
+    <td class="enumTableCell">ANALOG_CLOCK_STATE_SYSTEM_TIME</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Set the clock hands to system time
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="ANALOG_CLOCK_STATE_HOLDING-const">
+    <td class="enumTableCell">ANALOG_CLOCK_STATE_HOLDING</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Set the clock hands to the specified position
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="WatchFaceConfigType-module" class="">
+    <h3>WatchFaceConfigType</h3>
+  </dt>
+  <p>
+WatchFace config types.
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="WATCH_FACE_CONFIG_TYPE_STYLE-const">
+    <td class="enumTableCell">WATCH_FACE_CONFIG_TYPE_STYLE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 5.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WATCH_FACE_CONFIG_TYPE_COMPLICATION-const">
+    <td class="enumTableCell">WATCH_FACE_CONFIG_TYPE_COMPLICATION</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 5.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WATCH_FACE_CONFIG_TYPE_ACCENT_COLOR-const">
+    <td class="enumTableCell">WATCH_FACE_CONFIG_TYPE_ACCENT_COLOR</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 5.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WATCH_FACE_CONFIG_TYPE_COMPLICATION_COLOR-const">
+    <td class="enumTableCell">WATCH_FACE_CONFIG_TYPE_COMPLICATION_COLOR</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 5.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="MenuTheme-module" class="">
+    <h3>MenuTheme</h3>
+  </dt>
+  <p>
+Menu theme for supported devices
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.1.8
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="MENU_THEME_DEFAULT-const">
+    <td class="enumTableCell">MENU_THEME_DEFAULT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.8
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The default theme color as specified by the device.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MENU_THEME_BLUE-const">
+    <td class="enumTableCell">MENU_THEME_BLUE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.8
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MENU_THEME_CYAN-const">
+    <td class="enumTableCell">MENU_THEME_CYAN</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.8
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MENU_THEME_GREEN-const">
+    <td class="enumTableCell">MENU_THEME_GREEN</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.8
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MENU_THEME_YELLOW-const">
+    <td class="enumTableCell">MENU_THEME_YELLOW</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.8
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MENU_THEME_ORANGE-const">
+    <td class="enumTableCell">MENU_THEME_ORANGE</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.8
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MENU_THEME_RED-const">
+    <td class="enumTableCell">MENU_THEME_RED</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.8
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MENU_THEME_PINK-const">
+    <td class="enumTableCell">MENU_THEME_PINK</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.8
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MENU_THEME_PURPLE-const">
+    <td class="enumTableCell">MENU_THEME_PURPLE</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.8
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MENU_THEME_GREEN_YELLOW-const">
+    <td class="enumTableCell">MENU_THEME_GREEN_YELLOW</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 4.1.8
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="Confirm-module" class="">
+    <h3>Confirm</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="CONFIRM_NO-const">
+    <td class="enumTableCell">CONFIRM_NO</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CONFIRM_YES-const">
+    <td class="enumTableCell">CONFIRM_YES</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="NumberPickerMode-module" class="">
+    <h3>NumberPickerMode</h3>
+  </dt>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This enum may be removed after System 3.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="NUMBER_PICKER_DISTANCE-const">
+    <td class="enumTableCell">NUMBER_PICKER_DISTANCE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A Float in meters (m)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="NUMBER_PICKER_TIME-const">
+    <td class="enumTableCell">NUMBER_PICKER_TIME</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A Duration
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="NUMBER_PICKER_TIME_MIN_SEC-const">
+    <td class="enumTableCell">NUMBER_PICKER_TIME_MIN_SEC</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A Duration
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="NUMBER_PICKER_TIME_OF_DAY-const">
+    <td class="enumTableCell">NUMBER_PICKER_TIME_OF_DAY</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A Duration representing the number of seconds since midnight
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="NUMBER_PICKER_WEIGHT-const">
+    <td class="enumTableCell">NUMBER_PICKER_WEIGHT</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A Float in kilograms (kg)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="NUMBER_PICKER_HEIGHT-const">
+    <td class="enumTableCell">NUMBER_PICKER_HEIGHT</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A Float in meters (m)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="NUMBER_PICKER_CALORIES-const">
+    <td class="enumTableCell">NUMBER_PICKER_CALORIES</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A Number
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="NUMBER_PICKER_BIRTH_YEAR-const">
+    <td class="enumTableCell">NUMBER_PICKER_BIRTH_YEAR</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A Number
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="SlideType-module" class="">
+    <h3>SlideType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SLIDE_IMMEDIATE-const">
+    <td class="enumTableCell">SLIDE_IMMEDIATE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+No transition.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SLIDE_LEFT-const">
+    <td class="enumTableCell">SLIDE_LEFT</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The View slides to the left.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SLIDE_RIGHT-const">
+    <td class="enumTableCell">SLIDE_RIGHT</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The View slides to the right.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SLIDE_DOWN-const">
+    <td class="enumTableCell">SLIDE_DOWN</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The View slides down.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SLIDE_UP-const">
+    <td class="enumTableCell">SLIDE_UP</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The View slides up.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SLIDE_BLINK-const">
+    <td class="enumTableCell">SLIDE_BLINK</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The View fades in.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="LayoutVerticalAlignment-module" class="">
+    <h3>LayoutVerticalAlignment</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="LAYOUT_VALIGN_TOP-const">
+    <td class="enumTableCell">LAYOUT_VALIGN_TOP</td>
+      <td class="enumTableCell">-0x7FFFFFFF</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Set a Drawable object's locY property to this to align it to the top
+edge of the device context (<a href='../Toybox/Graphics/Dc.html'>Dc</a>).
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LAYOUT_VALIGN_BOTTOM-const">
+    <td class="enumTableCell">LAYOUT_VALIGN_BOTTOM</td>
+      <td class="enumTableCell">-0x7FFFFFFE</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Set a Drawable object's locY property to this to align it to the
+bottom edge of the device context (<a href='../Toybox/Graphics/Dc.html'>Dc</a>).
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LAYOUT_VALIGN_CENTER-const">
+    <td class="enumTableCell">LAYOUT_VALIGN_CENTER</td>
+      <td class="enumTableCell">-0x7FFFFFFD</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Set a Drawable object's locY property to this to center it vertically
+in the device context (<a href='../Toybox/Graphics/Dc.html'>Dc</a>).
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LAYOUT_VALIGN_START-const">
+    <td class="enumTableCell">LAYOUT_VALIGN_START</td>
+      <td class="enumTableCell">-0x7FFFFFFC</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Set a Drawable object's locY property to this to make it equal to
+its parent's locY property.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="LayoutHorizontalAlignment-module" class="">
+    <h3>LayoutHorizontalAlignment</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="LAYOUT_HALIGN_LEFT-const">
+    <td class="enumTableCell">LAYOUT_HALIGN_LEFT</td>
+      <td class="enumTableCell">-0x7FFFFFFF</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Set a Drawable object's locX property to this to align it along the
+left edge of the device context (<a href='../Toybox/Graphics/Dc.html'>Dc</a>).
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LAYOUT_HALIGN_RIGHT-const">
+    <td class="enumTableCell">LAYOUT_HALIGN_RIGHT</td>
+      <td class="enumTableCell">-0x7FFFFFFE</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Set a Drawable object's locX property to this to align it along the
+right edge of the device context (<a href='../Toybox/Graphics/Dc.html'>Dc</a>).
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LAYOUT_HALIGN_CENTER-const">
+    <td class="enumTableCell">LAYOUT_HALIGN_CENTER</td>
+      <td class="enumTableCell">-0x7FFFFFFD</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Set a Drawable object's locX property to this to center it horizontally
+in the device context (<a href='../Toybox/Graphics/Dc.html'>Dc</a>).
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LAYOUT_HALIGN_START-const">
+    <td class="enumTableCell">LAYOUT_HALIGN_START</td>
+      <td class="enumTableCell">-0x7FFFFFFC</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Set a Drawable object's locX property to this to make it equal to
+its parent's locX property.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="AnimationEvent-module" class="">
+    <h3>AnimationEvent</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="ANIMATION_EVENT_COMPLETE-const">
+    <td class="enumTableCell">ANIMATION_EVENT_COMPLETE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates the completion of an animation.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="ANIMATION_EVENT_CANCELED-const">
+    <td class="enumTableCell">ANIMATION_EVENT_CANCELED</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates the cancel of the animation playback
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ActionMenuTheme-module" class="">
+    <h3>ActionMenuTheme</h3>
+  </dt>
+  <p>
+The theme for the ActionMenu
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="ACTION_MENU_THEME_DARK-const">
+    <td class="enumTableCell">ACTION_MENU_THEME_DARK</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Dark theme for the action menu
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="ACTION_MENU_THEME_LIGHT-const">
+    <td class="enumTableCell">ACTION_MENU_THEME_LIGHT</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Light theme for the action menu
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ReviewRequestStatus-module" class="">
+    <h3>ReviewRequestStatus</h3>
+  </dt>
+  <p>
+Enum class for makeReviewTokenRequest return status
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.2
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="REVIEW_REQUEST_STATUS_GRANTED-const">
+    <td class="enumTableCell">REVIEW_REQUEST_STATUS_GRANTED</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.2
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="REVIEW_REQUEST_STATUS_DENIED-const">
+    <td class="enumTableCell">REVIEW_REQUEST_STATUS_DENIED</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.2
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="REVIEW_REQUEST_STATUS_FAILED-const">
+    <td class="enumTableCell">REVIEW_REQUEST_STATUS_FAILED</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.2
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+<h2>Typedef Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#InputDelegates-named_type" title="InputDelegates (Named Type)"><strong>InputDelegates</strong></a> as <span class="type"><a href="../Toybox/WatchUi/InputDelegate.html">WatchUi.InputDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/BehaviorDelegate.html">WatchUi.BehaviorDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/ConfirmationDelegate.html">WatchUi.ConfirmationDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/MenuInputDelegate.html">WatchUi.MenuInputDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/NumberPickerDelegate.html">WatchUi.NumberPickerDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/PickerDelegate.html">WatchUi.PickerDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/TextPickerDelegate.html">WatchUi.TextPickerDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/WatchFaceDelegate.html">WatchUi.WatchFaceDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/Menu2InputDelegate.html">WatchUi.Menu2InputDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/ViewLoopDelegate.html">WatchUi.ViewLoopDelegate</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Resource-named_type" title="Resource (Named Type)"><strong>Resource</strong></a> as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span> or <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/WatchUi/AnimationResource.html">WatchUi.AnimationResource</a></span> or <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/WatchUi/FontResource.html">WatchUi.FontResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span> or <span class="type"><a href="../Toybox/Graphics/FontReference.html">Graphics.FontReference</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Views-named_type" title="Views (Named Type)"><strong>Views</strong></a> as <span class="type"><a href="../Toybox/WatchUi/View.html">WatchUi.View</a></span> or <span class="type"><a href="../Toybox/WatchUi/Menu.html">WatchUi.Menu</a></span> or <span class="type"><a href="../Toybox/WatchUi/TextPicker.html">WatchUi.TextPicker</a></span> or <span class="type"><a href="../Toybox/WatchUi/ProgressBar.html">WatchUi.ProgressBar</a></span> or <span class="type"><a href="../Toybox/WatchUi/Confirmation.html">WatchUi.Confirmation</a></span> or <span class="type"><a href="../Toybox/WatchUi/NumberPicker.html">WatchUi.NumberPicker</a></span> or <span class="type"><a href="../Toybox/WatchUi/ViewLoop.html">WatchUi.ViewLoop</a></span>
+    </span>
+
+
+
+</li>
+</ul>
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#animate-instance_function" title="animate (Instance Function)"><strong>animate</strong></a>(object as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, property as <span class="type"><a href="../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>, type as <span class="type"><a href="../Toybox/WatchUi.html#AnimationType-module">WatchUi.AnimationType</a></span>, start as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, stop as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, period as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, callback as <b>Null</b> or <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>() as <b>Void</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Animate an Object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#cancelAllAnimations-instance_function" title="cancelAllAnimations (Instance Function)"><strong>cancelAllAnimations</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Cancel animations started with <a href='../Toybox/WatchUi.html#animate-instance_function'>WatchUi.animate()</a> Stop all animations that were started with <a href='../Toybox/WatchUi.html#animate-instance_function'>WatchUi.animate()</a>.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getCurrentView-instance_function" title="getCurrentView (Instance Function)"><strong>getCurrentView</strong></a>()    as [ <span class="type"><a href="../Toybox/WatchUi/View.html">WatchUi.View</a></span> or <b>Null</b>, <span class="type"><a href="../Toybox/WatchUi.html#InputDelegates-named_type">WatchUi.InputDelegates</a></span> or <b>Null</b> ]
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current view that is displayed in the UI.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getSubscreen-instance_function" title="getSubscreen (Instance Function)"><strong>getSubscreen</strong></a>()    as <span class="type"><a href="../Toybox/Graphics/BoundingBox.html">Graphics.BoundingBox</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the subscreen area in the display.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#loadResource-instance_function" title="loadResource (Instance Function)"><strong>loadResource</strong></a>(resource as <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)    as <span class="type"><a href="../Toybox/WatchUi.html#Resource-named_type">WatchUi.Resource</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Load a resource from the executable.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#makeReviewTokenRequest-instance_function" title="makeReviewTokenRequest (Instance Function)"><strong>makeReviewTokenRequest</strong></a>(callback as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(responseStatus as <span class="type"><a href="../Toybox/WatchUi.html#ReviewRequestStatus-module">WatchUi.ReviewRequestStatus</a></span>, token as <span class="type"><a href="../Toybox/WatchUi/ReviewResponseToken.html">WatchUi.ReviewResponseToken</a></span> or <b>Null</b>) as <b>Void</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Initiate a request to ask for this app to be reviewed.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#popView-instance_function" title="popView (Instance Function)"><strong>popView</strong></a>(transition as <span class="type"><a href="../Toybox/WatchUi.html#SlideType-module">WatchUi.SlideType</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Pop the current View from the View stack.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#pushView-instance_function" title="pushView (Instance Function)"><strong>pushView</strong></a>(view as <span class="type"><a href="../Toybox/WatchUi.html#Views-named_type">WatchUi.Views</a></span>, delegate as <span class="type"><a href="../Toybox/WatchUi.html#InputDelegates-named_type">WatchUi.InputDelegates</a></span> or <b>Null</b>, transition as <span class="type"><a href="../Toybox/WatchUi.html#SlideType-module">WatchUi.SlideType</a></span>)    as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Push a View onto the View stack.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#requestUpdate-instance_function" title="requestUpdate (Instance Function)"><strong>requestUpdate</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Request a call to the <a href='../Toybox/WatchUi/View.html#onUpdate-instance_function'>onUpdate()</a> method for the current View.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#showActionMenu-instance_function" title="showActionMenu (Instance Function)"><strong>showActionMenu</strong></a>(menu as <span class="type"><a href="../Toybox/WatchUi/ActionMenu.html">WatchUi.ActionMenu</a></span>, delegate as <span class="type"><a href="../Toybox/WatchUi/ActionMenuDelegate.html">WatchUi.ActionMenuDelegate</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Push an action menu to the display.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#showToast-instance_function" title="showToast (Instance Function)"><strong>showToast</strong></a>(text as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, options as { :icon as <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span> or <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> } or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Push a toast notification to the display.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#startUserReview-instance_function" title="startUserReview (Instance Function)"><strong>startUserReview</strong></a>(token as <span class="type"><a href="../Toybox/WatchUi/ReviewResponseToken.html">WatchUi.ReviewResponseToken</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Start the app review UI flow.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#switchToView-instance_function" title="switchToView (Instance Function)"><strong>switchToView</strong></a>(view as <span class="type"><a href="../Toybox/WatchUi.html#Views-named_type">WatchUi.Views</a></span>, delegate as <span class="type"><a href="../Toybox/WatchUi.html#InputDelegates-named_type">WatchUi.InputDelegates</a></span> or <b>Null</b>, transition as <span class="type"><a href="../Toybox/WatchUi.html#SlideType-module">WatchUi.SlideType</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Pop the current View from the View stack and push a new one.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="typedef_details" class="attr_details">
+    <h2>Typedef Details</h2>
+    <div class="details">
+<h3 class="signature" id="InputDelegates-named_type">
+
+<strong>InputDelegates</strong> as <span class="type"><a href="../Toybox/WatchUi/InputDelegate.html">WatchUi.InputDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/BehaviorDelegate.html">WatchUi.BehaviorDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/ConfirmationDelegate.html">WatchUi.ConfirmationDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/MenuInputDelegate.html">WatchUi.MenuInputDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/NumberPickerDelegate.html">WatchUi.NumberPickerDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/PickerDelegate.html">WatchUi.PickerDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/TextPickerDelegate.html">WatchUi.TextPickerDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/WatchFaceDelegate.html">WatchUi.WatchFaceDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/Menu2InputDelegate.html">WatchUi.Menu2InputDelegate</a></span> or <span class="type"><a href="../Toybox/WatchUi/ViewLoopDelegate.html">WatchUi.ViewLoopDelegate</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="Resource-named_type">
+
+<strong>Resource</strong> as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span> or <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/WatchUi/AnimationResource.html">WatchUi.AnimationResource</a></span> or <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/WatchUi/FontResource.html">WatchUi.FontResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span> or <span class="type"><a href="../Toybox/Graphics/FontReference.html">Graphics.FontReference</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="Views-named_type">
+
+<strong>Views</strong> as <span class="type"><a href="../Toybox/WatchUi/View.html">WatchUi.View</a></span> or <span class="type"><a href="../Toybox/WatchUi/Menu.html">WatchUi.Menu</a></span> or <span class="type"><a href="../Toybox/WatchUi/TextPicker.html">WatchUi.TextPicker</a></span> or <span class="type"><a href="../Toybox/WatchUi/ProgressBar.html">WatchUi.ProgressBar</a></span> or <span class="type"><a href="../Toybox/WatchUi/Confirmation.html">WatchUi.Confirmation</a></span> or <span class="type"><a href="../Toybox/WatchUi/NumberPicker.html">WatchUi.NumberPicker</a></span> or <span class="type"><a href="../Toybox/WatchUi/ViewLoop.html">WatchUi.ViewLoop</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+ </div>
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="animate-instance_function">
+    <strong>animate(object as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, property as <span class="type"><a href="../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>, type as <span class="type"><a href="../Toybox/WatchUi.html#AnimationType-module">WatchUi.AnimationType</a></span>, start as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, stop as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, period as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, callback as <b>Null</b> or <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>() as <b>Void</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Animate an Object.
+</p><p>
+Animate works by changing an object property over time, such as the
+x-position of a Drawable. The animation starts after the call and runs
+the length of the specified period. During this time, the View object's
+onUpdate() method will be invoked at an increased rate to facilitate
+animation.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Will cause an app crash if called from background or data field app, or from watch face while in low power mode
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">object</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The object to animate
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">property</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Symbol of the object's property to animate (e.g. :locX, :locY, etc.)
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">type</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi.html#AnimationType-module">WatchUi.AnimationType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../Toybox/WatchUi.html#ANIM_TYPE_LINEAR-const'>WatchUi.ANIM_TYPE_*</a> value
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">start</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The starting value of the property
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">stop</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The ending value of the property
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">period</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The duration of the animation in seconds
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">callback</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Method to call when the animation is complete; this can be <code>null</code>
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Move a bitmap across the screen from left to right</p>
+</div></p>
+<pre class="example code">
+<code>using System.WatchUi;
+
+square = new Ui.Bitmap({
+    :rezId=&gt;Rez.Drawables.square,
+    :locX=&gt;10,
+    :locY=&gt;30
+});
+WatchUi.animate(square, :locX, Ui.ANIM_TYPE_LINEAR, 10, 200, 10, null);</code>
+</pre>
+</div>
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/WatchUi/Drawable.html">Toybox.WatchUi.Drawable</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/WatchUi/Bitmap.html">Toybox.WatchUi.Bitmap</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="cancelAllAnimations-instance_function">
+    <strong>cancelAllAnimations()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Cancel animations started with <a href='../Toybox/WatchUi.html#animate-instance_function'>WatchUi.animate()</a>
+</p><p>
+Stop all animations that were started with <a href='../Toybox/WatchUi.html#animate-instance_function'>WatchUi.animate()</a>.
+This will leave all animations at their final frame, as if
+<a href='../Toybox/WatchUi.html#animate-instance_function'>WatchUi.animate()</a> ran to completion.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/WatchUi.html#animate-instance_function">WatchUi.animate()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.7
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getCurrentView-instance_function">
+    <strong>getCurrentView()</strong> <span class="type"> as [ <span class="type"><a href="../Toybox/WatchUi/View.html">WatchUi.View</a></span> or <b>Null</b>, <span class="type"><a href="../Toybox/WatchUi.html#InputDelegates-named_type">WatchUi.InputDelegates</a></span> or <b>Null</b> ]</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current view that is displayed in the UI
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An array containing the view and the delegate.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getSubscreen-instance_function">
+    <strong>getSubscreen()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Graphics/BoundingBox.html">Graphics.BoundingBox</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the subscreen area in the display.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Descent™ G1 / G1 Solar</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Graphics/BoundingBox.html">Graphics.BoundingBox</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+object or <code>null</code> if no subscreen is present or if a virtual subscreen is present but not used for normal views.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.7
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="loadResource-instance_function">
+    <strong>loadResource(resource as <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/WatchUi.html#Resource-named_type">WatchUi.Resource</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Load a resource from the executable.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+<a href='../Toybox/Graphics/BitmapReference.html'>Toybox::Graphics::BitmapReference</a> and <a href='../Toybox/Graphics/FontReference.html'>Toybox::Graphics::FontReference</a> are returned for <a href='../Toybox/WatchUi/BitmapResource.html'>Toybox::WatchUi::BitmapResource</a> and <a href='../Toybox/WatchUi/FontResource.html'>Toybox::WatchUi::FontResource</a> in CIQ 4.0.0 and later.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">resource</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An identifier for a resource defined in the project's <code>resources.xml</code> file
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Loading a String resource</p>
+</div></p>
+<pre class="example code">
+<code>// The resources.xml file contents:
+// &lt;resources&gt;
+//     &lt;string id="AppName"&gt;APEELingApp&lt;/string&gt;
+// &lt;/resources&gt;
+using Toybox.WatchUi;
+
+var banana = WatchUi.loadResource(Rez.Strings.AppName);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>, <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>, <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/WatchUi/AnimationResource.html">WatchUi.AnimationResource</a></span>, <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span>, <span class="type"><a href="../Toybox/WatchUi/FontResource.html">WatchUi.FontResource</a></span>, <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span>, <span class="type"><a href="../Toybox/Graphics/FontReference.html">Graphics.FontReference</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="makeReviewTokenRequest-instance_function">
+    <strong>makeReviewTokenRequest(callback as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(responseStatus as <span class="type"><a href="../Toybox/WatchUi.html#ReviewRequestStatus-module">WatchUi.ReviewRequestStatus</a></span>, token as <span class="type"><a href="../Toybox/WatchUi/ReviewResponseToken.html">WatchUi.ReviewResponseToken</a></span> or <b>Null</b>) as <b>Void</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Initiate a request to ask for this app to be reviewed
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">callback</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Callback to invoke when the review token request has completed.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.2
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="popView-instance_function">
+    <strong>popView(transition as <span class="type"><a href="../Toybox/WatchUi.html#SlideType-module">WatchUi.SlideType</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Pop the current View from the View stack.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">transition</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi.html#SlideType-module">WatchUi.SlideType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../Toybox/WatchUi.html#SLIDE_IMMEDIATE-const'>WatchUi.SLIDE_*</a> value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/OperationNotAllowedException.html">Lang.OperationNotAllowedException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if called from background, data field, glance, or watch face app; or of called from the base page of a widget
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="pushView-instance_function">
+    <strong>pushView(view as <span class="type"><a href="../Toybox/WatchUi.html#Views-named_type">WatchUi.Views</a></span>, delegate as <span class="type"><a href="../Toybox/WatchUi.html#InputDelegates-named_type">WatchUi.InputDelegates</a></span> or <b>Null</b>, transition as <span class="type"><a href="../Toybox/WatchUi.html#SlideType-module">WatchUi.SlideType</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Push a View onto the View stack.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">view</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi/View.html">WatchUi.View</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+View to push
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">delegate</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi/BehaviorDelegate.html">WatchUi.BehaviorDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/ConfirmationDelegate.html">WatchUi.ConfirmationDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/InputDelegate.html">WatchUi.InputDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/MenuInputDelegate.html">WatchUi.MenuInputDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/NumberPickerDelegate.html">WatchUi.NumberPickerDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/PickerDelegate.html">WatchUi.PickerDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/TextPickerDelegate.html">WatchUi.TextPickerDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/WatchFaceDelegate.html">WatchUi.WatchFaceDelegate</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The input delegate to handle input for the View
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">transition</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi.html#SlideType-module">WatchUi.SlideType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../Toybox/WatchUi.html#SLIDE_IMMEDIATE-const'>WatchUi.SLIDE_*</a> value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown when view is type <a href='../Toybox/WatchUi/MapView.html'>MapView</a> and the visible map area parameters are invalid
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/OperationNotAllowedException.html">Lang.OperationNotAllowedException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if called from background, data field, glance, or watch face app; or if the new view is a <a href='../Toybox/WatchUi/DataField.html'>DataField</a>, a <a href='../Toybox/WatchUi/GlanceView.html'>GlanceView</a>, or a <a href='../Toybox/WatchUi/WatchFace.html'>WatchFace</a>
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="requestUpdate-instance_function">
+    <strong>requestUpdate()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Request a call to the <a href='../Toybox/WatchUi/View.html#onUpdate-instance_function'>onUpdate()</a> method
+for the current View.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/WatchUi/View.html#onUpdate-instance_function">View.onUpdate()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="showActionMenu-instance_function">
+    <strong>showActionMenu(menu as <span class="type"><a href="../Toybox/WatchUi/ActionMenu.html">WatchUi.ActionMenu</a></span>, delegate as <span class="type"><a href="../Toybox/WatchUi/ActionMenuDelegate.html">WatchUi.ActionMenuDelegate</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Push an action menu to the display
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+An action menu will dismiss it self on either user selecting a menu item or pressing back button.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">menu</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi/ActionMenu.html">WatchUi.ActionMenu</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An action menu object.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">delegate</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi/ActionMenuDelegate.html">WatchUi.ActionMenuDelegate</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An action menu delegate object.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 945 LTE</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="showToast-instance_function">
+    <strong>showToast(text as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, options as { :icon as <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span> or <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> } or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Push a toast notification to the display
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">text</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The text to display in the notification toast.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary of options.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:icon</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span>, <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span>, <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The icon to display with this notification. If no icon is provided and the system requires an icon for a toast, the app icon will be used.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 945 LTE</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="startUserReview-instance_function">
+    <strong>startUserReview(token as <span class="type"><a href="../Toybox/WatchUi/ReviewResponseToken.html">WatchUi.ReviewResponseToken</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Start the app review UI flow
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">token</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi/ReviewResponseToken.html">WatchUi.ReviewResponseToken</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The token that was passed as a parameter to a successful call to the callback parameter in <a href='../Toybox/WatchUi.html#makeReviewTokenRequest-instance_function'>makeReviewTokenRequest</a>.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.2
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/OperationNotAllowedException.html">Lang.OperationNotAllowedException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+if <code>token</code> is not a ReviewResponseToken.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="switchToView-instance_function">
+    <strong>switchToView(view as <span class="type"><a href="../Toybox/WatchUi.html#Views-named_type">WatchUi.Views</a></span>, delegate as <span class="type"><a href="../Toybox/WatchUi.html#InputDelegates-named_type">WatchUi.InputDelegates</a></span> or <b>Null</b>, transition as <span class="type"><a href="../Toybox/WatchUi.html#SlideType-module">WatchUi.SlideType</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Pop the current View from the View stack and push a new one.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Prior to ConnectIQ 3.1, this method only supported switching to user-defined View objects, and would only accept InputDelegate or BehaviorDelegate objects as delegates for the given View.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">view</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi/View.html">WatchUi.View</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The View object to push
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">delegate</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi/BehaviorDelegate.html">WatchUi.BehaviorDelegate</a></span>, <span class="type"><a href="../Toybox/WatchUi/InputDelegate.html">WatchUi.InputDelegate</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The input delegate to handle input for the View
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">transition</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi.html#SlideType-module">WatchUi.SlideType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../Toybox/WatchUi.html#SLIDE_IMMEDIATE-const'>WatchUi.SLIDE_*</a> value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/OperationNotAllowedException.html">Lang.OperationNotAllowedException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if called from background, data field, glance, or watch face app; or of called from the base page of a widget and the new view is native; or if the new view is a <a href='../Toybox/WatchUi/DataField.html'>DataField</a>, a <a href='../Toybox/WatchUi/GlanceView.html'>GlanceView</a>, or a <a href='../Toybox/WatchUi/WatchFace.html'>WatchFace</a>
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

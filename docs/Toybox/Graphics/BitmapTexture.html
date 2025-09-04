@@ -1,0 +1,289 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Graphics.BitmapTexture </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Graphics.BitmapTexture";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Graphics.BitmapTexture</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Graphics/BitmapTexture.html">Toybox.Graphics.BitmapTexture</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+An object representing a textured area with in a bitmap that can be can be used to fill a primitive drawable object.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(options as { :bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :offsetX as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :offsetY as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> })
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setOffset-instance_function" title="setOffset (Instance Function)"><strong>setOffset</strong></a>(offsetX as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, offsetY as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set an offset for the texture.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(options as { :bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :offsetX as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :offsetY as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> })</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A dictionary representing a bitmap with an offset to be used as a texture.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:bitmap</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, <span class="type"><a href="../../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span>, <span class="type"><a href="../../Toybox/Graphics/BufferedBitmap.html">Graphics.BufferedBitmap</a></span>, <span class="type"><a href="../../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Bitmap to be used as a texture.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:offsetX</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An x offset with in the bitmap to be mapped to the x coordinate of the origin of the primitive object.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:offsetY</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An y offset with in the bitmap to be mapped to the y coordinate of the origin of the primitive object.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setOffset-instance_function">
+    <strong>setOffset(offsetX as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, offsetY as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set an offset for the texture.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">offsetX</span>
+        &mdash;
+        <div class="inline">
+<p>
+<a href='../../Toybox/Lang/Number.html'>Toybox::Lang::Number</a> An x offset with in the bitmap to be used to render the texture
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">offsetY</span>
+        &mdash;
+        <div class="inline">
+<p>
+<a href='../../Toybox/Lang/Number.html'>Toybox::Lang::Number</a> An y offset with in the bitmap to be used to render the texture
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

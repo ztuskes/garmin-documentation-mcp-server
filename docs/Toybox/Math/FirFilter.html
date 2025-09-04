@@ -1,0 +1,301 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Math.FirFilter </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Math.FirFilter";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Math.FirFilter</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Math.Filter</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Math/Filter.html">Toybox.Math.Filter</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Math/FirFilter.html">Toybox.Math.FirFilter</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Finite Impulse Response (FIR) filter implementation.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Finite_impulse_response">FirFilters</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Shows the constructor and implementation for filter use with accelerometer data. Borrowed from the PitchCounter sample included in the SDK.</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Math;
+var mX = [0];
+var mY = [0];
+var mZ = [0];
+var mFilter;
+
+// Constructor
+function initialize() {
+    // initialize FIR filter
+    var options = {
+        :coefficients =&gt; [ -0.0278f, 0.9444f, -0.0278f ],
+        :gain =&gt; 0.001f
+    };
+
+    try {
+        mFilter = new Math.FirFilter(options);
+    }
+    catch(e) {
+        System.println(e.getErrorMessage());
+    }
+}
+
+// Callback to receive accelerometer data
+function accel_callback(sensorData) {
+    mX = mFilter.apply(sensorData.accelerometerData.x);
+    mY = sensorData.accelerometerData.y;
+    mZ = sensorData.accelerometerData.z;
+    onAccelData();
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#apply-instance_function" title="apply (Instance Function)"><strong>apply</strong></a>(data as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>&gt;)    as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>&gt;
+      </span>
+
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(dictionary as { :coefficients as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>&gt; or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :gain as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> })
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="apply-instance_function">
+    <strong>apply(data as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>&gt;)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>&gt;</span>
+  </h3>
+
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(dictionary as { :coefficients as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>&gt; or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :gain as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> })</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">dictionary</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary containing filter settings.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:coefficients</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>, <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An Array of Float values that specify the filter coefficients. A ResourceId referencing a JSON Array resource can also be used here.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:gain</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Float value that specifies a multiplier to be applied to the coefficients.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/InvalidOptionsException.html">Lang.InvalidOptionsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+If the Dictionary does not have valid coefficients for filter or the :gain field is missing. Will also be thrown if an invalid JSON ResourceId is specified for coefficients instead of an array
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

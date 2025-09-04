@@ -1,0 +1,10 @@
+<svg width="163" height="156" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="instinct2s-3fields-1-mask">
+      <rect width="100%" height="100%" fill="black"/>
+<path d="M 35.099999999999994, 0 L 120.9, 0 L 156, 35.099999999999994 L 156, 120.9 L 120.9, 156 L 35.099999999999994, 156 L 0, 120.9 L 0, 35.099999999999994 L 35.099999999999994, 0 " style="fill:white"/><circle cx="135.0" cy="27.0" r="27.0" style="fill:black"/>    </mask>
+  </defs>
+  <rect x="0" y="0" width="93" height="64" mask="url(#instinct2s-3fields-1-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="64" width="156" height="92" mask="url(#instinct2s-3fields-1-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="109" y="0" width="54" height="54" mask="url(#instinct2s-3fields-1-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+<path d="M 35.099999999999994, 0 L 120.9, 0 L 156, 35.099999999999994 L 156, 120.9 L 120.9, 156 L 35.099999999999994, 156 L 0, 120.9 L 0, 35.099999999999994 L 35.099999999999994, 0 " style="stroke-width:1;stroke:rgb(0,0,0);fill:none"/><circle cx="135.0" cy="27.0" r="27.0" style="fill:black"/></svg>

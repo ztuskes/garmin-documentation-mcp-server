@@ -1,0 +1,15 @@
+<svg width="240" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="edgeexplore2-6fieldsb-9-mask">
+      <rect width="100%" height="100%" fill="black"/>
+      <rect width="100%" height="100%" style="fill:white"/>
+    </mask>
+  </defs>
+  <rect x="0" y="0" width="119" height="78" mask="url(#edgeexplore2-6fieldsb-9-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="121" y="0" width="119" height="78" mask="url(#edgeexplore2-6fieldsb-9-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="80" width="240" height="156" mask="url(#edgeexplore2-6fieldsb-9-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="238" width="240" height="78" mask="url(#edgeexplore2-6fieldsb-9-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="318" width="119" height="82" mask="url(#edgeexplore2-6fieldsb-9-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="121" y="318" width="119" height="82" mask="url(#edgeexplore2-6fieldsb-9-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+      <rect width="100%" height="100%" style="stroke-width:1;stroke:rgb(0,0,0);fill:none"/>
+</svg>

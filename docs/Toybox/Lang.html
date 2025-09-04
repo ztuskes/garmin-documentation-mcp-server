@@ -1,0 +1,601 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Lang </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Lang";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Lang</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Lang module contains Monkey C language basic types, and provides a
+method for formatting Strings.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Lang/Array.html">Array</a></span>, <span class="type"><a href="../Toybox/Lang/Boolean.html">Boolean</a></span>, <span class="type"><a href="../Toybox/Lang/ByteArray.html">ByteArray</a></span>, <span class="type"><a href="../Toybox/Lang/Char.html">Char</a></span>, <span class="type"><a href="../Toybox/Lang/Dictionary.html">Dictionary</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Double</a></span>, <span class="type"><a href="../Toybox/Lang/Exception.html">Exception</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Float</a></span>, <span class="type"><a href="../Toybox/Lang/InvalidOptionsException.html">InvalidOptionsException</a></span>, <span class="type"><a href="../Toybox/Lang/InvalidValueException.html">InvalidValueException</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Long</a></span>, <span class="type"><a href="../Toybox/Lang/Method.html">Method</a></span>, <span class="type"><a href="../Toybox/Lang/Number.html">Number</a></span>, <span class="type"><a href="../Toybox/Lang/Object.html">Object</a></span>, <span class="type"><a href="../Toybox/Lang/OperationNotAllowedException.html">OperationNotAllowedException</a></span>, <span class="type"><a href="../Toybox/Lang/ResourceId.html">ResourceId</a></span>, <span class="type"><a href="../Toybox/Lang/SerializationException.html">SerializationException</a></span>, <span class="type"><a href="../Toybox/Lang/StorageFullException.html">StorageFullException</a></span>, <span class="type"><a href="../Toybox/Lang/String.html">String</a></span>, <span class="type"><a href="../Toybox/Lang/Symbol.html">Symbol</a></span>, <span class="type"><a href="../Toybox/Lang/SymbolNotAllowedException.html">SymbolNotAllowedException</a></span>, <span class="type"><a href="../Toybox/Lang/UnexpectedTypeException.html">UnexpectedTypeException</a></span>, <span class="type"><a href="../Toybox/Lang/ValueOutOfBoundsException.html">ValueOutOfBoundsException</a></span>, <span class="type"><a href="../Toybox/Lang/WeakReference.html">WeakReference</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="NumberFormat-module" class="">
+    <h3>NumberFormat</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="NUMBER_FORMAT_FLOAT-const">
+    <td class="enumTableCell">NUMBER_FORMAT_FLOAT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+IEEE 754 Single Precision Float Value (32-bits)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="NUMBER_FORMAT_SINT16-const">
+    <td class="enumTableCell">NUMBER_FORMAT_SINT16</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Signed 16-bit Integer Value
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="NUMBER_FORMAT_SINT32-const">
+    <td class="enumTableCell">NUMBER_FORMAT_SINT32</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Signed 32-bit Integer Value
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="NUMBER_FORMAT_SINT8-const">
+    <td class="enumTableCell">NUMBER_FORMAT_SINT8</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Signed 8-bit Integer Value
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="NUMBER_FORMAT_UINT16-const">
+    <td class="enumTableCell">NUMBER_FORMAT_UINT16</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Unsigned 16-bit Integer Value
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="NUMBER_FORMAT_UINT32-const">
+    <td class="enumTableCell">NUMBER_FORMAT_UINT32</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Unsigned 32-bit Integer Value
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="NUMBER_FORMAT_UINT8-const">
+    <td class="enumTableCell">NUMBER_FORMAT_UINT8</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Unsigned 8-bit Integer Value
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="Endian-module" class="">
+    <h3>Endian</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="ENDIAN_LITTLE-const">
+    <td class="enumTableCell">ENDIAN_LITTLE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="ENDIAN_BIG-const">
+    <td class="enumTableCell">ENDIAN_BIG</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+<h2>Typedef Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Comparable-named_type" title="Comparable (Named Type)"><strong>Comparable</strong></a> as interface {<br/>function compareTo(other as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>) as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>;<br/>}
+    </span>
+
+
+
+    <span class="summary_desc">
+        <div class="inline">
+            <p>
+Comparable defines an ordering between an object and others.
+</p>
+
+
+        </div>
+    </span>
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Comparator-named_type" title="Comparator (Named Type)"><strong>Comparator</strong></a> as interface {<br/>function compare(a as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, b as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>) as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>;<br/>}
+    </span>
+
+
+
+    <span class="summary_desc">
+        <div class="inline">
+            <p>
+Comparator defines an ordering between objects.
+</p>
+
+
+        </div>
+    </span>
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Decimal-named_type" title="Decimal (Named Type)"><strong>Decimal</strong></a> as <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span> or <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Integer-named_type" title="Integer (Named Type)"><strong>Integer</strong></a> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Numeric-named_type" title="Numeric (Named Type)"><strong>Numeric</strong></a> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span> or <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span> or <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+    </span>
+
+
+
+</li>
+</ul>
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#format-instance_function" title="format (Instance Function)"><strong>format</strong></a>(format as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, parameters as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)    as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Create a formatted String by substituting the given parameters into the given format at the corresponding locations.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="typedef_details" class="attr_details">
+    <h2>Typedef Details</h2>
+    <div class="details">
+<h3 class="signature" id="Comparable-named_type">
+
+<strong>Comparable</strong> as interface {<br/>function compareTo(other as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>) as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>;<br/>}
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Comparable defines an ordering between an object and others.
+</p><p>
+Comparator can be use to specify an ordering between an object and others.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 5.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="Comparator-named_type">
+
+<strong>Comparator</strong> as interface {<br/>function compare(a as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, b as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>) as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>;<br/>}
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Comparator defines an ordering between objects.
+</p><p>
+Comparator can be use to specify an ordering between objects.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 5.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="Decimal-named_type">
+
+<strong>Decimal</strong> as <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span> or <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="Integer-named_type">
+
+<strong>Integer</strong> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="Numeric-named_type">
+
+<strong>Numeric</strong> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span> or <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span> or <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+ </div>
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="format-instance_function">
+    <strong>format(format as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, parameters as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Create a formatted String by substituting the given parameters into the
+given format at the corresponding locations.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">format</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A string using $1$, $2$, $3$... as substitution identifiers
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">parameters</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Array of content to substitute into the formatted String
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>// Set the 'myString' variable to "Your next meeting is at 2:30 on Sep 4 in room 6820."
+using Toybox.Lang
+var myFormat = "Your next meeting is at $1$:$2$ on $3$ $4$ in room $5$.";
+var myParams = [2, 30, "Sep", 4, "6820"];
+var myString = Lang.format(myFormat, myParams);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A new String with the substituted content
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

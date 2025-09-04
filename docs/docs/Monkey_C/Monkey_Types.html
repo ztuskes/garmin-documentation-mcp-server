@@ -1,0 +1,378 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="DC.type" content="topic"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="monkey-types"><link rel="stylesheet" type="text/css" href="../../branding/commonltr.css"><link rel="stylesheet" type="text/css" href="../../branding/style.css"><title>Monkey Types</title></head><body id="monkey-types"><header role="banner"><div>
+<link href="../../resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
+<script src="../../resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="../../resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+</div></header><nav role="toc"><ul><li><a href="../../docs/Readme/Intro.html">Introduction</a></li><li><a href="../../docs/Connect_IQ_Basics/Welcome_to_the_Jungle.html">Welcome to Connect IQ</a></li><li><a href="../../docs/Monkey_C/Basic_Syntax.html">Hello Monkey C!</a><ul><li><a href="../../docs/Monkey_C/Functions.html">Functions</a></li><li><a href="../../docs/Monkey_C/Objects_and_Memory.html">Objects, Modules, and Memory</a></li><li><a href="../../docs/Monkey_C/Containers.html">Containers</a></li><li class="active"><a href="../../docs/Monkey_C/Monkey_Types.html">Monkey Types</a></li><li><a href="../../docs/Monkey_C/Exceptions_and_Errors.html">Exceptions and Errors</a></li><li><a href="../../docs/Monkey_C/Annotations.html">Annotations</a></li><li><a href="../../docs/Monkey_C/Coding_Conventions.html">Coding Conventions</a></li><li><a href="../../docs/Monkey_C/Compiler_Options.html">Compiler Options</a></li></ul></li><li><a href="../../docs/Core_Topics/Overview.html">Core Topics</a></li><li><a href="../../docs/User_Experience_Guidelines/Overview.html">User Experience Guidelines</a></li><li><a href="../../docs/Personality_Library/Personality_UI.html">Personality UI</a></li><li><a href="../../docs/Connect_IQ_FAQ/Overview.html">Connect IQ FAQ</a></li><li><a href="../../docs/Reference_Guides/Overview.html">Reference Guides</a></li><li><a href="../../docs/App_Review_Guidelines/Overview.html">Garmin Connect IQ App Review Guidelines</a></li><li><a href="../../docs/Monetization/Overview.html">Connect IQ Monetization System</a></li><li><a href="../../docs/Device_Reference/Overview.html">Device Reference</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Monkey Types</h1><div class="body"><p class="p">Monkey Types is the gradual type system for the Monkey C language. The type system is designed to recognize Monkey C's historically duck-typed nature but add the necessary components to type check your applications at compile time.</p><p class="p">Monkey Types has the following goals:</p><ol class="ol"><li class="li"><p class="p"><strong class="ph b">Compatibility</strong> - Breaking changes to the Monkey C language would require rework to thousands of Connect IQ apps. Monkey Types extends the Monkey C grammar but avoids breaking changes. Monkey Types is also designed to not rely on additional run time information. Because of this, you can use Monkey Types for apps that run on all Connect IQ compatible devices.</p></li><li class="li"><p class="p"><strong class="ph b">Ease of Use</strong> - The philosophy of Monkey C is to be <em class="ph i">the language you didn't know you already knew</em>.  We want the experience of writing Monkey C to be like deja-vu. Likewise, Monkey Types borrows heavily from Kotlin, Swift, and Typescript in its design.</p></li><li class="li"><p class="p"><strong class="ph b">Flexibility</strong> - Monkey Types is a gradual type system. You can leave the type scaffolding off if you choose, or you can strictly type your app.</p></li></ol><p class="p">The Connect IQ type checker is disabled by default and is enabled with the <code class="ph codeph">-l</code> compiler option. There are four levels of type checking:</p><table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry" id="monkey-types__entry__1">Option</th><th class="entry" id="monkey-types__entry__2">Level</th><th class="entry align-left" id="monkey-types__entry__3">Description</th></tr></thead><tbody class="tbody"><tr class="row"><td class="entry" headers="monkey-types__entry__1"><code class="ph codeph">-l 0</code></td><td class="entry" headers="monkey-types__entry__2">Silent</td><td class="entry align-left" headers="monkey-types__entry__3">No type checking; keep everything dynamically typed</td></tr><tr class="row"><td class="entry" headers="monkey-types__entry__1"><code class="ph codeph">-l 1</code></td><td class="entry" headers="monkey-types__entry__2">Gradual</td><td class="entry align-left" headers="monkey-types__entry__3">Type check any statement where typing can be inferred, otherwise stay silent</td></tr><tr class="row"><td class="entry" headers="monkey-types__entry__1"><code class="ph codeph">-l 2</code></td><td class="entry" headers="monkey-types__entry__2">Informative</td><td class="entry align-left" headers="monkey-types__entry__3">Type check only what has been typed, warn about ambiguity</td></tr><tr class="row"><td class="entry" headers="monkey-types__entry__1"><code class="ph codeph">-l 3</code></td><td class="entry" headers="monkey-types__entry__2">Strict</td><td class="entry align-left" headers="monkey-types__entry__3">Do not allow compiler ambiguity</td></tr></tbody></table><p class="p">Let's cover the new syntax available for communicating type information to the type system.</p></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="the-as-clause"><h2 class="title topictitle2" id="ariaid-title2">The as Clause</h2><div class="body"><p class="p">Monkey Types introduces a new keyword <code class="ph codeph">as</code>. You use <code class="ph codeph">as</code> to bind a type to a member variable, module variable, function argument, or function return value. Locals are always type inferred at assignment.</p><p class="p">Once a type has been bound to a value, the compiler will only allow values of that type to be assigned.</p><pre class="pre codeblock typescript"><code>using Toybox.Lang;
+using Toybox.System;
+
+var globalX as Lang.Number = 0;
+
+function hasANumber() {
+    globalX = 2;  // Allowed
+    globalX = "2"; // Not allowed
+    System.println("globalX = " + globalX);
+}</code></pre><p class="p">In this example we are declaring that global variable <code class="ph codeph">globalX</code> will only accept values of <code class="ph codeph">Toybox.Lang.Number</code>. Once that has been declared, the compiler will only allow values of that type to be assigned to <code class="ph codeph">globalX</code>.</p><p class="p">Since Monkey C is a duck-typed language, only allowing a single type to be bound to a variable would be overly restrictive. An <code class="ph codeph">as</code> clause is allowed to have an <code class="ph codeph">or</code> clause attached if a variable accepts multiple types.</p><pre class="pre codeblock typescript"><code>using Toybox.Lang;
+using Toybox.System;
+
+var globalX as Lang.Number or Lang.String = 0;
+
+function hasANumber() {
+    globalX = 2;  // Allowed
+    globalX = "2"; // Allowed
+    System.println("globalX = " + globalX);
+}</code></pre></div></article><article class="topic nested1" aria-labelledby="ariaid-title3" id="the-import-statement"><h2 class="title topictitle2" id="ariaid-title3">The import Statement</h2><div class="body"><p class="p">In traditional Monkey C, the <code class="ph codeph">using</code> statement brings a <code class="ph codeph">module</code> suffix into the namespace of the file being processed. To access any functions, variables, or class definitions, the module suffix must be referenced.</p><p class="p">For adding type information, all that module prefixing is annoying. Monkey Types introduces the <code class="ph codeph">import</code> statement. When you use <code class="ph codeph">import</code> it will bring the <em class="ph i">module suffix and all classes in the module into the type namespace</em>. This allows classes in a module to be accessed without the module suffix, making for easier typing. Functions still require the module suffix to be accessed.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+import Toybox.System;
+
+// Import lets you say goodbye to
+// module prefixes
+var globalX as Number or String = 0;
+
+function hasANumber() {
+    globalX = 2;  // Allowed
+    globalX = "2"; // Allowed
+    // Still require prefixes in code
+    System.println("globalX = " + globalX);
+}</code></pre><p class="p">Note <code class="ph codeph">import</code> does not support using <code class="ph codeph">as</code> for renaming  modules in a source file<a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a>.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title4" id="named-versus-anonymous-types"><h2 class="title topictitle2" id="ariaid-title4">Named Versus Anonymous Types</h2><div class="body"><p class="p">As you can see from the above example, the type system can allow for complicated type definitions. There are times where a type pattern is repeated that you just want to refer to it by a name.</p><p class="p">A <code class="ph codeph">typedef</code> statement allows you to create a <em class="ph i">named type</em> in the application namespace. For example, the following would create a poly type named <code class="ph codeph">Numeric</code> in the global namespace. The function <code class="ph codeph">add</code> then binds <code class="ph codeph">Numeric</code> to parameters <code class="ph codeph">a</code> and <code class="ph codeph">b</code> and its return value by having the <code class="ph codeph">as</code> clauses refer to the <code class="ph codeph">Numeric</code> type declaration.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+typedef Numeric as Number or Float or Long or Double;
+
+function add(a as Numeric, b as Numeric) as Numeric {
+    return a + b;
+}</code></pre><p class="p">If you do not wish to name your type declarations, you can always use the <code class="ph codeph">as</code> clause to build the type declaration in line as an anonymous type.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title5" id="types"><h2 class="title topictitle2" id="ariaid-title5">Types</h2><div class="body"><p class="p">Monkey Types allows you to add a layer of type scaffolding to your Monkey C code. The type system allows for a lot more than associating variables with classes.</p><p class="p">This section will overview the type declarations you can use.</p></div><article class="topic nested2" aria-labelledby="ariaid-title6" id="any"><h3 class="title topictitle3" id="ariaid-title6">Any</h3><div class="body"><p class="p">Any variable, function argument, or function return value that does not have a type bound to it is of type Any. The Any type can be anything, including nothing. Values of type Any follow the traditional duck type rules of Monkey C.</p><p class="p">To bind Any to a value, simply do not add an <code class="ph codeph">as</code> clause to it's declaration. There is no keyword to bind Any to a value.</p></div></article><article class="topic nested2" aria-labelledby="ariaid-title7" id="void"><h3 class="title topictitle3" id="ariaid-title7">Void</h3><div class="body"><p class="p">The void type is only for return values, and communicates that a function does not allow return values. It also communicates that a function should not expect a return value by calling this function.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+function doNothing() as Void {
+    // Compiler error - this is failing to
+    // do nothing.
+    return true;
+}
+
+function doSomething() as String {
+    // Compiler error - cannot assign value
+    // from a function that returns nothing
+    var x = doNothing();
+    // Compiler error - doSomething should
+    // return a String
+}</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title8" id="concrete"><h3 class="title topictitle3" id="ariaid-title8">Concrete</h3><div class="body"><p class="p">Concrete types are a single reference to a declared class in the program namespace. This is the most traditional and most familiar use of typing. If a value is bound to a concrete type, it will only accept values of that class or any derived classes.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+import WoolMarket;
+
+class Wool {
+    public var bagsFull;
+
+    public function initialize(bags as Number) {
+        bagsFull = bags;
+    }
+}
+
+class Sheep {
+    public var wool as Wool;
+
+    public function initialize() {
+        wool = new Wool(1);
+    }
+}
+
+class BlackSheep extends Sheep {
+    public function initialize() {
+        Sheep.initialize();
+        wool = new Wool(3);
+    }
+}
+
+function processSheep(baa as Sheep) {
+    if(baa.wool != null) {
+        WoolMarket.sellWool(baa.wool);
+    }
+}
+
+function example() {
+    // Allowed
+    processSheep(new Sheep());
+    processSheep(new BlackSheep());
+    // Not allowed
+    processSheep(new Wool());
+}</code></pre><p class="p">Note that concrete types do not implicitly accept <code class="ph codeph">null</code> as a value. If you want a value to also accept <code class="ph codeph">null</code> you must make a poly type (see <a class="xref" href="#null"><code class="ph codeph">Null</code></a> for more information).</p></div></article><article class="topic nested2" aria-labelledby="ariaid-title9" id="poly"><h3 class="title topictitle3" id="ariaid-title9">Poly</h3><div class="body"><p class="p">Poly types allow the concatenation of multiple types into a single type. This allows for the type system to model the duck-type nature of Monkey C. To create a poly type, you simply use the <code class="ph codeph">or</code> clause when defining your type.</p><p class="p">A poly type will accept:</p><ol class="ol"><li class="li"><p class="p">A value whose type is bound to one of the types within the poly type</p></li><li class="li"><p class="p">A value bound to a poly type whose types are within the definition of the destination type</p></li></ol><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+typedef Addable as Number or Float or Long or Double or String;
+typedef Numeric as Number or Float or Long or Double;
+
+function add(a as Addable, b as Addable) as Addable {
+    return a + b;
+}
+
+function subtract(a as Numeric, b as Numeric) as Numeric {
+    return a - b;
+}
+
+function doWork() {
+    // Allowed
+    var x as Addable = add("1", "2");
+    // Not allowed; Addable has String which is
+    // not within Numeric
+    var y as Numeric = subtract(x, 2);
+}</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title10" id="interface"><h3 class="title topictitle3" id="ariaid-title10">Interface</h3><div class="body"><p class="p">An interface type requires a class to contain a set of member declarations. The members can be member variables and functions.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+typedef LittleBoys as interface {
+    var frogs as Array&lt;Frogs&gt;;
+    var snails as Array&lt;Snails&gt;;
+    var puppyDogTails as Array&lt;PuppyDogTails&gt;;
+};
+
+// Implements LittleBoys interface
+class MaleChild {
+    var frogs as Array&lt;Frogs&gt;;
+    var snails as Array&lt;Snails&gt;;
+    var puppyDogTails as Array&lt;PuppyDogTails&gt;;
+}</code></pre><p class="p">Note that the class does not require additional decoration to implement the interface. This allows anonymous interfaces to be defined within function arguments.</p><pre class="pre codeblock typescript"><code>// Processing
+function example(you as interface {
+    var frogs as Array&lt;Frogs&gt;;
+})</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title11" id="container"><h3 class="title topictitle3" id="ariaid-title11">Container</h3><div class="body"><p class="p">The Monkey C language has two native container types, <code class="ph codeph">Array</code> and <code class="ph codeph">Dictionary</code>. While the Monkey Types system does not support generics, it does allow for the developer to type the value type of an <code class="ph codeph">Array</code> or the key and value type of a <code class="ph codeph">Dictionary</code>.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+typedef ContainerA as Array&lt;Number&gt;;
+typedef ContainerB as Dictionary&lt;String, Number&gt;;</code></pre><p class="p">Container types only match other container types if both the key and value types are equivalent. An <code class="ph codeph">Array&lt;String&gt;</code> only matches an <code class="ph codeph">Array&lt;String&gt;</code> and not an <code class="ph codeph">Array&lt;String or Number&gt;</code>.</p><p class="p">Monkey C does not infer container types at this time, so you will need to declare your containers. If you want to create a new typed array or dictionary you can use the following syntax:</p><pre class="pre codeblock typescript"><code>class ContainerClass {
+    // Array of 10 items that takes only numbers
+    var typedArray as Array&lt;Number&gt; = new Array&lt;Number&gt;[10];
+    // Initialized array
+    var initializedArray as Array&lt;Number&gt; = [1, 2, 3, 4, 5] as Array&lt;Number&gt;;
+    // Initialized dictionary
+    var initializedDictionary as Dictionary&lt;String, String&gt; = {"this"=&gt;"that"} as Dictionary&lt;String, String&gt;;
+}</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title12" id="tuples"><h3 class="title topictitle3" id="ariaid-title12">Tuples</h3><div class="body"><p class="p">A common pattern in Monkey C is to use arrays as structured groupings. Monkey types allows modeling an array by binding the indexed items to types.</p><p class="p">Think of Tuple types like Dictionary types, except the key is implied by the order. In the following example, the array being returned is automatically typed as a Tuple of types <code class="ph codeph">[ StartView, StartDelegate]</code>. This is typed against the allowed return value <span class="xref"></span> and found to match:</p><pre class="pre codeblock typescript"><code>function getInitialView() as [Views] or [Views, InputDelegates] {
+    return [ new StartView(), new StartDelegate() ] ;
+}</code></pre><p class="p">The rules of Tuple type A matching Tuple type B are as follows:</p><ul class="ul"><li class="li"><p class="p">Tuple A and B must be the same length</p></li><li class="li"><p class="p">For every index, every type in A must be an instance of B</p></li></ul><p class="p">Arrays created with the <code class="ph codeph">[ value, value...]</code> syntax will now be typed as a Tuple instead of an <code class="ph codeph">Array&lt;Any&gt;</code>. You can use Container types if that better matches the pattern you are implementing, but Tuples have a natural compatibility with Container types. Tuples of type <code class="ph codeph">[A, B, C]</code> shall be instance of <code class="ph codeph">Array&lt;A or B or C&gt;</code> if the types A, B, and C are in the polytype definition of the container type.</p><pre class="pre codeblock typescript"><code>function sumArray(x as Array&lt;Numeric&gt;) as Number {
+    var result = 0;
+    for (var i = 0; i &lt; x.size(); i++) {
+        result += x[i];
+    }
+    return result;
+}
+
+function sumThisTuple() as Number{
+    // This should pass type checking because the
+    // Tuple [Number, Number... ] should be an instanceOf Array&lt;Numeric&gt;
+    return sumArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+}
+</code></pre><p class="p">Tuple types are also more mutable. As the underlying array changes, they are modified as long as the type system can keep up. The type system will not track changes to the tuple's types when passed as an argument to another method.</p><pre class="pre codeblock typescript"><code>function foo(x as [Number, Number, Number]) as [Number, Number, Number] {
+    x[1] = "Hello"; // Allowed, type is now [Number, String, Number]
+    return x; // Error, type mismatch
+}</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title13" id="dictionary"><h3 class="title topictitle3" id="ariaid-title13">Dictionary</h3><div class="body"><p class="p">A common pattern in Monkey C is to use an options dictionary as an argument. This allows for extensible APIs. Monkey Types allows modeling an options dictionary by binding key literals to types.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+function doWork(options as {
+    :option1 as String,
+    :option2 as {
+        "name" as String,
+        "value" as Number
+    }
+})</code></pre><p class="p">If a dictionary is declared inline, the compiler will track the types bound to the values, and then type check to see if all the value types match. It will not require all keys to be provided, and it will not error if additional keys are added.</p><pre class="pre codeblock typescript"><code>doWork({:option1=&gt;"x", :option3=&gt;true})</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title14" id="enumerations"><h3 class="title topictitle3" id="ariaid-title14">Enumerations</h3><div class="body"><p class="p">Enumerations can now be named types by appending a name to the declaration. Enumeration values will be bound to both their enumeration type as well as their value type.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+enum Dog {
+    SPOT = "Spot",
+    LUKE = "Luke",
+    POCO = "Poco",
+    COMMODORE = "Commodore",
+    BINGO = "B_I_N_G_O"
+}
+
+function getDogName(dog as Dog) as String {
+    // Return the dog name
+    return dog.toString();
+}</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title15" id="callback"><h3 class="title topictitle3" id="ariaid-title15">Callback</h3><div class="body"><p class="p">The base object of Monkey C contains the <code class="ph codeph">method</code> method to create <code class="ph codeph">Method</code> callback objects<a name="fnsrc_2" href="#fntarg_2"><sup>2</sup></a>. The callback type allows you to type <code class="ph codeph">Method</code> objects based on what the expected parameters and return values are.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+function doWork(
+    x as Method(a as Number) as String
+) as String {
+    return x.invoke(2);
+}</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title16" id="null"><h3 class="title topictitle3" id="ariaid-title16">Null</h3><div class="body"><p class="p">Monkey Types treats Null as its own unique type. More importantly, Monkey Types requires explicit declaration if <code class="ph codeph">null</code> is an allowed value.</p><pre class="pre codeblock typescript"><code>function doWork() as Number or Null</code></pre><p class="p">The <code class="ph codeph">?</code> can be used with single type declarations to make it a null accepting poly type.</p><pre class="pre codeblock typescript"><code>function doWork() as Number?</code></pre></div></article></article><article class="topic nested1" aria-labelledby="ariaid-title17" id="type-matching-and-ambiguity"><h2 class="title topictitle2" id="ariaid-title17">Type Matching and Ambiguity</h2><div class="body"><p class="p">Because of the duck type nature of Monkey C, ambiguity is inherit to Monkey Types. Ideally, type systems would have very clear rules for if a type does or doesn't match, but Monkey Types has True, False, and Maybe<a name="fnsrc_3" href="#fntarg_3"><sup>3</sup></a>.</p><p class="p">Assuming we have the following:</p><pre class="pre codeblock type"><code>var a as A;
+var b as B;
+
+a = b; // Is this assigment allowed?</code></pre><p class="p">You can use the following table</p><table class="table"><caption></caption><colgroup><col><col><col><col><col><col><col><col><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry" id="type-matching-and-ambiguity__entry__1">A↓ B→</th><th class="entry" id="type-matching-and-ambiguity__entry__2">Any</th><th class="entry" id="type-matching-and-ambiguity__entry__3">Concrete</th><th class="entry" id="type-matching-and-ambiguity__entry__4">Poly</th><th class="entry" id="type-matching-and-ambiguity__entry__5">Interface</th><th class="entry" id="type-matching-and-ambiguity__entry__6">Container</th><th class="entry" id="type-matching-and-ambiguity__entry__7">Dictionary</th><th class="entry" id="type-matching-and-ambiguity__entry__8">Enum</th><th class="entry" id="type-matching-and-ambiguity__entry__9">Callback</th><th class="entry" id="type-matching-and-ambiguity__entry__10">Null</th></tr></thead><tbody class="tbody"><tr class="row"><td class="entry" headers="type-matching-and-ambiguity__entry__1"><strong class="ph b">Any</strong></td><td class="entry" headers="type-matching-and-ambiguity__entry__2">True</td><td class="entry" headers="type-matching-and-ambiguity__entry__3">True</td><td class="entry" headers="type-matching-and-ambiguity__entry__4">True</td><td class="entry" headers="type-matching-and-ambiguity__entry__5">True</td><td class="entry" headers="type-matching-and-ambiguity__entry__6">True</td><td class="entry" headers="type-matching-and-ambiguity__entry__7">True</td><td class="entry" headers="type-matching-and-ambiguity__entry__8">True</td><td class="entry" headers="type-matching-and-ambiguity__entry__9">True</td><td class="entry" headers="type-matching-and-ambiguity__entry__10">True</td></tr><tr class="row"><td class="entry" headers="type-matching-and-ambiguity__entry__1"><strong class="ph b">Concrete</strong></td><td class="entry" headers="type-matching-and-ambiguity__entry__2">Maybe</td><td class="entry" headers="type-matching-and-ambiguity__entry__3">True if B is or extends A</td><td class="entry" headers="type-matching-and-ambiguity__entry__4">Maybe if one of the poly types in B  matches A, False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__5">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__6">Maybe if A is a Dictionary or Array</td><td class="entry" headers="type-matching-and-ambiguity__entry__7">Maybe if A is a Dictionary, False  otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__8">True if enum value type matches A,  False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__9">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__10">False</td></tr><tr class="row"><td class="entry" headers="type-matching-and-ambiguity__entry__1"><strong class="ph b">Poly</strong></td><td class="entry" headers="type-matching-and-ambiguity__entry__2">Maybe</td><td class="entry" headers="type-matching-and-ambiguity__entry__3">True if B is a type within A, False  otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__4">True if all references exist in  both A and B. Maybe if there are some types in B not in A. False  if no matching types between B and A</td><td class="entry" headers="type-matching-and-ambiguity__entry__5">True if B is a type within A, False  otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__6">True if B is a type within A, False  otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__7">True if B is a type within A, False  otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__8">True if B is a type within A, False  otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__9">True if B is a type within A, False  otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__10">True if B is a type  within A, False otherwise</td></tr><tr class="row"><td class="entry" headers="type-matching-and-ambiguity__entry__1"><strong class="ph b">Interface</strong></td><td class="entry" headers="type-matching-and-ambiguity__entry__2">Maybe</td><td class="entry" headers="type-matching-and-ambiguity__entry__3">True if B is an object that  contains all members of interface A, False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__4">Maybe if the poly contains a  matching type</td><td class="entry" headers="type-matching-and-ambiguity__entry__5">True if B's interface contains all  members in A.</td><td class="entry" headers="type-matching-and-ambiguity__entry__6">True if classes Array or Dictionary  contains all members of interface, False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__7">True if class Dictionary contains  all members of interface, False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__8">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__9">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__10">False</td></tr><tr class="row"><td class="entry" headers="type-matching-and-ambiguity__entry__1"><strong class="ph b">Container</strong></td><td class="entry" headers="type-matching-and-ambiguity__entry__2">Maybe</td><td class="entry" headers="type-matching-and-ambiguity__entry__3">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__4">Maybe if one of the poly types in B  matches A, False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__5">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__6">True if container type and  key/value types match exactly, False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__7">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__8">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__9">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__10">False</td></tr><tr class="row"><td class="entry" headers="type-matching-and-ambiguity__entry__1"><strong class="ph b">Dictionary</strong></td><td class="entry" headers="type-matching-and-ambiguity__entry__2">Maybe</td><td class="entry" headers="type-matching-and-ambiguity__entry__3">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__4">Maybe if one of the poly types in B  matches A, False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__5">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__6">True if all keys match the key type  and values match the value type (if applicable), False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__7">True if all keys match the key type  and values match the value type (if applicable), False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__8">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__9">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__10">False</td></tr><tr class="row"><td class="entry" headers="type-matching-and-ambiguity__entry__1"><strong class="ph b">Enum</strong></td><td class="entry" headers="type-matching-and-ambiguity__entry__2">Maybe</td><td class="entry" headers="type-matching-and-ambiguity__entry__3">True if value type of enum value B matches concrete  type A</td><td class="entry" headers="type-matching-and-ambiguity__entry__4">Maybe if one of the poly types in B  matches A, False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__5">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__6">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__7">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__8">True if enum types match, false  otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__9">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__10">False</td></tr><tr class="row"><td class="entry" headers="type-matching-and-ambiguity__entry__1"><strong class="ph b">Callback</strong></td><td class="entry" headers="type-matching-and-ambiguity__entry__2">Maybe</td><td class="entry" headers="type-matching-and-ambiguity__entry__3">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__4">Maybe if one of the poly types in B  matches A, False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__5">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__6">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__7">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__8">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__9">True if function signatures match,  False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__10">False</td></tr><tr class="row"><td class="entry" headers="type-matching-and-ambiguity__entry__1"><strong class="ph b">Null</strong></td><td class="entry" headers="type-matching-and-ambiguity__entry__2">Maybe</td><td class="entry" headers="type-matching-and-ambiguity__entry__3">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__4">Maybe if one of the  poly types in B matches A, False otherwise</td><td class="entry" headers="type-matching-and-ambiguity__entry__5">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__6">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__7">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__8">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__9">False</td><td class="entry" headers="type-matching-and-ambiguity__entry__10">True</td></tr></tbody></table><p class="p">The type checker can run at three different levels based on your level of comfort with ambiguity.</p><ol class="ol"><li class="li"><p class="p"><strong class="ph b">Silent</strong> - Type match failures are marked as errors, but ambiguity is ignored</p></li><li class="li"><p class="p"><strong class="ph b">Warning</strong> - Type match failures are marked as errors, and ambiguity is marked as a warning</p></li><li class="li"><p class="p"><strong class="ph b">Error</strong> - Type match failures and ambiguity are marked as errors</p></li></ol><p class="p">Compiling a code base with ambiguity muted can find obvious type errors, while compiling code when erroring on ambiguity requires adding type scaffolding throughout the code. Monkey Types is designed to allow you to build towards aggressive typing if you choose to, while still adding value if you don't.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title18" id="typing-within-functions"><h2 class="title topictitle2" id="ariaid-title18">Typing Within Functions</h2><div class="body"><p class="p">Up until now we have been explicitly adding type scaffolding. While this makes for very readable and explicit code, it can add lots of boilerplate to implementation.</p><p class="p">Unlike with class instance variables, the Monkey Types system will infer the type of a local variable by tracking assignments.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+import OldMacDonaldsFarm;
+
+function handleDog(dog as Dog, here as Array, there as Array, everywhere as Array) {
+    here.add(dog.woofWoof());
+    there.add(dog.woofWoof());
+    everywhere.add(dog.woofWoof());
+}
+
+function handleCat(cat as Cat, here as Array, there as Array, everywhere as Array) {
+    here.add(cat.meowMeow());
+    there.add(cat.meowMeow());
+    everywhere.add(cat.meowMeow());
+}
+
+function eieio() {
+    var here = [], there = [], everywhere = [];
+    // Animal will be typed as a Dog based
+    // on the assignment. No need to declare
+    // it's type
+    var animal = new OldMacDonaldsFarm.Dog();
+    // Allowed, animal is currently assigned a Dog value
+    handleDog(animal, here, there, everywhere);
+    // Animal will now be typed as a Cat based on
+    // the assignment
+    animal = new OldMacDonaldsFarm.Cat();
+    // Allowed, animal is currently assigned a Cat value
+    handleCat(animal, here, there, everywhere);
+}</code></pre><p class="p">The inference will follow through branches. If the type is unclear based on which branch is taken, the type system will make a poly type of the options until the next assignment.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+function process(a as Boolean) as Boolean? {
+    var x = null;
+
+    if(a) {
+        x = true;
+    }
+    // At this point, x is now the poly type
+    // Boolean or Null
+    return x;
+}</code></pre><p class="p">When a value has a known type definition, the type checker will validate if method calls are allowed.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+class A {
+    function foo() {};
+    function bar() {};
+}
+
+function process() {
+    var a = new A();
+    a.foo(); // Allowed
+    a.bar(); // Allowed
+    a.fonz(); // Not allowed
+}</code></pre><p class="p">With container types, it is also possible to bind a type to the initialized value. This will put controls on what can be assigned to the container, but allow the local to have any value.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+function example() {
+    var a = {} as Dictionary&lt;String, String&gt;;
+    a["key"] = "value" // &lt;-- Assignments to a's value must obey type
+
+    a = null; // &lt;-- a is Any and can be assigned to null
+}</code></pre></div><article class="topic nested2" aria-labelledby="ariaid-title19" id="return-values-and-void"><h3 class="title topictitle3" id="ariaid-title19">Return Values and Void</h3><div class="body"><p class="p">By default functions return Any. If you bind a type to a function return value, the type checker will ensure that you return values of that type.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+function isTrue() as Boolean {
+    return "true"; // Not allowed
+}</code></pre><p class="p">If your function does not have a return value, you can use the <code class="ph codeph">Void</code> type. This will ensure the function doesn't return values and error if a function tries to assign the return value of the function.</p></div></article><article class="topic nested2" aria-labelledby="ariaid-title20" id="any-and-type-ambiguity"><h3 class="title topictitle3" id="ariaid-title20">Any and Type Ambiguity</h3><div class="body"><p class="p">Any function parameter without a bound type will be of type Any. The ambiguity of the parameter will percolate to any member it interacts with in an expression. If you provide all type definitions, type checking can protect them from many kinds of common errors. However, just a little ambiguity can prevent any level of checking. Take this example where a function has a result check but does not have a argument type for <code class="ph codeph">a</code>.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+function foo(a) as Integer? {
+    // a is of type Any, so Monkey Types can't identify what doThis() is being called
+    var x = a.doThis();
+    // x is of type Any, so we can't know what the result type is
+    var y = x + 3;
+    // What is Y? What is Why? What is Love?
+    return y;
+}</code></pre><p class="p">Because <code class="ph codeph">a</code> is Any, Monkey Types can't make any determination on any members of it, and by proxy Monkey Types can't make determination on the results of accessing those members.</p></div></article><article class="topic nested2" aria-labelledby="ariaid-title21" id="type-casting"><h3 class="title topictitle3" id="ariaid-title21">Type Casting</h3><div class="body"><p class="p">The <code class="ph codeph">as</code> keyword can also be used in an expression to type cast a value to another type. This can be useful if the type is not clear to the type system.</p><pre class="pre codeblock typescript"><code>import Toybox.WatchUi;
+
+function process(a as View) {
+    (a as MyView).specialMyViewMethod();
+}</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title22" id="runtime-type-checking"><h3 class="title topictitle3" id="ariaid-title22">Runtime Type Checking</h3><div class="body"><p class="p">One of the goals of Monkey Types was to not add any runtime overhead. This allows Monkey Types to work on all Connect IQ compatible products out of the gate, but it does add a cost when it comes to runtime type checking. Put simply: while at compile time you have access to an expressive type system, at runtime <code class="ph codeph">instanceof</code> and <code class="ph codeph">has</code> have the same limits as they had before. For cases involving poly types of concrete types this can work fine.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+function example(x as Number or Float) as Boolean {
+    switch(x) {
+        case instanceof Number:
+            doNumberImpl(x);
+            break;
+        case instanceof Float:
+            doFloatImpl(x);
+            break;
+    }
+}</code></pre><p class="p">Unfortunately not every scenario can be resolved this way. For example, lets say we had the following scenario:</p><pre class="pre codeblock typescript"><code>typedef Nimble as interface {
+    function isNimble() as Boolean;
+};
+
+typedef Quick as interface {
+    function isQuick() as Boolean;
+};
+
+function handleCandleStick(jack as Nimble or Quick) {
+    if(jack instanceof Nimble and jack instanceof Quick) {
+        if(jack.isNimble() and jack.isQuick() and jack has :jumpOverCandleStick) {
+            jack.jumpOverCandleStick();
+        }
+    }
+}</code></pre><p class="p">In the case of <code class="ph codeph">handleCandleStick</code> the interfaces <code class="ph codeph">Nimble</code> and <code class="ph codeph">Quick</code> are lexical types and only exist at compile time. This will cause a compiler error because <code class="ph codeph">instanceof</code> can only be used on concrete classes and not lexical types. In this case we can use <code class="ph codeph">has</code> to resolve this issue.</p><pre class="pre codeblock typescript"><code>function handleCandleStick(jack as Nimble or Quick) {
+    if(jack has :isNimble and jack has :isQuick and jack has :jumpOverCandleStick) {
+        if(jack.isNimble() and jack.isQuick()) {
+            jack.jumpOverCandleStick();
+        }
+    }
+}</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title23" id="if-splitting"><h3 class="title topictitle3" id="ariaid-title23">If-Splitting</h3><div class="body"><p class="p">In languages like Java, an object's type is assumed to be whatever it was declared to be. This can lead to some very redundant casting or generation of lots of unnecessary locals to communicate to the Compiler that something isn't what it was declared to be.</p><pre class="pre codeblock java"><code>public boolean foo(SomeInterfaceType x) {
+    if(x instanceof SomeConcreteType) {
+        // My life will just be easier if I make
+        // a new variable, even though it should
+        // be possible to assume that x is
+        // a SomeConcreteType
+        SomeConcreteType y = (SomeConcreteType)x;
+        // Do operations on y
+    }
+}</code></pre><p class="p">The Monkey C type system will take advantage of if-splitting, where the branch expression causes the types for variables to mutate within the true and false cases.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+public function foo(x as Number?) as Boolean {
+    if(x != null) {
+        // Within this block assume x is Number and not null
+    } else {
+        // Within this block assume x is null
+    }
+}</code></pre><p class="p">The ==, !=, and <code class="ph codeph">instanceof</code> operators will mutate the types based on the following rules</p><table class="table"><caption></caption><colgroup><col><col><col><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry align-left" id="if-splitting__entry__1">type</th><th class="entry align-left" id="if-splitting__entry__2">==</th><th class="entry align-left" id="if-splitting__entry__3">!=</th><th class="entry align-left" id="if-splitting__entry__4">instanceof</th><th class="entry align-left" id="if-splitting__entry__5">!instanceof</th></tr></thead><tbody class="tbody"><tr class="row"><td class="entry align-left" headers="if-splitting__entry__1">Any</td><td class="entry align-left" headers="if-splitting__entry__2">Ignore</td><td class="entry align-left" headers="if-splitting__entry__3">Ignore</td><td class="entry align-left" headers="if-splitting__entry__4">Mutate type to <code class="ph codeph">instanceof</code> type</td><td class="entry align-left" headers="if-splitting__entry__5">Ignore</td></tr><tr class="row"><td class="entry align-left" headers="if-splitting__entry__1">Concrete</td><td class="entry align-left" headers="if-splitting__entry__2">Ignore</td><td class="entry align-left" headers="if-splitting__entry__3">Ignore</td><td class="entry align-left" headers="if-splitting__entry__4">Mutate type to <code class="ph codeph">instanceof</code> type</td><td class="entry align-left" headers="if-splitting__entry__5">Ignore</td></tr><tr class="row"><td class="entry align-left" headers="if-splitting__entry__1">Poly</td><td class="entry align-left" headers="if-splitting__entry__2">If == is <code class="ph codeph">null</code>, mutate to Null type</td><td class="entry align-left" headers="if-splitting__entry__3">if != is <code class="ph codeph">null</code>, mutate to poly type minus <code class="ph codeph">null</code>.</td><td class="entry align-left" headers="if-splitting__entry__4">Mutate type to <code class="ph codeph">instanceof</code> type</td><td class="entry align-left" headers="if-splitting__entry__5">Mutate type to poly type minus type from <code class="ph codeph">instanceof</code></td></tr><tr class="row"><td class="entry align-left" headers="if-splitting__entry__1">Interface</td><td class="entry align-left" headers="if-splitting__entry__2">Ignore</td><td class="entry align-left" headers="if-splitting__entry__3">Ignore</td><td class="entry align-left" headers="if-splitting__entry__4">Mutate type to <code class="ph codeph">instanceof</code> type</td><td class="entry align-left" headers="if-splitting__entry__5">Ignore</td></tr><tr class="row"><td class="entry align-left" headers="if-splitting__entry__1">Container</td><td class="entry align-left" headers="if-splitting__entry__2">Ignore</td><td class="entry align-left" headers="if-splitting__entry__3">Ignore</td><td class="entry align-left" headers="if-splitting__entry__4">Ignore</td><td class="entry align-left" headers="if-splitting__entry__5">Ignore</td></tr><tr class="row"><td class="entry align-left" headers="if-splitting__entry__1">Dictionary</td><td class="entry align-left" headers="if-splitting__entry__2">Ignore</td><td class="entry align-left" headers="if-splitting__entry__3">Ignore</td><td class="entry align-left" headers="if-splitting__entry__4">Ignore</td><td class="entry align-left" headers="if-splitting__entry__5">Ignore</td></tr><tr class="row"><td class="entry align-left" headers="if-splitting__entry__1">Enum</td><td class="entry align-left" headers="if-splitting__entry__2">Mutate to enum value type</td><td class="entry align-left" headers="if-splitting__entry__3">Ignore</td><td class="entry align-left" headers="if-splitting__entry__4">Ignore</td><td class="entry align-left" headers="if-splitting__entry__5">Ignore</td></tr><tr class="row"><td class="entry align-left" headers="if-splitting__entry__1">Callback</td><td class="entry align-left" headers="if-splitting__entry__2">Ignore</td><td class="entry align-left" headers="if-splitting__entry__3">Ignore</td><td class="entry align-left" headers="if-splitting__entry__4">Ignore</td><td class="entry align-left" headers="if-splitting__entry__5">Ignore</td></tr><tr class="row"><td class="entry align-left" headers="if-splitting__entry__1">Null</td><td class="entry align-left" headers="if-splitting__entry__2">Ignore</td><td class="entry align-left" headers="if-splitting__entry__3">Ignore</td><td class="entry align-left" headers="if-splitting__entry__4">Ignore</td><td class="entry align-left" headers="if-splitting__entry__5">Ignore</td></tr></tbody></table><p class="p">Expressions can also be modified using the &amp;&amp; and || operators. With the &amp;&amp; operator, the mutation will carry through the expression, being further modified as the expression continues.</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+typedef Addable as Number or Float or Long or Double or String;
+
+public function foo(x as Addable?) {
+    // In the first clause, x is modified to remove the null
+    // from the poly type. In the second clause, the new polytype
+    // is modified to be a String concrete type.
+    if(x != null &amp;&amp;
+       x instanceof String) {
+        // Within this block assume x is a string
+    }
+}</code></pre><p class="p">With || operators, a new poly type is created with the results of both operations</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+typedef Addable as Number or Float or Long or Double or String;
+
+public function foo(x as Addable?) {
+    if(x instanceof Number ||
+       x instanceof Float) {
+        // Within this block assume x is a Number or Float
+    }
+}</code></pre><p class="p">When if-splitting on member variables, all type mutations will be removed if a function is invoked.</p></div></article></article><article class="topic nested1" aria-labelledby="ariaid-title24" id="typing-modules-and-classes"><h2 class="title topictitle2" id="ariaid-title24">Typing Modules and Classes</h2><div class="body"><p class="p">Class member variables are bound to type Any by default. Unlike local variables, member variables are not type inferenced based on assignment. Adding type scaffolding to your member variables and names to your enumerations will allow for stronger type checking. Constants are typed based on assignment.</p><pre class="pre codeblock typescript"><code>class Example {
+    // Member variable
+    private var _x as Number = 0;
+
+    // Enum values can be explicitly assigned, or by default will
+    // be numerically incremented values.
+    enum NamedEnum {
+        NAMED_ENUM;
+    }
+
+    // Constants assume their type by assignment
+    private const _constant = "Constant";
+}</code></pre><p class="p">If you add type scaffolding, you must either initialize the variable or allow it to be <code class="ph codeph">null</code>. The below example will cause a compiler error:</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+import Toybox.System;
+
+// Don't shoot
+class Messenger {
+    private var _message as String;
+
+    public function shareTheMessage() as Void {
+        System.println(_message);
+    }
+}</code></pre><p class="p">The reason for the error is that <code class="ph codeph">_message</code> is declared as a String, but left alone it's initialized as <code class="ph codeph">null</code>. Module variables either have to be initialized at declaration or allowed to be <code class="ph codeph">null</code>, while object members can be initialized in the <code class="ph codeph">initialize</code> function, as well. The following would address the error:</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+import Toybox.System;
+
+// Don't shoot
+class Messenger {
+    private var _message as String;
+
+    public function initialize() {
+       // Initialize message
+        _message = "";
+    }
+
+    public function shareTheMessage() {
+        System.println(_message);
+    }
+}</code></pre></div><article class="topic nested2" aria-labelledby="ariaid-title25" id="types-and-inheritance"><h3 class="title topictitle3" id="ariaid-title25">Types and Inheritance</h3><div class="body"><p class="p">When extending classes, the type system will use the following rules:</p><ol class="ol"><li class="li"><p class="p">If you extend a function from a parent with the same number of arguments but do not add type decoration, the types for the arguments and return value will be transferred verbatim from the parent implementation</p></li><li class="li"><p class="p">If you extend a function from a parent with the same number of arguments and add type decoration, you must match the number of arguments and type decoration exactly or the compiler will error</p></li></ol><p class="p">This allows for existing Monkey C code that extends <code class="ph codeph">Toybox</code> types to take advantage of type checking without having to add any type decoration.</p></div></article></article><article class="topic nested1" aria-labelledby="ariaid-title26" id="application-scope-type-checking"><h2 class="title topictitle2" id="ariaid-title26">Application Scope Type Checking</h2><div class="body"><p class="p">The type checker attempts to validate that any member fetched from a module or class is available in all of the same application scopes as the caller. If the developer is confident their code is application scope safe and the type checker still complains, this check can be disabled for background or glance scopes using the annotations <code class="ph codeph">:typecheck(disableBackgroundCheck)</code> or <code class="ph codeph">:typecheck(disableGlanceCheck)</code>, respectively. To disable checks for both background and glance scopes, use the annotation <code class="ph codeph">:typecheck([disableBackgroundCheck, disableGlanceCheck])</code>.</p></div></article><div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>   It is understood that this  is controversial. First, <code class="ph codeph">as</code> has a whole new meaning now in the grammar, and using it for module renaming is confusing. Also, renaming modules in Monkey C has made it really difficult to write good shareable example code because everyone renames every module to their own preference. Yes, <code class="ph codeph">Gregorian</code> is a big word and is annoying to type, but thats what we have auto-complete for.</div><div class="fn"><a name="fntarg_2" href="#fnsrc_2"><sup>2</sup></a>  The <code class="ph codeph">method</code> method  that returns <code class="ph codeph">Method</code> should not be confused with "The Method Method", my upcoming self help book on evaluating self help books.</div><div class="fn"><a name="fntarg_3" href="#fnsrc_3"><sup>3</sup></a>  I just met you | and this is crazy | but I'm an Any | so type match? Maybe...</div></article></main><footer role="contentinfo"><div>
+<p class="disclaimer">
+Connect IQ System None API 8.2.3 Documentation. Copyright 2025 Garmin International. All Rights Reserved.
+</p>
+</div></footer></body></html>

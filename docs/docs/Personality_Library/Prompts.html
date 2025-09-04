@@ -1,0 +1,71 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="DC.type" content="topic"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="prompts"><link rel="stylesheet" type="text/css" href="../../branding/commonltr.css"><link rel="stylesheet" type="text/css" href="../../branding/style.css"><title>Prompts</title></head><body id="prompts"><header role="banner"><div>
+<link href="../../resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
+<script src="../../resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="../../resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+</div></header><nav role="toc"><ul><li><a href="../../docs/Readme/Intro.html">Introduction</a></li><li><a href="../../docs/Connect_IQ_Basics/Welcome_to_the_Jungle.html">Welcome to Connect IQ</a></li><li><a href="../../docs/Monkey_C/Basic_Syntax.html">Hello Monkey C!</a></li><li><a href="../../docs/Core_Topics/Overview.html">Core Topics</a></li><li><a href="../../docs/User_Experience_Guidelines/Overview.html">User Experience Guidelines</a></li><li><a href="../../docs/Personality_Library/Personality_UI.html">Personality UI</a><ul><li><a href="../../docs/Personality_Library/Colors.html">Color</a></li><li><a href="../../docs/Personality_Library/Iconography.html">Iconography</a></li><li><a href="../../docs/Personality_Library/Typography.html">Typography</a></li><li><a href="../../docs/Personality_Library/Input_Hints.html">Input Hints</a></li><li class="active"><a href="../../docs/Personality_Library/Prompts.html">Prompts</a></li><li><a href="../../docs/Personality_Library/Confirmations.html">Confirmations</a></li><li><a href="../../docs/Personality_Library/Toasts.html">Toasts</a></li><li><a href="../../docs/Personality_Library/Action_Views.html">Action Views</a></li><li><a href="../../docs/Personality_Library/Page_Loops.html">Page Loops</a></li><li><a href="../../docs/Personality_Library/Progress_Bars.html">Progress Indicators</a></li></ul></li><li><a href="../../docs/Connect_IQ_FAQ/Overview.html">Connect IQ FAQ</a></li><li><a href="../../docs/Reference_Guides/Overview.html">Reference Guides</a></li><li><a href="../../docs/App_Review_Guidelines/Overview.html">Garmin Connect IQ App Review Guidelines</a></li><li><a href="../../docs/Monetization/Overview.html">Connect IQ Monetization System</a></li><li><a href="../../docs/Device_Reference/Overview.html">Device Reference</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Prompts</h1><div class="body"><p class="p">A prompt is a page of textual information for the user. A prompt can be a valuable tool that provides important information. It can contain helpful tips or messages explaining why the user is unable to perform a specific action.</p><img class="image" id="prompts__GUID-0C74292F-9C44-43A4-9EA1-796EFC8071B0__IMAGE_B97FD644BE984070940F618086A40DBD" src="../../resources/personality-library/personality_ui_prompts_no_titlehigh.jpg" alt="Front views of devices displaying a prompt with no title"><br><p class="p">Prompts are often pages without titles that automatically disappear after a short time.</p></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="example"><h2 class="title topictitle2" id="ariaid-title2">Example</h2><div class="body"><pre class="pre codeblock xml"><code>&lt;!-- layout.xml --&gt;
+
+    &lt;!-- Informational Prompt --&gt;
+    &lt;layout id="InfoPromptDark" &gt;
+        &lt;!-- Dark Background --&gt;
+        &lt;drawable id="DarkBackground" /&gt;
+
+        &lt;!-- Prompt Body --&gt;
+        &lt;text-area id="mainLabel" text="@Strings.informationPrompt" personality="
+            prompt_color_dark__body
+            prompt_size__body_no_title
+            prompt_loc__body_no_title
+            prompt_font__body_no_title
+        " /&gt;
+    &lt;/layout&gt;</code></pre></div></article><article class="topic nested1" aria-labelledby="ariaid-title3" id="prompts-with-a-textual-title"><h2 class="title topictitle2" id="ariaid-title3">Prompts with a Textual Title</h2><div class="body"><img class="image" id="prompts-with-a-textual-title__GUID-0C74292F-9C44-43A4-9EA1-796EFC8071B0__IMAGE_9E476906A6E74D3EA42B3A8F6FF49B88" src="../../resources/personality-library/personality_ui_prompts_with_titlehigh.jpg" alt="Front views of devices displaying a prompt with a title"><br><p class="p">A textual title for the prompt provides additional context.</p></div><article class="topic nested2" aria-labelledby="ariaid-title4" id="example-1"><h3 class="title topictitle3" id="ariaid-title4">Example</h3><div class="body"><pre class="pre codeblock xml"><code>&lt;!-- layout.xml --&gt;
+
+    &lt;!-- Informational Prompt --&gt;
+    &lt;layout id="TitlePromptDark" &gt;
+        &lt;!-- Dark Background --&gt;
+        &lt;drawable id="DarkBackground" /&gt;
+
+        &lt;!-- Prompt Title --&gt;
+        &lt;text-area id="title" text="@Strings.mainTitle" personality="
+            prompt_color_dark__title
+            prompt_size__title
+            prompt_loc__title
+            prompt_font__title
+        " /&gt;
+        &lt;!-- Prompt Body --&gt;
+        &lt;text-area id="mainLabel" text="@Strings.informationPrompt" personality="
+            prompt_color_dark__body
+            prompt_size__body_with_title
+            prompt_loc__body_with_title
+            prompt_font__body_with_title
+        " /&gt;
+    &lt;/layout&gt;</code></pre></div></article></article><article class="topic nested1" aria-labelledby="ariaid-title5" id="prompts-with-an-icon-title"><h2 class="title topictitle2" id="ariaid-title5">Prompts with an Icon Title</h2><div class="body"><img class="image" id="prompts-with-an-icon-title__GUID-0C74292F-9C44-43A4-9EA1-796EFC8071B0__IMAGE_10ECF16DDBBD480183A43DCFE01EC987" src="../../resources/personality-library/personality_ui_prompts_with_iconhigh.jpg" alt="Front views of devices displaying a prompt with an icon"><br><p class="p">You can use an icon in place of a textual title to provide context more quickly, or with greater emphasis.</p></div><article class="topic nested2" aria-labelledby="ariaid-title6" id="example-2"><h3 class="title topictitle3" id="ariaid-title6">Example</h3><div class="body"><p class="p">The following example places a warning icon above the prompt body text.</p><pre class="pre codeblock xml"><code>&lt;!-- layout.xml --&gt;
+
+        &lt;!-- About page prompt --&gt;
+    &lt;layout id="AboutPageLight"&gt;
+        &lt;!-- Light Background --&gt;
+        &lt;drawable id="LightBackground" /&gt;
+
+        &lt;bitmap id="aboutIconLight" personality="
+            system_icon_light__about
+            prompt_loc__title_icon
+            prompt_size__title_icon
+        " /&gt;
+
+        &lt;text-area text="@Strings.aboutPrompt" personality="
+            prompt_color_light__body
+            prompt_size__body_with_title
+            prompt_loc__body_with_title
+            prompt_font__body_with_title
+        " /&gt;
+
+    &lt;/layout&gt;</code></pre></div></article></article></article></main><footer role="contentinfo"><div>
+<p class="disclaimer">
+Connect IQ System None API 8.2.3 Documentation. Copyright 2025 Garmin International. All Rights Reserved.
+</p>
+</div></footer></body></html>

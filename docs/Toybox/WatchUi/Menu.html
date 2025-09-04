@@ -1,0 +1,373 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.WatchUi.Menu </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.WatchUi.Menu";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.WatchUi.Menu</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Menu.html">Toybox.WatchUi.Menu</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A representation of an on-screen menu.
+</p><p>
+A Menu is a special View that presents the user with a list of options.
+After an option is selected, the registered
+<a href='../../Toybox/WatchUi/MenuInputDelegate.html#onMenuItem-instance_function'>onMenuItem()</a> method will
+be called. While a Menu can be generated programmatically, they should
+generally be created as a resource.
+</p><p>
+A Menu is pushed using <a href='../../Toybox/WatchUi.html#pushView-instance_function'>pushView()</a>, which
+provides a <a href='../../Toybox/WatchUi/MenuInputDelegate.html'>MenuInputDelegate</a> as the
+input delegate.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/MenuInputDelegate.html">Toybox.WatchUi.MenuInputDelegate</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi.html#pushView-instance_function">WatchUi.pushView()</a>
+  </div>
+  </li>
+  </ul>
+
+  <!-- Note -->
+  <div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+The look and feel of a menu is device-specific.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Build a simple menu programmatically</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.WatchUi;
+
+class MyBehaviorDelegate extends WatchUi.BehaviorDelegate {
+    function initialize() {
+        BehaviorDelegate.initialize();
+    }
+
+    function onMenu() {
+        var menu = new WatchUi.Menu();
+        var delegate;
+        menu.setTitle("My Menu");
+        menu.addItem("Item One", :one);
+        menu.addItem("Item Two", :two);
+        delegate = new MyMenuDelegate(); // a WatchUi.MenuInputDelegate
+        WatchUi.pushView(menu, delegate, WatchUi.SLIDE_IMMEDIATE);
+        return true;
+    }
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch Face</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+
+
+</div>
+
+
+
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class="constTable">
+    <tr>
+        <th class="constTableHeader">Type</th>
+        <th class="constTableHeader">Name</th>
+        <th class="constTableHeader">Value</th>
+        <th class="constTableHeader">Since</th>
+        <th class="constTableHeader">Description</th>
+    </tr>
+    <tr class="enumTableOdd" id="MAX_SIZE-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">MAX_SIZE</td>
+    <td class="constTableCell">16</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+The maximum number of allowed entries in a Menu.
+</p>
+
+</td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#addItem-instance_function" title="addItem (Instance Function)"><strong>addItem</strong></a>(label as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, identifier as <span class="type"><a href="../../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add an entry to a Menu.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setTitle-instance_function" title="setTitle (Instance Function)"><strong>setTitle</strong></a>(title as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set a Menu title.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="addItem-instance_function">
+    <strong>addItem(label as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, identifier as <span class="type"><a href="../../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add an entry to a Menu.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">label</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The item text as a String or string ResourceId
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">identifier</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Symbol representing the Menu item value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setTitle-instance_function">
+    <strong>setTitle(title as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set a Menu title.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">title</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The title text or a string ResourceId
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

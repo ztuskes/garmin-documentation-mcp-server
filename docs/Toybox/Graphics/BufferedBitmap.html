@@ -1,0 +1,715 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Graphics.BufferedBitmap </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Graphics.BufferedBitmap";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Graphics.BufferedBitmap</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Graphics/BufferedBitmap.html">Toybox.Graphics.BufferedBitmap</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+This class represents an off-screen bitmap. It provides methods to
+modify the bitmap palette, and get a drawable context.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="https://developer.garmin.com/connect-iq/core-topics/resources/">Core Topics - Resources</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Sets up an off-screen buffer using resources.</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Graphics;
+
+var screenShape;
+var offscreenBuffer;
+var dateBuffer;
+
+    if (Toybox.Graphics has :createBufferedBitmap) {        // check to see if device has BufferedBitmap enabled
+        offscreenBuffer = Graphics.createBufferedBitmap({   // create an off-screen buffer with a palette of four colors
+            :width =&gt; dc.getWidth(),
+            :height =&gt; dc.getHeight(),
+            :palette =&gt; [
+                Graphics.COLOR_DK_GRAY,
+                Graphics.COLOR_LT_GRAY,
+                Graphics.COLOR_BLACK,
+                Graphics.COLOR_WHITE
+            ]
+        });
+
+        stringBuffer = Graphics.createBufferedBitmap({      // Buffer will have full color support as no palette is defined
+                :width =&gt; dc.getWidth(),
+                :height =&gt; Graphics.getFontHeight(Graphics.FONT_MEDIUM)
+        });
+    } else {
+        offscreenBuffer = null;                             // handle devices without BufferedBitmap
+        stringBuffer = null;
+    }</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getDc-instance_function" title="getDc (Instance Function)"><strong>getDc</strong></a>()    as <span class="type"><a href="../../Toybox/Graphics/Dc.html">Graphics.Dc</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the Dc to draw on the buffered bitmap.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getHeight-instance_function" title="getHeight (Instance Function)"><strong>getHeight</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the height of a bitmap.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getPalette-instance_function" title="getPalette (Instance Function)"><strong>getPalette</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>&gt;
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+<code>null</code> if this surface uses the system palette.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getWidth-instance_function" title="getWidth (Instance Function)"><strong>getWidth</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the width of a bitmap.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public deprecated">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(options as { :width as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :height as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :palette as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>&gt;, :colorDepth as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :bitmapResource as <span class="type"><a href="../../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span>, :alphaBlending as <span class="type"><a href="../../Toybox/Graphics.html#AlphaBlending-module">Graphics.AlphaBlending</a></span> })
+      </span>
+
+  <span class="deprecated note title">deprecated</span>
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#isCached-instance_function" title="isCached (Instance Function)"><strong>isCached</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Check if the memory for the bitmap is still loaded in the memory User can invoke this method to check if the underlying resource is still available in the memory since last used if <code>true</code>, the resource such as <a href='../../Toybox/Graphics/BufferedBitmap.html'>BufferedBitmap</a> has been cached and can be used directly without re-drawing.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setPalette-instance_function" title="setPalette (Instance Function)"><strong>setPalette</strong></a>(palette as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>&gt;)    as <b>Void</b>
+      </span>
+
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getDc-instance_function">
+    <strong>getDc()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Graphics/Dc.html">Graphics.Dc</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the Dc to draw on the buffered bitmap.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Graphics/Dc.html">Graphics.Dc</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The draw context
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getHeight-instance_function">
+    <strong>getHeight()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the height of a bitmap.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Height of the bitmap in pixels
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getPalette-instance_function">
+    <strong>getPalette()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>&gt;</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+<code>null</code> if this surface uses the system palette
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The current palette for this bitmap.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getWidth-instance_function">
+    <strong>getWidth()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the width of a bitmap.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Width of the bitmap in pixels
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(options as { :width as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :height as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :palette as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>&gt;, :colorDepth as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :bitmapResource as <span class="type"><a href="../../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span>, :alphaBlending as <span class="type"><a href="../../Toybox/Graphics.html#AlphaBlending-module">Graphics.AlphaBlending</a></span> })</strong>
+  </h3>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+Use <a href='../../Toybox/Graphics.html#createBufferedBitmap-instance_function'>Graphics.createBufferedBitmap()</a> after ConnectIQ version 4.0.0.
+</p>
+
+
+  </div>
+</div>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Dictionary of options. Must contain width and height, with optional palette, or a <a href='../../Toybox/WatchUi/BitmapResource.html'>BitmapResource</a>. This resource is not allowed to have an alpha channel.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:width</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The width of the surface in pixels
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:height</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height of the surface in pixels
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:palette</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The colors used in this surface. Using less will reduce the bitmap size. The bitmap will use the system default if not provided. The maximum palette size allowed is 256 colors. If a palette is provided, the number of colors must also be <= to the number of system colors.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:colorDepth</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Color depth in terms of bits/pixel, when missing, default to system value.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:bitmapResource</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/WatchUi/BitmapResource.html'>BitmapResource</a> to initialize
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:alphaBlending</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#AlphaBlending-module">Graphics.AlphaBlending</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/Graphics.html#AlphaBlending-module'>AlphaBlending</a> enum to specify the level of alpha blending support for this buffered bitmap object
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/InvalidPaletteException.html">Graphics.InvalidPaletteException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the palette size exceeds the number of system colors.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/InvalidPaletteException.html">Graphics.InvalidPaletteException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the palette size exceeds 256 colors.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/InvalidBitmapResourceException.html">Graphics.InvalidBitmapResourceException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the <a href='../../Toybox/WatchUi/BitmapResource.html'>BitmapResource</a> provided has an alpha channel.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/OutOfGraphicsMemoryException.html">Graphics.OutOfGraphicsMemoryException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if there isn't enough free memory available to load the resource.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="isCached-instance_function">
+    <strong>isCached()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Check if the memory for the bitmap is still loaded in the memory
+User can invoke this method to check if the underlying resource is still available in the memory since last used
+if <code>true</code>, the resource such as <a href='../../Toybox/Graphics/BufferedBitmap.html'>BufferedBitmap</a> has been cached and can be used directly without re-drawing.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if the object's memory has not been recycled since last usage.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setPalette-instance_function">
+    <strong>setPalette(palette as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>&gt;)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">palette</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A palette for this bitmap. The number of colors must match the current palette. Each color in the image will be replaced with the colors specified in the new palette.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/InvalidPaletteException.html">Graphics.InvalidPaletteException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the palette size does not match the current palette.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

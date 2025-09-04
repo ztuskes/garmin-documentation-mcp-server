@@ -1,0 +1,963 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.UserProfile.Profile </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.UserProfile.Profile";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.UserProfile.Profile</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/UserProfile/Profile.html">Toybox.UserProfile.Profile</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The profile object contains user information.
+</p><p>
+Values may be <code>null</code> if the value has not been configured or cannot be
+calculated.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#activityClass-var" title="activityClass (Var)"><strong>activityClass</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Activity level as configured by the user.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#averageRestingHeartRate-var" title="averageRestingHeartRate (Var)"><strong>averageRestingHeartRate</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Average resting heart rate This value is calculated based on historical data.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#birthYear-var" title="birthYear (Var)"><strong>birthYear</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Birth year as configured by the user.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#gender-var" title="gender (Var)"><strong>gender</strong></a>  as <span class="type"><a href="../../Toybox/UserProfile.html#Gender-module">UserProfile.Gender</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Gender as configured by the user.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#height-var" title="height (Var)"><strong>height</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Height as configured by the user.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#restingHeartRate-var" title="restingHeartRate (Var)"><strong>restingHeartRate</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Resting heart rate as configured by the user.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#runningStepLength-var" title="runningStepLength (Var)"><strong>runningStepLength</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Running step length as configured by the user.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#sleepTime-var" title="sleepTime (Var)"><strong>sleepTime</strong></a>  as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Typical sleep time as configured by the user.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#vo2maxCycling-var" title="vo2maxCycling (Var)"><strong>vo2maxCycling</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Cycling VO2 Max This value is calculated based on historical data.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#vo2maxRunning-var" title="vo2maxRunning (Var)"><strong>vo2maxRunning</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Running VO2 Max This value is calculated based on historical data.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#wakeTime-var" title="wakeTime (Var)"><strong>wakeTime</strong></a>  as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Typical wake time as configured by the user.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#walkingStepLength-var" title="walkingStepLength (Var)"><strong>walkingStepLength</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Walking step length as configured by the user.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#weight-var" title="weight (Var)"><strong>weight</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Weight as configured by the user.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="activityClass-var" class="details">
+<h3 class="signature" id="activityClass-var">
+
+var activityClass  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Activity level as configured by the user
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The activity level as a value from 0-100.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="averageRestingHeartRate-var" class="details">
+<h3 class="signature" id="averageRestingHeartRate-var">
+
+var averageRestingHeartRate  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Average resting heart rate
+</p><p>
+This value is calculated based on historical data. It may be <code>null</code> if there is insufficient
+data to produce a result.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The seven day average resting heart rate. Units are beats/min (bpm).
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="birthYear-var" class="details">
+<h3 class="signature" id="birthYear-var">
+
+var birthYear  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Birth year as configured by the user
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The birth year as a four digit Number.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="gender-var" class="details">
+<h3 class="signature" id="gender-var">
+
+var gender  as <span class="type"><a href="../../Toybox/UserProfile.html#Gender-module">UserProfile.Gender</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Gender as configured by the user
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/UserProfile.html#Gender-module">UserProfile.Gender</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="height-var" class="details">
+<h3 class="signature" id="height-var">
+
+var height  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Height as configured by the user
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Height of the user in centimeters (cm)
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="restingHeartRate-var" class="details">
+<h3 class="signature" id="restingHeartRate-var">
+
+var restingHeartRate  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Resting heart rate as configured by the user
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The user's configured resting heart rate in beats per minute (bpm)
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="runningStepLength-var" class="details">
+<h3 class="signature" id="runningStepLength-var">
+
+var runningStepLength  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Running step length as configured by the user
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Running step length in millimeters (mm)
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="sleepTime-var" class="details">
+<h3 class="signature" id="sleepTime-var">
+
+var sleepTime  as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Typical sleep time as configured by the user
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A <a href='../../Toybox/Time/Duration.html'>Duration</a> since local midnight
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="vo2maxCycling-var" class="details">
+<h3 class="signature" id="vo2maxCycling-var">
+
+var vo2maxCycling  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Cycling VO2 Max
+</p><p>
+This value is calculated based on historical data. It may be <code>null</code> if there is insufficient
+data to produce a result.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The VO2 Max value for cycling activity. Units are mL/kg/min.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="vo2maxRunning-var" class="details">
+<h3 class="signature" id="vo2maxRunning-var">
+
+var vo2maxRunning  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Running VO2 Max
+</p><p>
+This value is calculated based on historical data. It may be <code>null</code> if there is insufficient
+data to produce a result.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The VO2 Max value for running activity. Units are mL/kg/min.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="wakeTime-var" class="details">
+<h3 class="signature" id="wakeTime-var">
+
+var wakeTime  as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Typical wake time as configured by the user
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A <a href='../../Toybox/Time/Duration.html'>Duration</a> since local midnight
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="walkingStepLength-var" class="details">
+<h3 class="signature" id="walkingStepLength-var">
+
+var walkingStepLength  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Walking step length as configured by the user
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Walking step length in millimeters (mm)
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="weight-var" class="details">
+<h3 class="signature" id="weight-var">
+
+var weight  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Weight as configured by the user
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Weight in grams (g)
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt>
+ </div>
+
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

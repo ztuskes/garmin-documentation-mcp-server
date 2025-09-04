@@ -1,0 +1,678 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.WatchUi.Text </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.WatchUi.Text";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.WatchUi.Text</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.WatchUi.Drawable</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Drawable.html">Toybox.WatchUi.Drawable</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Text.html">Toybox.WatchUi.Text</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A representation of a text resource.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Drawable.html">Toybox.WatchUi.Drawable</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Graphics;
+using Toybox.WatchUi;
+
+class MyTextView extends WatchUi.View {
+
+    hidden var myText;
+
+    function initialize() {
+        View.initialize();
+    }
+
+    function onShow() {
+        myText = new WatchUi.Text({
+            :text=&gt;"Hello World!",
+            :color=&gt;Graphics.COLOR_WHITE,
+            :font=&gt;Graphics.FONT_LARGE,
+            :locX =&gt;WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY=&gt;WatchUi.LAYOUT_VALIGN_CENTER
+        });
+    }
+
+    function onUpdate(dc) {
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+        dc.clear();
+        myText.draw(dc);
+    }
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#draw-instance_function" title="draw (Instance Function)"><strong>draw</strong></a>(dc as <span class="type"><a href="../../Toybox/Graphics/Dc.html">Graphics.Dc</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw Text to the device context (<a href='../../Toybox/Graphics/Dc.html'>Dc</a>).
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(options as { :text as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :color as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>, :backgroundColor as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>, :font as <span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>, :justification as <span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span> or <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :identifier as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>, :locX as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :locY as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :visible as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> })
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setBackgroundColor-instance_function" title="setBackgroundColor (Instance Function)"><strong>setBackgroundColor</strong></a>(color as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the background color of a Text object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setColor-instance_function" title="setColor (Instance Function)"><strong>setColor</strong></a>(color as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the color of a Text object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setFont-instance_function" title="setFont (Instance Function)"><strong>setFont</strong></a>(font as <span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the font face of a Text object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setJustification-instance_function" title="setJustification (Instance Function)"><strong>setJustification</strong></a>(justification as <span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span> or <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the justification of a Text object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setText-instance_function" title="setText (Instance Function)"><strong>setText</strong></a>(text as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the text string of a Text object.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="draw-instance_function">
+    <strong>draw(dc as <span class="type"><a href="../../Toybox/Graphics/Dc.html">Graphics.Dc</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw Text to the device context (<a href='../../Toybox/Graphics/Dc.html'>Dc</a>).
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">dc</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/Dc.html">Graphics.Dc</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The device context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(options as { :text as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :color as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>, :backgroundColor as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>, :font as <span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>, :justification as <span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span> or <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :identifier as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>, :locX as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :locY as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :visible as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> })</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary containing the options for the Text object
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:text</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The text string or ResourceId of a string resource
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:color</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/Graphics.html#COLOR_WHITE-const'>Graphics.COLOR_*</a> value representing the desired text color, defaults to COLOR_WHITE
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:backgroundColor</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/Graphics.html#COLOR_WHITE-const'>Graphics.COLOR_*</a> value representing the desired background color, defaults to COLOR_TRANSPARENT
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A value representing the desired font face, defaults to FONT_MEDIUM
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:justification</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/Graphics.html#TEXT_JUSTIFY_RIGHT-const'>Graphics.TEXT_JUSTIFY_*</a> value representing the desired justification, defaults to TEXT_JUSTIFY_LEFT
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Drawable.html#initialize-instance_function">Drawable.initialize()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setBackgroundColor-instance_function">
+    <strong>setBackgroundColor(color as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the background color of a Text object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">color</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/Graphics.html#COLOR_WHITE-const'>Graphics.COLOR_*</a> value representing the desired background color
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setColor-instance_function">
+    <strong>setColor(color as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the color of a Text object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">color</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/Graphics.html#COLOR_WHITE-const'>Graphics.COLOR_*</a> value representing the desired text color
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setFont-instance_function">
+    <strong>setFont(font as <span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the font face of a Text object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#FontDefinition-module">Graphics.FontDefinition</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/Graphics.html#FONT_XTINY-const'>Graphics.FONT_*</a> value representing the desired font face or a resource object from <a href='../../Toybox/WatchUi.html#loadResource-instance_function'>WatchUi.loadResource()</a>
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi.html#loadResource-instance_function">WatchUi.loadResource()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setJustification-instance_function">
+    <strong>setJustification(justification as <span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span> or <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the justification of a Text object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">justification</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/Graphics.html#TEXT_JUSTIFY_RIGHT-const'>Graphics.TEXT_JUSTIFY_*</a> value representing the desired justification
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setText-instance_function">
+    <strong>setText(text as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the text string of a Text object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">text</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The text String or a string ResourceId
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:15 PM
+</p>
+
+</body>

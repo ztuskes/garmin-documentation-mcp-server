@@ -1,0 +1,11 @@
+<svg width="166" height="166" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="instincte40mm-4fields-4-mask">
+      <rect width="100%" height="100%" fill="black"/>
+<path d="M 37.349999999999994, 0 L 128.65, 0 L 166, 37.349999999999994 L 166, 128.65 L 128.65, 166 L 37.349999999999994, 166 L 0, 128.65 L 0, 37.349999999999994 L 37.349999999999994, 0 " style="fill:white"/><circle cx="139.0" cy="26.0" r="26.0" style="fill:black"/>    </mask>
+  </defs>
+  <rect x="0" y="0" width="103" height="62" mask="url(#instincte40mm-4fields-4-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="62" width="83" height="77" mask="url(#instincte40mm-4fields-4-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="83" y="62" width="83" height="77" mask="url(#instincte40mm-4fields-4-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="31" y="141" width="104" height="25" mask="url(#instincte40mm-4fields-4-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+<path d="M 37.349999999999994, 0 L 128.65, 0 L 166, 37.349999999999994 L 166, 128.65 L 128.65, 166 L 37.349999999999994, 166 L 0, 128.65 L 0, 37.349999999999994 L 37.349999999999994, 0 " style="stroke-width:1;stroke:rgb(0,0,0);fill:none"/><circle cx="139.0" cy="26.0" r="26.0" style="fill:black"/></svg>

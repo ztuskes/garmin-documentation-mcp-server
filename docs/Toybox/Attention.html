@@ -1,0 +1,1437 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Attention </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Attention";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Attention</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Attention module provides the ability to play pre-defined sounds,
+methods for managing vibration, and control of the back light.
+</p><p>
+Not all devices fully support this module, so <code>has</code> checks are recommended.
+For example, the vivoactive does not have a tone generator and will trigger
+an error if an app attempts to play sounds.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Attention/BacklightOnTooLongException.html">BacklightOnTooLongException</a></span>, <span class="type"><a href="../Toybox/Attention/ToneProfile.html">ToneProfile</a></span>, <span class="type"><a href="../Toybox/Attention/VibeProfile.html">VibeProfile</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="Tone-module" class="">
+    <h3>Tone</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="TONE_KEY-const">
+    <td class="enumTableCell">TONE_KEY</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that a key was pressed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TONE_START-const">
+    <td class="enumTableCell">TONE_START</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that an activity has started
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TONE_STOP-const">
+    <td class="enumTableCell">TONE_STOP</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that an activity has stopped
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TONE_MSG-const">
+    <td class="enumTableCell">TONE_MSG</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that a message is available
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TONE_ALERT_HI-const">
+    <td class="enumTableCell">TONE_ALERT_HI</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+An alert ending with a high note
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TONE_ALERT_LO-const">
+    <td class="enumTableCell">TONE_ALERT_LO</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+An alert ending with a low note
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TONE_LOUD_BEEP-const">
+    <td class="enumTableCell">TONE_LOUD_BEEP</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A loud beep
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TONE_INTERVAL_ALERT-const">
+    <td class="enumTableCell">TONE_INTERVAL_ALERT</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates a change in interval
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TONE_ALARM-const">
+    <td class="enumTableCell">TONE_ALARM</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates an alarm has triggered
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TONE_RESET-const">
+    <td class="enumTableCell">TONE_RESET</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that the activity was reset
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TONE_LAP-const">
+    <td class="enumTableCell">TONE_LAP</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that the user has completed a lap
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TONE_CANARY-const">
+    <td class="enumTableCell">TONE_CANARY</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+An annoying sound to get the users attention
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TONE_TIME_ALERT-const">
+    <td class="enumTableCell">TONE_TIME_ALERT</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+An alert that a time threshold has been met
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TONE_DISTANCE_ALERT-const">
+    <td class="enumTableCell">TONE_DISTANCE_ALERT</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+An alert that a distance threshold has been met
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TONE_FAILURE-const">
+    <td class="enumTableCell">TONE_FAILURE</td>
+      <td class="enumTableCell">14</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that the activity was a failure
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TONE_SUCCESS-const">
+    <td class="enumTableCell">TONE_SUCCESS</td>
+      <td class="enumTableCell">15</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that the activity was a success
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TONE_POWER-const">
+    <td class="enumTableCell">TONE_POWER</td>
+      <td class="enumTableCell">16</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The power on tone
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TONE_LOW_BATTERY-const">
+    <td class="enumTableCell">TONE_LOW_BATTERY</td>
+      <td class="enumTableCell">17</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that the device has low battery power
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TONE_ERROR-const">
+    <td class="enumTableCell">TONE_ERROR</td>
+      <td class="enumTableCell">18</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates an error occurred
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="FlashlightMode-module" class="">
+    <h3>FlashlightMode</h3>
+  </dt>
+  <p>
+Flashlight modes
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.3
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="FLASHLIGHT_MODE_OFF-const">
+    <td class="enumTableCell">FLASHLIGHT_MODE_OFF</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FLASHLIGHT_MODE_ON-const">
+    <td class="enumTableCell">FLASHLIGHT_MODE_ON</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FLASHLIGHT_MODE_STROBE-const">
+    <td class="enumTableCell">FLASHLIGHT_MODE_STROBE</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="FlashlightColor-module" class="">
+    <h3>FlashlightColor</h3>
+  </dt>
+  <p>
+Flashlight colors
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.3
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="FLASHLIGHT_COLOR_WHITE-const">
+    <td class="enumTableCell">FLASHLIGHT_COLOR_WHITE</td>
+      <td class="enumTableCell">0xFFFFFF</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FLASHLIGHT_COLOR_GREEN-const">
+    <td class="enumTableCell">FLASHLIGHT_COLOR_GREEN</td>
+      <td class="enumTableCell">0x00FF00</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FLASHLIGHT_COLOR_RED-const">
+    <td class="enumTableCell">FLASHLIGHT_COLOR_RED</td>
+      <td class="enumTableCell">0xFF0000</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="FlashlightBrightness-module" class="">
+    <h3>FlashlightBrightness</h3>
+  </dt>
+  <p>
+Flashlight brightness
+</p><p>
+Constants map to device-specific brightness levels
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.3
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="FLASHLIGHT_BRIGHTNESS_LOW-const">
+    <td class="enumTableCell">FLASHLIGHT_BRIGHTNESS_LOW</td>
+      <td class="enumTableCell">255</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FLASHLIGHT_BRIGHTNESS_MEDIUM-const">
+    <td class="enumTableCell">FLASHLIGHT_BRIGHTNESS_MEDIUM</td>
+      <td class="enumTableCell">254</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FLASHLIGHT_BRIGHTNESS_HIGH-const">
+    <td class="enumTableCell">FLASHLIGHT_BRIGHTNESS_HIGH</td>
+      <td class="enumTableCell">253</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="FlashlightStrobeMode-module" class="">
+    <h3>FlashlightStrobeMode</h3>
+  </dt>
+  <p>
+Flashlight strobe modes
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.3
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="FLASHLIGHT_STROBE_MODE_BLINK-const">
+    <td class="enumTableCell">FLASHLIGHT_STROBE_MODE_BLINK</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FLASHLIGHT_STROBE_MODE_PULSE-const">
+    <td class="enumTableCell">FLASHLIGHT_STROBE_MODE_PULSE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FLASHLIGHT_STROBE_MODE_BEACON-const">
+    <td class="enumTableCell">FLASHLIGHT_STROBE_MODE_BEACON</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FLASHLIGHT_STROBE_MODE_BLITZ-const">
+    <td class="enumTableCell">FLASHLIGHT_STROBE_MODE_BLITZ</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="FlashlightStrobeSpeed-module" class="">
+    <h3>FlashlightStrobeSpeed</h3>
+  </dt>
+  <p>
+Flashlight strobe speeds
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.3
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="FLASHLIGHT_STROBE_SPEED_SLOW-const">
+    <td class="enumTableCell">FLASHLIGHT_STROBE_SPEED_SLOW</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FLASHLIGHT_STROBE_SPEED_MEDIUM-const">
+    <td class="enumTableCell">FLASHLIGHT_STROBE_SPEED_MEDIUM</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FLASHLIGHT_STROBE_SPEED_FAST-const">
+    <td class="enumTableCell">FLASHLIGHT_STROBE_SPEED_FAST</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="FlashlightResult-module" class="">
+    <h3>FlashlightResult</h3>
+  </dt>
+  <p>
+Flashlight result codes
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.3
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="FLASHLIGHT_RESULT_SUCCESS-const">
+    <td class="enumTableCell">FLASHLIGHT_RESULT_SUCCESS</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FLASHLIGHT_RESULT_INVALID_COLOR-const">
+    <td class="enumTableCell">FLASHLIGHT_RESULT_INVALID_COLOR</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FLASHLIGHT_RESULT_INVALID_BRIGHTNESS-const">
+    <td class="enumTableCell">FLASHLIGHT_RESULT_INVALID_BRIGHTNESS</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FLASHLIGHT_RESULT_INVALID_MODE-const">
+    <td class="enumTableCell">FLASHLIGHT_RESULT_INVALID_MODE</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FLASHLIGHT_RESULT_INVALID_SPEED-const">
+    <td class="enumTableCell">FLASHLIGHT_RESULT_INVALID_SPEED</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FLASHLIGHT_RESULT_FAILURE-const">
+    <td class="enumTableCell">FLASHLIGHT_RESULT_FAILURE</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.4.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#backlight-instance_function" title="backlight (Instance Function)"><strong>backlight</strong></a>(setting as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> or <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Control the display backlight.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#hasFlashlightColor-instance_function" title="hasFlashlightColor (Instance Function)"><strong>hasFlashlightColor</strong></a>(color as <span class="type"><a href="../Toybox/Attention.html#FlashlightColor-module">Attention.FlashlightColor</a></span>)    as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Determine if a given flashlight color is supported by this device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#playTone-instance_function" title="playTone (Instance Function)"><strong>playTone</strong></a>(options as <span class="type"><a href="../Toybox/Attention.html#Tone-module">Attention.Tone</a></span> or { :toneProfile as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Attention/ToneProfile.html">Attention.ToneProfile</a></span>&gt;, :repeatCount as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> })    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Play a tone.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setFlashlightMode-instance_function" title="setFlashlightMode (Instance Function)"><strong>setFlashlightMode</strong></a>(mode as <span class="type"><a href="../Toybox/Attention.html#FlashlightMode-module">Attention.FlashlightMode</a></span>, options as { :color as <span class="type"><a href="../Toybox/Attention.html#FlashlightColor-module">Attention.FlashlightColor</a></span>, :brightness as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Attention.html#FlashlightBrightness-module">Attention.FlashlightBrightness</a></span>, :strobeMode as <span class="type"><a href="../Toybox/Attention.html#FlashlightStrobeMode-module">Attention.FlashlightStrobeMode</a></span>, :strobeSpeed as <span class="type"><a href="../Toybox/Attention.html#FlashlightStrobeSpeed-module">Attention.FlashlightStrobeSpeed</a></span> } or <b>Null</b>)    as <span class="type"><a href="../Toybox/Attention.html#FlashlightResult-module">Attention.FlashlightResult</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#vibrate-instance_function" title="vibrate (Instance Function)"><strong>vibrate</strong></a>(vibeProfiles as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Attention/VibeProfile.html">Attention.VibeProfile</a></span>&gt;)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Engage the vibration motor.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="backlight-instance_function">
+    <strong>backlight(setting as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> or <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Control the display backlight.
+</p><p>
+The backlight will always respect the backlight timeout settings on the device.
+Behavior of this feature may also change depending on device settings. For example, if a device is set to activate the back light with key
+presses, the backlight will toggle on with key presses even if the app is written to turn off the back light with a key press.
+</p><p>
+On products that use a gesture enabled display, calling this API will suppress the gesture detection for the period that the backlight is
+on. Calling this repeatedly can hold the display on, but if the product has burn in protection an exception will be thrown if you attempt
+to keep the display enabled for too long (e.g. over 1 minute).
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Passing a <a href='../Toybox/Lang/Float.html'>Float</a> is only supported with ConnectIQ 3.2.1 and later.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">setting</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<ul>
+<li>
+<p>
+If <code>setting</code> is a <a href='../Toybox/Lang/Boolean.html'>Boolean</a>, <code>false</code> will disable the backlight and <code>true</code> will enable the backlight at the system backlight level.
+</p>
+
+</li>
+<li>
+<p>
+If <code>setting</code> is a <a href='../Toybox/Lang/Float.html'>Float</a>, the value 0.0 will disable the backlight and values greater than 0.0 and less than or equal to 1.0 will enable the backlight at the specified brightness.
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 45</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Garmin Swim™ 2</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <div class="inline">
+<p>
+BacklightOnTooLongException On products with burn in protection, this exception is thrown if the backlight is held on for too long continuously
+</p>
+
+
+        </div>
+    </li><li>
+        <div class="inline">
+<p>
+InvalidOptionsException If the Float value is outside the valid range.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="hasFlashlightColor-instance_function">
+    <strong>hasFlashlightColor(color as <span class="type"><a href="../Toybox/Attention.html#FlashlightColor-module">Attention.FlashlightColor</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Determine if a given flashlight color is supported by this device
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">color</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Attention.html#FlashlightColor-module">Attention.FlashlightColor</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Color to check
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class="inline">
+    <p>
+Returns true if the given color is supported, otherwise false.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.3
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/OperationNotAllowedException.html">Lang.OperationNotAllowedException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Raised if called from an app type other than watch-app.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="playTone-instance_function">
+    <strong>playTone(options as <span class="type"><a href="../Toybox/Attention.html#Tone-module">Attention.Tone</a></span> or { :toneProfile as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Attention/ToneProfile.html">Attention.ToneProfile</a></span>&gt;, :repeatCount as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> })</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Play a tone.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Passing an options <a href='../Toybox/Lang/Dictionary.html'>Dictionary</a> is only supported with ConnectIQ 3.1.0 and later.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Attention.html#Tone-module">Attention.Tone</a></span>, <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A TONE_* value or <a href='../Toybox/Lang/Dictionary.html'>Dictionary</a> of options.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:toneProfile</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Array containing at least one <a href='../Toybox/Attention/ToneProfile.html'>ToneProfile</a> object to be played in sequence.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:repeatCount</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Number of times to repeat the given tone sequence.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Attention;
+
+// Play a predefined tone
+if (Attention has :playTone) {
+   Attention.playTone(Attention.TONE_LOUD_BEEP);
+}
+
+// Use an array of ToneProfile objects to build and play a custom tone
+if (Attention has :ToneProfile) {
+    var toneProfile =
+    [
+        new Attention.ToneProfile( 2500, 250),
+        new Attention.ToneProfile( 5000, 250),
+        new Attention.ToneProfile(10000, 250),
+        new Attention.ToneProfile( 5000, 250),
+        new Attention.ToneProfile( 2500, 250),
+    ];
+    Attention.playTone({:toneProfile=&gt;toneProfile});
+   }
+</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 45</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Garmin Swim™ 2</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 3</li><li>Venu® 3S</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidOptionsException.html">Lang.InvalidOptionsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if passing an options hash with invalid values when using new ToneProfile objects
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setFlashlightMode-instance_function">
+    <strong>setFlashlightMode(mode as <span class="type"><a href="../Toybox/Attention.html#FlashlightMode-module">Attention.FlashlightMode</a></span>, options as { :color as <span class="type"><a href="../Toybox/Attention.html#FlashlightColor-module">Attention.FlashlightColor</a></span>, :brightness as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Attention.html#FlashlightBrightness-module">Attention.FlashlightBrightness</a></span>, :strobeMode as <span class="type"><a href="../Toybox/Attention.html#FlashlightStrobeMode-module">Attention.FlashlightStrobeMode</a></span>, :strobeSpeed as <span class="type"><a href="../Toybox/Attention.html#FlashlightStrobeSpeed-module">Attention.FlashlightStrobeSpeed</a></span> } or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Attention.html#FlashlightResult-module">Attention.FlashlightResult</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">mode</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Attention.html#FlashlightMode-module">Attention.FlashlightMode</a></span>)</span>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Flashlight mode options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:color</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Attention.html#FlashlightColor-module">Attention.FlashlightColor</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Color of flashlight. Default is FLASHLIGHT_COLOR_WHITE.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:strobeMode</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Attention.html#FlashlightStrobeMode-module">Attention.FlashlightStrobeMode</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Mode of strobe. Default is FLASHLIGHT_STROBE_MODE_BLINK.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:strobeSpeed</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Attention.html#FlashlightStrobeSpeed-module">Attention.FlashlightStrobeSpeed</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Speed of strobe. Default is FLASHLIGHT_STROBE_SPEED_MEDIUM.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:brightness</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Attention.html#FlashlightBrightness-module">Attention.FlashlightBrightness</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Intensity of the flashlight. Default is FLASHLIGHT_BRIGHTNESS_MEDIUM.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Attention.html#FlashlightResult-module">Attention.FlashlightResult</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A <a href='../Toybox/Attention.html#FlashlightResult-module'>FlashlightResult</a> value indicating the operation status.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.3
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/OperationNotAllowedException.html">Lang.OperationNotAllowedException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Raised if called from an app type other than watch-app.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="vibrate-instance_function">
+    <strong>vibrate(vibeProfiles as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Attention/VibeProfile.html">Attention.VibeProfile</a></span>&gt;)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Engage the vibration motor.
+</p><p>
+The vibrate method takes an Array containing at least one
+<a href='../Toybox/Attention/VibeProfile.html'>VibeProfile</a> object, up to a maximum of 8,
+and runs them in sequence.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Forerunner devices do not support vibration patterns. Vibration may still be used, but the vibration will always run at the same duty cycle.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">vibeProfiles</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An Array of <a href='../Toybox/Attention/VibeProfile.html'>VibeProfile</a> objects
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Vibrate in an on/off pattern</p>
+</div></p>
+<pre class="example code">
+<code>if (Attention has :vibrate) {
+    vibeData =
+    [
+        new Attention.VibeProfile(50, 2000), // On for two seconds
+        new Attention.VibeProfile(0, 2000),  // Off for two seconds
+        new Attention.VibeProfile(50, 2000), // On for two seconds
+        new Attention.VibeProfile(0, 2000),  // Off for two seconds
+        new Attention.VibeProfile(50, 2000)  // on for two seconds
+    ];
+}
+Attention.vibrate(vibeData);</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 45</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Garmin Swim™ 2</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Attention/VibeProfile.html">Toybox.Attention.VibeProfile</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

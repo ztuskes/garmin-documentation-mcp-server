@@ -1,0 +1,99 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="DC.type" content="topic"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="how-do-i-use-a-mapview"><link rel="stylesheet" type="text/css" href="../../branding/commonltr.css"><link rel="stylesheet" type="text/css" href="../../branding/style.css"><title>How do I use a MapView?</title></head><body id="how-do-i-use-a-mapview"><header role="banner"><div>
+<link href="../../resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
+<script src="../../resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="../../resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+</div></header><nav role="toc"><ul><li><a href="../../docs/Readme/Intro.html">Introduction</a></li><li><a href="../../docs/Connect_IQ_Basics/Welcome_to_the_Jungle.html">Welcome to Connect IQ</a></li><li><a href="../../docs/Monkey_C/Basic_Syntax.html">Hello Monkey C!</a></li><li><a href="../../docs/Core_Topics/Overview.html">Core Topics</a></li><li><a href="../../docs/User_Experience_Guidelines/Overview.html">User Experience Guidelines</a></li><li><a href="../../docs/Personality_Library/Personality_UI.html">Personality UI</a></li><li><a href="../../docs/Connect_IQ_FAQ/Overview.html">Connect IQ FAQ</a><ul><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Get_My_Watch_Face_to_Update_Every_Second.html">How do I Make My Watch Face Update Every Second?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Use_REST_Services.html">How do I communicate with REST services?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Make_a_Watch_Face_for_AMOLED_Products.html">How do I Make a Watch Face for AMOLED Products?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Create_a_Connect_IQ_Background_Service.html">How do I create a Connect IQ Background Service?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Optimize_Bitmaps.html">How do I optimize bitmaps in my app?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Override_the_Goal_Animations.html">How do I Override The Goal Animation?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Use_Custom_Fonts.html">How do I use custom fonts?</a></li><li class="active"><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Use_a_Mapview.html">How do I use a MapView?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Use_the_Connect_IQ_Mobile_SDK.html">How do I use the Connect IQ Mobile SDK</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Create_an_Audio_Content_Provider.html">How do I create an Audio Content Provider?</a></li></ul></li><li><a href="../../docs/Reference_Guides/Overview.html">Reference Guides</a></li><li><a href="../../docs/App_Review_Guidelines/Overview.html">Garmin Connect IQ App Review Guidelines</a></li><li><a href="../../docs/Monetization/Overview.html">Connect IQ Monetization System</a></li><li><a href="../../docs/Device_Reference/Overview.html">Device Reference</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">How do I use a MapView?</h1><div class="body"><p class="p">Garmin built itself as a company by making location aware products, and has grown to make products that serve automotive, aviation, marine, fitness, and outdoor markets. A cornerstone to location awareness is digital cartography. Garmin products are often used outside of cell coverage, and our users depend on us to know where you are even when disconnected from the cloud. For over a decade Garmin has been digitizing the world and putting maps on devices of all shapes and sizes.</p><p class="p">With the addition of <code class="ph codeph">MapView</code> objects, Connect IQ now allows your apps to take advantage of the digital cartography included on Garmin devices. You can use <code class="ph codeph">MapView</code> objects to provide location context to the user, provide a preview of a course or route, or let the user browse their surroundings.</p></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="integrating-map-views"><h2 class="title topictitle2" id="ariaid-title2">Integrating Map Views</h2><div class="body"><p class="p">Let's talk through a common use case on Garmin devices. Assume the use case where you have a cloud database of routes that the user can choose to download to the device. You want to give the user a preview of the route on the map and give a clear call to action to the user to download. You also want to allow the user to touch the map to browse the route.</p><figure class="fig fignone">
+<img class="image" src="../../resources/faq/map_view_1.png"><br>
+</figure></div></article><article class="topic nested1" aria-labelledby="ariaid-title3" id="setting-the-scene"><h2 class="title topictitle2" id="ariaid-title3">Setting The Scene</h2><div class="body"><p class="p">The first thing you need to do is tell the map where on the Earth you want to focus the user's attention. The method <code class="ph codeph">setMapVisibleArea</code> allows you to set a bounding box of <code class="ph codeph">Location</code> objects that define what part of the world should render on screen.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title4" id="overlaying-content"><h2 class="title topictitle2" id="ariaid-title4">Overlaying Content</h2><div class="body"><p class="p"><code class="ph codeph">MapView</code> objects allow for two kinds of overlays: <em class="ph i">markers</em> and <em class="ph i">polylines</em>. A <code class="ph codeph">MapMarker</code> instance represents a single location on the map. You can use either the default Garmin pin, or you can provide your own <code class="ph codeph">BitmapResource</code> object. If you use a custom marker, you need to set the pixel that will be drawn at the exact location (the hotspot). If you pass an array of <code class="ph codeph">MapMarker</code> objects to the <code class="ph codeph">MapView</code> instance, it will add all of them to the map. Calling <code class="ph codeph">setMapMarker</code> will clear whatever markers are currently set.</p><p class="p">A <code class="ph codeph">MapPolyline</code> instance represents a series of coordinates, like a course. You can set the width and color of the polyline. You can set the polyline for a <code class="ph codeph">MapView</code>using <code class="ph codeph">setPolyline</code>. A <code class="ph codeph">MapView</code> instance can only have one <code class="ph codeph">MapPolyline</code> instance set at any given time.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title5" id="preview-and-browse"><h2 class="title topictitle2" id="ariaid-title5">Preview and Browse</h2><div class="body"><p class="p">Going back to our example, remember that we want to allow the user to have a preview of the route with a call to action, but let them browse the content if they want a closer look. The <code class="ph codeph">MapView</code> class handles both use cases in a single View using the <em class="ph i">map mode</em>.</p><p class="p">In <code class="ph codeph">MAP_MODE_PREVIEW</code> the map view centers on an area. You can add a layout above the map with buttons and selectables to provide context and actions. You can use <code class="ph codeph">setScreenVisibleArea</code> to communicate to the <code class="ph codeph">MapView</code> instance what portion of the map is not obscured by your user interface.</p><figure class="fig fignone">
+<img class="image" src="../../resources/faq/map_view_2.png"><br>
+</figure><p class="p">Switching the map mode to <code class="ph codeph">MAP_MODE_BROWSE</code> changes the map view to a browse interface. The browse interface will be same browse interface used natively by the device.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title6" id="tying-it-together"><h2 class="title topictitle2" id="ariaid-title6">Tying it Together</h2><div class="body"><p class="p">We want to show the user a preview of the course we want to download before they download it, but how can we show it before we download the full course? One way to bring a polyline to your app is with a <a class="xref" href="https://developers.google.com/maps/documentation/utilities/polylinealgorithm" target="_blank">Google Polyline Algorithm Format</a>. This allows you to send a polyline to your Connect IQ app as a string that can be decoded back into a polyline. The function below will decode a polyline string into an array of <code class="ph codeph">Location</code> objects. To conserve memory, it will begin skipping over coordinates as the polyline grows in size, essentially downscaling the line as it grows in length.</p><pre class="pre codeblock typescript"><code>    // Constant used to downscale detail as
+    // line grows in length to conserve memory
+    const MAX_POLYLINE_OBJECT_COUNT = 233;
+
+    // Returns the decoded polyline string
+    // in an array of longitudes and latitudes
+    function decodePolyline(polyline) {
+        polyline = polyline.toCharArray();
+        var len = polyline.size();
+        var indexJump = Math.ceil(len / MAX_POLYLINE_OBJECT_COUNT);
+        var poly = [];
+        var index = 0;
+        var lat = 0;
+        var lng = 0;
+        var skipIndex = 0;
+
+        while (index &lt; len) {
+
+            var byte = 0;
+            var shift = 0;
+            var result = 0;
+
+            do {
+                byte = polyline[index].toNumber() - 63;
+                result = result | ((byte &amp; 31) &lt;&lt; shift);
+                shift += 5;
+                index++;
+            } while (byte &gt;= 32 &amp;&amp; index &lt; len);
+
+            var dlat = ((result &amp; 1) ? ~(result &gt;&gt; 1) : (result &gt;&gt; 1));
+
+            shift = 0;
+            result = 0;
+
+            do {
+                byte = polyline[index].toNumber() - 63;
+                result = result | ((byte &amp; 31) &lt;&lt; shift);
+                shift += 5;
+                index++;
+            } while (byte &gt;= 32 &amp;&amp; index &lt; len);
+
+            var dlng = ((result &amp; 1) ? ~(result &gt;&gt; 1) : (result &gt;&gt; 1));
+
+            lat += dlat;
+            lng += dlng;
+
+            if (indexJump == 0 || skipIndex % indexJump == 0) {
+                var p = new Position.Location({:latitude=&gt;lat/1e5, :longitude=&gt;lng/1e5, :format=&gt;:degrees});
+                poly.add(p);
+            }
+
+            skipIndex++;
+        }
+        return poly;
+    }</code></pre><p class="p">In our UI we want to allow the user to switch between our user interface with the call to action and allowing them to browse. Rather than pushing and popping the map view with different modes, we can use a single view and switch modes in the delegate.</p><pre class="pre codeblock typescript"><code>class MapSampleMapDelegate extends Ui.BehaviorDelegate {
+
+    var mView;
+
+    function initialize(view) {
+        BehaviorDelegate.initialize();
+        mView = view;
+    }
+
+    function onBack() {
+        // if current mode is preview mode them pop the view
+        if(mView.getMapMode() == Ui.MAP_MODE_PREVIEW) {
+            Ui.popView(Ui.SLIDE_UP);
+        } else {
+            // if browse mode change the mode to preview
+            mView.setMapMode(Ui.MAP_MODE_PREVIEW);
+        }
+        return true;
+    }
+
+    function onSelect() {
+        // on enter button press chenage the map view to browse mode
+        mView.setMapMode(Ui.MAP_MODE_BROWSE);
+        return true;
+    }
+}</code></pre><p class="p">Now in a single view we can provide a UI with a call to action and preview of the course and allow the user to browse the content as well.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title7" id="conclusion"><h2 class="title topictitle2" id="ariaid-title7">Conclusion</h2><div class="body"><p class="p">Hopefully you can see from this that the <code class="ph codeph">MapView</code> class is a powerful addition to the Toybox. By combining Garmin digital cartography with your content, you can bring a whole new level of location awareness to your apps.</p></div></article></article></main><footer role="contentinfo"><div>
+<p class="disclaimer">
+Connect IQ System None API 8.2.3 Documentation. Copyright 2025 Garmin International. All Rights Reserved.
+</p>
+</div></footer></body></html>

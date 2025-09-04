@@ -1,0 +1,124 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="DC.type" content="topic"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="confirmations"><link rel="stylesheet" type="text/css" href="../../branding/commonltr.css"><link rel="stylesheet" type="text/css" href="../../branding/style.css"><title>Confirmations</title></head><body id="confirmations"><header role="banner"><div>
+<link href="../../resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
+<script src="../../resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="../../resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+</div></header><nav role="toc"><ul><li><a href="../../docs/Readme/Intro.html">Introduction</a></li><li><a href="../../docs/Connect_IQ_Basics/Welcome_to_the_Jungle.html">Welcome to Connect IQ</a></li><li><a href="../../docs/Monkey_C/Basic_Syntax.html">Hello Monkey C!</a></li><li><a href="../../docs/Core_Topics/Overview.html">Core Topics</a></li><li><a href="../../docs/User_Experience_Guidelines/Overview.html">User Experience Guidelines</a></li><li><a href="../../docs/Personality_Library/Personality_UI.html">Personality UI</a><ul><li><a href="../../docs/Personality_Library/Colors.html">Color</a></li><li><a href="../../docs/Personality_Library/Iconography.html">Iconography</a></li><li><a href="../../docs/Personality_Library/Typography.html">Typography</a></li><li><a href="../../docs/Personality_Library/Input_Hints.html">Input Hints</a></li><li><a href="../../docs/Personality_Library/Prompts.html">Prompts</a></li><li class="active"><a href="../../docs/Personality_Library/Confirmations.html">Confirmations</a></li><li><a href="../../docs/Personality_Library/Toasts.html">Toasts</a></li><li><a href="../../docs/Personality_Library/Action_Views.html">Action Views</a></li><li><a href="../../docs/Personality_Library/Page_Loops.html">Page Loops</a></li><li><a href="../../docs/Personality_Library/Progress_Bars.html">Progress Indicators</a></li></ul></li><li><a href="../../docs/Connect_IQ_FAQ/Overview.html">Connect IQ FAQ</a></li><li><a href="../../docs/Reference_Guides/Overview.html">Reference Guides</a></li><li><a href="../../docs/App_Review_Guidelines/Overview.html">Garmin Connect IQ App Review Guidelines</a></li><li><a href="../../docs/Monetization/Overview.html">Connect IQ Monetization System</a></li><li><a href="../../docs/Device_Reference/Overview.html">Device Reference</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Confirmations</h1><div class="body"><p class="p">Confirmations ask the user for a yes or no response to a question. Confirmations are usually text only. Confirmations are a useful way of adding small amounts of friction to important decisions, to make sure the user understands their significance.</p><img class="image" id="confirmations__GUID-E5BA5C83-9222-4F80-AEA6-D26C6B6E7AE1__IMAGE_059E464F65104E6E93DAE7BA39157138" src="../../resources/personality-library/personality_ui_confirmationhigh.jpg" alt="Front views of devices displaying a yes confirmation"><br><p class="p">A yes/no confirmation gives the user an opportunity to confirm an action.</p></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="example"><h2 class="title topictitle2" id="ariaid-title2">Example</h2><div class="body"><p class="p">The following example uses <a class="xref" href="https://developer.garmin.com/connect-iq/api-docs/Toybox/WatchUi/Confirmation.html" target="_blank">WatchUi.Confirmation</a> to display a yes/no confirmation.</p><pre class="pre codeblock typescript"><code>// InputDelegate.mc
+
+using Toybox.WatchUi;
+
+var message = "Continue?";
+dialog = new WatchUi.Confirmation(message);
+WatchUi.pushView(
+    dialog,
+    new ConfirmationDelegate(),
+    WatchUi.SLIDE_IMMEDIATE
+);</code></pre></div></article><article class="topic nested1" aria-labelledby="ariaid-title3" id="delete-confirmation"><h2 class="title topictitle2" id="ariaid-title3">Delete Confirmation</h2><div class="body"><img class="image" id="delete-confirmation__GUID-E5BA5C83-9222-4F80-AEA6-D26C6B6E7AE1__IMAGE_73DFE720914744528678FF168865B0AF" src="../../resources/personality-library/personality_ui_delete_confirmationhigh.jpg" alt="Front views of devices displaying a delete confirmation"><br><p class="p">A delete confirmation asks the user to confirm whether they want to delete an item.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title4" id="example-1"><h2 class="title topictitle2" id="ariaid-title4">Example</h2><div class="body"><p class="p"><a class="xref" href="https://developer.garmin.com/connect-iq/api-docs/Toybox/WatchUi/Confirmation.html" target="_blank">WatchUi.Confirmation</a> does not support delete confirmations, but you can build your own confirmation using selectors.</p><pre class="pre codeblock xml"><code>&lt;!-- layout.xml --&gt;
+
+    &lt;!-- A Delete Confirmation page --&gt;
+    &lt;layout id="DeleteConfirmationPage"&gt;
+        &lt;!-- Confirm --&gt;
+        &lt;bitmap id="confirmIcon" personality="
+            confirmation_icon__hint_confirm
+            confirmation_loc__hint_confirm
+        " /&gt;
+
+        &lt;!-- Delete --&gt;
+        &lt;bitmap id="deleteIcon" personality="
+            confirmation_icon__hint_delete
+            confirmation_loc__hint_delete
+        " /&gt;
+
+        &lt;!-- Prompt body --&gt;
+        &lt;text-area text="@Strings.deletePrompt" personality="
+            confirmation_color_dark__body
+            confirmation_size__body
+            confirmation_loc__body
+            confirmation_font__body
+        " /&gt;</code></pre><pre class="pre codeblock typescript"><code>// InputDelegate.mc
+
+    function onKey(evt as KeyEvent) as Boolean {
+        if (Styles.confirmation_input__confirm has :button &amp;&amp;
+            evt.getKey() == Styles.confirmation_input__confirm.button) {
+            doConfirmAction();
+            return true;
+        } else if (Styles.confirmation_input__reject has :button &amp;&amp;
+            evt.getKey() == Styles.confirmation_input__reject.button) {
+            doRejectAction();
+            return true;
+        }
+        return false;
+    }
+
+    function onTap(evt as ClickEvent) as Boolean {
+        if (!(Styles.confirmation_input__confirm has :button) &amp;&amp;
+            $.isInRejectArea(evt.getCoordinates())) {
+            doConfirmAction();
+            return true;
+        } else if (!(Styles.confirmation_input__reject has :button) &amp;&amp;
+            $.isInRejectArea(evt.getCoordinates())) {
+            doRejectAction();
+            return true;
+        }
+        return false;
+    }</code></pre><pre class="pre codeblock typescript"><code>// Helper Functions
+
+import Rez.Styles;
+
+//! Function to see if a tap falls within the touch area for
+//! the confirm touch area.
+//! @param x X coord of tap
+//! @param y Y coord of tap
+//! @return true if tapped, false otherwise
+function isInConfirmArea(coord as Array&lt;Numeric&gt;) as Boolean {
+    if (Styles.confirmation_input__confirm has :x1 &amp;&amp;
+        Styles.confirmation_input__confirm has :y1 &amp;&amp;
+        Styles.confirmation_input__confirm has :x2 &amp;&amp;
+        Styles.confirmation_input__confirm has :y2) {
+
+        var x = coord[0];
+        var y = coord[1];
+
+        if (x &gt;= Styles.confirmation_input__confirm.x1 &amp;&amp;
+            x &lt;= Styles.confirmation_input__confirm.x2 &amp;&amp;
+            y &gt;= Styles.confirmation_input__confirm.y1 &amp;&amp;
+            y &lt;= Styles.confirmation_input__confirm.y2) {
+            return true;
+        }
+    }
+    return false;
+}
+
+//! Function to see if a tap falls within the touch area for
+//! the reject touch area.
+//! @param x X coord of tap
+//! @param y Y coord of tap
+//! @return true if tapped, false otherwise
+function isInRejectArea(coord as Array&lt;Numeric&gt;) as Boolean {
+    if (Styles.confirmation_input__reject has :x1 &amp;&amp;
+        Styles.confirmation_input__reject has :y1 &amp;&amp;
+        Styles.confirmation_input__reject has :x2 &amp;&amp;
+        Styles.confirmation_input__reject has :y2) {
+
+        var x = coord[0];
+        var y = coord[1];
+
+        if (x &gt;= Styles.confirmation_input__reject.x1 &amp;&amp;
+            x &lt;= Styles.confirmation_input__reject.x2 &amp;&amp;
+            y &gt;= Styles.confirmation_input__reject.y1 &amp;&amp;
+            y &lt;= Styles.confirmation_input__reject.y2) {
+            return true;
+        }
+    }
+    return false;
+}</code></pre></div></article></article></main><footer role="contentinfo"><div>
+<p class="disclaimer">
+Connect IQ System None API 8.2.3 Documentation. Copyright 2025 Garmin International. All Rights Reserved.
+</p>
+</div></footer></body></html>

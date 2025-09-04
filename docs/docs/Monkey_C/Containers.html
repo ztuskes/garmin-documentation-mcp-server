@@ -1,0 +1,45 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="DC.type" content="topic"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="containers"><link rel="stylesheet" type="text/css" href="../../branding/commonltr.css"><link rel="stylesheet" type="text/css" href="../../branding/style.css"><title>Containers</title></head><body id="containers"><header role="banner"><div>
+<link href="../../resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
+<script src="../../resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="../../resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+</div></header><nav role="toc"><ul><li><a href="../../docs/Readme/Intro.html">Introduction</a></li><li><a href="../../docs/Connect_IQ_Basics/Welcome_to_the_Jungle.html">Welcome to Connect IQ</a></li><li><a href="../../docs/Monkey_C/Basic_Syntax.html">Hello Monkey C!</a><ul><li><a href="../../docs/Monkey_C/Functions.html">Functions</a></li><li><a href="../../docs/Monkey_C/Objects_and_Memory.html">Objects, Modules, and Memory</a></li><li class="active"><a href="../../docs/Monkey_C/Containers.html">Containers</a></li><li><a href="../../docs/Monkey_C/Monkey_Types.html">Monkey Types</a></li><li><a href="../../docs/Monkey_C/Exceptions_and_Errors.html">Exceptions and Errors</a></li><li><a href="../../docs/Monkey_C/Annotations.html">Annotations</a></li><li><a href="../../docs/Monkey_C/Coding_Conventions.html">Coding Conventions</a></li><li><a href="../../docs/Monkey_C/Compiler_Options.html">Compiler Options</a></li></ul></li><li><a href="../../docs/Core_Topics/Overview.html">Core Topics</a></li><li><a href="../../docs/User_Experience_Guidelines/Overview.html">User Experience Guidelines</a></li><li><a href="../../docs/Personality_Library/Personality_UI.html">Personality UI</a></li><li><a href="../../docs/Connect_IQ_FAQ/Overview.html">Connect IQ FAQ</a></li><li><a href="../../docs/Reference_Guides/Overview.html">Reference Guides</a></li><li><a href="../../docs/App_Review_Guidelines/Overview.html">Garmin Connect IQ App Review Guidelines</a></li><li><a href="../../docs/Monetization/Overview.html">Connect IQ Monetization System</a></li><li><a href="../../docs/Device_Reference/Overview.html">Device Reference</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Containers</h1><div class="body"><p class="p">Monkey C has two container types built into the language: Arrays and Dictionaries.</p></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="arrays"><h2 class="title topictitle2" id="ariaid-title2">Arrays</h2><div class="body"><p class="p">Arrays in Monkey C, like variables, are typeless, it is not necessary to declare a data type. There are two forms for creating a new array. To create an empty array of a fixed <code class="ph codeph">size</code>, use this:</p><pre class="pre codeblock typescript"><code>// Create a typeless array
+var untypedArray = new [size];
+// Create a typed array
+var typedArray = new Array&lt;Number&gt;[size];</code></pre><p class="p">To pre-initialize an array, this syntax can be used:</p><pre class="pre codeblock typescript"><code>// New array. Will be typed as a Tuple
+// [Number, Number, Number, Number, Number]
+var untypedArray = [1, 2, 3, 4, 5];
+// New typed array
+var typedArray = [1, 2, 3, 4, 5] as Array&lt;Number&gt;;</code></pre><p class="p">Elements are expressions, so multidimensional arrays can be created using this syntax:</p><pre class="pre codeblock typescript"><code>var array = [ [1,2], [3,4] ];</code></pre><p class="p">Monkey C does not have a direct way of creating an empty two-dimensional array, one may be initialized with this syntax:</p><pre class="pre codeblock typescript"><code>// Shout out to all the Java programmers in the house
+var array = new [first_dimension_size];
+
+// Initialize the sub-arrays
+for( var i = 0; i &lt; first_dimension_size; i += 1 ) {
+    array[i] = new [second_dimension_size];
+}</code></pre></div></article><article class="topic nested1" aria-labelledby="ariaid-title3" id="dictionaries"><h2 class="title topictitle2" id="ariaid-title3">Dictionaries</h2><div class="body"><p class="p">Dictionaries, or associative arrays, are a built-in data structure in Monkey C:</p><pre class="pre codeblock java"><code>var dict = { "a" =&gt; 1, "b" =&gt; 2 };  // Creates a dictionary
+System.println( dict["a"] );        // Prints "1"
+System.println( dict["b"] );        // Prints "2"
+System.println( dict["c"] );        // Prints "null"</code></pre><p class="p">To initialize an empty dictionary, use the following syntax:</p><pre class="pre codeblock typescript"><code>var x = {};                         // Empty dictionary</code></pre><p class="p">A type suffix can be added when creating new <a class="xref" href="https://developer.garmin.com/connect-iq/api-docs/Toybox/Lang/Dictionary.html" target="_blank">Lang.Dictionary</a> objects:</p><pre class="pre codeblock typescript"><code>var x = {} as Dictionary&lt;Symbol, String&gt;;
+// Valid
+x[:option] = "value";
+// Invalid
+x["option"] = "value";</code></pre><p class="p">By default, objects hash on their reference value. Classes should override the <code class="ph codeph">hashCode()</code> method in <code class="ph codeph">Toybox.Lang.Object</code> to change the hashing function for their type:</p><pre class="pre codeblock java"><code>class Person
+{
+    // Return a number as the hash code. Remember that the hash code must be
+    // the same for two objects that are equal.
+    // @return Hash code value
+    function hashCode() {
+        // Using the unique person id for the hash code
+        return mPersonId;
+    }
+}</code></pre><p class="p">Dictionaries automatically resize and rehash as the contents grow or shrink. This makes them extremely flexible, but it comes at a cost. Insertion and removal of the contents can cause performance problems if there is accidental or excessive resizing and rehashing. Also, because hash tables require extra space for allocation, they are not as space-efficient as either objects or arrays.</p></div></article></article></main><footer role="contentinfo"><div>
+<p class="disclaimer">
+Connect IQ System None API 8.2.3 Documentation. Copyright 2025 Garmin International. All Rights Reserved.
+</p>
+</div></footer></body></html>

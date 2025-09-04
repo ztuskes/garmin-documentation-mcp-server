@@ -1,0 +1,377 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Activity.ProfileInfo </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Activity.ProfileInfo";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Activity.ProfileInfo</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Activity/ProfileInfo.html">Toybox.Activity.ProfileInfo</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The ProfileInfo class contains information about the active profile.
+</p><p>
+This information can be retrieved with the
+<a href='../../Toybox/Activity.html#getProfileInfo-instance_function'>getProfileInfo()</a> method. Fields in
+this class may return <code>null</code> so should be checked for <code>null</code> values prior
+to use.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#name-var" title="name (Var)"><strong>name</strong></a>  as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The profile name.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#sport-var" title="sport (Var)"><strong>sport</strong></a>  as <span class="type"><a href="../../Toybox/Activity.html#Sport-module">Activity.Sport</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A <a href='../../Toybox/Activity.html#SPORT_GENERIC-const'>SPORT_*</a> enum value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#subSport-var" title="subSport (Var)"><strong>subSport</strong></a>  as <span class="type"><a href="../../Toybox/Activity.html#SubSport-module">Activity.SubSport</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A <a href='../../Toybox/Activity.html#SUB_SPORT_GENERIC-const'>SUB_SPORT_*</a> enum value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#uniqueIdentifier-var" title="uniqueIdentifier (Var)"><strong>uniqueIdentifier</strong></a>  as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+An unique identifer of the profile.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="name-var" class="details">
+<h3 class="signature" id="name-var">
+
+var name  as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The profile name
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+the profile name
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="sport-var" class="details">
+<h3 class="signature" id="sport-var">
+
+var sport  as <span class="type"><a href="../../Toybox/Activity.html#Sport-module">Activity.Sport</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+A <a href='../../Toybox/Activity.html#SPORT_GENERIC-const'>SPORT_*</a> enum value
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Activity.html#Sport-module">Activity.Sport</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A SPORT_* enum value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="subSport-var" class="details">
+<h3 class="signature" id="subSport-var">
+
+var subSport  as <span class="type"><a href="../../Toybox/Activity.html#SubSport-module">Activity.SubSport</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+A <a href='../../Toybox/Activity.html#SUB_SPORT_GENERIC-const'>SUB_SPORT_*</a> enum value.
+Can be <code>null</code>.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Activity.html#SubSport-module">Activity.SubSport</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A SUB_SPORT_* enum value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="uniqueIdentifier-var" class="details">
+<h3 class="signature" id="uniqueIdentifier-var">
+
+var uniqueIdentifier  as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+An unique identifer of the profile
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+the profile identifier
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt>
+ </div>
+
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:12 PM
+</p>
+
+</body>

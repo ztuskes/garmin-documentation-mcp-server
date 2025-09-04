@@ -1,0 +1,402 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Sensor.SensorDelegate </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Sensor.SensorDelegate";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Sensor.SensorDelegate</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Sensor/SensorDelegate.html">Toybox.Sensor.SensorDelegate</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Delegate for handling native sensor pairing process.
+</p><p>
+The members of this object get called by the system to delegate
+scanning and pairing of different sensors.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>D2™ Mach 1</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onPair-instance_function" title="onPair (Instance Function)"><strong>onPair</strong></a>(sensor as <span class="type"><a href="../../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Pair the sensor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onScan-instance_function" title="onScan (Instance Function)"><strong>onScan</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Start the sensor scan process.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onUnpair-instance_function" title="onUnpair (Instance Function)"><strong>onUnpair</strong></a>(sensor as <span class="type"><a href="../../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Unpair the sensor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#pairingRequired-instance_function" title="pairingRequired (Instance Function)"><strong>pairingRequired</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Is sensor pairing required? Is called by the system to check if sensor pairing is required.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="onPair-instance_function">
+    <strong>onPair(sensor as <span class="type"><a href="../../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Pair the sensor.
+</p><p>
+Is called by the system to pair the sensor, during the native sensor pairing process.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">sensor</span>
+        &mdash;
+        <div class="inline">
+<p>
+<a href='../../Toybox/Sensor/SensorInfo.html'>Toybox::Sensor::SensorInfo</a> object
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+true if the sensor was paired successfully, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onScan-instance_function">
+    <strong>onScan()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Start the sensor scan process.
+</p><p>
+Is called by the system to start the sensor scan process, during
+the native sensor pairing process.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+true if the scan was started successfully, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onUnpair-instance_function">
+    <strong>onUnpair(sensor as <span class="type"><a href="../../Toybox/Sensor/SensorInfo.html">Sensor.SensorInfo</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Unpair the sensor.
+</p><p>
+Is called by the system to unpair the sensor, during the native sensor removing process.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">sensor</span>
+        &mdash;
+        <div class="inline">
+<p>
+<a href='../../Toybox/Sensor/SensorInfo.html'>Toybox::Sensor::SensorInfo</a> object
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+true if the sensor was paired successfully, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="pairingRequired-instance_function">
+    <strong>pairingRequired()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Is sensor pairing required?
+</p><p>
+Is called by the system to check if sensor pairing is required.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+true if sensor pairing is required, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

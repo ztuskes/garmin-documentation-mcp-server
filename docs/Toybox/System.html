@@ -1,0 +1,2014 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.System </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.System";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.System</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The System module provides basic system information, including access to the
+clock time, device settings, battery level, and memory use.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/System/AppNotInstalledException.html">AppNotInstalledException</a></span>, <span class="type"><a href="../Toybox/System/ClockTime.html">ClockTime</a></span>, <span class="type"><a href="../Toybox/System/ConnectionInfo.html">ConnectionInfo</a></span>, <span class="type"><a href="../Toybox/System/DeviceSettings.html">DeviceSettings</a></span>, <span class="type"><a href="../Toybox/System/Intent.html">Intent</a></span>, <span class="type"><a href="../Toybox/System/PreviousOperationNotCompleteException.html">PreviousOperationNotCompleteException</a></span>, <span class="type"><a href="../Toybox/System/ServiceDelegate.html">ServiceDelegate</a></span>, <span class="type"><a href="../Toybox/System/Stats.html">Stats</a></span>, <span class="type"><a href="../Toybox/System/UnexpectedAppTypeException.html">UnexpectedAppTypeException</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="UnitsSystem-module" class="">
+    <h3>UnitsSystem</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="UNIT_METRIC-const">
+    <td class="enumTableCell">UNIT_METRIC</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Display units in metric units
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="UNIT_STATUTE-const">
+    <td class="enumTableCell">UNIT_STATUTE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Display units in statute units
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ScreenShape-module" class="">
+    <h3>ScreenShape</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SCREEN_SHAPE_ROUND-const">
+    <td class="enumTableCell">SCREEN_SHAPE_ROUND</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SCREEN_SHAPE_SEMI_ROUND-const">
+    <td class="enumTableCell">SCREEN_SHAPE_SEMI_ROUND</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SCREEN_SHAPE_RECTANGLE-const">
+    <td class="enumTableCell">SCREEN_SHAPE_RECTANGLE</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SCREEN_SHAPE_SEMI_OCTAGON-const">
+    <td class="enumTableCell">SCREEN_SHAPE_SEMI_OCTAGON</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ButtonInputs-module" class="">
+    <h3>ButtonInputs</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="BUTTON_INPUT_SELECT-const">
+    <td class="enumTableCell">BUTTON_INPUT_SELECT</td>
+      <td class="enumTableCell">0x00000001</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_INPUT_UP-const">
+    <td class="enumTableCell">BUTTON_INPUT_UP</td>
+      <td class="enumTableCell">0x00000002</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_INPUT_DOWN-const">
+    <td class="enumTableCell">BUTTON_INPUT_DOWN</td>
+      <td class="enumTableCell">0x00000004</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_INPUT_MENU-const">
+    <td class="enumTableCell">BUTTON_INPUT_MENU</td>
+      <td class="enumTableCell">0x00000008</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_INPUT_CLOCK-const">
+    <td class="enumTableCell">BUTTON_INPUT_CLOCK</td>
+      <td class="enumTableCell">0x00000010</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_INPUT_DOWN_LEFT-const">
+    <td class="enumTableCell">BUTTON_INPUT_DOWN_LEFT</td>
+      <td class="enumTableCell">0x00000020</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_INPUT_DOWN_RIGHT-const">
+    <td class="enumTableCell">BUTTON_INPUT_DOWN_RIGHT</td>
+      <td class="enumTableCell">0x00000040</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_INPUT_ESC-const">
+    <td class="enumTableCell">BUTTON_INPUT_ESC</td>
+      <td class="enumTableCell">0x00000080</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_INPUT_FIND-const">
+    <td class="enumTableCell">BUTTON_INPUT_FIND</td>
+      <td class="enumTableCell">0x00000100</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_INPUT_LAP-const">
+    <td class="enumTableCell">BUTTON_INPUT_LAP</td>
+      <td class="enumTableCell">0x00000200</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_INPUT_LEFT-const">
+    <td class="enumTableCell">BUTTON_INPUT_LEFT</td>
+      <td class="enumTableCell">0x00000400</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_INPUT_LIGHT-const">
+    <td class="enumTableCell">BUTTON_INPUT_LIGHT</td>
+      <td class="enumTableCell">0x00000800</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_INPUT_MODE-const">
+    <td class="enumTableCell">BUTTON_INPUT_MODE</td>
+      <td class="enumTableCell">0x00001000</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_INPUT_PAGE-const">
+    <td class="enumTableCell">BUTTON_INPUT_PAGE</td>
+      <td class="enumTableCell">0x00002000</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_INPUT_POWER-const">
+    <td class="enumTableCell">BUTTON_INPUT_POWER</td>
+      <td class="enumTableCell">0x00004000</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_INPUT_RESET-const">
+    <td class="enumTableCell">BUTTON_INPUT_RESET</td>
+      <td class="enumTableCell">0x00008000</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_INPUT_RIGHT-const">
+    <td class="enumTableCell">BUTTON_INPUT_RIGHT</td>
+      <td class="enumTableCell">0x00010000</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_INPUT_SPORT-const">
+    <td class="enumTableCell">BUTTON_INPUT_SPORT</td>
+      <td class="enumTableCell">0x00020000</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_INPUT_START-const">
+    <td class="enumTableCell">BUTTON_INPUT_START</td>
+      <td class="enumTableCell">0x00040000</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_INPUT_UP_LEFT-const">
+    <td class="enumTableCell">BUTTON_INPUT_UP_LEFT</td>
+      <td class="enumTableCell">0x00080000</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_INPUT_UP_RIGHT-const">
+    <td class="enumTableCell">BUTTON_INPUT_UP_RIGHT</td>
+      <td class="enumTableCell">0x00100000</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_INPUT_ZIN-const">
+    <td class="enumTableCell">BUTTON_INPUT_ZIN</td>
+      <td class="enumTableCell">0x00200000</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_INPUT_ZOUT-const">
+    <td class="enumTableCell">BUTTON_INPUT_ZOUT</td>
+      <td class="enumTableCell">0x00400000</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ConnectionState-module" class="">
+    <h3>ConnectionState</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="CONNECTION_STATE_NOT_INITIALIZED-const">
+    <td class="enumTableCell">CONNECTION_STATE_NOT_INITIALIZED</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that the connection is not setup or is inactive.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CONNECTION_STATE_NOT_CONNECTED-const">
+    <td class="enumTableCell">CONNECTION_STATE_NOT_CONNECTED</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that the connection has been setup but is not in range.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="CONNECTION_STATE_CONNECTED-const">
+    <td class="enumTableCell">CONNECTION_STATE_CONNECTED</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that the connection is available for use.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="Language-module" class="">
+    <h3>Language</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="LANGUAGE_ARA-const">
+    <td class="enumTableCell">LANGUAGE_ARA</td>
+      <td class="enumTableCell">8389920</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Arabic
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_BUL-const">
+    <td class="enumTableCell">LANGUAGE_BUL</td>
+      <td class="enumTableCell">8389921</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Bulgarian
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_CES-const">
+    <td class="enumTableCell">LANGUAGE_CES</td>
+      <td class="enumTableCell">8389352</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Czech
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_CHS-const">
+    <td class="enumTableCell">LANGUAGE_CHS</td>
+      <td class="enumTableCell">8389372</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Chinese (Simplified)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_CHT-const">
+    <td class="enumTableCell">LANGUAGE_CHT</td>
+      <td class="enumTableCell">8389371</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Chinese (Traditional)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_DAN-const">
+    <td class="enumTableCell">LANGUAGE_DAN</td>
+      <td class="enumTableCell">8389353</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Danish
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_DEU-const">
+    <td class="enumTableCell">LANGUAGE_DEU</td>
+      <td class="enumTableCell">8389358</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+German
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_DUT-const">
+    <td class="enumTableCell">LANGUAGE_DUT</td>
+      <td class="enumTableCell">8389354</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Dutch
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_ENG-const">
+    <td class="enumTableCell">LANGUAGE_ENG</td>
+      <td class="enumTableCell">8389355</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+English
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_EST-const">
+    <td class="enumTableCell">LANGUAGE_EST</td>
+      <td class="enumTableCell">8390796</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Estonian
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_FIN-const">
+    <td class="enumTableCell">LANGUAGE_FIN</td>
+      <td class="enumTableCell">8389356</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Finnish
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_FRE-const">
+    <td class="enumTableCell">LANGUAGE_FRE</td>
+      <td class="enumTableCell">8389357</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+French
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_GRE-const">
+    <td class="enumTableCell">LANGUAGE_GRE</td>
+      <td class="enumTableCell">8389359</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Greek
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_HEB-const">
+    <td class="enumTableCell">LANGUAGE_HEB</td>
+      <td class="enumTableCell">8389919</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Hebrew
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_HRV-const">
+    <td class="enumTableCell">LANGUAGE_HRV</td>
+      <td class="enumTableCell">8389361</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Croatian
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_HUN-const">
+    <td class="enumTableCell">LANGUAGE_HUN</td>
+      <td class="enumTableCell">8389360</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Hungarian
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_IND-const">
+    <td class="enumTableCell">LANGUAGE_IND</td>
+      <td class="enumTableCell">8389578</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Bahasa Indonesia
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_ITA-const">
+    <td class="enumTableCell">LANGUAGE_ITA</td>
+      <td class="enumTableCell">8389362</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Italian
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_JPN-const">
+    <td class="enumTableCell">LANGUAGE_JPN</td>
+      <td class="enumTableCell">8389373</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Japanese
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_KOR-const">
+    <td class="enumTableCell">LANGUAGE_KOR</td>
+      <td class="enumTableCell">8389696</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Korean
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_LAV-const">
+    <td class="enumTableCell">LANGUAGE_LAV</td>
+      <td class="enumTableCell">8390797</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Latvian
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_LIT-const">
+    <td class="enumTableCell">LANGUAGE_LIT</td>
+      <td class="enumTableCell">8390798</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Lithuanian
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_NOB-const">
+    <td class="enumTableCell">LANGUAGE_NOB</td>
+      <td class="enumTableCell">8389363</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Norwegian
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_POL-const">
+    <td class="enumTableCell">LANGUAGE_POL</td>
+      <td class="enumTableCell">8389364</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Polish
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_POR-const">
+    <td class="enumTableCell">LANGUAGE_POR</td>
+      <td class="enumTableCell">8389365</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Portuguese
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_RON-const">
+    <td class="enumTableCell">LANGUAGE_RON</td>
+      <td class="enumTableCell">8390799</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Romanian
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_RUS-const">
+    <td class="enumTableCell">LANGUAGE_RUS</td>
+      <td class="enumTableCell">8389366</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Russian
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_SLO-const">
+    <td class="enumTableCell">LANGUAGE_SLO</td>
+      <td class="enumTableCell">8389367</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Slovak
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_SLV-const">
+    <td class="enumTableCell">LANGUAGE_SLV</td>
+      <td class="enumTableCell">8389368</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Slovenian
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_SPA-const">
+    <td class="enumTableCell">LANGUAGE_SPA</td>
+      <td class="enumTableCell">8389369</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Spanish
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_SWE-const">
+    <td class="enumTableCell">LANGUAGE_SWE</td>
+      <td class="enumTableCell">8389370</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Swedish
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_THA-const">
+    <td class="enumTableCell">LANGUAGE_THA</td>
+      <td class="enumTableCell">8389548</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Thai
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_TUR-const">
+    <td class="enumTableCell">LANGUAGE_TUR</td>
+      <td class="enumTableCell">8389774</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Turkish
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_UKR-const">
+    <td class="enumTableCell">LANGUAGE_UKR</td>
+      <td class="enumTableCell">8390800</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Ukrainian
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LANGUAGE_VIE-const">
+    <td class="enumTableCell">LANGUAGE_VIE</td>
+      <td class="enumTableCell">8390206</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Vietnamese
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LANGUAGE_ZSM-const">
+    <td class="enumTableCell">LANGUAGE_ZSM</td>
+      <td class="enumTableCell">8389579</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Standard (Bahasa) Malay
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="DisplayMode-module" class="">
+    <h3>DisplayMode</h3>
+  </dt>
+  <p>
+Enum class for display mode
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="DISPLAY_MODE_HIGH_POWER-const">
+    <td class="enumTableCell">DISPLAY_MODE_HIGH_POWER</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 5.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Display in high power mode.
+<a href='../Toybox/WatchUi/View.html#onUpdate-instance_function'>View.onUpdate</a> are not subject to burn-in protection.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="DISPLAY_MODE_LOW_POWER-const">
+    <td class="enumTableCell">DISPLAY_MODE_LOW_POWER</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 5.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Display in low power mode, including watch face always-on mode.
+<a href='../Toybox/WatchUi/View.html#onUpdate-instance_function'>View.onUpdate</a> subject to burn-in protection.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="DISPLAY_MODE_OFF-const">
+    <td class="enumTableCell">DISPLAY_MODE_OFF</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 5.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Display is off.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="PhoneOperatingSystem-module" class="">
+    <h3>PhoneOperatingSystem</h3>
+  </dt>
+  <p>
+The platform associated with a connected phone.
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="PHONE_OS_NOT_KNOWN-const">
+    <td class="enumTableCell">PHONE_OS_NOT_KNOWN</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 5.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="PHONE_OS_ANDROID-const">
+    <td class="enumTableCell">PHONE_OS_ANDROID</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 5.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="PHONE_OS_IOS-const">
+    <td class="enumTableCell">PHONE_OS_IOS</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 5.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#error-instance_function" title="error (Instance Function)"><strong>error</strong></a>(msg as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Write an error to the console and exit the system.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#exit-instance_function" title="exit (Instance Function)"><strong>exit</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+End execution of the current app.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#exitTo-instance_function" title="exitTo (Instance Function)"><strong>exitTo</strong></a>(intent as <span class="type"><a href="../Toybox/System/Intent.html">System.Intent</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Exit the current app and launch a new app.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getClockTime-instance_function" title="getClockTime (Instance Function)"><strong>getClockTime</strong></a>()    as <span class="type"><a href="../Toybox/System/ClockTime.html">System.ClockTime</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current clock time.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getDeviceSettings-instance_function" title="getDeviceSettings (Instance Function)"><strong>getDeviceSettings</strong></a>()    as <span class="type"><a href="../Toybox/System/DeviceSettings.html">System.DeviceSettings</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current device settings.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getDisplayMode-instance_function" title="getDisplayMode (Instance Function)"><strong>getDisplayMode</strong></a>()    as <span class="type"><a href="../Toybox/System.html#DisplayMode-module">System.DisplayMode</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current display mode, only available in devices with AMOLED or LCD screens.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getSystemStats-instance_function" title="getSystemStats (Instance Function)"><strong>getSystemStats</strong></a>()    as <span class="type"><a href="../Toybox/System/Stats.html">System.Stats</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current system stats.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getTimer-instance_function" title="getTimer (Instance Function)"><strong>getTimer</strong></a>()    as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current millisecond timer value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#isAppInstalled-instance_function" title="isAppInstalled (Instance Function)"><strong>isAppInstalled</strong></a>(uri as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)    as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Check the installation status of an app.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#print-instance_function" title="print (Instance Function)"><strong>print</strong></a>(output as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Print to the console.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#println-instance_function" title="println (Instance Function)"><strong>println</strong></a>(output as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Print to the console with a line terminator.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="error-instance_function">
+    <strong>error(msg as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Write an error to the console and exit the system.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+There are never really too many bananas.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">msg</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The error message to output
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+const MAX_BANANAS = 8;
+var bananasInBunch = 10;
+if (bananasInBunch &gt; MAX_BANANAS) {
+    System.error("Too many bananas!")
+}</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="exit-instance_function">
+    <strong>exit()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+End execution of the current app.
+</p><p>
+This will exit the system cleanly from any point within an app.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="exitTo-instance_function">
+    <strong>exitTo(intent as <span class="type"><a href="../Toybox/System/Intent.html">System.Intent</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Exit the current app and launch a new app.
+</p><p>
+This may only be called by watch-apps and widgets, and may only target
+watch-apps (both native activities and Connect IQ apps) and widgets.
+This is an asynchronous request that presents a confirmation dialog to
+launch the Intent. If confirmed, the current app will exit. Otherwise,
+the app will continue to run without exiting.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">intent</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/System/Intent.html">System.Intent</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Intent to trigger
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+var targetApp = new System.Intent(
+    "manifest-id://12345678-1234-1234-1234-123412341234",
+    {"arg"=&gt;"CurrentAppName"}
+);
+System.exitTo(targetApp);</code>
+</pre>
+</div>
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/System/Intent.html">Toybox.System.Intent</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/System/UnexpectedAppTypeException.html">System.UnexpectedAppTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Indicates the intended application is not a device app or widget
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/System/AppNotInstalledException.html">System.AppNotInstalledException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Indicates the intended application is not installed
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/System/PreviousOperationNotCompleteException.html">System.PreviousOperationNotCompleteException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Indicates exitTo() is called a second time before the initial call completes
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getClockTime-instance_function">
+    <strong>getClockTime()</strong> <span class="type"> as <span class="type"><a href="../Toybox/System/ClockTime.html">System.ClockTime</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current clock time.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/System/ClockTime.html">System.ClockTime</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getDeviceSettings-instance_function">
+    <strong>getDeviceSettings()</strong> <span class="type"> as <span class="type"><a href="../Toybox/System/DeviceSettings.html">System.DeviceSettings</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current device settings.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+var mySettings = System.getDeviceSettings();</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/System/DeviceSettings.html">System.DeviceSettings</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getDisplayMode-instance_function">
+    <strong>getDisplayMode()</strong> <span class="type"> as <span class="type"><a href="../Toybox/System.html#DisplayMode-module">System.DisplayMode</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current display mode, only available in devices with AMOLED or LCD screens.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ G2</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 965</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getSystemStats-instance_function">
+    <strong>getSystemStats()</strong> <span class="type"> as <span class="type"><a href="../Toybox/System/Stats.html">System.Stats</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current system stats.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+var myStats = System.getSystemStats();</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/System/Stats.html">System.Stats</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getTimer-instance_function">
+    <strong>getTimer()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current millisecond timer value.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+The returned value typically starts at zero on device boot and will roll over periodically. Assuming the timer starts at zero, this will happen ~25 days after a reboot, and every ~50 days thereafter.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="isAppInstalled-instance_function">
+    <strong>isAppInstalled(uri as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Check the installation status of an app.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">uri</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The URI that specifies an app
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Valid URI formats</p>
+</div></p>
+<pre class="example code">
+<code>manifest-id://[manifest ID in the form xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx]
+store-id://[app store ID in the form xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx]</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if the app is installed, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if an invalid URI format is provided
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="print-instance_function">
+    <strong>print(output as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Print to the console.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">output</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The item to print, typically a <a href='../Toybox/Lang/String.html'>String</a>.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="println-instance_function">
+    <strong>println(output as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Print to the console with a line terminator.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">output</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The item to print, typically a <a href='../Toybox/Lang/String.html'>String</a>.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+System.println("Hello Monkey C!");</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

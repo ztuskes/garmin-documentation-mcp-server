@@ -1,0 +1,3625 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Communications </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Communications";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Communications</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Communications Module provides tools for communication.
+</p><p>
+With the Communications module, widgets and apps will be able to communicate
+with a mobile phone via Bluetooth Low Energy (BLE). The mobile phone may be
+sharing data with the device, or it may act as a bridge between the app and
+the Internet. This allows the device to become part of the Internet of
+Things.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+  <!-- Note -->
+  <div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+This module was made available to foreground data fields with API 5.0.0
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Background</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 45</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Garmin Swim™ 2</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+  <!-- Permissions -->
+  <p class="tag_title">Requires Permission:</p>
+  <ul class="required_permissions">
+      <li>
+    <div class="inline">
+      <p>Communications</p>
+    </div>
+  </li>
+  </ul>
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Communications/ConnectionListener.html">ConnectionListener</a></span>, <span class="type"><a href="../Toybox/Communications/MailboxIterator.html">MailboxIterator</a></span>, <span class="type"><a href="../Toybox/Communications/Message.html">Message</a></span>, <span class="type"><a href="../Toybox/Communications/OAuthMessage.html">OAuthMessage</a></span>, <span class="type"><a href="../Toybox/Communications/PhoneAppMessage.html">PhoneAppMessage</a></span>, <span class="type"><a href="../Toybox/Communications/SyncDelegate.html">SyncDelegate</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="Error-module" class="">
+    <h3>Error</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="UNKNOWN_ERROR-const">
+    <td class="enumTableCell">UNKNOWN_ERROR</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+An unknown error has occurred.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BLE_ERROR-const">
+    <td class="enumTableCell">BLE_ERROR</td>
+      <td class="enumTableCell">-1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+A generic BLE error has occurred.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BLE_HOST_TIMEOUT-const">
+    <td class="enumTableCell">BLE_HOST_TIMEOUT</td>
+      <td class="enumTableCell">-2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+We timed out waiting for a response from the host.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BLE_SERVER_TIMEOUT-const">
+    <td class="enumTableCell">BLE_SERVER_TIMEOUT</td>
+      <td class="enumTableCell">-3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+We timed out waiting for a response from a server.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BLE_NO_DATA-const">
+    <td class="enumTableCell">BLE_NO_DATA</td>
+      <td class="enumTableCell">-4</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Response contained no data.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BLE_REQUEST_CANCELLED-const">
+    <td class="enumTableCell">BLE_REQUEST_CANCELLED</td>
+      <td class="enumTableCell">-5</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The request was cancelled at the request of the system.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BLE_QUEUE_FULL-const">
+    <td class="enumTableCell">BLE_QUEUE_FULL</td>
+      <td class="enumTableCell">-101</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Too many requests have been made.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BLE_REQUEST_TOO_LARGE-const">
+    <td class="enumTableCell">BLE_REQUEST_TOO_LARGE</td>
+      <td class="enumTableCell">-102</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Serialized input data for the request was too large.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BLE_UNKNOWN_SEND_ERROR-const">
+    <td class="enumTableCell">BLE_UNKNOWN_SEND_ERROR</td>
+      <td class="enumTableCell">-103</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Send failed for an unknown reason.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BLE_CONNECTION_UNAVAILABLE-const">
+    <td class="enumTableCell">BLE_CONNECTION_UNAVAILABLE</td>
+      <td class="enumTableCell">-104</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+No BLE connection is available.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="INVALID_HTTP_HEADER_FIELDS_IN_REQUEST-const">
+    <td class="enumTableCell">INVALID_HTTP_HEADER_FIELDS_IN_REQUEST</td>
+      <td class="enumTableCell">-200</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Request contained invalid http header fields.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="INVALID_HTTP_BODY_IN_REQUEST-const">
+    <td class="enumTableCell">INVALID_HTTP_BODY_IN_REQUEST</td>
+      <td class="enumTableCell">-201</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Request contained an invalid http body.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="INVALID_HTTP_METHOD_IN_REQUEST-const">
+    <td class="enumTableCell">INVALID_HTTP_METHOD_IN_REQUEST</td>
+      <td class="enumTableCell">-202</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Request used an invalid http method.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="NETWORK_REQUEST_TIMED_OUT-const">
+    <td class="enumTableCell">NETWORK_REQUEST_TIMED_OUT</td>
+      <td class="enumTableCell">-300</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Request timed out before a response was received.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="INVALID_HTTP_BODY_IN_NETWORK_RESPONSE-const">
+    <td class="enumTableCell">INVALID_HTTP_BODY_IN_NETWORK_RESPONSE</td>
+      <td class="enumTableCell">-400</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Response body data is invalid for the request type.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="INVALID_HTTP_HEADER_FIELDS_IN_NETWORK_RESPONSE-const">
+    <td class="enumTableCell">INVALID_HTTP_HEADER_FIELDS_IN_NETWORK_RESPONSE</td>
+      <td class="enumTableCell">-401</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Response contained invalid http header fields.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="NETWORK_RESPONSE_TOO_LARGE-const">
+    <td class="enumTableCell">NETWORK_RESPONSE_TOO_LARGE</td>
+      <td class="enumTableCell">-402</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Serialized response was too large.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="NETWORK_RESPONSE_OUT_OF_MEMORY-const">
+    <td class="enumTableCell">NETWORK_RESPONSE_OUT_OF_MEMORY</td>
+      <td class="enumTableCell">-403</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Ran out of memory processing network response.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="STORAGE_FULL-const">
+    <td class="enumTableCell">STORAGE_FULL</td>
+      <td class="enumTableCell">-1000</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Filesystem too full to store response data.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SECURE_CONNECTION_REQUIRED-const">
+    <td class="enumTableCell">SECURE_CONNECTION_REQUIRED</td>
+      <td class="enumTableCell">-1001</td>
+      <td class="enumTableCell"><p>
+API Level 2.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates an https connection is required for the request.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="UNSUPPORTED_CONTENT_TYPE_IN_RESPONSE-const">
+    <td class="enumTableCell">UNSUPPORTED_CONTENT_TYPE_IN_RESPONSE</td>
+      <td class="enumTableCell">-1002</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.1
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Content type given in response is not supported or does not match what is expected.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="REQUEST_CANCELLED-const">
+    <td class="enumTableCell">REQUEST_CANCELLED</td>
+      <td class="enumTableCell">-1003</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Http request was cancelled by the system.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="REQUEST_CONNECTION_DROPPED-const">
+    <td class="enumTableCell">REQUEST_CONNECTION_DROPPED</td>
+      <td class="enumTableCell">-1004</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Connection was lost before a response could be obtained.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="UNABLE_TO_PROCESS_MEDIA-const">
+    <td class="enumTableCell">UNABLE_TO_PROCESS_MEDIA</td>
+      <td class="enumTableCell">-1005</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Downloaded media file was unable to be read.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="UNABLE_TO_PROCESS_IMAGE-const">
+    <td class="enumTableCell">UNABLE_TO_PROCESS_IMAGE</td>
+      <td class="enumTableCell">-1006</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Downloaded image file was unable to be processed.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="UNABLE_TO_PROCESS_HLS-const">
+    <td class="enumTableCell">UNABLE_TO_PROCESS_HLS</td>
+      <td class="enumTableCell">-1007</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+HLS content could not be downloaded.
+Most often occurs when requested and provided bit rates do not match.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="TokenResult-module" class="">
+    <h3>TokenResult</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="OAUTH_RESULT_TYPE_URL-const">
+    <td class="enumTableCell">OAUTH_RESULT_TYPE_URL</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+How the OAuth token will be returned in the final step.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="SigningMethod-module" class="">
+    <h3>SigningMethod</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="OAUTH_SIGNING_METHOD_HMAC_SHA1-const">
+    <td class="enumTableCell">OAUTH_SIGNING_METHOD_HMAC_SHA1</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+How the OAuth request will be signed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="HttpRequestMethod-module" class="">
+    <h3>HttpRequestMethod</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="HTTP_REQUEST_METHOD_GET-const">
+    <td class="enumTableCell">HTTP_REQUEST_METHOD_GET</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies a request be executed using the GET method.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="HTTP_REQUEST_METHOD_PUT-const">
+    <td class="enumTableCell">HTTP_REQUEST_METHOD_PUT</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies a request be executed using the PUT method.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="HTTP_REQUEST_METHOD_POST-const">
+    <td class="enumTableCell">HTTP_REQUEST_METHOD_POST</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies a request be executed using the POST method.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="HTTP_REQUEST_METHOD_DELETE-const">
+    <td class="enumTableCell">HTTP_REQUEST_METHOD_DELETE</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies a request be executed using the DELETE method.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="HttpResponseContentType-module" class="">
+    <h3>HttpResponseContentType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="HTTP_RESPONSE_CONTENT_TYPE_JSON-const">
+    <td class="enumTableCell">HTTP_RESPONSE_CONTENT_TYPE_JSON</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Content type specifier for response is expected to be a json type.
+Content type string must be "application/json".
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="HTTP_RESPONSE_CONTENT_TYPE_URL_ENCODED-const">
+    <td class="enumTableCell">HTTP_RESPONSE_CONTENT_TYPE_URL_ENCODED</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Content type specifier for response is expected to indicate url encoding.
+Content type string must be "application/x-www-form-urlencoded".
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="HTTP_RESPONSE_CONTENT_TYPE_GPX-const">
+    <td class="enumTableCell">HTTP_RESPONSE_CONTENT_TYPE_GPX</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Content type specifier for response is expected to be a gpx type.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="HTTP_RESPONSE_CONTENT_TYPE_FIT-const">
+    <td class="enumTableCell">HTTP_RESPONSE_CONTENT_TYPE_FIT</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Content type specifier for response is expected to be a FIT type.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="HTTP_RESPONSE_CONTENT_TYPE_AUDIO-const">
+    <td class="enumTableCell">HTTP_RESPONSE_CONTENT_TYPE_AUDIO</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Content type specifier for response is expected to be an audio type.
+Content type string must be of the "audio/*" format.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="HTTP_RESPONSE_CONTENT_TYPE_TEXT_PLAIN-const">
+    <td class="enumTableCell">HTTP_RESPONSE_CONTENT_TYPE_TEXT_PLAIN</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Content type specifier for response is expected to be plain text type.
+Content type string must be "text/plain"
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="HTTP_RESPONSE_CONTENT_TYPE_HLS_DOWNLOAD-const">
+    <td class="enumTableCell">HTTP_RESPONSE_CONTENT_TYPE_HLS_DOWNLOAD</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Content type specifier for response is expected to be an HLS data type.
+Content type string must be either "application/vnd.apple.mpegurl" or "audio/mpegurl".
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="HTTP_RESPONSE_CONTENT_TYPE_ANIMATION_MANIFEST-const">
+    <td class="enumTableCell">HTTP_RESPONSE_CONTENT_TYPE_ANIMATION_MANIFEST</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Content type specifier for response is expected to be a CIQ animation manifest data type.
+Content type string must be "application/vnd.garmin.connectiq.animation.manifest".
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="HTTP_RESPONSE_CONTENT_TYPE_ANIMATION-const">
+    <td class="enumTableCell">HTTP_RESPONSE_CONTENT_TYPE_ANIMATION</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Content type specifier for response is expected to be a CIQ animation data type.
+Content type string must be "image/vnd.garmin.connectiq.animation".
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="WifiConnectionStatus-module" class="">
+    <h3>WifiConnectionStatus</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="WIFI_CONNECTION_STATUS_LOW_BATTERY-const">
+    <td class="enumTableCell">WIFI_CONNECTION_STATUS_LOW_BATTERY</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies an error condition, battery is too low to start a WIFI connection.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WIFI_CONNECTION_STATUS_NO_ACCESS_POINTS-const">
+    <td class="enumTableCell">WIFI_CONNECTION_STATUS_NO_ACCESS_POINTS</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies an error condition, no access-point is stored on the device.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WIFI_CONNECTION_STATUS_UNSUPPORTED-const">
+    <td class="enumTableCell">WIFI_CONNECTION_STATUS_UNSUPPORTED</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies an error condition, WIFI is not supported on current device.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WIFI_CONNECTION_STATUS_USER_DISABLED-const">
+    <td class="enumTableCell">WIFI_CONNECTION_STATUS_USER_DISABLED</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies an error condition, WIFI is disabled by user.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WIFI_CONNECTION_STATUS_BATTERY_SAVER_ACTIVE-const">
+    <td class="enumTableCell">WIFI_CONNECTION_STATUS_BATTERY_SAVER_ACTIVE</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies an error condition, WIFI is disabled by battery saver.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WIFI_CONNECTION_STATUS_STEALTH_MODE_ACTIVE-const">
+    <td class="enumTableCell">WIFI_CONNECTION_STATUS_STEALTH_MODE_ACTIVE</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies an error condition, WIFI is disabled by stealth mode.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WIFI_CONNECTION_STATUS_AIRPLANE_MODE_ACTIVE-const">
+    <td class="enumTableCell">WIFI_CONNECTION_STATUS_AIRPLANE_MODE_ACTIVE</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies an error condition, WIFI is disabled by airplane mode.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WIFI_CONNECTION_STATUS_POWERED_DOWN-const">
+    <td class="enumTableCell">WIFI_CONNECTION_STATUS_POWERED_DOWN</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies an error condition, WIFI is disabled by the device.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WIFI_CONNECTION_STATUS_UNKNOWN-const">
+    <td class="enumTableCell">WIFI_CONNECTION_STATUS_UNKNOWN</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies an error condition, WIFI is not usable but status is unknown.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="WIFI_CONNECTION_STATUS_CANNOT_CONNECT_TO_ACCESS_POINT-const">
+    <td class="enumTableCell">WIFI_CONNECTION_STATUS_CANNOT_CONNECT_TO_ACCESS_POINT</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies an error condition, WIFI can not connect to saved AccessPoint.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="WIFI_CONNECTION_STATUS_TRANSFER_ALREADY_IN_PROGRESS-const">
+    <td class="enumTableCell">WIFI_CONNECTION_STATUS_TRANSFER_ALREADY_IN_PROGRESS</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies an error condition, WIFI transfer already in progress
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="HttpRequestContentType-module" class="">
+    <h3>HttpRequestContentType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="REQUEST_CONTENT_TYPE_URL_ENCODED-const">
+    <td class="enumTableCell">REQUEST_CONTENT_TYPE_URL_ENCODED</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies a content type of application/x-www-form-urlencoded
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="REQUEST_CONTENT_TYPE_JSON-const">
+    <td class="enumTableCell">REQUEST_CONTENT_TYPE_JSON</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Specifies a content type of application/json
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="PackingFormat-module" class="">
+    <h3>PackingFormat</h3>
+  </dt>
+  <p>
+Image packing format used for image request.
+</p><p>
+The packing format describes the encoding a requested image should use when
+being transmitted. The encoding used affects the transfer size, decoding time,
+and image quality.
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="PACKING_FORMAT_DEFAULT-const">
+    <td class="enumTableCell">PACKING_FORMAT_DEFAULT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Image data is encoded in the device native format, a lossless encoding
+that available on all devices. It is very efficient to decode, but
+often results in large transfer sizes so is slow to download.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="PACKING_FORMAT_YUV-const">
+    <td class="enumTableCell">PACKING_FORMAT_YUV</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Image data is encoded in YUV format. This is a lossy encoding that is
+compressed, and is fast to load. It is ideal for photographic imagery
+with transparency.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="PACKING_FORMAT_PNG-const">
+    <td class="enumTableCell">PACKING_FORMAT_PNG</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Image data is encoded in PNG format. This is a lossless encoding that
+is compressed, but is relatively slow to load. It is ideal for
+non-photographic imagery.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="PACKING_FORMAT_JPG-const">
+    <td class="enumTableCell">PACKING_FORMAT_JPG</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Image data is encoded in JPG format. This is a lossy encoding that is
+compressed, and is reasonably fast to load. It is ideal for photographic
+imagery.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="Dithering-module" class="">
+    <h3>Dithering</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="IMAGE_DITHERING_NONE-const">
+    <td class="enumTableCell">IMAGE_DITHERING_NONE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Do not apply dithering to an image.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="IMAGE_DITHERING_FLOYD_STEINBERG-const">
+    <td class="enumTableCell">IMAGE_DITHERING_FLOYD_STEINBERG</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Apply Floyd-Steinberg dithering to an image.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+<h2>Typedef Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#PhoneMessageCallback-named_type" title="PhoneMessageCallback (Named Type)"><strong>PhoneMessageCallback</strong></a> as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(msg as <span class="type"><a href="../Toybox/Communications/PhoneAppMessage.html">Communications.PhoneAppMessage</a></span>) as <b>Void</b>
+    </span>
+
+
+
+</li>
+</ul>
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#cancelAllRequests-instance_function" title="cancelAllRequests (Instance Function)"><strong>cancelAllRequests</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Cancel all pending JSON and Image requests.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#checkWifiConnection-instance_function" title="checkWifiConnection (Instance Function)"><strong>checkWifiConnection</strong></a>(connectionStatusCallback as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(result as { :wifiAvailable as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :errorCode as <span class="type"><a href="../Toybox/Communications.html#WifiConnectionStatus-module">Communications.WifiConnectionStatus</a></span> }) as <b>Void</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Checks if an internet-enabled WIFI access point is visible and can be connected to.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public deprecated">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#emptyMailbox-instance_function" title="emptyMailbox (Instance Function)"><strong>emptyMailbox</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="deprecated note title">deprecated</span>
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Clear the contents of the mailbox.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#encodeURL-instance_function" title="encodeURL (Instance Function)"><strong>encodeURL</strong></a>(url as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)    as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert a URL String into a percent-encoded string.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public deprecated">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#generateSignedOAuthHeader-instance_function" title="generateSignedOAuthHeader (Instance Function)"><strong>generateSignedOAuthHeader</strong></a>(url as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, params as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>&gt;, requestMethod as <span class="type"><a href="../Toybox/Communications.html#HttpRequestMethod-module">Communications.HttpRequestMethod</a></span>, signatureMethod as <span class="type"><a href="../Toybox/Communications.html#SigningMethod-module">Communications.SigningMethod</a></span>, token as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>, tokenSecret as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, consumerKey as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, consumerSecret as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)    as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+      </span>
+
+  <span class="deprecated note title">deprecated</span>
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Generate the value for the "Authorization" header in an OAuth 1.0a request.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public deprecated">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getMailbox-instance_function" title="getMailbox (Instance Function)"><strong>getMailbox</strong></a>()    as <span class="type"><a href="../Toybox/Communications/MailboxIterator.html">Communications.MailboxIterator</a></span>
+      </span>
+
+  <span class="deprecated note title">deprecated</span>
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the MailboxIterator for this Application's mailbox.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#makeImageRequest-instance_function" title="makeImageRequest (Instance Function)"><strong>makeImageRequest</strong></a>(url as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, parameters as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <b>Null</b>, options as { :palette as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>&gt;, :maxWidth as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :maxHeight as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :dithering as <span class="type"><a href="../Toybox/Communications.html#Dithering-module">Communications.Dithering</a></span>, :packingFormat as <span class="type"><a href="../Toybox/Communications.html#PackingFormat-module">Communications.PackingFormat</a></span> }, responseCallback as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(responseCode as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, data as <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span> or <b>Null</b>) as <b>Void</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Initiate an image download request.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public deprecated">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#makeJsonRequest-instance_function" title="makeJsonRequest (Instance Function)"><strong>makeJsonRequest</strong></a>(url as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, parameters as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>&gt; or <b>Null</b>, options as { :method as <span class="type"><a href="../Toybox/Communications.html#HttpRequestMethod-module">Communications.HttpRequestMethod</a></span>, :headers as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> } or <b>Null</b>, responseCallback as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(responseCode as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, data as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/PersistedContent/Iterator.html">PersistedContent.Iterator</a></span> or <b>Null</b>) as <b>Void</b>)    as <b>Void</b>
+      </span>
+
+  <span class="deprecated note title">deprecated</span>
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Initiate a download request.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#makeOAuthRequest-instance_function" title="makeOAuthRequest (Instance Function)"><strong>makeOAuthRequest</strong></a>(requestUrl as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, requestParams as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>, resultUrl as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, resultType as <span class="type"><a href="../Toybox/Communications.html#TokenResult-module">Communications.TokenResult</a></span>, resultKeys as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>&gt;)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Request an OAuth sign-in through Garmin Connect Mobile.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#makeWebRequest-instance_function" title="makeWebRequest (Instance Function)"><strong>makeWebRequest</strong></a>(url as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, parameters as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>&gt; or <b>Null</b>, options as { :method as <span class="type"><a href="../Toybox/Communications.html#HttpRequestMethod-module">Communications.HttpRequestMethod</a></span>, :headers as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>, :responseType as <span class="type"><a href="../Toybox/Communications.html#HttpResponseContentType-module">Communications.HttpResponseContentType</a></span>, :context as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>, :maxBandwidth as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :fileDownloadProgressCallback as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(totalBytesTransferred as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, fileSize as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>) as <b>Void</b> } or <b>Null</b>, responseCallback as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(responseCode as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, data as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/PersistedContent/Iterator.html">PersistedContent.Iterator</a></span> or <b>Null</b>) as <b>Void</b> or <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(responseCode as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, data as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/PersistedContent/Iterator.html">PersistedContent.Iterator</a></span> or <b>Null</b>, context as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>) as <b>Void</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Initiate a download request.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#notifySyncComplete-instance_function" title="notifySyncComplete (Instance Function)"><strong>notifySyncComplete</strong></a>(errorMessage as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Send a system notification to indicate that the sync completed.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#notifySyncProgress-instance_function" title="notifySyncProgress (Instance Function)"><strong>notifySyncProgress</strong></a>(percentageComplete as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Send a system notification to indicate overall sync progress.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#openWebPage-instance_function" title="openWebPage (Instance Function)"><strong>openWebPage</strong></a>(url as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, params as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <b>Null</b>, options as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Request that GCM issue a phone notification that will open a web page.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#registerForOAuthMessages-instance_function" title="registerForOAuthMessages (Instance Function)"><strong>registerForOAuthMessages</strong></a>(method as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(data as <span class="type"><a href="../Toybox/Communications/OAuthMessage.html">Communications.OAuthMessage</a></span>) as <b>Void</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Register a callback for receiving OAuth messages.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#registerForPhoneAppMessages-instance_function" title="registerForPhoneAppMessages (Instance Function)"><strong>registerForPhoneAppMessages</strong></a>(method as <span class="type"><a href="../Toybox/Communications.html#PhoneMessageCallback-named_type">Communications.PhoneMessageCallback</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Register a callback for receiving Phone App messages.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public deprecated">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setMailboxListener-instance_function" title="setMailboxListener (Instance Function)"><strong>setMailboxListener</strong></a>(listener as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(mailboxIterator as <span class="type"><a href="../Toybox/Communications/MailboxIterator.html">Communications.MailboxIterator</a></span>) as <b>Void</b>)    as <b>Void</b>
+      </span>
+
+  <span class="deprecated note title">deprecated</span>
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add a listener for mailbox events.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#startSync-instance_function" title="startSync (Instance Function)"><strong>startSync</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Exit the <a href='../Toybox/Application/AppBase.html'>AppBase</a> and launch it in sync mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#startSync2-instance_function" title="startSync2 (Instance Function)"><strong>startSync2</strong></a>(options as { :message as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> } or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Exit the <a href='../Toybox/Application/AppBase.html'>AppBase</a> and launch it in sync mode with the provided message.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#transmit-instance_function" title="transmit (Instance Function)"><strong>transmit</strong></a>(content as <span class="type"><a href="../Toybox/Application.html#PersistableType-named_type">Application.PersistableType</a></span>, options as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <b>Null</b>, listener as <span class="type"><a href="../Toybox/Communications/ConnectionListener.html">Communications.ConnectionListener</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Send data across the the BLE link.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="typedef_details" class="attr_details">
+    <h2>Typedef Details</h2>
+    <div class="details">
+<h3 class="signature" id="PhoneMessageCallback-named_type">
+
+<strong>PhoneMessageCallback</strong> as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(msg as <span class="type"><a href="../Toybox/Communications/PhoneAppMessage.html">Communications.PhoneAppMessage</a></span>) as <b>Void</b>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+ </div>
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="cancelAllRequests-instance_function">
+    <strong>cancelAllRequests()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Cancel all pending JSON and Image requests.
+</p><p>
+The number of active requests running in parallel is limited in the
+Connect IQ platform. This call will cancel all outstanding requests.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="checkWifiConnection-instance_function">
+    <strong>checkWifiConnection(connectionStatusCallback as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(result as { :wifiAvailable as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, :errorCode as <span class="type"><a href="../Toybox/Communications.html#WifiConnectionStatus-module">Communications.WifiConnectionStatus</a></span> }) as <b>Void</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Checks if an internet-enabled WIFI access point is visible and can be connected to
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">connectionStatusCallback</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A callback that will be invoked after the connection test has completed. This callback accepts a single dictionary parameter. This dictionary has two keys:
+</p>
+
+<ul>
+<li>
+<p>
+:wifiAvailable <code>true</code> if an access point with internet access could be connected to, <code>false</code> otherwise
+</p>
+
+</li>
+<li>
+<p>
+:errorCode If :wifiAvailable is <code>false</code> the value will be a <a href='../Toybox/Communications.html#WIFI_CONNECTION_STATUS_LOW_BATTERY-const'>WIFI_CONNECTION_STATUS_*</a> indicating why the connection is not available.
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="emptyMailbox-instance_function">
+    <strong>emptyMailbox()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This method may be removed after System 4.
+</p>
+
+
+  </div>
+</div>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Clear the contents of the mailbox.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Communications.html#registerForPhoneAppMessages-instance_function">Communications.registerForPhoneAppMessages()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="encodeURL-instance_function">
+    <strong>encodeURL(url as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert a URL String into a percent-encoded string.
+</p><p>
+The reserved characters in the string will be replaced with their
+corresponding hex-value pairs. This follows the URI-encoding scheme as
+detailed by RFC 3986.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">url</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The URL String to be encoded
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A percent-encoded String
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="https://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.1.2
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="generateSignedOAuthHeader-instance_function">
+    <strong>generateSignedOAuthHeader(url as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, params as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>&gt;, requestMethod as <span class="type"><a href="../Toybox/Communications.html#HttpRequestMethod-module">Communications.HttpRequestMethod</a></span>, signatureMethod as <span class="type"><a href="../Toybox/Communications.html#SigningMethod-module">Communications.SigningMethod</a></span>, token as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>, tokenSecret as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, consumerKey as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, consumerSecret as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span></span>
+  </h3>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This method may be removed after System 10.
+</p>
+
+
+  </div>
+</div>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Generate the value for the "Authorization" header in an OAuth 1.0a
+request.
+</p><p>
+The returned value can be set as the "Authorization" header for
+<a href='../Toybox/Communications.html#makeWebRequest-instance_function'>makeWebRequest()</a>.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+It is recommended to use OAuth 2.0 instead of OAuth 1.0a. See <a href='../Toybox/Communications.html#makeOAuthRequest-instance_function'>Toybox::Communications#makeOAuthRequest</a>.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">url</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The request URL
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">params</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The parameters of the request
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">requestMethod</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Communications.html#HttpRequestMethod-module">Communications.HttpRequestMethod</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An HTTP_REQUEST_METHOD_* value
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">signatureMethod</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Communications.html#SigningMethod-module">Communications.SigningMethod</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An OAUTH_SIGNING_METHOD_* value
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">token</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, null)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The token given by the OAuth service
+</p>
+
+<ul>
+<li>
+<p>
+Can be <code>null</code>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">tokenSecret</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The token secret given by the OAuth service. Used to sign the request
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">consumerKey</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The key that identifies your application
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">consumerSecret</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The consumer secret that is used to sign the request
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The value for the "Authorization" header
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getMailbox-instance_function">
+    <strong>getMailbox()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Communications/MailboxIterator.html">Communications.MailboxIterator</a></span></span>
+  </h3>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This method may be removed after System 4.
+</p>
+
+
+  </div>
+</div>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the MailboxIterator for this Application's mailbox.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Communications/MailboxIterator.html">Communications.MailboxIterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Iterator for the mailbox
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Communications.html#registerForPhoneAppMessages-instance_function">Communications.registerForPhoneAppMessages()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="makeImageRequest-instance_function">
+    <strong>makeImageRequest(url as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, parameters as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <b>Null</b>, options as { :palette as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>&gt;, :maxWidth as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :maxHeight as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :dithering as <span class="type"><a href="../Toybox/Communications.html#Dithering-module">Communications.Dithering</a></span>, :packingFormat as <span class="type"><a href="../Toybox/Communications.html#PackingFormat-module">Communications.PackingFormat</a></span> }, responseCallback as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(responseCode as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, data as <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span> or <b>Null</b>) as <b>Void</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Initiate an image download request.
+</p><p>
+GCM will scale and dither the image based on the capabilities of the
+device, but the user will be able to pass additional options (like
+dithering it down to a one color image)
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+This method can be used when connected to WiFi or a mobile device over Bluetooth.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">url</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The URL of an image to request
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">parameters</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>, null)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Dictionary of keys and values
+</p>
+
+<ul>
+<li>
+<p>
+Appended to the URL
+</p>
+
+</li>
+<li>
+<p>
+Can be <code>null</code>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Additional image options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:palette</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The color palette to restrict the image dithering to. Using a smaller palette can reduce the size of the image data to speed up transfers
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:maxWidth</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The maximum width an image should be scaled to
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:maxHeight</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The maximum height an image should be scaled to
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:dithering</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Communications.html#Dithering-module">Communications.Dithering</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The type of dithering to use when processing the image. Defaults to <a href='../Toybox/Communications.html#IMAGE_DITHERING_FLOYD_STEINBERG-const'>IMAGE_DITHERING_FLOYD_STEINBERG</a>
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:packingFormat</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Communications.html#PackingFormat-module">Communications.PackingFormat</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The format of the image data to request. Defaults to <a href='../Toybox/Communications.html#PACKING_FORMAT_DEFAULT-const'>PACKING_FORMAT_DEFAULT</a>
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li><li>
+        <span class="name">responseCallback</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A reference to a callback method which must accept two arguments:
+</p>
+
+<ul>
+<li>
+<p>
+responseCode: The server response code or a BLE_* error type
+</p>
+
+</li>
+<li>
+<p>
+data: A <a href='../Toybox/WatchUi/BitmapResource.html'>BitmapResource</a> or <a href='../Toybox/Graphics/BitmapReference.html'>BitmapReference</a> from a successful request, or <code>null</code> on error
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.Communications;
+
+var image;
+var responseCode;
+
+    // Set up the responseCallback function to return an image or null
+    function responseCallback(responseCode, data) {
+        responseCode = responseCode;
+        if (responseCode == 200) {
+            image = data;
+        } else {
+            image = null;
+        }
+    }
+
+    // wrap the request in a function
+    function makeRequest() {
+        var url = "http://www.garmin.com/image-path";           // set the image url
+        var parameters = null;                                  // set the parameters
+        var options = {                                         // set the options
+            :palette =&gt; [ Gfx.COLOR_ORANGE,                     // set the palette
+                          Gfx.COLOR_DK_BLUE,
+                          Gfx.COLOR_BLUE,
+                          Gfx.COLOR_BLACK ],
+            :maxWidth =&gt; 100,                                   // set the max width
+            :maxHeight =&gt; 100,                                  // set the max height
+            :dithering =&gt; Communications.IMAGE_DITHERING_NONE   // set the dithering
+        };
+
+        // Make the image request
+        Communications.makeImageRequest(url, parameters, options, method(:responseCallback));
+    }</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="makeJsonRequest-instance_function">
+    <strong>makeJsonRequest(url as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, parameters as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>&gt; or <b>Null</b>, options as { :method as <span class="type"><a href="../Toybox/Communications.html#HttpRequestMethod-module">Communications.HttpRequestMethod</a></span>, :headers as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> } or <b>Null</b>, responseCallback as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(responseCode as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, data as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/PersistedContent/Iterator.html">PersistedContent.Iterator</a></span> or <b>Null</b>) as <b>Void</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This method may be removed after System 4.
+</p>
+
+
+  </div>
+</div>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Initiate a download request.
+</p><p>
+The request is asynchronous; the responseCallback will be called when
+the request returns.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+This method can be used when connected to WiFi or a mobile device over Bluetooth.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">url</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The URL being requested
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">parameters</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary of keys and values
+</p>
+
+<ul>
+<li>
+<p>
+Appended to the URL for GET/DELETE request
+</p>
+
+</li>
+<li>
+<p>
+Set as the body for a POST/PUT request
+</p>
+
+</li>
+<li>
+<p>
+These values must be URL encoded
+</p>
+
+</li>
+<li>
+<p>
+Can be <code>null</code>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary of options
+</p>
+
+<ul>
+<li>
+<p>
+Can be <code>null</code>
+</p>
+
+</li>
+</ul>
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:method</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Communications.html#HttpRequestMethod-module">Communications.HttpRequestMethod</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The HTTP method of the request. This option should be an HTTP_REQUEST_METHOD_* value.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:headers</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary of HTTP headers to include in the request
+</p>
+
+<ul>
+<li>
+<p>
+The "Content-Type" header for the body of the request can be specified using a REQUEST_CONTENT_TYPE_* value
+</p>
+
+</li>
+<ul>
+<li>
+<p>
+This is only valid for methods PUT and POST (you cannot set a body for a GET or DELETE request)
+</p>
+
+</li>
+<li>
+<p>
+If the content type is not specified, it will default to "application/json" for GET and DELETE requests, and will default to "application/x-www-form-urlencoded" for POST and PUT requests
+</p>
+
+</li>
+</ul>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li><li>
+        <span class="name">responseCallback</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A reference to a callback method which must accept two arguments:
+</p>
+
+<ul>
+<li>
+<p>
+responseCode: the server response code
+</p>
+
+</li>
+<li>
+<p>
+data: the content if the request was successful, or <code>null</code>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 45</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Garmin Swim™ 2</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Communications.html#makeWebRequest-instance_function">Communications.makeWebRequest().</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="makeOAuthRequest-instance_function">
+    <strong>makeOAuthRequest(requestUrl as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, requestParams as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>, resultUrl as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, resultType as <span class="type"><a href="../Toybox/Communications.html#TokenResult-module">Communications.TokenResult</a></span>, resultKeys as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>&gt;)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Request an OAuth sign-in through Garmin Connect Mobile.
+</p><p>
+A notification will trigger on the phone, that when clicked, provides a
+web view that shows <code>requestUrl</code>. If the user grants permission to the app,
+then the callback registered by
+<a href='../Toybox/Communications.html#registerForOAuthMessages-instance_function'>registerForOAuthMessages()</a>
+will be called with an <a href='../Toybox/Communications/OAuthMessage.html'>OAuthMessage</a>
+from the OAuth response.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+This method can only be used when connected to a mobile device over Bluetooth.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">requestUrl</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The URL to load in the web view to begin authentication
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">requestParams</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Non-URL encoded parameters for the <code>requestUrl</code>
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">resultUrl</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The URL of the final page of authentication that contains the <code>resultKeys</code>
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">resultType</span>
+        &mdash;
+        <span class="type">(TokenResult)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An OAUTH_RESULT_TYPE_* value that specifies the format of the result
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">resultKeys</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The desired OAuth response values passed to the callback method. The keys map to the actual OAuth response keys, and the values map to the keys of the <a href='../Toybox/Communications/OAuthMessage.html'>OAuthMessage</a> data.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Communications;
+using Toybox.System;
+
+const CLIENT_ID = "myClientID";
+const OAUTH_CODE = "myOAuthCode";
+const OAUTH_ERROR = "myOAuthError";
+
+// register a callback to capture results from OAuth requests
+Communications.registerForOAuthMessages(method(:onOAuthMessage));
+
+// wrap the OAuth request in a function
+function getOAuthToken() {
+   status = "Look at OAuth screen\n";
+   Ui.requestUpdate();
+
+   // set the makeOAuthRequest parameters
+   var params = {
+       "scope" =&gt; Comm.encodeURL("https://www.serviceurl.com/"),
+       "redirect_uri" =&gt; "https://localhost",
+       "response_type" =&gt; "code",
+       "client_id" =&gt; $.CLIENT_ID
+   };
+
+   // makeOAuthRequest triggers login prompt on mobile device.
+   // "responseCode" and "responseError" are the parameters passed
+   // to the resultUrl. Check the oauth provider's documentation
+   // to determine the correct strings to use.
+   Comm.makeOAuthRequest(
+       "https://requesturl.com",
+       params,
+       "http://resulturl.com",
+       Comm.OAUTH_RESULT_TYPE_URL,
+       {"responseCode" =&gt; $.OAUTH_CODE, "responseError" =&gt; $.OAUTH_ERROR}
+   );
+}
+
+// implement the OAuth callback method
+function onOAuthMessage(message) {
+    if (message.data != null) {
+        var code = message.data[$.OAUTH_CODE];
+        var error = message.data[$.OAUTH_ERROR];
+    } else {
+        // return an error
+    }
+}
+// the OAuth service can now be used with a makeWebRequest() call</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="makeWebRequest-instance_function">
+    <strong>makeWebRequest(url as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, parameters as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>&gt; or <b>Null</b>, options as { :method as <span class="type"><a href="../Toybox/Communications.html#HttpRequestMethod-module">Communications.HttpRequestMethod</a></span>, :headers as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>, :responseType as <span class="type"><a href="../Toybox/Communications.html#HttpResponseContentType-module">Communications.HttpResponseContentType</a></span>, :context as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>, :maxBandwidth as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :fileDownloadProgressCallback as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(totalBytesTransferred as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, fileSize as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>) as <b>Void</b> } or <b>Null</b>, responseCallback as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(responseCode as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, data as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/PersistedContent/Iterator.html">PersistedContent.Iterator</a></span> or <b>Null</b>) as <b>Void</b> or <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(responseCode as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, data as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/PersistedContent/Iterator.html">PersistedContent.Iterator</a></span> or <b>Null</b>, context as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>) as <b>Void</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Initiate a download request.
+</p><p>
+Web requests are asynchronous. The supplied response callback method
+will be called when the request returns.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+This method can be used when connected to WiFi or a mobile device over Bluetooth.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">url</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The URL being requested
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">parameters</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary of keys and values.
+</p>
+
+<ul>
+<li>
+<p>
+These values should not be URL encoded.
+</p>
+
+</li>
+<li>
+<p>
+Can be <code>null</code>.
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary of options.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:method</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Communications.html#HttpRequestMethod-module">Communications.HttpRequestMethod</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The HTTP method of the request. This should be an HTTP_REQUEST_METHOD_* value.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:headers</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary of HTTP headers to include in the request.
+</p>
+
+<ul>
+<li>
+<p>
+The "Content-Type" header for the body of the request can be specified using a <a href='../Toybox/Communications.html'>REQUEST_CONTENT_TYPE_*</a> value.
+</p>
+
+</li>
+<li>
+<p>
+If the content type is not specified, it will default to "application/json" for GET and DELETE requests, and will default to "application/x-www-form-urlencoded" for POST and PUT requests.
+</p>
+
+</li>
+<li>
+<p>
+By default, DELETE requests will have their parameters appended to the URL.
+</p>
+
+</li>
+<li>
+<p>
+Setting the method as DELETE as well as a "Content-Type" header will result in the parameters being set in the body of the request and they will not be appended to the URL.
+</p>
+
+</li>
+<li>
+<p>
+GET requests can only have their parameters appended to the URL, specifying the "Content-Type" header will not set the body.
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:responseType</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Communications.html#HttpResponseContentType-module">Communications.HttpResponseContentType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The format of the response.
+</p>
+
+<ul>
+<li>
+<p>
+This should be an <a href='../Toybox/Communications.html'>HTTP_RESPONSE_CONTENT_TYPE_*</a> value.
+</p>
+
+</li>
+<li>
+<p>
+If HTTP_RESPONSE_CONTENT_TYPE_FIT or HTTP_RESPONSE_CONTENT_TYPE_GPX is given, the system will attempt to download and parse a FIT or GPX file and store the contained data in the device, based on the contents of the file.
+</p>
+
+</li>
+<li>
+<p>
+If not given, the system will use the Content-Type header from the server response to determine the format of the response body. If the Content-Type header from the response is not one of the known HTTP_RESPONSE_CONTENT_TYPE_* types, an error will occur.
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:context</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A user-specific context object to be passed to the response callback. The callback will need to accept a third parameter if this value is populated.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:mediaEncoding</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Media.html#Encoding-module">Media.Encoding</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The encoding of the audio content that is being downloaded. Should be a <a href='../Toybox/Media.html'>Media.ENCODING_*</a> value.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:maxBandwidth</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+maximum bandwidth. TVM will select the audio stream with the highest bandwidth that's less than or equal to the maximum This option is only effective when processing HLS content
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:fileDownloadProgressCallback</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+a callback method which must accept two parameters
+</p>
+
+<ul>
+<li>
+<p>
+totalBytesTransferred: The total number of bytes transferred for the current file download
+</p>
+
+</li>
+<li>
+<p>
+fileSize: The size of the file being downloaded. Note that this can be <code>null</code> if file size cannot be determined from the server.
+</p>
+
+</li>
+<li>
+<p>
+This option is only supported for media file download progress
+</p>
+
+</li>
+<li>
+<p>
+This option is supported since CIQ 3.2.0
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li><li>
+        <span class="name">responseCallback</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A reference to a callback method which must accept two arguments:
+</p>
+
+<ul>
+<li>
+<p>
+responseCode: The server response code or a BLE_* error type
+</p>
+
+</li>
+<li>
+<p>
+data: The content if the request was successful, or <code>null</code>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>// It is common for developers to wrap a makeWebRequest() call in a function
+// as displayed below. The function defines the variables for each of the
+// necessary arguments in a Communications.makeWebRequest() call, then passes
+// these variables as the arguments. This allows for a clean layout of your web
+// request and expandability.
+using Toybox.System;
+using Toybox.Communications;
+
+   // set up the response callback function
+   function onReceive(responseCode, data) {
+       if (responseCode == 200) {
+           System.println("Request Successful");                   // print success
+       }
+       else {
+           System.println("Response: " + responseCode);            // print response code
+       };
+
+   };
+
+   function makeRequest() {
+       var url = "https://www.garmin.com";                         // set the url
+
+       var params = {                                              // set the parameters
+              "definedParams" =&gt; "123456789abcdefg"
+       };
+
+       var options = {                                             // set the options
+           :method =&gt; Communications.HTTP_REQUEST_METHOD_GET,      // set HTTP method
+           :headers =&gt; {                                           // set headers
+                   "Content-Type" =&gt; Communications.REQUEST_CONTENT_TYPE_URL_ENCODED},
+                                                                   // set response type
+           :responseType =&gt; Communications.HTTP_RESPONSE_CONTENT_TYPE_URL_ENCODED
+       };
+
+       var responseCallback = method(:onReceive);                  // set responseCallback to
+                                                                   // onReceive() method
+       // Make the Communications.makeWebRequest() call
+       Communications.makeWebRequest(url, params, options, responseCallback);
+  }</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidOptionsException.html">Lang.InvalidOptionsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a required option for a particular request is omitted
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/SymbolNotAllowedException.html">Lang.SymbolNotAllowedException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a given :responseType option is not supported for the device the request is being made from. An example would be using HTTP_RESPONSE_CONTENT_TYPE_AUDIO on a device that does not support audio content provider apps
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="notifySyncComplete-instance_function">
+    <strong>notifySyncComplete(errorMessage as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Send a system notification to indicate that the sync completed.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">errorMessage</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A descriptive error message if a failure occurred. If the sync completes successfully, <code>null</code> should be passed to this method.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 255 Music</li><li>Forerunner® 255s Music</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 645 Music</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="notifySyncProgress-instance_function">
+    <strong>notifySyncProgress(percentageComplete as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Send a system notification to indicate overall sync progress.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">percentageComplete</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An integer from 0 to 100 indicating the completion percentage.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 255 Music</li><li>Forerunner® 255s Music</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 645 Music</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="openWebPage-instance_function">
+    <strong>openWebPage(url as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, params as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <b>Null</b>, options as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Request that GCM issue a phone notification that will open a web page.
+</p><p>
+This method will push a phone notification that must be accepted by the
+user. If the used accepts it, a web page defined by this method will be
+opened in the default browser on the phone.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+This method can only be used when connected to a mobile device over Bluetooth.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">url</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The URL to open.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">params</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The URL parameters used to add to the pages web page URL. Parameters should not be URL encoded.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Additional options for the request
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Communications;
+Communications.openWebPage(
+   "http://www.bing.com/images/search",
+   {"q" =&gt; "cute kitten"},
+   null
+);
+// passes the url: http://bing.com/images/search?q=cute kitten to the
+// browser on the phone</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="registerForOAuthMessages-instance_function">
+    <strong>registerForOAuthMessages(method as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(data as <span class="type"><a href="../Toybox/Communications/OAuthMessage.html">Communications.OAuthMessage</a></span>) as <b>Void</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Register a callback for receiving OAuth messages.
+</p><p>
+The callback will be called once for each received OAuth message.
+If there are messages waiting for the app when this function is
+called, the callback will immediately be called once for each waiting
+message.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">method</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A reference to a callback, which must receive a <code>data</code> argument of the type <a href='../Toybox/Communications/OAuthMessage.html'>OAuthMessage</a>.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Communications;
+
+function onOAuthMessage(message) {
+    if (message.data != null) {
+        var code = message.data[OAUTH_CODE];
+        var error = message.data[OAUTH_ERROR];
+    } else {
+        // return an error
+    }
+}
+Communications.registerForOAuthMessages(method(:onOAuthMessage));
+</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="registerForPhoneAppMessages-instance_function">
+    <strong>registerForPhoneAppMessages(method as <span class="type"><a href="../Toybox/Communications.html#PhoneMessageCallback-named_type">Communications.PhoneMessageCallback</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Register a callback for receiving Phone App messages.
+</p><p>
+The callback will be called once for each message received. If there are
+messages waiting for the app when this function is called, the
+callback will immediately be called once for each waiting message.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">method</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A reference to a callback, which must receive a <code>data</code> argument of the type <a href='../Toybox/Communications/PhoneAppMessage.html'>PhoneAppMessage</a>.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Communications;
+// set up somewhere to store the message
+var message = new Communications.PhoneAppMessage;
+// set up phoneMessageCallback
+function phoneMessageCallback(msg) {
+   message = msg.data;
+}
+// register the messages from the callback to capture the results
+Communications.registerForPhoneAppMessages(method(:phoneMessageCallback));</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Communications/PhoneAppMessage.html">Toybox.Communications.PhoneAppMessage</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setMailboxListener-instance_function">
+    <strong>setMailboxListener(listener as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(mailboxIterator as <span class="type"><a href="../Toybox/Communications/MailboxIterator.html">Communications.MailboxIterator</a></span>) as <b>Void</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This method may be removed after System 4.
+</p>
+
+
+  </div>
+</div>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add a listener for mailbox events.
+</p><p>
+The listener method is called whenever a new message is received.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">listener</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A reference to a callback method which must accept an iterator. The iterator is the mailbox iterator for the app
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Communications.html#registerForPhoneAppMessages-instance_function">Communications.registerForPhoneAppMessages()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="startSync-instance_function">
+    <strong>startSync()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Exit the <a href='../Toybox/Application/AppBase.html'>AppBase</a>
+and launch it in sync mode.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 255 Music</li><li>Forerunner® 255s Music</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 645 Music</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="startSync2-instance_function">
+    <strong>startSync2(options as { :message as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> } or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Exit the <a href='../Toybox/Application/AppBase.html'>AppBase</a>
+and launch it in sync mode with the provided message.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+a dictionary of options, can be null
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:message</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+the sync message to display
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ G2</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255s Music</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Sq 2 Music</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.4
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="transmit-instance_function">
+    <strong>transmit(content as <span class="type"><a href="../Toybox/Application.html#PersistableType-named_type">Application.PersistableType</a></span>, options as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <b>Null</b>, listener as <span class="type"><a href="../Toybox/Communications/ConnectionListener.html">Communications.ConnectionListener</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Send data across the the BLE link.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">content</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The object to be sent
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Additional transmit options for future proofing. For now, an empty Dictionary is used.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">listener</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Communications/ConnectionListener.html">Communications.ConnectionListener</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An extension of the ConnectionListener class
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

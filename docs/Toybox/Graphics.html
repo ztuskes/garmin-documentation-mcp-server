@@ -1,0 +1,2377 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Graphics </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Graphics";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Graphics</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Graphics module provides a set of tools that allow developers to use
+basic drawing functionality.
+</p><p>
+This provides the ability to draw shapes,
+lines, fill shapes, and use dynamic layouts for graphic elements based on
+specific device contexts. The Device Context (Dc) is useful for developers
+who are interested in creating content for multiple device platforms with
+differing screen shapes, sizes, and color palettes.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Background (supported since API Level 5.1.0)</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch Face</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Graphics/AffineTransform.html">AffineTransform</a></span>, <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">BitmapReference</a></span>, <span class="type"><a href="../Toybox/Graphics/BitmapTexture.html">BitmapTexture</a></span>, <span class="type"><a href="../Toybox/Graphics/BoundingBox.html">BoundingBox</a></span>, <span class="type"><a href="../Toybox/Graphics/BufferedBitmap.html">BufferedBitmap</a></span>, <span class="type"><a href="../Toybox/Graphics/BufferedBitmapReference.html">BufferedBitmapReference</a></span>, <span class="type"><a href="../Toybox/Graphics/Dc.html">Dc</a></span>, <span class="type"><a href="../Toybox/Graphics/FontReference.html">FontReference</a></span>, <span class="type"><a href="../Toybox/Graphics/InvalidBitmapResourceException.html">InvalidBitmapResourceException</a></span>, <span class="type"><a href="../Toybox/Graphics/InvalidPaletteException.html">InvalidPaletteException</a></span>, <span class="type"><a href="../Toybox/Graphics/OutOfGraphicsMemoryException.html">OutOfGraphicsMemoryException</a></span>, <span class="type"><a href="../Toybox/Graphics/ResourceReference.html">ResourceReference</a></span>, <span class="type"><a href="../Toybox/Graphics/VectorFont.html">VectorFont</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="FontDefinition-module" class="">
+    <h3>FontDefinition</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="FONT_XTINY-const">
+    <td class="enumTableCell">FONT_XTINY</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Extra tiny Connect IQ font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_TINY-const">
+    <td class="enumTableCell">FONT_TINY</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Tiny Connect IQ font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_SMALL-const">
+    <td class="enumTableCell">FONT_SMALL</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Small Connect IQ font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_MEDIUM-const">
+    <td class="enumTableCell">FONT_MEDIUM</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Medium Connect IQ font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_LARGE-const">
+    <td class="enumTableCell">FONT_LARGE</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Large Connect IQ font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_NUMBER_MILD-const">
+    <td class="enumTableCell">FONT_NUMBER_MILD</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Normal size number only Connect IQ font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_NUMBER_MEDIUM-const">
+    <td class="enumTableCell">FONT_NUMBER_MEDIUM</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Medium size number only Connect IQ font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_NUMBER_HOT-const">
+    <td class="enumTableCell">FONT_NUMBER_HOT</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Large size number only Connect IQ font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_NUMBER_THAI_HOT-const">
+    <td class="enumTableCell">FONT_NUMBER_THAI_HOT</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Huge size number only Connect IQ font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_SYSTEM_XTINY-const">
+    <td class="enumTableCell">FONT_SYSTEM_XTINY</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Extra tiny system font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_SYSTEM_TINY-const">
+    <td class="enumTableCell">FONT_SYSTEM_TINY</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Tiny system font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_SYSTEM_SMALL-const">
+    <td class="enumTableCell">FONT_SYSTEM_SMALL</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Small system font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_SYSTEM_MEDIUM-const">
+    <td class="enumTableCell">FONT_SYSTEM_MEDIUM</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Medium system font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_SYSTEM_LARGE-const">
+    <td class="enumTableCell">FONT_SYSTEM_LARGE</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Large system font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_SYSTEM_NUMBER_MILD-const">
+    <td class="enumTableCell">FONT_SYSTEM_NUMBER_MILD</td>
+      <td class="enumTableCell">14</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Normal size number only system font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_SYSTEM_NUMBER_MEDIUM-const">
+    <td class="enumTableCell">FONT_SYSTEM_NUMBER_MEDIUM</td>
+      <td class="enumTableCell">15</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Medium size number only system font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_SYSTEM_NUMBER_HOT-const">
+    <td class="enumTableCell">FONT_SYSTEM_NUMBER_HOT</td>
+      <td class="enumTableCell">16</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Large size number only system font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_SYSTEM_NUMBER_THAI_HOT-const">
+    <td class="enumTableCell">FONT_SYSTEM_NUMBER_THAI_HOT</td>
+      <td class="enumTableCell">17</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Huge size number only system font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_GLANCE-const">
+    <td class="enumTableCell">FONT_GLANCE</td>
+      <td class="enumTableCell">18</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.8
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Glance text font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_GLANCE_NUMBER-const">
+    <td class="enumTableCell">FONT_GLANCE_NUMBER</td>
+      <td class="enumTableCell">19</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.8
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Glance number only font
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_AUX1-const">
+    <td class="enumTableCell">FONT_AUX1</td>
+      <td class="enumTableCell">20</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Auxiliary Font 1
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_AUX2-const">
+    <td class="enumTableCell">FONT_AUX2</td>
+      <td class="enumTableCell">21</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.2
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Auxiliary Font 2
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_AUX3-const">
+    <td class="enumTableCell">FONT_AUX3</td>
+      <td class="enumTableCell">22</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Auxiliary Font 3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_AUX4-const">
+    <td class="enumTableCell">FONT_AUX4</td>
+      <td class="enumTableCell">23</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Auxiliary Font 4
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_AUX5-const">
+    <td class="enumTableCell">FONT_AUX5</td>
+      <td class="enumTableCell">24</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Auxiliary Font 5
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_AUX6-const">
+    <td class="enumTableCell">FONT_AUX6</td>
+      <td class="enumTableCell">25</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Auxiliary Font 6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_AUX7-const">
+    <td class="enumTableCell">FONT_AUX7</td>
+      <td class="enumTableCell">26</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Auxiliary Font 7
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FONT_AUX8-const">
+    <td class="enumTableCell">FONT_AUX8</td>
+      <td class="enumTableCell">27</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Auxiliary Font 8
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FONT_AUX9-const">
+    <td class="enumTableCell">FONT_AUX9</td>
+      <td class="enumTableCell">28</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Auxiliary Font 9
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ColorValue-module" class="">
+    <h3>ColorValue</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="COLOR_WHITE-const">
+    <td class="enumTableCell">COLOR_WHITE</td>
+      <td class="enumTableCell">0xFFFFFF</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+White
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COLOR_LT_GRAY-const">
+    <td class="enumTableCell">COLOR_LT_GRAY</td>
+      <td class="enumTableCell">0xAAAAAA</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Light Gray
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COLOR_DK_GRAY-const">
+    <td class="enumTableCell">COLOR_DK_GRAY</td>
+      <td class="enumTableCell">0x555555</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Dark Gray
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COLOR_BLACK-const">
+    <td class="enumTableCell">COLOR_BLACK</td>
+      <td class="enumTableCell">0x000000</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Black
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COLOR_RED-const">
+    <td class="enumTableCell">COLOR_RED</td>
+      <td class="enumTableCell">0xFF0000</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Red
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COLOR_DK_RED-const">
+    <td class="enumTableCell">COLOR_DK_RED</td>
+      <td class="enumTableCell">0xAA0000</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Dark Red
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COLOR_ORANGE-const">
+    <td class="enumTableCell">COLOR_ORANGE</td>
+      <td class="enumTableCell">0xFF5500</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Orange
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COLOR_YELLOW-const">
+    <td class="enumTableCell">COLOR_YELLOW</td>
+      <td class="enumTableCell">0xFFAA00</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Yellow
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COLOR_GREEN-const">
+    <td class="enumTableCell">COLOR_GREEN</td>
+      <td class="enumTableCell">0x00FF00</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Green
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COLOR_DK_GREEN-const">
+    <td class="enumTableCell">COLOR_DK_GREEN</td>
+      <td class="enumTableCell">0x00AA00</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Dark Green
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COLOR_BLUE-const">
+    <td class="enumTableCell">COLOR_BLUE</td>
+      <td class="enumTableCell">0x00AAFF</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Blue
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COLOR_DK_BLUE-const">
+    <td class="enumTableCell">COLOR_DK_BLUE</td>
+      <td class="enumTableCell">0x0000FF</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Dark Blue
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COLOR_PURPLE-const">
+    <td class="enumTableCell">COLOR_PURPLE</td>
+      <td class="enumTableCell">0xAA00FF</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Purple. Not valid on fenix 3 or D2 Bravo. Use 0x5500AA instead.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COLOR_PINK-const">
+    <td class="enumTableCell">COLOR_PINK</td>
+      <td class="enumTableCell">0xFF00FF</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Pink
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COLOR_TRANSPARENT-const">
+    <td class="enumTableCell">COLOR_TRANSPARENT</td>
+      <td class="enumTableCell">-1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Transparent
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="TextJustification-module" class="">
+    <h3>TextJustification</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="TEXT_JUSTIFY_RIGHT-const">
+    <td class="enumTableCell">TEXT_JUSTIFY_RIGHT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Right justify the text at the x/y coordinates
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TEXT_JUSTIFY_CENTER-const">
+    <td class="enumTableCell">TEXT_JUSTIFY_CENTER</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Center justify the text at the x/y coordinates
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TEXT_JUSTIFY_LEFT-const">
+    <td class="enumTableCell">TEXT_JUSTIFY_LEFT</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Left justify the text at the x/y coordinates
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TEXT_JUSTIFY_VCENTER-const">
+    <td class="enumTableCell">TEXT_JUSTIFY_VCENTER</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Center the text vertically
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="BlendMode-module" class="">
+    <h3>BlendMode</h3>
+  </dt>
+  <p>
+Blend mode
+</p><p>
+Specifies how colors of a source pixel will be blended with the colors
+of a destination pixel.
+</p><p>
+In the below descriptions
+</p>
+
+<pre>
+   S is source pixel
+   D is destination pixel
+   a is the alpha component
+</pre>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="BLEND_MODE_DEFAULT-const">
+    <td class="enumTableCell">BLEND_MODE_DEFAULT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 4.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Alias for <code>BLEND_MODE_SOURCE_OVER</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BLEND_MODE_NO_BLEND-const">
+    <td class="enumTableCell">BLEND_MODE_NO_BLEND</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 4.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Alias for <code>BLEND_MODE_SOURCE</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BLEND_MODE_SOURCE_OVER-const">
+    <td class="enumTableCell">BLEND_MODE_SOURCE_OVER</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.1
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+S + (1 - S.a) * D
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BLEND_MODE_SOURCE-const">
+    <td class="enumTableCell">BLEND_MODE_SOURCE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.1
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+S, i.e. no blending.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BLEND_MODE_MULTIPLY-const">
+    <td class="enumTableCell">BLEND_MODE_MULTIPLY</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.1
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+(S * (1 - D.a)) + (D * (1 - S.a)) + (S * D)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BLEND_MODE_ADDITIVE-const">
+    <td class="enumTableCell">BLEND_MODE_ADDITIVE</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.1
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+S + D
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="AlphaBlending-module" class="">
+    <h3>AlphaBlending</h3>
+  </dt>
+  <p>
+Constant representing alpha blending state for buffered bitmaps
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="ALPHA_BLENDING_FULL-const">
+    <td class="enumTableCell">ALPHA_BLENDING_FULL</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 4.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Default surface for buffered bitmap with maximum alpha blending support
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="ALPHA_BLENDING_PARTIAL-const">
+    <td class="enumTableCell">ALPHA_BLENDING_PARTIAL</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 4.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Surface for buffered bitmap with at least a 1-bit alpha channel. The actual
+number of bits may vary by device.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="RadialTextDirection-module" class="">
+    <h3>RadialTextDirection</h3>
+  </dt>
+  <p>
+Orientation for radial text
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.1
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="RADIAL_TEXT_DIRECTION_CLOCKWISE-const">
+    <td class="enumTableCell">RADIAL_TEXT_DIRECTION_CLOCKWISE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.1
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Top of text is further from center. Typically used for upright text along the top of a circle.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="RADIAL_TEXT_DIRECTION_COUNTER_CLOCKWISE-const">
+    <td class="enumTableCell">RADIAL_TEXT_DIRECTION_COUNTER_CLOCKWISE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.1
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Bottom of text is further from center. Typically used for upright text along the bottom of a circle.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="FilterMode-module" class="">
+    <h3>FilterMode</h3>
+  </dt>
+  <p>
+Filter mode
+</p><p>
+Specifies how many pixels to sample
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.1
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="FILTER_MODE_POINT-const">
+    <td class="enumTableCell">FILTER_MODE_POINT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.1
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Point filter
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FILTER_MODE_BILINEAR-const">
+    <td class="enumTableCell">FILTER_MODE_BILINEAR</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.1
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Bilinear filter
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ArcDirection-module" class="">
+    <h3>ArcDirection</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="ARC_COUNTER_CLOCKWISE-const">
+    <td class="enumTableCell">ARC_COUNTER_CLOCKWISE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Counter clockwise draw
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="ARC_CLOCKWISE-const">
+    <td class="enumTableCell">ARC_CLOCKWISE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Clockwise draw
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+<h2>Typedef Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#BitmapType-named_type" title="BitmapType (Named Type)"><strong>BitmapType</strong></a> as <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BufferedBitmap.html">Graphics.BufferedBitmap</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span> or <span class="type"><a href="../Toybox/Graphics/BufferedBitmapReference.html">Graphics.BufferedBitmapReference</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#ColorType-named_type" title="ColorType (Named Type)"><strong>ColorType</strong></a> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Graphics.html#ColorValue-module">Graphics.ColorValue</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#FontType-named_type" title="FontType (Named Type)"><strong>FontType</strong></a> as <span class="type"><a href="../Toybox/WatchUi/FontResource.html">WatchUi.FontResource</a></span> or <span class="type"><a href="../Toybox/Graphics.html#FontDefinition-module">Graphics.FontDefinition</a></span> or <span class="type"><a href="../Toybox/Graphics/FontReference.html">Graphics.FontReference</a></span> or <span class="type"><a href="../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Point2D-named_type" title="Point2D (Named Type)"><strong>Point2D</strong></a> as [ <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span> ]
+    </span>
+
+
+
+    <span class="summary_desc">
+        <div class="inline">
+            <p>
+Type alias for an Array<Numeric> of length 2.
+</p>
+
+
+        </div>
+    </span>
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#VectorFontOptions-named_type" title="VectorFontOptions (Named Type)"><strong>VectorFontOptions</strong></a> as { :face as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>&gt;, :size as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :font as <span class="type"><a href="../Toybox/Graphics.html#FontDefinition-module">Graphics.FontDefinition</a></span> or <span class="type"><a href="../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span>, :scale as <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span> }
+    </span>
+
+
+
+</li>
+</ul>
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#createBufferedBitmap-instance_function" title="createBufferedBitmap (Instance Function)"><strong>createBufferedBitmap</strong></a>(options as { :width as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :height as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :palette as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>&gt;, :colorDepth as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :bitmapResource as <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span>, :alphaBlending as <span class="type"><a href="../Toybox/Graphics.html#AlphaBlending-module">Graphics.AlphaBlending</a></span> })    as <span class="type"><a href="../Toybox/Graphics/BufferedBitmapReference.html">Graphics.BufferedBitmapReference</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Create a buffered bitmap object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#createColor-instance_function" title="createColor (Instance Function)"><strong>createColor</strong></a>(alpha as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, red as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, green as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, blue as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)    as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Create a color with the individual channel values passed in.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#fitTextToArea-instance_function" title="fitTextToArea (Instance Function)"><strong>fitTextToArea</strong></a>(text as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, font as <span class="type"><a href="../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>, width as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, truncate as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)    as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a text string to fit in a specified area.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getFontAscent-instance_function" title="getFontAscent (Instance Function)"><strong>getFontAscent</strong></a>(font as <span class="type"><a href="../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)    as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the recommended distance above the baseline for single spaced text.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getFontDescent-instance_function" title="getFontDescent (Instance Function)"><strong>getFontDescent</strong></a>(font as <span class="type"><a href="../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)    as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the recommended distance below the baseline for single spaced text.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getFontHeight-instance_function" title="getFontHeight (Instance Function)"><strong>getFontHeight</strong></a>(font as <span class="type"><a href="../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)    as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the height (ascent plus descent) of the given font.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getVectorFont-instance_function" title="getVectorFont (Instance Function)"><strong>getVectorFont</strong></a>(options as <span class="type"><a href="../Toybox/Graphics.html#VectorFontOptions-named_type">Graphics.VectorFontOptions</a></span>)    as <span class="type"><a href="../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a font for this device.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="typedef_details" class="attr_details">
+    <h2>Typedef Details</h2>
+    <div class="details">
+<h3 class="signature" id="BitmapType-named_type">
+
+<strong>BitmapType</strong> as <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BufferedBitmap.html">Graphics.BufferedBitmap</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span> or <span class="type"><a href="../Toybox/Graphics/BufferedBitmapReference.html">Graphics.BufferedBitmapReference</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="ColorType-named_type">
+
+<strong>ColorType</strong> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Graphics.html#ColorValue-module">Graphics.ColorValue</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="FontType-named_type">
+
+<strong>FontType</strong> as <span class="type"><a href="../Toybox/WatchUi/FontResource.html">WatchUi.FontResource</a></span> or <span class="type"><a href="../Toybox/Graphics.html#FontDefinition-module">Graphics.FontDefinition</a></span> or <span class="type"><a href="../Toybox/Graphics/FontReference.html">Graphics.FontReference</a></span> or <span class="type"><a href="../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="Point2D-named_type">
+
+<strong>Point2D</strong> as [ <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span> ]
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Type alias for an Array<Numeric> of length 2
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="VectorFontOptions-named_type">
+
+<strong>VectorFontOptions</strong> as { :face as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>&gt;, :size as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :font as <span class="type"><a href="../Toybox/Graphics.html#FontDefinition-module">Graphics.FontDefinition</a></span> or <span class="type"><a href="../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span>, :scale as <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span> }
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+ </div>
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="createBufferedBitmap-instance_function">
+    <strong>createBufferedBitmap(options as { :width as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :height as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :palette as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>&gt;, :colorDepth as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, :bitmapResource as <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span>, :alphaBlending as <span class="type"><a href="../Toybox/Graphics.html#AlphaBlending-module">Graphics.AlphaBlending</a></span> })</strong> <span class="type"> as <span class="type"><a href="../Toybox/Graphics/BufferedBitmapReference.html">Graphics.BufferedBitmapReference</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Create a buffered bitmap object.
+This function will return a <a href='../Toybox/Graphics/BufferedBitmapReference.html'>Toybox::Graphics::BufferedBitmapReference</a> object which can be used to reference the <a href='../Toybox/Graphics/BufferedBitmap.html'>Toybox::Graphics::BufferedBitmap</a> object.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+The result of a draw/fill operation to a <a href='../Toybox/Graphics/BufferedBitmap.html'>BufferedBitmap</a> created with <a href='../Toybox/Graphics.html#AlphaBlending-module'>ALPHA_BLENDING_PARTIAL</a> may produce inconsistent results between devices and the ConnectIQ simulator if the drawn pixels are not fully opaque or fully transparent.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Dictionary of options. Must contain width and height, with optional palette, or a <a href='../Toybox/WatchUi/BitmapResource.html'>BitmapResource</a>. This resource is not allowed to have an alpha channel.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:width</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The width of the surface in pixels. Must be a positive integer value.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:height</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height of the surface in pixels. Must be a positive integer value.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:palette</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The colors used in this surface. Using less will reduce the bitmap size. The bitmap will use the system default if not provided. The maximum palette size allowed is 256 colors. If a palette is provided, the number of colors must also be <= to the number of system colors.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:colorDepth</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Color depth in terms of bits/pixel, when missing, default to system value.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:bitmapResource</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../Toybox/WatchUi/BitmapResource.html'>BitmapResource</a> or <a href='../Toybox/Graphics/BitmapReference.html'>BitmapReference</a> to initialize
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:alphaBlending</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Graphics.html#AlphaBlending-module">Graphics.AlphaBlending</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../Toybox/Graphics.html#AlphaBlending-module'>AlphaBlending</a> enum to specify the level of alpha blending support for this buffered bitmap object.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class="inline">
+    <p>
+<a href='../Toybox/Graphics/BufferedBitmapReference.html'>Toybox::Graphics::BufferedBitmapReference</a> A reference to BufferedBitmap object
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Graphics/InvalidPaletteException.html">Graphics.InvalidPaletteException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the palette size exceeds the number of system colors.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/Graphics/InvalidPaletteException.html">Graphics.InvalidPaletteException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the palette size exceeds 256 colors.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/Graphics/InvalidBitmapResourceException.html">Graphics.InvalidBitmapResourceException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the <a href='../Toybox/WatchUi/BitmapResource.html'>BitmapResource</a> provided has an alpha channel.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="createColor-instance_function">
+    <strong>createColor(alpha as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, red as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, green as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, blue as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Create a color with the individual channel values passed in
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">alpha</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Number value ranging from 0-255 representing alpha channel
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">red</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Number value ranging from 0-255 representing red channel
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">green</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Number value ranging from 0-255 representing green channel
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">blue</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Number value ranging from 0-255 representing blue channel
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class="inline">
+    <p>
+color [Toybox::Lang::Number] 32-bit value representing the created color that can be used with Toybox.Graphics functions.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="fitTextToArea-instance_function">
+    <strong>fitTextToArea(text as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, font as <span class="type"><a href="../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>, width as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, truncate as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a text string to fit in a specified area
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+<a href='../Toybox/Graphics/FontReference.html'>FontReference</a> is only supported in CIQ 4.0.0 and later
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">text</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The text to fit into the given area, which may include newlines
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The font to use when determining line break placement
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">width</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The width of the area to fit within
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">height</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height of the area to fit within
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">truncate</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+If <code>true</code>, the resulting string may be truncated to fit within the provided area using the provided font
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class="inline">
+    <p>
+Returns a String suitable for display in the given area. The String will be truncated if the 'truncate' parameter is <code>true</code> and the String cannot fit into the specified area. Otherwise, <code>null</code> will be returned.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getFontAscent-instance_function">
+    <strong>getFontAscent(font as <span class="type"><a href="../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the recommended distance above the baseline for single spaced text.
+</p><p>
+The base line is the line on which the text sits.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+<a href='../Toybox/Graphics/FontReference.html'>FontReference</a> is only supported in CIQ 4.0.0 and later
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The font to use
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The ascent of the font
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getFontDescent-instance_function">
+    <strong>getFontDescent(font as <span class="type"><a href="../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the recommended distance below the baseline for single spaced text.
+</p><p>
+The base line is the line on which the text sits.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+<a href='../Toybox/Graphics/FontReference.html'>FontReference</a> is only supported in CIQ 4.0.0 and later
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The font to use
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The descent of the font
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getFontHeight-instance_function">
+    <strong>getFontHeight(font as <span class="type"><a href="../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the height (ascent plus descent) of the given font.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+<a href='../Toybox/Graphics/FontReference.html'>FontReference</a> is only supported in CIQ 4.0.0 and later
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The font to use
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The height of the font
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getVectorFont-instance_function">
+    <strong>getVectorFont(options as <span class="type"><a href="../Toybox/Graphics.html#VectorFontOptions-named_type">Graphics.VectorFontOptions</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a font for this device
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+The :font and :scale options are only supported in CIQ 5.1.0 and later.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>, <span class="type"><a href="../Toybox/Graphics.html#FontDefinition-module">Graphics.FontDefinition</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A description of the font to retrieve.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:face</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A String representing the face name requested, or an Array<String> of face names that are acceptable.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:size</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height of the font requested in pixels as a positive number.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Graphics.html#FontDefinition-module">Graphics.FontDefinition</a></span>, <span class="type"><a href="../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The font to apply a scale to.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:scale</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The amount to scale the font.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Mach 1</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+if a font can be created for the given parameters, otherwise <code>null</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="https://developer.garmin.com/connect-iq/reference-guides/devices-reference/">Reference Guides - Devices Reference</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.1
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if <code>options</code> is not a supported type.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the provided <code>:size</code> or <code>:scale</code> are not a supported type.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the provided <code>:face</code> is not a supported type.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the provided <code>:face</code> value is out of range.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the provided <code>:size</code> or <code>:scale</code> value is not positive.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

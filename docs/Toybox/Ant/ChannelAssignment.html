@@ -1,0 +1,549 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Ant.ChannelAssignment </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Ant.ChannelAssignment";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Ant.ChannelAssignment</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Ant/ChannelAssignment.html">Toybox.Ant.ChannelAssignment</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A class to control the assignment of an ANT wireless channel.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#channelType-var" title="channelType (Var)"><strong>channelType</strong></a>  as <span class="type"><a href="../../Toybox/Ant.html#ChannelType-module">Ant.ChannelType</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Defines the type of channel.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#network-var" title="network (Var)"><strong>network</strong></a>  as <span class="type"><a href="../../Toybox/Ant.html#NetworkType-module">Ant.NetworkType</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Defines the type of network the channel should operate under.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(c as <span class="type"><a href="../../Toybox/Ant.html#ChannelType-module">Ant.ChannelType</a></span>, n as <span class="type"><a href="../../Toybox/Ant.html#NetworkType-module">Ant.NetworkType</a></span>)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor By default disables background scanning.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#isBackgroundScanEnabled-instance_function" title="isBackgroundScanEnabled (Instance Function)"><strong>isBackgroundScanEnabled</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+See if background scanning is enabled for the channel assignment.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setBackgroundScan-instance_function" title="setBackgroundScan (Instance Function)"><strong>setBackgroundScan</strong></a>(isBackgroundScanEnabled as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set background scan to be enabled or disabled.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="channelType-var" class="details">
+<h3 class="signature" id="channelType-var">
+
+var channelType  as <span class="type"><a href="../../Toybox/Ant.html#ChannelType-module">Ant.ChannelType</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Defines the type of channel.
+</p><p>
+The channel can be defined to primarily send data (master) or
+receive data(slave). The channel type is set via the
+<a href='../../Toybox/Ant.html#CHANNEL_TYPE_TX_NOT_RX-const'>CHANNEL_TYPE_*</a> constant passed
+to the <a href='../../Toybox/Ant/ChannelAssignment.html#initialize-instance_function'>Ant.ChannelAssignment.initialize()</a>
+function for the <code>channelType</code> parameter.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="network-var" class="details">
+<h3 class="signature" id="network-var">
+
+var network  as <span class="type"><a href="../../Toybox/Ant.html#NetworkType-module">Ant.NetworkType</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Defines the type of network the channel should operate under.
+</p><p>
+The network is set via the <a href='../../Toybox/Ant.html#NETWORK_PUBLIC-const'>NETWORK_*</a>
+constant passed to the <a href='../../Toybox/Ant/ChannelAssignment.html#initialize-instance_function'>Ant.ChannelAssignment.initialize()</a>
+function for the <code>network</code> parameter.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(c as <span class="type"><a href="../../Toybox/Ant.html#ChannelType-module">Ant.ChannelType</a></span>, n as <span class="type"><a href="../../Toybox/Ant.html#NetworkType-module">Ant.NetworkType</a></span>)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+By default disables background scanning.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">c</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Ant.html#ChannelType-module">Ant.ChannelType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The channel type specifier. Must use one of the following constants:
+</p>
+
+<ul>
+<li>
+<p>
+<a href='../../Toybox/Ant.html#CHANNEL_TYPE_TX_NOT_RX-const'>CHANNEL_TYPE_TX_NOT_RX</a> - Bidirectional Transmit (Master)
+</p>
+
+</li>
+<ul>
+<li>
+<p>
+Master Channels are not allowed on the ANT+ Network
+</p>
+
+</li>
+</ul>
+<li>
+<p>
+<a href='../../Toybox/Ant.html#CHANNEL_TYPE_RX_NOT_TX-const'>CHANNEL_TYPE_RX_NOT_TX</a> - Bidirectional Receive (Slave)
+</p>
+
+</li>
+<li>
+<p>
+<a href='../../Toybox/Ant.html#CHANNEL_TYPE_RX_ONLY-const'>CHANNEL_TYPE_RX_ONLY</a> - Receive Only (Slave)
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">n</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Ant.html#NetworkType-module">Ant.NetworkType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The network type specifier. Must use one of the following constants:
+</p>
+
+<ul>
+<li>
+<p>
+<a href='../../Toybox/Ant.html#NETWORK_PUBLIC-const'>NETWORK_PUBLIC</a> - ANT public network
+</p>
+
+</li>
+<li>
+<p>
+<a href='../../Toybox/Ant.html#NETWORK_PLUS-const'>NETWORK_PLUS</a> - ANT+ network
+</p>
+
+</li>
+<li>
+<p>
+<a href='../../Toybox/Ant.html#NETWORK_PRIVATE-const'>NETWORK_PRIVATE</a> - ANT private network
+</p>
+
+</li>
+<ul>
+<li>
+<p>
+A network key must be provided for an Private Network
+</p>
+
+</li>
+<li>
+<p>
+Both 64 and 128 bit keys are required
+</p>
+
+</li>
+</ul>
+</ul>
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Ant;
+
+var channelType = Ant.CHANNEL_TYPE_RX_NOT_TX  // Bidirectional Receive (Slave)
+var network = Ant.NETWORK_PUBLIC;             // Ant public network
+// Get the channel
+channelAssign = new Ant.ChannelAssignment(channelType, network);
+
+// Initialize the channel - assumes message callback method
+GenericChannel.initialize(method(:onMessage), channelAssign);</code>
+</pre>
+</div>
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/AntPlus.html">Toybox.AntPlus</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="isBackgroundScanEnabled-instance_function">
+    <strong>isBackgroundScanEnabled()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+See if background scanning is enabled for the channel assignment.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Ant;
+// Assuming initialized channel
+ChannelAssignment.isBackgroundScanEnabled();</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Returns <code>true</code> if background scan is enabled, otherwise <code>false</code>.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setBackgroundScan-instance_function">
+    <strong>setBackgroundScan(isBackgroundScanEnabled as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set background scan to be enabled or disabled.
+</p><p>
+Enabling background scan can only be done on Receive Only channels.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">isBackgroundScanEnabled</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Value is <code>true</code> to enable background scan, otherwise <code>false</code>.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Ant;
+// Assuming initialized channel
+ChannelAssignment.setBackgroundScan(isBackgroundScanEnabled);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Return <code>true</code> if the background scan property was successfully set, otherwise <code>false</code>.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:12 PM
+</p>
+
+</body>

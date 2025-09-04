@@ -1,0 +1,369 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.BluetoothLowEnergy.Uuid </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.BluetoothLowEnergy.Uuid";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.BluetoothLowEnergy.Uuid</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/BluetoothLowEnergy/Uuid.html">Toybox.BluetoothLowEnergy.Uuid</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Encapsulates a Bluetooth UUID and provides various helper methods for
+interacting with UUID within the Bluetooth Low Energy Subsystem
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#equals-instance_function" title="equals (Instance Function)"><strong>equals</strong></a>(other as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Compares the Uuid to another object for equality.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#hashCode-instance_function" title="hashCode (Instance Function)"><strong>hashCode</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Retrieve a hash code of the UUID Optimized for BLE standard.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toByteArray-instance_function" title="toByteArray (Instance Function)"><strong>toByteArray</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert UUID to a Little Endian Byte Array.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toString-instance_function" title="toString (Instance Function)"><strong>toString</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert a UUID to a String.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="equals-instance_function">
+    <strong>equals(other as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Compares the Uuid to another object for equality
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">other</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Object to test against
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if the parameter provided is an equivalent Uuid or equivalent UUID String, <code>false</code> otherwise.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/UuidFormatException.html">BluetoothLowEnergy.UuidFormatException</a></span>)</span>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="hashCode-instance_function">
+    <strong>hashCode()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Retrieve a hash code of the UUID
+</p><p>
+Optimized for BLE standard
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toByteArray-instance_function">
+    <strong>toByteArray()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert UUID to a Little Endian Byte Array
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Byte Array Representation of the UUID
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toString-instance_function">
+    <strong>toString()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert a UUID to a String
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A String representation of the UUID
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

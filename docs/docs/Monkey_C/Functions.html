@@ -1,0 +1,196 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="DC.type" content="topic"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="functions"><link rel="stylesheet" type="text/css" href="../../branding/commonltr.css"><link rel="stylesheet" type="text/css" href="../../branding/style.css"><title>Functions</title></head><body id="functions"><header role="banner"><div>
+<link href="../../resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
+<script src="../../resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="../../resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+</div></header><nav role="toc"><ul><li><a href="../../docs/Readme/Intro.html">Introduction</a></li><li><a href="../../docs/Connect_IQ_Basics/Welcome_to_the_Jungle.html">Welcome to Connect IQ</a></li><li><a href="../../docs/Monkey_C/Basic_Syntax.html">Hello Monkey C!</a><ul><li class="active"><a href="../../docs/Monkey_C/Functions.html">Functions</a></li><li><a href="../../docs/Monkey_C/Objects_and_Memory.html">Objects, Modules, and Memory</a></li><li><a href="../../docs/Monkey_C/Containers.html">Containers</a></li><li><a href="../../docs/Monkey_C/Monkey_Types.html">Monkey Types</a></li><li><a href="../../docs/Monkey_C/Exceptions_and_Errors.html">Exceptions and Errors</a></li><li><a href="../../docs/Monkey_C/Annotations.html">Annotations</a></li><li><a href="../../docs/Monkey_C/Coding_Conventions.html">Coding Conventions</a></li><li><a href="../../docs/Monkey_C/Compiler_Options.html">Compiler Options</a></li></ul></li><li><a href="../../docs/Core_Topics/Overview.html">Core Topics</a></li><li><a href="../../docs/User_Experience_Guidelines/Overview.html">User Experience Guidelines</a></li><li><a href="../../docs/Personality_Library/Personality_UI.html">Personality UI</a></li><li><a href="../../docs/Connect_IQ_FAQ/Overview.html">Connect IQ FAQ</a></li><li><a href="../../docs/Reference_Guides/Overview.html">Reference Guides</a></li><li><a href="../../docs/App_Review_Guidelines/Overview.html">Garmin Connect IQ App Review Guidelines</a></li><li><a href="../../docs/Monetization/Overview.html">Connect IQ Monetization System</a></li><li><a href="../../docs/Device_Reference/Overview.html">Device Reference</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Functions</h1><div class="body"><p class="p">Functions are the meat<a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a> of your program. Functions define discrete callable units of code.</p><p class="p">Monkey C functions can take arguments, but because Monkey C is a dynamically typed language the argument types is not declared; just its name. Also, it is not necessary to declare the return value of a function, or even if a function returns a value, because all functions return values.</p><p class="p">Functions can exist in a class or module, or appear in the global module.</p></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="variables-expressions-and-operators"><h2 class="title topictitle2" id="ariaid-title2">Variables, Expressions, and Operators</h2><div class="body"><p class="p">The basic types supported by Monkey C are:</p><ul class="ul"><li class="li"><p class="p"><strong class="ph b">Integers</strong> - 32-bit signed integers</p></li><li class="li"><p class="p"><strong class="ph b">Floats</strong> - 32-bit floating point numbers</p></li><li class="li"><p class="p"><strong class="ph b">Longs</strong> – 64-bit signed integers</p></li><li class="li"><p class="p"><strong class="ph b">Doubles</strong> – 64-bit floating point numbers</p></li><li class="li"><p class="p"><strong class="ph b">Booleans</strong> - <code class="ph codeph">true</code> and <code class="ph codeph">false</code></p></li><li class="li"><p class="p"><strong class="ph b">Chars</strong> - Unicode characters</p></li><li class="li"><p class="p"><strong class="ph b">Strings</strong> - strings of characters</p></li><li class="li"><p class="p"><strong class="ph b">Objects</strong> – Instantiated objects (defined with the class keyword)</p></li><li class="li"><p class="p"><strong class="ph b">Arrays</strong> - Allocated with the syntax <code class="ph codeph">new [X]</code> where 'X' is an expression computing the size of the array</p></li><li class="li"><p class="p"><strong class="ph b">Dictionaries</strong> - Associative arrays, allocated with the syntax <code class="ph codeph">{}</code></p></li></ul></div><article class="topic nested2" aria-labelledby="ariaid-title3" id="keywords"><h3 class="title topictitle3" id="ariaid-title3">Keywords</h3><div class="body"><p class="p">Here is a list of keywords in the Monkey C programming language. You cannot use any of the following as variables or symbols in your programs. The keywords <code class="ph codeph">native</code> and <code class="ph codeph">alias</code> are reserved, even though it is not currently used. <code class="ph codeph">true</code>, <code class="ph codeph">false</code>, <code class="ph codeph">null</code>, <code class="ph codeph">NaN</code>, <code class="ph codeph">new</code>, <code class="ph codeph">and</code>, and <code class="ph codeph">or</code> might seem like keywords, but they are actually literals and operators; you cannot use them as identifiers in your programs.</p><div class="div" id="keywords__test">
+</div><table class="table"><caption></caption><colgroup><col><col><col><col><col><col><col></colgroup><thead class="thead"></thead><tbody class="tbody"><tr class="row"><td class="entry align-center"><code class="ph codeph">as</code></td><td class="entry align-center"><code class="ph codeph">const</code></td><td class="entry align-center"><code class="ph codeph">enum</code></td><td class="entry align-center"><code class="ph codeph">has</code></td><td class="entry align-center"><code class="ph codeph">module</code></td><td class="entry align-center"><code class="ph codeph">self</code></td><td class="entry align-center"><code class="ph codeph">using</code></td></tr><tr class="row"><td class="entry align-center"><code class="ph codeph">break</code></td><td class="entry align-center"><code class="ph codeph">continue</code></td><td class="entry align-center"><code class="ph codeph">extends</code></td><td class="entry align-center"><code class="ph codeph">hidden</code></td><td class="entry align-center"><code class="ph codeph">private</code></td><td class="entry align-center"><code class="ph codeph">static</code></td><td class="entry align-center"><code class="ph codeph">var</code></td></tr><tr class="row"><td class="entry align-center"><code class="ph codeph">case</code></td><td class="entry align-center"><code class="ph codeph">default</code></td><td class="entry align-center"><code class="ph codeph">finally</code></td><td class="entry align-center"><code class="ph codeph">if</code></td><td class="entry align-center"><code class="ph codeph">protected</code></td><td class="entry align-center"><code class="ph codeph">switch</code></td><td class="entry align-center"><code class="ph codeph">while</code></td></tr><tr class="row"><td class="entry align-center"><code class="ph codeph">catch</code></td><td class="entry align-center"><code class="ph codeph">do</code></td><td class="entry align-center"><code class="ph codeph">for</code></td><td class="entry align-center"><code class="ph codeph">instanceof</code></td><td class="entry align-center"><code class="ph codeph">public</code></td><td class="entry align-center"><code class="ph codeph">throw</code></td><td class="entry align-center"></td></tr><tr class="row"><td class="entry align-center"><code class="ph codeph">class</code></td><td class="entry align-center"><code class="ph codeph">else</code></td><td class="entry align-center"><code class="ph codeph">function</code></td><td class="entry align-center"><code class="ph codeph">me</code></td><td class="entry align-center"><code class="ph codeph">return</code></td><td class="entry align-center"><code class="ph codeph">try</code></td><td class="entry align-center"></td></tr></tbody></table></div></article><article class="topic nested2" aria-labelledby="ariaid-title4" id="declaring-variables"><h3 class="title topictitle3" id="ariaid-title4">Declaring Variables</h3><div class="body"><p class="p">All local variables must be declared ahead of time using the <code class="ph codeph">var</code> keyword. In the Monkey C language, all values (including numeric values) are objects.</p><pre class="pre codeblock java"><code>var n = null;               // Null reference
+var x = 5;                  // 32-bit signed integers
+var y = 6.0;                // 32-bit floating point
+var l = 5l;                 // 64-bit signed integers
+var d = 4.0d;               // 64-bit floating point
+var bool = true;            // Boolean (true or false)
+var c = 'x';                // Unicode character
+var str = "Hello";          // String
+var arr = new [20 + 30];    // Array of size 50
+var dict = { x=&gt;y };        // Dictionary: key is 5, value is 6.0
+var z = arr[2] + x;         // Null pointer waiting to happen</code></pre><p class="p">Monkey C supports the following operators:</p><div class="div" id="declaring-variables__operators">
+</div><table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry align-center" id="declaring-variables__entry__1">Precedence</th><th class="entry align-center" id="declaring-variables__entry__2">Operator</th><th class="entry align-left" id="declaring-variables__entry__3">Description</th></tr></thead><tbody class="tbody"><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1">1</td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">new</code></td><td class="entry align-left" headers="declaring-variables__entry__3">creation</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">!</code></td><td class="entry align-left" headers="declaring-variables__entry__3">logical NOT</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">~</code></td><td class="entry align-left" headers="declaring-variables__entry__3">bitwise NOT</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">( )</code></td><td class="entry align-left" headers="declaring-variables__entry__3">function invocation</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1">2</td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">*</code></td><td class="entry align-left" headers="declaring-variables__entry__3">multiplication</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">/</code></td><td class="entry align-left" headers="declaring-variables__entry__3">division</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">%</code></td><td class="entry align-left" headers="declaring-variables__entry__3">modulo</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">&amp;</code></td><td class="entry align-left" headers="declaring-variables__entry__3">bitwise AND</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">&lt;&lt;</code></td><td class="entry align-left" headers="declaring-variables__entry__3">left shift</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">&gt;&gt;</code></td><td class="entry align-left" headers="declaring-variables__entry__3">right shift</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1">3</td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">+</code></td><td class="entry align-left" headers="declaring-variables__entry__3">addition</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">-</code></td><td class="entry align-left" headers="declaring-variables__entry__3">subtraction</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">|</code></td><td class="entry align-left" headers="declaring-variables__entry__3">bitwise OR</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">^</code></td><td class="entry align-left" headers="declaring-variables__entry__3">bitwise XOR</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1">4</td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">&lt;</code></td><td class="entry align-left" headers="declaring-variables__entry__3">less than</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">&lt;=</code></td><td class="entry align-left" headers="declaring-variables__entry__3">less than or equals</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">&gt;</code></td><td class="entry align-left" headers="declaring-variables__entry__3">greater than</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">&gt;=</code></td><td class="entry align-left" headers="declaring-variables__entry__3">greater than or equals</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">==</code></td><td class="entry align-left" headers="declaring-variables__entry__3">equals</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">!=</code></td><td class="entry align-left" headers="declaring-variables__entry__3">not equals</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1">5</td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">&amp;&amp;</code></td><td class="entry align-left" headers="declaring-variables__entry__3">logical AND</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">and</code></td><td class="entry align-left" headers="declaring-variables__entry__3"> </td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1">6</td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">||</code></td><td class="entry align-left" headers="declaring-variables__entry__3">logical OR</td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1"> </td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">or</code></td><td class="entry align-left" headers="declaring-variables__entry__3"> </td></tr><tr class="row"><td class="entry align-center" headers="declaring-variables__entry__1">7</td><td class="entry align-center" headers="declaring-variables__entry__2"><code class="ph codeph">?:</code></td><td class="entry align-left" headers="declaring-variables__entry__3">conditional</td></tr></tbody></table></div></article><article class="topic nested2" aria-labelledby="ariaid-title5" id="symbols"><h3 class="title topictitle3" id="ariaid-title5">Symbols</h3><div class="body"><p class="p">Symbols are lightweight constant identifiers. When the Monkey C compiler finds a new symbol, it will assign it a new unique value. This allows symbols to be used as keys or constants without explicitly declaring a const or enum:</p><pre class="pre codeblock java"><code>var a = :symbol_1;
+var b = :symbol_1;
+var c = :symbol_2;
+Sys.println( a == b );  // Prints true
+Sys.println( a == c );  // Prints false</code></pre><p class="p">Symbols can be useful when wanting to create keys without having to declare an enum:</p><pre class="pre codeblock java"><code>var person = { :firstName=&gt;"Bob", :lastName=&gt;"Jones" };</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title6" id="constants"><h3 class="title topictitle3" id="ariaid-title6">Constants</h3><div class="body"><p class="p">Constants are named, immutable values declared with the <code class="ph codeph">const</code> keyword. These are useful for storing unchanging values that may be used repeatedly throughout code. Constants must be declared at the module or class level; they cannot be declared within a function.</p><p class="p">Constants support the same types as <a class="xref" href="#declaringvariables">listed for variables</a>. It is important to note that with data structures like arrays, <code class="ph codeph">const</code> functions similar to Java's <code class="ph codeph">final</code> keyword. For example, a <code class="ph codeph">const</code> array prevents the array from being replaced by a new instance, but the elements of the array may be modified.</p><pre class="pre codeblock java"><code>const PI = 3.14;
+const EAT_BANANAS = true;
+const BANANA_YELLOW = "#FFE135";</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title7" id="enumerations"><h3 class="title topictitle3" id="ariaid-title7">Enumerations</h3><div class="body"><p class="p">Enumerations are explicit or auto-incrementing constant mappings from symbol to integer. Unless explicity set (see the second example), each proceeding symbol is automatically assigned the value of its predecessor plus one, starting with <code class="ph codeph">0</code>. So, in the following example, the symbol Monday is automatically assigned the value <code class="ph codeph">0</code>, Tuesday is assigned <code class="ph codeph">1</code>, and so on. These symbols can be used just like constant variables (which is essentially what they are). Enums must be declared at the module or class level; they cannot be declared within a function.</p><pre class="pre codeblock java"><code>enum {
+    Monday,   // Monday = 0
+    Tuesday,  // Tuesday = 1
+    Wednesday // Wednesday = 2
+    // ...and so on
+}</code></pre><pre class="pre codeblock java"><code>enum {
+    x = 1337, // x = 1337
+    y,        // y = 1338
+    z,        // z = 1339
+    a = 0,    // a = 0
+    b,        // b = 1
+    c         // c = 2
+}</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title8" id="calling-methods-and-functions"><h3 class="title topictitle3" id="ariaid-title8">Calling Methods and Functions</h3><div class="body"><p class="p">To call a method within your own class or module, simply use the function call syntax:</p><pre class="pre codeblock typescript"><code>function foo( a ) {
+    //Assume foo does something really impressive
+}
+
+function bar() {
+    foo( "hello" );
+}</code></pre><p class="p">If calling on an instance of an object, precede the call with the object and a '<code class="ph codeph">.</code>'.</p><p class="p">When accessing class members, <code class="ph codeph">public</code> and <code class="ph codeph">protected</code> variables should be accessed using either one of the following formats:</p><pre class="pre codeblock typescript"><code>var x = mMemberVariable;
+var y = self.mMemberVariable;</code></pre><p class="p">Overridden parent member functions should be accessed using the following syntax:</p><pre class="pre codeblock typescript"><code>class A
+{
+    function overridableMethod() {
+        System.println("I am A!");
+    }
+}
+
+class B extends A
+{
+    function overridableMethod() {
+        System.println("B wins!");
+        A.overridableMethod();
+    }
+}</code></pre><p class="p">The syntax of <code class="ph codeph">SuperClass.memberVariable</code> is not supported in the Monkey C language. Always use <code class="ph codeph">self</code> to access member variables of super classes.</p></div></article><article class="topic nested2" aria-labelledby="ariaid-title9" id="if-statements"><h3 class="title topictitle3" id="ariaid-title9">If Statements</h3><div class="body"><p class="p"><code class="ph codeph">if</code> statements allow branch points in your code:</p><pre class="pre codeblock java"><code>myInstance.methodToCall( parameter );
+
+if ( a == true ) {
+    // Do something
+} else if ( b == true ) {
+    // Do something else
+} else {
+    // If all else fails
+}
+
+// Monkey C also supports the ternary operator
+var result = a ? 1 : 2;</code></pre><p class="p">The expression inside the <code class="ph codeph">if</code> statement is required to be an expression; assignments are not allowed. Things that will evaluate to true are:</p><ul class="ul"><li class="li"><p class="p"><code class="ph codeph">true</code></p></li><li class="li"><p class="p">A non-zero integer</p></li><li class="li"><p class="p">A non-null object</p></li></ul></div></article><article class="topic nested2" aria-labelledby="ariaid-title10" id="switch-statements"><h3 class="title topictitle3" id="ariaid-title10">Switch Statements</h3><div class="body"><p class="p">Like <code class="ph codeph">if</code> statements, <code class="ph codeph">switch</code> statements also allow branch points in your code. Deciding whether to use <code class="ph codeph">if</code> statements or a <code class="ph codeph">switch</code> statement is based on readability and the expression that the statement is testing.</p><p class="p">A <code class="ph codeph">switch</code> statement tests expressions based only on a single object. Like <code class="ph codeph">if</code> statements, the expression inside the <code class="ph codeph">switch</code> statement is required to be an expression; assignments are not allowed. You can have any number of <code class="ph codeph">case</code> statements within a <code class="ph codeph">switch</code> statement. Each <code class="ph codeph">case</code> is followed by the object or <code class="ph codeph">instanceof</code> object to be compared to and a colon:</p><pre class="pre codeblock typescript"><code>switch ( obj ) {
+    case true:
+    // Do something
+    break;
+    case 1:
+    // Do something
+    break;
+    case "B": {
+        // Do something
+        break;
+    }
+    // Executed based on the type
+    // instead of the value
+    case instanceof MyClass:
+    // Do something
+    break;
+    default:
+    // If all else fails
+    break;
+}
+
+// Monkey C also supports fall-through into the next case statement
+switch ( obj ) {
+    case false:
+    // Do something
+    // Fall through and execute the code in the next case block
+    case 2: {
+        // Do something
+        break;
+    }
+    case instanceof MyOtherClass:
+    // Do something
+    break;
+    case "B":
+    // Do something
+    // Fall through and execute the code in the default block
+    default:
+    // If all else fails
+    break;
+}</code></pre><p class="p">The <code class="ph codeph">instanceof</code> operator is discussed in more detail later in this guide.</p><p class="p">When the object being switched on is either equal to or an instance of the value defined in a <code class="ph codeph">case</code> statement, the statements following that <code class="ph codeph">case</code> will execute until a <code class="ph codeph">break</code> statement is reached. Each <code class="ph codeph">break</code> statement terminates the enclosing <code class="ph codeph">switch</code> statement. Without a <code class="ph codeph">break</code> statement, <code class="ph codeph">case</code> statements fall through: all statements after the matching <code class="ph codeph">case</code> label are executed in sequence, regardless of the expression of the subsequent <code class="ph codeph">case</code> labels, until a <code class="ph codeph">break</code> statement is encountered. A final <code class="ph codeph">break</code> statement is not required because control flow will just naturally fall out of the <code class="ph codeph">switch</code> statement.</p><p class="p">A <code class="ph codeph">switch</code> statement can also have a single optional <code class="ph codeph">default</code> case, which is not required to appear at the end of the <code class="ph codeph">switch</code> statement. The <code class="ph codeph">default</code> case handles all objects that are not explicitly handled by one of the <code class="ph codeph">case</code> statements.</p></div></article><article class="topic nested2" aria-labelledby="ariaid-title11" id="switch-block-variable-scoping"><h3 class="title topictitle3" id="ariaid-title11">Switch Block Variable Scoping</h3><div class="body"><p class="p">The body of a <code class="ph codeph">switch</code> statement is known as the "switch block". Variables declared within the switch block will be scoped at the switch block level. Variables defined within curly braces of a case block will be scoped at that code block level. Additionally, due to the nature of fall-through cases, all variables defined at the switch block level must be initialized before being used in any subsequent <code class="ph codeph">case</code> statements. For instance:</p><pre class="pre codeblock java"><code>switch ( obj ) {
+    case true:
+    var aaa = 1; // Scoped at the switch block level
+    ...
+    case 1:
+    var zzz = aaa; // Results in a compiler error because aaa was not initialized in this case block
+    ...
+    break;
+    case "B": {
+       var aaa = true; // Scoped at the code block level within the curly braces, no scoping conflict with variable aaa at the swtich block level
+       ...
+       break;
+    }
+    case instanceof MyClass:
+    var aaa = "Hello!" // Results in a compiler error because aaa has already been defined in the switch block
+    ...
+    default:
+    aaa = 0; // aaa was defined in the first case and initialized at the beginning of the default case, no errors!
+    var good = aaa;
+    ...
+    break;
+}</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title12" id="loops"><h3 class="title topictitle3" id="ariaid-title12">Loops</h3><div class="body"><p class="p">Monkey C supports <code class="ph codeph">for</code> loops, <code class="ph codeph">while</code> loops, and <code class="ph codeph">do/while</code> loops. <code class="ph codeph">while</code> and <code class="ph codeph">do/while</code> loops have a familiar syntax:</p><pre class="pre codeblock java"><code>// do/while loop
+do {
+    // Code to do in a loop
+}
+while( expression );
+
+// while loop
+while( expression ) {
+    // Code to do in a loop
+}</code></pre><p class="p">Loops must have braces around them because single-line loops are not supported:</p><pre class="pre codeblock java"><code>// Monkey C does allow for variable declaration in for loops
+for( var i = 0; i &lt; array.size(); i++ ) {
+    // Code to do in a loop
+}</code></pre><p class="p">Control within loops can be managed by using the <code class="ph codeph">break</code> and <code class="ph codeph">continue</code> statements. These should also have familiar behavior:</p><pre class="pre codeblock java"><code>// This for loop should only print 5, 6, and 7.
+for (var i = 0; i &lt; 10; i += 1) {
+    if (i &lt; 5) {
+        continue;
+    }
+    System.println(i);
+    if (7 == i) {
+        break;
+    }
+}</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title13" id="returning-values-from-functions"><h3 class="title topictitle3" id="ariaid-title13">Returning Values From Functions</h3><div class="body"><p class="p">All functions return values in Monkey C. You can explicitly set the return value by using the <code class="ph codeph">return</code> keyword:</p><pre class="pre codeblock java"><code>return expression;</code></pre><p class="p">The expression is optional. Functions without a return statement automatically return the last value operated on.</p></div></article><article class="topic nested2" aria-labelledby="ariaid-title14" id="instanceof-and-has"><h3 class="title topictitle3" id="ariaid-title14">Instanceof and Has</h3><div class="body"><p class="p">As a duck-typed language, Monkey C gives the programmer great flexibility, but the trade off is that the compiler cannot perform the type checking like in C, C++ or Java. Monkey C provides two tools to do runtime type checking—<code class="ph codeph">instanceof</code> and <code class="ph codeph">has</code>.</p><p class="p">The <code class="ph codeph">instanceof</code> operator offers the ability to check if an object instance inherits from a given class. The second argument is the class name to check against:</p><pre class="pre codeblock java"><code>var value = 5;
+// Check to see if value is a number
+if ( value instanceof Toybox.Lang.Number )
+{
+    System.println( "Value is a number" );
+}</code></pre><p class="p">The <code class="ph codeph">has</code> operator lets you check if a given object has a symbol, which may be a public method, instance variable, or even a class definition or module. The second argument is the symbol to check for. For example, assume we have magnetometer libraries in <code class="ph codeph">Toybox.Sensor.Magnetometer</code>, but not all products have a magnetometer. Here is an example of changing your implementation based on those criteria:</p><pre class="pre codeblock java"><code>var impl;
+// Check to see if the Magnetometer module exists in Toybox
+if ( Toybox has :Magnetometer )
+{
+    impl = new ImplementationWithMagnetometer();
+}
+else
+{
+    impl = new ImplementationWithoutMagnetometer();
+}</code></pre><p class="p">Monkey C's object-oriented design patterns in conjunction with the <code class="ph codeph">has</code> and <code class="ph codeph">instanceof</code> operator enables software that has implementations for many devices in one code base.</p></div></article></article><article class="topic nested1" aria-labelledby="ariaid-title15" id="callbacks"><h2 class="title topictitle2" id="ariaid-title15">Callbacks</h2><div class="body"><p class="p">Functions in Monkey C are not first class, meaning you cannot pass them as objects directly for use in other functions. However, using the  <code class="ph codeph">method()</code> function inherited from <code class="ph codeph">Toybox.Lang.Object</code>, a class instance can create a <code class="ph codeph">Method</code> object, which provides a way to invoke it as a callback method.</p><pre class="pre codeblock java"><code>class Foo
+{
+    function operation(a, b) {
+        // The code here is really amazing. Like mind blowing amazing. You wish this method was in your program.
+    }
+}
+function usageSample() {
+    // Create a new instance of Foo
+    var v = new Foo();
+    // Get the callback for the operation method from the instance of Foo.
+    var m = v.method(:operation);
+    // Invoke v's operation method.
+    m.invoke(1,2);
+}</code></pre><p class="p">A<code class="ph codeph"> Method</code> object will invoke a method on the instance of the object it came from. It keeps a strong reference to the source object.</p><p class="p">Unlike classes, Modules do not inherit from Object so do not have access to the <code class="ph codeph">method()</code> function. However, a new instance of <code class="ph codeph">Method</code> can be created, which allows module-level functions to be invoked as callbacks in a similar fashion:</p><pre class="pre codeblock typescript"><code>import Toybox.Lang;
+
+module Foo
+{
+    function operation() {
+        // Do something
+    }
+}
+function moduleSample() {
+    var v = new Method(Foo, :operation);
+    v.invoke();
+}</code></pre></div></article><div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>  Tofu for the vegetarians, BBQ for Kansans…</div></article></main><footer role="contentinfo"><div>
+<p class="disclaimer">
+Connect IQ System None API 8.2.3 Documentation. Copyright 2025 Garmin International. All Rights Reserved.
+</p>
+</div></footer></body></html>

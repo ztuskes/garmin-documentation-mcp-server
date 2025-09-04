@@ -1,0 +1,919 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Time.Duration </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Time.Duration";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Time.Duration</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Time/Duration.html">Toybox.Time.Duration</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A Duration is an immutable period of time.
+</p><p>
+Duration objects are closely related to <a href='../../Toybox/Time/Moment.html'>Moment</a>
+objects, and are frequently used together for time calculations. While a
+<a href='../../Toybox/Time/Moment.html'>Moment</a> represents a single point in time, a Duration
+represents a span of time such as seven days.
+</p><p>
+Duration objects are stored as a the number of seconds that compose the
+span of time the Duration represents.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#add-instance_function" title="add (Instance Function)"><strong>add</strong></a>(time as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span> or <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)    as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span> or <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add a <a href='../../Toybox/Time/Moment.html'>Moment</a> or another Duration to a Duration.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#compare-instance_function" title="compare (Instance Function)"><strong>compare</strong></a>(duration as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Determine if a Duration is shorter or longer than another Duration.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#divide-instance_function" title="divide (Instance Function)"><strong>divide</strong></a>(value as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)    as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Divide a Duration by a value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#greaterThan-instance_function" title="greaterThan (Instance Function)"><strong>greaterThan</strong></a>(duration as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Determine if a Duration is longer than another Duration.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(value as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)   <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#lessThan-instance_function" title="lessThan (Instance Function)"><strong>lessThan</strong></a>(duration as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Determine if a Duration is shorter than another Duration.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#multiply-instance_function" title="multiply (Instance Function)"><strong>multiply</strong></a>(value as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)    as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Multiply a Duration by a value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#subtract-instance_function" title="subtract (Instance Function)"><strong>subtract</strong></a>(duration as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)    as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the absolute difference between two Duration objects.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#value-instance_function" title="value (Instance Function)"><strong>value</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the value of a Duration.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="add-instance_function">
+    <strong>add(time as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span> or <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span> or <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add a <a href='../../Toybox/Time/Moment.html'>Moment</a> or another Duration to a Duration.
+</p><p>
+When adding a Moment to a Duration, this method functions the same as
+the <a href='../../Toybox/Time/Moment.html#add-instance_function'>Moment.add()</a> method.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">time</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>, <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Duration or Moment to add to Duration
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Add two Duration objects</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Time;
+var oneHour    = new Time.Duration(3600);
+var twoHours   = new Time.Duration(7200);
+var threeHours = oneHour.add(twoHours);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>, <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Duration or Moment object that is the sum of self and the provided object:
+</p>
+
+<ul>
+<li>
+<p>
+Duration + Moment   = Moment
+</p>
+
+</li>
+<li>
+<p>
+Duration + Duration = Duration
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/Time/Moment.html#add-instance_function">Moment.add()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="compare-instance_function">
+    <strong>compare(duration as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Determine if a Duration is shorter or longer than another Duration.
+</p><p>
+This computes a Number representing the difference between the two
+Duration objects in seconds. The <a href='../../Toybox/Time/Duration.html#subtract-instance_function'>subtract()</a>
+method can also be used to get the absolute difference between two
+Duration objects.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">duration</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Duration to compare to this Duration
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.Time;
+var oneHour    = new Time.Duration(3600);
+var twoHours   = new Time.Duration(7200);
+
+System.println(oneHour.compare(twoHours)); // -3600, or one minute in the past
+System.println(twoHours.compare(oneHour)); //  3600, or one minute in the future</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The Number of seconds difference between the two Duration objects. If the Duration supplied for comparison is longer than this Duration, the value will be negative.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="divide-instance_function">
+    <strong>divide(value as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Divide a Duration by a value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">value</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value by which to divide the Duration
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Time;
+var fourHours  = new Time.Duration(Gregorian.SECONDS_PER_HOUR * 4);
+var twoHours = fourHours.divide(2);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The quotient of the Duration and the supplied value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="greaterThan-instance_function">
+    <strong>greaterThan(duration as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Determine if a Duration is longer than another Duration.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">duration</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Duration to compare to this Duration
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.Time;
+var oneHour    = new Time.Duration(3600);
+var twoHours   = new Time.Duration(7200);
+
+System.println(oneHour.greaterThan(twoHours)); // false
+System.println(twoHours.greaterThan(oneHour)); // true</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if this Duration is longer than the Duration supplied for comparison, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(value as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"><span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">value</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Number of seconds with which to initialize the Duration
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Create a Duration of one day with a number of seconds</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Time;
+var oneDay = new Time.Duration(86400);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Duration representing the specified Number of seconds
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/Time/Gregorian.html#duration-instance_function">Gregorian.duration()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="lessThan-instance_function">
+    <strong>lessThan(duration as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Determine if a Duration is shorter than another Duration.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">duration</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Duration to compare to this Duration
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.Time;
+var oneHour    = new Time.Duration(3600);
+var twoHours   = new Time.Duration(7200);
+
+System.println(oneHour.lessThan(twoHours)); // true
+System.println(twoHours.lessThan(oneHour)); // false</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if this Duration is shorter than the Duration supplied for comparison, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="multiply-instance_function">
+    <strong>multiply(value as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Multiply a Duration by a value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">value</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value by which to multiply the Duration
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Time;
+var twoHours  = new Time.Duration(7200);
+var fourHours = twoHours.multiply(2);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The product of the Duration and the supplied value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="subtract-instance_function">
+    <strong>subtract(duration as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the absolute difference between two Duration objects.
+</p><p>
+The computed Duration is always a positive value. The
+<a href='../../Toybox/Time/Duration.html#compare-instance_function'>compare()</a> method can also be used to
+get the difference between two Duration objects.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">duration</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Duration to subtract from this Duration
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Time;
+var twoHours   = new Time.Duration(7200);
+var threeHours = new Time.Duration(10800);
+var oneHour = threeHours.subtract(twoHours);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The difference between the two Duration objects
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="value-instance_function">
+    <strong>value()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the value of a Duration.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The value of the Duration in seconds
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

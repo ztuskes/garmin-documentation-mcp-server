@@ -1,0 +1,583 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Position.Location </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Position.Location";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Position.Location</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Position/Location.html">Toybox.Position.Location</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Location object represents a specific position.
+</p><p>
+Location objects provide methods for retrieving position coordinates in
+various formats.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getProjectedLocation-instance_function" title="getProjectedLocation (Instance Function)"><strong>getProjectedLocation</strong></a>(angle as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, distance as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a <a href='../../Toybox/Position/Location.html'>Location</a> object that is offset from the current position by a given distance and angle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(options as { :latitude as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :longitude as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :format as <span class="type"><a href="../../Toybox/Lang/Symbol.html">Lang.Symbol</a></span> })
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor Create a Location based on a set of coordinates.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toDegrees-instance_function" title="toDegrees (Instance Function)"><strong>toDegrees</strong></a>()    as [ <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span>, <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span> ]
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a Location object's coordinates in degrees.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toGeoString-instance_function" title="toGeoString (Instance Function)"><strong>toGeoString</strong></a>(format as <span class="type"><a href="../../Toybox/Position.html#CoordinateFormat-module">Position.CoordinateFormat</a></span>)    as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a String representation a Location object's coordinates.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toRadians-instance_function" title="toRadians (Instance Function)"><strong>toRadians</strong></a>()    as [ <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span>, <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span> ]
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a location object's coordinates in radians.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getProjectedLocation-instance_function">
+    <strong>getProjectedLocation(angle as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, distance as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a <a href='../../Toybox/Position/Location.html'>Location</a> object that is offset from the current position by a given distance and angle.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">angle</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The angle in radians from north.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">distance</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The distance from the current position in meters (m).
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The projected location.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(options as { :latitude as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :longitude as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :format as <span class="type"><a href="../../Toybox/Lang/Symbol.html">Lang.Symbol</a></span> })</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+Create a Location based on a set of coordinates.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An Array of options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:latitude</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The latitude
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:longitude</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The longitude
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:format</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The format of the provided latitude and longitude as one of three possible values:
+</p>
+
+<ul>
+<li>
+<p>
+:degrees
+</p>
+
+</li>
+<li>
+<p>
+:radians
+</p>
+
+</li>
+<li>
+<p>
+:semicircles
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Position;
+var myLocation = new Position.Location(
+    {
+        :latitude =&gt; 38.856147,
+        :longitude =&gt; -94.800953,
+        :format =&gt; :degrees
+    }
+);</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toDegrees-instance_function">
+    <strong>toDegrees()</strong> <span class="type"> as [ <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span>, <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span> ]</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a Location object's coordinates in degrees.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Position;
+using Toybox.System;
+Position.enableLocationEvents(Position.LOCATION_ONE_SHOT, method(:onPosition));
+
+function onPosition(info) {
+    var myLocation = info.position.toDegrees();
+    System.println(myLocation[0]); // latitude (e.g. 38.856147)
+    System.println(myLocation[1]); // longitude (e.g -94.800953)
+}</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An Array containing the latitude and longitude as <a href='../../Toybox/Lang/Double.html'>Doubles</a> in a degree format
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toGeoString-instance_function">
+    <strong>toGeoString(format as <span class="type"><a href="../../Toybox/Position.html#CoordinateFormat-module">Position.CoordinateFormat</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a String representation a Location object's coordinates.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">format</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Position.html#CoordinateFormat-module">Position.CoordinateFormat</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Position.GEO_* value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Position;
+using Toybox.System;
+var myLocation = new Position.Location(
+    {
+        :latitude =&gt; 38.856147,
+        :longitude =&gt; -94.800953,
+        :format =&gt; :degrees
+    }
+);
+var locString = myLocation.toGeoString(Position.GEO_DMS); // N 38 51'22.13" W 94 45' 3.44"</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A formatted coordinate String in the specified format
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toRadians-instance_function">
+    <strong>toRadians()</strong> <span class="type"> as [ <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span>, <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span> ]</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a location object's coordinates in radians.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Position;
+using Toybox.System;
+Position.enableLocationEvents(Position.LOCATION_ONE_SHOT, method(:onPosition));
+
+function onPosition(info) {
+    var myLocation = info.position.toRadians();
+    System.println(myLocation[0]); // latitude (e.g. 0.678197)
+    System.println(myLocation[1]); // longitude (e.g -1.654588)
+}</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An Array containing latitude and longitude as <a href='../../Toybox/Lang/Double.html'>Doubles</a> in a radian format
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

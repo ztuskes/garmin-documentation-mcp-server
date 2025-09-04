@@ -1,0 +1,310 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.WatchUi.NumberPicker </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.WatchUi.NumberPicker";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.WatchUi.NumberPicker</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/NumberPicker.html">Toybox.WatchUi.NumberPicker</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A representation of an on-screen number picker.
+</p><p>
+A NumberPicker is a special View that provides a way to specify numeric
+values within an app. A NumberPicker is pushed using
+<a href='../../Toybox/WatchUi.html#pushView-instance_function'>pushView()</a> and provides a
+<a href='../../Toybox/WatchUi/NumberPickerDelegate.html'>NumberPickerDelegate</a> as the input
+delegate.
+</p><p>
+The NumberPicker class is limited to the eight specific modes described
+by the <a href='../../Toybox/WatchUi.html#NUMBER_PICKER_DISTANCE-const'>WatchUi.NUMBER_PICKER_*</a>
+types enum. There are set minimum and maximum values enforced by the
+product for each mode, and the initial value of the NumberPicker will be
+adjusted to fall within these bounds.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This class may be removed after System 3.
+</p>
+
+
+  </div>
+</div>
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/NumberPickerDelegate.html">Toybox.WatchUi.NumberPickerDelegate</a>
+  </div>
+  </li>
+  </ul>
+
+  <!-- Note -->
+  <div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+The look and feel of a number picker is device-specific.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Display a distance picker when the Menu button is pressed</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.WatchUi;
+
+class MyNumberPickerDelegate extends WatchUi.NumberPickerDelegate {
+    function initialize() {
+        NumberPickerDelegate.initialize();
+    }
+
+    function onNumberPicked(value) {
+        myValue = value; // e.g. 1000f
+    }
+}
+
+class MyInputDelegate extends WatchUi.BehaviorDelegate {
+    var myPicker;
+
+    function initialize() {
+        BehaviorDelegate.initialize();
+    }
+
+    function onMenu() {
+        if (WatchUi has :NumberPicker) {
+            myPicker = new WatchUi.NumberPicker(
+                WatchUi.NUMBER_PICKER_DISTANCE,
+                myValue
+            );
+            WatchUi.pushView(
+                myPicker,
+                new MyNumberPickerDelegate(),
+                WatchUi.SLIDE_IMMEDIATE
+            );
+        }
+        return true;
+    }
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch Face</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S60</li><li>Approach® S62</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>Descent™ Mk1</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® Chronos</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(mode as <span class="type"><a href="../../Toybox/WatchUi.html#NumberPickerMode-module">WatchUi.NumberPickerMode</a></span>, initialValue as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(mode as <span class="type"><a href="../../Toybox/WatchUi.html#NumberPickerMode-module">WatchUi.NumberPickerMode</a></span>, initialValue as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">mode</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The <a href='../../Toybox/WatchUi.html#NUMBER_PICKER_DISTANCE-const'>NUMBER_PICKER_*</a> value for the desired mode
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">initialValue</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The initial value for the NumberPicker, dependent on the specified mode
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:15 PM
+</p>
+
+</body>

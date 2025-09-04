@@ -1,0 +1,515 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Position.Info </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Position.Info";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Position.Info</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Position/Info.html">Toybox.Position.Info</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Position.Info class contains all of the information provided by
+the positioning system.
+</p><p>
+Position Info can be retrieved on every call of <a href='../../Toybox/WatchUi/View.html#onUpdate-instance_function'>onUpdate()</a>
+or it can be obtained on demand. Fields in this class may return <code>null</code>
+so should be checked for <code>null</code> values prior to use.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 45</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Garmin Swim™ 2</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#accuracy-var" title="accuracy (Var)"><strong>accuracy</strong></a>  as <span class="type"><a href="../../Toybox/Position.html#Quality-module">Position.Quality</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The positional accuracy.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#altitude-var" title="altitude (Var)"><strong>altitude</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The elevation above mean sea level in meters (m).
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#heading-var" title="heading (Var)"><strong>heading</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The true north referenced heading in radians.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#position-var" title="position (Var)"><strong>position</strong></a>  as <span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The latitude and longitude of the position.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#speed-var" title="speed (Var)"><strong>speed</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The horizontal speed in meters per second (mps).
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#when-var" title="when (Var)"><strong>when</strong></a>  as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The GPS time stamp of the obtained <a href='../../Toybox/Position/Location.html'>Location</a> fix.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="accuracy-var" class="details">
+<h3 class="signature" id="accuracy-var">
+
+var accuracy  as <span class="type"><a href="../../Toybox/Position.html#Quality-module">Position.Quality</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The positional accuracy.
+</p><p>
+This is given as one of the following values: good, usable, poor, or
+not available, which corresponds with the Position.QUALITY_* constants.
+This cannot be <code>null</code>.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Position.html#Quality-module">Position.Quality</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Position.QUALITY_* value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="altitude-var" class="details">
+<h3 class="signature" id="altitude-var">
+
+var altitude  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The elevation above mean sea level in meters (m).
+</p><p>
+Elevation is obtained from the GPS. If no GPS is present, then no valid
+elevation will be returned.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+<p class="tag_title">See Also:</p>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Metres_above_sea_level">Meters above sea level</a>
+  </div>
+  </li>
+  </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="heading-var" class="details">
+<h3 class="signature" id="heading-var">
+
+var heading  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The true north referenced heading in radians.
+</p><p>
+This provides the direction of travel when moving. If supported by
+the device, it provides compass orientation when stopped.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="position-var" class="details">
+<h3 class="signature" id="position-var">
+
+var position  as <span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The latitude and longitude of the position.
+</p><p>
+If no GPS is available or is between GPS fix intervals (typically 1
+second), the position is propagated (i.e. dead-reckoned) using the
+last known heading and last known speed. After a short period of time,
+the position will cease to be propagated to avoid excessive accumulation
+of position errors.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="speed-var" class="details">
+<h3 class="signature" id="speed-var">
+
+var speed  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The horizontal speed in meters per second (mps).
+</p><p>
+Speed is derived from the most accurate source in the following order:
+</p>
+
+<ol>
+<li>
+<p>
+GPS
+</p>
+
+</li>
+<li>
+<p>
+Foot pod
+</p>
+
+</li>
+<li>
+<p>
+Accelerometer
+</p>
+
+</li>
+</ol>
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="when-var" class="details">
+<h3 class="signature" id="when-var">
+
+var when  as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The GPS time stamp of the obtained <a href='../../Toybox/Position/Location.html'>Location</a>
+fix.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>
+</li>
+    </ul>
+</div>
+
+</dt>
+ </div>
+
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

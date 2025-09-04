@@ -1,0 +1,13 @@
+<svg width="390" height="390" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="instinct3amoled45mm-4fieldsb-6-mask">
+      <rect width="100%" height="100%" fill="black"/>
+      <circle cx="50%" cy="50%" r="49%" style="fill:white"/>
+    </mask>
+  </defs>
+  <rect x="0" y="0" width="390" height="139" mask="url(#instinct3amoled45mm-4fieldsb-6-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="140" width="194" height="108" mask="url(#instinct3amoled45mm-4fieldsb-6-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="195" y="140" width="194" height="108" mask="url(#instinct3amoled45mm-4fieldsb-6-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="251" width="390" height="139" mask="url(#instinct3amoled45mm-4fieldsb-6-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+      <circle cx="50%" cy="50%" r="49%" style="stroke-width:1;stroke:rgb(0,0,0);fill:none"/>
+</svg>

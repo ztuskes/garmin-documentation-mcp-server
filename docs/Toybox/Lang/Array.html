@@ -1,0 +1,905 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Lang.Array </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Lang.Array";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Lang.Array</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Array.html">Toybox.Lang.Array</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Array objects are fixed size (not a linked list), numerically indexed, single dimensional,
+and take any Objects (including Arrays) as members. Array keys must be
+Numbers, but Array values may be any type of Object.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#add-instance_function" title="add (Instance Function)"><strong>add</strong></a>(object as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)    as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>&gt;
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add an Object to the end of an Array.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#addAll-instance_function" title="addAll (Instance Function)"><strong>addAll</strong></a>(array as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>&gt;)    as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>&gt;
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add an Array of Objects to the end of an Array.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#indexOf-instance_function" title="indexOf (Instance Function)"><strong>indexOf</strong></a>(object as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the index of an Object within the Array.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#remove-instance_function" title="remove (Instance Function)"><strong>remove</strong></a>(object as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Remove an Object from an Array.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#removeAll-instance_function" title="removeAll (Instance Function)"><strong>removeAll</strong></a>(object as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Remove Objects from an Array.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#reverse-instance_function" title="reverse (Instance Function)"><strong>reverse</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>&gt;
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Return a new Array that contains the elements of a source Array in reverse order.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#size-instance_function" title="size (Instance Function)"><strong>size</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the size of an Array.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#slice-instance_function" title="slice (Instance Function)"><strong>slice</strong></a>(startIndex as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>, endIndex as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>)    as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>&gt;
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a new Array containing a portion of an existing Array.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#sort-instance_function" title="sort (Instance Function)"><strong>sort</strong></a>(comparator as <span class="type"><a href="../../Toybox/Lang.html#Comparator-named_type">Lang.Comparator</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Sort an Array.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toString-instance_function" title="toString (Instance Function)"><strong>toString</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert an Array to a String.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="add-instance_function">
+    <strong>add(object as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>&gt;</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add an Object to the end of an Array.
+</p><p>
+When adding an Object, the Array size is increased by one and the new
+Object is inserted at the new index.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">object</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Object to be added to the Array
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+self
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="addAll-instance_function">
+    <strong>addAll(array as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>&gt;)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>&gt;</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add an Array of Objects to the end of an Array.
+</p><p>
+When adding an Array of Objects, the Array is expanded by the size of
+the provided Array, and all of the new elements are inserted starting
+at the new index.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">array</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Array of Objects to be added to the Array
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+self
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="indexOf-instance_function">
+    <strong>indexOf(object as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the index of an Object within the Array.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">object</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Object whose index is to be found
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The index of the first instance of the provided Object in the Array. If the Object is not found, -1 is returned.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="remove-instance_function">
+    <strong>remove(object as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Remove an Object from an Array.
+</p><p>
+If the passed Object is found, the Array size is decreased by one and
+elements beyond it are shifted to the next lower index. If the Array
+has multiple matches, the matching Object at the lowest index will be
+removed but the other matching Objects will not be removed.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">object</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The object to be removed from the Array
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if instances of the object are found, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="removeAll-instance_function">
+    <strong>removeAll(object as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Remove Objects from an Array.
+</p><p>
+For each instance of the Object that is found, the Array size is
+decreased by one and elements beyond it are shifted to the next lower
+index.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">object</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Object to be removed from the Array
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if instances of the Object are found, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="reverse-instance_function">
+    <strong>reverse()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>&gt;</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Return a new Array that contains the elements of a source Array in
+reverse order.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A new Array with elements in reversed order
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="size-instance_function">
+    <strong>size()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the size of an Array.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The number of elements in the Array
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="slice-instance_function">
+    <strong>slice(startIndex as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>, endIndex as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>&gt;</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a new Array containing a portion of an existing Array.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">startIndex</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, null)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A zero-based index of the start of the new Array. If a negative <code>startIndex</code> is provided, it will offset from the end of the Array. If the <code>startIndex</code> is <code>null</code>, the slice will begin at 0. An out-of-bounds index will be truncated to the array limits.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">endIndex</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, null)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A zero-based index of the end of the new Array. Items are included up to, but not including <code>endIndex</code>. If a negative <code>endIndex</code> is provided, it will offset from the end of the Array. If <code>endIndex</code> is <code>null</code>, the the slice will end at the last element. An out-of-bounds index will be truncated to the Array limits.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>var myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Get the first five elements of the Array
+var newArray1 = myArray.slice(0, 5);     // [1, 2, 3, 4, 5]
+
+// Get the last element of the Array
+var newArray2 = myArray.slice(-1, null); // [10]
+
+// Slice off the first and last elements from the Array
+var myArray3 = myArray.slice(1, -1);     // [2, 3, 4, 5, 6, 7, 8, 9]</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A new Array containing the elements from <code>startIndex</code> to <code>endIndex</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="sort-instance_function">
+    <strong>sort(comparator as <span class="type"><a href="../../Toybox/Lang.html#Comparator-named_type">Lang.Comparator</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Sort an Array
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">comparator</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Comparator-named_type">Lang.Comparator</a></span>, null)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An object that can be used to specify the order of Objects relative to others. If <code>comparator</code> is <code>null</code>, a default comparator will be used. The default comparator will sort values in ascending order, and is able to compare Numeric, Boolean, and Char values, or String values.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>var myArray = [2, 1, 3.0f, 0.0d];
+myArray.sort(null); // [0.0d, 1, 2, 3.0f]
+
+var myStrings = ["bb", "a", "aa", "b"];
+myStrings.sort(null); // ["a", "aa", "b", "bb"]
+
+var myProblem = ["1", 1];
+myProblem.sort(null); // UnexpectedTypeException</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the default comparator is used to compare values that are not directly comparable.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toString-instance_function">
+    <strong>toString()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert an Array to a String.
+</p><p>
+This does not convert the elements of the Array into Strings, but
+transforms the entire Array into a String.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+var myArray = [1, 2, 3, 4, 5];
+System.println(myArray[1]);                // prints 1
+
+var myString = myArray.toString();
+System.println(myString);                  // "[1, 2, 3, 4, 5]"
+System.println(myString[1]);               // UnexpectedTypeException
+System.println(myString.substring(0, 5));  // "[1, 2"</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A String representation of the Array
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

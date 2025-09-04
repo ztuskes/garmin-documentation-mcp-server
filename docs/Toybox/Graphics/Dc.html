@@ -1,0 +1,3389 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Graphics.Dc </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Graphics.Dc";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Graphics.Dc</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Graphics/Dc.html">Toybox.Graphics.Dc</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+This class represents a device context.
+</p><p>
+It provides methods to perform drawing operations on the device.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+  <!-- Note -->
+  <div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+You should never directly instantiate a Dc object, or attempt to render to the screen outside of an onUpdate call.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Draws a blue rectangle using direct pixel parameters.</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Graphics;
+function onUpdate(dc) {
+    dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLACK);
+    dc.fillRectangle(100, 100, 100, 100);
+}</code>
+</pre>
+</div><div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Draws a red circle using direct pixel parameters.</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Graphics;
+function onUpdate(dc) {
+    dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_BLACK);
+    dc.fillCircle(50, 100, 75);
+}</code>
+</pre>
+</div><div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Draws "Hello World" in the center of the screen using calls to the Device Context (dc).</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Graphics;
+function onUpdate(dc) {
+    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+    dc.drawText(
+        dc.getWidth() / 2,                      // gets the width of the device and divides by 2
+        dc.getHeight() / 2,                     // gets the height of the device and divides by 2
+        Graphics.FONT_LARGE,                    // sets the font size
+        "Hello World",                          // the String to display
+        Graphics.TEXT_JUSTIFY_CENTER            // sets the justification for the text
+                );
+}</code>
+</pre>
+</div><div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Clears the screen of device with background color (Graphics.COLOR_BLACK).</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Graphics;
+function onUpdate(dc) {
+    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+    dc.clear();
+}
+</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#clear-instance_function" title="clear (Instance Function)"><strong>clear</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Erase the screen using the background color.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#clearClip-instance_function" title="clearClip (Instance Function)"><strong>clearClip</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Reset the drawable area to the full area of the Dc.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawAngledText-instance_function" title="drawAngledText (Instance Function)"><strong>drawAngledText</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, font as <span class="type"><a href="../../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span>, text as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, justification as <span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span> or <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, angle as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw angled text Draw text such that it is oriented perpendicular to a radial line at the given angle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawArc-instance_function" title="drawArc (Instance Function)"><strong>drawArc</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, r as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, attr as <span class="type"><a href="../../Toybox/Graphics.html#ArcDirection-module">Graphics.ArcDirection</a></span>, degreeStart as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, degreeEnd as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw an arc.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawBitmap-instance_function" title="drawBitmap (Instance Function)"><strong>drawBitmap</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw a bitmap to the screen.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawBitmap2-instance_function" title="drawBitmap2 (Instance Function)"><strong>drawBitmap2</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>, options as { :bitmapX as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :bitmapY as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :bitmapWidth as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :bitmapHeight as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :tintColor as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>, :filterMode as <span class="type"><a href="../../Toybox/Graphics.html#FilterMode-module">Graphics.FilterMode</a></span>, :transform as <span class="type"><a href="../../Toybox/Graphics/AffineTransform.html">Graphics.AffineTransform</a></span> } or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw bitmap with the given options.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawCircle-instance_function" title="drawCircle (Instance Function)"><strong>drawCircle</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, radius as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw a circle around a point.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawEllipse-instance_function" title="drawEllipse (Instance Function)"><strong>drawEllipse</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, a as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, b as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw an ellipse around a point.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawLine-instance_function" title="drawLine (Instance Function)"><strong>drawLine</strong></a>(x1 as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y1 as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, x2 as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y2 as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw a line between two points.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawOffsetBitmap-instance_function" title="drawOffsetBitmap (Instance Function)"><strong>drawOffsetBitmap</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmapX as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmapY as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmapWidth as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmapHeight as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw a bitmap to the screen with an offset.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawPoint-instance_function" title="drawPoint (Instance Function)"><strong>drawPoint</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw a point on the screen.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawRadialText-instance_function" title="drawRadialText (Instance Function)"><strong>drawRadialText</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, font as <span class="type"><a href="../../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span>, text as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, justification as <span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span> or <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, angle as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, radius as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, direction as <span class="type"><a href="../../Toybox/Graphics.html#RadialTextDirection-module">Graphics.RadialTextDirection</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw radial text Draw text oriented along an arc.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawRectangle-instance_function" title="drawRectangle (Instance Function)"><strong>drawRectangle</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw a rectangle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawRoundedRectangle-instance_function" title="drawRoundedRectangle (Instance Function)"><strong>drawRoundedRectangle</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, radius as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw a rounded rectangle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawScaledBitmap-instance_function" title="drawScaledBitmap (Instance Function)"><strong>drawScaledBitmap</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw a scaled bitmap to a surface.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#drawText-instance_function" title="drawText (Instance Function)"><strong>drawText</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, font as <span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>, text as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>, justification as <span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span> or <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw text at the given location.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#fillCircle-instance_function" title="fillCircle (Instance Function)"><strong>fillCircle</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, radius as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Fill a circle with the foreground color.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#fillEllipse-instance_function" title="fillEllipse (Instance Function)"><strong>fillEllipse</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, a as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, b as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Fill an ellipse with the foreground color.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#fillPolygon-instance_function" title="fillPolygon (Instance Function)"><strong>fillPolygon</strong></a>(pts as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Graphics.html#Point2D-named_type">Graphics.Point2D</a></span>&gt;)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Fill a polygon with the foreground color.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#fillRectangle-instance_function" title="fillRectangle (Instance Function)"><strong>fillRectangle</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Fill a rectangle with the foreground color.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#fillRoundedRectangle-instance_function" title="fillRoundedRectangle (Instance Function)"><strong>fillRoundedRectangle</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, radius as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Fill a rounded rectangle with the foreground color.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getFontHeight-instance_function" title="getFontHeight (Instance Function)"><strong>getFontHeight</strong></a>(font as <span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the height of a font.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getHeight-instance_function" title="getHeight (Instance Function)"><strong>getHeight</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the height of the display region that is available to the app.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getTextDimensions-instance_function" title="getTextDimensions (Instance Function)"><strong>getTextDimensions</strong></a>(text as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, font as <span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)    as [ <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> ]
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the width and height of a String.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getTextWidthInPixels-instance_function" title="getTextWidthInPixels (Instance Function)"><strong>getTextWidthInPixels</strong></a>(text as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, font as <span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the width of a String.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getWidth-instance_function" title="getWidth (Instance Function)"><strong>getWidth</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the width of the display region that is available to the app.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setAntiAlias-instance_function" title="setAntiAlias (Instance Function)"><strong>setAntiAlias</strong></a>(enabled as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Enable anti-aliased drawing for primitives This method is not supported for a <a href='../../Toybox/Graphics/BufferedBitmap.html'>BufferedBitmap</a> that has a palette.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setBlendMode-instance_function" title="setBlendMode (Instance Function)"><strong>setBlendMode</strong></a>(mode as <span class="type"><a href="../../Toybox/Graphics.html#BlendMode-module">Graphics.BlendMode</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set blend mode for drawing.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setClip-instance_function" title="setClip (Instance Function)"><strong>setClip</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Apply a clipping region to the Dc.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setColor-instance_function" title="setColor (Instance Function)"><strong>setColor</strong></a>(foreground as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>, background as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the current foreground and background colors.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setFill-instance_function" title="setFill (Instance Function)"><strong>setFill</strong></a>(fill as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Graphics/BitmapTexture.html">Graphics.BitmapTexture</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set fill tool for drawing primitives.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setPenWidth-instance_function" title="setPenWidth (Instance Function)"><strong>setPenWidth</strong></a>(width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the width of a line.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setStroke-instance_function" title="setStroke (Instance Function)"><strong>setStroke</strong></a>(stroke as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Graphics/BitmapTexture.html">Graphics.BitmapTexture</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set draw tool for drawing primitives.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="clear-instance_function">
+    <strong>clear()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Erase the screen using the background color.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Starting form version 3.1.0, COLOR_TRANSPARENT will also be honored as background color, which will cause the value of pixels in the clip region to be replaced by COLOR_TRANSPARENT. For example, this can be used to clear the transparent overlay layer so animation background is visible.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="clearClip-instance_function">
+    <strong>clearClip()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Reset the drawable area to the full area of the Dc.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawAngledText-instance_function">
+    <strong>drawAngledText(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, font as <span class="type"><a href="../../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span>, text as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, justification as <span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span> or <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, angle as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw angled text
+</p><p>
+Draw text such that it is oriented perpendicular to a radial line
+at the given angle.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the text
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the text
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The font to use.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">text</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The String to render.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">justification</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Specifies how text is placed relative to the text location.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">angle</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Angle of the text baseline in degrees counter-clockwise from the 3 o'clock position.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Mach 1</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.1
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawArc-instance_function">
+    <strong>drawArc(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, r as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, attr as <span class="type"><a href="../../Toybox/Graphics.html#ArcDirection-module">Graphics.ArcDirection</a></span>, degreeStart as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, degreeEnd as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw an arc.
+</p>
+
+<ul>
+<li>
+<p>
+0 degrees: 3 o'clock position.
+</p>
+
+</li>
+<li>
+<p>
+90 degrees: 12 o'clock position.
+</p>
+
+</li>
+<li>
+<p>
+180 degrees: 9 o'clock position.
+</p>
+
+</li>
+<li>
+<p>
+270 degrees: 6 o'clock position.
+</p>
+
+</li>
+</ul>
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the arc center
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the arc center
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">r</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The radius of the arc
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">attr</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#ArcDirection-module">Graphics.ArcDirection</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Arc drawing attributes. (ARC_COUNTER_CLOCKWISE or ARC_CLOCKWISE)
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">degreeStart</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The start angle of the arc by degrees.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">degreeEnd</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The end angle of the arc by degrees.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawBitmap-instance_function">
+    <strong>drawBitmap(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw a bitmap to the screen.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+<a href='../../Toybox/Graphics/BitmapReference.html'>BitmapReference</a> is only supported in CIQ 4.0.0 and later
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The top left x coordinate to begin the draw
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The top left y coordinate to begin the draw
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">bitmap</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span>, <span class="type"><a href="../../Toybox/Graphics/BufferedBitmap.html">Graphics.BufferedBitmap</a></span>, <span class="type"><a href="../../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The object to draw. The source color palette must be a subset of the destination color palette.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/InvalidPaletteException.html">Graphics.InvalidPaletteException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the source color palette is not a subset of the destination palette
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawBitmap2-instance_function">
+    <strong>drawBitmap2(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>, options as { :bitmapX as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :bitmapY as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :bitmapWidth as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :bitmapHeight as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :tintColor as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>, :filterMode as <span class="type"><a href="../../Toybox/Graphics.html#FilterMode-module">Graphics.FilterMode</a></span>, :transform as <span class="type"><a href="../../Toybox/Graphics/AffineTransform.html">Graphics.AffineTransform</a></span> } or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw bitmap with the given options
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The top left x coordinate to begin the draw
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The top left y coordinate to begin the draw
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">bitmap</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The <a href='../../Toybox/WatchUi/BitmapResource.html'>BitmapResource</a> or <a href='../../Toybox/Graphics/BufferedBitmap.html'>BufferedBitmap</a> to render. The source color palette must be a subset of the destination color palette.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A dictionary of options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:bitmapX</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x coordinate of the top left corner of the source bitmap area. Default is 0
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:bitmapY</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y coordinate of the top left corner of the source bitmap area. Default is 0
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:bitmapWidth</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The width of the source bitmap area. Default is <code>bitmap.getWidth()</code>
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:bitmapHeight</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height of the source bitmap area. Default is <code>bitmap.getHeight()</code>
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:tintColor</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Tint color to apply to the output If not provided, no tint is applied.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:filterMode</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#FilterMode-module">Graphics.FilterMode</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Default is FILTER_MODE_POINT.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:transform</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/AffineTransform.html">Graphics.AffineTransform</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Transformation to apply to the source image when drawing it to the output. If not provided, no transform is applied.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ G2</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.1
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <div class="inline">
+<p>
+InvalidValueException if one of <code>:bitmapX</code>, <code>:bitmapY</code>, <code>:bitmapWidth</code>, <code>:bitmapHeight</code> are provided and outside the bounds of <code>bitmap</code>.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawCircle-instance_function">
+    <strong>drawCircle(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, radius as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw a circle around a point.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the circle center
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the circle center
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">radius</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The radius of the circle
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawEllipse-instance_function">
+    <strong>drawEllipse(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, a as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, b as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw an ellipse around a point.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the ellipse center
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the ellipse center
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">a</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The radius of the ellipse along the x axis
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">b</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The radius of the ellipse along the y axis
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawLine-instance_function">
+    <strong>drawLine(x1 as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y1 as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, x2 as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y2 as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw a line between two points.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x1</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The first x coordinate
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y1</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The first y coordinate
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">x2</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The second x coordinate
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y2</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The second y coordinate
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawOffsetBitmap-instance_function">
+    <strong>drawOffsetBitmap(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmapX as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmapY as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmapWidth as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmapHeight as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw a bitmap to the screen with an offset.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The top left x coordinate to begin the draw
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The top left y coordinate to begin the draw
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">bitmapX</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x offset of the upper left corner of pixels to copy from the bitmap.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">bitmapY</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y offset of the upper left corner of pixels to copy from the bitmap.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">bitmapWidth</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The width of the area to copy pixels from the bitmap.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">bitmapHeight</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height of the area to copy pixels from the bitmap
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">bitmap</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The <a href='../../Toybox/WatchUi/BitmapResource.html'>BitmapResource</a> or <a href='../../Toybox/Graphics/BufferedBitmap.html'>BufferedBitmap</a> to render. The source color palette must be a subset of the destination color palette.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/InvalidPaletteException.html">Graphics.InvalidPaletteException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the source color palette is not a subset of the destination palette
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawPoint-instance_function">
+    <strong>drawPoint(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw a point on the screen.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the point
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the point
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawRadialText-instance_function">
+    <strong>drawRadialText(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, font as <span class="type"><a href="../../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span>, text as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, justification as <span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span> or <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, angle as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, radius as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, direction as <span class="type"><a href="../../Toybox/Graphics.html#RadialTextDirection-module">Graphics.RadialTextDirection</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw radial text
+</p><p>
+Draw text oriented along an arc.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the center of circle for radial text
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the center of circle for radial text
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/VectorFont.html">Graphics.VectorFont</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The font to use.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">text</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The String to render.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">justification</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Specifies how text placed relative to the text location.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">angle</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Angle to a point on the circle to justify text in degrees counter-clockwise from the 3 o'clock position.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">radius</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Distance from center of circle on which to draw text.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">direction</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#RadialTextDirection-module">Graphics.RadialTextDirection</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Text drawing direction along the arc.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Mach 1</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.1
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawRectangle-instance_function">
+    <strong>drawRectangle(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw a rectangle.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the upper corner
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the upper corner
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">width</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The width value of the rectangle
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">height</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height value of the rectangle
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawRoundedRectangle-instance_function">
+    <strong>drawRoundedRectangle(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, radius as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw a rounded rectangle.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the upper corner
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the upper corner
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">width</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The width value of the rectangle
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">height</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height value of the rectangle
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">radius</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The radius of the rounding.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawScaledBitmap-instance_function">
+    <strong>drawScaledBitmap(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, bitmap as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw a scaled bitmap to a surface.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The top left x coordinate to begin the draw
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The top left y coordinate to begin the draw
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">width</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The width of the bitmap drawn on the destination surface
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">height</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height of the bitmap drawn on the destination surface
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">bitmap</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The <a href='../../Toybox/WatchUi/BitmapResource.html'>BitmapResource</a> or <a href='../../Toybox/Graphics/BufferedBitmap.html'>BufferedBitmap</a> to render. The source color palette must be a subset of the destination color palette.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/InvalidPaletteException.html">Graphics.InvalidPaletteException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the source color palette is not a subset of the destination palette
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="drawText-instance_function">
+    <strong>drawText(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, font as <span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>, text as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>, justification as <span class="type"><a href="../../Toybox/Graphics.html#TextJustification-module">Graphics.TextJustification</a></span> or <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw text at the given location.
+</p><p>
+This method is not supported for anti-aliased fonts
+(including most built in fonts) for a
+<a href='../../Toybox/Graphics/BufferedBitmap.html'>BufferedBitmap</a> that has a
+palette.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+<a href='../../Toybox/Graphics/FontReference.html'>FontReference</a> is only supported in CIQ 4.0.0 and later
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the text
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the text
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The font to use. This can be a custom font loaded from resources or a Graphics.FONT_* value.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">text</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Object to render.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">justification</span>
+        &mdash;
+        <div class="inline">
+<p>
+Mask of Graphics.TEXT_JUSTIFY_* constants. This may either be a single Graphics.TEXT_JUSTIFY_* constant, or a combination of one vertical and one horizontal justification value as a bit mask (e.g., Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER).
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/InvalidPaletteException.html">Graphics.InvalidPaletteException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if an anti-aliased font is used on a paletted bitmap
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="fillCircle-instance_function">
+    <strong>fillCircle(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, radius as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Fill a circle with the foreground color.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the circle center
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the circle center
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">radius</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The radius of the circle
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="fillEllipse-instance_function">
+    <strong>fillEllipse(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, a as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, b as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Fill an ellipse with the foreground color.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the ellipse center
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the ellipse center
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">a</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The radius of the ellipse along the x axis
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">b</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The radius of the ellipse along the y axis
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="fillPolygon-instance_function">
+    <strong>fillPolygon(pts as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Graphics.html#Point2D-named_type">Graphics.Point2D</a></span>&gt;)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Fill a polygon with the foreground color.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">pts</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Array of coordinates with a 64 point limit
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="fillRectangle-instance_function">
+    <strong>fillRectangle(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Fill a rectangle with the foreground color.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the upper corner
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the upper corner
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">width</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The width value of the rectangle
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">height</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height value of the rectangle
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="fillRoundedRectangle-instance_function">
+    <strong>fillRoundedRectangle(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, radius as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Fill a rounded rectangle with the foreground color.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x location of the upper corner
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y location of the upper corner
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">width</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The width value of the rectangle
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">height</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height value of the rectangle
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">radius</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The radius of the rounding
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getFontHeight-instance_function">
+    <strong>getFontHeight(font as <span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the height of a font.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The font to measure
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The height of the font in pixels
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getHeight-instance_function">
+    <strong>getHeight()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the height of the display region that is available to the app.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The height of display in pixels
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getTextDimensions-instance_function">
+    <strong>getTextDimensions(text as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, font as <span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</strong> <span class="type"> as [ <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> ]</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the width and height of a String.
+</p><p>
+This takes new lines into account when determining the height.
+The width is the maximum width for a given line of the String. If a
+String has two newline characters (\\n) in it, the height would be
+for three lines and the width would be the width of the longest
+String.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">text</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The text to get the width for
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The font of the text to measure.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The [width, height] of the String in pixels
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getTextWidthInPixels-instance_function">
+    <strong>getTextWidthInPixels(text as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, font as <span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the width of a String.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">text</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The text to get width for
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">font</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#FontType-named_type">Graphics.FontType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The font of the text to measure.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The width of String in pixels
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getWidth-instance_function">
+    <strong>getWidth()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the width of the display region that is available to the app.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The width of display in pixels
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setAntiAlias-instance_function">
+    <strong>setAntiAlias(enabled as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Enable anti-aliased drawing for primitives
+This method is not supported for a
+<a href='../../Toybox/Graphics/BufferedBitmap.html'>BufferedBitmap</a> that has a palette.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">enabled</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+<code>true</code> if AA is to be enabled, <code>false</code> otherwise.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 645 Music</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 67 / 67i</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/InvalidPaletteException.html">Graphics.InvalidPaletteException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if antialiasing is enabled for a paletted bitmap.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setBlendMode-instance_function">
+    <strong>setBlendMode(mode as <span class="type"><a href="../../Toybox/Graphics.html#BlendMode-module">Graphics.BlendMode</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set blend mode for drawing.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+BLEND_MODE_NO_BLEND is only supported while drawing bitmaps
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">mode</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#BlendMode-module">Graphics.BlendMode</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+<a href='../../Toybox/Graphics.html#BlendMode-module'>Graphics.BLEND_MODE_*</a> constant.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setClip-instance_function">
+    <strong>setClip(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Apply a clipping region to the Dc.
+</p><p>
+Pixels outside of the region will not be affected by any operations.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x coordinate of the top left corner of the clipping region
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y coordinate of the top left corner of the clipping region
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">width</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The width of the clipping region in pixels.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">height</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height of the clipping region in pixels.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setColor-instance_function">
+    <strong>setColor(foreground as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>, background as <span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the current foreground and background colors.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">foreground</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+<a href='../../Toybox/Graphics.html#ColorValue-module'>Graphics.COLOR_*</a> constant or 24-bit integer of the form 0xRRGGBB.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">background</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#ColorType-named_type">Graphics.ColorType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+<a href='../../Toybox/Graphics.html#ColorValue-module'>Graphics.COLOR_*</a> constant or 24-bit integer of the form 0xRRGGBB.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setFill-instance_function">
+    <strong>setFill(fill as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Graphics/BitmapTexture.html">Graphics.BitmapTexture</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set fill tool for drawing primitives.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+this function takes precedence over setColor(). If fill tool is not set, the foreground color will be used.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">fill</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The <a href='../../Toybox/Graphics/BitmapTexture.html'>BitmapTexture</a> or <a href='../../Toybox/Lang/Number.html'>Color</a> 32-bit integer in the format 0xAARRGGBB to use for fill draws.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setPenWidth-instance_function">
+    <strong>setPenWidth(width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the width of a line.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">width</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The pen width in pixels
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setStroke-instance_function">
+    <strong>setStroke(stroke as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Graphics/BitmapTexture.html">Graphics.BitmapTexture</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set draw tool for drawing primitives.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+this function takes precedence over setColor(). If draw tool is not set, the foreground color will be used.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">stroke</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The <a href='../../Toybox/Graphics/BitmapTexture.html'>BitmapTexture</a> or <a href='../../Toybox/Lang/Number.html'>Color</a> 32-bit integer in the format 0xAARRGGBB to use for draws.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

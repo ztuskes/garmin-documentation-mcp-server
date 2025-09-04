@@ -1,0 +1,507 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.AntPlus.DeviceListener </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.AntPlus.DeviceListener";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.AntPlus.DeviceListener</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/AntPlus/DeviceListener.html">Toybox.AntPlus.DeviceListener</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Listener class for Device.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+  <h2>Direct Known Subclasses</h2>
+  <p class="sub_classes">
+    <span class="type"><a href="../../Toybox/AntPlus/BikeCadenceListener.html">AntPlus.BikeCadenceListener</a></span>, <span class="type"><a href="../../Toybox/AntPlus/BikePowerListener.html">AntPlus.BikePowerListener</a></span>, <span class="type"><a href="../../Toybox/AntPlus/BikeRadarListener.html">AntPlus.BikeRadarListener</a></span>, <span class="type"><a href="../../Toybox/AntPlus/BikeSpeedCadenceListener.html">AntPlus.BikeSpeedCadenceListener</a></span>, <span class="type"><a href="../../Toybox/AntPlus/BikeSpeedListener.html">AntPlus.BikeSpeedListener</a></span>, <span class="type"><a href="../../Toybox/AntPlus/FitnessEquipmentListener.html">AntPlus.FitnessEquipmentListener</a></span>, <span class="type"><a href="../../Toybox/AntPlus/LightNetworkListener.html">AntPlus.LightNetworkListener</a></span>, <span class="type"><a href="../../Toybox/AntPlus/RunningDynamicsListener.html">AntPlus.RunningDynamicsListener</a></span>, <span class="type"><a href="../../Toybox/AntPlus/ShiftingListener.html">AntPlus.ShiftingListener</a></span>
+  </p>
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onBatteryStatusUpdate-instance_function" title="onBatteryStatusUpdate (Instance Function)"><strong>onBatteryStatusUpdate</strong></a>(data as <span class="type"><a href="../../Toybox/AntPlus/BatteryStatus.html">AntPlus.BatteryStatus</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Callback when battery status is received.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onDeviceStateUpdate-instance_function" title="onDeviceStateUpdate (Instance Function)"><strong>onDeviceStateUpdate</strong></a>(data as <span class="type"><a href="../../Toybox/AntPlus/DeviceState.html">AntPlus.DeviceState</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Callback when device state is updated.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onManufacturerInfoUpdate-instance_function" title="onManufacturerInfoUpdate (Instance Function)"><strong>onManufacturerInfoUpdate</strong></a>(data as <span class="type"><a href="../../Toybox/AntPlus/ManufacturerInfo.html">AntPlus.ManufacturerInfo</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Callback when manufacturer's information is received.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onMessage-instance_function" title="onMessage (Instance Function)"><strong>onMessage</strong></a>(msg as <span class="type"><a href="../../Toybox/Ant/Message.html">Ant.Message</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Callback when ANT message is received.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onProductInfoUpdate-instance_function" title="onProductInfoUpdate (Instance Function)"><strong>onProductInfoUpdate</strong></a>(data as <span class="type"><a href="../../Toybox/AntPlus/ProductInfo.html">AntPlus.ProductInfo</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Callback when product information is received.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onSentMessage-instance_function" title="onSentMessage (Instance Function)"><strong>onSentMessage</strong></a>(status as <span class="type"><a href="../../Toybox/AntPlus.html#MessageSendStatus-module">AntPlus.MessageSendStatus</a></span>, sentMesgData as { :messageType as <span class="type"><a href="../../Toybox/AntPlus.html#MessageType-module">AntPlus.MessageType</a></span>, :pageNumber as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> })    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+After sending a manufacturer message or page request this will be called to indicate message sent status.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="onBatteryStatusUpdate-instance_function">
+    <strong>onBatteryStatusUpdate(data as <span class="type"><a href="../../Toybox/AntPlus/BatteryStatus.html">AntPlus.BatteryStatus</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Callback when battery status is received.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">data</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/AntPlus/BatteryStatus.html">AntPlus.BatteryStatus</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The data with battery status information
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onDeviceStateUpdate-instance_function">
+    <strong>onDeviceStateUpdate(data as <span class="type"><a href="../../Toybox/AntPlus/DeviceState.html">AntPlus.DeviceState</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Callback when device state is updated.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">data</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/AntPlus/DeviceState.html">AntPlus.DeviceState</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The data with updated device state information.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onManufacturerInfoUpdate-instance_function">
+    <strong>onManufacturerInfoUpdate(data as <span class="type"><a href="../../Toybox/AntPlus/ManufacturerInfo.html">AntPlus.ManufacturerInfo</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Callback when manufacturer's information is received.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">data</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/AntPlus/ManufacturerInfo.html">AntPlus.ManufacturerInfo</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The data with manufacturer's information
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onMessage-instance_function">
+    <strong>onMessage(msg as <span class="type"><a href="../../Toybox/Ant/Message.html">Ant.Message</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Callback when ANT message is received.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">msg</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Ant/Message.html">Ant.Message</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The ANT message
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onProductInfoUpdate-instance_function">
+    <strong>onProductInfoUpdate(data as <span class="type"><a href="../../Toybox/AntPlus/ProductInfo.html">AntPlus.ProductInfo</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Callback when product information is received.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">data</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/AntPlus/ProductInfo.html">AntPlus.ProductInfo</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The data with product information
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onSentMessage-instance_function">
+    <strong>onSentMessage(status as <span class="type"><a href="../../Toybox/AntPlus.html#MessageSendStatus-module">AntPlus.MessageSendStatus</a></span>, sentMesgData as { :messageType as <span class="type"><a href="../../Toybox/AntPlus.html#MessageType-module">AntPlus.MessageType</a></span>, :pageNumber as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> })</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+After sending a manufacturer message or page request this will be called to
+indicate message sent status.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">status</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/AntPlus.html#MessageSendStatus-module">AntPlus.MessageSendStatus</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The status of the sent message as a <a href='../../Toybox/AntPlus.html#MESSAGE_SENT_SUCCESS-const'>SENT_MESSAGE_*</a> enum value
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">sentMesgData</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The dictionary will have keys for message type and page number. The message type is a <a href='../../Toybox/AntPlus.html#MESSAGE_TYPE_MANUFACTURER-const'>AntPlus.MESSAGE_TYPE_*</a>. The page number is byte 0 of the manufacturer specific message or the requested page number.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

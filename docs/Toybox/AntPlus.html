@@ -1,0 +1,1765 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.AntPlus </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.AntPlus";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.AntPlus</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The AntPlus module contains the interface for ANT+ data.
+</p><p>
+ANT+ is built on top of ANT.  It is a set of mutually agreed upon device
+profiles for what the information sent over ANT represents.  For example, a
+heart rate monitor will send information about your heart rate over ANT as
+defined in the ANT+ Heart Rate Device Profile. CIQ devices can use the
+<a href='../Toybox/Ant.html'>ANT Module</a> to implement ANT+ device profiles and talk to nearby
+devices that also implement the same ANT+ device profile (such as heart rate,
+bike power and fitness equipment control). The AntPlus Module provides the
+APIs to communicate in specific and standard ways with the ANT+ profiles
+defined in the document available at the link below titled, "ANT+ Device Profiles".
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../Toybox/Ant.html">Toybox.Ant</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="https://www.thisisant.com/developer/ant/ant-basics/#104_tab">ANT Basics</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="https://www.thisisant.com/developer/resources/downloads/">ANT Downloads & Resources (ANT+ Device Profiles)</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li>
+  </ul>
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/AntPlus/AntPlusNotAllowedException.html">AntPlusNotAllowedException</a></span>, <span class="type"><a href="../Toybox/AntPlus/BatteryStatus.html">BatteryStatus</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikeCadence.html">BikeCadence</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikeCadenceInfo.html">BikeCadenceInfo</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikeCadenceListener.html">BikeCadenceListener</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikeLight.html">BikeLight</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikePower.html">BikePower</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikePowerListener.html">BikePowerListener</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikeRadar.html">BikeRadar</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikeRadarListener.html">BikeRadarListener</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikeSpeed.html">BikeSpeed</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikeSpeedCadence.html">BikeSpeedCadence</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikeSpeedCadenceInfo.html">BikeSpeedCadenceInfo</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikeSpeedCadenceListener.html">BikeSpeedCadenceListener</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikeSpeedInfo.html">BikeSpeedInfo</a></span>, <span class="type"><a href="../Toybox/AntPlus/BikeSpeedListener.html">BikeSpeedListener</a></span>, <span class="type"><a href="../Toybox/AntPlus/CalculatedCadence.html">CalculatedCadence</a></span>, <span class="type"><a href="../Toybox/AntPlus/CalculatedPower.html">CalculatedPower</a></span>, <span class="type"><a href="../Toybox/AntPlus/CalculatedWheelDistance.html">CalculatedWheelDistance</a></span>, <span class="type"><a href="../Toybox/AntPlus/CalculatedWheelSpeed.html">CalculatedWheelSpeed</a></span>, <span class="type"><a href="../Toybox/AntPlus/CommonData.html">CommonData</a></span>, <span class="type"><a href="../Toybox/AntPlus/DerailleurStatus.html">DerailleurStatus</a></span>, <span class="type"><a href="../Toybox/AntPlus/Device.html">Device</a></span>, <span class="type"><a href="../Toybox/AntPlus/DeviceListener.html">DeviceListener</a></span>, <span class="type"><a href="../Toybox/AntPlus/DeviceState.html">DeviceState</a></span>, <span class="type"><a href="../Toybox/AntPlus/FitnessEquipment.html">FitnessEquipment</a></span>, <span class="type"><a href="../Toybox/AntPlus/FitnessEquipmentData.html">FitnessEquipmentData</a></span>, <span class="type"><a href="../Toybox/AntPlus/FitnessEquipmentListener.html">FitnessEquipmentListener</a></span>, <span class="type"><a href="../Toybox/AntPlus/FitnessEquipmentMode.html">FitnessEquipmentMode</a></span>, <span class="type"><a href="../Toybox/AntPlus/LightNetwork.html">LightNetwork</a></span>, <span class="type"><a href="../Toybox/AntPlus/LightNetworkListener.html">LightNetworkListener</a></span>, <span class="type"><a href="../Toybox/AntPlus/ManufacturerInfo.html">ManufacturerInfo</a></span>, <span class="type"><a href="../Toybox/AntPlus/PedalPowerBalance.html">PedalPowerBalance</a></span>, <span class="type"><a href="../Toybox/AntPlus/ProductInfo.html">ProductInfo</a></span>, <span class="type"><a href="../Toybox/AntPlus/RadarTarget.html">RadarTarget</a></span>, <span class="type"><a href="../Toybox/AntPlus/ResistanceSettings.html">ResistanceSettings</a></span>, <span class="type"><a href="../Toybox/AntPlus/RunningDynamics.html">RunningDynamics</a></span>, <span class="type"><a href="../Toybox/AntPlus/RunningDynamicsData.html">RunningDynamicsData</a></span>, <span class="type"><a href="../Toybox/AntPlus/RunningDynamicsListener.html">RunningDynamicsListener</a></span>, <span class="type"><a href="../Toybox/AntPlus/SensorPosition.html">SensorPosition</a></span>, <span class="type"><a href="../Toybox/AntPlus/Shifting.html">Shifting</a></span>, <span class="type"><a href="../Toybox/AntPlus/ShiftingListener.html">ShiftingListener</a></span>, <span class="type"><a href="../Toybox/AntPlus/ShiftingStatus.html">ShiftingStatus</a></span>, <span class="type"><a href="../Toybox/AntPlus/SimulationSettings.html">SimulationSettings</a></span>, <span class="type"><a href="../Toybox/AntPlus/TargetPowerSettings.html">TargetPowerSettings</a></span>, <span class="type"><a href="../Toybox/AntPlus/TorqueEffectivenessPedalSmoothness.html">TorqueEffectivenessPedalSmoothness</a></span>, <span class="type"><a href="../Toybox/AntPlus/UserSettings.html">UserSettings</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class="constTable">
+    <tr>
+        <th class="constTableHeader">Type</th>
+        <th class="constTableHeader">Name</th>
+        <th class="constTableHeader">Value</th>
+        <th class="constTableHeader">Since</th>
+        <th class="constTableHeader">Description</th>
+    </tr>
+    <tr class="enumTableOdd" id="FRONT_GEAR_INVALID-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">FRONT_GEAR_INVALID</td>
+    <td class="constTableCell">7</td>
+    <td class="constTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+Invalid front gear index
+</p>
+
+</td>
+</tr><tr class="enumTableEven" id="INVALID_CADENCE-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">INVALID_CADENCE</td>
+    <td class="constTableCell">-1</td>
+    <td class="constTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableOdd" id="INVALID_SPEED-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">INVALID_SPEED</td>
+    <td class="constTableCell">-1</td>
+    <td class="constTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+Represents an invalid speed value
+</p>
+
+</td>
+</tr><tr class="enumTableEven" id="MAX_GEARS_INVALID-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">MAX_GEARS_INVALID</td>
+    <td class="constTableCell">0</td>
+    <td class="constTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+Invalid max gears value
+</p>
+
+</td>
+</tr><tr class="enumTableOdd" id="REAR_GEAR_INVALID-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">REAR_GEAR_INVALID</td>
+    <td class="constTableCell">31</td>
+    <td class="constTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+Invalid rear gear index
+</p>
+
+</td>
+</tr>
+</table><dt id="BatteryStatusValue-module" class="">
+    <h3>BatteryStatusValue</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="BATT_STATUS_NEW-const">
+    <td class="enumTableCell">BATT_STATUS_NEW</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BATT_STATUS_GOOD-const">
+    <td class="enumTableCell">BATT_STATUS_GOOD</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BATT_STATUS_OK-const">
+    <td class="enumTableCell">BATT_STATUS_OK</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BATT_STATUS_LOW-const">
+    <td class="enumTableCell">BATT_STATUS_LOW</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BATT_STATUS_CRITICAL-const">
+    <td class="enumTableCell">BATT_STATUS_CRITICAL</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BATT_STATUS_INVALID-const">
+    <td class="enumTableCell">BATT_STATUS_INVALID</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BATT_STATUS_CNT-const">
+    <td class="enumTableCell">BATT_STATUS_CNT</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="MessageSendStatus-module" class="">
+    <h3>MessageSendStatus</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="MESSAGE_SENT_SUCCESS-const">
+    <td class="enumTableCell">MESSAGE_SENT_SUCCESS</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Message sent successfully
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MESSAGE_SENT_FAILED-const">
+    <td class="enumTableCell">MESSAGE_SENT_FAILED</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Message sent failed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MESSAGE_SENT_COUNT-const">
+    <td class="enumTableCell">MESSAGE_SENT_COUNT</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="MessageType-module" class="">
+    <h3>MessageType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="MESSAGE_TYPE_MANUFACTURER-const">
+    <td class="enumTableCell">MESSAGE_TYPE_MANUFACTURER</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Manufacturer specific message sent
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MESSAGE_TYPE_PAGE_REQUEST-const">
+    <td class="enumTableCell">MESSAGE_TYPE_PAGE_REQUEST</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Page request sent
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MESSAGE_TYPE_COUNT-const">
+    <td class="enumTableCell">MESSAGE_TYPE_COUNT</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="DeviceCurrentState-module" class="">
+    <h3>DeviceCurrentState</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="DEVICE_STATE_DEAD-const">
+    <td class="enumTableCell">DEVICE_STATE_DEAD</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Device is not usable (not paired or disabled)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="DEVICE_STATE_CLOSED-const">
+    <td class="enumTableCell">DEVICE_STATE_CLOSED</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Device's channel is closed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="DEVICE_STATE_SEARCHING-const">
+    <td class="enumTableCell">DEVICE_STATE_SEARCHING</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Device's channel is open and searching
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="DEVICE_STATE_TRACKING-const">
+    <td class="enumTableCell">DEVICE_STATE_TRACKING</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Device's channel is open and tracking
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="DEVICE_STATE_CNT-const">
+    <td class="enumTableCell">DEVICE_STATE_CNT</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="LightNetworkState-module" class="">
+    <h3>LightNetworkState</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="LIGHT_NETWORK_STATE_NOT_FORMED-const">
+    <td class="enumTableCell">LIGHT_NETWORK_STATE_NOT_FORMED</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Light network is not yet formed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_NETWORK_STATE_FORMING-const">
+    <td class="enumTableCell">LIGHT_NETWORK_STATE_FORMING</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Light network is forming
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_NETWORK_STATE_FORMED-const">
+    <td class="enumTableCell">LIGHT_NETWORK_STATE_FORMED</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Light network is formed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="LightNetworkMode-module" class="">
+    <h3>LightNetworkMode</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="LIGHT_NETWORK_MODE_INDIVIDUAL-const">
+    <td class="enumTableCell">LIGHT_NETWORK_MODE_INDIVIDUAL</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Light modes are set by the user
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_NETWORK_MODE_AUTO-const">
+    <td class="enumTableCell">LIGHT_NETWORK_MODE_AUTO</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Light modes are automatically set based on
+ambient light (or time of day if there is
+no ambient light sensor available)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_NETWORK_MODE_HIGH_VIS-const">
+    <td class="enumTableCell">LIGHT_NETWORK_MODE_HIGH_VIS</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Light modes are automatically placed in
+their highest-visibility mode
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="LightMode-module" class="">
+    <h3>LightMode</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="LIGHT_MODE_OFF-const">
+    <td class="enumTableCell">LIGHT_MODE_OFF</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_MODE_ST_81_100-const">
+    <td class="enumTableCell">LIGHT_MODE_ST_81_100</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Steady beam 81-100% intensity
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_MODE_ST_61_80-const">
+    <td class="enumTableCell">LIGHT_MODE_ST_61_80</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Steady beam 61-80% intensity
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_MODE_ST_41_60-const">
+    <td class="enumTableCell">LIGHT_MODE_ST_41_60</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Steady beam 41-60% intensity
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_MODE_ST_21_40-const">
+    <td class="enumTableCell">LIGHT_MODE_ST_21_40</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Steady beam 21-40% intensity
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_MODE_ST_0_20-const">
+    <td class="enumTableCell">LIGHT_MODE_ST_0_20</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Steady beam 0-20% intensity
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_MODE_SLOW_FLASH-const">
+    <td class="enumTableCell">LIGHT_MODE_SLOW_FLASH</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Slow flash mode
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_MODE_FAST_FLASH-const">
+    <td class="enumTableCell">LIGHT_MODE_FAST_FLASH</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Fast flash mode
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_MODE_RANDOM_FLASH-const">
+    <td class="enumTableCell">LIGHT_MODE_RANDOM_FLASH</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Randomly timed flash mode
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_MODE_AUTO-const">
+    <td class="enumTableCell">LIGHT_MODE_AUTO</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_MODE_SIGNAL_LEFT_SC-const">
+    <td class="enumTableCell">LIGHT_MODE_SIGNAL_LEFT_SC</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Turn signal left self-cancelling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_MODE_SIGNAL_LEFT-const">
+    <td class="enumTableCell">LIGHT_MODE_SIGNAL_LEFT</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Turn signal left
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_MODE_SIGNAL_RIGHT_SC-const">
+    <td class="enumTableCell">LIGHT_MODE_SIGNAL_RIGHT_SC</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Turn signal right self-cancelling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_MODE_SIGNAL_RIGHT-const">
+    <td class="enumTableCell">LIGHT_MODE_SIGNAL_RIGHT</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Turn signal right
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_MODE_HAZARD-const">
+    <td class="enumTableCell">LIGHT_MODE_HAZARD</td>
+      <td class="enumTableCell">14</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Hazard - right and left signals flash
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_MODE_CUSTOM_5-const">
+    <td class="enumTableCell">LIGHT_MODE_CUSTOM_5</td>
+      <td class="enumTableCell">59</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Custom mode (manufacturer-defined)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_MODE_CUSTOM_4-const">
+    <td class="enumTableCell">LIGHT_MODE_CUSTOM_4</td>
+      <td class="enumTableCell">60</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Custom mode (manufacturer-defined)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_MODE_CUSTOM_3-const">
+    <td class="enumTableCell">LIGHT_MODE_CUSTOM_3</td>
+      <td class="enumTableCell">61</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Custom mode (manufacturer-defined)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_MODE_CUSTOM_2-const">
+    <td class="enumTableCell">LIGHT_MODE_CUSTOM_2</td>
+      <td class="enumTableCell">62</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Custom mode (manufacturer-defined)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_MODE_CUSTOM_1-const">
+    <td class="enumTableCell">LIGHT_MODE_CUSTOM_1</td>
+      <td class="enumTableCell">63</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Custom mode (manufacturer-defined)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="LightType-module" class="">
+    <h3>LightType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="LIGHT_TYPE_HEADLIGHT-const">
+    <td class="enumTableCell">LIGHT_TYPE_HEADLIGHT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Headlight light type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_TYPE_TAILLIGHT-const">
+    <td class="enumTableCell">LIGHT_TYPE_TAILLIGHT</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Taillight light type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_TYPE_SIGNAL_CONFIG-const">
+    <td class="enumTableCell">LIGHT_TYPE_SIGNAL_CONFIG</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Configurable signal light type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_TYPE_SIGNAL_LEFT-const">
+    <td class="enumTableCell">LIGHT_TYPE_SIGNAL_LEFT</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Left turn signal light type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LIGHT_TYPE_SIGNAL_RIGHT-const">
+    <td class="enumTableCell">LIGHT_TYPE_SIGNAL_RIGHT</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Right turn signal light type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LIGHT_TYPE_OTHER-const">
+    <td class="enumTableCell">LIGHT_TYPE_OTHER</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Undefined light type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="BikePowerSensorType-module" class="">
+    <h3>BikePowerSensorType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="BIKE_POWER_SENSOR_TYPE_NONE-const">
+    <td class="enumTableCell">BIKE_POWER_SENSOR_TYPE_NONE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+None
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BIKE_POWER_SENSOR_TYPE_POWER_ONLY-const">
+    <td class="enumTableCell">BIKE_POWER_SENSOR_TYPE_POWER_ONLY</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Power output directly in Watts
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BIKE_POWER_SENSOR_TYPE_WHEEL_TORQUE-const">
+    <td class="enumTableCell">BIKE_POWER_SENSOR_TYPE_WHEEL_TORQUE</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Power output from torque on rear wheel
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BIKE_POWER_SENSOR_TYPE_CRANK_TORQUE-const">
+    <td class="enumTableCell">BIKE_POWER_SENSOR_TYPE_CRANK_TORQUE</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Power output from torque at crank
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BIKE_POWER_SENSOR_TYPE_CRANK_TORQUE_FREQUENCY-const">
+    <td class="enumTableCell">BIKE_POWER_SENSOR_TYPE_CRANK_TORQUE_FREQUENCY</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Power output from torque frequency at crank
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BIKE_POWER_SENSOR_TYPE_CNT-const">
+    <td class="enumTableCell">BIKE_POWER_SENSOR_TYPE_CNT</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 2.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ThreatLevel-module" class="">
+    <h3>ThreatLevel</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="THREAT_LEVEL_NO_THREAT-const">
+    <td class="enumTableCell">THREAT_LEVEL_NO_THREAT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+No threat
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="THREAT_LEVEL_VEHICLE_APPROACHING-const">
+    <td class="enumTableCell">THREAT_LEVEL_VEHICLE_APPROACHING</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Vehicle is approaching
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="THREAT_LEVEL_VEHICLE_FAST_APPROACHING-const">
+    <td class="enumTableCell">THREAT_LEVEL_VEHICLE_FAST_APPROACHING</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Vehicle is approaching fast
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ThreatSide-module" class="">
+    <h3>ThreatSide</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="THREAT_SIDE_NO_SIDE-const">
+    <td class="enumTableCell">THREAT_SIDE_NO_SIDE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Threat not on right or left
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="THREAT_SIDE_RIGHT-const">
+    <td class="enumTableCell">THREAT_SIDE_RIGHT</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Threat is on the right side
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="THREAT_SIDE_LEFT-const">
+    <td class="enumTableCell">THREAT_SIDE_LEFT</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Threat is on the left side
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="TrainerMode-module" class="">
+    <h3>TrainerMode</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="TRAINER_MODE_BASIC_RESISTANCE-const">
+    <td class="enumTableCell">TRAINER_MODE_BASIC_RESISTANCE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Basic resistance fitness equipment training mode
+In this mode the user may set the percentage of maximum resistance on the equipment
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TRAINER_MODE_TARGET_POWER-const">
+    <td class="enumTableCell">TRAINER_MODE_TARGET_POWER</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Target power fitness equipment training mode
+In this mode the user may set the target wattage output of the equipment
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TRAINER_MODE_SIMULATION-const">
+    <td class="enumTableCell">TRAINER_MODE_SIMULATION</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Simulation fitness equipment training mode
+In this mode the user may set various fields to adjust resistance
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="TrainerValue-module" class="">
+    <h3>TrainerValue</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="TRAINER_MODE-const">
+    <td class="enumTableCell">TRAINER_MODE</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The training mode the fitness equipment is currently in.
+See TRAINER_MODE_* enum for values
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TRAINER_RESISTANCE-const">
+    <td class="enumTableCell">TRAINER_RESISTANCE</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Basic resistance value of the fitness equipment.
+Percent of max resistance 0 - 100 input range, unit 0.5%.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TRAINER_TARGET_POWER-const">
+    <td class="enumTableCell">TRAINER_TARGET_POWER</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Target power setting of the fitness equipment.
+0 - 4000W input range, unit 0.25W.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TRAINER_SLOPE-const">
+    <td class="enumTableCell">TRAINER_SLOPE</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The simulated Slope/Grade setting of simulation training mode.
+-200% - 200% input range, unit 0.01%.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TRAINER_SURFACE-const">
+    <td class="enumTableCell">TRAINER_SURFACE</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The simulated surface resistance coefficient setting of simulation training mode.
+0 - 0.0127 input range, 5x10^-5 scale.
+Default value is set to 0xFF.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TRAINER_WIND_COEFF-const">
+    <td class="enumTableCell">TRAINER_WIND_COEFF</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The simulated wind resistance coefficient setting of simulation training mode.
+0.0 - 1.86 kg/m input range, 0.01 scale.
+Wind Resistance Coefficient [kg/m] = Frontal Surface Area [m2] x Drag Coefficient x Air Density [kg/m3]
+Default value is set to 0xFF.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TRAINER_WIND_SPEED-const">
+    <td class="enumTableCell">TRAINER_WIND_SPEED</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The simulated wind speed setting of simulation training mode.
+-127 - +127 km/hr input range, (+)Head wind (-)Tail wind. 1 km/hr units.
+Simulated Wind Speed (km/h) = Raw Wind Speed Value – 127 km/h
+Default value is set to 0xFF.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TRAINER_WIND_DRAFT_FACTOR-const">
+    <td class="enumTableCell">TRAINER_WIND_DRAFT_FACTOR</td>
+      <td class="enumTableCell">14</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The simulated wind drafting scale factor setting of simulation training mode.
+0 - 1.0 input range, 0.01 scale.
+A draft factor of 0 removes all wind resistance, and 1.0 indicates no drafting effects.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TRAINER_USER_WEIGHT-const">
+    <td class="enumTableCell">TRAINER_USER_WEIGHT</td>
+      <td class="enumTableCell">15</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The user weight setting of simulation training mode.
+0 - 655.34 kg input range, unit 0.01kg.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TRAINER_BIKE_WEIGHT-const">
+    <td class="enumTableCell">TRAINER_BIKE_WEIGHT</td>
+      <td class="enumTableCell">16</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The bike weight setting of simulation training mode.
+0 - 50kg input range, unit 0.05kg
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TRAINER_WHEEL_DIAMETER-const">
+    <td class="enumTableCell">TRAINER_WHEEL_DIAMETER</td>
+      <td class="enumTableCell">17</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The wheel diameter setting of the fitness equipment.
+0 - 2.54m input range, unit 0.01m
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TRAINER_GEAR_RATIO-const">
+    <td class="enumTableCell">TRAINER_GEAR_RATIO</td>
+      <td class="enumTableCell">18</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The gear ratio setting of the fitness equipment.
+0.03 - 7.65 input range, unit 0.03.
+gear ratio = value * 0.03
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="BodyLocation-module" class="">
+    <h3>BodyLocation</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="BODY_LOCATION_LEFT_LEG-const">
+    <td class="enumTableCell">BODY_LOCATION_LEFT_LEG</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Left leg body location
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BODY_LOCATION_RIGHT_LEG-const">
+    <td class="enumTableCell">BODY_LOCATION_RIGHT_LEG</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Right leg body location
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BODY_LOCATION_TORSO_FRONT-const">
+    <td class="enumTableCell">BODY_LOCATION_TORSO_FRONT</td>
+      <td class="enumTableCell">17</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Front torso body location
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BODY_LOCATION_WAIST_MID_BACK-const">
+    <td class="enumTableCell">BODY_LOCATION_WAIST_MID_BACK</td>
+      <td class="enumTableCell">36</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Waist, mid back body location
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BODY_LOCATION_WAIST_FRONT-const">
+    <td class="enumTableCell">BODY_LOCATION_WAIST_FRONT</td>
+      <td class="enumTableCell">37</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Waist, front body location
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BODY_LOCATION_WAIST_LEFT-const">
+    <td class="enumTableCell">BODY_LOCATION_WAIST_LEFT</td>
+      <td class="enumTableCell">38</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Waist, left body location
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BODY_LOCATION_WAIST_RIGHT-const">
+    <td class="enumTableCell">BODY_LOCATION_WAIST_RIGHT</td>
+      <td class="enumTableCell">39</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Waist, right body location
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="SensorOrientation-module" class="">
+    <h3>SensorOrientation</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SENSOR_ORIENTATION_RIGHT_SIDE_UP-const">
+    <td class="enumTableCell">SENSOR_ORIENTATION_RIGHT_SIDE_UP</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Right side up sensor orientation
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SENSOR_ORIENTATION_UPSIDE_DOWN-const">
+    <td class="enumTableCell">SENSOR_ORIENTATION_UPSIDE_DOWN</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 2.4.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Upside down sensor orientation
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+
+
+
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:12 PM
+</p>
+
+</body>

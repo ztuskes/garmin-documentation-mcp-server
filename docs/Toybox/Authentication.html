@@ -1,0 +1,430 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Authentication </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Authentication";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Authentication</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Authentication Module provides tools for authentication.
+</p><p>
+With the Authentication module, Connect IQ apps will be able to make OAuth
+requests redirected through Connect IQ mobile app.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Authentication/Message.html">Message</a></span>, <span class="type"><a href="../Toybox/Authentication/OAuthMessage.html">OAuthMessage</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="OAuthResultType-module" class="">
+    <h3>OAuthResultType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="OAUTH_RESULT_TYPE_URL-const">
+    <td class="enumTableCell">OAUTH_RESULT_TYPE_URL</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+How the OAuth token will be returned in the final step.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="OAuthSigningMethod-module" class="">
+    <h3>OAuthSigningMethod</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="OAUTH_SIGNING_METHOD_HMAC_SHA1-const">
+    <td class="enumTableCell">OAUTH_SIGNING_METHOD_HMAC_SHA1</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+How the OAuth request will be signed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#makeOAuthRequest-instance_function" title="makeOAuthRequest (Instance Function)"><strong>makeOAuthRequest</strong></a>(requestUrl as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, requestParams as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>&gt;, resultUrl as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, resultType as <span class="type"><a href="../Toybox/Authentication.html#OAuthResultType-module">Authentication.OAuthResultType</a></span>, resultKeys as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>&gt;)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Request an OAuth sign-in through Garmin Connect IQ Mobile App A notification will trigger on the phone, that when clicked, provides a web view that shows <code>requestUrl</code>.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#registerForOAuthMessages-instance_function" title="registerForOAuthMessages (Instance Function)"><strong>registerForOAuthMessages</strong></a>(method as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(message as <span class="type"><a href="../Toybox/Authentication/OAuthMessage.html">Authentication.OAuthMessage</a></span>) as <b>Void</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Register a callback for receiving OAuth messages.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="makeOAuthRequest-instance_function">
+    <strong>makeOAuthRequest(requestUrl as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, requestParams as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>&gt;, resultUrl as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, resultType as <span class="type"><a href="../Toybox/Authentication.html#OAuthResultType-module">Authentication.OAuthResultType</a></span>, resultKeys as <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>&gt;)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Request an OAuth sign-in through Garmin Connect IQ Mobile App
+</p><p>
+A notification will trigger on the phone, that when clicked, provides a
+web view that shows <code>requestUrl</code>. If the user grants permission to the app,
+then the callback registered by
+<a href='../Toybox/Authentication.html#registerForOAuthMessages-instance_function'>registerForOAuthMessages()</a>
+will be called with an <a href='../Toybox/Authentication/OAuthMessage.html'>OAuthMessage</a>
+from the OAuth response.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">requestUrl</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The URL to load in the web view to begin authentication
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">requestParams</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Non-URL encoded parameters for the <code>requestUrl</code>
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">resultUrl</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The URL of the final page of authentication that contains the <code>resultKeys</code>
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">resultType</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Authentication.html#OAuthResultType-module">Authentication.OAuthResultType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An OAUTH_RESULT_TYPE_* value that specifies the format of the result
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">resultKeys</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The desired OAuth response values passed to the callback method. The keys map to the actual OAuth response keys, and the values map to the keys of the <a href='../Toybox/Authentication/OAuthMessage.html'>OAuthMessage</a> data.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Authentication;
+using Toybox.System;
+
+const CLIENT_ID = "myClientID";
+const OAUTH_CODE = "myOAuthCode";
+const OAUTH_ERROR = "myOAuthError";
+
+// register a callback to capture results from OAuth requests
+Authentication.registerForOAuthMessages(method(:onOAuthMessage));
+
+// wrap the OAuth request in a function
+function getOAuthToken() {
+   status = "Look at OAuth screen\n";
+   Ui.requestUpdate();
+
+   // set the makeOAuthRequest parameters
+   var params = {
+       "redirect_uri" =&gt; "connectiq://oauth",
+       "response_type" =&gt; "code",
+       "client_id" =&gt; $.CLIENT_ID
+   };
+
+   // makeOAuthRequest triggers login prompt on mobile device.
+   // "responseCode" and "responseError" are the parameters passed
+   // to the resultUrl. Check the oauth provider's documentation
+   // to determine the correct strings to use.
+   Auth.makeOAuthRequest(
+       "https://requesturl.com",
+       params,
+       "http://resulturl.com",
+       Auth.OAUTH_RESULT_TYPE_URL,
+       {"responseCode" =&gt; $.OAUTH_CODE, "responseError" =&gt; $.OAUTH_ERROR}
+   );
+}
+
+// implement the OAuth callback method
+function onOAuthMessage(message) {
+    if (message.data != null) {
+        var code = message.data[$.OAUTH_CODE];
+        var error = message.data[$.OAUTH_ERROR];
+    } else {
+        // return an error
+    }
+}
+// the OAuth service can now be used with a makeWebRequest() call</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="registerForOAuthMessages-instance_function">
+    <strong>registerForOAuthMessages(method as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(message as <span class="type"><a href="../Toybox/Authentication/OAuthMessage.html">Authentication.OAuthMessage</a></span>) as <b>Void</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Register a callback for receiving OAuth messages.
+</p><p>
+The callback will be called once for each received OAuth message.
+If there are messages waiting for the app when this function is
+called, the callback will immediately be called once for each waiting
+message.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">method</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A reference to a callback, which must receive a <code>data</code> argument of the type <a href='../Toybox/Authentication/OAuthMessage.html'>OAuthMessage</a>.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Authentication;
+
+function onOAuthMessage(message) {
+    if (message.data != null) {
+        var code = message.data[OAUTH_CODE];
+        var error = message.data[OAUTH_ERROR];
+    } else {
+        // return an error
+    }
+}
+Authentication.registerForOAuthMessages(method(:onOAuthMessage));
+</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

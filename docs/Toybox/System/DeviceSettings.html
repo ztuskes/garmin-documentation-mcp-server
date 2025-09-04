@@ -1,0 +1,2432 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.System.DeviceSettings </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.System.DeviceSettings";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.System.DeviceSettings</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/System/DeviceSettings.html">Toybox.System.DeviceSettings</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Represents various settings available on a device.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/System.html#getDeviceSettings-instance_function">getDeviceSettings()</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/Lang.html#format-instance_function">Lang.format()</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+var mySettings = System.getDeviceSettings();
+var clockMode = mySettings.is24Hour;
+var phone = mySettings.phoneConnected;
+var version = mySettings.monkeyVersion;
+var versionString = Lang.format("$1$.$2$.$3$", version);
+System.println(versionString); //e.g. 2.2.5</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#activityTrackingOn-var" title="activityTrackingOn (Var)"><strong>activityTrackingOn</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The activity tracking setting mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#alarmCount-var" title="alarmCount (Var)"><strong>alarmCount</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The number of alarms set on the device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#connectionAvailable-var" title="connectionAvailable (Var)"><strong>connectionAvailable</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Indicates if any communication channel is connected and available for use.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#connectionInfo-var" title="connectionInfo (Var)"><strong>connectionInfo</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>, <span class="type"><a href="../../Toybox/System/ConnectionInfo.html">System.ConnectionInfo</a></span>&gt;
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The state of connections available to the device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#distanceUnits-var" title="distanceUnits (Var)"><strong>distanceUnits</strong></a>  as <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The distance unit setting mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#doNotDisturb-var" title="doNotDisturb (Var)"><strong>doNotDisturb</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Do Not Disturb setting mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#elevationUnits-var" title="elevationUnits (Var)"><strong>elevationUnits</strong></a>  as <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The elevation unit setting mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#firmwareVersion-var" title="firmwareVersion (Var)"><strong>firmwareVersion</strong></a>  as [ <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> ]
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The current firmware version of the device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#firstDayOfWeek-var" title="firstDayOfWeek (Var)"><strong>firstDayOfWeek</strong></a>  as <span class="type"><a href="../../Toybox/Time/Gregorian.html#DayOfWeek-module">Gregorian.DayOfWeek</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The first day of the week.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#fontScale-var" title="fontScale (Var)"><strong>fontScale</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Scale factor to be used for displayed text.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#heightUnits-var" title="heightUnits (Var)"><strong>heightUnits</strong></a>  as <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The height unit setting mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#inputButtons-var" title="inputButtons (Var)"><strong>inputButtons</strong></a>  as <span class="type"><a href="../../Toybox/System.html#ButtonInputs-module">System.ButtonInputs</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The physical buttons supported by the device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#is24Hour-var" title="is24Hour (Var)"><strong>is24Hour</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The clock mode mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#isEnhancedReadabilityModeEnabled-var" title="isEnhancedReadabilityModeEnabled (Var)"><strong>isEnhancedReadabilityModeEnabled</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Indicates the device is currently using Enhanced Readability Mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#isGlanceModeEnabled-var" title="isGlanceModeEnabled (Var)"><strong>isGlanceModeEnabled</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Indicates if widget glances are enabled on the device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#isNightModeEnabled-var" title="isNightModeEnabled (Var)"><strong>isNightModeEnabled</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Indicates the device is currently using night mode colors.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#isTouchScreen-var" title="isTouchScreen (Var)"><strong>isTouchScreen</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The availability of a touch screen on the device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#monkeyVersion-var" title="monkeyVersion (Var)"><strong>monkeyVersion</strong></a>  as [ <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> ]
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Connect IQ version supported by the device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#notificationCount-var" title="notificationCount (Var)"><strong>notificationCount</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The number of active notifications.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#paceUnits-var" title="paceUnits (Var)"><strong>paceUnits</strong></a>  as <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The pace unit setting mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#partNumber-var" title="partNumber (Var)"><strong>partNumber</strong></a>  as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The part number of the device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#phoneConnected-var" title="phoneConnected (Var)"><strong>phoneConnected</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The phone connection status mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#phoneOperatingSystem-var" title="phoneOperatingSystem (Var)"><strong>phoneOperatingSystem</strong></a>  as <span class="type"><a href="../../Toybox/System.html#PhoneOperatingSystem-module">System.PhoneOperatingSystem</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Operating System of the BLE-connected mobile device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#requiresBurnInProtection-var" title="requiresBurnInProtection (Var)"><strong>requiresBurnInProtection</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+This flag indicates whether the device screen requires burn-in protection.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#screenHeight-var" title="screenHeight (Var)"><strong>screenHeight</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The height of the device screen in pixels.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#screenShape-var" title="screenShape (Var)"><strong>screenShape</strong></a>  as <span class="type"><a href="../../Toybox/System.html#ScreenShape-module">System.ScreenShape</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The screen shape of the device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#screenWidth-var" title="screenWidth (Var)"><strong>screenWidth</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The width of the device screen in pixels.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#systemLanguage-var" title="systemLanguage (Var)"><strong>systemLanguage</strong></a>  as <span class="type"><a href="../../Toybox/System.html#Language-module">System.Language</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The language being used by the system.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#temperatureUnits-var" title="temperatureUnits (Var)"><strong>temperatureUnits</strong></a>  as <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The temperature unit setting mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#tonesOn-var" title="tonesOn (Var)"><strong>tonesOn</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The tone setting mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#uniqueIdentifier-var" title="uniqueIdentifier (Var)"><strong>uniqueIdentifier</strong></a>  as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A unique alphanumeric device identifier.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#vibrateOn-var" title="vibrateOn (Var)"><strong>vibrateOn</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The vibration setting mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#weightUnits-var" title="weightUnits (Var)"><strong>weightUnits</strong></a>  as <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The weight unit setting mode.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="activityTrackingOn-var" class="details">
+<h3 class="signature" id="activityTrackingOn-var">
+
+var activityTrackingOn  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The activity tracking setting mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if activity tracking is enabled on the device, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="alarmCount-var" class="details">
+<h3 class="signature" id="alarmCount-var">
+
+var alarmCount  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The number of alarms set on the device.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="connectionAvailable-var" class="details">
+<h3 class="signature" id="connectionAvailable-var">
+
+var connectionAvailable  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Indicates if any communication channel is connected and available for use.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="connectionInfo-var" class="details">
+<h3 class="signature" id="connectionInfo-var">
+
+var connectionInfo  as <span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>, <span class="type"><a href="../../Toybox/System/ConnectionInfo.html">System.ConnectionInfo</a></span>&gt;
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The state of connections available to the device.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Dictionary that contains the state of each available connection. The keys, <code>:bluetooth</code>, <code>:wifi</code>, and <code>:lte</code> indicate the connection type. If a key is not present then it means that connection type is not available to the device. The values are a <a href='../../Toybox/System/ConnectionInfo.html'>ConnectionInfo</a> object, which contain the state of the connection type.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="distanceUnits-var" class="details">
+<h3 class="signature" id="distanceUnits-var">
+
+var distanceUnits  as <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The distance unit setting mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+One of two System.UNIT_* constant values:
+</p>
+
+<ul>
+<li>
+<p>
+UNIT_METRIC if distance is set to display in kilometers (km)
+</p>
+
+</li>
+<li>
+<p>
+UNIT_STATUTE if distance is set to display in miles (mi)
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="doNotDisturb-var" class="details">
+<h3 class="signature" id="doNotDisturb-var">
+
+var doNotDisturb  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Do Not Disturb setting mode.
+</p><p>
+Not all devices support Do Not Disturb, so it's a good idea to perform
+a <code>has</code> check when attempting to use this value.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+var mySettings = System.getDeviceSettings();
+if (deviceSettings has :doNotDisturb) {
+    var doNotDisturb = deviceSettings.doNotDisturb;
+}</code>
+</pre>
+</div>
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if enabled on the device, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="elevationUnits-var" class="details">
+<h3 class="signature" id="elevationUnits-var">
+
+var elevationUnits  as <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The elevation unit setting mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+One of two System.UNIT_* constant values:
+</p>
+
+<ul>
+<li>
+<p>
+UNIT_METRIC if elevation is set to display in meters (m)
+</p>
+
+</li>
+<li>
+<p>
+UNIT_STATUTE if elevation is set to display in feet (ft)
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="firmwareVersion-var" class="details">
+<h3 class="signature" id="firmwareVersion-var">
+
+var firmwareVersion  as [ <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> ]
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The current firmware version of the device.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+var mySettings = System.getDeviceSettings();
+var version = mySettings.firmwareVersion;
+var versionString = Lang.format("$1$.$2$", version);
+System.println(versionString minor); // e.g. 2.50</code>
+</pre>
+</div>
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+<p class="tag_title">See Also:</p>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/Lang.html#format-instance_function">Lang.format()</a>
+  </div>
+  </li>
+  </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A two element Array containing the major and minor version numbers as <a href='../../Toybox/Lang/Number.html'>Number</a> objects
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="firstDayOfWeek-var" class="details">
+<h3 class="signature" id="firstDayOfWeek-var">
+
+var firstDayOfWeek  as <span class="type"><a href="../../Toybox/Time/Gregorian.html#DayOfWeek-module">Gregorian.DayOfWeek</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The first day of the week.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Gregorian.html#DayOfWeek-module">Gregorian.DayOfWeek</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A <a href='../../Toybox/Time/Gregorian.html'>Gregorian::DAY_*</a> value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="fontScale-var" class="details">
+<h3 class="signature" id="fontScale-var">
+
+var fontScale  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Scale factor to be used for displayed text.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 5.0.1
+</p>
+
+</div>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Enduro™ 3</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Scaling factor configured by user.  Values will always be positive, and are typically in the range of 0.8 to 1.2.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="heightUnits-var" class="details">
+<h3 class="signature" id="heightUnits-var">
+
+var heightUnits  as <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The height unit setting mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+One of two UNIT_* constant values:
+</p>
+
+<ul>
+<li>
+<p>
+UNIT_METRIC if height is set to display in meters (m)
+</p>
+
+</li>
+<li>
+<p>
+UNIT_STATUTE if height is set to display inSystem. feet (ft)
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="inputButtons-var" class="details">
+<h3 class="signature" id="inputButtons-var">
+
+var inputButtons  as <span class="type"><a href="../../Toybox/System.html#ButtonInputs-module">System.ButtonInputs</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The physical buttons supported by the device.
+</p><p>
+This returns a bitwise binary of the enumerated values defined by the
+<a href='../../Toybox/System.html#ButtonInputs-module'>System.BUTTON_INPUT_*</a> constants that match the available buttons on
+a particular device. For example, a vivoactive HR returns a value of
+9, which indicates Select (1) and Menu (8) button support. A fenix 5,
+however, returns 11, indicating support for all available button types.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+var mySettings = System.getDeviceSettings();
+if ((mySettings.inputButtons & System.BUTTON_INPUT_MENU) != 0) {
+    // Allow the use of the Menu button
+}</code>
+</pre>
+</div>
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+<p class="tag_title">See Also:</p>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/System.html">Toybox.System</a>
+  </div>
+  </li>
+  </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/System.html#ButtonInputs-module">System.ButtonInputs</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A System.BUTTON_INPUT_* value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="is24Hour-var" class="details">
+<h3 class="signature" id="is24Hour-var">
+
+var is24Hour  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The clock mode mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if the device is set to 24 hour mode, <code>false</code> if it is set to 12 hour mode
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="isEnhancedReadabilityModeEnabled-var" class="details">
+<h3 class="signature" id="isEnhancedReadabilityModeEnabled-var">
+
+var isEnhancedReadabilityModeEnabled  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Indicates the device is currently using Enhanced Readability Mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 4.2.3
+</p>
+
+</div>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>D2™ Mach 1</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 5</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+true if Enhanced Readability Mode is enabled, otherwise false.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="isGlanceModeEnabled-var" class="details">
+<h3 class="signature" id="isGlanceModeEnabled-var">
+
+var isGlanceModeEnabled  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Indicates if widget glances are enabled on the device.
+</p><p>
+If glance mode is enabled, the system will pass up / down key events to a widget base page.
+Otherwise, the system will mask them out.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.1.4
+</p>
+
+</div>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if glance mode is enabled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="isNightModeEnabled-var" class="details">
+<h3 class="signature" id="isNightModeEnabled-var">
+
+var isNightModeEnabled  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Indicates the device is currently using night mode colors
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 4.1.2
+</p>
+
+</div>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+true if night colors are currently in use, otherwise false.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="isTouchScreen-var" class="details">
+<h3 class="signature" id="isTouchScreen-var">
+
+var isTouchScreen  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The availability of a touch screen on the device.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if the device has a touch screen and it is enabled in settings, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="monkeyVersion-var" class="details">
+<h3 class="signature" id="monkeyVersion-var">
+
+var monkeyVersion  as [ <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> ]
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Connect IQ version supported by the device.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+var mySettings = System.getDeviceSettings();
+var version = mySettings.monkeyVersion;
+var versionString = Lang.format("$1$.$2$.$3$", version);
+System.println(versionString); //e.g. 2.2.5</code>
+</pre>
+</div>
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+<p class="tag_title">See Also:</p>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/Lang.html#format-instance_function">Lang.format()</a>
+  </div>
+  </li>
+  </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A three element Array containing the major, minor, and micro version numbers as <a href='../../Toybox/Lang/Number.html'>Number</a> objects
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="notificationCount-var" class="details">
+<h3 class="signature" id="notificationCount-var">
+
+var notificationCount  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The number of active notifications.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="paceUnits-var" class="details">
+<h3 class="signature" id="paceUnits-var">
+
+var paceUnits  as <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The pace unit setting mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+One of two System.UNIT_* constant values:
+</p>
+
+<ul>
+<li>
+<p>
+UNIT_METRIC if pace is set to display in kilometers per hour (km/hr)
+</p>
+
+</li>
+<li>
+<p>
+UNIT_STATUTE if pace is set to display in miles per hour (mph)
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="partNumber-var" class="details">
+<h3 class="signature" id="partNumber-var">
+
+var partNumber  as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The part number of the device.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="phoneConnected-var" class="details">
+<h3 class="signature" id="phoneConnected-var">
+
+var phoneConnected  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The phone connection status mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.1.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if a mobile phone is connected to the device, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="phoneOperatingSystem-var" class="details">
+<h3 class="signature" id="phoneOperatingSystem-var">
+
+var phoneOperatingSystem  as <span class="type"><a href="../../Toybox/System.html#PhoneOperatingSystem-module">System.PhoneOperatingSystem</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Operating System of the BLE-connected mobile device.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 5.0.1
+</p>
+
+</div>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>D2™ Mach 1</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 3</li><li>Venu® 3S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/System.html#PhoneOperatingSystem-module">System.PhoneOperatingSystem</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The operating system, if available, or <code>null</code>.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="requiresBurnInProtection-var" class="details">
+<h3 class="signature" id="requiresBurnInProtection-var">
+
+var requiresBurnInProtection  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+This flag indicates whether the device screen requires burn-in protection.
+</p><p>
+Some screens require special drawing behavior when rendering content in always-on mode.
+If a screen requires burn-in protection the following rules must be followed:
+A maximum of ten-percent of the total available screen pixels can be in use at one time.
+Individual pixels can be on for no more than three update cycles when updating at once-per-minute intervals.
+If either condition is violated all screen pixels will be turned off until the device goes into high-power mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.0.12
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if the screen type needs burn-in protection, <code>false</code> otherwise.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="screenHeight-var" class="details">
+<h3 class="signature" id="screenHeight-var">
+
+var screenHeight  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The height of the device screen in pixels.
+</p><p>
+In some cases, this can be useful to determine the device type at
+runtime. However, to get the height of the screen area currently
+available to an app, use
+<a href='../../Toybox/Graphics/Dc.html#getHeight-instance_function'>Graphics.Dc.getHeight()</a>.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+<p class="tag_title">See Also:</p>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/Graphics/Dc.html#getHeight-instance_function">Graphics.Dc.getHeight()</a>
+  </div>
+  </li>
+  </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="screenShape-var" class="details">
+<h3 class="signature" id="screenShape-var">
+
+var screenShape  as <span class="type"><a href="../../Toybox/System.html#ScreenShape-module">System.ScreenShape</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The screen shape of the device.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/System.html#ScreenShape-module">System.ScreenShape</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A System.SCREEN_SHAPE_* value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="screenWidth-var" class="details">
+<h3 class="signature" id="screenWidth-var">
+
+var screenWidth  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The width of the device screen in pixels.
+</p><p>
+In some cases, this can be useful to determine the device type at
+runtime. However, to get the width of the screen area currently
+available to an app, use
+<a href='../../Toybox/Graphics/Dc.html#getWidth-instance_function'>Graphics.Dc.getWidth()</a>.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+<p class="tag_title">See Also:</p>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/Graphics/Dc.html#getWidth-instance_function">Graphics.Dc.getWidth()</a>
+  </div>
+  </li>
+  </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="systemLanguage-var" class="details">
+<h3 class="signature" id="systemLanguage-var">
+
+var systemLanguage  as <span class="type"><a href="../../Toybox/System.html#Language-module">System.Language</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The language being used by the system
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/System.html#Language-module">System.Language</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+LANGUAGE_* enum
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="temperatureUnits-var" class="details">
+<h3 class="signature" id="temperatureUnits-var">
+
+var temperatureUnits  as <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The temperature unit setting mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+One of two System.UNIT_* constant values:
+</p>
+
+<ul>
+<li>
+<p>
+UNIT_METRIC if temperature is set to display in degrees Celsius (C)
+</p>
+
+</li>
+<li>
+<p>
+UNIT_STATUTE if temperature is set to display in degrees Fahrenheit (F)
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="tonesOn-var" class="details">
+<h3 class="signature" id="tonesOn-var">
+
+var tonesOn  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The tone setting mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if tones are enabled on the device, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="uniqueIdentifier-var" class="details">
+<h3 class="signature" id="uniqueIdentifier-var">
+
+var uniqueIdentifier  as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+A unique alphanumeric device identifier.
+</p><p>
+The value is unique for every app, but is stable on a device across
+uninstall and reinstall. Any use of this value for tracking user
+information must be in compliance with international privacy law.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+var mySettings = System.getDeviceSettings();
+var id = mySettings.uniqueIdentifier;
+if (id != null) {
+    System.println(id); //e.g. ac915d426451c88e8ea691fa412f9af9c21b4d12
+}</code>
+</pre>
+</div>
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.4.1
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An identifier that can be used to identify the host device or <code>null</code> on error.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="vibrateOn-var" class="details">
+<h3 class="signature" id="vibrateOn-var">
+
+var vibrateOn  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The vibration setting mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if vibration is enabled on the device, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="weightUnits-var" class="details">
+<h3 class="signature" id="weightUnits-var">
+
+var weightUnits  as <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The weight unit setting mode.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/System.html#UnitsSystem-module">System.UnitsSystem</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+One of two System.UNIT_* constant values:
+</p>
+
+<ul>
+<li>
+<p>
+UNIT_METRIC if weight is set to display in kilograms (kg)
+</p>
+
+</li>
+<li>
+<p>
+UNIT_STATUTE if weight is set to display in pounds (lbs)
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt>
+ </div>
+
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

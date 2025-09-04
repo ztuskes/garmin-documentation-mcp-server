@@ -1,0 +1,934 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.WatchUi.Drawable </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.WatchUi.Drawable";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.WatchUi.Drawable</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Drawable.html">Toybox.WatchUi.Drawable</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Drawable is the base class of a drawable object.
+</p><p>
+A Drawable can be constructed using the resource compiler and loaded
+through the resource (Rez) module.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Using a Drawable defined as a resource</p>
+</div></p>
+<pre class="example code">
+<code>// The drawable.xml file contents:
+// &lt;drawable-list id="shapes" background="Graphics.COLOR_TRANSPARENT"&gt;
+//     &lt;shape type="circle" x="78" y="160" radius="8" color="Graphics.COLOR_RED" /&gt;
+//     &lt;shape type="rectangle" x="51" y="137" width="76" height="20" color="Graphics.COLOR_BLUE" /&gt;
+// &lt;/drawable-list&gt;
+
+using Toybox.Graphics;
+using Toybox.WatchUi;
+
+class MyDrawableView extends WatchUi.View {
+    var myShapes;
+
+    function initialize() {
+        View.initialize();
+        myShapes = new Rez.Drawables.shapes();
+    }
+
+    function onUpdate(dc) {
+        dc.setColor(
+            Graphics.COLOR_WHITE,
+            Graphics.COLOR_BLACK
+        );
+        dc.fillRectangle(
+            0,
+            0,
+            dc.getWidth(),
+            dc.getHeight()
+        );
+        myShapes.draw(dc);
+    }
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+  <h2>Direct Known Subclasses</h2>
+  <p class="sub_classes">
+    <span class="type"><a href="../../Toybox/WatchUi/Bitmap.html">WatchUi.Bitmap</a></span>, <span class="type"><a href="../../Toybox/WatchUi/Selectable.html">WatchUi.Selectable</a></span>, <span class="type"><a href="../../Toybox/WatchUi/Text.html">WatchUi.Text</a></span>, <span class="type"><a href="../../Toybox/WatchUi/TextArea.html">WatchUi.TextArea</a></span>
+  </p>
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#height-var" title="height (Var)"><strong>height</strong></a>  as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The clip height of the Drawable object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#identifier-var" title="identifier (Var)"><strong>identifier</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The ID used to identify the Drawable object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#isVisible-var" title="isVisible (Var)"><strong>isVisible</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The visibility of the Drawable object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#locX-var" title="locX (Var)"><strong>locX</strong></a>  as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The absolute, on-screen x-coordinate of the Drawable object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#locY-var" title="locY (Var)"><strong>locY</strong></a>  as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The absolute, on-screen y-coordinate of the Drawable object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#width-var" title="width (Var)"><strong>width</strong></a>  as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The clip width of the Drawable object.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#draw-instance_function" title="draw (Instance Function)"><strong>draw</strong></a>(dc as <span class="type"><a href="../../Toybox/Graphics/Dc.html">Graphics.Dc</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw an object to the device context (<a href='../../Toybox/Graphics/Dc.html'>Dc</a>).
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(options as { :identifier as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>, :locX as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :locY as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :visible as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> })
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setLocation-instance_function" title="setLocation (Instance Function)"><strong>setLocation</strong></a>(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the on-screen location for a Drawable object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setSize-instance_function" title="setSize (Instance Function)"><strong>setSize</strong></a>(w as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, h as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the size of a Drawable object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setVisible-instance_function" title="setVisible (Instance Function)"><strong>setVisible</strong></a>(visible as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the visibility of a Drawable object.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="height-var" class="details">
+<h3 class="signature" id="height-var">
+
+var height  as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The clip height of the Drawable object.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="identifier-var" class="details">
+<h3 class="signature" id="identifier-var">
+
+var identifier  as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The ID used to identify the Drawable object.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="isVisible-var" class="details">
+<h3 class="signature" id="isVisible-var">
+
+var isVisible  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The visibility of the Drawable object.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="locX-var" class="details">
+<h3 class="signature" id="locX-var">
+
+var locX  as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The absolute, on-screen x-coordinate of the Drawable object.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="locY-var" class="details">
+<h3 class="signature" id="locY-var">
+
+var locY  as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The absolute, on-screen y-coordinate of the Drawable object.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="width-var" class="details">
+<h3 class="signature" id="width-var">
+
+var width  as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The clip width of the Drawable object.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+</li>
+    </ul>
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="draw-instance_function">
+    <strong>draw(dc as <span class="type"><a href="../../Toybox/Graphics/Dc.html">Graphics.Dc</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw an object to the device context (<a href='../../Toybox/Graphics/Dc.html'>Dc</a>).
+</p><p>
+This method assumes that the device context has already been
+configured to the proper options.
+</p><p>
+Derived classes should check the isVisible property, if it exists,
+before trying to draw.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">dc</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/Dc.html">Graphics.Dc</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The device context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(options as { :identifier as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>, :locX as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :locY as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :width as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :height as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, :visible as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> })</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+The option <code>:visible</code> is only supported with ConnectIQ 3.3.0 and later.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary containing options for the Drawable object
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:identifier</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The identifier for the Drawable object
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:locX</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The absolute, on-screen x-coordinate for the Drawable object
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:locY</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The absolute, on-screen y-coordinate for the Drawable object
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:width</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The clip width of the Drawable object
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:height</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The clip height of the Drawable object
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:visible</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The visibility of the Drawable object
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setLocation-instance_function">
+    <strong>setLocation(x as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the on-screen location for a Drawable object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The horizontal position on the screen
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The vertical position on the screen
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setSize-instance_function">
+    <strong>setSize(w as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, h as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the size of a Drawable object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">w</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The width of the Drawable object
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">h</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The height of the Drawable object
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setVisible-instance_function">
+    <strong>setVisible(visible as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the visibility of a Drawable object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">visible</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The visibility of the Drawable object
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:15 PM
+</p>
+
+</body>

@@ -1,0 +1,532 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Application.AudioContentProviderApp </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Application.AudioContentProviderApp";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Application.AudioContentProviderApp</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Application.AppBase</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Application/AppBase.html">Toybox.Application.AppBase</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Application/AudioContentProviderApp.html">Toybox.Application.AudioContentProviderApp</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The base class for audio content provider apps.
+</p><p>
+This object extends <a href='../../Toybox/Application/AppBase.html'>AppBase</a> and adds new
+methods for getting different initial view types based on what mode the
+app needs to be started in.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Background</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li>
+  </ul>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getContentDelegate-instance_function" title="getContentDelegate (Instance Function)"><strong>getContentDelegate</strong></a>(args as <span class="type"><a href="../../Toybox/Application.html#PersistableType-named_type">Application.PersistableType</a></span>)    as <span class="type"><a href="../../Toybox/Media/ContentDelegate.html">Media.ContentDelegate</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a <a href='../../Toybox/Media/ContentDelegate.html'>ContentDelegate</a> for use by the system to get and iterate through media content on the device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getPlaybackConfigurationView-instance_function" title="getPlaybackConfigurationView (Instance Function)"><strong>getPlaybackConfigurationView</strong></a>()    as [ <span class="type"><a href="../../Toybox/WatchUi.html#Views-named_type">WatchUi.Views</a></span> ] or [ <span class="type"><a href="../../Toybox/WatchUi.html#Views-named_type">WatchUi.Views</a></span>, <span class="type"><a href="../../Toybox/WatchUi.html#InputDelegates-named_type">WatchUi.InputDelegates</a></span> ]
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Override to provide the initial View and Input Delegate for configuring playback.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getProviderIconInfo-instance_function" title="getProviderIconInfo (Instance Function)"><strong>getProviderIconInfo</strong></a>()    as <span class="type"><a href="../../Toybox/Media/ProviderIconInfo.html">Media.ProviderIconInfo</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get audio provider icon information.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getSyncConfigurationView-instance_function" title="getSyncConfigurationView (Instance Function)"><strong>getSyncConfigurationView</strong></a>()    as [ <span class="type"><a href="../../Toybox/WatchUi.html#Views-named_type">WatchUi.Views</a></span> ] or [ <span class="type"><a href="../../Toybox/WatchUi.html#Views-named_type">WatchUi.Views</a></span>, <span class="type"><a href="../../Toybox/WatchUi.html#InputDelegates-named_type">WatchUi.InputDelegates</a></span> ]
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Override to provide the initial View and Input Delegate for configuring sync.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public deprecated">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getSyncDelegate-instance_function" title="getSyncDelegate (Instance Function)"><strong>getSyncDelegate</strong></a>()    as <span class="type"><a href="../../Toybox/Communications/SyncDelegate.html">Communications.SyncDelegate</a></span> or <b>Null</b>
+      </span>
+
+  <span class="deprecated note title">deprecated</span>
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a <a href='../../Toybox/Communications/SyncDelegate.html'>SyncDelegate</a> object that communicates sync status to the system for syncing media content to the device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>()
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getContentDelegate-instance_function">
+    <strong>getContentDelegate(args as <span class="type"><a href="../../Toybox/Application.html#PersistableType-named_type">Application.PersistableType</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Media/ContentDelegate.html">Media.ContentDelegate</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a <a href='../../Toybox/Media/ContentDelegate.html'>ContentDelegate</a> for use by
+the system to get and iterate through media content on the device.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+This method must be overridden in derived classes. If called, this function will cause the application to crash.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 245 Music</li><li>Forerunner® 255 Music</li><li>Forerunner® 255s Music</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 645 Music</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Media/ContentDelegate.html">Media.ContentDelegate</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getPlaybackConfigurationView-instance_function">
+    <strong>getPlaybackConfigurationView()</strong> <span class="type"> as [ <span class="type"><a href="../../Toybox/WatchUi.html#Views-named_type">WatchUi.Views</a></span> ] or [ <span class="type"><a href="../../Toybox/WatchUi.html#Views-named_type">WatchUi.Views</a></span>, <span class="type"><a href="../../Toybox/WatchUi.html#InputDelegates-named_type">WatchUi.InputDelegates</a></span> ]</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Override to provide the initial View and Input Delegate for configuring playback.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+This method must be overridden in derived classes. If called, this function will cause the application to crash.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An Array containing a <a href='../../Toybox/WatchUi/View.html'>WatchUi.View</a> and an optional <a href='../../Toybox/WatchUi/BehaviorDelegate.html'>WatchUi.BehaviorDelegate</a>, <a href='../../Toybox/WatchUi/ConfirmationDelegate.html'>WatchUi.ConfirmationDelegate</a>, <a href='../../Toybox/WatchUi/InputDelegate.html'>WatchUi.InputDelegate</a>, <a href='../../Toybox/WatchUi/MenuInputDelegate.html'>WatchUi.MenuInputDelegate</a>, <a href='../../Toybox/WatchUi/NumberPickerDelegate.html'>WatchUi.NumberPickerDelegate</a>, <a href='../../Toybox/WatchUi/PickerDelegate.html'>WatchUi.PickerDelegate</a>, <a href='../../Toybox/WatchUi/TextPickerDelegate.html'>WatchUi.TextPickerDelegate</a>, or <a href='../../Toybox/WatchUi/WatchFaceDelegate.html'>WatchUi.WatchFaceDelegate</a>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getProviderIconInfo-instance_function">
+    <strong>getProviderIconInfo()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Media/ProviderIconInfo.html">Media.ProviderIconInfo</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get audio provider icon information.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 245 Music</li><li>Forerunner® 255 Music</li><li>Forerunner® 255s Music</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 645 Music</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class="inline">
+    <p>
+<a href='../../Toybox/Media/ProviderIconInfo.html'>Toybox::Media::ProviderIconInfo</a> The icon for the audio content provider
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getSyncConfigurationView-instance_function">
+    <strong>getSyncConfigurationView()</strong> <span class="type"> as [ <span class="type"><a href="../../Toybox/WatchUi.html#Views-named_type">WatchUi.Views</a></span> ] or [ <span class="type"><a href="../../Toybox/WatchUi.html#Views-named_type">WatchUi.Views</a></span>, <span class="type"><a href="../../Toybox/WatchUi.html#InputDelegates-named_type">WatchUi.InputDelegates</a></span> ]</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Override to provide the initial View and Input Delegate for configuring sync.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+This method must be overridden in derived classes. If called, this function will cause the application to crash.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An Array containing a <a href='../../Toybox/WatchUi/View.html'>WatchUi.View</a> and an optional <a href='../../Toybox/WatchUi/BehaviorDelegate.html'>WatchUi.BehaviorDelegate</a>, <a href='../../Toybox/WatchUi/ConfirmationDelegate.html'>WatchUi.ConfirmationDelegate</a>, <a href='../../Toybox/WatchUi/InputDelegate.html'>WatchUi.InputDelegate</a>, <a href='../../Toybox/WatchUi/MenuInputDelegate.html'>WatchUi.MenuInputDelegate</a>, <a href='../../Toybox/WatchUi/NumberPickerDelegate.html'>WatchUi.NumberPickerDelegate</a>, <a href='../../Toybox/WatchUi/PickerDelegate.html'>WatchUi.PickerDelegate</a>, <a href='../../Toybox/WatchUi/TextPickerDelegate.html'>WatchUi.TextPickerDelegate</a>, or <a href='../../Toybox/WatchUi/WatchFaceDelegate.html'>WatchUi.WatchFaceDelegate</a>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getSyncDelegate-instance_function">
+    <strong>getSyncDelegate()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Communications/SyncDelegate.html">Communications.SyncDelegate</a></span> or <b>Null</b></span>
+  </h3>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This method may be removed after System 9.
+</p>
+
+
+  </div>
+</div>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a <a href='../../Toybox/Communications/SyncDelegate.html'>SyncDelegate</a> object that
+communicates sync status to the system for syncing media content to
+the device.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Communications/SyncDelegate.html">Communications.SyncDelegate</a></span>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/Application/AppBase.html#getSyncDelegate-instance_function">AppBase.getSyncDelegate()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize()</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

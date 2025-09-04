@@ -1,0 +1,786 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Test </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Test";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Test</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Test module provides a testing framework for Monkey C.
+</p><p>
+The test module provides the tools to implement your own
+unit test and asserts in your source code. Unit tests take a
+<a href='../Toybox/Test/Logger.html'>Logger</a> object and allow for different levels of
+output. Unit tests are annotated with <code>:test</code> and ignored if testing is not
+run. Asserts do not require the <code>:test</code> annotation and will be compiled out
+in release versions or you Connect IQ Content. A test RESULTS section
+is printed to the console with the tests run, test status, and failure rates.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="https://developer.garmin.com/connect-iq/core-topics/unit-testing/">Core Topics - Unit Testing</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Testing Implementation</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Test;
+var x = 1;
+var y = 2;
+
+// Asserts can be called outside of test calls
+function assertWithoutLogger(x, y) {
+   Test.assertEqual(x, y);
+}
+
+(:test)
+function aDebugTest(logger) {
+   logger.debug("This is a debug message.");
+   return true;
+}
+
+(:test)
+function aTestOfAssert(logger) {
+   logger.debug("This tests the assert() function.");
+   Test.assert(true);
+   logger.debug("Test.assert(true) didn't throw an Exception which is a very good thing.");
+   Test.assert(false);
+   logger.error("We should not be executing this statement.");
+   return true;
+}</code>
+</pre>
+</div><div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Console Output for above example</p>
+</div></p>
+<pre class="example code">
+<code>// Output:
+------------------------------------------------------------------------------
+Executing test aDebugTest...
+DEBUG (9:21): This is a debug message.
+PASS
+------------------------------------------------------------------------------
+Executing test aTestOfAssert...
+DEBUG (9:21): This tests the assert() function.
+DEBUG (9:21): Test.assert(true) didn't throw an Exception which is a very good thing.
+Unhandled Exception
+ASSERTION FAILED
+aTestOfAssert in C:\workspace\RunNoEvil\source\RunNoEvil.mc:21
+runTest in UnitTests:33
+ERROR
+
+==============================================================================
+RESULTS
+Test:                                Status:
+aDebugTest                           PASS
+aTestOfAssert                        ERROR
+Ran 2 tests
+
+FAILED (passed=1, failed=0, errors=1)</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Test/AssertException.html">AssertException</a></span>, <span class="type"><a href="../Toybox/Test/Logger.html">Logger</a></span>
+</p>
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#assert-instance_function" title="assert (Instance Function)"><strong>assert</strong></a>(test as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Throws an exception if the test is <code>false</code>.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#assertEqual-instance_function" title="assertEqual (Instance Function)"><strong>assertEqual</strong></a>(value1 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, value2 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Throws an exception if value1 and value2 are not equal.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#assertEqualMessage-instance_function" title="assertEqualMessage (Instance Function)"><strong>assertEqualMessage</strong></a>(value1 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, value2 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>, message as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Throws an exception if value1 and value2 are not equal followed by a <a href='../Toybox/Lang/String.html'>String</a> defined by the developer.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#assertMessage-instance_function" title="assertMessage (Instance Function)"><strong>assertMessage</strong></a>(test as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, message as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Throws an exception if the test is <code>false</code> followed by a <a href='../Toybox/Lang/String.html'>String</a> defined by the developer.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#assertNotEqual-instance_function" title="assertNotEqual (Instance Function)"><strong>assertNotEqual</strong></a>(value1 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, value2 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Throws an exception if value1 and value2 are equal.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#assertNotEqualMessage-instance_function" title="assertNotEqualMessage (Instance Function)"><strong>assertNotEqualMessage</strong></a>(value1 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, value2 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>, message as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Throws an exception if value1 and value2 are equal followed by a <a href='../Toybox/Lang/String.html'>String</a> defined by the developer.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="assert-instance_function">
+    <strong>assert(test as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Throws an exception if the test is <code>false</code>.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">test</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The expression to test for <code>true</code>
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Test;
+(:test)
+function anAssertTest(logger) {
+   var x = false;
+   Test.assert(x);
+   return true;
+}
+// Output:
+ASSERTION FAILED
+Unhandled Exception</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Test/AssertException.html">Test.AssertException</a></span>)</span>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="assertEqual-instance_function">
+    <strong>assertEqual(value1 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, value2 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Throws an exception if value1 and value2 are not equal.
+</p><p>
+The objects passed to this function must implement the
+<a href='../Toybox/Lang/Object.html#equals-instance_function'>Object.equals()</a> method which compares both
+type and value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">value1</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The first value to test for equality
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">value2</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The second value to test for equality
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Test;
+(:test)
+function anAssertEqualTest(logger) {
+   var x = 1;
+   var y = 2;
+   Test.assertEqual(x, y);
+   return true;
+}
+// Output:
+ASSERTION FAILED
+Unhandled Exception</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Test/AssertException.html">Test.AssertException</a></span>)</span>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="assertEqualMessage-instance_function">
+    <strong>assertEqualMessage(value1 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, value2 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>, message as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Throws an exception if value1 and value2 are not equal followed by a
+<a href='../Toybox/Lang/String.html'>String</a> defined by the developer.
+</p><p>
+The objects passed to this function must implement the
+<a href='../Toybox/Lang/Object.html#equals-instance_function'>Object.equals()</a> method which compares both
+type and value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">value1</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value to test for equality
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">value2</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value to test for equality
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">message</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The identifying message for the assert
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Test;
+(:test)
+function anAssertEqualMessageTest(logger) {
+   var x = 1;
+   var y = 2;
+   Test.assertEqual(x, y, "x and y are not equal!");
+   return true;
+}
+// Output:
+ASSERTION FAILED: x and y are not equal!
+Unhandled Exception</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Test/AssertException.html">Test.AssertException</a></span>)</span>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="assertMessage-instance_function">
+    <strong>assertMessage(test as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>, message as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Throws an exception if the test is <code>false</code> followed by a
+<a href='../Toybox/Lang/String.html'>String</a> defined by the developer.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">test</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Expression to test for <code>true</code>
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">message</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The identifying message for the assert
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Test;
+(:test)
+function anAssertMessageTest(logger) {
+   var x = false;
+   Test.assertMessage(x, "The assert is False for x.");
+   return true;
+}
+// Output:
+ASSERTION FAILED: The assert is False for x.
+Unhandled Exception</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Test/AssertException.html">Test.AssertException</a></span>)</span>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="assertNotEqual-instance_function">
+    <strong>assertNotEqual(value1 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, value2 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Throws an exception if value1 and value2 are equal.
+</p><p>
+The objects passed to this function must implement the
+<a href='../Toybox/Lang/Object.html#equals-instance_function'>Object.equals()</a> method which compares both
+type and value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">value1</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value to test for equality
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">value2</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value to test for equality
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Test;
+(:test)
+function anAssertNotEqualTest(logger) {
+   var x = 1;
+   var y = 1;
+   Test.assertNotEqual(x, y);
+   return true;
+}
+// Output:
+ASSERTION FAILED
+Unhandled Exception</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Test/AssertException.html">Test.AssertException</a></span>)</span>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="assertNotEqualMessage-instance_function">
+    <strong>assertNotEqualMessage(value1 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>, value2 as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>, message as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Throws an exception if value1 and value2 are equal followed by a
+<a href='../Toybox/Lang/String.html'>String</a> defined by the developer.
+</p><p>
+The objects passed to this function must implement the
+<a href='../Toybox/Lang/Object.html#equals-instance_function'>Object.equals()</a> method which compares both
+type and value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">value1</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value to test for equality
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">value2</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value to test for equality
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">message</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The identifying message for the assert
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Test;
+(:test)
+function anAssertNotEqualMessageTest(logger) {
+   var x = 1;
+   var y = 2;
+   Test.assertNotEqual(x, y, "x and y are equal!");
+   return true;
+}
+// Output:
+ASSERTION FAILED: x and y are equal!
+Unhandled Exception</code>
+</pre>
+</div>
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Test/AssertException.html">Test.AssertException</a></span>)</span>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

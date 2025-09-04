@@ -1,0 +1,627 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Cryptography </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Cryptography";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Cryptography</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Cryptography Module will allow the application to create a
+<a href='../Toybox/Cryptography/Cipher.html'>Cipher</a> object that can encrypt and decrypt
+<a href='../Toybox/Lang/ByteArray.html'>ByteArray</a> objects.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 520 Plus</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 745</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Cryptography/Cipher.html">Cipher</a></span>, <span class="type"><a href="../Toybox/Cryptography/CipherBasedMessageAuthenticationCode.html">CipherBasedMessageAuthenticationCode</a></span>, <span class="type"><a href="../Toybox/Cryptography/Hash.html">Hash</a></span>, <span class="type"><a href="../Toybox/Cryptography/HashBasedMessageAuthenticationCode.html">HashBasedMessageAuthenticationCode</a></span>, <span class="type"><a href="../Toybox/Cryptography/InvalidBlockSizeException.html">InvalidBlockSizeException</a></span>, <span class="type"><a href="../Toybox/Cryptography/Key.html">Key</a></span>, <span class="type"><a href="../Toybox/Cryptography/KeyAgreement.html">KeyAgreement</a></span>, <span class="type"><a href="../Toybox/Cryptography/KeyPair.html">KeyPair</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="HashAlgorithm-module" class="">
+    <h3>HashAlgorithm</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="HASH_SHA1-const">
+    <td class="enumTableCell">HASH_SHA1</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+SHA-1 implementation for Hash objects
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/SHA-1">https://en.wikipedia.org/wiki/SHA-1</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableEven" id="HASH_SHA256-const">
+    <td class="enumTableCell">HASH_SHA256</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+SHA-256 implementation for Hash objects
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/SHA-2">https://en.wikipedia.org/wiki/SHA-2</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableOdd" id="HASH_MD5-const">
+    <td class="enumTableCell">HASH_MD5</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+MD5 implementation for Hash objects
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/MD5">https://en.wikipedia.org/wiki/MD5</a>
+  </div>
+  </li></td>
+    </td>
+</tr>
+</table><dt id="CipherAlgorithm-module" class="">
+    <h3>CipherAlgorithm</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="CIPHER_AES128-const">
+    <td class="enumTableCell">CIPHER_AES128</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+AES128 implementation for Cipher objects
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">https://en.wikipedia.org/wiki/Advanced_Encryption_Standard</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableEven" id="CIPHER_AES256-const">
+    <td class="enumTableCell">CIPHER_AES256</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+AES256 implementation for Cipher objects
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">https://en.wikipedia.org/wiki/Advanced_Encryption_Standard</a>
+  </div>
+  </li></td>
+    </td>
+</tr>
+</table><dt id="EncryptionMode-module" class="">
+    <h3>EncryptionMode</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="MODE_ECB-const">
+    <td class="enumTableCell">MODE_ECB</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Electronic Code Book (ECB)
+</p><p>
+This is the simplest encryption mode. Each plaintext block is
+directly encrypted into a ciphertext block, independent of any
+other block. This mode exposes frequency of symbols in your
+plaintext. Other modes (e.g. CBC) are recommended.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_Codebook_(ECB)">https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_Codebook_(ECB)</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableEven" id="MODE_CBC-const">
+    <td class="enumTableCell">MODE_CBC</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Cipher-Block Chaining
+</p><p>
+Each ciphertext block depends on the current and all previous
+plaintext blocks. An Initialization Vector (IV) is required. The IV
+is a data block to be transmitted to the receiver. The IV can be
+made public, but it must be authenticated by the receiver and it
+should be picked randomly.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_(CBC)">https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_(CBC)</a>
+  </div>
+  </li></td>
+    </td>
+</tr>
+</table><dt id="KeyPairAlgorithm-module" class="">
+    <h3>KeyPairAlgorithm</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="KEY_PAIR_ELLIPTIC_CURVE_SECP224R1-const">
+    <td class="enumTableCell">KEY_PAIR_ELLIPTIC_CURVE_SECP224R1</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+224-bit secp224r1 Elliptic Curve
+</p><p>
+Based on the algebraic structure of elliptic curves over finite fields.
+ECC requires smaller keys compared to non-ECC cryptography to provide
+equivalent security.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Elliptic-curve_cryptography">https://en.wikipedia.org/wiki/Elliptic-curve_cryptography</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableEven" id="KEY_PAIR_ELLIPTIC_CURVE_SECP256R1-const">
+    <td class="enumTableCell">KEY_PAIR_ELLIPTIC_CURVE_SECP256R1</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+256-bit secp256r1 Elliptic Curve
+</p><p>
+Based on the algebraic structure of elliptic curves over finite fields.
+ECC requires smaller keys compared to non-ECC cryptography to provide
+equivalent security.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Elliptic-curve_cryptography">https://en.wikipedia.org/wiki/Elliptic-curve_cryptography</a>
+  </div>
+  </li></td>
+    </td>
+</tr>
+</table><dt id="KeyAgreementProtocol-module" class="">
+    <h3>KeyAgreementProtocol</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="KEY_AGREEMENT_ECDH-const">
+    <td class="enumTableCell">KEY_AGREEMENT_ECDH</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Elliptic Curve Diffie-Hellman (ECDH)
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman">https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman</a>
+  </div>
+  </li></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#createPublicKey-instance_function" title="createPublicKey (Instance Function)"><strong>createPublicKey</strong></a>(algorithm as <span class="type"><a href="../Toybox/Cryptography.html#HashAlgorithm-module">Cryptography.HashAlgorithm</a></span>, bytes as <span class="type"><a href="../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)    as <span class="type"><a href="../Toybox/Cryptography/Key.html">Cryptography.Key</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Create a public <a href='../Toybox/Cryptography/Key.html'>Key</a> object from bytes to be added to a <a href='../Toybox/Cryptography/KeyAgreement.html'>KeyAgreement</a>.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#randomBytes-instance_function" title="randomBytes (Instance Function)"><strong>randomBytes</strong></a>(size as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)    as <span class="type"><a href="../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Generates cryptographically random bytes.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="createPublicKey-instance_function">
+    <strong>createPublicKey(algorithm as <span class="type"><a href="../Toybox/Cryptography.html#HashAlgorithm-module">Cryptography.HashAlgorithm</a></span>, bytes as <span class="type"><a href="../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Cryptography/Key.html">Cryptography.Key</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Create a public <a href='../Toybox/Cryptography/Key.html'>Key</a> object from bytes to be
+added to a <a href='../Toybox/Cryptography/KeyAgreement.html'>KeyAgreement</a>.
+</p><p>
+If a public key is received from another party, it can be converted to a
+<a href='../Toybox/Cryptography/Key.html'>Key</a> object using this method.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+bytes is expected to be in little-endian byte order.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">algorithm</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Cryptography.html#HashAlgorithm-module">Cryptography.HashAlgorithm</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The hash algorithm to use as a <a href='../Toybox/Cryptography.html#KEY_PAIR_ELLIPTIC_CURVE_SECP224R1-const'>KEY_PAIR_ELLIPTIC_CURVE_*</a> constant
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">bytes</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The public key bytes to be used to generate the <a href='../Toybox/Cryptography/Key.html'>Key</a>
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 745</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Cryptography/Key.html">Cryptography.Key</a></span>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Cryptography/KeyAgreement.html">Toybox.Cryptography.KeyAgreement</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if an argument is not the correct type
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the ByteArray provided is not the correct size for the selected algorithm, or the algorithm selected is not supported.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="randomBytes-instance_function">
+    <strong>randomBytes(size as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Generates cryptographically random bytes.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">size</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The number of requested random bytes
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A ByteArray of the requested size filled with cryptographically random bytes
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

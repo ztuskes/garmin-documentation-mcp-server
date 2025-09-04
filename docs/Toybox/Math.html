@@ -1,0 +1,2124 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Math </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Math";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Math</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Math Module provides various math methods available for use by Apps.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Prints the circumference of a circle.</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.Math;
+var r = 5;
+var circumference = (2 * Math.PI * r);
+
+System.println(circumference);
+</code>
+</pre>
+</div><div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Prints the area of a square with Math.pow via direct call.</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.Math;
+
+System.println(Math.pow(10, 2));
+</code>
+</pre>
+</div><div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Solves for c using the Pythagorean Theorem and multiple Math API methods.</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.Math;
+var a = 2;
+var b = 3;
+var c = Math.sqrt((Math.pow(a, 2) + Math.pow(b, 2)));
+
+System.println(c);</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Math/Filter.html">Filter</a></span>, <span class="type"><a href="../Toybox/Math/FirFilter.html">FirFilter</a></span>, <span class="type"><a href="../Toybox/Math/IirFilter.html">IirFilter</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class="constTable">
+    <tr>
+        <th class="constTableHeader">Type</th>
+        <th class="constTableHeader">Name</th>
+        <th class="constTableHeader">Value</th>
+        <th class="constTableHeader">Since</th>
+        <th class="constTableHeader">Description</th>
+    </tr>
+    <tr class="enumTableOdd" id="E-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">E</td>
+    <td class="constTableCell">2.7182818284590452354</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+32-bit floating point representation of E
+</p>
+
+</td>
+</tr><tr class="enumTableEven" id="PI-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">PI</td>
+    <td class="constTableCell">3.14159265358979323846</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+32-bit floating point representation of PI
+</p>
+
+</td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#acos-instance_function" title="acos (Instance Function)"><strong>acos</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the arc cosine of an angle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#asin-instance_function" title="asin (Instance Function)"><strong>asin</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the arc sine of an angle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#atan-instance_function" title="atan (Instance Function)"><strong>atan</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the arc tangent of an angle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#atan2-instance_function" title="atan2 (Instance Function)"><strong>atan2</strong></a>(y as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the arc tangent of y/x in radians.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#ceil-instance_function" title="ceil (Instance Function)"><strong>ceil</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Compute the ceiling of a value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#cos-instance_function" title="cos (Instance Function)"><strong>cos</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the cosine of an angle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#floor-instance_function" title="floor (Instance Function)"><strong>floor</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Compute the floor of a value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#ln-instance_function" title="ln (Instance Function)"><strong>ln</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get natural logarithm of a value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#log-instance_function" title="log (Instance Function)"><strong>log</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, base as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get logarithm of a value using the specified base.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#mean-instance_function" title="mean (Instance Function)"><strong>mean</strong></a>(data as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>&gt;)    as <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the arithmetic mean (average) of an array of data.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#mode-instance_function" title="mode (Instance Function)"><strong>mode</strong></a>(data as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>&gt;)    as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the most common value found in an array of data.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#pow-instance_function" title="pow (Instance Function)"><strong>pow</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Calculate x to the power of y.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#rand-instance_function" title="rand (Instance Function)"><strong>rand</strong></a>()    as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Returns a pseudo-random Number.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#round-instance_function" title="round (Instance Function)"><strong>round</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Round a value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#sin-instance_function" title="sin (Instance Function)"><strong>sin</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the sine of an angle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#sqrt-instance_function" title="sqrt (Instance Function)"><strong>sqrt</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Calculate the square root of a value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#srand-instance_function" title="srand (Instance Function)"><strong>srand</strong></a>(seed as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Seed the random number generator.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#stdev-instance_function" title="stdev (Instance Function)"><strong>stdev</strong></a>(data as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>&gt;, xbar as <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span> or <b>Null</b>)    as <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the standard deviation of a sample of population data.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#tan-instance_function" title="tan (Instance Function)"><strong>tan</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the tangent of an angle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toDegrees-instance_function" title="toDegrees (Instance Function)"><strong>toDegrees</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert an angle from radians to degrees.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toRadians-instance_function" title="toRadians (Instance Function)"><strong>toRadians</strong></a>(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)    as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert an angle from degrees to radians.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#variance-instance_function" title="variance (Instance Function)"><strong>variance</strong></a>(data as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>&gt;, xbar as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span> or <b>Null</b>)    as <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the sample variance of an array of data.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="acos-instance_function">
+    <strong>acos(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the arc cosine of an angle.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The cosine value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The interval [0..PI] in radians, or <code>NaN</code> if invalid
+</p>
+
+<ul>
+<li>
+<p>
+Float if input is Number or Float
+</p>
+
+</li>
+<li>
+<p>
+Double if input is Long or Double
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="asin-instance_function">
+    <strong>asin(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the arc sine of an angle.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The sine value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The interval [-PI/2..PI/2] in radians, or <code>NaN</code> if invalid
+</p>
+
+<ul>
+<li>
+<p>
+Float if input is Number or Float
+</p>
+
+</li>
+<li>
+<p>
+Double if input is Long or Double
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="atan-instance_function">
+    <strong>atan(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the arc tangent of an angle.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The tangent value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The interval [-PI/2..PI/2] in radians, or <code>NaN</code> if invalid
+</p>
+
+<ul>
+<li>
+<p>
+Float if input is Number or Float
+</p>
+
+</li>
+<li>
+<p>
+Double if input is Long or Double
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="atan2-instance_function">
+    <strong>atan2(y as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the arc tangent of y/x in radians.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The proportion of the y coordinate
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The proportion of the x coordinate
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The principal arc tangent of y/x, in the interval [-PI..PI] radians, or <code>NaN</code> if invalid
+</p>
+
+<ul>
+<li>
+<p>
+Float if both inputs are Number or Float
+</p>
+
+</li>
+<li>
+<p>
+Double if either input is Long or Double
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="ceil-instance_function">
+    <strong>ceil(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Compute the ceiling of a value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A numeric value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The smallest integer greater than or equal to x Return type matches the input parameter type
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="cos-instance_function">
+    <strong>cos(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the cosine of an angle.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The angle in radians
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The cosine value of x in radians
+</p>
+
+<ul>
+<li>
+<p>
+Float if input is Number or Float
+</p>
+
+</li>
+<li>
+<p>
+Double if input is Long or Double
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="floor-instance_function">
+    <strong>floor(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Compute the floor of a value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A numeric value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The largest integer less than or equal to x Return type matches the input parameter type
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="ln-instance_function">
+    <strong>ln(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get natural logarithm of a value
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value for which to get the logarithm
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+natural logarithm of x
+</p>
+
+<ul>
+<li>
+<p>
+Float if input is Number or Float
+</p>
+
+</li>
+<li>
+<p>
+Double if input is Long or Double
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="log-instance_function">
+    <strong>log(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, base as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get logarithm of a value using the specified base
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value for which to get the logarithm
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">base</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The base value.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+specified base logarithm of x
+</p>
+
+<ul>
+<li>
+<p>
+Float if both inputs are Number or Float
+</p>
+
+</li>
+<li>
+<p>
+Double if either input is Long or Double
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="mean-instance_function">
+    <strong>mean(data as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>&gt;)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the arithmetic mean (average) of an array of data.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">data</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An array of <a href='../Toybox/Lang/Number.html'>Number</a>, <a href='../Toybox/Lang/Float.html'>Float</a>, <a href='../Toybox/Lang/Long.html'>Long</a>, or <a href='../Toybox/Lang/Double.html'>Double</a> values
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The arithmetic mean of the values in data
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the provided data array is empty.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="mode-instance_function">
+    <strong>mode(data as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>&gt;)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the most common value found in an array of data.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">data</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An array of <a href='../Toybox/Lang/Object.html'>Objects</a>
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The most frequently occurring value in data.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if there is no most frequently occurring value or the passed in value array is empty
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="pow-instance_function">
+    <strong>pow(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, y as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Calculate x to the power of y.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Base
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Exponent
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+x to the power of y
+</p>
+
+<ul>
+<li>
+<p>
+Float if both inputs are Number or Float
+</p>
+
+</li>
+<li>
+<p>
+Double if either input is Long or Double
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="rand-instance_function">
+    <strong>rand()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Returns a pseudo-random Number. Use the <a href='../Toybox/Math.html#srand-instance_function'>srand()</a> function to seed the random number generator.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Non-negative random number
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="round-instance_function">
+    <strong>round(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Round a value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A numeric value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The closest integer to x. Decimal values >= .5 will be rounded up Return type matches the input parameter type
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="sin-instance_function">
+    <strong>sin(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the sine of an angle.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The angle in radians
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The sine value of x in radians
+</p>
+
+<ul>
+<li>
+<p>
+Float if input is Number or Float
+</p>
+
+</li>
+<li>
+<p>
+Double if input is Long or Double
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="sqrt-instance_function">
+    <strong>sqrt(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Calculate the square root of a value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value for which to get the square root
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The square root of x, or <code>NaN</code> if invalid
+</p>
+
+<ul>
+<li>
+<p>
+Float if input is Number or Float
+</p>
+
+</li>
+<li>
+<p>
+Double if input is Long or Double
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="srand-instance_function">
+    <strong>srand(seed as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Seed the random number generator.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+srand() does not return any value.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">seed</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value used for seeding rand()
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="stdev-instance_function">
+    <strong>stdev(data as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>&gt;, xbar as <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the standard deviation of a sample of population data.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">data</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An array of <a href='../Toybox/Lang/Number.html'>Number</a>, <a href='../Toybox/Lang/Float.html'>Float</a>, <a href='../Toybox/Lang/Long.html'>Long</a>, or <a href='../Toybox/Lang/Double.html'>Double</a> values with at least two elements.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">xbar</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The mean, if known. Otherwise, pass <code>null</code> and the mean of data will be calculated.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The standard deviation of the samples
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the provided data array has fewer than two elements.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="tan-instance_function">
+    <strong>tan(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the tangent of an angle.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The angle in radians
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The tangent value of x in radians Toybox::Lang::Float if input is Toybox::Lang::Number or Toybox::Lang::Float Toybox::Lang::Double if input is Toybox::Lang::Long or Toybox::Lang::Double
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toDegrees-instance_function">
+    <strong>toDegrees(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert an angle from radians to degrees.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The angle in radians
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The angle of x in degrees
+</p>
+
+<ul>
+<li>
+<p>
+Float if input is Number or Float
+</p>
+
+</li>
+<li>
+<p>
+Double if input is Long or Double
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toRadians-instance_function">
+    <strong>toRadians(x as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang.html#Decimal-named_type">Lang.Decimal</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert an angle from degrees to radians.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The angle in degrees
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The angle of x in radians
+</p>
+
+<ul>
+<li>
+<p>
+Float if input is Number or Float
+</p>
+
+</li>
+<li>
+<p>
+Double if input is Long or Double
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="variance-instance_function">
+    <strong>variance(data as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>&gt;, xbar as <span class="type"><a href="../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the sample variance of an array of data.
+</p><p>
+Returns the sample variance with Bessel's correction.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">data</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An array of <a href='../Toybox/Lang/Number.html'>Number</a>, <a href='../Toybox/Lang/Float.html'>Float</a>, <a href='../Toybox/Lang/Long.html'>Long</a>, or <a href='../Toybox/Lang/Double.html'>Double</a> values with at least two elements.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">xbar</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The mean, if known. Otherwise, pass <code>null</code> and the mean of data will be calculated.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The variance of the samples
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the provided data array has fewer than two elements.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

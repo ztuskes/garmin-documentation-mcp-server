@@ -1,0 +1,595 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.UserProfile </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.UserProfile";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.UserProfile</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The UserProfile module will allow apps to access user information.
+</p><p>
+The module contains the GENDER_* enum to retrieve gender information from
+the user profile. The HR_ZONE_SPORT_* enum also provides constants for
+defining different sport type. This is used to retrieve Heart Rate Zones
+specific to that sport.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Simple UserProfile module use</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.UserProfile;
+
+var profile = UserProfile.getProfile();
+System.out.println("The user was born in " + profile.birthYear);</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+  <!-- Permissions -->
+  <p class="tag_title">Requires Permission:</p>
+  <ul class="required_permissions">
+      <li>
+    <div class="inline">
+      <p>UserProfile</p>
+    </div>
+  </li>
+  </ul>
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/UserProfile/Profile.html">Profile</a></span>, <span class="type"><a href="../Toybox/UserProfile/UserActivity.html">UserActivity</a></span>, <span class="type"><a href="../Toybox/UserProfile/UserActivityHistoryIterator.html">UserActivityHistoryIterator</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="Gender-module" class="">
+    <h3>Gender</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="GENDER_FEMALE-const">
+    <td class="enumTableCell">GENDER_FEMALE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="GENDER_MALE-const">
+    <td class="enumTableCell">GENDER_MALE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="GENDER_UNSPECIFIED-const">
+    <td class="enumTableCell">GENDER_UNSPECIFIED</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.3
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="SportHrZone-module" class="">
+    <h3>SportHrZone</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="HR_ZONE_SPORT_GENERIC-const">
+    <td class="enumTableCell">HR_ZONE_SPORT_GENERIC</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="HR_ZONE_SPORT_RUNNING-const">
+    <td class="enumTableCell">HR_ZONE_SPORT_RUNNING</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="HR_ZONE_SPORT_BIKING-const">
+    <td class="enumTableCell">HR_ZONE_SPORT_BIKING</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="HR_ZONE_SPORT_SWIMMING-const">
+    <td class="enumTableCell">HR_ZONE_SPORT_SWIMMING</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.2.6
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getCurrentSport-instance_function" title="getCurrentSport (Instance Function)"><strong>getCurrentSport</strong></a>()    as <span class="type"><a href="../Toybox/UserProfile.html#SportHrZone-module">UserProfile.SportHrZone</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Return the sport for which the current activity retrieves heart rate zone thresholds.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getHeartRateZones-instance_function" title="getHeartRateZones (Instance Function)"><strong>getHeartRateZones</strong></a>(sport as <span class="type"><a href="../Toybox/UserProfile.html#SportHrZone-module">UserProfile.SportHrZone</a></span>)    as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>&gt;
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Retrieve an <a href='../Toybox/Lang/Array.html'>Array</a> of the current heart rate zone threshold values in beats per minute (bpm) The returned Array contains zone values as follows: * min zone 1 - The minimum heart rate threshold for zone 1 * max zone 1 - The maximum heart rate threshold for zone 1 * max zone 2 - The maximum heart rate threshold for zone 2 * max zone 3 - The maximum heart rate threshold for zone 3 * max zone 4 - The maximum heart rate threshold for zone 4 * max zone 5 - The maximum heart rate threshold for zone 5.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getProfile-instance_function" title="getProfile (Instance Function)"><strong>getProfile</strong></a>()    as <span class="type"><a href="../Toybox/UserProfile/Profile.html">UserProfile.Profile</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Retrieve the current <a href='../Toybox/UserProfile/Profile.html'>Profile</a> object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getUserActivityHistory-instance_function" title="getUserActivityHistory (Instance Function)"><strong>getUserActivityHistory</strong></a>()    as <span class="type"><a href="../Toybox/UserProfile/UserActivityHistoryIterator.html">UserProfile.UserActivityHistoryIterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get an iterator for Activity history for the user.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getCurrentSport-instance_function">
+    <strong>getCurrentSport()</strong> <span class="type"> as <span class="type"><a href="../Toybox/UserProfile.html#SportHrZone-module">UserProfile.SportHrZone</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Return the sport for which the current activity retrieves heart rate
+zone thresholds.
+</p><p>
+If the active sport does not have sport specific zones, it will return
+<a href='../Toybox/UserProfile.html#HR_ZONE_SPORT_GENERIC-const'>HR_ZONE_SPORT_GENERIC</a>.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.UserProfile;
+var profile = UserProfile.getCurrentSport();</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/UserProfile.html#SportHrZone-module">UserProfile.SportHrZone</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The current HR zone sport from the <a href='../Toybox/UserProfile.html#HR_ZONE_SPORT_GENERIC-const'>HR_ZONE_SPORT_*</a> enum.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.2.6
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getHeartRateZones-instance_function">
+    <strong>getHeartRateZones(sport as <span class="type"><a href="../Toybox/UserProfile.html#SportHrZone-module">UserProfile.SportHrZone</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>&gt;</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Retrieve an <a href='../Toybox/Lang/Array.html'>Array</a> of the current heart rate zone
+threshold values in beats per minute (bpm)
+</p><p>
+The returned Array contains zone values as follows:
+</p>
+
+<ul>
+<li>
+<p>
+min zone 1 - The minimum heart rate threshold for zone 1
+</p>
+
+</li>
+<li>
+<p>
+max zone 1 - The maximum heart rate threshold for zone 1
+</p>
+
+</li>
+<li>
+<p>
+max zone 2 - The maximum heart rate threshold for zone 2
+</p>
+
+</li>
+<li>
+<p>
+max zone 3 - The maximum heart rate threshold for zone 3
+</p>
+
+</li>
+<li>
+<p>
+max zone 4 - The maximum heart rate threshold for zone 4
+</p>
+
+</li>
+<li>
+<p>
+max zone 5 - The maximum heart rate threshold for zone 5
+</p>
+
+</li>
+</ul>
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">sport</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/UserProfile.html#SportHrZone-module">UserProfile.SportHrZone</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The sport that zones are being requested from. Should be a <a href='../Toybox/UserProfile.html#HR_ZONE_SPORT_GENERIC-const'>HR_ZONE_SPORT_*</a> value.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Use the HR_ZONE_SPORT_* enum to get the zone for that specific sport</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.UserProfile;
+var genericZoneInfo = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An Array of zone thresholds for the requested sport.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.2.6
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getProfile-instance_function">
+    <strong>getProfile()</strong> <span class="type"> as <span class="type"><a href="../Toybox/UserProfile/Profile.html">UserProfile.Profile</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Retrieve the current <a href='../Toybox/UserProfile/Profile.html'>Profile</a>
+object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.UserProfile;
+var profile = UserProfile.getProfile();</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/UserProfile/Profile.html">UserProfile.Profile</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The Profile object for the current user
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getUserActivityHistory-instance_function">
+    <strong>getUserActivityHistory()</strong> <span class="type"> as <span class="type"><a href="../Toybox/UserProfile/UserActivityHistoryIterator.html">UserProfile.UserActivityHistoryIterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get an iterator for Activity history for the user
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Shows the use of UserActivityHistoryIterator</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.UserProfile;
+using Toybox.System;
+
+// get a UserActivityHistoryIterator object
+var userActivityIterator = UserProfile.getUserActivityHistory();
+var sample = userActivityIterator.next();                        // get the user activity data
+
+while (sample != null) {
+    System.println("Sample: " + sample.userActivityData);        // print the current sample
+    sample = userActivityIterator.next();
+}</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/UserProfile/UserActivityHistoryIterator.html">UserProfile.UserActivityHistoryIterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Iterator object
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

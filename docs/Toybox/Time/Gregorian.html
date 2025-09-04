@@ -1,0 +1,1177 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Time.Gregorian </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Time.Gregorian";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Time.Gregorian</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Gregorian module provides an interface for getting <a href='../../Toybox/Time/Moment.html'>Moment</a>
+objects and <a href='../../Toybox/Time/Duration.html'>Duration</a> objects based on the Gregorian
+calendar.
+</p><p>
+For convenience, several time constants are defined that represent the
+number of seconds per year, per day, per hour, and per minute.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Gregorian_calendar">The Gregorian Calendar</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../../Toybox/Time/Gregorian/Info.html">Info</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class="constTable">
+    <tr>
+        <th class="constTableHeader">Type</th>
+        <th class="constTableHeader">Name</th>
+        <th class="constTableHeader">Value</th>
+        <th class="constTableHeader">Since</th>
+        <th class="constTableHeader">Description</th>
+    </tr>
+    <tr class="enumTableOdd" id="SECONDS_PER_DAY-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">SECONDS_PER_DAY</td>
+    <td class="constTableCell">86400</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+The number of seconds in one day
+</p>
+
+</td>
+</tr><tr class="enumTableEven" id="SECONDS_PER_HOUR-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">SECONDS_PER_HOUR</td>
+    <td class="constTableCell">3600</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+The number of seconds in one hour
+</p>
+
+</td>
+</tr><tr class="enumTableOdd" id="SECONDS_PER_MINUTE-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">SECONDS_PER_MINUTE</td>
+    <td class="constTableCell">60</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+The number of seconds in one minute
+</p>
+
+</td>
+</tr><tr class="enumTableEven" id="SECONDS_PER_YEAR-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">SECONDS_PER_YEAR</td>
+    <td class="constTableCell">31557600</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+The number of seconds in one year
+</p>
+
+</td>
+</tr>
+</table><dt id="DayOfWeek-module" class="">
+    <h3>DayOfWeek</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="DAY_SUNDAY-const">
+    <td class="enumTableCell">DAY_SUNDAY</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sunday
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="DAY_MONDAY-const">
+    <td class="enumTableCell">DAY_MONDAY</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Monday
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="DAY_TUESDAY-const">
+    <td class="enumTableCell">DAY_TUESDAY</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Tuesday
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="DAY_WEDNESDAY-const">
+    <td class="enumTableCell">DAY_WEDNESDAY</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Wednesday
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="DAY_THURSDAY-const">
+    <td class="enumTableCell">DAY_THURSDAY</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Thursday
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="DAY_FRIDAY-const">
+    <td class="enumTableCell">DAY_FRIDAY</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Friday
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="DAY_SATURDAY-const">
+    <td class="enumTableCell">DAY_SATURDAY</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Saturday
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="Month-module" class="">
+    <h3>Month</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="MONTH_JANUARY-const">
+    <td class="enumTableCell">MONTH_JANUARY</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+January
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MONTH_FEBRUARY-const">
+    <td class="enumTableCell">MONTH_FEBRUARY</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+February
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MONTH_MARCH-const">
+    <td class="enumTableCell">MONTH_MARCH</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+March
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MONTH_APRIL-const">
+    <td class="enumTableCell">MONTH_APRIL</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+April
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MONTH_MAY-const">
+    <td class="enumTableCell">MONTH_MAY</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+May
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MONTH_JUNE-const">
+    <td class="enumTableCell">MONTH_JUNE</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+June
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MONTH_JULY-const">
+    <td class="enumTableCell">MONTH_JULY</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+July
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MONTH_AUGUST-const">
+    <td class="enumTableCell">MONTH_AUGUST</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+August
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MONTH_SEPTEMBER-const">
+    <td class="enumTableCell">MONTH_SEPTEMBER</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+September
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MONTH_OCTOBER-const">
+    <td class="enumTableCell">MONTH_OCTOBER</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+October
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="MONTH_NOVEMBER-const">
+    <td class="enumTableCell">MONTH_NOVEMBER</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+November
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="MONTH_DECEMBER-const">
+    <td class="enumTableCell">MONTH_DECEMBER</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+December
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#duration-instance_function" title="duration (Instance Function)"><strong>duration</strong></a>(options as { :years as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :days as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :hours as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :minutes as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :seconds as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> })    as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Create a <a href='../../Toybox/Time/Duration.html'>Duration</a> from a Dictionary of options.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#info-instance_function" title="info (Instance Function)"><strong>info</strong></a>(moment as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span> or <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>, format as <span class="type"><a href="../../Toybox/Time.html#DateFormat-module">Time.DateFormat</a></span>)    as <span class="type"><a href="../../Toybox/Time/Gregorian/Info.html">Gregorian.Info</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get <a href='../../Toybox/Time/Gregorian/Info.html'>Info</a> for a <a href='../../Toybox/Time/Moment.html'>Moment</a> in local time.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#localMoment-instance_function" title="localMoment (Instance Function)"><strong>localMoment</strong></a>(location as <span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span>, moment as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>)    as <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Create a LocalMoment from a Moment and a Location.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#moment-instance_function" title="moment (Instance Function)"><strong>moment</strong></a>(options as { :year as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :month as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>, :day as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :hour as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :minute as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :second as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> })    as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Create a <a href='../../Toybox/Time/Moment.html'>Moment</a> from a Dictionary of options.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#utcInfo-instance_function" title="utcInfo (Instance Function)"><strong>utcInfo</strong></a>(moment as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>, format as <span class="type"><a href="../../Toybox/Time.html#DateFormat-module">Time.DateFormat</a></span>)    as <span class="type"><a href="../../Toybox/Time/Gregorian/Info.html">Gregorian.Info</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get <a href='../../Toybox/Time/Gregorian/Info.html'>Info</a> for a <a href='../../Toybox/Time/Moment.html'>Moment</a> in UTC time.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="duration-instance_function">
+    <strong>duration(options as { :years as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :days as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :hours as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :minutes as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :seconds as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> })</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Create a <a href='../../Toybox/Time/Duration.html'>Duration</a> from a Dictionary of options.
+</p><p>
+This is an alternative to
+<a href='../../Toybox/Time/Duration.html#initialize-instance_function'>Duration.initialize()</a> that allows
+the Duration to be made more easily, using familiar units, which can
+be handy when building a Duration manually.
+</p><p>
+Option values are represented as signed 32-bit integers.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A dictionary of options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:years</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The number of years (max 69)
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:days</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The number of days (max 24855)
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:hours</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The number of hours (max 596523)
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:minutes</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The number of minutes (max 35791394)
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:seconds</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The number of seconds (max 2147483647)
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Create a Duration of one day with Gregorian.duration()</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Time.Gregorian;
+var oneDay = Gregorian.duration({:days =&gt; 1});</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The Duration representing the specified span of time
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/Time/Duration.html#initialize-instance_function">Duration.initialize()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="info-instance_function">
+    <strong>info(moment as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span> or <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>, format as <span class="type"><a href="../../Toybox/Time.html#DateFormat-module">Time.DateFormat</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/Gregorian/Info.html">Gregorian.Info</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get <a href='../../Toybox/Time/Gregorian/Info.html'>Info</a> for a <a href='../../Toybox/Time/Moment.html'>Moment</a>
+in local time.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">moment</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>, <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Moment or LocalMoment object for which to get Info
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">format</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time.html#DateFormat-module">Time.DateFormat</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Time.FORMAT_* type
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Get Info for today in local time (assume CST)</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.Time;
+using Toybox.Time.Gregorian;
+var options = {
+    :year   =&gt; 2003,
+    :month  =&gt; 5, // 3.x devices can also use :month =&gt; Gregorian.MONTH_MAY
+    :day    =&gt; 16,
+    :hour   =&gt; 0
+};
+var date = Gregorian.moment(options);
+var birthday = Gregorian.info(date, Time.FORMAT_MEDIUM);
+System.println(birthday.year);  // 2003
+System.println(birthday.month); // May
+System.println(birthday.day);   // 16
+System.println(birthday.hour);  // 19</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Gregorian/Info.html">Gregorian.Info</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Info for the supplied Moment formatted according to the specified format type in local time.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="localMoment-instance_function">
+    <strong>localMoment(location as <span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span>, moment as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Create a LocalMoment from a Moment and a Location
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">location</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The location to use to determine the time zone offset and daylight saving time rules.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">moment</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The UTC time to find the local time for.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A LocalMoment object for the local time at the given location, or <code>null</code> if an error occurred.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="moment-instance_function">
+    <strong>moment(options as { :year as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :month as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>, :day as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :hour as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :minute as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :second as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> })</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Create a <a href='../../Toybox/Time/Moment.html'>Moment</a> from a Dictionary of options.
+</p>
+
+<pre>
+  Each option value is assumed to be in the UTC time zone.
+
+</pre>
+
+<p>
+Unlike <a href='../../Toybox/Time/Moment.html#initialize-instance_function'>Moment.initialize()</a>, which
+is based on the UNIX epoch, a Moment created with Gregorian.moment()
+is based on <a href='../../Toybox/Time.html#today-instance_function'>today()</a>. The result is determined
+by taking the result of <a href='../../Toybox/Time.html#today-instance_function'>today()</a> and overlaying
+the options provided.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A dictionary of options; values that would not result in a valid date are not allowed
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:year</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The year (1970-2106)
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:month</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The month (1-12) or a Symbol (:january, :february, ...)
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:day</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The day of month (1-31)
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:hour</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The hour (0-23)
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:minute</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The minute (0-59)
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:second</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The second (0-59)
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Create a Moment representing midnight on the first day of the current month.</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Time;
+var oneDay = Gregorian.moment({:day =&gt; 1});</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Moment representing the specified moment in time
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/Time/Moment.html#initialize-instance_function">Moment.initialize()</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC Time</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="utcInfo-instance_function">
+    <strong>utcInfo(moment as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>, format as <span class="type"><a href="../../Toybox/Time.html#DateFormat-module">Time.DateFormat</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/Gregorian/Info.html">Gregorian.Info</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get <a href='../../Toybox/Time/Gregorian/Info.html'>Info</a> for a <a href='../../Toybox/Time/Moment.html'>Moment</a>
+in UTC time.
+</p>
+
+<pre>
+  Info
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">format</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time.html#DateFormat-module">Time.DateFormat</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Time.FORMAT_* type
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Get Info for today in UTC</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.Time;
+using Toybox.Time.Gregorian;
+var options = {
+    :year   =&gt; 2003,
+    :month  =&gt; 5, // 3.x devices can also use :month =&gt; Gregorian.MONTH_MAY
+    :day    =&gt; 16,
+    :hour   =&gt; 0
+};
+var date = Gregorian.moment(options);
+var birthday = Gregorian.utcInfo(date, Time.FORMAT_MEDIUM);
+System.println(birthday.year);  // 2003
+System.println(birthday.month); // May
+System.println(birthday.day);   // 16
+System.println(birthday.hour);  // 0</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Gregorian/Info.html">Gregorian.Info</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Info for the supplied Moment formatted according to the specified format type in UTC time.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC Time</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

@@ -1,0 +1,1763 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Complications </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Complications";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Complications</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Complications module allows apps to both subscribe to and publish complications.
+Complications are exposed via an iterator, or can be queried by identifier. Watch
+faces can register a callback and subscribe to multiple complications. Device apps
+and audio content providers can publish complication information.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ G2</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Complications/Complication.html">Complication</a></span>, <span class="type"><a href="../Toybox/Complications/ComplicationNotFoundException.html">ComplicationNotFoundException</a></span>, <span class="type"><a href="../Toybox/Complications/Id.html">Id</a></span>, <span class="type"><a href="../Toybox/Complications/Iterator.html">Iterator</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="Unit-module" class="">
+    <h3>Unit</h3>
+  </dt>
+  <p>
+Units reported by a complication
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="UNIT_INVALID-const">
+    <td class="enumTableCell">UNIT_INVALID</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="UNIT_DISTANCE-const">
+    <td class="enumTableCell">UNIT_DISTANCE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Complication is a distance; value is in meters
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="UNIT_ELEVATION-const">
+    <td class="enumTableCell">UNIT_ELEVATION</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Complication is a elevation; value is in meters
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="UNIT_HEIGHT-const">
+    <td class="enumTableCell">UNIT_HEIGHT</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Complication is a height; value is in meters
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="UNIT_SPEED-const">
+    <td class="enumTableCell">UNIT_SPEED</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Complication is a speed; value is in meters/second
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="UNIT_TEMPERATURE-const">
+    <td class="enumTableCell">UNIT_TEMPERATURE</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Complication is a temperature; value is in degrees Celsius
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="UNIT_WEIGHT-const">
+    <td class="enumTableCell">UNIT_WEIGHT</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Complication is a weight; value is in grams
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="Type-module" class="">
+    <h3>Type</h3>
+  </dt>
+  <p>
+System build-in complication type
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="COMPLICATION_TYPE_INVALID-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_INVALID</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Invalid build-in complication type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_BATTERY-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_BATTERY</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number percent 0 to 100 representing battery charge or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_STEPS-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_STEPS</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number of steps for the current day, not available in wheelchair mode
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_CALORIES-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_CALORIES</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number of calories burned for the current day
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_FLOORS_CLIMBED-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_FLOORS_CLIMBED</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number of floors climbed, not available in wheelchair mode
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_INTENSITY_MINUTES-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_INTENSITY_MINUTES</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number of intensity minutes that resets weekly
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_DATE-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_DATE</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a String with the day of the month and the month e.g., 28 Mar
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_WEEKDAY_MONTHDAY-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_WEEKDAY_MONTHDAY</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a String with the day of the week and the day of the month e.g., Mon 28
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_CURRENT_WEATHER-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_CURRENT_WEATHER</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a <a href='../Toybox/Weather.html#CONDITION_CLEAR-const'>Weather.CONDITION_*</a> for the current weather
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_FORECAST_WEATHER_1DAY-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_FORECAST_WEATHER_1DAY</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a <a href='../Toybox/Weather.html#CONDITION_CLEAR-const'>Weather.CONDITION_*</a> for the forecast weather one day in the future
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_FORECAST_WEATHER_2DAY-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_FORECAST_WEATHER_2DAY</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a <a href='../Toybox/Weather.html#CONDITION_CLEAR-const'>Weather.CONDITION_*</a> for the forecast weather two days in the future
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_FORECAST_WEATHER_3DAY-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_FORECAST_WEATHER_3DAY</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a <a href='../Toybox/Weather.html#CONDITION_CLEAR-const'>Weather.CONDITION_*</a> for the forecast weather three days in the future
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_CALENDAR_EVENTS-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_CALENDAR_EVENTS</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a String with the time of your next calendar event or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_SUNRISE-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_SUNRISE</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number representing seconds since midnight local time of the sunrise or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_SUNSET-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_SUNSET</td>
+      <td class="enumTableCell">14</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number representing seconds since midnight local time of the sunset or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_ALTITUDE-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_ALTITUDE</td>
+      <td class="enumTableCell">15</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Float of the current altitude in meters or <code>null</code>. Prior to ConnectIQ API version 5.1.0, the value was a Number.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_SEA_LEVEL_PRESSURE-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_SEA_LEVEL_PRESSURE</td>
+      <td class="enumTableCell">16</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Float in pascals of the current pressure or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_NOTIFICATION_COUNT-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_NOTIFICATION_COUNT</td>
+      <td class="enumTableCell">17</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number of notifications or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_HEART_RATE-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_HEART_RATE</td>
+      <td class="enumTableCell">18</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number in beats per minute or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_WEEKLY_RUN_DISTANCE-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_WEEKLY_RUN_DISTANCE</td>
+      <td class="enumTableCell">19</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Float of your weekly run distance in meters
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_WEEKLY_BIKE_DISTANCE-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_WEEKLY_BIKE_DISTANCE</td>
+      <td class="enumTableCell">20</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Float of your weekly bike distance in meters
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_RECOVERY_TIME-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_RECOVERY_TIME</td>
+      <td class="enumTableCell">21</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Number of minutes remaining in your recovery time
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_STRESS-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_STRESS</td>
+      <td class="enumTableCell">22</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Number representing your current stress level or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_BODY_BATTERY-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_BODY_BATTERY</td>
+      <td class="enumTableCell">23</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Number representing your current body battery or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_VO2MAX_RUN-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_VO2MAX_RUN</td>
+      <td class="enumTableCell">24</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Number representing your running VO2 max or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_VO2MAX_BIKE-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_VO2MAX_BIKE</td>
+      <td class="enumTableCell">25</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Number representing your cycling VO2 max or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_TRAINING_STATUS-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_TRAINING_STATUS</td>
+      <td class="enumTableCell">26</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a String representing your training status
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_RACE_PREDICTOR_5K-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_RACE_PREDICTOR_5K</td>
+      <td class="enumTableCell">27</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Number representing your predicted 5K time in seconds
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_RACE_PREDICTOR_10K-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_RACE_PREDICTOR_10K</td>
+      <td class="enumTableCell">28</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Number representing your predicted 10k time in seconds
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_RACE_PREDICTOR_HALF_MARATHON-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_RACE_PREDICTOR_HALF_MARATHON</td>
+      <td class="enumTableCell">29</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Number representing your predicted half marathon time in seconds
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_RACE_PREDICTOR_MARATHON-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_RACE_PREDICTOR_MARATHON</td>
+      <td class="enumTableCell">30</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Number representing your predicted your marathon time in seconds
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_RACE_PACE_PREDICTOR_5K-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_RACE_PACE_PREDICTOR_5K</td>
+      <td class="enumTableCell">31</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Float representing your 5k pace in meters/second
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_RACE_PACE_PREDICTOR_10K-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_RACE_PACE_PREDICTOR_10K</td>
+      <td class="enumTableCell">32</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Float representing your 10k pace in meters/second
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_RACE_PACE_PREDICTOR_HALF_MARATHON-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_RACE_PACE_PREDICTOR_HALF_MARATHON</td>
+      <td class="enumTableCell">33</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Float representing your half marathon pace in meters/second
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_RACE_PACE_PREDICTOR_MARATHON-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_RACE_PACE_PREDICTOR_MARATHON</td>
+      <td class="enumTableCell">34</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Float representing your marathon pace in meters/second
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_PULSE_OX-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_PULSE_OX</td>
+      <td class="enumTableCell">35</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number as a percent from 0 to 100 representing your blood oxygen or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_RESPIRATION_RATE-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_RESPIRATION_RATE</td>
+      <td class="enumTableCell">36</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number representing your breaths per minute or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_SOLAR_INPUT-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_SOLAR_INPUT</td>
+      <td class="enumTableCell">37</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number representing percent between 0 to 100 of solar charge or <code>null</code>
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_CURRENT_TEMPERATURE-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_CURRENT_TEMPERATURE</td>
+      <td class="enumTableCell">38</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a Float representing temperature in degrees Celsius or <code>null</code>. Prior to ConnectIQ API version 5.0.0, the value was a Number.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_HIGH_LOW_TEMPERATURE-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_HIGH_LOW_TEMPERATURE</td>
+      <td class="enumTableCell">39</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a String providing the high and low temperature values in a format similar to "H &lt;high&gt; / L &lt;low&gt;"
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="COMPLICATION_TYPE_WHEELCHAIR_PUSHES-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_WHEELCHAIR_PUSHES</td>
+      <td class="enumTableCell">40</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a non-negative Number of pushes for the current day, only available in wheelchair mode
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="COMPLICATION_TYPE_LAST_GOLF_ROUND_SCORE-const">
+    <td class="enumTableCell">COMPLICATION_TYPE_LAST_GOLF_ROUND_SCORE</td>
+      <td class="enumTableCell">41</td>
+      <td class="enumTableCell"><p>
+API Level 5.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Value is a String in the format "&lt;LastRoundTotalScore&gt;(&lt;Offset&gt;)" where Offset is "E" for even-par, a negative value for under par, or a positive value for over par
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+<h2>Typedef Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#ComplicationChangedCallback-named_type" title="ComplicationChangedCallback (Named Type)"><strong>ComplicationChangedCallback</strong></a> as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(id as <span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>) as <b>Void</b>
+    </span>
+
+
+
+    <span class="summary_desc">
+        <div class="inline">
+            <p>
+Callback for subscribers to be notified of complication updates.
+</p>
+
+
+        </div>
+    </span>
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Data-named_type" title="Data (Named Type)"><strong>Data</strong></a> as { :shortLabel as <span class="type"><a href="../Toybox/Complications.html#Label-named_type">Complications.Label</a></span>, :value as <span class="type"><a href="../Toybox/Complications.html#Value-named_type">Complications.Value</a></span>, :unit as <span class="type"><a href="../Toybox/Complications.html#Unit-module">Complications.Unit</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, :ranges as <span class="type"><a href="../Toybox/Complications.html#Ranges-named_type">Complications.Ranges</a></span> }
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Icon-named_type" title="Icon (Named Type)"><strong>Icon</strong></a> as <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Label-named_type" title="Label (Named Type)"><strong>Label</strong></a> as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#RangeValue-named_type" title="RangeValue (Named Type)"><strong>RangeValue</strong></a> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span> or <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span> or <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Ranges-named_type" title="Ranges (Named Type)"><strong>Ranges</strong></a> as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Complications.html#RangeValue-named_type">Complications.RangeValue</a></span>&gt;
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Value-named_type" title="Value (Named Type)"><strong>Value</strong></a> as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Complications.html#RangeValue-named_type">Complications.RangeValue</a></span>
+    </span>
+
+
+
+</li>
+</ul>
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#exitTo-instance_function" title="exitTo (Instance Function)"><strong>exitTo</strong></a>(id as <span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Launches the app associated with the complication.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getComplication-instance_function" title="getComplication (Instance Function)"><strong>getComplication</strong></a>(id as <span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>)    as <span class="type"><a href="../Toybox/Complications/Complication.html">Complications.Complication</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Given a complication Id, get the complication.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getComplications-instance_function" title="getComplications (Instance Function)"><strong>getComplications</strong></a>()    as <span class="type"><a href="../Toybox/Complications/Iterator.html">Complications.Iterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Provide an iterator over complication id that we have access to.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#registerComplicationChangeCallback-instance_function" title="registerComplicationChangeCallback (Instance Function)"><strong>registerComplicationChangeCallback</strong></a>(callback as <span class="type"><a href="../Toybox/Complications.html#ComplicationChangedCallback-named_type">Complications.ComplicationChangedCallback</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Register callback for notifications of complication updates.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#subscribeToUpdates-instance_function" title="subscribeToUpdates (Instance Function)"><strong>subscribeToUpdates</strong></a>(id as <span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>)    as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Subscribes to complication.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#unsubscribeFromAllUpdates-instance_function" title="unsubscribeFromAllUpdates (Instance Function)"><strong>unsubscribeFromAllUpdates</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Unsubscribes from all subscribed complications.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#unsubscribeFromUpdates-instance_function" title="unsubscribeFromUpdates (Instance Function)"><strong>unsubscribeFromUpdates</strong></a>(id as <span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Unsubscribes from complication.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#updateComplication-instance_function" title="updateComplication (Instance Function)"><strong>updateComplication</strong></a>(index as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, data as <span class="type"><a href="../Toybox/Complications.html#Data-named_type">Complications.Data</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Update the complication data Values not specified in `data` will not be updated from the last update or what is specified in the resource definition.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="typedef_details" class="attr_details">
+    <h2>Typedef Details</h2>
+    <div class="details">
+<h3 class="signature" id="ComplicationChangedCallback-named_type">
+
+<strong>ComplicationChangedCallback</strong> as <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(id as <span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>) as <b>Void</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Callback for subscribers to be notified of complication updates
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="Data-named_type">
+
+<strong>Data</strong> as { :shortLabel as <span class="type"><a href="../Toybox/Complications.html#Label-named_type">Complications.Label</a></span>, :value as <span class="type"><a href="../Toybox/Complications.html#Value-named_type">Complications.Value</a></span>, :unit as <span class="type"><a href="../Toybox/Complications.html#Unit-module">Complications.Unit</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, :ranges as <span class="type"><a href="../Toybox/Complications.html#Ranges-named_type">Complications.Ranges</a></span> }
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="Icon-named_type">
+
+<strong>Icon</strong> as <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="Label-named_type">
+
+<strong>Label</strong> as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="RangeValue-named_type">
+
+<strong>RangeValue</strong> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span> or <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span> or <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="Ranges-named_type">
+
+<strong>Ranges</strong> as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Complications.html#RangeValue-named_type">Complications.RangeValue</a></span>&gt;
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="Value-named_type">
+
+<strong>Value</strong> as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Complications.html#RangeValue-named_type">Complications.RangeValue</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+ </div>
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="exitTo-instance_function">
+    <strong>exitTo(id as <span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Launches the app associated with the complication
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">id</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The complication Id to launch
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Descent™ G2</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/System.html#exitTo-instance_function">Toybox.System.exitTo</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if complication id is not a from a valid app
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getComplication-instance_function">
+    <strong>getComplication(id as <span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Complications/Complication.html">Complications.Complication</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Given a complication Id, get the complication
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">id</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Complication Id to fetch
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Complications/Complication.html">Complications.Complication</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Complication
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Complications/ComplicationNotFoundException.html">Complications.ComplicationNotFoundException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the given complication is not found.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getComplications-instance_function">
+    <strong>getComplications()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Complications/Iterator.html">Complications.Iterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Provide an iterator over complication id that we have access to
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Complications/Iterator.html">Complications.Iterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Iterator instance
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="registerComplicationChangeCallback-instance_function">
+    <strong>registerComplicationChangeCallback(callback as <span class="type"><a href="../Toybox/Complications.html#ComplicationChangedCallback-named_type">Complications.ComplicationChangedCallback</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Register callback for notifications of complication updates
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">callback</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Complications.html#ComplicationChangedCallback-named_type">Complications.ComplicationChangedCallback</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Callback to be invoked when complication is changed or becomes unavailable.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="subscribeToUpdates-instance_function">
+    <strong>subscribeToUpdates(id as <span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Subscribes to complication. Information is sent to registered ComplicationChangedCallback method.
+Make sure you have registered your change callback.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if subscribed successfully, <code>false</code> if given complication could not be subscribed to
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Complications.html#registerComplicationChangeCallback-instance_function">Toybox.Complications.registerComplicationChangeCallback</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/OperationNotAllowedException.html">Lang.OperationNotAllowedException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if too many active subscriptions
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/Complications/ComplicationNotFoundException.html">Complications.ComplicationNotFoundException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the given complication is not found.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="unsubscribeFromAllUpdates-instance_function">
+    <strong>unsubscribeFromAllUpdates()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Unsubscribes from all subscribed complications
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="unsubscribeFromUpdates-instance_function">
+    <strong>unsubscribeFromUpdates(id as <span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Unsubscribes from complication
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">id</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Complications/Id.html">Complications.Id</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Complication Td to unsubscribe from
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="updateComplication-instance_function">
+    <strong>updateComplication(index as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, data as <span class="type"><a href="../Toybox/Complications.html#Data-named_type">Complications.Data</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Update the complication data
+Values not specified in `data` will not be updated from the last update or what
+is specified in the resource definition.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">index</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Application complication to be updated
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">data</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Complications.html#Data-named_type">Complications.Data</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Updated values for the complication
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/OperationNotAllowedException.html">Lang.OperationNotAllowedException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the id of the complication is not associated with this application
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

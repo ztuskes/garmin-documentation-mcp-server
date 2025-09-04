@@ -1,0 +1,1096 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.WatchUi.InputDelegate </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.WatchUi.InputDelegate";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.WatchUi.InputDelegate</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/InputDelegate.html">Toybox.WatchUi.InputDelegate</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+InputDelegate handles basic input events.
+</p><p>
+There are four types of basic inputs InputDelegate can handle:
+</p>
+
+<ul>
+<li>
+<p>
+Key, represented by <a href='../../Toybox/WatchUi/KeyEvent.html'>KeyEvent</a>
+</p>
+
+</li>
+<li>
+<p>
+Touch, represented by <a href='../../Toybox/WatchUi/ClickEvent.html'>ClickEvent</a>
+</p>
+
+</li>
+<li>
+<p>
+Swipe, represented by <a href='../../Toybox/WatchUi/SwipeEvent.html'>SwipeEvent</a>
+</p>
+
+</li>
+<li>
+<p>
+Selectable, represented by <a href='../../Toybox/WatchUi/SelectableEvent.html'>SelectableEvent</a>
+</p>
+
+</li>
+</ul>
+<p>
+This class is the base class for
+<a href='../../Toybox/WatchUi/BehaviorDelegate.html'>BehaviorDelegate</a>, which goes beyond
+simple key and screen-based input.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/BehaviorDelegate.html">Toybox.WatchUi.BehaviorDelegate</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.WatchUi;
+
+class MyInputDelegate extends WatchUi.InputDelegate {
+    function onKey(keyEvent) {
+        System.println(keyEvent.getKey());         // e.g. KEY_MENU = 7
+        return true;
+    }
+
+    function onTap(clickEvent) {
+        System.println(clickEvent.getType());      // e.g. CLICK_TYPE_TAP = 0
+        return true;
+    }
+
+    function onSwipe(swipeEvent) {
+        System.println(swipeEvent.getDirection()); // e.g. SWIPE_DOWN = 2
+        return true;
+    }
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch Face</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+
+
+</div>
+
+  <h2>Direct Known Subclasses</h2>
+  <p class="sub_classes">
+    <span class="type"><a href="../../Toybox/WatchUi/BehaviorDelegate.html">WatchUi.BehaviorDelegate</a></span>
+  </p>
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onDrag-instance_function" title="onDrag (Instance Function)"><strong>onDrag</strong></a>(dragEvent as <span class="type"><a href="../../Toybox/WatchUi/DragEvent.html">WatchUi.DragEvent</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A touch screen drag event has occurred.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onFlick-instance_function" title="onFlick (Instance Function)"><strong>onFlick</strong></a>(flickEvent as <span class="type"><a href="../../Toybox/WatchUi/FlickEvent.html">WatchUi.FlickEvent</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A touch screen flick event has occurred.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onHold-instance_function" title="onHold (Instance Function)"><strong>onHold</strong></a>(clickEvent as <span class="type"><a href="../../Toybox/WatchUi/ClickEvent.html">WatchUi.ClickEvent</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A touch screen hold event has occurred.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onKey-instance_function" title="onKey (Instance Function)"><strong>onKey</strong></a>(keyEvent as <span class="type"><a href="../../Toybox/WatchUi/KeyEvent.html">WatchUi.KeyEvent</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A physical button has been pressed and released.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onKeyPressed-instance_function" title="onKeyPressed (Instance Function)"><strong>onKeyPressed</strong></a>(keyEvent as <span class="type"><a href="../../Toybox/WatchUi/KeyEvent.html">WatchUi.KeyEvent</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A physical button has been pressed down.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onKeyReleased-instance_function" title="onKeyReleased (Instance Function)"><strong>onKeyReleased</strong></a>(keyEvent as <span class="type"><a href="../../Toybox/WatchUi/KeyEvent.html">WatchUi.KeyEvent</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A physical button has been released.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onRelease-instance_function" title="onRelease (Instance Function)"><strong>onRelease</strong></a>(clickEvent as <span class="type"><a href="../../Toybox/WatchUi/ClickEvent.html">WatchUi.ClickEvent</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A touch screen release event has occurred.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onSelectable-instance_function" title="onSelectable (Instance Function)"><strong>onSelectable</strong></a>(selectableEvent as <span class="type"><a href="../../Toybox/WatchUi/SelectableEvent.html">WatchUi.SelectableEvent</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The state of a <a href='../../Toybox/WatchUi/Selectable.html'>Selectable</a> has changed.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onSwipe-instance_function" title="onSwipe (Instance Function)"><strong>onSwipe</strong></a>(swipeEvent as <span class="type"><a href="../../Toybox/WatchUi/SwipeEvent.html">WatchUi.SwipeEvent</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A touch screen swipe event has occurred.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onTap-instance_function" title="onTap (Instance Function)"><strong>onTap</strong></a>(clickEvent as <span class="type"><a href="../../Toybox/WatchUi/ClickEvent.html">WatchUi.ClickEvent</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A screen tap event has occurred.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="onDrag-instance_function">
+    <strong>onDrag(dragEvent as <span class="type"><a href="../../Toybox/WatchUi/DragEvent.html">WatchUi.DragEvent</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A touch screen drag event has occurred.
+</p><p>
+This is sent when the touch screen is dragged.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">dragEvent</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/DragEvent.html">WatchUi.DragEvent</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The drag event that has occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/DragEvent.html">Toybox.WatchUi.DragEvent</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onFlick-instance_function">
+    <strong>onFlick(flickEvent as <span class="type"><a href="../../Toybox/WatchUi/FlickEvent.html">WatchUi.FlickEvent</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A touch screen flick event has occurred.
+</p><p>
+This is sent when the touch screen is flicked.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">flickEvent</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/FlickEvent.html">WatchUi.FlickEvent</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The flick event that has occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G2</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/FlickEvent.html">Toybox.WatchUi.FlickEvent</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onHold-instance_function">
+    <strong>onHold(clickEvent as <span class="type"><a href="../../Toybox/WatchUi/ClickEvent.html">WatchUi.ClickEvent</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A touch screen hold event has occurred.
+</p><p>
+This is sent when the touch screen is touched and not released.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">clickEvent</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/ClickEvent.html">WatchUi.ClickEvent</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The click event that has occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/ClickEvent.html">Toybox.WatchUi.ClickEvent</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onKey-instance_function">
+    <strong>onKey(keyEvent as <span class="type"><a href="../../Toybox/WatchUi/KeyEvent.html">WatchUi.KeyEvent</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A physical button has been pressed and released.
+</p><p>
+To find out which key was pressed, use
+<a href='../../Toybox/WatchUi/KeyEvent.html#getKey-instance_function'>KeyEvent.getKey()</a> to get the button's
+<a href='../../Toybox/WatchUi.html#KEY_POWER-const'>WatchUi.KEY_*</a> enum value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">keyEvent</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/KeyEvent.html">WatchUi.KeyEvent</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The key event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/KeyEvent.html">Toybox.WatchUi.KeyEvent</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onKeyPressed-instance_function">
+    <strong>onKeyPressed(keyEvent as <span class="type"><a href="../../Toybox/WatchUi/KeyEvent.html">WatchUi.KeyEvent</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A physical button has been pressed down.
+</p><p>
+To find out which key was pressed, use
+<a href='../../Toybox/WatchUi/KeyEvent.html#getKey-instance_function'>KeyEvent.getKey()</a> to get the button's
+<a href='../../Toybox/WatchUi.html#KEY_POWER-const'>WatchUi.KEY_*</a> enum value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">keyEvent</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/KeyEvent.html">WatchUi.KeyEvent</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The key event that occurred.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/KeyEvent.html">Toybox.WatchUi.KeyEvent</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.1.2
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onKeyReleased-instance_function">
+    <strong>onKeyReleased(keyEvent as <span class="type"><a href="../../Toybox/WatchUi/KeyEvent.html">WatchUi.KeyEvent</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A physical button has been released.
+</p><p>
+To find out which key was pressed, use
+<a href='../../Toybox/WatchUi/KeyEvent.html#getKey-instance_function'>KeyEvent.getKey()</a> to get the button's
+<a href='../../Toybox/WatchUi.html#KEY_POWER-const'>WatchUi.KEY_*</a> enum value.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">keyEvent</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/KeyEvent.html">WatchUi.KeyEvent</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The key event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/KeyEvent.html">Toybox.WatchUi.KeyEvent</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.1.2
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onRelease-instance_function">
+    <strong>onRelease(clickEvent as <span class="type"><a href="../../Toybox/WatchUi/ClickEvent.html">WatchUi.ClickEvent</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A touch screen release event has occurred.
+</p><p>
+This is only sent after an <a href='../../Toybox/WatchUi/InputDelegate.html#onHold-instance_function'>onHold()</a>
+event, once the hold on the touch screen is released.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">clickEvent</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/ClickEvent.html">WatchUi.ClickEvent</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The click event that has occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/ClickEvent.html">Toybox.WatchUi.ClickEvent</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onSelectable-instance_function">
+    <strong>onSelectable(selectableEvent as <span class="type"><a href="../../Toybox/WatchUi/SelectableEvent.html">WatchUi.SelectableEvent</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The state of a <a href='../../Toybox/WatchUi/Selectable.html'>Selectable</a> has changed.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">selectableEvent</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/SelectableEvent.html">WatchUi.SelectableEvent</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The selectable event containing the information about the Selectable whose state has changed
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Selectable.html">Toybox.WatchUi.Selectable</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/SelectableEvent.html">Toybox.WatchUi.SelectableEvent</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onSwipe-instance_function">
+    <strong>onSwipe(swipeEvent as <span class="type"><a href="../../Toybox/WatchUi/SwipeEvent.html">WatchUi.SwipeEvent</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A touch screen swipe event has occurred.
+</p><p>
+This is sent when the touch screen is swiped.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">swipeEvent</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/SwipeEvent.html">WatchUi.SwipeEvent</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The swipe event that has occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/SwipeEvent.html">Toybox.WatchUi.SwipeEvent</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onTap-instance_function">
+    <strong>onTap(clickEvent as <span class="type"><a href="../../Toybox/WatchUi/ClickEvent.html">WatchUi.ClickEvent</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A screen tap event has occurred.
+</p><p>
+This is sent when the touch screen is tapped (a quick touch and release).
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">clickEvent</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/ClickEvent.html">WatchUi.ClickEvent</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The click event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if handled, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/ClickEvent.html">Toybox.WatchUi.ClickEvent</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

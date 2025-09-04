@@ -1,0 +1,295 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Timer.Timer </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Timer.Timer";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Timer.Timer</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Timer/Timer.html">Toybox.Timer.Timer</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A Timer object will invoke a callback function after a specified number
+of milliseconds.
+</p><p>
+There are two types of timers: one-shot or repeating. A one-shot
+Timer will only run once after the Timer expires, while a repeating
+Timer will invoke the callback function every n milliseconds until
+stop() is called. If a repeating Timer fails to run before its next
+execution time, then any missed executions will be skipped.
+</p><p>
+The number of available timers (default 3) and the minimum time value
+(default 50 ms) depends on the host system. An error will occur if too
+many timers are set.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Create a counter that increments by one each second</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Timer;
+var myCount =  0;
+
+function timerCallback() {
+    myCount += 1;
+    Ui.requestUpdate();
+}
+
+function onLayout(dc) {
+    var myTimer = new Timer.Timer();
+    myTimer.start(method(:timerCallback), 1000, true);
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#start-instance_function" title="start (Instance Function)"><strong>start</strong></a>(callback as <span class="type"><a href="../../Toybox/Lang/Method.html">Lang.Method</a></span>() as <b>Void</b>, time as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, repeat as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Start the Timer.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#stop-instance_function" title="stop (Instance Function)"><strong>stop</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Stops the Timer from running.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="start-instance_function">
+    <strong>start(callback as <span class="type"><a href="../../Toybox/Lang/Method.html">Lang.Method</a></span>() as <b>Void</b>, time as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, repeat as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Start the Timer.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Will cause an app crash if called from a watch face app while in low power mode
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">callback</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A function to call after the Timer completes
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">time</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The number of milliseconds to wait before invoking callback
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">repeat</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Set to <code>true</code> to have the Timer repeat until stop() is called
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="stop-instance_function">
+    <strong>stop()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Stops the Timer from running.
+</p><p>
+This only needs to be called for repeating timers. A Timer can be
+started again by calling start().
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

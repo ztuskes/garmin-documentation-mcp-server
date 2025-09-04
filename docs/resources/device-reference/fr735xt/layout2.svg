@@ -1,0 +1,12 @@
+<svg width="215" height="180" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="fr735xt-3fields-2-mask">
+      <rect width="100%" height="100%" fill="black"/>
+       <path d="M 86.0,0 L 129.0,0 Q 215,0 215,90.0 Q 215,180 129.0,180 L 86.0,180 Q 0,180 0,90.0 Q 0,0 86.0,0 Z" style="fill:white"/>
+    </mask>
+  </defs>
+  <rect x="0" y="0" width="215" height="55" mask="url(#fr735xt-3fields-2-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="57" width="215" height="66" mask="url(#fr735xt-3fields-2-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="125" width="215" height="55" mask="url(#fr735xt-3fields-2-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+       <path d="M 86.0,0 L 129.0,0 Q 215,0 215,90.0 Q 215,180 129.0,180 L 86.0,180 Q 0,180 0,90.0 Q 0,0 86.0,0 Z" style="stroke-width:1;stroke:rgb(0,0,0);fill:none"/>
+</svg>

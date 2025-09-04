@@ -1,0 +1,807 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Lang.Double </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Lang.Double";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Lang.Double</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Double.html">Toybox.Lang.Double</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Double represents a 64-bit floating point number.
+</p><p>
+To use a double in Monkey C add 'd' to the end of the number.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>var e = 2.718281828459045d;</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#abs-instance_function" title="abs (Instance Function)"><strong>abs</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the absolute value of a Double.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#compareTo-instance_function" title="compareTo (Instance Function)"><strong>compareTo</strong></a>(other as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Compare the numeric value of self to some other numeric value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#equals-instance_function" title="equals (Instance Function)"><strong>equals</strong></a>(other as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Test if an Object instance is equal to another instance of an Object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#format-instance_function" title="format (Instance Function)"><strong>format</strong></a>(format as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>)    as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Format a Double using a formatting String.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toDouble-instance_function" title="toDouble (Instance Function)"><strong>toDouble</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert a Double to a Double.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toFloat-instance_function" title="toFloat (Instance Function)"><strong>toFloat</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert a Double to a Float.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toLong-instance_function" title="toLong (Instance Function)"><strong>toLong</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Long.html">Lang.Long</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert a Double to a Long.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toNumber-instance_function" title="toNumber (Instance Function)"><strong>toNumber</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert a Double to a Number.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toString-instance_function" title="toString (Instance Function)"><strong>toString</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert a Double to a String.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="abs-instance_function">
+    <strong>abs()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the absolute value of a Double.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The absolute value of the Double
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="compareTo-instance_function">
+    <strong>compareTo(other as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Compare the numeric value of self to some other numeric value. NaN is
+</p>
+
+<pre>
+  considered greater than all numbers and equal to itself.
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">other</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The right hand side of a comparison.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A negative value if self is less than other, zero if the objects are equivalent, and a positive value if self is greater than other.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if other is not of type <a href='../../Toybox/Lang.html#Numeric-named_type'>Numeric</a>, <a href='../../Toybox/Lang/Boolean.html'>Boolean</a>, or <a href='../../Toybox/Lang/Char.html'>Char</a>.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="equals-instance_function">
+    <strong>equals(other as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Test if an Object instance is equal to another instance of an Object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">other</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Object to test against
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if the Objects are equal, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="format-instance_function">
+    <strong>format(format as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Format a Double using a formatting String.
+</p><p>
+The formatting string is similar to that available in <code>printf</code> from the
+C stdio library, though the <code>length</code> option is not available:
+</p>
+
+<pre>
+    "%[flags][width][.precision]specifier"
+</pre>
+
+<dl><dt>specifiers</dt><dd>
+<ul>
+<li>
+<p>
+<strong>d</strong> or <strong>i</strong> - signed decimal integer
+</p>
+
+</li>
+<li>
+<p>
+<strong>e</strong> - scientific notation (mantissa/exponent) using 'e' character
+</p>
+
+</li>
+<li>
+<p>
+<strong>E</strong> - scientific notation (mantissa/exponent) using 'E' character
+</p>
+
+</li>
+<li>
+<p>
+<strong>f</strong> - decimal floating point
+</p>
+
+</li>
+<li>
+<p>
+<strong>o</strong> - signed octal
+</p>
+
+</li>
+<li>
+<p>
+<strong>u</strong> - unsigned decimal integer
+</p>
+
+</li>
+<li>
+<p>
+<strong>x</strong> - unsigned hexadecimal integer
+</p>
+
+</li>
+<li>
+<p>
+<strong>X</strong> - unsigned hexadecimal integer (capital letters)
+</p>
+
+</li>
+</ul>
+</dl></dd>
+<dl><dt>flags</dt><dd>
+<ul>
+<li>
+<p>
++ - Prepends the result with a plus or minus sign ('+' or '-'), including positive numbers. By default, only negative numbers are preceded with a '-' sign.
+</p>
+
+</li>
+<li>
+<p>
+<strong>0</strong> - Left-pads the number with zeros (0) instead of spaces, where padding is specified (see width sub-specifier).
+</p>
+
+</li>
+</ul>
+</dl></dd>
+<dl><dt>width</dt><dd>
+<p>
+supports only numbers (* is not supported)
+</p>
+
+</dl></dd>
+<dl><dt>.precision</dt><dd>
+<p>
+supports only numbers (* is not supported)
+</p>
+
+</dl></dd>
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A formatted String
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toDouble-instance_function">
+    <strong>toDouble()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert a Double to a Double.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Double.html">Lang.Double</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Double representation of the Double
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toFloat-instance_function">
+    <strong>toFloat()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert a Double to a Float.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Float representation of the Double
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toLong-instance_function">
+    <strong>toLong()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Long.html">Lang.Long</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert a Double to a Long.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Long.html">Lang.Long</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Long representation of the Double
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toNumber-instance_function">
+    <strong>toNumber()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert a Double to a Number.
+</p><p>
+The Double value will be rounded toward 0 upon conversion. For example,
+6.8 becomes 6 and -5.7 becomes -5.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Number representation of the Double
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toString-instance_function">
+    <strong>toString()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert a Double to a String.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The String representation of the Double
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

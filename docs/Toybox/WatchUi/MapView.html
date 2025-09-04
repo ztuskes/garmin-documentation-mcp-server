@@ -1,0 +1,756 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.WatchUi.MapView </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.WatchUi.MapView";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.WatchUi.MapView</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.WatchUi.View</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/View.html">Toybox.WatchUi.View</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/MapView.html">Toybox.WatchUi.MapView</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A <a href='../../Toybox/WatchUi/View.html'>View</a> for rendering a map on the screen.
+</p><p>
+The map is rendered statically and focused on the bounding box
+and/or a MapMarker point or MapPolyline drawn on the map. The map can be
+rendered in <a href='../../Toybox/WatchUi.html'>MAP_MODE_BROWSE</a> or
+<a href='../../Toybox/WatchUi.html'>MAP_MODE_PREVIEW</a> mode.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch Face</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 520 Plus</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rino® 7 Series</li>
+  </ul>
+
+
+</div>
+
+  <h2>Direct Known Subclasses</h2>
+  <p class="sub_classes">
+    <span class="type"><a href="../../Toybox/WatchUi/MapTrackView.html">WatchUi.MapTrackView</a></span>
+  </p>
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#clear-instance_function" title="clear (Instance Function)"><strong>clear</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Clear all the objects from the map.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getMapMode-instance_function" title="getMapMode (Instance Function)"><strong>getMapMode</strong></a>()    as <span class="type"><a href="../../Toybox/WatchUi.html#MapMode-module">WatchUi.MapMode</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current mode for the map in this MapView.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>()
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setMapMarker-instance_function" title="setMapMarker (Instance Function)"><strong>setMapMarker</strong></a>(markers as <span class="type"><a href="../../Toybox/WatchUi/MapMarker.html">WatchUi.MapMarker</a></span> or <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/WatchUi/MapMarker.html">WatchUi.MapMarker</a></span>&gt;)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add a <a href='../../Toybox/WatchUi/MapMarker.html'>MapMarker</a> object or an <a href='../../Toybox/Lang/Array.html'>Array</a> of MapMarker objects to be rendered on the map.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setMapMode-instance_function" title="setMapMode (Instance Function)"><strong>setMapMode</strong></a>(mode as <span class="type"><a href="../../Toybox/WatchUi.html#MapMode-module">WatchUi.MapMode</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the mode for the map in this MapView.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setMapVisibleArea-instance_function" title="setMapVisibleArea (Instance Function)"><strong>setMapVisibleArea</strong></a>(topLeft as <span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span>, bottomRight as <span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Select the area of the map to render on the screen with a bounding box.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setPolyline-instance_function" title="setPolyline (Instance Function)"><strong>setPolyline</strong></a>(polyline as <span class="type"><a href="../../Toybox/WatchUi/MapPolyline.html">WatchUi.MapPolyline</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add <a href='../../Toybox/WatchUi/MapPolyline.html'>MapPolyline</a> object to be rendered on the map.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setScreenVisibleArea-instance_function" title="setScreenVisibleArea (Instance Function)"><strong>setScreenVisibleArea</strong></a>(topLeftX as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, topLeftY as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, bottomRightX as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, bottomRightY as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the area on the screen to focus the map.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="clear-instance_function">
+    <strong>clear()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Clear all the objects from the map.
+</p><p>
+Removes all <a href='../../Toybox/WatchUi/MapPolyline.html'>MapPolyline</a> and
+<a href='../../Toybox/WatchUi/MapMarker.html'>MapMarker</a> objects.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getMapMode-instance_function">
+    <strong>getMapMode()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/WatchUi.html#MapMode-module">WatchUi.MapMode</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current mode for the map in this MapView.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/WatchUi.html#MapMode-module">WatchUi.MapMode</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The mode in which the map is rendered on the screen as a <a href='../../Toybox/WatchUi.html'>MAP_MODE_*</a> enum value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize()</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setMapMarker-instance_function">
+    <strong>setMapMarker(markers as <span class="type"><a href="../../Toybox/WatchUi/MapMarker.html">WatchUi.MapMarker</a></span> or <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/WatchUi/MapMarker.html">WatchUi.MapMarker</a></span>&gt;)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add a <a href='../../Toybox/WatchUi/MapMarker.html'>MapMarker</a> object or an
+<a href='../../Toybox/Lang/Array.html'>Array</a> of MapMarker objects to be rendered on
+the map.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">markers</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/MapMarker.html">WatchUi.MapMarker</a></span>, <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A MapMarker object or an Array of Marker objects to be rendered on the map
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the <code>markers</code> param is not a valid MapMarker object or an Array of MapMarker objects
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setMapMode-instance_function">
+    <strong>setMapMode(mode as <span class="type"><a href="../../Toybox/WatchUi.html#MapMode-module">WatchUi.MapMode</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the mode for the map in this MapView.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">mode</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi.html#MapMode-module">WatchUi.MapMode</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The mode in which the map will be rendered on the screen as a <a href='../../Toybox/WatchUi.html'>MAP_MODE_*</a> enum value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setMapVisibleArea-instance_function">
+    <strong>setMapVisibleArea(topLeft as <span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span>, bottomRight as <span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Select the area of the map to render on the screen with a bounding box.
+A redraw of the current underlying map data will occur, so calling this
+function inside of onUpdate() is discouraged as it could lead to map
+flicker.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">topLeft</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The top left point of the visible area of the map
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">bottomRight</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Position/Location.html">Position.Location</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The bottom right point of the visible area of the map
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/MapView.html#setScreenVisibleArea-instance_function">MapView.setScreenVisibleArea()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if <code>topLeft</code> or <code>bottomRight</code> are not a Location objects
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setPolyline-instance_function">
+    <strong>setPolyline(polyline as <span class="type"><a href="../../Toybox/WatchUi/MapPolyline.html">WatchUi.MapPolyline</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add <a href='../../Toybox/WatchUi/MapPolyline.html'>MapPolyline</a> object to be rendered
+on the map.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">polyline</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/MapPolyline.html">WatchUi.MapPolyline</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The polyline to be rendered on the map
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if <code>polyline</code> is is not a valid MapPolyline object
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setScreenVisibleArea-instance_function">
+    <strong>setScreenVisibleArea(topLeftX as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, topLeftY as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, bottomRightX as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, bottomRightY as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the area on the screen to focus the map.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">topLeftX</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The <code>x</code> location of the top-left visible pixel on the screen
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">topLeftY</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The <code>y</code> location of the top-left visible pixel on the screen
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">bottomRightX</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The <code>x</code> location of the bottom-right visible pixel on the screen
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">bottomRightY</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The <code>y</code> location of the bottom-right visible pixel on the screen
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/MapView.html#setMapVisibleArea-instance_function">MapView.setMapVisibleArea()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/InvalidPointException.html">WatchUi.InvalidPointException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if <code>topLeftX</code>, <code>topLeftY</code>, <code>bottomRightX</code>, or <code>bottomRightY</code> are outside the bounds of the device screen
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

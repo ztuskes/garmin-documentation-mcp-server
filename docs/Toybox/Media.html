@@ -1,0 +1,1891 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Media </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Media";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Media</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Media module provides objects and methods for implementing audio content
+provider apps.
+</p><p>
+This includes interfaces and methods for managing downloaded media content
+as well as interfaces used to provide required information to the system
+for playback.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Background</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li>
+  </ul>
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 245 Music</li><li>Forerunner® 255 Music</li><li>Forerunner® 255s Music</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 645 Music</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Media/ActiveContent.html">ActiveContent</a></span>, <span class="type"><a href="../Toybox/Media/AlbumArt.html">AlbumArt</a></span>, <span class="type"><a href="../Toybox/Media/AudioFormat.html">AudioFormat</a></span>, <span class="type"><a href="../Toybox/Media/CacheStatistics.html">CacheStatistics</a></span>, <span class="type"><a href="../Toybox/Media/Content.html">Content</a></span>, <span class="type"><a href="../Toybox/Media/ContentDelegate.html">ContentDelegate</a></span>, <span class="type"><a href="../Toybox/Media/ContentIterator.html">ContentIterator</a></span>, <span class="type"><a href="../Toybox/Media/ContentMetadata.html">ContentMetadata</a></span>, <span class="type"><a href="../Toybox/Media/ContentRef.html">ContentRef</a></span>, <span class="type"><a href="../Toybox/Media/ContentRefIterator.html">ContentRefIterator</a></span>, <span class="type"><a href="../Toybox/Media/CustomButton.html">CustomButton</a></span>, <span class="type"><a href="../Toybox/Media/PlaybackProfile.html">PlaybackProfile</a></span>, <span class="type"><a href="../Toybox/Media/PlayerColors.html">PlayerColors</a></span>, <span class="type"><a href="../Toybox/Media/ProviderIconInfo.html">ProviderIconInfo</a></span>, <span class="type"><a href="../Toybox/Media/SyncDelegate.html">SyncDelegate</a></span>, <span class="type"><a href="../Toybox/Media/SystemButton.html">SystemButton</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="PlaybackPosition-module" class="">
+    <h3>PlaybackPosition</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="PLAYBACK_POSITION_START-const">
+    <td class="enumTableCell">PLAYBACK_POSITION_START</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The playback position when the song has begun to play
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ContentType-module" class="">
+    <h3>ContentType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="CONTENT_TYPE_INVALID-const">
+    <td class="enumTableCell">CONTENT_TYPE_INVALID</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Invalid content type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CONTENT_TYPE_AUDIO-const">
+    <td class="enumTableCell">CONTENT_TYPE_AUDIO</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Content type for Audio
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="Encoding-module" class="">
+    <h3>Encoding</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="ENCODING_INVALID-const">
+    <td class="enumTableCell">ENCODING_INVALID</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Invalid encoding type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="ENCODING_ADTS-const">
+    <td class="enumTableCell">ENCODING_ADTS</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+ADTS audio encoding type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="ENCODING_MP3-const">
+    <td class="enumTableCell">ENCODING_MP3</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+MP3 audio encoding type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="ENCODING_M4A-const">
+    <td class="enumTableCell">ENCODING_M4A</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+M4A audio encoding type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="ENCODING_WAV-const">
+    <td class="enumTableCell">ENCODING_WAV</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+WAV audio encoding type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ImageFormat-module" class="">
+    <h3>ImageFormat</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="IMAGE_FORMAT_INVALID-const">
+    <td class="enumTableCell">IMAGE_FORMAT_INVALID</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Invalid media content image format
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="IMAGE_FORMAT_JPEG-const">
+    <td class="enumTableCell">IMAGE_FORMAT_JPEG</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+JPEG media content image format
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="IMAGE_FORMAT_PNG-const">
+    <td class="enumTableCell">IMAGE_FORMAT_PNG</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+PNG media content image format
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="PlaybackControl-module" class="">
+    <h3>PlaybackControl</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="PLAYBACK_CONTROL_SHUFFLE-const">
+    <td class="enumTableCell">PLAYBACK_CONTROL_SHUFFLE</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The "shuffle" operation is allowed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="PLAYBACK_CONTROL_PREVIOUS-const">
+    <td class="enumTableCell">PLAYBACK_CONTROL_PREVIOUS</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The "previous track" operation is allowed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="PLAYBACK_CONTROL_NEXT-const">
+    <td class="enumTableCell">PLAYBACK_CONTROL_NEXT</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The "next track" operation is allowed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="PLAYBACK_CONTROL_SKIP_FORWARD-const">
+    <td class="enumTableCell">PLAYBACK_CONTROL_SKIP_FORWARD</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The "skip forward x seconds" operation is allowed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="PLAYBACK_CONTROL_SKIP_BACKWARD-const">
+    <td class="enumTableCell">PLAYBACK_CONTROL_SKIP_BACKWARD</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The "skip backward x seconds" operation is allowed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="PLAYBACK_CONTROL_REPEAT-const">
+    <td class="enumTableCell">PLAYBACK_CONTROL_REPEAT</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The "repeat" operation is allowed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="PLAYBACK_CONTROL_RATING-const">
+    <td class="enumTableCell">PLAYBACK_CONTROL_RATING</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The track "rating" operation is allowed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="PLAYBACK_CONTROL_PLAYBACK-const">
+    <td class="enumTableCell">PLAYBACK_CONTROL_PLAYBACK</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The "play/pause" operation is allowed
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="PLAYBACK_CONTROL_VOLUME-const">
+    <td class="enumTableCell">PLAYBACK_CONTROL_VOLUME</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The "volume" button - if not provided it will be added to the end of the playback controls
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="PLAYBACK_CONTROL_SOURCE-const">
+    <td class="enumTableCell">PLAYBACK_CONTROL_SOURCE</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The "source" button - if not provided it will be added to the end of the playback controls
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="PLAYBACK_CONTROL_LIBRARY-const">
+    <td class="enumTableCell">PLAYBACK_CONTROL_LIBRARY</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The "library" button - If provided it will be used for the library button UI.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="SongEvent-module" class="">
+    <h3>SongEvent</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SONG_EVENT_START-const">
+    <td class="enumTableCell">SONG_EVENT_START</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that a song was started from the beginning.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="../Toybox/Media/ContentDelegate.html#onSong-instance_function">ContentDelegate.onSong()</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableEven" id="SONG_EVENT_SKIP_NEXT-const">
+    <td class="enumTableCell">SONG_EVENT_SKIP_NEXT</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that a song was skipped and the next song was requested.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="../Toybox/Media/ContentDelegate.html#onSong-instance_function">ContentDelegate.onSong()</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SONG_EVENT_SKIP_PREVIOUS-const">
+    <td class="enumTableCell">SONG_EVENT_SKIP_PREVIOUS</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that a song was skipped and the previous song was requested.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="../Toybox/Media/ContentDelegate.html#onSong-instance_function">ContentDelegate.onSong()</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableEven" id="SONG_EVENT_PLAYBACK_NOTIFY-const">
+    <td class="enumTableCell">SONG_EVENT_PLAYBACK_NOTIFY</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that a song was played for the duration set in
+<a href='../Toybox/Media/PlaybackProfile.html#playbackNotificationThreshold-var'>PlaybackProfile.playbackNotificationThreshold</a>.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="../Toybox/Media/ContentDelegate.html#onSong-instance_function">ContentDelegate.onSong()</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SONG_EVENT_COMPLETE-const">
+    <td class="enumTableCell">SONG_EVENT_COMPLETE</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that a song was completed.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="../Toybox/Media/ContentDelegate.html#onSong-instance_function">ContentDelegate.onSong()</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableEven" id="SONG_EVENT_STOP-const">
+    <td class="enumTableCell">SONG_EVENT_STOP</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that a song was stopped in the middle of playback.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="../Toybox/Media/ContentDelegate.html#onSong-instance_function">ContentDelegate.onSong()</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SONG_EVENT_PAUSE-const">
+    <td class="enumTableCell">SONG_EVENT_PAUSE</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that a song was paused in the middle of playback.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="../Toybox/Media/ContentDelegate.html#onSong-instance_function">ContentDelegate.onSong()</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableEven" id="SONG_EVENT_RESUME-const">
+    <td class="enumTableCell">SONG_EVENT_RESUME</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that a song was resumed after being paused.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="../Toybox/Media/ContentDelegate.html#onSong-instance_function">ContentDelegate.onSong()</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SONG_EVENT_SKIP_FORWARD-const">
+    <td class="enumTableCell">SONG_EVENT_SKIP_FORWARD</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.4
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that a song was skipped forward by the number of seconds specified in
+<a href='../Toybox/Media/PlaybackProfile.html#skipForwardTimeDelta-var'>PlaybackProfile.skipForwardTimeDelta</a>.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="../Toybox/Media/ContentDelegate.html#onSong-instance_function">ContentDelegate.onSong()</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableEven" id="SONG_EVENT_SKIP_BACKWARD-const">
+    <td class="enumTableCell">SONG_EVENT_SKIP_BACKWARD</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 4.2.4
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Indicates that a song was skipped forward by the number of seconds specified in
+<a href='../Toybox/Media/PlaybackProfile.html#skipBackwardTimeDelta-var'>PlaybackProfile.skipBackwardTimeDelta</a>.
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="../Toybox/Media/ContentDelegate.html#onSong-instance_function">ContentDelegate.onSong()</a>
+  </div>
+  </li></td>
+    </td>
+</tr>
+</table><dt id="RepeatMode-module" class="">
+    <h3>RepeatMode</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="REPEAT_MODE_OFF-const">
+    <td class="enumTableCell">REPEAT_MODE_OFF</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Repeat is off
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="REPEAT_MODE_ONE-const">
+    <td class="enumTableCell">REPEAT_MODE_ONE</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Repeat the current track
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="REPEAT_MODE_ALL-const">
+    <td class="enumTableCell">REPEAT_MODE_ALL</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Repeat all tracks
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ButtonState-module" class="">
+    <h3>ButtonState</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="BUTTON_STATE_DEFAULT-const">
+    <td class="enumTableCell">BUTTON_STATE_DEFAULT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The default state for a button. This is a valid state for all buttons.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_STATE_DISABLED-const">
+    <td class="enumTableCell">BUTTON_STATE_DISABLED</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The button is shown but not selectable. This is a valid state for all buttons.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_STATE_ON-const">
+    <td class="enumTableCell">BUTTON_STATE_ON</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The button is considered "on". This is a valid state for the PLAYBACK_CONTROL_PLAYBACK, PLAYBACK_CONTROL_SHUFFLE, and PLAYBACK_CONTROL_REPEAT buttons.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_STATE_OFF-const">
+    <td class="enumTableCell">BUTTON_STATE_OFF</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The button is considered "off". This is a valid state for the PLAYBACK_CONTROL_PLAYBACK, PLAYBACK_CONTROL_SHUFFLE, and PLAYBACK_CONTROL_REPEAT buttons.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_STATE_ALL-const">
+    <td class="enumTableCell">BUTTON_STATE_ALL</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The button is considered in the "on" and "all" states. This is a valid state the for the PLAYBACK_CONTROL_SHUFFLE (shuffle all) and PLAYBACK_CONTROL_REPEAT (repeat all) buttons.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_STATE_POSITIVE-const">
+    <td class="enumTableCell">BUTTON_STATE_POSITIVE</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The button is considered in the "positive" state. This is a valid state the for the PLAYBACK_CONTROL_RATING button.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="BUTTON_STATE_NEGATIVE-const">
+    <td class="enumTableCell">BUTTON_STATE_NEGATIVE</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The button is considered in the "negative" state. This is a valid state the for the PLAYBACK_CONTROL_RATING button.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_STATE_NEUTRAL-const">
+    <td class="enumTableCell">BUTTON_STATE_NEUTRAL</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The button is considered in the "neutral" state. This is a valid state the for the PLAYBACK_CONTROL_RATING button.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="ButtonImage-module" class="">
+    <h3>ButtonImage</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="BUTTON_IMAGE_ICON-const">
+    <td class="enumTableCell">BUTTON_IMAGE_ICON</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The normal sized button image
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="BUTTON_IMAGE_DETAIL-const">
+    <td class="enumTableCell">BUTTON_IMAGE_DETAIL</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.3
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The larger image for when the icon is highlighted
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#deleteCachedItem-instance_function" title="deleteCachedItem (Instance Function)"><strong>deleteCachedItem</strong></a>(contentRef as <span class="type"><a href="../Toybox/Media/ContentRef.html">Media.ContentRef</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Delete an individual cached media item.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getCacheStatistics-instance_function" title="getCacheStatistics (Instance Function)"><strong>getCacheStatistics</strong></a>()    as <span class="type"><a href="../Toybox/Media/CacheStatistics.html">Media.CacheStatistics</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current size statistics of the media cache.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getCachedContentObj-instance_function" title="getCachedContentObj (Instance Function)"><strong>getCachedContentObj</strong></a>(contentRef as <span class="type"><a href="../Toybox/Media/ContentRef.html">Media.ContentRef</a></span>)    as <span class="type"><a href="../Toybox/Media/Content.html">Media.Content</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a <a href='../Toybox/Media/Content.html'>Content</a> object by ID from what has been persisted on the system.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getContentRefIter-instance_function" title="getContentRefIter (Instance Function)"><strong>getContentRefIter</strong></a>(options as { :contentType as <span class="type"><a href="../Toybox/Media.html#ContentType-module">Media.ContentType</a></span>, :shuffle as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> })    as <span class="type"><a href="../Toybox/Media/ContentRefIterator.html">Media.ContentRefIterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a <a href='../Toybox/Media/ContentRefIterator.html'>ContentRefIterator</a> object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public deprecated">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#notifySyncComplete-instance_function" title="notifySyncComplete (Instance Function)"><strong>notifySyncComplete</strong></a>(errorMessage as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="deprecated note title">deprecated</span>
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Send a system notification to indicate that the sync completed.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public deprecated">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#notifySyncProgress-instance_function" title="notifySyncProgress (Instance Function)"><strong>notifySyncProgress</strong></a>(percentageComplete as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="deprecated note title">deprecated</span>
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Send a system notification to indicate overall sync progress.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#requestPlaybackProfileUpdate-instance_function" title="requestPlaybackProfileUpdate (Instance Function)"><strong>requestPlaybackProfileUpdate</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Request that the media player call <a href='../Toybox/Media/ContentIterator.html#getPlaybackProfile-instance_function'>ContentIterator.getPlaybackProfile()</a>.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#resetContentCache-instance_function" title="resetContentCache (Instance Function)"><strong>resetContentCache</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Delete the cached media content and reset the encryption key for the app.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setAlbumArt-instance_function" title="setAlbumArt (Instance Function)"><strong>setAlbumArt</strong></a>(albumArt as <span class="type"><a href="../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the album art for the currently playing song.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#startPlayback-instance_function" title="startPlayback (Instance Function)"><strong>startPlayback</strong></a>(args as <span class="type"><a href="../Toybox/Application.html#PersistableType-named_type">Application.PersistableType</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Exit the <a href='../Toybox/Application/AudioContentProviderApp.html'>AudioContentProviderApp</a> in its current mode and launch it in playback mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public deprecated">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#startSync-instance_function" title="startSync (Instance Function)"><strong>startSync</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="deprecated note title">deprecated</span>
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Exit the <a href='../Toybox/Application/AudioContentProviderApp.html'>AudioContentProviderApp</a> in its current mode and launch it in sync mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#stopPlayback-instance_function" title="stopPlayback (Instance Function)"><strong>stopPlayback</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Stops playback if it was initiated by the app.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="deleteCachedItem-instance_function">
+    <strong>deleteCachedItem(contentRef as <span class="type"><a href="../Toybox/Media/ContentRef.html">Media.ContentRef</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Delete an individual cached media item.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">contentRef</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Media/ContentRef.html">Media.ContentRef</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The ContentRef for the <a href='../Toybox/Media/Content.html'>Content</a> object to be deleted
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getCacheStatistics-instance_function">
+    <strong>getCacheStatistics()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Media/CacheStatistics.html">Media.CacheStatistics</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current size statistics of the media cache.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Media/CacheStatistics.html">Media.CacheStatistics</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The current CacheStatistics object
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getCachedContentObj-instance_function">
+    <strong>getCachedContentObj(contentRef as <span class="type"><a href="../Toybox/Media/ContentRef.html">Media.ContentRef</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Media/Content.html">Media.Content</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a <a href='../Toybox/Media/Content.html'>Content</a> object by ID from what has been
+persisted on the system.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">contentRef</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Media/ContentRef.html">Media.ContentRef</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The ContentRef object for the desired media <a href='../Toybox/Media/Content.html'>Content</a>
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Media/Content.html">Media.Content</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The desired Content object
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if contentRef parameter is not a valid <a href='../Toybox/Media/ContentRef.html'>ContentRef</a> object Thrown if ID field of provided <a href='../Toybox/Media/ContentRef.html'>ContentRef</a> object is not a string but content type is set to CONTENT_TYPE_AUDIO
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidOptionsException.html">Lang.InvalidOptionsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if provided <a href='../Toybox/Media/ContentRef.html'>ContentRef</a> has an invalid content type
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getContentRefIter-instance_function">
+    <strong>getContentRefIter(options as { :contentType as <span class="type"><a href="../Toybox/Media.html#ContentType-module">Media.ContentType</a></span>, :shuffle as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> })</strong> <span class="type"> as <span class="type"><a href="../Toybox/Media/ContentRefIterator.html">Media.ContentRefIterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a <a href='../Toybox/Media/ContentRefIterator.html'>ContentRefIterator</a> object.
+</p><p>
+The ContentRefIterator is used to iterate over all cached media on the
+system for the calling app.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary of options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:contentType</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Media.html#ContentType-module">Media.ContentType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+One of the <a href='../Toybox/Media.html#CONTENT_TYPE_INVALID-const'>CONTENT_TYPE_*</a> values that indicates the type of cached content.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:shuffle</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<ul>
+<li>
+<p>
+When <code>true</code>, the <a href='../Toybox/Media/ContentRef.html'>ContentRef</a> objects will be returned in a random order
+</p>
+
+</li>
+<li>
+<p>
+When <code>false</code>, the <a href='../Toybox/Media/ContentRef.html'>ContentRef</a> objects will be returned in a consistent order that is system dependent
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Media/ContentRefIterator.html">Media.ContentRefIterator</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidOptionsException.html">Lang.InvalidOptionsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if :contentType value is invalid
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="notifySyncComplete-instance_function">
+    <strong>notifySyncComplete(errorMessage as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This method may be removed after System 9.
+</p>
+
+
+  </div>
+</div>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Send a system notification to indicate that the sync completed.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">errorMessage</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A descriptive error message if a failure occurred. If the sync completes successfully, <code>null</code> should be passed to this method.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Communications.html#notifySyncComplete-instance_function">Communications.notifySyncComplete()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="notifySyncProgress-instance_function">
+    <strong>notifySyncProgress(percentageComplete as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This method may be removed after System 9.
+</p>
+
+
+  </div>
+</div>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Send a system notification to indicate overall sync progress.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">percentageComplete</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An integer from 0 to 100 indicating the completion percentage.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Communications.html#notifySyncProgress-instance_function">Communications.notifySyncProgress()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="requestPlaybackProfileUpdate-instance_function">
+    <strong>requestPlaybackProfileUpdate()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Request that the media player call <a href='../Toybox/Media/ContentIterator.html#getPlaybackProfile-instance_function'>ContentIterator.getPlaybackProfile()</a>
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.3
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="resetContentCache-instance_function">
+    <strong>resetContentCache()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Delete the cached media content and reset the encryption key for the app.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setAlbumArt-instance_function">
+    <strong>setAlbumArt(albumArt as <span class="type"><a href="../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the album art for the currently playing song
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+<a href='../Toybox/Graphics/BitmapReference.html'>BitmapReference</a> is only supported in CIQ 4.0.0 and later
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">albumArt</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span>, <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The album art to display. If <code>null</code> then the system's default album art will be displayed.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.10
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="startPlayback-instance_function">
+    <strong>startPlayback(args as <span class="type"><a href="../Toybox/Application.html#PersistableType-named_type">Application.PersistableType</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Exit the <a href='../Toybox/Application/AudioContentProviderApp.html'>AudioContentProviderApp</a>
+in its current mode and launch it in playback mode.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">args</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A serializable object to pass to <a href='../Toybox/Application/AudioContentProviderApp.html#getContentDelegate-instance_function'>AudioContentProviderApp.getContentDelegate()</a> when the app starts in playback mode.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/SerializationException.html">Lang.SerializationException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown when the given argument cannot be serialized or is too large for serialization.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="startSync-instance_function">
+    <strong>startSync()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This method may be removed after System 9.
+</p>
+
+
+  </div>
+</div>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Exit the <a href='../Toybox/Application/AudioContentProviderApp.html'>AudioContentProviderApp</a>
+in its current mode and launch it in sync mode.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Communications.html#startSync-instance_function">Communications.startSync()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="stopPlayback-instance_function">
+    <strong>stopPlayback()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Stops playback if it was initiated by the app. If playback was not initiated by the app,
+calling stopPlayback() will do nothing.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.8
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

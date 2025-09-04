@@ -1,0 +1,13 @@
+<svg width="205" height="148" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="epix-4fieldsb-5-mask">
+      <rect width="100%" height="100%" fill="black"/>
+      <rect width="100%" height="100%" style="fill:white"/>
+    </mask>
+  </defs>
+  <rect x="0" y="0" width="101" height="74" mask="url(#epix-4fieldsb-5-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="103" y="0" width="102" height="74" mask="url(#epix-4fieldsb-5-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="76" width="101" height="72" mask="url(#epix-4fieldsb-5-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="103" y="76" width="102" height="72" mask="url(#epix-4fieldsb-5-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+      <rect width="100%" height="100%" style="stroke-width:1;stroke:rgb(0,0,0);fill:none"/>
+</svg>

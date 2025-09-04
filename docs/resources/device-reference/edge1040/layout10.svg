@@ -1,0 +1,16 @@
+<svg width="282" height="470" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="edge1040-7fieldsa-10-mask">
+      <rect width="100%" height="100%" fill="black"/>
+      <rect width="100%" height="100%" style="fill:white"/>
+    </mask>
+  </defs>
+  <rect x="0" y="0" width="282" height="92" mask="url(#edge1040-7fieldsa-10-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="94" width="282" height="92" mask="url(#edge1040-7fieldsa-10-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="188" width="282" height="92" mask="url(#edge1040-7fieldsa-10-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="282" width="140" height="92" mask="url(#edge1040-7fieldsa-10-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="376" width="140" height="94" mask="url(#edge1040-7fieldsa-10-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="142" y="376" width="140" height="94" mask="url(#edge1040-7fieldsa-10-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="142" y="282" width="140" height="92" mask="url(#edge1040-7fieldsa-10-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+      <rect width="100%" height="100%" style="stroke-width:1;stroke:rgb(0,0,0);fill:none"/>
+</svg>

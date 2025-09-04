@@ -1,0 +1,471 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Cryptography.KeyAgreement </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Cryptography.KeyAgreement";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Cryptography.KeyAgreement</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Cryptography/KeyAgreement.html">Toybox.Cryptography.KeyAgreement</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A local private key in combination with a public key to generate
+a shared secret.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Create a shared secret using KeyAgreement</p>
+</div></p>
+<pre class="example code">
+<code>// &gt; openssl ec -in key.pem -text -noout
+// read EC key
+// Private-Key: (224 bit)
+// priv:
+//     00:89:01:46:f8:bd:64:ce:75:e0:83:02:d0:fc:e1:
+//     1d:ce:fd:eb:66:f8:81:1d:68:64:49:05:d3:ee
+// pub:
+//     04:1d:ba:39:9a:16:6e:62:0b:56:e3:16:73:f7:38:
+//     b0:d1:b7:2d:40:ca:92:3a:f8:94:26:24:22:e6:6f:
+//     d7:61:db:e8:9b:47:03:33:da:46:0e:6b:36:c9:34:
+//     a6:75:6d:d1:10:9f:c2:d7:c6:07:72:bc
+// ASN1 OID: secp224r1
+// NIST CURVE: P-224
+
+using Toybox.Cryptography;
+using Toybox.System;
+
+const PRIVATE_KEY_SECP224R1 = [
+    // first byte is not part of the key, so it is omitted
+    // 0x00,
+
+    // byte swapped 28 byte (224 bit) word
+    0xee, 0xd3, 0x05, 0x49, 0x64, 0x68, 0x1d, 0x81, 0xf8, 0x66, 0xeb, 0xfd, 0xce, 0x1d,
+    0xe1, 0xfc, 0xd0, 0x02, 0x83, 0xe0, 0x75, 0xce, 0x64, 0xbd, 0xf8, 0x46, 0x01, 0x89,
+]b;
+
+const PUBLIC_KEY_SECP224R1 = [
+    // first byte is not part of the key, so it is omitted
+    // 0x04,
+
+    // byte swapped 28 byte (224 bit) words
+    0xe6, 0x22, 0x24, 0x26, 0x94, 0xf8, 0x3a, 0x92, 0xca, 0x40, 0x2d, 0xb7, 0xd1, 0xb0,
+    0x38, 0xf7, 0x73, 0x16, 0xe3, 0x56, 0x0b, 0x62, 0x6e, 0x16, 0x9a, 0x39, 0xba, 0x1d,
+
+    0xbc, 0x72, 0x07, 0xc6, 0xd7, 0xc2, 0x9f, 0x10, 0xd1, 0x6d, 0x75, 0xa6, 0x34, 0xc9,
+    0x36, 0x6b, 0x0e, 0x46, 0xda, 0x33, 0x03, 0x47, 0x9b, 0xe8, 0xdb, 0x61, 0xd7, 0x6f,
+]b;
+
+// Alice generates a key pair from a private key
+var keyPairAlice = new Cryptography.KeyPair({
+    :algorithm =&gt; Cryptography.KEY_PAIR_ELLIPTIC_CURVE_SECP224R1,
+    :privateKey =&gt; PRIVATE_KEY_SECP224R1
+});
+
+var publicKeyAlice = PUBLIC_KEY_SECP224R1;
+
+// Sanity check Alice's public key matches what we expect
+System.println(keyPairAlice.getPublicKey().equals(publicKeyAlice)); // prints 'true'
+
+
+// Bob generates a key pair from scratch
+var keyPairBob = new Cryptography.KeyPair({
+    :algorithm =&gt; Cryptography.KEY_PAIR_ELLIPTIC_CURVE_SECP224R1
+});
+
+var publicKeyBob = keyPairBob.getPublicKey().getBytes();
+
+
+//
+// Alice and Bob exchange public keys
+//
+
+
+// Alice creates a key agreement from her private key
+var keyAgreementAlice = new Cryptography.KeyAgreement({
+    :protocol =&gt; Cryptography.KEY_AGREEMENT_ECDH,
+    :privateKey =&gt; keyPairAlice.getPrivateKey()
+});
+
+// Alice uses Bob's public key to generate a secret known only to Bob and herself
+keyAgreementAlice.addKey(keyPairBob.getPublicKey());
+var secretKeyAliceAndBob = keyAgreementAlice.generateSecret();
+
+
+// Bob creates a key agreement from his private key
+var keyAgreementBob = new Cryptography.KeyAgreement({
+    :protocol =&gt; Cryptography.KEY_AGREEMENT_ECDH,
+    :privateKey =&gt; keyPairBob.getPrivateKey()
+});
+
+// Bob uses Alice's public key to generate a secret known only to and Alice and himself
+keyAgreementBob.addKey(keyPairAlice.getPublicKey());
+var secretKeyBobAndAlice = keyAgreementBob.generateSecret();
+
+
+// Bob and Alice now have a shared secret without exposing either of
+// their private keys. This secret can be used to sign or encrypt
+// messages between Alice and Bob. Sanity check shared secret is same
+// for both Alice and Bob.
+System.println(secretKeyAliceAndBob.equals(secretKeyBobAndAlice)); // prints 'true'</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 745</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#addKey-instance_function" title="addKey (Instance Function)"><strong>addKey</strong></a>(key as <span class="type"><a href="../../Toybox/Cryptography/Key.html">Cryptography.Key</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add a public <a href='../../Toybox/Cryptography/Key.html'>Key</a> to KeyAgreement.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#generateSecret-instance_function" title="generateSecret (Instance Function)"><strong>generateSecret</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Generate a shared secret for the KeyAgreement.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(options as { :protocol as <span class="type"><a href="../../Toybox/Cryptography.html#KeyAgreementProtocol-module">Cryptography.KeyAgreementProtocol</a></span>, :privateKey as <span class="type"><a href="../../Toybox/Cryptography/Key.html">Cryptography.Key</a></span> })
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="addKey-instance_function">
+    <strong>addKey(key as <span class="type"><a href="../../Toybox/Cryptography/Key.html">Cryptography.Key</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add a public <a href='../../Toybox/Cryptography/Key.html'>Key</a> to KeyAgreement.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">key</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Cryptography/Key.html">Cryptography.Key</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The public key to add to the agreement
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the specified key is not valid for the selected algorithm
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="generateSecret-instance_function">
+    <strong>generateSecret()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Generate a shared secret for the KeyAgreement.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The secret for the KeyAgreement
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(options as { :protocol as <span class="type"><a href="../../Toybox/Cryptography.html#KeyAgreementProtocol-module">Cryptography.KeyAgreementProtocol</a></span>, :privateKey as <span class="type"><a href="../../Toybox/Cryptography/Key.html">Cryptography.Key</a></span> })</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A dictionary of options for the KeyAgreement
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:protocol</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Cryptography.html#KeyAgreementProtocol-module">Cryptography.KeyAgreementProtocol</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The protocol to use as a <a href='../../Toybox/Cryptography.html'>KEY_AGREEMENT_*</a> value
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:privateKey</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Cryptography/Key.html">Cryptography.Key</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The private key in the KeyAgreement
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if an argument is not the correct type
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if the specified private key is not the correct size for the selected algorithm, or if the selected protocol is not supported
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

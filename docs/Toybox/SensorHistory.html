@@ -1,0 +1,1508 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.SensorHistory </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.SensorHistory";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.SensorHistory</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The SensorHistory module contains the interface for SensorHistory.
+</p><p>
+SensorHistory provides access to historical information recorded by the on-board
+sensors of device hardware. The amount of information that is available is
+device dependent. This means that one device may provide more information
+than another. This class provides an ORDER_* enum which is used to select
+the data order of the sample iterator.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li>
+  </ul>
+
+  <!-- Permissions -->
+  <p class="tag_title">Requires Permission:</p>
+  <ul class="required_permissions">
+      <li>
+    <div class="inline">
+      <p>SensorHistory</p>
+    </div>
+  </li>
+  </ul>
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistoryIterator</a></span>, <span class="type"><a href="../Toybox/SensorHistory/SensorSample.html">SensorSample</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="Order-module" class="">
+    <h3>Order</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="ORDER_NEWEST_FIRST-const">
+    <td class="enumTableCell">ORDER_NEWEST_FIRST</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 2.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Request iterator with newest data first
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="ORDER_OLDEST_FIRST-const">
+    <td class="enumTableCell">ORDER_OLDEST_FIRST</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 2.1.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Request iterator with oldest data first
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getBodyBatteryHistory-instance_function" title="getBodyBatteryHistory (Instance Function)"><strong>getBodyBatteryHistory</strong></a>(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> } or <b>Null</b>)    as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the body battery history for the given period.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getElevationHistory-instance_function" title="getElevationHistory (Instance Function)"><strong>getElevationHistory</strong></a>(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> } or <b>Null</b>)    as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the elevation history for the given period, up to the last power cycle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getHeartRateHistory-instance_function" title="getHeartRateHistory (Instance Function)"><strong>getHeartRateHistory</strong></a>(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> or <b>Null</b> } or <b>Null</b>)    as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the heart rate history for the given period, up to the last power cycle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getOxygenSaturationHistory-instance_function" title="getOxygenSaturationHistory (Instance Function)"><strong>getOxygenSaturationHistory</strong></a>(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> } or <b>Null</b>)    as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the oxygen saturation history for the given period This function always returns the most recent sensor history samples.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getPressureHistory-instance_function" title="getPressureHistory (Instance Function)"><strong>getPressureHistory</strong></a>(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> } or <b>Null</b>)    as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the pressure history for the given period, up to the last power cycle.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getStressHistory-instance_function" title="getStressHistory (Instance Function)"><strong>getStressHistory</strong></a>(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> } or <b>Null</b>)    as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get stress history data for the given period This function always returns the most recent sensor history samples.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getTemperatureHistory-instance_function" title="getTemperatureHistory (Instance Function)"><strong>getTemperatureHistory</strong></a>(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> } or <b>Null</b>)    as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the temperature history for the given period, up to the last power cycle.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getBodyBatteryHistory-instance_function">
+    <strong>getBodyBatteryHistory(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> } or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the body battery history for the given period.
+</p><p>
+This function always returns the most recent sensor history samples. The time
+between each `SensorSample` in the iterator may be device dependent.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Dictionary of options. Can be <code>null</code>.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:period</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The period of time from which to retrieve the samples:
+</p>
+
+<ul>
+<li>
+<p>
+If <code>null</code>, the entire available history is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If a <a href='../Toybox/Time/Duration.html'>Duration</a>, then the history for the given Duration is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If a <a href='../Toybox/Lang/Number.html'>Number</a>, then the last specified Number of entries are retrieved
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:order</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The order in which to retrieve the samples:
+</p>
+
+<ul>
+<li>
+<p>
+If <code>null</code>, the samples will be <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a>
+</p>
+
+</li>
+<li>
+<p>
+Use the ORDER_* enumeration to explicitly select <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a> or <a href='../Toybox/SensorHistory.html#ORDER_OLDEST_FIRST-const'>ORDER_OLDEST_FIRST</a>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Shows the use of BodyBatteryIterator</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.SensorHistory;
+using Toybox.System;
+
+  // Create a method to get the SensorHistoryIterator object
+  function getIterator() {
+      // Check device for SensorHistory compatibility
+      if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getBodyBatteryHistory)) {
+          // Set up the method with parameters
+          return Toybox.SensorHistory.getBodyBatteryHistory({});
+      }
+      return null;
+  }
+  // get the body battery iterator object
+  var bbIterator = getIterator();
+  var sample = bbIterator.next();                         // get the body battery data
+
+  while (sample != null) {
+      System.println("Sample: " + sample.data);           // print the current sample
+      sample = bbIterator.next();
+  }</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An iterator for the body battery history for the given period. Samples returned by this iterator are ranges from 0-100. A 0 indicates that the body is drained and a 100 indicates the body is rested and charged.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/Lang/Method.html">Toybox.Lang.Method</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getElevationHistory-instance_function">
+    <strong>getElevationHistory(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> } or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the elevation history for the given period, up to the last power
+cycle.
+</p><p>
+This function always returns the most recent pressure samples. The time
+between each <a href='../Toybox/SensorHistory/SensorSample.html'>SensorSample</a> in the
+iterator may be device dependent.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Dictionary of options. Can be <code>null</code>.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:period</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The period of time from which to retrieve the samples:
+</p>
+
+<ul>
+<li>
+<p>
+If <code>null</code>, the entire available history is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If a <a href='../Toybox/Time/Duration.html'>Duration</a>, then the history for the given Duration is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If a <a href='../Toybox/Lang/Number.html'>Number</a>, then the last specified Number of entries are retrieved
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:order</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The order in which to retrieve the samples:
+</p>
+
+<ul>
+<li>
+<p>
+If <code>null</code>, the samples will be <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a>
+</p>
+
+</li>
+<li>
+<p>
+Use the ORDER_* enumeration to explicitly select <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a> or <a href='../Toybox/SensorHistory.html#ORDER_OLDEST_FIRST-const'>ORDER_OLDEST_FIRST</a>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Gets a SensoryHistoryIterator and prints out the elevation value from the most recent SensorSample</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.SensorHistory;
+using Toybox.Lang;
+using Toybox.System;
+
+// Create a method to get the SensorHistoryIterator object
+function getIterator() {
+    // Check device for SensorHistory compatibility
+    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getElevationHistory)) {
+        return Toybox.SensorHistory.getElevationHistory({});
+    }
+    return null;
+}
+
+// Store the iterator info in a variable. The options are 'null' in
+// this case so the entire available history is returned with the
+// newest samples returned first.
+var sensorIter = getIterator();
+
+// Print out the next entry in the iterator
+if (sensorIter != null) {
+    System.println(sensorIter.next().data);
+}</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 745</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® HR</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An iterator for the elevation history for the given period. Samples returned by this iterator are in meters (m).
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/Lang/Method.html">Toybox.Lang.Method</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getHeartRateHistory-instance_function">
+    <strong>getHeartRateHistory(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> or <b>Null</b> } or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the heart rate history for the given period, up to the last power
+cycle.
+</p><p>
+This function always returns the most recent heart rate samples. The
+time between each <a href='../Toybox/SensorHistory/SensorSample.html'>SensorSample</a> in
+the iterator may be device dependent.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Dictionary of options. Can be <code>null</code>.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:period</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The period of time from which to retrieve the samples:
+</p>
+
+<ul>
+<li>
+<p>
+If <code>null</code>, the entire available history is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If a <a href='../Toybox/Time/Duration.html'>Duration</a>, then the history for the given Duration is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If a <a href='../Toybox/Lang/Number.html'>Number</a>, then the last specified Number of entries are retrieved
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:order</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The order in which to retrieve the samples:
+</p>
+
+<ul>
+<li>
+<p>
+If <code>null</code>, the samples will be listed <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a>
+</p>
+
+</li>
+<li>
+<p>
+Use the ORDER_* enumeration to explicitly select <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a> or <a href='../Toybox/SensorHistory.html#ORDER_OLDEST_FIRST-const'>ORDER_OLDEST_FIRST</a>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Gets a SensoryHistoryIterator and prints out the heart rate value from the most recent SensorSample</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.SensorHistory;
+using Toybox.Lang;
+using Toybox.System;
+
+// Create a method to get the SensorHistoryIterator object
+function getIterator() {
+    // Check device for SensorHistory compatibility
+    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getHeartRateHistory)) {
+        return Toybox.SensorHistory.getHeartRateHistory({});
+    }
+    return null;
+}
+
+// Store the iterator info in a variable. The options are 'null' in
+// this case so the entire available history is returned with the
+// newest samples returned first.
+var sensorIter = getIterator();
+
+// Print out the next entry in the iterator
+if (sensorIter != null) {
+    System.println(sensorIter.next().data);
+}</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An iterator for the heart rate history for the given period. Samples returned by this iterator are in beats per minute (bpm).
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/Lang/Method.html">Toybox.Lang.Method</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getOxygenSaturationHistory-instance_function">
+    <strong>getOxygenSaturationHistory(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> } or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the oxygen saturation history for the given period
+</p><p>
+This function always returns the most recent sensor history samples. The time
+between each `SensorSample` in the iterator may be device dependent.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Dictionary of options. Can be <code>null</code>.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:period</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The period of time from which to retrieve the samples:
+</p>
+
+<ul>
+<li>
+<p>
+If <code>null</code>, the entire available history is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If a <a href='../Toybox/Time/Duration.html'>Duration</a>, then the history for the given Duration is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If a <a href='../Toybox/Lang/Number.html'>Number</a>, then the last specified Number of entries are retrieved
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:order</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The order in which to retrieve the samples:
+</p>
+
+<ul>
+<li>
+<p>
+If <code>null</code>, the samples will be <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a>
+</p>
+
+</li>
+<li>
+<p>
+Use the ORDER_* enumeration to explicitly select <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a> or <a href='../Toybox/SensorHistory.html#ORDER_OLDEST_FIRST-const'>ORDER_OLDEST_FIRST</a>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Gets a SensoryHistoryIterator and prints out the Muscle Oxygen Saturation value from the most recent SensorSample</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.SensorHistory;
+using Toybox.Lang;
+using Toybox.System;
+
+// Create a method to get the SensorHistoryIterator object
+function getIterator() {
+    // Check device for SensorHistory compatibility
+    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getOxygenSaturationHistory)) {
+        // Set up the method with parameters
+        return Toybox.SensorHistory.getOxygenSaturationHistory({});
+    }
+    return null;
+}
+
+// Store the iterator info in a variable. The options are 'null' in
+// this case so the entire available history is returned with the
+// newest samples returned first.
+var sensorIter = getIterator();
+
+// Print out the next entry in the iterator
+if (sensorIter != null) {
+    System.println(sensorIter.next().data);
+}</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An iterator for the oxygen saturation history for the given period. Samples returned by this iterator are in percent (%).
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/Lang/Method.html">Toybox.Lang.Method</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getPressureHistory-instance_function">
+    <strong>getPressureHistory(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> } or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the pressure history for the given period, up to the last
+power cycle.
+</p><p>
+This function always returns the most recent pressure samples. The time
+between each <a href='../Toybox/SensorHistory/SensorSample.html'>SensorSample</a> in the iterator may
+be device dependent.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Dictionary of options. Can be <code>null</code>.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:period</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The period of time from which to retrieve the samples.
+</p>
+
+<ul>
+<li>
+<p>
+If period is <code>null</code>, the entire available history is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If period is a <a href='../Toybox/Time/Duration.html'>Duration</a>, then the history for the given Duration is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If period is a <a href='../Toybox/Lang/Number.html'>Number</a>, then the last specified Number of entries are retrieved
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:order</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The order in which to retrieve the samples.
+</p>
+
+<ul>
+<li>
+<p>
+If order is <code>null</code>, the samples will be <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a>
+</p>
+
+</li>
+<li>
+<p>
+Use the ORDER enumeration to explicitly select <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a> or <a href='../Toybox/SensorHistory.html#ORDER_OLDEST_FIRST-const'>ORDER_OLDEST_FIRST</a>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Gets a SensoryHistoryIterator and prints out the pressure value from the most recent SensorSample</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.SensorHistory;
+using Toybox.Lang;
+using Toybox.System;
+
+// Create a method to get the SensorHistoryIterator object
+function getIterator() {
+    // Check device for SensorHistory compatibility
+    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getPressureHistory)) {
+        return Toybox.SensorHistory.getPressureHistory({});
+    }
+    return null;
+}
+
+// Store the iterator info in a variable. The options are 'null' in
+// this case so the entire available history is returned with the
+// newest samples returned first.
+var sensorIter = getIterator();
+
+// Print out the next entry in the iterator
+if (sensorIter != null) {
+    System.println(sensorIter.next().data);
+}</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 745</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® HR</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An iterator for the pressure history for the given period. Samples returned by this iterator are in Pascals (Pa).
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/Lang/Method.html">Toybox.Lang.Method</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getStressHistory-instance_function">
+    <strong>getStressHistory(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> } or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get stress history data for the given period
+</p><p>
+This function always returns the most recent sensor history samples. The time
+between each `SensorSample` in the iterator may be device dependent.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Dictionary of options. Can be <code>null</code>.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:period</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The period of time from which to retrieve the samples:
+</p>
+
+<ul>
+<li>
+<p>
+If <code>null</code>, the entire available history is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If a <a href='../Toybox/Time/Duration.html'>Duration</a>, then the history for the given Duration is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If a <a href='../Toybox/Lang/Number.html'>Number</a>, then the last specified Number of entries are retrieved
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:order</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The order in which to retrieve the samples:
+</p>
+
+<ul>
+<li>
+<p>
+If <code>null</code>, the samples will be <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a>
+</p>
+
+</li>
+<li>
+<p>
+Use the ORDER_* enumeration to explicitly select <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a> or <a href='../Toybox/SensorHistory.html#ORDER_OLDEST_FIRST-const'>ORDER_OLDEST_FIRST</a>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Shows the use of StressHistoryIterator</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.ActivityMonitor;
+using Toybox.System;
+
+  // Create a method to get the SensorHistoryIterator object
+  function getIterator() {
+      // Check device for SensorHistory compatibility
+      if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getStressHistory)) {
+          // Set up the method with parameters
+          return Toybox.SensorHistory.getStressHistory({});
+      }
+      return null;
+  }
+
+// get stress history iterator object
+var stressIterator = getIterator();
+var sample = stressIterator.next();                        // get the stress data
+
+while (sample != null) {
+    System.println("Sample: " + sample.data);        // print the current sample
+    sample = stressIterator.next();
+}</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An iterator for the stress history for the given period. Samples returned by this iterator are ranges from 0-100. Higher value indicate higher stress and lower value indicate lower stress. and a 100 indicates the body is rested and charged.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/Lang/Method.html">Toybox.Lang.Method</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getTemperatureHistory-instance_function">
+    <strong>getTemperatureHistory(options as { :period as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span> or <b>Null</b>, :order as <span class="type"><a href="../Toybox/SensorHistory.html#Order-module">SensorHistory.Order</a></span> } or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the temperature history for the given period, up to the last power
+cycle.
+</p><p>
+This function always returns the most recent temperature samples. The
+time between each <a href='../Toybox/SensorHistory/SensorSample.html'>SensorSample</a> in
+the iterator may be device dependent.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Dictionary of options. Can be <code>null</code>.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:period</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The period of time from which to retrieve the samples:
+</p>
+
+<ul>
+<li>
+<p>
+If <code>null</code>, the entire available history is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If a <a href='../Toybox/Time/Duration.html'>Duration</a>, then the history for the given Duration is retrieved
+</p>
+
+</li>
+<li>
+<p>
+If a <a href='../Toybox/Lang/Number.html'>Number</a>, then the last specified Number of entries are retrieved
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:order</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The order in which to retrieve the samples.
+</p>
+
+<ul>
+<li>
+<p>
+If <code>null</code>, the samples will be listed <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a>
+</p>
+
+</li>
+<li>
+<p>
+Use the ORDER_* enumeration to explicitly select <a href='../Toybox/SensorHistory.html#ORDER_NEWEST_FIRST-const'>ORDER_NEWEST_FIRST</a> or <a href='../Toybox/SensorHistory.html#ORDER_OLDEST_FIRST-const'>ORDER_OLDEST_FIRST</a>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Gets a SensoryHistoryIterator and prints out the temperature value from the most recent SensorSample</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.SensorHistory;
+using Toybox.Lang;
+using Toybox.System;
+
+// Create a method to get the SensorHistoryIterator object
+function getIterator() {
+    // Check device for SensorHistory compatibility
+    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getTemperatureHistory)) {
+        // Set up the method with parameters
+        return Toybox.SensorHistory.getTemperatureHistory({});
+    }
+    return null;
+}
+
+// Store the iterator info in a variable. The options are 'null' in
+// this case so the entire available history is returned with the
+// newest samples returned first.
+var sensorIter = getIterator();
+
+// Print out the next entry in the iterator
+if (sensorIter != null) {
+    System.println(sensorIter.next().data);
+}</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 745</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® HR</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/SensorHistory/SensorHistoryIterator.html">SensorHistory.SensorHistoryIterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An iterator for the temperature history for the given period. Samples returned by this iterator are in degrees Celsius (C).
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../Toybox/Lang/Method.html">Toybox.Lang.Method</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

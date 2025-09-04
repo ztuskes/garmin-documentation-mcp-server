@@ -1,0 +1,941 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.BluetoothLowEnergy.BleDelegate </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.BluetoothLowEnergy.BleDelegate";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.BluetoothLowEnergy.BleDelegate</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/BluetoothLowEnergy/BleDelegate.html">Toybox.BluetoothLowEnergy.BleDelegate</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Delegate Class for Bluetooth Low Energy Callbacks.
+</p><p>
+Applications must extend this Class and register an instance with the
+BLE Subsystem using <a href='../../Toybox/BluetoothLowEnergy.html#setDelegate-instance_function'>setDelegate()</a>
+to support asynchronous operations.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>()
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onCharacteristicChanged-instance_function" title="onCharacteristicChanged (Instance Function)"><strong>onCharacteristicChanged</strong></a>(characteristic as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">BluetoothLowEnergy.Characteristic</a></span>, value as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+After enabling notifications or indications on a characteristic by enabling the appropriate bit of the CCCD of the characteristic this function will be called after every change to the characteristic.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onCharacteristicRead-instance_function" title="onCharacteristicRead (Instance Function)"><strong>onCharacteristicRead</strong></a>(characteristic as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">BluetoothLowEnergy.Characteristic</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>, value as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+After requesting a read operation on a Characteristic with <a href='../../Toybox/BluetoothLowEnergy/Characteristic.html#requestRead-instance_function'>requestRead()</a>, this function will be called when the operation is completed.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onCharacteristicWrite-instance_function" title="onCharacteristicWrite (Instance Function)"><strong>onCharacteristicWrite</strong></a>(characteristic as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">BluetoothLowEnergy.Characteristic</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+After requesting a write operation on a Characteristic with <a href='../../Toybox/BluetoothLowEnergy/Characteristic.html#requestWrite-instance_function'>requestWrite()</a>, this function will be called when the operation is completed.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onConnectedStateChanged-instance_function" title="onConnectedStateChanged (Instance Function)"><strong>onConnectedStateChanged</strong></a>(device as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Device.html">BluetoothLowEnergy.Device</a></span>, state as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#ConnectionState-module">BluetoothLowEnergy.ConnectionState</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+After pairing a device this will be called after the connection is made.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onDescriptorRead-instance_function" title="onDescriptorRead (Instance Function)"><strong>onDescriptorRead</strong></a>(descriptor as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Descriptor.html">BluetoothLowEnergy.Descriptor</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>, value as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+After requesting a read operation on a Descriptor with <a href='../../Toybox/BluetoothLowEnergy/Descriptor.html#requestRead-instance_function'>requestRead()</a> this function will be called when the operation is completed.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onDescriptorWrite-instance_function" title="onDescriptorWrite (Instance Function)"><strong>onDescriptorWrite</strong></a>(descriptor as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Descriptor.html">BluetoothLowEnergy.Descriptor</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+After requesting a write operation on a Descriptor with <a href='../../Toybox/BluetoothLowEnergy/Descriptor.html#requestWrite-instance_function'>requestWrite()</a> this function will be called when the operation is completed.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onEncryptionStatus-instance_function" title="onEncryptionStatus (Instance Function)"><strong>onEncryptionStatus</strong></a>(device as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Device.html">BluetoothLowEnergy.Device</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+After requesting a new bond or reconnecting to a device with a previously established bond, this function will be called with the current encryption status.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onProfileRegister-instance_function" title="onProfileRegister (Instance Function)"><strong>onProfileRegister</strong></a>(uuid as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+After Registering a UUID this callback will notify of the result of the registration request.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onScanResults-instance_function" title="onScanResults (Instance Function)"><strong>onScanResults</strong></a>(scanResults as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Iterator.html">BluetoothLowEnergy.Iterator</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+If a scan is running this will be called when new ScanResults are received.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onScanStateChange-instance_function" title="onScanStateChange (Instance Function)"><strong>onScanStateChange</strong></a>(scanState as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#ScanState-module">BluetoothLowEnergy.ScanState</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+When the state of scanning is modified the system will call this function with the new state and a status indicating the result of the last call to <a href='../../Toybox/BluetoothLowEnergy.html#setScanState-instance_function'>setScanState()</a>.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize()</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onCharacteristicChanged-instance_function">
+    <strong>onCharacteristicChanged(characteristic as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">BluetoothLowEnergy.Characteristic</a></span>, value as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+After enabling notifications or indications on a characteristic
+by enabling the appropriate bit of the CCCD of the characteristic
+this function will be called after every change to the
+characteristic.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">characteristic</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">BluetoothLowEnergy.Characteristic</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The characteristic that changed
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">value</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The updated value of the characteristic
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onCharacteristicRead-instance_function">
+    <strong>onCharacteristicRead(characteristic as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">BluetoothLowEnergy.Characteristic</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>, value as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+After requesting a read operation on a Characteristic with
+<a href='../../Toybox/BluetoothLowEnergy/Characteristic.html#requestRead-instance_function'>requestRead()</a>,
+this function will be called when the operation is completed.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">characteristic</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">BluetoothLowEnergy.Characteristic</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The characteristic that was read.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">status</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/BluetoothLowEnergy.html#STATUS_SUCCESS-const'>STATUS_*</a> indicating the result of the operation
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">value</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Characteristic value that was read. <code>null</code> if status is not <a href='../../Toybox/BluetoothLowEnergy.html#STATUS_SUCCESS-const'>STATUS_SUCCESS</a>
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onCharacteristicWrite-instance_function">
+    <strong>onCharacteristicWrite(characteristic as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">BluetoothLowEnergy.Characteristic</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+After requesting a write operation on a Characteristic with
+<a href='../../Toybox/BluetoothLowEnergy/Characteristic.html#requestWrite-instance_function'>requestWrite()</a>,
+this function will be called when the operation is completed.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">characteristic</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">BluetoothLowEnergy.Characteristic</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The characteristic that was written.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">status</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/BluetoothLowEnergy.html#STATUS_SUCCESS-const'>STATUS_*</a> indicating the result of the operation
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onConnectedStateChanged-instance_function">
+    <strong>onConnectedStateChanged(device as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Device.html">BluetoothLowEnergy.Device</a></span>, state as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#ConnectionState-module">BluetoothLowEnergy.ConnectionState</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+After pairing a device this will be called after the connection is
+made
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">device</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/Device.html">BluetoothLowEnergy.Device</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+the device state that was changed
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">state</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#ConnectionState-module">BluetoothLowEnergy.ConnectionState</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/BluetoothLowEnergy.html#CONNECTION_STATE_DISCONNECTED-const'>CONNECTION_STATE_*</a> indicating the state of the connection
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onDescriptorRead-instance_function">
+    <strong>onDescriptorRead(descriptor as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Descriptor.html">BluetoothLowEnergy.Descriptor</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>, value as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+After requesting a read operation on a Descriptor with
+<a href='../../Toybox/BluetoothLowEnergy/Descriptor.html#requestRead-instance_function'>requestRead()</a>
+this function will be called when the operation is completed.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">descriptor</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/Descriptor.html">BluetoothLowEnergy.Descriptor</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The descriptor that was read
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">status</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/BluetoothLowEnergy.html#STATUS_SUCCESS-const'>STATUS_*</a> indicating the result of the operation
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">value</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Descriptor value that was read. <code>null</code> if status is not <a href='../../Toybox/BluetoothLowEnergy.html#STATUS_SUCCESS-const'>STATUS_SUCCESS</a>
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onDescriptorWrite-instance_function">
+    <strong>onDescriptorWrite(descriptor as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Descriptor.html">BluetoothLowEnergy.Descriptor</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+After requesting a write operation on a Descriptor with
+<a href='../../Toybox/BluetoothLowEnergy/Descriptor.html#requestWrite-instance_function'>requestWrite()</a>
+this function will be called when the operation is completed.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">descriptor</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/Descriptor.html">BluetoothLowEnergy.Descriptor</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The descriptor that was written
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">status</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/BluetoothLowEnergy.html#STATUS_SUCCESS-const'>STATUS_*</a> indicating the result of the operation
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onEncryptionStatus-instance_function">
+    <strong>onEncryptionStatus(device as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Device.html">BluetoothLowEnergy.Device</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+After requesting a new bond or reconnecting to a device with a
+previously established bond, this function will be called with the
+current encryption status.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">device</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/Device.html">BluetoothLowEnergy.Device</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+the device state that was changed
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">status</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/BluetoothLowEnergy.html#STATUS_SUCCESS-const'>STATUS_*</a> indicating the status of the encryption operation.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>D2™ Mach 1</li><li>Descent™ G2</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 540 / 540 Solar</li><li>Edge® 840 / 840 Solar</li><li>Enduro™ 3</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.5
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onProfileRegister-instance_function">
+    <strong>onProfileRegister(uuid as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+After Registering a UUID this callback will notify of the result of
+the registration request
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">uuid</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Profile UUID that this callback is related to
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">status</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/BluetoothLowEnergy.html#STATUS_SUCCESS-const'>STATUS_*</a> indicating the result of a call to <a href='../../Toybox/BluetoothLowEnergy.html#registerProfile-instance_function'>registerProfile()</a>
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onScanResults-instance_function">
+    <strong>onScanResults(scanResults as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Iterator.html">BluetoothLowEnergy.Iterator</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+If a scan is running this will be called when new ScanResults are received
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">scanResults</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/Iterator.html">BluetoothLowEnergy.Iterator</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An iterator of <a href='../../Toybox/BluetoothLowEnergy/ScanResult.html'>ScanResult</a> objects for all of the advertisements seen since the last call to this callback
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onScanStateChange-instance_function">
+    <strong>onScanStateChange(scanState as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#ScanState-module">BluetoothLowEnergy.ScanState</a></span>, status as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+When the state of scanning is modified the system will call this
+function with the new state and a status indicating the result of
+the last call to <a href='../../Toybox/BluetoothLowEnergy.html#setScanState-instance_function'>setScanState()</a>.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">scanState</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#ScanState-module">BluetoothLowEnergy.ScanState</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/BluetoothLowEnergy.html#SCAN_STATE_OFF-const'>SCAN_STATE_*</a> enum value indicating the new Scan State of the system
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">status</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#Status-module">BluetoothLowEnergy.Status</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The <a href='../../Toybox/BluetoothLowEnergy.html#STATUS_SUCCESS-const'>STATUS_*</a> result of the last call to <a href='../../Toybox/BluetoothLowEnergy.html#setScanState-instance_function'>setScanState()</a>
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

@@ -1,0 +1,657 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Ant.Message </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Ant.Message";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Ant.Message</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Ant/Message.html">Toybox.Ant.Message</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A class to hold and define the information in an ANT wireless data payload.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Ant;
+// Wrap the message prep and broadcast in a callback method
+function onMessage(msg) {
+    var payload = msg.getPayload(); //get the data payload
+    var data = new [msg.length];    // create an array the length of the message
+
+    // Iterate and add data to the Message with each pass
+    for (var i = 0; i &lt; msg.length; i++) {
+        data[i] = i;            // Adds {0,1,2,3,4,5,6,7}
+    }
+
+    var message = new Ant.Message();
+    message.setPayload(data);       // Form the Message
+
+    // Set the broadcast buffer
+    genericChannel.sendBroadcast(message);
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class="constTable">
+    <tr>
+        <th class="constTableHeader">Type</th>
+        <th class="constTableHeader">Name</th>
+        <th class="constTableHeader">Value</th>
+        <th class="constTableHeader">Since</th>
+        <th class="constTableHeader">Description</th>
+    </tr>
+    <tr class="enumTableOdd" id="DATA_PAYLOAD_LENGTH-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">DATA_PAYLOAD_LENGTH</td>
+    <td class="constTableCell">8</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"></td>
+</tr>
+</table>
+</dl>
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#deviceNumber-var" title="deviceNumber (Var)"><strong>deviceNumber</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Unique device number (ANT-id).
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#deviceType-var" title="deviceType (Var)"><strong>deviceType</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A 1-Byte device type identifier.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#length-var" title="length (Var)"><strong>length</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Number of data bytes in the data payload (not including any extended data if applicable).
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#messageId-var" title="messageId (Var)"><strong>messageId</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Data Type Identifier.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#rssi-var" title="rssi (Var)"><strong>rssi</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Received Signal Strength Indication.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#timestamp-var" title="timestamp (Var)"><strong>timestamp</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The time stamp of received message generated off of a 32.768 kHz clock.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#transmissionType-var" title="transmissionType (Var)"><strong>transmissionType</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The manufacturer-specific transport type and extended device number.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getPayload-instance_function" title="getPayload (Instance Function)"><strong>getPayload</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>&gt;
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the ANT data packet.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setPayload-instance_function" title="setPayload (Instance Function)"><strong>setPayload</strong></a>(data as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>&gt;)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the ANT data packet.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="deviceNumber-var" class="details">
+<h3 class="signature" id="deviceNumber-var">
+
+var deviceNumber  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Unique device number (ANT-id).
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="deviceType-var" class="details">
+<h3 class="signature" id="deviceType-var">
+
+var deviceType  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+A 1-Byte device type identifier.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+<p class="tag_title">See Also:</p>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="https://www.thisisant.com/developer/resources/downloads/">ANT Downloads & Resources - ANT Message Protocol and Usage for pre-defined Device Types.</a>
+  </div>
+  </li>
+  </ul>
+
+
+
+</div>
+
+</dt><dt id="length-var" class="details">
+<h3 class="signature" id="length-var">
+
+var length  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Number of data bytes in the data payload (not including any extended
+data if applicable).
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="messageId-var" class="details">
+<h3 class="signature" id="messageId-var">
+
+var messageId  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Data Type Identifier
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="rssi-var" class="details">
+<h3 class="signature" id="rssi-var">
+
+var rssi  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Received Signal Strength Indication.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="timestamp-var" class="details">
+<h3 class="signature" id="timestamp-var">
+
+var timestamp  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The time stamp of received message generated off of a 32.768 kHz clock.
+</p><p>
+Rolls over every 2 seconds.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="transmissionType-var" class="details">
+<h3 class="signature" id="transmissionType-var">
+
+var transmissionType  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The manufacturer-specific transport type and extended device number.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getPayload-instance_function">
+    <strong>getPayload()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>&gt;</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the ANT data packet.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+An Array of Numbers as integers representing the bytes of the data payload
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setPayload-instance_function">
+    <strong>setPayload(data as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>&gt;)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the ANT data packet.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">data</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An Array of Numbers as integers representing the bytes of the data payload
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:12 PM
+</p>
+
+</body>

@@ -1,0 +1,578 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.StringUtil </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.StringUtil";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.StringUtil</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The StringUtil module contains String utility functions
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/StringUtil/InvalidHexStringException.html">InvalidHexStringException</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="CharacterEncoding-module" class="">
+    <h3>CharacterEncoding</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="CHAR_ENCODING_UTF8-const">
+    <td class="enumTableCell">CHAR_ENCODING_UTF8</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="Representation-module" class="">
+    <h3>Representation</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="REPRESENTATION_STRING_BASE64-const">
+    <td class="enumTableCell">REPRESENTATION_STRING_BASE64</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="REPRESENTATION_STRING_HEX-const">
+    <td class="enumTableCell">REPRESENTATION_STRING_HEX</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="REPRESENTATION_STRING_PLAIN_TEXT-const">
+    <td class="enumTableCell">REPRESENTATION_STRING_PLAIN_TEXT</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="REPRESENTATION_BYTE_ARRAY-const">
+    <td class="enumTableCell">REPRESENTATION_BYTE_ARRAY</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#charArrayToString-instance_function" title="charArrayToString (Instance Function)"><strong>charArrayToString</strong></a>(charArray as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Char.html">Lang.Char</a></span>&gt;)    as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Given an Array of <a href='../Toybox/Lang/Char.html'>Char</a> objects, return the String equivalent.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#convertEncodedString-instance_function" title="convertEncodedString (Instance Function)"><strong>convertEncodedString</strong></a>(input as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>, options as { :fromRepresentation as <span class="type"><a href="../Toybox/StringUtil.html#Representation-module">StringUtil.Representation</a></span>, :toRepresentation as <span class="type"><a href="../Toybox/StringUtil.html#Representation-module">StringUtil.Representation</a></span>, :encoding as <span class="type"><a href="../Toybox/StringUtil.html#CharacterEncoding-module">StringUtil.CharacterEncoding</a></span> })    as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert a String or ByteArray representation to a String or ByteArray representation whose underlying byte format corresponds to the provided input options.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#encodeBase64-instance_function" title="encodeBase64 (Instance Function)"><strong>encodeBase64</strong></a>(string as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)    as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Encodes a String in base64.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#utf8ArrayToString-instance_function" title="utf8ArrayToString (Instance Function)"><strong>utf8ArrayToString</strong></a>(utf8Array as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>&gt;)    as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Given an Array of UTF-8 bytes, return the String equivalent.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="charArrayToString-instance_function">
+    <strong>charArrayToString(charArray as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Char.html">Lang.Char</a></span>&gt;)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Given an Array of <a href='../Toybox/Lang/Char.html'>Char</a> objects, return the String equivalent
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">charArray</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An Array of Char objects
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The String representation of the input Array
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="convertEncodedString-instance_function">
+    <strong>convertEncodedString(input as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>, options as { :fromRepresentation as <span class="type"><a href="../Toybox/StringUtil.html#Representation-module">StringUtil.Representation</a></span>, :toRepresentation as <span class="type"><a href="../Toybox/StringUtil.html#Representation-module">StringUtil.Representation</a></span>, :encoding as <span class="type"><a href="../Toybox/StringUtil.html#CharacterEncoding-module">StringUtil.CharacterEncoding</a></span> })</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert a String or ByteArray representation to a String or ByteArray
+representation whose underlying byte format corresponds to the provided
+input options.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">input</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Input that needs to be converted.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        <ul>
+        <li>
+        <span class="name">:fromRepresentation</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/StringUtil.html#Representation-module">StringUtil.Representation</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Required. A <a href='../Toybox/StringUtil.html'>REPRESENTATION_*</a> enum value indicating the representation from which the <code>input</code> should be converted.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:toRepresentation</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/StringUtil.html#Representation-module">StringUtil.Representation</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Required. A <a href='../Toybox/StringUtil.html'>REPRESENTATION_*</a> enum value indicating the representation to which the <code>input</code> should be converted.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:encoding</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/StringUtil.html#CharacterEncoding-module">StringUtil.CharacterEncoding</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../Toybox/StringUtil.html'>CHAR_ENCODING_*</a> value indicating the String encoding to use when generating a hex string or ByteArray when either the <code>fromRepresentation</code> or <code>toRepresentation</code> is set to REPRESENTATION_STRING_PLAIN_TEXT. Defaults to CHAR_ENCODING_UTF8 if not specified.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The converted String or ByteArray based on the provided options
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidOptionsException.html">Lang.InvalidOptionsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a required option is not set with a valid enumeration value.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="encodeBase64-instance_function">
+    <strong>encodeBase64(string as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Encodes a String in base64
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">string</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The string to encode
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A base64 encoded String
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="utf8ArrayToString-instance_function">
+    <strong>utf8ArrayToString(utf8Array as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>&gt;)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Given an Array of UTF-8 bytes, return the String equivalent
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">utf8Array</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An Array of UTF-8 bytes
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The String representation of the input Array
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a the provided bytes contain an invalid UTF-8 sequence.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

@@ -1,0 +1,634 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Sensor.SensorInfo </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Sensor.SensorInfo";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Sensor.SensorInfo</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Sensor/SensorInfo.html">Toybox.Sensor.SensorInfo</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A class describing a Sensor
+</p><p>
+The SensorInfo provides access to the attributes of a Sensor.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#data-var" title="data (Var)"><strong>data</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Sensor-specific data A dictionary of sensor-specific attributes.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#enabled-var" title="enabled (Var)"><strong>enabled</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Sensor enabled flag.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#manufacturerId-var" title="manufacturerId (Var)"><strong>manufacturerId</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Sensor manufacturer.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#name-var" title="name (Var)"><strong>name</strong></a>  as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Sensor name.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#partNumber-var" title="partNumber (Var)"><strong>partNumber</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Sensor part number.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#softwareVersion-var" title="softwareVersion (Var)"><strong>softwareVersion</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Sensor software version.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#technology-var" title="technology (Var)"><strong>technology</strong></a>  as <span class="type"><a href="../../Toybox/Sensor.html#SensorTechnology-module">Sensor.SensorTechnology</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Sensor technology The technology used to communicate with this sensor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#type-var" title="type (Var)"><strong>type</strong></a>  as <span class="type"><a href="../../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Sensor type.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="data-var" class="details">
+<h3 class="signature" id="data-var">
+
+var data  as <span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Sensor-specific data
+</p><p>
+A dictionary of sensor-specific attributes. Currently supported attributes
+include:
+</p>
+
+<ul>
+<li>
+<p>
+<code>:bleAddress</code> - The mac address of the BLE sensor (e.g., 01:02:03:04:05:06) as a <a href='../../Toybox/Lang/ByteArray.html'>ByteArray</a>, if available.
+</p>
+
+</li>
+<li>
+<p>
+<code>:antSerialNumber</code> - The 20-bit ANT sensor serial number as a <a href='../../Toybox/Lang/Number.html'>Number</a>
+</p>
+
+</li>
+<li>
+<p>
+<code>:bleScanResult</code> - The scanresult of a discovered BLE device as a <a href='../../Toybox/BluetoothLowEnergy/ScanResult.html'>ScanResult</a>.
+</p>
+
+</li>
+<li>
+<p>
+<code>:antMessage</code> - The ANT message of a discovered ANT device as a <a href='../../Toybox/Ant/Message.html'>Message</a>
+</p>
+
+</li>
+</ul>
+
+  </div>
+</div>
+
+<div class="tags">
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+<code>:bleScanResult</code> and <code>:antMessage</code> are used for native sensor pairing process only.
+</p>
+
+
+  </div>
+</div>
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="enabled-var" class="details">
+<h3 class="signature" id="enabled-var">
+
+var enabled  as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Sensor enabled flag.
+</p><p>
+An indicator of whether or not the sensor is enabled for pairing.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="manufacturerId-var" class="details">
+<h3 class="signature" id="manufacturerId-var">
+
+var manufacturerId  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Sensor manufacturer.
+</p><p>
+The manufacturer id of the sensor. May be <code>null</code>.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="name-var" class="details">
+<h3 class="signature" id="name-var">
+
+var name  as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Sensor name.
+</p><p>
+The name of the sensor.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="partNumber-var" class="details">
+<h3 class="signature" id="partNumber-var">
+
+var partNumber  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Sensor part number.
+</p><p>
+The part number the sensor. May be <code>null</code>.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="softwareVersion-var" class="details">
+<h3 class="signature" id="softwareVersion-var">
+
+var softwareVersion  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Sensor software version.
+</p><p>
+The software version of the sensor. May be <code>null</code>.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="technology-var" class="details">
+<h3 class="signature" id="technology-var">
+
+var technology  as <span class="type"><a href="../../Toybox/Sensor.html#SensorTechnology-module">Sensor.SensorTechnology</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Sensor technology
+</p><p>
+The technology used to communicate with this sensor.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Sensor.html#SensorTechnology-module">Sensor.SensorTechnology</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The sensor type as a Sensor.SENSOR_TECHNOLOGY_*
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="type-var" class="details">
+<h3 class="signature" id="type-var">
+
+var type  as <span class="type"><a href="../../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Sensor type.
+</p><p>
+The type of the sensor.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.2.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Sensor.html#SensorType-named_type">Sensor.SensorType</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The sensor type as a Sensor.SENSOR_*
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt>
+ </div>
+
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

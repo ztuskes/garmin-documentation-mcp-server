@@ -1,0 +1,15 @@
+<svg width="400" height="240" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="oregon7xx-7fields-6-mask">
+      <rect width="100%" height="100%" fill="black"/>
+      <rect width="100%" height="100%" style="fill:white"/>
+    </mask>
+  </defs>
+  <rect x="0" y="0" width="137" height="76" mask="url(#oregon7xx-7fields-6-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="139" y="0" width="128" height="76" mask="url(#oregon7xx-7fields-6-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="78" width="137" height="75" mask="url(#oregon7xx-7fields-6-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="139" y="78" width="128" height="75" mask="url(#oregon7xx-7fields-6-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="155" width="137" height="75" mask="url(#oregon7xx-7fields-6-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="139" y="155" width="128" height="75" mask="url(#oregon7xx-7fields-6-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+      <rect width="100%" height="100%" style="stroke-width:1;stroke:rgb(0,0,0);fill:none"/>
+</svg>

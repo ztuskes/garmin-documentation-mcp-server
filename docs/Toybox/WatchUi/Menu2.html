@@ -1,0 +1,1410 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.WatchUi.Menu2 </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.WatchUi.Menu2";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.WatchUi.Menu2</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.WatchUi.View</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/View.html">Toybox.WatchUi.View</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Menu2.html">Toybox.WatchUi.Menu2</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A representation of an on-screen menu.
+A Menu2 is a special View, similar to a <a href='../../Toybox/WatchUi/Menu.html'>Toybox::WatchUi::Menu</a>, that
+presents the user with a list of options. A Menu2 offers more capabilities
+than a <a href='../../Toybox/WatchUi/Menu.html'>Toybox::WatchUi::Menu</a>, like graphical titles, menu items that
+can be updated dynamically, and additional menu elements such as check
+boxes.
+</p><p>
+After an option is selected, the registered
+<a href='../../Toybox/WatchUi/Menu2InputDelegate.html#onSelect-instance_function'>onSelect()</a> method will
+be called. While a Menu2 can be generated programmatically, they should
+generally be created as a resource.
+</p><p>
+A Menu2 is pushed using <a href='../../Toybox/WatchUi.html#pushView-instance_function'>pushView()</a>, which
+provides a <a href='../../Toybox/WatchUi/Menu2InputDelegate.html'>Menu2InputDelegate</a> as
+the input delegate.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Menu2InputDelegate.html">Toybox.WatchUi.Menu2InputDelegate</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/MenuItem.html">Toybox.WatchUi.MenuItem</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/BehaviorDelegate.html">Toybox.WatchUi.BehaviorDelegate</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi.html#pushView-instance_function">WatchUi.pushView()</a>
+  </div>
+  </li>
+  </ul>
+
+  <!-- Note -->
+  <div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+The look and feel of a Menu2 is device-specific.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Build a simple Menu2 programmatically</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.WatchUi;
+
+class MyBehaviorDelegate extends WatchUi.BehaviorDelegate {
+    function initialize() {
+        BehaviorDelegate.initialize();
+    }
+
+    function onMenu() {
+        var menu = new WatchUi.Menu2({:title=&gt;"My Menu2"});
+        var delegate;
+        menu.addItem(
+            new MenuItem(
+                "Item 1 Label",
+                "Item 1 subLabel",
+                "itemOneId",
+                {}
+            )
+        );
+        menu.addItem(
+            new MenuItem(
+                "Item 2 Label",
+                "Item 2 subLabel",
+                "itemTwoId",
+                {}
+            )
+        );
+        delegate = new MyMenu2Delegate(); // a WatchUi.Menu2InputDelegate
+        WatchUi.pushView(menu, delegate, WatchUi.SLIDE_IMMEDIATE);
+        return true;
+    }
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Audio Content Provider</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Data Field</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch Face</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Widget</p>
+    </div>
+  </li>
+  </ul>
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 520 Plus</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 745</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+</div>
+
+  <h2>Direct Known Subclasses</h2>
+  <p class="sub_classes">
+    <span class="type"><a href="../../Toybox/WatchUi/CheckboxMenu.html">WatchUi.CheckboxMenu</a></span>, <span class="type"><a href="../../Toybox/WatchUi/CustomMenu.html">WatchUi.CustomMenu</a></span>
+  </p>
+
+
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="DividerType-module" class="">
+    <h3>DividerType</h3>
+  </dt>
+  <p>
+Divider type for supported devices
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.0.1
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="DIVIDER_TYPE_DEFAULT-const">
+    <td class="enumTableCell">DIVIDER_TYPE_DEFAULT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 5.0.1
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Default divider type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="DIVIDER_TYPE_ICON-const">
+    <td class="enumTableCell">DIVIDER_TYPE_ICON</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 5.0.1
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Icon divider type
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#addItem-instance_function" title="addItem (Instance Function)"><strong>addItem</strong></a>(item as <span class="type"><a href="../../Toybox/WatchUi/MenuItem.html">WatchUi.MenuItem</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add a MenuItem to a Menu2.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#deleteItem-instance_function" title="deleteItem (Instance Function)"><strong>deleteItem</strong></a>(index as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Delete a MenuItem from a Menu2.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#findItemById-instance_function" title="findItemById (Instance Function)"><strong>findItemById</strong></a>(identifier as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Find a MenuItem by ID in a Menu2.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getIcon-instance_function" title="getIcon (Instance Function)"><strong>getIcon</strong></a>()    as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the icon Retrieve the icon for this Menu2.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getItem-instance_function" title="getItem (Instance Function)"><strong>getItem</strong></a>(index as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)    as <span class="type"><a href="../../Toybox/WatchUi/MenuItem.html">WatchUi.MenuItem</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a MenuItem from a Menu2.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(options as { :title as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span>, :footer as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span>, :focus as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :icon as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :theme as <span class="type"><a href="../../Toybox/WatchUi.html#MenuTheme-module">WatchUi.MenuTheme</a></span> or <b>Null</b>, :dividerType as <span class="type"><a href="../../Toybox/WatchUi/Menu2.html#DividerType-module">Menu2.DividerType</a></span> or <b>Null</b> } or <b>Null</b>)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setDividerType-instance_function" title="setDividerType (Instance Function)"><strong>setDividerType</strong></a>(divider as <span class="type"><a href="../../Toybox/WatchUi/Menu2.html#DividerType-module">Menu2.DividerType</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set or change the desired divider type.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setFocus-instance_function" title="setFocus (Instance Function)"><strong>setFocus</strong></a>(focus as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the focus of a MenuItem in a Menu2.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setFooter-instance_function" title="setFooter (Instance Function)"><strong>setFooter</strong></a>(footer as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set a Menu2 footer.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setIcon-instance_function" title="setIcon (Instance Function)"><strong>setIcon</strong></a>(icon as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the icon Set the icon to display in the subscreen area when the focused MenuItem does not have an icon.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setTheme-instance_function" title="setTheme (Instance Function)"><strong>setTheme</strong></a>(theme as <span class="type"><a href="../../Toybox/WatchUi.html#MenuTheme-module">WatchUi.MenuTheme</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the theme.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setTitle-instance_function" title="setTitle (Instance Function)"><strong>setTitle</strong></a>(title as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set a Menu2 title.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#updateItem-instance_function" title="updateItem (Instance Function)"><strong>updateItem</strong></a>(item as <span class="type"><a href="../../Toybox/WatchUi/MenuItem.html">WatchUi.MenuItem</a></span>, index as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Update a MenuItem in a Menu2.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="addItem-instance_function">
+    <strong>addItem(item as <span class="type"><a href="../../Toybox/WatchUi/MenuItem.html">WatchUi.MenuItem</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add a MenuItem to a Menu2.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">item</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/MenuItem.html">WatchUi.MenuItem</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The MenuItem to add to the Menu2
+</p>
+
+<ul>
+<li>
+<p>
+May not be a <a href='../../Toybox/WatchUi/CheckboxMenuItem.html'>CheckboxMenuItem</a>
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/InvalidMenuItemTypeException.html">WatchUi.InvalidMenuItemTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if item is a <a href='../../Toybox/WatchUi/CheckboxMenuItem.html'>CheckboxMenuItem</a>
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if item is not a valid type
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="deleteItem-instance_function">
+    <strong>deleteItem(index as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Delete a MenuItem from a Menu2.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">index</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The index of the <a href='../../Toybox/WatchUi/MenuItem.html'>MenuItem</a> that should be deleted from the Menu2.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class="inline">
+    <p>
+<a href='../../Toybox/Lang/Boolean.html'>Toybox::Lang::Boolean</a> <code>true</code> if the item exists, or <code>null</code> if the specified index it outside of the bounds of the menu items array.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="findItemById-instance_function">
+    <strong>findItemById(identifier as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Find a MenuItem by ID in a Menu2.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">identifier</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The identifier for which to search
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The index of the <a href='../../Toybox/WatchUi/MenuItem.html'>MenuItem</a> assigned the supplied identifier
+</p>
+
+<ul>
+<li>
+<p>
+-1 if not found
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getIcon-instance_function">
+    <strong>getIcon()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the icon
+</p><p>
+Retrieve the icon for this Menu2.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Descent™ G1 / G1 Solar</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>, <span class="type"><a href="../../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>, <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The icon
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getItem-instance_function">
+    <strong>getItem(index as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/WatchUi/MenuItem.html">WatchUi.MenuItem</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a MenuItem from a Menu2.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">index</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The index of the <a href='../../Toybox/WatchUi/MenuItem.html'>MenuItem</a> to get
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/WatchUi/MenuItem.html">WatchUi.MenuItem</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(options as { :title as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span>, :footer as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span>, :focus as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :icon as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, :theme as <span class="type"><a href="../../Toybox/WatchUi.html#MenuTheme-module">WatchUi.MenuTheme</a></span> or <b>Null</b>, :dividerType as <span class="type"><a href="../../Toybox/WatchUi/Menu2.html#DividerType-module">Menu2.DividerType</a></span> or <b>Null</b> } or <b>Null</b>)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+The <code>:icon</code> option is only used on ConnectIQ 3.4.0 devices with subscreen support.
+</p>
+
+
+  </div>
+</div><div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+The <code>:theme</code> option is only used on ConnectIQ 4.1.8 devices with menu theme support.
+</p>
+
+
+  </div>
+</div><div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+The <code>:dividerType</code> option is only used on ConnectIQ 5.0.1 devices with divider support.
+</p>
+
+
+  </div>
+</div><div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+The <code>:footer</code> option is only used on ConnectIQ 5.1.0 devices.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary of options
+</p>
+
+<ul>
+<li>
+<p>
+Can be <code>null</code>
+</p>
+
+</li>
+</ul>
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:title</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The menu title
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:footer</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The menu footer
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:focus</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The index of the <a href='../../Toybox/WatchUi/MenuItem.html'>MenuItem</a> that should have initial focus
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:icon</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>, <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span>, <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The icon to display in the subscreen area when the focused MenuItem does not have an icon.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:theme</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi.html#MenuTheme-module">WatchUi.MenuTheme</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The menu theme, or <code>null</code> for no theme. Defaults to MENU_THEME_DEFAULT.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:dividerType</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/Menu2.html#DividerType-module">Menu2.DividerType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The divider type, Defaults to DIVIDER_TYPE_DEFAULT.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/WatchUi/Menu2.html#setDividerType-instance_function">Toybox.WatchUi.Menu2.setDividerType</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setDividerType-instance_function">
+    <strong>setDividerType(divider as <span class="type"><a href="../../Toybox/WatchUi/Menu2.html#DividerType-module">Menu2.DividerType</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set or change the desired divider type.
+</p><p>
+If set to <a href='../../Toybox/WatchUi/Menu2.html#DividerType-module'>Menu2.DIVIDER_TYPE_ICON</a>.
+</p><p>
+For <a href='../../Toybox/WatchUi/IconMenuItem.html'>IconMenuItem</a> and
+<a href='../../Toybox/WatchUi/CheckboxMenuItem.html'>CheckboxMenuItem</a>, icon and checkbox
+will be rendered on the left side of the divider if item is
+<a href='../../Toybox/WatchUi/MenuItem.html#Alignment-module'>MenuItem.MENU_ITEM_LABEL_ALIGN_LEFT</a>
+or <code>default</code> aligned.
+</p><p>
+For <a href='../../Toybox/WatchUi/ToggleMenuItem.html'>ToggleMenuItem</a>, toggle icon
+will be rendered on the left side of the divider,
+if item is <a href='../../Toybox/WatchUi/MenuItem.html#Alignment-module'>MenuItem.MENU_ITEM_LABEL_ALIGN_LEFT</a>
+aligned only.
+</p><p>
+<a href='../../Toybox/WatchUi/Menu2.html#DividerType-module'>Menu2.DIVIDER_TYPE_DEFAULT</a> will be used
+if not set for devices that support divider, or <code>null</code> is passed.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Enduro™ 3</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.0.1
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type">WatchUi.InvalidValueException</span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if divider is not an valid value.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if divider is not a valid type.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setFocus-instance_function">
+    <strong>setFocus(focus as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the focus of a MenuItem in a Menu2.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">focus</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The index of the <a href='../../Toybox/WatchUi/MenuItem.html'>MenuItem</a> that should have focus
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if focus is not a valid type
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setFooter-instance_function">
+    <strong>setFooter(footer as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set a Menu2 footer.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">footer</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The menu footer text, <code>null</code>, a string ResourceId, or a Drawable
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if footer is not a valid type
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setIcon-instance_function">
+    <strong>setIcon(icon as <span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the icon
+</p><p>
+Set the icon to display in the subscreen area when the focused MenuItem
+does not have an icon. If this menu does not have an icon, the app icon
+will be shown instead.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">icon</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#BitmapType-named_type">Graphics.BitmapType</a></span>, <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The icon
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Descent™ G1 / G1 Solar</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.4.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setTheme-instance_function">
+    <strong>setTheme(theme as <span class="type"><a href="../../Toybox/WatchUi.html#MenuTheme-module">WatchUi.MenuTheme</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the theme
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">theme</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi.html#MenuTheme-module">WatchUi.MenuTheme</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The theme for this menu.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® E</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 965</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.1.8
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setTitle-instance_function">
+    <strong>setTitle(title as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span> or <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span> or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set a Menu2 title.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">title</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>, <span class="type"><a href="../../Toybox/WatchUi/Drawable.html">WatchUi.Drawable</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The menu title text, <code>null</code>, a string ResourceId, or a Drawable
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if title is not a valid type
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="updateItem-instance_function">
+    <strong>updateItem(item as <span class="type"><a href="../../Toybox/WatchUi/MenuItem.html">WatchUi.MenuItem</a></span>, index as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Update a MenuItem in a Menu2.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">item</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/WatchUi/MenuItem.html">WatchUi.MenuItem</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The MenuItem to update
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">index</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The index of the MenuItem to update
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

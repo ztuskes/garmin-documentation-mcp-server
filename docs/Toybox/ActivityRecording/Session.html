@@ -1,0 +1,875 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.ActivityRecording.Session </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.ActivityRecording.Session";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.ActivityRecording.Session</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/ActivityRecording/Session.html">Toybox.ActivityRecording.Session</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Session objects control the FIT recording state machine.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Format for setting up a Session object</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.ActivityRecording;
+var session = ActivityRecording.createSession({  // set up recording session
+    :name=&gt;"Generic",                            // set session name
+    :sport=&gt;Activity.SPORT_GENERIC,              // set sport type
+    :subSport=&gt;Activity.SUB_SPORT_GENERIC        // set sub sport type
+});</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#addLap-instance_function" title="addLap (Instance Function)"><strong>addLap</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add a lap to the current recording.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#createField-instance_function" title="createField (Instance Function)"><strong>createField</strong></a>(name as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, fieldId as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, type as <span class="type"><a href="../../Toybox/FitContributor.html#DataType-module">FitContributor.DataType</a></span>, options as { :count as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :mesgType as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :units as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, :nativeNum as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> })    as <span class="type"><a href="../../Toybox/FitContributor/Field.html">FitContributor.Field</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Create a new <a href='../../Toybox/FitContributor/Field.html'>Field</a>.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#discard-instance_function" title="discard (Instance Function)"><strong>discard</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Complete the Session by discarding the recorded data.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#isRecording-instance_function" title="isRecording (Instance Function)"><strong>isRecording</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Check if recording is active for this Session.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#save-instance_function" title="save (Instance Function)"><strong>save</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Complete the session by storing the FIT file on the file system.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setTimerEventListener-instance_function" title="setTimerEventListener (Instance Function)"><strong>setTimerEventListener</strong></a>(listener as <span class="type"><a href="../../Toybox/Lang/Method.html">Lang.Method</a></span>(eventType as <span class="type"><a href="../../Toybox/ActivityRecording.html#TimerEventType-module">ActivityRecording.TimerEventType</a></span>, eventData as <span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>) as <b>Void</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the listener for Session timer events The listener method is called whenever a new timer event occurs.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#start-instance_function" title="start (Instance Function)"><strong>start</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Begin recording a FIT file on the system.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#stop-instance_function" title="stop (Instance Function)"><strong>stop</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Stop recording a FIT file on the system.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="addLap-instance_function">
+    <strong>addLap()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add a lap to the current recording.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if a lap was successfully created, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="createField-instance_function">
+    <strong>createField(name as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, fieldId as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, type as <span class="type"><a href="../../Toybox/FitContributor.html#DataType-module">FitContributor.DataType</a></span>, options as { :count as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :mesgType as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :units as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>, :nativeNum as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> })</strong> <span class="type"> as <span class="type"><a href="../../Toybox/FitContributor/Field.html">FitContributor.Field</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Create a new <a href='../../Toybox/FitContributor/Field.html'>Field</a>.
+</p><p>
+Field objects allow developers to store information in FIT developer
+fields. This information can be displayed in Garmin Connect as a
+per-second graph, as lap information, or as workout summary
+information.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">name</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The name of the Field as a String
+</p>
+
+<ul>
+<li>
+<p>
+The maximum length may vary between products
+</p>
+
+</li>
+<li>
+<p>
+At least 64 bytes are available
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">fieldId</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The unique Field Identifier for the Field
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">type</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/FitContributor.html#DataType-module">FitContributor.DataType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The type definition for the Field from the DATA_TYPE_* enumerator in the <a href='../../Toybox/FitContributor.html'>FitContributor</a> module
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Optional parameters that can be specified for Field creation
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:count</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The number of elements to add to the Field if it is an Array
+</p>
+
+<ul>
+<li>
+<p>
+This is also the maximum combined size of strings plus <code>null</code> terminators if the type is DATA_TYPE_STRING (Default 1)
+</p>
+
+</li>
+<li>
+<p>
+Apps are limited to 256 total bytes per message
+</p>
+
+</li>
+<li>
+<p>
+Data fields are limited to 32 bytes per message
+</p>
+
+</li>
+<li>
+<p>
+Messages larger than the limit will result in a "New Field out of memory for FIT data" error.
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:mesgType</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The message type that this Field should be added to
+</p>
+
+<ul>
+<li>
+<p>
+Defaults to <a href='../../Toybox/FitContributor.html#MESG_TYPE_RECORD-const'>MESG_TYPE_RECORD</a> if not provided
+</p>
+
+</li>
+<li>
+<p>
+If mesgType == <a href='../../Toybox/FitContributor.html#MESG_TYPE_RECORD-const'>MESG_TYPE_RECORD</a>, <a href='../../Toybox/FitContributor.html#DATA_TYPE_STRING-const'>DATA_TYPE_STRING</a> cannot be used as the Field type.
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:units</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The display units as a String
+</p>
+
+<ul>
+<li>
+<p>
+This should use the current device language
+</p>
+
+</li>
+<li>
+<p>
+The maximum length may vary between products
+</p>
+
+</li>
+<li>
+<p>
+At least 16 bytes are available
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:nativeNum</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+If this Field can be treated equivalently to a Field that is included in the FIT SDK use this to indicate the Field Number that is specified by the FIT Profile.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/FitContributor/Field.html">FitContributor.Field</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The resulting Field object
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="https://www.thisisant.com/resources/fit">The Message type  descriptions can be found in Profile.xlsx included in the FIT SDK</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/FitContributor/Field.html">FitContributor.Field</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="https://developer.garmin.com/connect-iq/core-topics/activity-recording/">Core Topics - Activity Recording</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="discard-instance_function">
+    <strong>discard()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Complete the Session by discarding the recorded data.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if the Session was successfully discarded, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="isRecording-instance_function">
+    <strong>isRecording()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Check if recording is active for this Session.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if recording is active, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="save-instance_function">
+    <strong>save()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Complete the session by storing the FIT file on the file system.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if the session was successfully saved, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setTimerEventListener-instance_function">
+    <strong>setTimerEventListener(listener as <span class="type"><a href="../../Toybox/Lang/Method.html">Lang.Method</a></span>(eventType as <span class="type"><a href="../../Toybox/ActivityRecording.html#TimerEventType-module">ActivityRecording.TimerEventType</a></span>, eventData as <span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>) as <b>Void</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the listener for Session timer events
+</p><p>
+The listener method is called whenever a new timer event
+occurs.
+</p><p>
+The keys in the Dictionary passed to the listener callback depend
+on the the value of the eventType parameter.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">listener</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A reference to a callback which must accept two arguments.
+</p>
+
+<ul>
+<li>
+<p>
+eventType: A TIMER_EVENT_* enum that describes the event that occurred.
+</p>
+
+</li>
+<li>
+<p>
+eventData: A <a href='../../Toybox/Lang/Dictionary.html'>Dictionary</a> containing data relevant to the timer event or <code>null</code>. If eventType is TIMER_EVENT_LAP, the following are provided if available:
+</p>
+
+</li>
+<ul>
+<li>
+<p>
+<code>:elapsedDistance</code> <a href='../../Toybox/Lang/Float.html'>Float</a> (meters)
+</p>
+
+</li>
+<li>
+<p>
+<code>:averageSpeed</code> <a href='../../Toybox/Lang/Float.html'>Float</a> (meters/second)
+</p>
+
+</li>
+<li>
+<p>
+<code>:maxSpeed</code> <a href='../../Toybox/Lang/Float.html'>Float</a> (meters/second)
+</p>
+
+</li>
+<li>
+<p>
+<code>:startTime</code> <a href='../../Toybox/Time/Moment.html'>Moment</a> (Moment)
+</p>
+
+</li>
+<li>
+<p>
+<code>:elapsedTime</code> <a href='../../Toybox/Lang/Number.html'>Number</a> (milliseconds)
+</p>
+
+</li>
+<li>
+<p>
+<code>:timerTime</code> <a href='../../Toybox/Lang/Number.html'>Number</a> (milliseconds)
+</p>
+
+</li>
+</ul>
+</ul>
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.10
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="start-instance_function">
+    <strong>start()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Begin recording a FIT file on the system.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if recording was successfully started, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="stop-instance_function">
+    <strong>stop()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Stop recording a FIT file on the system.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if recording was successfully stopped, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

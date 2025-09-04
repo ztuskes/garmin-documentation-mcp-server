@@ -1,0 +1,333 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Application.Properties </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Application.Properties";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Application.Properties</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Properties module provides access to application properties.
+</p><p>
+Storage provides access to properties defined in application properties.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../../Toybox/Application/Properties/InvalidKeyException.html">InvalidKeyException</a></span>
+</p>
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getValue-instance_function" title="getValue (Instance Function)"><strong>getValue</strong></a>(key as <span class="type"><a href="../../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span>)    as <span class="type"><a href="../../Toybox/Application.html#PropertyValueType-named_type">Application.PropertyValueType</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the data associated with a given key from application settings.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setValue-instance_function" title="setValue (Instance Function)"><strong>setValue</strong></a>(key as <span class="type"><a href="../../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span>, value as <span class="type"><a href="../../Toybox/Application.html#PropertyValueType-named_type">Application.PropertyValueType</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Store the given Application Property.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getValue-instance_function">
+    <strong>getValue(key as <span class="type"><a href="../../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Application.html#PropertyValueType-named_type">Application.PropertyValueType</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the data associated with a given key from application settings.
+</p><p>
+Property values must be defined in the application settings xml. If a key
+that is not present in application settings is passed to getValue(),
+an exception will be thrown.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">key</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The key of the value to retrieve from Application Properties
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The content associated with the key
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/Application/Properties.html#setValue-instance_function">setValue()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if key is a disallowed data type
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Application/Properties/InvalidKeyException.html">Properties.InvalidKeyException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if key does not exist in Application Settings
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setValue-instance_function">
+    <strong>setValue(key as <span class="type"><a href="../../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span>, value as <span class="type"><a href="../../Toybox/Application.html#PropertyValueType-named_type">Application.PropertyValueType</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Store the given Application Property.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Background processes cannot save Application Properties
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">key</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The key used to store and retrieve the value from Application Properties
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">value</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value to put into Application Properties
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Application/ObjectStoreAccessException.html">Application.ObjectStoreAccessException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if called from a background process on device that does not have ConnectIQ 3.2.0 support. Data can always be passed to the foreground process from a background process with <a href='../../Toybox/Background.html#exit-instance_function'>Background.exit()</a>.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if key is a disallowed data type
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Application/Properties/InvalidKeyException.html">Properties.InvalidKeyException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if key does not exist in Application Properties
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

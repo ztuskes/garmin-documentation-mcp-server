@@ -1,0 +1,545 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.BluetoothLowEnergy.Characteristic </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.BluetoothLowEnergy.Characteristic";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.BluetoothLowEnergy.Characteristic</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/BluetoothLowEnergy/Characteristic.html">Toybox.BluetoothLowEnergy.Characteristic</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Encapsulates a characteristic on a service
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getDescriptor-instance_function" title="getDescriptor (Instance Function)"><strong>getDescriptor</strong></a>(uuid as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>)    as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Descriptor.html">BluetoothLowEnergy.Descriptor</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Retrieves the Descriptor with a specified UUID.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getDescriptors-instance_function" title="getDescriptors (Instance Function)"><strong>getDescriptors</strong></a>()    as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Iterator.html">BluetoothLowEnergy.Iterator</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Retrieves an Iterator over the <a href='../../Toybox/BluetoothLowEnergy/Descriptor.html'>Descriptors</a> discovered in the Characteristic This will only provide descriptors that have been registered using <a href='../../Toybox/BluetoothLowEnergy.html#registerProfile-instance_function'>registerProfile()</a>.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getService-instance_function" title="getService (Instance Function)"><strong>getService</strong></a>()    as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Service.html">BluetoothLowEnergy.Service</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Retrieves the Characteristic's Service Retrieve the Service that this characteristic belongs to.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getUuid-instance_function" title="getUuid (Instance Function)"><strong>getUuid</strong></a>()    as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Return the UUID of the Characteristic.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#requestRead-instance_function" title="requestRead (Instance Function)"><strong>requestRead</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Requests a read operation on the characteristic Once the operation is completed, <a href='../../Toybox/BluetoothLowEnergy/BleDelegate.html#onCharacteristicRead-instance_function'>onCharacteristicRead()</a> will be called on the registered <a href='../../Toybox/BluetoothLowEnergy/BleDelegate.html'>BleDelegate</a> with the status of the operation Support for long reads is not implemented.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#requestWrite-instance_function" title="requestWrite (Instance Function)"><strong>requestWrite</strong></a>(value as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>, options as { :writeType as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#WriteType-module">BluetoothLowEnergy.WriteType</a></span> })    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Requests a write operation Once the operation is completed, <a href='../../Toybox/BluetoothLowEnergy/BleDelegate.html#onCharacteristicWrite-instance_function'>onCharacteristicWrite()</a> will be called on the registered <a href='../../Toybox/BluetoothLowEnergy/BleDelegate.html'>BleDelegate</a> with the status of the operation Support for long writes is not implemented.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getDescriptor-instance_function">
+    <strong>getDescriptor(uuid as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Descriptor.html">BluetoothLowEnergy.Descriptor</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Retrieves the Descriptor with a specified UUID
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">uuid</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+the UUID to search for.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Descriptor.html">BluetoothLowEnergy.Descriptor</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The Descriptor represented by the UUID provided or, <code>null</code> if the descriptor does not exist or the UUID has not be registered.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getDescriptors-instance_function">
+    <strong>getDescriptors()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Iterator.html">BluetoothLowEnergy.Iterator</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Retrieves an Iterator over the <a href='../../Toybox/BluetoothLowEnergy/Descriptor.html'>Descriptors</a>
+discovered in the Characteristic
+</p><p>
+This will only provide descriptors that have been registered
+using <a href='../../Toybox/BluetoothLowEnergy.html#registerProfile-instance_function'>registerProfile()</a>
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Iterator.html">BluetoothLowEnergy.Iterator</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Iterator of <a href='../../Toybox/BluetoothLowEnergy/Descriptor.html'>Descriptor</a> objects for the descriptors discovered in the Characteristic
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getService-instance_function">
+    <strong>getService()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Service.html">BluetoothLowEnergy.Service</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Retrieves the Characteristic's Service
+</p><p>
+Retrieve the Service that this characteristic belongs to
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Service.html">BluetoothLowEnergy.Service</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Parent characteristic object
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getUuid-instance_function">
+    <strong>getUuid()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Return the UUID of the Characteristic
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/BluetoothLowEnergy/Uuid.html">BluetoothLowEnergy.Uuid</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The UUID of the Characteristic
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="requestRead-instance_function">
+    <strong>requestRead()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Requests a read operation on the characteristic
+</p><p>
+Once the operation is completed,
+<a href='../../Toybox/BluetoothLowEnergy/BleDelegate.html#onCharacteristicRead-instance_function'>onCharacteristicRead()</a>
+will be called on the registered <a href='../../Toybox/BluetoothLowEnergy/BleDelegate.html'>BleDelegate</a>
+with the status of the operation
+</p><p>
+Support for long reads is not implemented.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="requestWrite-instance_function">
+    <strong>requestWrite(value as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>, options as { :writeType as <span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#WriteType-module">BluetoothLowEnergy.WriteType</a></span> })</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Requests a write operation
+</p><p>
+Once the operation is completed,
+<a href='../../Toybox/BluetoothLowEnergy/BleDelegate.html#onCharacteristicWrite-instance_function'>onCharacteristicWrite()</a>
+will be called on the registered <a href='../../Toybox/BluetoothLowEnergy/BleDelegate.html'>BleDelegate</a>
+with the status of the operation
+</p><p>
+Support for long writes is not implemented. Requesting a write on a
+characteristic longer than 20 bytes will cause an
+<a href='../../Toybox/BluetoothLowEnergy/InvalidRequestException.html'>InvalidRequestException</a>
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">value</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+New value to store.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary containing write options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:writeType</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy.html#WriteType-module">BluetoothLowEnergy.WriteType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/BluetoothLowEnergy.html#WRITE_TYPE_WITH_RESPONSE-const'>WRITE_TYPE_*</a> indicating the write type to use when writing to the characteristic. Cannot be <code>null</code>.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/BluetoothLowEnergy/InvalidRequestException.html">BluetoothLowEnergy.InvalidRequestException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+if the request is invalid
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

@@ -1,0 +1,616 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.SensorHistory.SensorHistoryIterator </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.SensorHistory.SensorHistoryIterator";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.SensorHistory.SensorHistoryIterator</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A class containing sensor data for a given period of time.
+</p><p>
+The SensorHistoryIterator describes a sequence of
+<a href='../../Toybox/SensorHistory/SensorSample.html'>SensorSample</a> objects. The iterator
+is retrieved using the appropriate "get" methods found in
+<a href='../../Toybox/SensorHistory.html'>SensorHistory</a> at the module level. This class
+provides the methods needed to retrieve information from each of the
+SensorSample objects included in the iterator.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory.html#getHeartRateHistory-instance_function">SensorHistory.getHeartRateHistory()</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/Lang/Method.html">Toybox.Lang.Method</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Gets a SensorHistoryIterator object to be used with the below methods</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.SensorHistory;
+using Toybox.Lang;
+using Toybox.System;
+
+// Create a method to get the SensorHistoryIterator object
+function getIterator() {
+    // Check device for SensorHistory compatibility
+    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getHeartRateHistory)) {
+        return Toybox.SensorHistory.getHeartRateHistory({});
+    }
+    return null;
+}
+
+// Store the iterator info in a variable. The options are 'null' in this
+// case so the entire available history is returned with the newest
+// samples returned first.
+var sensorIter = getIterator();</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getMax-instance_function" title="getMax (Instance Function)"><strong>getMax</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the maximum <a href='../../Toybox/SensorHistory/SensorSample.html'>SensorSample</a> data value contained in this iterator.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getMin-instance_function" title="getMin (Instance Function)"><strong>getMin</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the minimum <a href='../../Toybox/SensorHistory/SensorSample.html'>SensorSample</a> data value contained in this iterator.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getNewestSampleTime-instance_function" title="getNewestSampleTime (Instance Function)"><strong>getNewestSampleTime</strong></a>()    as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the <a href='../../Toybox/Time/Moment.html'>Moment</a> of the newest <a href='../../Toybox/SensorHistory/SensorSample.html'>SensorSample</a> in this iterator.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getOldestSampleTime-instance_function" title="getOldestSampleTime (Instance Function)"><strong>getOldestSampleTime</strong></a>()    as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the <a href='../../Toybox/Time/Moment.html'>Moment</a> of the oldest <a href='../../Toybox/SensorHistory/SensorSample.html'>SensorSample</a> in this iterator.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#next-instance_function" title="next (Instance Function)"><strong>next</strong></a>()    as <span class="type"><a href="../../Toybox/SensorHistory/SensorSample.html">SensorHistory.SensorSample</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the next <a href='../../Toybox/SensorHistory/SensorSample.html'>SensorSample</a> entry in the iterator.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getMax-instance_function">
+    <strong>getMax()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the maximum <a href='../../Toybox/SensorHistory/SensorSample.html'>SensorSample</a>
+data value contained in this iterator.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Print out the maximum SensorSample data value</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.SensorHistory;
+using Toybox.System;
+// Given a valid SensorHistoryIterator object, print out the
+// maximum sample value entry in the iterator
+System.println(sensorIter.getMax().data);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The maximum SensorSample data value in this iterator
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getMin-instance_function">
+    <strong>getMin()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the minimum <a href='../../Toybox/SensorHistory/SensorSample.html'>SensorSample</a>
+data value contained in this iterator.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Print out the minimum SensorSample data value</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.SensorHistory;
+using Toybox.System;
+// Given a valid SensorHistoryIterator object, print out the
+// minimum sample value entry in the iterator
+System.println(sensorIter.getMin().data);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The minimum SensorSample data value in this iterator
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getNewestSampleTime-instance_function">
+    <strong>getNewestSampleTime()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the <a href='../../Toybox/Time/Moment.html'>Moment</a> of the newest
+<a href='../../Toybox/SensorHistory/SensorSample.html'>SensorSample</a> in this iterator.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Print out the Moment of the newest SensorSample</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.SensorHistory;
+using Toybox.System;
+// Given a valid SensorHistoryIterator object, print out the Moment
+// of the newest sample entry in the iterator
+System.println(sensorIter.getNewestSampleTime());</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The Moment of the newest SensorSample in this iterator
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/Lang/Method.html">Toybox.Lang.Method</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/Time/Moment.html">Toybox.Time.Moment</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getOldestSampleTime-instance_function">
+    <strong>getOldestSampleTime()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the <a href='../../Toybox/Time/Moment.html'>Moment</a> of the oldest
+<a href='../../Toybox/SensorHistory/SensorSample.html'>SensorSample</a> in this iterator.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Print out the Moment of the oldest SensorSample</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.SensorHistory;
+using Toybox.System;
+// Given a valid SensorHistoryIterator object, print out the Moment
+// of the oldest sample entry in the iterator
+System.println(sensorIter.getOldestSampleTime());</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The Moment of the oldest SensorSample in this iterator
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/Lang/Method.html">Toybox.Lang.Method</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/Time/Moment.html">Toybox.Time.Moment</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="next-instance_function">
+    <strong>next()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/SensorHistory/SensorSample.html">SensorHistory.SensorSample</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the next <a href='../../Toybox/SensorHistory/SensorSample.html'>SensorSample</a>
+entry in the iterator.
+</p><p>
+This must be called to get the initial data from the iterator.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Print out the next SensorSample data value</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.SensorHistory;
+using Toybox.System;
+// Given a valid SensorHistoryIterator object, print out the next
+// entry in the iterator
+System.println(sensorIter.next().data);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/SensorHistory/SensorSample.html">SensorHistory.SensorSample</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The next SensorHistorySample, or <code>null</code> if there are no more samples
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory/SensorHistoryIterator.html">Toybox.SensorHistory.SensorHistoryIterator</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/SensorHistory/SensorSample.html">Toybox.SensorHistory.SensorSample</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 2.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

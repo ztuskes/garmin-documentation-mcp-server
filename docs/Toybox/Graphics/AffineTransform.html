@@ -1,0 +1,1244 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Graphics.AffineTransform </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Graphics.AffineTransform";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Graphics.AffineTransform</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Graphics/AffineTransform.html">Toybox.Graphics.AffineTransform</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A 2D affine transformation matrix
+</p><p>
+This is a 2D transform, typically used for converting coordinates from one 2D coordinate system to
+another. These transformations can represent a sequence of rotations, scales, shears, and translations.
+</p><p>
+</p>
+
+<pre>
+   | m00  m01  m02 |
+   | m10  m11  m12 |
+   |   0    0    1 |
+</pre>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#concatenate-instance_function" title="concatenate (Instance Function)"><strong>concatenate</strong></a>(xform as <span class="type"><a href="../../Toybox/Graphics/AffineTransform.html">Graphics.AffineTransform</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Apply the given transform Assign self to the result of the following matrix-matrix product: | m00 m01 m02 | | x00 x01 x02 | | m10 m11 m12 | x | x10 x11 x12 | | 0 0 1 | | 0 0 1 |.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getDeterminant-instance_function" title="getDeterminant (Instance Function)"><strong>getDeterminant</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the transform determinant.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getMatrix-instance_function" title="getMatrix (Instance Function)"><strong>getMatrix</strong></a>()    as [ <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> ]
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the transform values Get the underlying values of this transform as an Array | m00 m01 m02 | | m10 m11 m12 | => [ m00, m01, m02, m10, m11, m12 ] | 0 0 1 |.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>()
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+initialize self to the identity transform | 1 0 0 | | 0 1 0 | | 0 0 1 |.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#invert-instance_function" title="invert (Instance Function)"><strong>invert</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Invert self.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#preConcatenate-instance_function" title="preConcatenate (Instance Function)"><strong>preConcatenate</strong></a>(xform as <span class="type"><a href="../../Toybox/Graphics/AffineTransform.html">Graphics.AffineTransform</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Apply the given transform Assign self to the result of the following matrix-matrix product: | x00 x01 x02 | | m00 m01 m02 | | x10 x11 x12 | x | m10 m11 m12 | | 0 0 1 | | 0 0 1 |.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#rotate-instance_function" title="rotate (Instance Function)"><strong>rotate</strong></a>(theta as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Apply a rotation Assign self to the result of the following matrix-matrix product: | m00 m01 m02 | | cos -sin 0 | | m10 m11 m12 | x | sin cos 0 | | 0 0 1 | | 0 0 1 | Equivalent to var xform = new AffineTransform(); xform.setToRotation(theta); self.concatenate(xform);.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#scale-instance_function" title="scale (Instance Function)"><strong>scale</strong></a>(sx as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, sy as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Apply a scale Assign self to the result of the following matrix-matrix product: | m00 m01 m02 | | sx 0 0 | | m10 m11 m12 | x | 0 sy 0 | | 0 0 1 | | 0 0 1 | Equivalent to var xform = new AffineTransform(); xform.setToScale(sx, sy); self.concatenate(xform);.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setMatrix-instance_function" title="setMatrix (Instance Function)"><strong>setMatrix</strong></a>(m as [ <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> ])    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the transform values | m00 m01 m02 | [ m00, m01, m02, m10, m11, m12 ] => | m10 m11 m12 | | 0 0 1 |.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setToRotation-instance_function" title="setToRotation (Instance Function)"><strong>setToRotation</strong></a>(theta as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set self to a rotation transform | cos -sin 0 | | sin cos 0 | | 0 0 1 |.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setToScale-instance_function" title="setToScale (Instance Function)"><strong>setToScale</strong></a>(sx as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, sy as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set self to a scale transform | sx 0 0 | | 0 sy 0 | | 0 0 1 |.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setToShear-instance_function" title="setToShear (Instance Function)"><strong>setToShear</strong></a>(shx as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, shy as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set self to a shear transform | 1 shx 0 | | shy 1 0 | | 0 0 1 |.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setToTranslation-instance_function" title="setToTranslation (Instance Function)"><strong>setToTranslation</strong></a>(tx as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, ty as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set self to a translation transform | 1 0 tx | | 0 1 ty | | 0 0 1 |.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#shear-instance_function" title="shear (Instance Function)"><strong>shear</strong></a>(shx as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, shy as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Apply a shear Assign self to the result of the following matrix-matrix product: | m00 m01 m02 | | 1 shx 0 | | m10 m11 m12 | x | shy 1 0 | | 0 0 1 | | 0 0 1 | Equivalent to var xform = new AffineTransform(); xform.setToShear(shx, shy); self.concatenate(xform);.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#transformPoint-instance_function" title="transformPoint (Instance Function)"><strong>transformPoint</strong></a>(pt as <span class="type"><a href="../../Toybox/Graphics.html#Point2D-named_type">Graphics.Point2D</a></span>)    as <span class="type"><a href="../../Toybox/Graphics.html#Point2D-named_type">Graphics.Point2D</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Apply transform to a 2D coordinate Transform a single point as if by generating the following matrix-vector product: | m00 m01 m02 | | ptx | | m10 m11 m12 | x | pty | | 0 0 1 | | 1 |.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#transformPoints-instance_function" title="transformPoints (Instance Function)"><strong>transformPoints</strong></a>(pts as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Graphics.html#Point2D-named_type">Graphics.Point2D</a></span>&gt;)    as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Graphics.html#Point2D-named_type">Graphics.Point2D</a></span>&gt;
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Apply transform to an Array of 2D coordinates Transform an array of coordinates.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#translate-instance_function" title="translate (Instance Function)"><strong>translate</strong></a>(tx as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, ty as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Apply translation Assign self to the result of the following matrix-matrix product: | m00 m01 m02 | | 1 0 tx | | m10 m11 m12 | x | 0 1 ty | | 0 0 1 | | 0 0 1 | Equivalent to var xform = new AffineTransform(); xform.setToTranslation(tx, ty); self.concatenate(xform);.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="concatenate-instance_function">
+    <strong>concatenate(xform as <span class="type"><a href="../../Toybox/Graphics/AffineTransform.html">Graphics.AffineTransform</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Apply the given transform
+</p><p>
+Assign self to the result of the following matrix-matrix product:
+</p><p>
+</p>
+
+<pre>
+   | m00  m01  m02 |   | x00  x01  x02 |
+   | m10  m11  m12 | x | x10  x11  x12 |
+   |   0    0    1 |   |   0    0    1 |
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">xform</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/AffineTransform.html">Graphics.AffineTransform</a></span>)</span>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getDeterminant-instance_function">
+    <strong>getDeterminant()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the transform determinant
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getMatrix-instance_function">
+    <strong>getMatrix()</strong> <span class="type"> as [ <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> ]</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the transform values
+</p><p>
+Get the underlying values of this transform as an Array
+</p><p>
+</p>
+
+<pre>
+   | m00  m01  m02 |
+   | m10  m11  m12 | => [ m00, m01, m02, m10, m11, m12 ]
+   |   0    0    1 |
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize()</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+initialize self to the identity transform
+</p><p>
+</p>
+
+<pre>
+   |   1    0    0 |
+   |   0    1    0 |
+   |   0    0    1 |
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="invert-instance_function">
+    <strong>invert()</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Invert self
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <div class="inline">
+<p>
+ValueOutOfBoundsException if self cannot be inverted.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="preConcatenate-instance_function">
+    <strong>preConcatenate(xform as <span class="type"><a href="../../Toybox/Graphics/AffineTransform.html">Graphics.AffineTransform</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Apply the given transform
+</p><p>
+Assign self to the result of the following matrix-matrix product:
+</p><p>
+</p>
+
+<pre>
+   | x00  x01  x02 |   | m00  m01  m02 |
+   | x10  x11  x12 | x | m10  m11  m12 |
+   |   0    0    1 |   |   0    0    1 |
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">xform</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics/AffineTransform.html">Graphics.AffineTransform</a></span>)</span>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="rotate-instance_function">
+    <strong>rotate(theta as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Apply a rotation
+</p><p>
+Assign self to the result of the following matrix-matrix product:
+</p><p>
+</p>
+
+<pre>
+   | m00  m01  m02 |   | cos -sin    0 |
+   | m10  m11  m12 | x | sin  cos    0 |
+   |   0    0    1 |   |   0    0    1 |
+
+</pre>
+
+<p>
+Equivalent to
+</p>
+
+<pre>
+     var xform = new AffineTransform();
+     xform.setToRotation(theta);
+     self.concatenate(xform);
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">theta</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="scale-instance_function">
+    <strong>scale(sx as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, sy as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Apply a scale
+</p><p>
+Assign self to the result of the following matrix-matrix product:
+</p><p>
+</p>
+
+<pre>
+   | m00  m01  m02 |   |  sx    0    0 |
+   | m10  m11  m12 | x |   0   sy    0 |
+   |   0    0    1 |   |   0    0    1 |
+
+</pre>
+
+<p>
+Equivalent to
+</p>
+
+<pre>
+     var xform = new AffineTransform();
+     xform.setToScale(sx, sy);
+     self.concatenate(xform);
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">sx</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li><li>
+        <span class="name">sy</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setMatrix-instance_function">
+    <strong>setMatrix(m as [ <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> ])</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the transform values
+</p><p>
+</p>
+
+<pre>
+                                       | m00  m01  m02 |
+</pre>
+
+<dl><dt> m00, m01, m02, m10, m11, m12 </dt><dd>
+<li>
+<p>
+ => | m10  m11  m12 |
+</p>
+
+<pre>
+                                       |   0    0    1 |
+</pre>
+
+</li>
+</dl></dd>
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <div class="inline">
+<p>
+UnexpectedTypeException if parameter is not an Array
+</p>
+
+
+        </div>
+    </li><li>
+        <div class="inline">
+<p>
+InvalidValueException if parameter does not have exactly 6 elements
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setToRotation-instance_function">
+    <strong>setToRotation(theta as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set self to a rotation transform
+</p><p>
+</p>
+
+<pre>
+   | cos -sin    0 |
+   | sin  cos    0 |
+   |   0    0    1 |
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">theta</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setToScale-instance_function">
+    <strong>setToScale(sx as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, sy as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set self to a scale transform
+</p><p>
+</p>
+
+<pre>
+   |  sx    0    0 |
+   |   0   sy    0 |
+   |   0    0    1 |
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">sx</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li><li>
+        <span class="name">sy</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setToShear-instance_function">
+    <strong>setToShear(shx as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, shy as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set self to a shear transform
+</p><p>
+</p>
+
+<pre>
+   |   1  shx    0 |
+   | shy    1    0 |
+   |   0    0    1 |
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">shx</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li><li>
+        <span class="name">shy</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setToTranslation-instance_function">
+    <strong>setToTranslation(tx as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, ty as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set self to a translation transform
+</p><p>
+</p>
+
+<pre>
+   |   1    0   tx |
+   |   0    1   ty |
+   |   0    0    1 |
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">tx</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li><li>
+        <span class="name">ty</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="shear-instance_function">
+    <strong>shear(shx as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, shy as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Apply a shear
+</p><p>
+Assign self to the result of the following matrix-matrix product:
+</p><p>
+</p>
+
+<pre>
+   | m00  m01  m02 |   |   1  shx    0 |
+   | m10  m11  m12 | x | shy    1    0 |
+   |   0    0    1 |   |   0    0    1 |
+
+</pre>
+
+<p>
+Equivalent to
+</p>
+
+<pre>
+     var xform = new AffineTransform();
+     xform.setToShear(shx, shy);
+     self.concatenate(xform);
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">shx</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li><li>
+        <span class="name">shy</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="transformPoint-instance_function">
+    <strong>transformPoint(pt as <span class="type"><a href="../../Toybox/Graphics.html#Point2D-named_type">Graphics.Point2D</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Graphics.html#Point2D-named_type">Graphics.Point2D</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Apply transform to a 2D coordinate
+</p><p>
+Transform a single point as if by generating the following matrix-vector product:
+</p><p>
+</p>
+
+<pre>
+   | m00  m01  m02 |   | ptx |
+   | m10  m11  m12 | x | pty |
+   |   0    0    1 |   |   1 |
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">pt</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Graphics.html#Point2D-named_type">Graphics.Point2D</a></span>)</span>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Graphics.html#Point2D-named_type">Graphics.Point2D</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="transformPoints-instance_function">
+    <strong>transformPoints(pts as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Graphics.html#Point2D-named_type">Graphics.Point2D</a></span>&gt;)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Graphics.html#Point2D-named_type">Graphics.Point2D</a></span>&gt;</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Apply transform to an Array of 2D coordinates
+</p><p>
+Transform an array of coordinates
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">pts</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="translate-instance_function">
+    <strong>translate(tx as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>, ty as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Apply translation
+</p><p>
+Assign self to the result of the following matrix-matrix product:
+</p><p>
+</p>
+
+<pre>
+   | m00  m01  m02 |   |   1    0   tx |
+   | m10  m11  m12 | x |   0    1   ty |
+   |   0    0    1 |   |   0    0    1 |
+
+</pre>
+
+<p>
+Equivalent to
+</p>
+
+<pre>
+     var xform = new AffineTransform();
+     xform.setToTranslation(tx, ty);
+     self.concatenate(xform);
+</pre>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">tx</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li><li>
+        <span class="name">ty</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 4.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

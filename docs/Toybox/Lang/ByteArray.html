@@ -1,0 +1,1306 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Lang.ByteArray </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Lang.ByteArray";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Lang.ByteArray</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/ByteArray.html">Toybox.Lang.ByteArray</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+ByteArray objects are fixed size, numerically indexed, single dimensional,
+and take Numbers with a value >= -128 and <= 255 as members.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#add-instance_function" title="add (Instance Function)"><strong>add</strong></a>(byte as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Char.html">Lang.Char</a></span>)    as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add a byte to the end of a ByteArray.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#addAll-instance_function" title="addAll (Instance Function)"><strong>addAll</strong></a>(array as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span> or <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)    as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add a ByteArray or an <a href='../../Toybox/Lang/Array.html'>Array</a> of bytes to the end of a ByteArray.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#decodeNumber-instance_function" title="decodeNumber (Instance Function)"><strong>decodeNumber</strong></a>(format as <span class="type"><a href="../../Toybox/Lang.html#NumberFormat-module">Lang.NumberFormat</a></span>, options as { :offset as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :endianness as <span class="type"><a href="../../Toybox/Lang.html#Endian-module">Lang.Endian</a></span> })    as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Decodes a portion of the array to a number based on a specified format.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#encodeNumber-instance_function" title="encodeNumber (Instance Function)"><strong>encodeNumber</strong></a>(value as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, format as <span class="type"><a href="../../Toybox/Lang.html#NumberFormat-module">Lang.NumberFormat</a></span>, options as { :offset as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :endianness as <span class="type"><a href="../../Toybox/Lang.html#Endian-module">Lang.Endian</a></span> })    as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Encodes a number into the byte array.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#equals-instance_function" title="equals (Instance Function)"><strong>equals</strong></a>(other as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Test if an Object instance is equal to another instance of an Object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#hashCode-instance_function" title="hashCode (Instance Function)"><strong>hashCode</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a hash code value for a ByteArray.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#indexOf-instance_function" title="indexOf (Instance Function)"><strong>indexOf</strong></a>(byte as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Char.html">Lang.Char</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the index of a byte within the ByteArray.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#remove-instance_function" title="remove (Instance Function)"><strong>remove</strong></a>(byte as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Char.html">Lang.Char</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Remove a byte from a ByteArray.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#removeAll-instance_function" title="removeAll (Instance Function)"><strong>removeAll</strong></a>(byte as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Char.html">Lang.Char</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Remove bytes from a ByteArray.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#reverse-instance_function" title="reverse (Instance Function)"><strong>reverse</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Return a new ByteArray that contains the elements of a source ByteArray in reverse order.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#size-instance_function" title="size (Instance Function)"><strong>size</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the size of a ByteArray.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#slice-instance_function" title="slice (Instance Function)"><strong>slice</strong></a>(startIndex as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>, endIndex as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>)    as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a new ByteArray containing a portion of an existing ByteArray.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toString-instance_function" title="toString (Instance Function)"><strong>toString</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert a ByteArray to a String.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="add-instance_function">
+    <strong>add(byte as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Char.html">Lang.Char</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add a byte to the end of a ByteArray.
+</p><p>
+When adding a byte, the ByteArray size is increased and new
+bytes are inserted at the end.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">byte</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Char.html">Lang.Char</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Number or Char byte to be added
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A ByteArray composed of the original ByteArray plus the added byte
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a type other than <a href='../../Toybox/Lang/Number.html'>Number</a> or <a href='../../Toybox/Lang/Char.html'>Char</a> is provided
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/ValueOutOfBoundsException.html">Lang.ValueOutOfBoundsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a <a href='../../Toybox/Lang/Number.html'>Number</a> greater than 255 or less than -128 is provided, or if a <a href='../../Toybox/Lang/Char.html'>Char</a> with a code point greater than 127 is provided. Negative numbers added are interpreted as the positive 8-bit unsigned equivalent once added to the ByteArray.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="addAll-instance_function">
+    <strong>addAll(array as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span> or <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add a ByteArray or an <a href='../../Toybox/Lang/Array.html'>Array</a> of bytes to the end
+of a ByteArray.
+</p><p>
+When adding an array of bytes, the ByteArray is expanded by the size
+of the provided ByteArray or Array, and all of the new elements are
+inserted starting at the new index.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">array</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>, <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The ByteArray or Array of bytes to be added to the ByteArray
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A ByteArray composed of the original ByteArray plus the added byte(s)
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a type other than ByteArray or an <a href='../../Toybox/Lang/Array.html'>Array</a> of bytes is provided
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="decodeNumber-instance_function">
+    <strong>decodeNumber(format as <span class="type"><a href="../../Toybox/Lang.html#NumberFormat-module">Lang.NumberFormat</a></span>, options as { :offset as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :endianness as <span class="type"><a href="../../Toybox/Lang.html#Endian-module">Lang.Endian</a></span> })</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Decodes a portion of the array to a number based on a specified format
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">format</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#NumberFormat-module">Lang.NumberFormat</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/Lang.html#NUMBER_FORMAT_FLOAT-const'>Lang.NUMBER_FORMAT_*</a> value representing the number format to decode.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary containing conversion options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:offset</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The 0 based offset in the array to begin decode. Default value is 0.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:endianness</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Endian-module">Lang.Endian</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/Lang.html#Endian-module'>Lang.ENDIAN_*</a> value representing the endianness of the number to decode. Default value is <a href='../../Toybox/Lang.html#ENDIAN_LITTLE-const'>Lang.ENDIAN_LITTLE</a>.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Long.html">Lang.Long</a></span>, <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Converted Number.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/InvalidOptionsException.html">Lang.InvalidOptionsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Indicates that one of the options provided is not valid.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="encodeNumber-instance_function">
+    <strong>encodeNumber(value as <span class="type"><a href="../../Toybox/Lang.html#Numeric-named_type">Lang.Numeric</a></span>, format as <span class="type"><a href="../../Toybox/Lang.html#NumberFormat-module">Lang.NumberFormat</a></span>, options as { :offset as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :endianness as <span class="type"><a href="../../Toybox/Lang.html#Endian-module">Lang.Endian</a></span> })</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Encodes a number into the byte array
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">value</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The value to encode
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">format</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#NumberFormat-module">Lang.NumberFormat</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/Lang.html#NUMBER_FORMAT_FLOAT-const'>Lang.NUMBER_FORMAT_*</a> value representing the number format to encode.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary containing conversion options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:offset</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The 0 based offset in the array to begin encoding. Default value is 0.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:endianness</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang.html#Endian-module">Lang.Endian</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../../Toybox/Lang.html#Endian-module'>Lang.ENDIAN_*</a> value representing the endianness of the number to encode. Default value is <a href='../../Toybox/Lang.html#ENDIAN_LITTLE-const'>Lang.ENDIAN_LITTLE</a>.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/InvalidOptionsException.html">Lang.InvalidOptionsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Indicates that one of the options provided is not valid.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="equals-instance_function">
+    <strong>equals(other as <span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Test if an Object instance is equal to another instance of an Object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">other</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Object.html">Lang.Object</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Object to test against
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>var a = [ 1, 2 ]b;
+var b = [ 1, 2 ]b;
+var c = [ 1, 2 ];
+a.equals(b); // returns true
+a.equals(c); // returns false</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if Objects are equal, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="hashCode-instance_function">
+    <strong>hashCode()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a hash code value for a ByteArray.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The hash code for the ByteArray
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="indexOf-instance_function">
+    <strong>indexOf(byte as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Char.html">Lang.Char</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the index of a byte within the ByteArray.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">byte</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Char.html">Lang.Char</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The byte whose index is to be found
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The index of the first instance of the provided byte in the ByteArray. If the byte is not found, -1 is returned.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a type other than <a href='../../Toybox/Lang/Number.html'>Number</a> or <a href='../../Toybox/Lang/Char.html'>Char</a> is provided
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/ValueOutOfBoundsException.html">Lang.ValueOutOfBoundsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a <a href='../../Toybox/Lang/Number.html'>Number</a> greater than 255 or less than -128 is provided, or if a <a href='../../Toybox/Lang/Char.html'>Char</a> with a code point greater than 127 is provided. Negative numbers provided are interpreted as the positive 8-bit unsigned equivalent when searching the ByteArray.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="remove-instance_function">
+    <strong>remove(byte as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Char.html">Lang.Char</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Remove a byte from a ByteArray.
+</p><p>
+If the passed byte is found, the ByteArray size is decreased by one and
+elements beyond it are shifted to the next lower index. If the ByteArray
+has multiple matches, the matching byte at the lowest index will be
+removed but the other matching bytes will not be removed.
+</p><p>
+If no byte is provided as an argument, the ByteArray will remain unchanged
+and <code>remove()</code> will return <code>false</code>.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">byte</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Char.html">Lang.Char</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The byte to remove from the ByteArray
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Returns <code>true</code> if instances of the byte are found, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a type other than <a href='../../Toybox/Lang/Number.html'>Number</a> or <a href='../../Toybox/Lang/Char.html'>Char</a> is provided
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/ValueOutOfBoundsException.html">Lang.ValueOutOfBoundsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a <a href='../../Toybox/Lang/Number.html'>Number</a> greater than 255 or less than -128 is provided, or if a <a href='../../Toybox/Lang/Char.html'>Char</a> with a code point greater than 127 is provided. Negative numbers provided are interpreted as the positive 8-bit unsigned equivalent when searching the ByteArray.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="removeAll-instance_function">
+    <strong>removeAll(byte as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../../Toybox/Lang/Char.html">Lang.Char</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Remove bytes from a ByteArray.
+</p><p>
+For each instance of the byte that is found, the ByteArray size is
+decreased by one and elements beyond it are shifted to the next lower
+index.
+</p><p>
+If no byte is given as an argument, the ByteArray will remain unchanged
+and <code>removeAll()</code> will return <code>false</code>.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">byte</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Char.html">Lang.Char</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The byte to remove from the ByteArray
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Returns <code>true</code> if instances of the byte are found, otherwise <code>false</code>.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a type other than <a href='../../Toybox/Lang/Number.html'>Number</a> or <a href='../../Toybox/Lang/Char.html'>Char</a> is provided
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/ValueOutOfBoundsException.html">Lang.ValueOutOfBoundsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if a <a href='../../Toybox/Lang/Number.html'>Number</a> greater than 255 or less than -128 is provided, or if a <a href='../../Toybox/Lang/Char.html'>Char</a> with a code point greater than 127 is provided. Negative numbers provided are interpreted as the positive 8-bit unsigned equivalent when searching the ByteArray.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="reverse-instance_function">
+    <strong>reverse()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Return a new ByteArray that contains the elements of a source
+ByteArray in reverse order.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A new ByteArray with elements in reversed order
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="size-instance_function">
+    <strong>size()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the size of a ByteArray.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The number of elements in the ByteArray.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="slice-instance_function">
+    <strong>slice(startIndex as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>, endIndex as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a new ByteArray containing a portion of an existing ByteArray.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">startIndex</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, null)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A zero-based index of the start of the new ByteArray. If a negative <code>startIndex</code> is provided, it will offset from the end of the ByteArray. If the <code>startIndex</code> is <code>null</code>, the slice will begin at 0. An out-of-bounds index will be truncated to the ByteArray limits.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">endIndex</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, null)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A zero-based index of the end of the new ByteArray. Items are included up to, but not including <code>endIndex</code>. If a negative <code>endIndex</code> is provided, it will offset from the end of the ByteArray. If <code>endIndex</code> is <code>null</code>, the slice will end at the last element. An out-of-bounds index is truncated to the ByteArray limits.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/ByteArray.html">Lang.ByteArray</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A new ByteArray containing the elements from <code>startIndex</code> to <code>endIndex</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toString-instance_function">
+    <strong>toString()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert a ByteArray to a String.
+</p><p>
+This does not convert the elements of the ByteArray into Strings, but
+transforms the entire ByteArray into a String.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/String.html">Lang.String</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A String representation of the ByteArray
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

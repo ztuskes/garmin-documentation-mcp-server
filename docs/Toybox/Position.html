@@ -1,0 +1,1209 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Position </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Position";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Position</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Position module provides an interface for location information and
+positioning sensors.
+</p><p>
+This module also provides two sets of constants:
+</p>
+
+<ul>
+<li>
+<p>
+<strong>GEO:</strong> Used to specify the <a href='../Toybox/Position/Location.html'>Location</a> formatting.
+</p>
+
+</li>
+<li>
+<p>
+<strong>QUALITY:</strong> Represents the GPS fix quality when the <a href='../Toybox/Position/Location.html'>Location</a> information was calculated
+</p>
+
+</li>
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Position;
+using Toybox.System;
+Position.enableLocationEvents(Position.LOCATION_ONE_SHOT, method(:onPosition));
+function onPosition(info) {
+    var myLocation = info.position.toDegrees();
+    System.println("Latitude: " + myLocation[0]); // e.g. 38.856147
+    System.println("Longitude: " + myLocation[1]); // e.g -94.800953
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Position/Info.html">Info</a></span>, <span class="type"><a href="../Toybox/Position/Location.html">Location</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="Constellation-module" class="">
+    <h3>Constellation</h3>
+  </dt>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This enum may be removed after System 10.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="CONSTELLATION_GPS-const">
+    <td class="enumTableCell">CONSTELLATION_GPS</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Use the GPS satellite constellation
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CONSTELLATION_GLONASS-const">
+    <td class="enumTableCell">CONSTELLATION_GLONASS</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Use the GLONASS satellite constellation
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="CONSTELLATION_GALILEO-const">
+    <td class="enumTableCell">CONSTELLATION_GALILEO</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Use the GALILEO satellite constellation
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="Configuration-module" class="">
+    <h3>Configuration</h3>
+  </dt>
+  <p>
+Configuration values for known GNSS configurations
+</p>
+
+
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.6
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="CONFIGURATION_GPS-const">
+    <td class="enumTableCell">CONFIGURATION_GPS</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.6
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+GPS L1
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CONFIGURATION_GPS_GLONASS-const">
+    <td class="enumTableCell">CONFIGURATION_GPS_GLONASS</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.6
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+GPS L1 and GLONASS
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="CONFIGURATION_GPS_GALILEO-const">
+    <td class="enumTableCell">CONFIGURATION_GPS_GALILEO</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.6
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+GPS L1 and GALILEO L1
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CONFIGURATION_GPS_BEIDOU-const">
+    <td class="enumTableCell">CONFIGURATION_GPS_BEIDOU</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.6
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+GPS L1 and BEIDOU L1
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1-const">
+    <td class="enumTableCell">CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.6
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+GPS L1, GLONASS, GALILEO L1, BEIDOU L1
+</p><p>
+This option is supported by System 6 devices like fenix7 and edge1040
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1_L5-const">
+    <td class="enumTableCell">CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1_L5</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.6
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+GPS L1, GPS L5, GLONASS, GALILEO L1A, GALILEO L5, BEIDOU L1, BEIDOU L5
+</p><p>
+Referred to as Multi-GNSS Multi-band on Edge 1040.
+</p><p>
+This option is supported by System 6 devices like fenix7 and edge1040
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="CONFIGURATION_SAT_IQ-const">
+    <td class="enumTableCell">CONFIGURATION_SAT_IQ</td>
+      <td class="enumTableCell">255</td>
+      <td class="enumTableCell"><p>
+API Level 3.3.6
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+AutoGNSS (SatIQ™)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="CoordinateFormat-module" class="">
+    <h3>CoordinateFormat</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="GEO_DEG-const">
+    <td class="enumTableCell">GEO_DEG</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The decimal degree format: ddd.dddddd (e.g. 38.278652)
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Decimal_degrees">Decimal Degrees</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableEven" id="GEO_DM-const">
+    <td class="enumTableCell">GEO_DM</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The degrees/decimal minutes format: dddmm.mmm  (e.g 38 27.865')
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="GEO_DMS-const">
+    <td class="enumTableCell">GEO_DMS</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+degrees/minutes/seconds (DMS) format: ddd mm ss (e.g. 38 27' 8")
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="GEO_MGRS-const">
+    <td class="enumTableCell">GEO_MGRS</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Military Grid Reference System, or MGRS (e.g. 4QFJ12345678)
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Military_Grid_Reference_System">Military Grid Reference System</a>
+  </div>
+  </li></td>
+    </td>
+</tr>
+</table><dt id="Quality-module" class="">
+    <h3>Quality</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="QUALITY_NOT_AVAILABLE-const">
+    <td class="enumTableCell">QUALITY_NOT_AVAILABLE</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+GPS is not available
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="QUALITY_LAST_KNOWN-const">
+    <td class="enumTableCell">QUALITY_LAST_KNOWN</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The Location is based on the last known GPS fix.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="QUALITY_POOR-const">
+    <td class="enumTableCell">QUALITY_POOR</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The Location was calculated with a poor GPS fix.
+Only a 2-D GPS fix is available, likely due to a limited number of tracked satellites.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="QUALITY_USABLE-const">
+    <td class="enumTableCell">QUALITY_USABLE</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The Location was calculated with a usable GPS fix.
+A 3-D GPS fix is available, with marginal HDOP (horizontal dilution of precision)
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Dilution_of_precision_(navigation)">Dilution of Precision</a>
+  </div>
+  </li></td>
+    </td>
+</tr><tr class="enumTableOdd" id="QUALITY_GOOD-const">
+    <td class="enumTableCell">QUALITY_GOOD</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The Location was calculated with a good GPS fix.
+A 3-D GPS fix is available, with good-to-excellent HDOP (horizontal dilution of precision).
+</p>
+
+</td>
+      <td class="enumTableCell"><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Dilution_of_precision_(navigation)">Dilution of Precision</a>
+  </div>
+  </li></td>
+    </td>
+</tr>
+</table><dt id="LocationAcquisitionType-module" class="">
+    <h3>LocationAcquisitionType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="LOCATION_ONE_SHOT-const">
+    <td class="enumTableCell">LOCATION_ONE_SHOT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Enables a one-time Location acquisition
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="LOCATION_CONTINUOUS-const">
+    <td class="enumTableCell">LOCATION_CONTINUOUS</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Enables continuous Location tracking
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="LOCATION_DISABLE-const">
+    <td class="enumTableCell">LOCATION_DISABLE</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Disables Location tracking
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="PositioningMode-module" class="">
+    <h3>PositioningMode</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="POSITIONING_MODE_NORMAL-const">
+    <td class="enumTableCell">POSITIONING_MODE_NORMAL</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Standard positioning mode used by default for fitness activities
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="POSITIONING_MODE_AVIATION-const">
+    <td class="enumTableCell">POSITIONING_MODE_AVIATION</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.2.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Enable special mode for aviation use-cases that require support for
+higher altitudes.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#createBoundingBox-instance_function" title="createBoundingBox (Instance Function)"><strong>createBoundingBox</strong></a>(locations as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span>&gt;)    as [ <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span>, <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span> ] or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Create a bounding box from an array of <a href='../Toybox/Position/Location.html'>Location</a> objects.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#enableLocationEvents-instance_function" title="enableLocationEvents (Instance Function)"><strong>enableLocationEvents</strong></a>(options as { :acquisitionType as <span class="type"><a href="../Toybox/Position.html#LocationAcquisitionType-module">Position.LocationAcquisitionType</a></span>, :constellations as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Position.html#Constellation-module">Position.Constellation</a></span>&gt;, :configuration as <span class="type"><a href="../Toybox/Position.html#Configuration-module">Position.Configuration</a></span>, :mode as <span class="type"><a href="../Toybox/Position.html#PositioningMode-module">Position.PositioningMode</a></span> } or <span class="type"><a href="../Toybox/Position.html#LocationAcquisitionType-module">Position.LocationAcquisitionType</a></span>, listener as <b>Null</b> or <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(loc as <span class="type"><a href="../Toybox/Position/Info.html">Position.Info</a></span>) as <b>Void</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Request a Location event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getInfo-instance_function" title="getInfo (Instance Function)"><strong>getInfo</strong></a>()    as <span class="type"><a href="../Toybox/Position/Info.html">Position.Info</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current <a href='../Toybox/Position/Info.html'>Position.Info</a>.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#hasConfigurationSupport-instance_function" title="hasConfigurationSupport (Instance Function)"><strong>hasConfigurationSupport</strong></a>(config as <span class="type"><a href="../Toybox/Position.html#Configuration-module">Position.Configuration</a></span>)    as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Determines if the device supports a requested GPS configuration.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#parse-instance_function" title="parse (Instance Function)"><strong>parse</strong></a>(string as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, format as <span class="type"><a href="../Toybox/Position.html#CoordinateFormat-module">Position.CoordinateFormat</a></span>)    as <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert a String to a Location object.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="createBoundingBox-instance_function">
+    <strong>createBoundingBox(locations as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span>&gt;)</strong> <span class="type"> as [ <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span>, <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span> ] or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Create a bounding box from an array of <a href='../Toybox/Position/Location.html'>Location</a> objects.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">locations</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Array of <a href='../Toybox/Position/Location.html'>Location</a> objects.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Array of <a href='../Toybox/Position/Location.html'>Location</a> objects that specify the bounds of the input array or <code>null</code> if the the input array is empty. The first element describes the top left corner, the second describes the bottom right.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.3
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="enableLocationEvents-instance_function">
+    <strong>enableLocationEvents(options as { :acquisitionType as <span class="type"><a href="../Toybox/Position.html#LocationAcquisitionType-module">Position.LocationAcquisitionType</a></span>, :constellations as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Position.html#Constellation-module">Position.Constellation</a></span>&gt;, :configuration as <span class="type"><a href="../Toybox/Position.html#Configuration-module">Position.Configuration</a></span>, :mode as <span class="type"><a href="../Toybox/Position.html#PositioningMode-module">Position.PositioningMode</a></span> } or <span class="type"><a href="../Toybox/Position.html#LocationAcquisitionType-module">Position.LocationAcquisitionType</a></span>, listener as <b>Null</b> or <span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>(loc as <span class="type"><a href="../Toybox/Position/Info.html">Position.Info</a></span>) as <b>Void</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Request a Location event.
+</p><p>
+Using this API requires enabling the Positioning Permission.
+Only Device Apps and Widgets may use this API.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Passing an options <a href='../Toybox/Lang/Dictionary.html'>Dictionary</a> is only supported with ConnectIQ 3.2.0 and later.
+</p>
+
+
+  </div>
+</div><div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Passing the <code>:configuration</code> option is only supported with ConnectIQ 3.3.6 or later.
+</p>
+
+
+  </div>
+</div><div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+Multitasking: Location events will be disabled when app enters inacitve state, and re-enabled when is active again. These state changes are denoted by calls to AppBase.onActive() and AppBase.onInactive().
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A LOCATION_* value or <a href='../Toybox/Lang/Dictionary.html'>Toybox::Lang::Dictionary</a> of options.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:acquisitionType</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Position.html#LocationAcquisitionType-module">Position.LocationAcquisitionType</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A LOCATION_* enum value indicating the position acquisition type to use.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:constellations</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An array of CONSTELLATION_* enum values specifying what constellations to enable. If not provided, CONSTELLATION_GPS will be used by default.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:configuration</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Position.html#Configuration-module">Position.Configuration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A CONFIGURATION_* value specifying what configuration to enable. Only available with ConnectIQ 3.3.6 and later.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:mode</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Position.html#PositioningMode-module">Position.PositioningMode</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+a POSITIONING_MODE_* value specifying the mode to use. If <code>null</code> POSITIONING_MODE_NORMAL will be used by default.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li><li>
+        <span class="name">listener</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Method.html">Lang.Method</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A reference to a listener method:
+</p>
+
+<ul>
+<li>
+<p>
+Called when location updates are received
+</p>
+
+</li>
+<li>
+<p>
+Receives a Position.Info object
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Position;
+
+var options = {
+    :acquisitionType =&gt; Position.LOCATION_CONTINUOUS
+};
+
+if (Position has :POSITIONING_MODE_AVIATION) {
+    options[:mode] = Position.POSITIONING_MODE_AVIATION;
+}
+
+if (Position has :hasConfigurationSupport) {
+    if (Position has :CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1_L5) &&
+       (Position.hasConfigurationSupport(Position.CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1_L5)) {
+        options[:configuration] = Position.CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1_L5;
+    } else if (Position has :CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1) &&
+       (Position.hasConfigurationSupport(Position.CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1)) {
+        options[:configuration] = Position.CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1;
+    } else if (Position has :CONFIGURATION_GPS) &&
+       (Position.hasConfigurationSupport(Position.CONFIGURATION_GPS)) {
+        options[:configuration] = Position.CONFIGURATION_GPS;
+    }
+} else if (Position has :CONSTELLATION_GLONASS) {
+    // this can fail with InvalidValueException if combination is not supported by device
+    options[:constellations] = [ Position.CONSTELLATION_GPS, Position.CONSTELLATION_GLONASS ];
+} else {
+    options = Position.LOCATION_CONTINUOUS;
+}
+
+// Continuous location updates using selected options
+Position.enableLocationEvents(options, method(:onPosition));
+
+function onPosition(info) {
+    var myLocation = info.position.toDegrees();
+}
+</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 45</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Garmin Swim™ 2</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if :acquisitionType is invalid, if a specific CONSTELLATION_* value is not supported by a device, or if an invalid combination of constellation values are specified.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getInfo-instance_function">
+    <strong>getInfo()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Position/Info.html">Position.Info</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current <a href='../Toybox/Position/Info.html'>Position.Info</a>.
+</p><p>
+Using this API requires enabling the Positioning Permission.
+This is useful for retrieving the current position info either on demand
+or periodically within a <a href='../Toybox/Timer/Timer.html'>Timer</a>.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Get position info once per second</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Position;
+using Toybox.System;
+using Toybox.Timer;
+var dataTimer = new Timer.Timer();
+dataTimer.start(method(:timerCallback), 1000, true); // A one-second timer
+function timerCallback() {
+    var positionInfo = Position.getInfo();
+    if (positionInfo has :altitude && positionInfo.altitude != null) {
+        var altitude = positionInfo.altitude;
+        System.println("Altitude: " + altitude);
+    }
+}</code>
+</pre>
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 45</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Garmin Swim™ 2</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Position/Info.html">Position.Info</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="hasConfigurationSupport-instance_function">
+    <strong>hasConfigurationSupport(config as <span class="type"><a href="../Toybox/Position.html#Configuration-module">Position.Configuration</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Determines if the device supports a requested GPS configuration
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">config</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Position.html#Configuration-module">Position.Configuration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A CONFIGURATION_* enum value specifying what configuration to enable. Only available with ConnectIQ 3.3.6 and later.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.6
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="parse-instance_function">
+    <strong>parse(string as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, format as <span class="type"><a href="../Toybox/Position.html#CoordinateFormat-module">Position.CoordinateFormat</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert a String to a Location object.
+</p><p>
+The input String must be in one of the four formats described by the
+<a href='../Toybox/Position.html#CoordinateFormat-module'>Position.GEO_*</a> constants.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">string</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The String to parse
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">format</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Position.html#CoordinateFormat-module">Position.CoordinateFormat</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Position.GEO_* value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.Position;
+using Toybox.System;
+var locString = "38.856147, -94.800953";
+var myLocation = Position.parse(locString, Position.GEO_DEG);
+System.println(myLocation.toRadians()); // [0.678168, -1.654589]</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Location object representing the position described by the input String
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

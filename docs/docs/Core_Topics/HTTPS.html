@@ -1,0 +1,99 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="DC.type" content="topic"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="json-rest-requests"><link rel="stylesheet" type="text/css" href="../../branding/commonltr.css"><link rel="stylesheet" type="text/css" href="../../branding/style.css"><title>JSON REST Requests</title></head><body id="json-rest-requests"><header role="banner"><div>
+<link href="../../resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
+<script src="../../resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="../../resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+</div></header><nav role="toc"><ul><li><a href="../../docs/Readme/Intro.html">Introduction</a></li><li><a href="../../docs/Connect_IQ_Basics/Welcome_to_the_Jungle.html">Welcome to Connect IQ</a></li><li><a href="../../docs/Monkey_C/Basic_Syntax.html">Hello Monkey C!</a></li><li><a href="../../docs/Core_Topics/Overview.html">Core Topics</a><ul><li><a href="../../docs/Core_Topics/Manifest_and_Permissions.html">Manifest File and Permissions</a></li><li><a href="../../docs/Core_Topics/Application_and_System_Modules.html">Application and System Modules</a></li><li><a href="../../docs/Core_Topics/Persisting_Data.html">Persisting Data</a></li><li><a href="../../docs/Core_Topics/Backgrounding.html">Background Services</a></li><li><a href="../../docs/Core_Topics/Glances.html">Glances</a></li><li><a href="../../docs/Core_Topics/Properties_and_App_Settings.html">Properties and Settings</a></li><li><a href="../../docs/Core_Topics/Intents.html">Intents</a></li><li><a href="../../docs/Core_Topics/Notifications.html">Notifications</a></li><li><a href="../../docs/Core_Topics/Build_Configuration.html">Build Configuration</a></li><li><a href="../../docs/Core_Topics/Security.html">Security</a></li><li><a href="../../docs/Core_Topics/User_Interface.html">Views, Drawables and Layers</a></li><li><a href="../../docs/Core_Topics/Layouts.html">Layouts</a></li><li><a href="../../docs/Core_Topics/Graphics.html">Graphics</a></li><li><a href="../../docs/Core_Topics/Input_Handling.html">Input Handling</a></li><li><a href="../../docs/Core_Topics/Native_Controls.html">Native UI Controls</a></li><li><a href="../../docs/Core_Topics/Resources.html">Resources</a></li><li><a href="../../docs/Core_Topics/Monkey_Style.html">Monkey Style</a></li><li><a href="../../docs/Core_Topics/Getting_the_Users_Attention.html">Getting the User's Attention</a></li><li><a href="../../docs/Core_Topics/Editing_Watch_Faces_On_Device.html">Watch Face Configurations</a></li><li class="active"><a href="../../docs/Core_Topics/HTTPS.html">JSON REST Requests</a></li><li><a href="../../docs/Core_Topics/Authenticated_Web_Services.html">Authenticated Web Services</a></li><li><a href="../../docs/Core_Topics/Communicating_with_Mobile_Apps.html">Communicating with Mobile Apps</a></li><li><a href="../../docs/Core_Topics/Downloading_Content.html">Downloading Content</a></li><li><a href="../../docs/Core_Topics/Mobile_SDK_for_Android.html">Mobile SDK for Android</a></li><li><a href="../../docs/Core_Topics/Mobile_SDK_for_iOS.html">Mobile SDK for iOS</a></li><li><a href="../../docs/Core_Topics/Ant_and_Ant_Plus.html">ANT and ANT+</a></li><li><a href="../../docs/Core_Topics/Bluetooth_Low_Energy.html">Getting Started with Connect IQ BLE Development</a></li><li><a href="../../docs/Core_Topics/Pairing_Wireless_Devices.html">Sensor Pairing</a></li><li><a href="../../docs/Core_Topics/Sensors.html">Sensors</a></li><li><a href="../../docs/Core_Topics/Positioning.html">Positioning</a></li><li><a href="../../docs/Core_Topics/Activity_Recording.html">Activity Recording</a></li><li><a href="../../docs/Core_Topics/Quantifying_the_User.html">Quantifying User Information</a></li><li><a href="../../docs/Core_Topics/Complications.html">Complications</a></li><li><a href="../../docs/Core_Topics/Shareable_Libraries.html">Shareable Libraries</a></li><li><a href="../../docs/Core_Topics/Debugging.html">Testing and Debugging</a></li><li><a href="../../docs/Core_Topics/Unit_Testing.html">Unit Testing</a></li><li><a href="../../docs/Core_Topics/Exception_Reporting_Tool.html">Error Reporting Application (ERA)</a></li><li><a href="../../docs/Core_Topics/Profiling.html">Profiling Applications</a></li><li><a href="../../docs/Core_Topics/Publishing_to_the_Store.html">Publishing to the Connect IQ Store</a></li><li><a href="../../docs/Core_Topics/Beta_Apps.html">Beta Apps</a></li><li><a href="../../docs/Core_Topics/Trial_Apps.html">App Trials</a></li><li><a href="../../docs/Core_Topics/Requesting_Reviews.html">Requesting Reviews</a></li></ul></li><li><a href="../../docs/User_Experience_Guidelines/Overview.html">User Experience Guidelines</a></li><li><a href="../../docs/Personality_Library/Personality_UI.html">Personality UI</a></li><li><a href="../../docs/Connect_IQ_FAQ/Overview.html">Connect IQ FAQ</a></li><li><a href="../../docs/Reference_Guides/Overview.html">Reference Guides</a></li><li><a href="../../docs/App_Review_Guidelines/Overview.html">Garmin Connect IQ App Review Guidelines</a></li><li><a href="../../docs/Monetization/Overview.html">Connect IQ Monetization System</a></li><li><a href="../../docs/Device_Reference/Overview.html">Device Reference</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">JSON REST Requests</h1><div class="body"><p class="p">Widgets and apps can communicate with a mobile phone via <a class="xref" href="https://en.wikipedia.org/wiki/Bluetooth_low_energy" target="_blank">Bluetooth low energy</a> (BLE). The mobile phone may be sharing data with the device, or it may act as a bridge between the app and the Internet. This allows the mobile phone to become part of the wearable web.</p><p class="p">There are also high-level interfaces for making JSON and image requests. This allows developers the option of developing a wearable web app without having to write their own companion phone app.</p><table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry" id="json-rest-requests__entry__1">API</th><th class="entry" id="json-rest-requests__entry__2">Purpose</th><th class="entry" id="json-rest-requests__entry__3">API Level</th></tr></thead><tbody class="tbody"><tr class="row"><td class="entry" headers="json-rest-requests__entry__1"><a class="xref" href="https://developer.garmin.com/connect-iq/api-docs/Toybox/Communications.html#makeWebRequest-instance_function" target="_blank">Communications.makeWebRequest()</a></td><td class="entry" headers="json-rest-requests__entry__2">Make an asynchronous JSON REST request to a web service</td><td class="entry" headers="json-rest-requests__entry__3">1.3.0</td></tr><tr class="row"><td class="entry" headers="json-rest-requests__entry__1"><a class="xref" href="https://developer.garmin.com/connect-iq/api-docs/Toybox/Communications.html#makeImageRequest-instance_function" target="_blank">Communications.makeImageRequest()</a></td><td class="entry" headers="json-rest-requests__entry__2">Download an image from the web</td><td class="entry" headers="json-rest-requests__entry__3">1.2.0</td></tr><tr class="row"><td class="entry" headers="json-rest-requests__entry__1"><a class="xref" href="https://developer.garmin.com/connect-iq/api-docs/Toybox/Communications.html#openWebPage-instance_function" target="_blank">Communications.openWebPage()</a></td><td class="entry" headers="json-rest-requests__entry__2">Commands Connect Mobile to ask the user to view a web link</td><td class="entry" headers="json-rest-requests__entry__3">1.3.0</td></tr></tbody></table></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="json-rest-requests-via-mobile-proxy"><h2 class="title topictitle2" id="ariaid-title2">JSON REST Requests via Mobile Proxy</h2><div class="body"><p class="p">Monkey C exposes a high level APIs to allow calls to basic web services through Garmin Connect Mobile via the <a class="xref" href="https://developer.garmin.com/connect-iq/api-docs/Toybox/Communications.html#makeWebRequest-instance_function" target="_blank">Communications.makeWebRequest()</a> and <span class="xref"></span> APIs. These APIs expose JSON requests and image requests as very straightforward APIs for making REST API calls. The JSON calls are converted to serialized Monkey C data and sent across the BLE pipe. You must have set the <code class="ph codeph">Communications</code> permission to use this API.</p><p class="p"><a class="xref" href="https://developer.garmin.com/connect-iq/api-docs/Toybox/Communications.html#makeWebRequest-instance_function" target="_blank">Communications.makeWebRequest()</a> provides a high level API for making a JSON REST request to an endpoint.  The call is asynchronous and requires a callback to receive the data once the operation completes.</p><pre class="pre codeblock typescript"><code>// It is common for developers to wrap a makeWebRequest() call in a function
+// as displayed below. The function defines the variables for each of the
+// necessary arguments in a Communications.makeWebRequest() call, then passes
+// these variables as the arguments. This allows for a clean layout of your web
+// request and expandability.
+import Toybox.System;
+import Toybox.Communications;
+import Toybox.Lang;
+
+class JsonTransaction {
+    // set up the response callback function
+    function onReceive(responseCode as Number, data as Dictionary?) as Void {
+        if (responseCode == 200) {
+            System.println("Request Successful");                   // print success
+        } else {
+            System.println("Response: " + responseCode);            // print response code
+        };
+
+    };
+
+    function makeRequest() as Void {
+        var url = "https://www.garmin.com";                         // set the url
+
+        var params = {                                              // set the parameters
+            "definedParams" =&gt; "123456789abcdefg"
+        };
+
+        var options = {                                             // set the options
+            :method =&gt; Communications.HTTP_REQUEST_METHOD_GET,      // set HTTP method
+            :headers =&gt; {                                           // set headers
+            "Content-Type" =&gt; Communications.REQUEST_CONTENT_TYPE_URL_ENCODED},
+            // set response type
+            :responseType =&gt; Communications.HTTP_RESPONSE_CONTENT_TYPE_URL_ENCODED
+        };
+
+        var responseCallback = method(:onReceive);                  // set responseCallback to
+        // onReceive() method
+        // Make the Communications.makeWebRequest() call
+        Communications.makeWebRequest(url, params, options, method(:onReceive));
+    }
+}</code></pre><p class="p"><span class="xref"></span> offers a similar API for making an image request. The images can be processed by the system, including applying a palette and dithering.</p><pre class="pre codeblock typescript"><code>import Toybox.System;
+import Toybox.Communications;
+import Toybox.WatchUi;
+
+class ImageTransaction {
+    var image as BitmapResource?;
+    var responseCode as Number?;
+
+    // Set up the responseCallback function to return an image or null
+    function responseCallback(responseCode as Number, data as BitmapResource?) {
+        responseCode = responseCode;
+        if (responseCode == 200) {
+            image = data;
+        } else {
+            image = null;
+        }
+    }
+
+    // wrap the request in a function
+    function makeRequest() as Void {
+        // set the image url
+        var url = "http://www.garmin.com/image-path";
+        // set the parameters
+        var parameters = null;
+        // set the options
+        var options = {
+            // set the palette
+            :palette =&gt; [ Gfx.COLOR_ORANGE,
+                          Gfx.COLOR_DK_BLUE,
+                          Gfx.COLOR_BLUE,
+                          Gfx.COLOR_BLACK
+                        ],
+            // set the max width
+            :maxWidth =&gt; 100,
+            // set the max height
+            :maxHeight =&gt; 100,
+            // set the dithering
+            :dithering =&gt; Communications.IMAGE_DITHERING_NONE
+        };
+
+        // Make the image request
+        Communications.makeImageRequest(url, parameters, options, method(:responseCallback));
+    }
+}</code></pre><p class="p">For more see the <code class="ph codeph">WebRequest</code> sample app distributed with the SDK.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title3" id="directing-users-to-web-content"><h2 class="title topictitle2" id="ariaid-title3">Directing Users to Web Content</h2><div class="body"><p class="p">The <span class="xref"></span> call can be used to direct the user to a specific web page on the paired mobile device. When called, the specified web page should be fetched and displayed in the phones default browser. There is no callback for this function and the watch app has no method for checking if the call was completed on the phone successfully.</p></div></article></article></main><footer role="contentinfo"><div>
+<p class="disclaimer">
+Connect IQ System None API 8.2.3 Documentation. Copyright 2025 Garmin International. All Rights Reserved.
+</p>
+</div></footer></body></html>

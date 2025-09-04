@@ -1,0 +1,11 @@
+<svg width="176" height="176" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="instinctcrossover-4fields-3-mask">
+      <rect width="100%" height="100%" fill="black"/>
+<path d="M 39.599999999999994, 0 L 136.4, 0 L 176, 39.599999999999994 L 176, 136.4 L 136.4, 176 L 39.599999999999994, 176 L 0, 136.4 L 0, 39.599999999999994 L 39.599999999999994, 0 " style="fill:white"/>    </mask>
+  </defs>
+  <rect x="0" y="0" width="87" height="87" mask="url(#instinctcrossover-4fields-3-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="89" y="0" width="87" height="87" mask="url(#instinctcrossover-4fields-3-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="0" y="89" width="87" height="87" mask="url(#instinctcrossover-4fields-3-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="89" y="89" width="87" height="87" mask="url(#instinctcrossover-4fields-3-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+<path d="M 39.599999999999994, 0 L 136.4, 0 L 176, 39.599999999999994 L 176, 136.4 L 136.4, 176 L 39.599999999999994, 176 L 0, 136.4 L 0, 39.599999999999994 L 39.599999999999994, 0 " style="stroke-width:1;stroke:rgb(0,0,0);fill:none"/></svg>

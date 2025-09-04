@@ -1,0 +1,451 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.AntPlus.SimulationSettings </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.AntPlus.SimulationSettings";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.AntPlus.SimulationSettings</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/AntPlus/SimulationSettings.html">Toybox.AntPlus.SimulationSettings</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Represents the wind and track simulation training mode settings on the fitness equipment.
+Fields may return <code>null</code> so you should <code>null</code> check values before using them.
+Values that have not yet been set will return invalid.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li>
+  </ul>
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#draftFactor-var" title="draftFactor (Var)"><strong>draftFactor</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The simulated draft factor setting for simulation mode A draft factor of 0 removes all wind resistance, and 1.0 indicates no drafting effects.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#slope-var" title="slope (Var)"><strong>slope</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The slope (grade) setting of the simulated track.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#surfaceResistance-var" title="surfaceResistance (Var)"><strong>surfaceResistance</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The simulated surface resistance coefficient for simulation mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#windResistance-var" title="windResistance (Var)"><strong>windResistance</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The simulated wind resistance coefficient setting for simulation mode Wind Resistance Coefficient [kg/m] = Frontal Surface Area [m2] x Drag Coefficient x Air Density [kg/m3].
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#windSpeed-var" title="windSpeed (Var)"><strong>windSpeed</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The simulated wind speed setting for simulation mode.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="draftFactor-var" class="details">
+<h3 class="signature" id="draftFactor-var">
+
+var draftFactor  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The simulated draft factor setting for simulation mode
+A draft factor of 0 removes all wind resistance, and 1.0 indicates no drafting effects.
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+0 - 1.0 range, invalid = 0xFF
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="slope-var" class="details">
+<h3 class="signature" id="slope-var">
+
+var slope  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The slope (grade) setting of the simulated track
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+-200% - +200% range, invalid 0xFFFF
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="surfaceResistance-var" class="details">
+<h3 class="signature" id="surfaceResistance-var">
+
+var surfaceResistance  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The simulated surface resistance coefficient for simulation mode.
+Dimensionless factor to quantify rolling resistance based on friction between
+bicycle tires and the tracker surface.
+Rolling Resistance [N] = (Bicycle Mass + Cyclist Mass) x Coefficient of Rolling Resistance x 9.8
+Sample coefficients:
+Wooden track = 0.001
+Smooth Concrete = 0.002
+Asphalt Road = 0.004
+Rough Road = 0.008
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+0 - 0.0127 range, invalid = 0xFF
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="windResistance-var" class="details">
+<h3 class="signature" id="windResistance-var">
+
+var windResistance  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The simulated wind resistance coefficient setting for simulation mode
+Wind Resistance Coefficient [kg/m] = Frontal Surface Area [m2] x Drag Coefficient x Air Density [kg/m3]
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+0.0 - 1.86 kg/m range, invalid = 0xFF
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt><dt id="windSpeed-var" class="details">
+<h3 class="signature" id="windSpeed-var">
+
+var windSpeed  as <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The simulated wind speed setting for simulation mode
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 2.4.0
+</p>
+
+</div>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Float.html">Lang.Float</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+-127 - +127 km/hr range, invalid = 0xFF
+</p>
+
+
+  </div>
+</li>
+    </ul>
+</div>
+
+</dt>
+ </div>
+
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

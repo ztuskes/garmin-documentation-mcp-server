@@ -1,0 +1,610 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Time </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Time";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Time</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Time module provides functionality for dealing with times and dates.
+</p><p>
+There are two main concepts used by Monkey C when working with time: the
+<a href='../Toybox/Time/Moment.html'>Moment</a> and <a href='../Toybox/Time/Duration.html'>Duration</a>. A Moment
+is a single point in time, while a Duration is a span of time. Moments and
+Durations can be used together for time calculations in the following ways:
+</p><p>
+</p>
+
+<pre>
+  Expression           Method               Result    Notes
+  ---------------------------------------------------------------------------
+  Moment + Moment      -                    -         Invalid
+  Moment + Duration    Moment.add()         Moment    A later Moment
+  Moment - Moment      Moment.subtract()    Duration  The span between Moments
+  Moment - Duration    Moment.subtract()    Moment    An earlier Moment
+
+  Duration + Duration  Duration.add()       Duration  A longer Duration
+  Duration + Moment    Duration.add()       Moment    A later Moment
+  Duration - Duration  Duration.subtract()  Duration  A shorter Duration
+  Duration - Moment    -                    -         Invalid
+
+</pre>
+
+<p>
+Dates and times are generally represented in UTC time from the UNIX epoch,
+with the exception of the <a href='../Toybox/Time/Gregorian.html#moment-instance_function'>Gregorian Moment</a>,
+which are created relative to the current local time.
+</p><p>
+Date and time formatting in Monkey C is relatively open-ended, providing some
+formatting constants for short, medium, and long formatting (long and medium
+formatting are currently equivalent).
+</p><p>
+</p>
+
+<pre>
+  Constant          Seconds  Minutes  Hours  Day of Week  Day  Month  Year
+  ---------------------------------------------------------------------------
+  FORMAT_SHORT   |  0        0        0      4            1    3      2017
+  FORMAT_MEDIUM  |  0        0        0      Wed          1    Mar    2017
+  FORMAT_LONG    |  0        0        0      Wed          1    Mar    2017
+</pre>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC Time</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Unix_time">UNIX Time</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Formatting and printing a date</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.Time;
+using Toybox.Time.Gregorian;
+var today = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
+var dateString = Lang.format(
+    "$1$:$2$:$3$ $4$ $5$ $6$ $7$",
+    [
+        today.hour,
+        today.min,
+        today.sec,
+        today.day_of_week,
+        today.day,
+        today.month,
+        today.year
+    ]
+);
+System.println(dateString); // e.g. "16:28:32 Wed 1 Mar 2017"</code>
+</pre>
+</div><div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Creating a Moment representing May 16, 2003</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.Time;
+using Toybox.Time.Gregorian;
+var options = {
+    :year   =&gt; 2003,
+    :month  =&gt; 5,
+    :day    =&gt; 16,
+    :hour   =&gt; 6    // UTC offset, in this case for CST
+};
+var birthday = Gregorian.moment(options);</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+<!-- Child Modules -->
+  <h2>Modules Under Namespace</h2>
+  <p class="children">
+    <strong class="classes">Modules:</strong>
+<span class="type"><a href="../Toybox/Time/Gregorian.html">Time.Gregorian</a></span>
+  </p>
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Time/Duration.html">Duration</a></span>, <span class="type"><a href="../Toybox/Time/LocalMoment.html">LocalMoment</a></span>, <span class="type"><a href="../Toybox/Time/Moment.html">Moment</a></span>, <span class="type"><a href="../Toybox/Time/RealTimeClockNotValidException.html">RealTimeClockNotValidException</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="DateFormat-module" class="">
+    <h3>DateFormat</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="FORMAT_SHORT-const">
+    <td class="enumTableCell">FORMAT_SHORT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Short formatting is a numerical representation of date/time.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="FORMAT_MEDIUM-const">
+    <td class="enumTableCell">FORMAT_MEDIUM</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Medium formatting is a mix of Numbers and Strings depending on which
+function is called. If formatted as a String, the result is an abbreviated
+form of the time or date.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="FORMAT_LONG-const">
+    <td class="enumTableCell">FORMAT_LONG</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Long formatting is a mix of Numbers and Strings depending on which
+function is called. If formatted as a String, the result is an abbreviated
+form of the time or date.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="CurrentTime-module" class="">
+    <h3>CurrentTime</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="CURRENT_TIME_DEFAULT-const">
+    <td class="enumTableCell">CURRENT_TIME_DEFAULT</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The default system clock, which may be user-modified.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="CURRENT_TIME_GPS-const">
+    <td class="enumTableCell">CURRENT_TIME_GPS</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The clock time based on your current GPS location if a GPS signal is available.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="CURRENT_TIME_RTC-const">
+    <td class="enumTableCell">CURRENT_TIME_RTC</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+The system's real-time clock that cannot be overridden by user settings,
+and can only be updated by trusted sources such as GPS.
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getCurrentTime-instance_function" title="getCurrentTime (Instance Function)"><strong>getCurrentTime</strong></a>(options as { :currentTimeType as <span class="type"><a href="../Toybox/Time.html#CurrentTime-module">Time.CurrentTime</a></span> })    as <span class="type"><a href="../Toybox/Time/Moment.html">Time.Moment</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a <a href='../Toybox/Time/Moment.html'>Moment</a> for the current time based on the specified source.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#now-instance_function" title="now (Instance Function)"><strong>now</strong></a>()    as <span class="type"><a href="../Toybox/Time/Moment.html">Time.Moment</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a <a href='../Toybox/Time/Moment.html'>Moment</a> for the current time.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#today-instance_function" title="today (Instance Function)"><strong>today</strong></a>()    as <span class="type"><a href="../Toybox/Time/Moment.html">Time.Moment</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a <a href='../Toybox/Time/Moment.html'>Moment</a> for midnight today.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getCurrentTime-instance_function">
+    <strong>getCurrentTime(options as { :currentTimeType as <span class="type"><a href="../Toybox/Time.html#CurrentTime-module">Time.CurrentTime</a></span> })</strong> <span class="type"> as <span class="type"><a href="../Toybox/Time/Moment.html">Time.Moment</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a <a href='../Toybox/Time/Moment.html'>Moment</a> for the current time based on the
+specified source.
+</p><p>
+This method behaves the same as <a href='../Toybox/Time.html#now-instance_function'>Time.now()</a>, but accepts
+an <code>options</code> argument that allows the time source to be selected.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Clock options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:currentTimeType</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Time.html#CurrentTime-module">Time.CurrentTime</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A <a href='../Toybox/Time.html#CURRENT_TIME_DEFAULT-const'>Time.CURRENT_TIME_*</a> value, which defaults to <a href='../Toybox/Time.html#CURRENT_TIME_DEFAULT-const'>Time.CURRENT_TIME_DEFAULT</a> if no time type is provided
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../Toybox/Time.html#now-instance_function">Time.now()</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.10
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Time/RealTimeClockNotValidException.html">Time.RealTimeClockNotValidException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if <a href='../Toybox/Time.html#CURRENT_TIME_RTC-const'>Time.CURRENT_TIME_RTC</a> is passed as an option and the real-time clock value is not valid, i.e. synced with trusted source such as GPS.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="now-instance_function">
+    <strong>now()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Time/Moment.html">Time.Moment</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a <a href='../Toybox/Time/Moment.html'>Moment</a> for the current time.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Using now() on December 31, 1989 at 5:00 pm CST</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Time;
+var now = new Time.Moment(Time.now().value()); // UNIX epoch 631148400</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Time/Moment.html">Time.Moment</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Moment representing the current moment in time.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC Time</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Unix_time">UNIX Time</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="today-instance_function">
+    <strong>today()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Time/Moment.html">Time.Moment</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a <a href='../Toybox/Time/Moment.html'>Moment</a> for midnight today.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Using today() on December 31, 1989 at 5:00 pm CST</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.Time;
+var now = new Time.Moment(Time.today().value()); // UNIX epoch 631087200</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Time/Moment.html">Time.Moment</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A Moment representing the the beginning of the current day.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC Time</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Unix_time">UNIX Time</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

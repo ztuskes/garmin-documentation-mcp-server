@@ -1,0 +1,118 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="DC.type" content="topic"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="how-do-i-communicate-with-rest-services"><link rel="stylesheet" type="text/css" href="../../branding/commonltr.css"><link rel="stylesheet" type="text/css" href="../../branding/style.css"><title>How do I communicate with REST services?</title></head><body id="how-do-i-communicate-with-rest-services"><header role="banner"><div>
+<link href="../../resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
+<script src="../../resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="../../resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+</div></header><nav role="toc"><ul><li><a href="../../docs/Readme/Intro.html">Introduction</a></li><li><a href="../../docs/Connect_IQ_Basics/Welcome_to_the_Jungle.html">Welcome to Connect IQ</a></li><li><a href="../../docs/Monkey_C/Basic_Syntax.html">Hello Monkey C!</a></li><li><a href="../../docs/Core_Topics/Overview.html">Core Topics</a></li><li><a href="../../docs/User_Experience_Guidelines/Overview.html">User Experience Guidelines</a></li><li><a href="../../docs/Personality_Library/Personality_UI.html">Personality UI</a></li><li><a href="../../docs/Connect_IQ_FAQ/Overview.html">Connect IQ FAQ</a><ul><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Get_My_Watch_Face_to_Update_Every_Second.html">How do I Make My Watch Face Update Every Second?</a></li><li class="active"><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Use_REST_Services.html">How do I communicate with REST services?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Make_a_Watch_Face_for_AMOLED_Products.html">How do I Make a Watch Face for AMOLED Products?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Create_a_Connect_IQ_Background_Service.html">How do I create a Connect IQ Background Service?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Optimize_Bitmaps.html">How do I optimize bitmaps in my app?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Override_the_Goal_Animations.html">How do I Override The Goal Animation?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Use_Custom_Fonts.html">How do I use custom fonts?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Use_a_Mapview.html">How do I use a MapView?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Use_the_Connect_IQ_Mobile_SDK.html">How do I use the Connect IQ Mobile SDK</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Create_an_Audio_Content_Provider.html">How do I create an Audio Content Provider?</a></li></ul></li><li><a href="../../docs/Reference_Guides/Overview.html">Reference Guides</a></li><li><a href="../../docs/App_Review_Guidelines/Overview.html">Garmin Connect IQ App Review Guidelines</a></li><li><a href="../../docs/Monetization/Overview.html">Connect IQ Monetization System</a></li><li><a href="../../docs/Device_Reference/Overview.html">Device Reference</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">How do I communicate with REST services?</h1><div class="body"><p class="p">The Connect IQ Communication API is the API that brings the wearable web to Garmin devices. However, there are some subtleties to how to expose a web service to a Garmin device.</p></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="the-bluetooth-smart-connection"><h2 class="title topictitle2" id="ariaid-title2">The Bluetooth Smart Connection</h2><div class="body"><p class="p">Because all of the communication takes place over a Bluetooth Smart (you may know this as Bluetooth LE or BLE) connection the device is bandwidth limited. Data transfers through the Connect IQ SDK will have a transfer speed less than 1 Kb/s, generally between 400 and 800 bytes/s. A single tweet being pulled from Twitter's API can be upwards of 2.5 Kb. We'll do some magic under the hood to minimize the amount of data that's transferred from the phone to the watch but you can quickly see how pulling a user's last few Tweets could be somewhat time consuming.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title3" id="less-is-more"><h2 class="title topictitle2" id="ariaid-title3">Less Is More</h2><div class="body"><p class="p">This classic proverb couldn't be more true when considering JSON responses or messages between a Connect IQ app and a companion mobile app. If you are writing a web service to return tweets which your Connect IQ app will be calling consider what information you really need to have at the Connect IQ level. You can probably get away with only having the text of a Tweet and the username of the person who Tweeted said Tweet. Now you're looking at only having to transfer about 250 bytes per Tweet.</p><p class="p">Referencing the example result on <a class="xref" href="https://dev.twitter.com/rest/reference/get/search/tweets" target="_blank">this</a> Twitter API page, a resulting Tweet's JSON would be:</p><pre class="pre codeblock javascript"><code>{
+  "coordinates": null,
+  "favorited": false,
+  "truncated": false,
+  "created_at": "Mon Sep 24 03:35:21 +0000 2012",
+  "id_str": "250075927172759552",
+  "entities": {
+    "urls": [
+
+    ],
+    "hashtags": [
+      {
+        "text": "freebandnames",
+        "indices": [
+          20,
+          34
+        ]
+      }
+    ],
+    "user_mentions": [
+
+    ]
+  },
+  "in_reply_to_user_id_str": null,
+  "contributors": null,
+  "text": "Aggressive Ponytail #freebandnames",
+  "metadata": {
+    "iso_language_code": "en",
+    "result_type": "recent"
+  },
+  "retweet_count": 0,
+  "in_reply_to_status_id_str": null,
+  "id": 250075927172759552,
+  "geo": null,
+  "retweeted": false,
+  "in_reply_to_user_id": null,
+  "place": null,
+  "user": {
+    "profile_sidebar_fill_color": "DDEEF6",
+    "profile_sidebar_border_color": "C0DEED",
+    "profile_background_tile": false,
+    "name": "Sean Cummings",
+    "profile_image_url": "http://a0.twimg.com/profile_images/2359746665/1v6zfgqo8g0d3mk7ii5s_normal.jpeg",
+    "created_at": "Mon Apr 26 06:01:55 +0000 2010",
+    "location": "LA, CA",
+    "follow_request_sent": null,
+    "profile_link_color": "0084B4",
+    "is_translator": false,
+    "id_str": "137238150",
+    "entities": {
+      "url": {
+        "urls": [
+          {
+            "expanded_url": null,
+            "url": "",
+            "indices": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "description": {
+        "urls": [
+        ]
+      }
+    },
+    "default_profile": true,
+    "contributors_enabled": false,
+    "favourites_count": 0,
+    "url": null,
+    "profile_image_url_https": "https://si0.twimg.com/profile_images/2359746665/1v6zfgqo8g0d3mk7ii5s_normal.jpeg",
+    "utc_offset": -28800,
+    "id": 137238150,
+    "profile_use_background_image": true,
+    "listed_count": 2,
+    "profile_text_color": "333333",
+    "lang": "en",
+    "followers_count": 70,
+    "protected": false,
+    "notifications": null,
+    "profile_background_image_url_https": "https://si0.twimg.com/images/themes/theme1/bg.png",
+    "profile_background_color": "C0DEED",
+    "verified": false,
+    "geo_enabled": true,
+    "time_zone": "Pacific Time (US &amp; Canada)",
+    "description": "Born 330 Live 310",
+    "default_profile_image": false,
+    "profile_background_image_url": "http://a0.twimg.com/images/themes/theme1/bg.png",
+    "statuses_count": 579,
+    "friends_count": 110,
+    "following": null,
+    "show_all_inline_media": false,
+    "screen_name": "sean_cummings"
+  },
+  "in_reply_to_screen_name": null,
+  "source": "Twitter for Mac",
+  "in_reply_to_status_id": null
+}
+</code></pre><p class="p">Using your web service to parse and minimize the data down to the aforementioned fields would result in a much smaller JSON object:</p><pre class="pre codeblock javascript"><code>{
+  "text": "Aggressive Ponytail #freebandnames",
+  "username": "sean_cummings"
+}</code></pre><p class="p">Limiting the data to just what you need to display, and use will result in a much faster communications transaction. Of course, writing and hosting your own web service can be a bit much for a simple, glanceable widget.</p></div></article></article></main><footer role="contentinfo"><div>
+<p class="disclaimer">
+Connect IQ System None API 8.2.3 Documentation. Copyright 2025 Garmin International. All Rights Reserved.
+</p>
+</div></footer></body></html>

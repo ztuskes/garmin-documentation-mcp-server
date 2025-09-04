@@ -1,0 +1,1192 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Ant.DeviceConfig </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Ant.DeviceConfig";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Ant.DeviceConfig</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Ant/DeviceConfig.html">Toybox.Ant.DeviceConfig</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A class to define the ANT wireless channel device configuration.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="https://www.thisisant.com/developer/resources/downloads/">ANT Downloads & Resources - ANT Message Protocol</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/AntPlus.html">Toybox.AntPlus</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>// Set the configuration
+deviceCfg = new Ant.DeviceConfig({
+    :deviceNumber =&gt; 0,                 // Wild card our search
+    :deviceType =&gt; 31,                  // 1 byte type identifier
+    :transmissionType =&gt; 0,             // Manufacturer-specific transport type
+    :messagePeriod =&gt; 8192,             // The message period
+    :radioFrequency =&gt; 57,              // Ant+ Frequency
+    :searchTimeoutLowPriority =&gt; 10,    // Timeout in 25s
+    :searchThreshold =&gt; 0               // Pair to all transmitting sensors
+});
+genericChannel.setDeviceConfig(deviceCfg);</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class="constTable">
+    <tr>
+        <th class="constTableHeader">Type</th>
+        <th class="constTableHeader">Name</th>
+        <th class="constTableHeader">Value</th>
+        <th class="constTableHeader">Since</th>
+        <th class="constTableHeader">Description</th>
+    </tr>
+    <tr class="enumTableOdd" id="DEFAULT_DEVICE_NUMBER-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">DEFAULT_DEVICE_NUMBER</td>
+    <td class="constTableCell">123</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+The default values for a device configuration
+</p>
+
+</td>
+</tr><tr class="enumTableEven" id="DEFAULT_DEVICE_TYPE-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">DEFAULT_DEVICE_TYPE</td>
+    <td class="constTableCell">1</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableOdd" id="DEFAULT_MESSAGE_PERIOD-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">DEFAULT_MESSAGE_PERIOD</td>
+    <td class="constTableCell">8192</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableEven" id="DEFAULT_NETWORK_KEY-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">DEFAULT_NETWORK_KEY</td>
+    <td class="constTableCell">0</td>
+    <td class="constTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableOdd" id="DEFAULT_RADIO_FREQUENCY-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">DEFAULT_RADIO_FREQUENCY</td>
+    <td class="constTableCell">10</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableEven" id="DEFAULT_SEARCH_TIMEOUT_HIGH-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">DEFAULT_SEARCH_TIMEOUT_HIGH</td>
+    <td class="constTableCell">0</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableOdd" id="DEFAULT_SEARCH_TIMEOUT_LOW-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">DEFAULT_SEARCH_TIMEOUT_LOW</td>
+    <td class="constTableCell">6</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableEven" id="DEFAULT_THRESHOLD-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">DEFAULT_THRESHOLD</td>
+    <td class="constTableCell">0</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableOdd" id="DEFAULT_TRANSMISSION_TYPE-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">DEFAULT_TRANSMISSION_TYPE</td>
+    <td class="constTableCell">0</td>
+    <td class="constTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableEven" id="NETWORK_KEY_LENGTH_128BIT-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">NETWORK_KEY_LENGTH_128BIT</td>
+    <td class="constTableCell">16</td>
+    <td class="constTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableOdd" id="NETWORK_KEY_LENGTH_64BIT-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">NETWORK_KEY_LENGTH_64BIT</td>
+    <td class="constTableCell">8</td>
+    <td class="constTableCell"><p>
+API Level 1.2.0
+</p>
+
+</td>
+    <td class="constTableCell"><p>
+Network key lengths
+</p>
+
+</td>
+</tr>
+</table>
+</dl>
+
+<h2>Typedef Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#NetworkKey128Bit-named_type" title="NetworkKey128Bit (Named Type)"><strong>NetworkKey128Bit</strong></a> as [ <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> ]
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#NetworkKey64Bit-named_type" title="NetworkKey64Bit (Named Type)"><strong>NetworkKey64Bit</strong></a> as [ <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> ]
+    </span>
+
+
+
+</li>
+</ul>
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#deviceNumber-var" title="deviceNumber (Var)"><strong>deviceNumber</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The unique device number (ANT-id).
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#deviceType-var" title="deviceType (Var)"><strong>deviceType</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A 1-Byte device type identifier.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#messagePeriod-var" title="messagePeriod (Var)"><strong>messagePeriod</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The Message period that the sensor uses.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#networkKey128Bit-var" title="networkKey128Bit (Var)"><strong>networkKey128Bit</strong></a>  as <span class="type"><a href="../../Toybox/Ant/DeviceConfig.html#NetworkKey128Bit-named_type">DeviceConfig.NetworkKey128Bit</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A 128 bit network key.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#networkKey64Bit-var" title="networkKey64Bit (Var)"><strong>networkKey64Bit</strong></a>  as <span class="type"><a href="../../Toybox/Ant/DeviceConfig.html#NetworkKey64Bit-named_type">DeviceConfig.NetworkKey64Bit</a></span> or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+A 64 bit network key.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#radioFrequency-var" title="radioFrequency (Var)"><strong>radioFrequency</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The radio frequency that the sensor operates on.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#searchThreshold-var" title="searchThreshold (Var)"><strong>searchThreshold</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The proximity threshold bin.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#searchTimeoutHighPriority-var" title="searchTimeoutHighPriority (Var)"><strong>searchTimeoutHighPriority</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+High Priority search timeout that a receiving channel will wait for in order to start tracking a master * Measured in 2.5s increments * Limited to a maximum of 5 seconds (Range of 0 to 2).
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#searchTimeoutLowPriority-var" title="searchTimeoutLowPriority (Var)"><strong>searchTimeoutLowPriority</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The low Priority search timeout that a receiving channel will wait for in order to start tracking a master * Measured in 2.5s increments * Limited to a maximum of 30 seconds (Range of 0 to 12).
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#transmissionType-var" title="transmissionType (Var)"><strong>transmissionType</strong></a>  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The manufacturer-specific transport type and extended device number.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(options as { :deviceNumber as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :deviceType as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :transmissionType as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :messagePeriod as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :radioFrequency as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :searchTimeoutLowPriority as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :searchTimeoutHighPriority as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :searchThreshold as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :networkKey64Bit as <span class="type"><a href="../../Toybox/Ant/DeviceConfig.html#NetworkKey64Bit-named_type">DeviceConfig.NetworkKey64Bit</a></span>, :networkKey128Bit as <span class="type"><a href="../../Toybox/Ant/DeviceConfig.html#NetworkKey128Bit-named_type">DeviceConfig.NetworkKey128Bit</a></span> })
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="typedef_details" class="attr_details">
+    <h2>Typedef Details</h2>
+    <div class="details">
+<h3 class="signature" id="NetworkKey128Bit-named_type">
+
+<strong>NetworkKey128Bit</strong> as [ <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> ]
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="NetworkKey64Bit-named_type">
+
+<strong>NetworkKey64Bit</strong> as [ <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span> ]
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+ </div>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="deviceNumber-var" class="details">
+<h3 class="signature" id="deviceNumber-var">
+
+var deviceNumber  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The unique device number (ANT-id)
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="deviceType-var" class="details">
+<h3 class="signature" id="deviceType-var">
+
+var deviceType  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+A 1-Byte device type identifier
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="messagePeriod-var" class="details">
+<h3 class="signature" id="messagePeriod-var">
+
+var messagePeriod  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The Message period that the sensor uses
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="networkKey128Bit-var" class="details">
+<h3 class="signature" id="networkKey128Bit-var">
+
+var networkKey128Bit  as <span class="type"><a href="../../Toybox/Ant/DeviceConfig.html#NetworkKey128Bit-named_type">DeviceConfig.NetworkKey128Bit</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+A 128 bit network key
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="networkKey64Bit-var" class="details">
+<h3 class="signature" id="networkKey64Bit-var">
+
+var networkKey64Bit  as <span class="type"><a href="../../Toybox/Ant/DeviceConfig.html#NetworkKey64Bit-named_type">DeviceConfig.NetworkKey64Bit</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+A 64 bit network key
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="radioFrequency-var" class="details">
+<h3 class="signature" id="radioFrequency-var">
+
+var radioFrequency  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The radio frequency that the sensor operates on
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="searchThreshold-var" class="details">
+<h3 class="signature" id="searchThreshold-var">
+
+var searchThreshold  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The proximity threshold bin
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="searchTimeoutHighPriority-var" class="details">
+<h3 class="signature" id="searchTimeoutHighPriority-var">
+
+var searchTimeoutHighPriority  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+High Priority search timeout that a receiving channel
+will wait for in order to start tracking a master
+</p>
+
+<ul>
+<li>
+<p>
+Measured in 2.5s increments
+</p>
+
+</li>
+<li>
+<p>
+Limited to a maximum of 5 seconds (Range of 0 to 2)
+</p>
+
+</li>
+</ul>
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="searchTimeoutLowPriority-var" class="details">
+<h3 class="signature" id="searchTimeoutLowPriority-var">
+
+var searchTimeoutLowPriority  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The low Priority search timeout that a receiving channel
+will wait for in order to start tracking a master
+</p>
+
+<ul>
+<li>
+<p>
+Measured in 2.5s increments
+</p>
+
+</li>
+<li>
+<p>
+Limited to a maximum of 30 seconds (Range of 0 to 12)
+</p>
+
+</li>
+</ul>
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt><dt id="transmissionType-var" class="details">
+<h3 class="signature" id="transmissionType-var">
+
+var transmissionType  as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The manufacturer-specific transport type and extended device number
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(options as { :deviceNumber as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :deviceType as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :transmissionType as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :messagePeriod as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :radioFrequency as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :searchTimeoutLowPriority as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :searchTimeoutHighPriority as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :searchThreshold as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>, :networkKey64Bit as <span class="type"><a href="../../Toybox/Ant/DeviceConfig.html#NetworkKey64Bit-named_type">DeviceConfig.NetworkKey64Bit</a></span>, :networkKey128Bit as <span class="type"><a href="../../Toybox/Ant/DeviceConfig.html#NetworkKey128Bit-named_type">DeviceConfig.NetworkKey128Bit</a></span> })</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The initialization options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:deviceNumber</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The ANT-id of the device to search for. Not setting enables a wild card search
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:deviceType</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+1-Byte device type identifier
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:transmissionType</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The manufacturer-specific transport type and extended device number
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:messagePeriod</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The message period that the sensor uses
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:radioFrequency</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The radio frequency that the sensor operates on. Range of 2 to 80.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:searchTimeoutLowPriority</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Low Priority search timeout that a receiving channel will wait for in order to start tracking a master
+</p>
+
+<ul>
+<li>
+<p>
+Low Priority search provides the capability of searching for a master without interrupting other channels on the device
+</p>
+
+</li>
+<li>
+<p>
+Range of 0 to 12 (2.5s increments)
+</p>
+
+</li>
+<li>
+<p>
+Default 6 (15s)
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:searchTimeoutHighPriority</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The High Priority search timeout that a receiving channel will wait for in order to start tracking a master
+</p>
+
+<ul>
+<li>
+<p>
+Is triggered after the Low Priority search mode times out
+</p>
+
+</li>
+<li>
+<p>
+Will interrupt other channels
+</p>
+
+</li>
+<li>
+<p>
+Will take priority over any other open channels on that device
+</p>
+
+</li>
+<li>
+<p>
+If it overlaps another channel the High Priority search takes priority and that other channel is blocked
+</p>
+
+</li>
+<li>
+<p>
+Keeping this search type disabled unless you have great difficulty acquiring a master through Low Priority search is recommended
+</p>
+
+</li>
+<li>
+<p>
+High Priority searches are disabled in data-fields, and will be ignored for that application type
+</p>
+
+</li>
+<li>
+<p>
+Range of 0 to 2 (2.5s increments)
+</p>
+
+</li>
+<li>
+<p>
+Default 0 (disabled)
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:searchThreshold</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A proximity threshold bin as a Number
+</p>
+
+<ul>
+<li>
+<p>
+Configures the RSSI threshold a slave channel will search for which is effectively the distance at which a slave is willing to be from a master
+</p>
+
+</li>
+<li>
+<p>
+Values are 0 (disabled), 1 (closest), 10 (farthest)
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:networkKey64Bit</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+64 bit network key
+</p>
+
+<ul>
+<li>
+<p>
+Set this when <a href='../../Toybox/Ant.html#NETWORK_PRIVATE-const'>NETWORK_PRIVATE</a> was chosen in the channel assignment
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li><li>
+        <span class="name">:networkKey128Bit</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+128 bit network key
+</p>
+
+<ul>
+<li>
+<p>
+Set this when NETWORK_PRIVATE was chosen in the channel assignment
+</p>
+
+</li>
+</ul>
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="https://www.thisisant.com/developer/resources/downloads/">ANT Downloads & Resources - ANT Message Protocol and Usage</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.2.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:12 PM
+</p>
+
+</body>

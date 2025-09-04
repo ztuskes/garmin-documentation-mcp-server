@@ -1,0 +1,56 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="DC.type" content="topic"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="hello-monkey-c"><link rel="stylesheet" type="text/css" href="../../branding/commonltr.css"><link rel="stylesheet" type="text/css" href="../../branding/style.css"><title>Hello Monkey C!</title></head><body id="hello-monkey-c"><header role="banner"><div>
+<link href="../../resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
+<script src="../../resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="../../resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+</div></header><nav role="toc"><ul><li><a href="../../docs/Readme/Intro.html">Introduction</a></li><li><a href="../../docs/Connect_IQ_Basics/Welcome_to_the_Jungle.html">Welcome to Connect IQ</a></li><li class="active"><a href="../../docs/Monkey_C/Basic_Syntax.html">Hello Monkey C!</a><ul><li><a href="../../docs/Monkey_C/Functions.html">Functions</a></li><li><a href="../../docs/Monkey_C/Objects_and_Memory.html">Objects, Modules, and Memory</a></li><li><a href="../../docs/Monkey_C/Containers.html">Containers</a></li><li><a href="../../docs/Monkey_C/Monkey_Types.html">Monkey Types</a></li><li><a href="../../docs/Monkey_C/Exceptions_and_Errors.html">Exceptions and Errors</a></li><li><a href="../../docs/Monkey_C/Annotations.html">Annotations</a></li><li><a href="../../docs/Monkey_C/Coding_Conventions.html">Coding Conventions</a></li><li><a href="../../docs/Monkey_C/Compiler_Options.html">Compiler Options</a></li></ul></li><li><a href="../../docs/Core_Topics/Overview.html">Core Topics</a></li><li><a href="../../docs/User_Experience_Guidelines/Overview.html">User Experience Guidelines</a></li><li><a href="../../docs/Personality_Library/Personality_UI.html">Personality UI</a></li><li><a href="../../docs/Connect_IQ_FAQ/Overview.html">Connect IQ FAQ</a></li><li><a href="../../docs/Reference_Guides/Overview.html">Reference Guides</a></li><li><a href="../../docs/App_Review_Guidelines/Overview.html">Garmin Connect IQ App Review Guidelines</a></li><li><a href="../../docs/Monetization/Overview.html">Connect IQ Monetization System</a></li><li><a href="../../docs/Device_Reference/Overview.html">Device Reference</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Hello Monkey C!</h1><div class="body"><figure class="fig fignone">
+<img class="image" src="../../resources/programmers-guide/smart-monkey.png"><br>
+</figure><p class="p">There is no better way to learn Monkey C than by jumping right in. Let's take a look at the application object of a watch face.</p><pre class="pre codeblock java"><code>using Toybox.Application as App;
+using Toybox.System;
+
+class MyProjectApp extends App.AppBase {
+
+    // onStart() is called on application start up
+    function onStart(state) {
+    }
+
+    // onStop() is called when your application is exiting
+    function onStop(state) {
+    }
+
+    // Return the initial view of your application here
+    function getInitialView() {
+        return [ new MyProjectView() ];
+    }
+}</code></pre><p class="p">If this looks familiar and non-threatening, that's the point. Monkey C is intended to be the language you didn't know you already knew.</p><p class="p">At the top is a using statement, which is analogous to C++'s <code class="ph codeph">using</code> statement, or an <code class="ph codeph">import</code> in Java™, Ruby, or Python™. <code class="ph codeph">using</code> statements lexically bring modules into our name space. After a <code class="ph codeph">using</code> clause, we can refer to a module by its shortened name (in this case <code class="ph codeph">System</code>). <code class="ph codeph">Toybox</code> is the root module for Monkey C system modules; all the cool toys are kept in there.</p><p class="p">To print out values to the debug console, use:</p><pre class="pre codeblock typescript"><code>System.println( "Hello Monkey C!" );</code></pre><p class="p"><code class="ph codeph">System</code> refers to the <code class="ph codeph">Toybox.System</code> module we imported with the <code class="ph codeph">using</code> statement. Unlike Java namespaces, modules in Monkey C are static objects that can contain functions, classes, and variables. The <code class="ph codeph">println()</code> function should be familiar to Java programmers—it prints a string and automatically adds a new line. The <code class="ph codeph">System</code> module has a number of useful functions:</p><ul class="ul"><li class="li"><p class="p"><code class="ph codeph">print</code> and <code class="ph codeph">println</code> send output to the console</p></li><li class="li"><p class="p"><code class="ph codeph">getTimer</code> returns the current millisecond timer. The value is a 32 bit integer representing the number of milliseconds the system has been running. The value can be used for timing but is allowed to roll over.</p></li><li class="li"><p class="p"><code class="ph codeph">getSystemStats</code> provides statistics from the runtime system</p></li><li class="li"><p class="p"><code class="ph codeph">exit</code> will terminate your application</p></li><li class="li"><p class="p"><code class="ph codeph">error</code> will exit your application while logging an error message</p></li></ul></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="differences-from-other-languages"><h2 class="title topictitle2" id="ariaid-title2">Differences From Other Languages</h2><div class="body"><p class="p">As Italian and Spanish derive from Latin, Monkey C derives heavily from other popular languages. C, Java™, JavaScript, Python™, Lua, Ruby, and PHP all influenced the design for Monkey C. If you are familiar with any of those languages, Monkey C should be easy to pick up.</p></div><article class="topic nested2" aria-labelledby="ariaid-title3" id="java"><h3 class="title topictitle3" id="ariaid-title3">Java</h3><div class="body"><p class="p">Like Java, Monkey C compiles into byte code that is interpreted by a virtual machine. Also like Java, all objects are allocated on the heap, and the virtual machine cleans up memory (Java through garbage collection, Monkey C through reference counting). Unlike Java, Monkey C does not have primitive types—integers, floats, and chars are objects. This means primitives can have methods just like other objects.</p><p class="p">While Java is a statically typed language, Monkey C is <a class="xref" href="https://en.wikipedia.org/wiki/Duck_typing" target="_blank"><em class="ph i">duck typed</em></a>. In Java, the developer must declare the types for all parameters of a function, and declare the return value type. The Java compiler checks these at compile time to ensure type safety. Duck typing is the concept of "if it walks like a duck, and quacks like a duck, then it must be a duck"<a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a>. For example:</p><pre class="pre codeblock typescript"><code>function add( a, b ) {
+    return a + b;
+}
+
+function thisFunctionUsesAdd() {
+    var a = add( 1, 3 ); // Return  4
+    var b = add( "Hello ", "World" ); // Returns "Hello World"
+}</code></pre><p class="p">The Monkey C compiler does not verify type safety, and instead causes a runtime error if a function mishandles a method.</p><p class="p">Monkey C modules serve a similar purpose as Java packages, but unlike packages, modules can contain variables and functions. It is common for static methods to exist in the module as opposed to a particular class.</p></div></article><article class="topic nested2" aria-labelledby="ariaid-title4" id="luajavascript"><h3 class="title topictitle3" id="ariaid-title4">Lua/JavaScript</h3><div class="body"><p class="p">The main difference between JavaScript or Lua and Monkey C is that functions in Monkey C are not first class. In JavaScript, a function can be passed to handle a callback:</p><pre class="pre codeblock javascript"><code>function wakeMeUpBeforeYouGoGo() {
+    // Handle completion
+}
+
+// Do a long running thing, and pass callback to call when done.
+doLongRunningTask( wakeMeUpBeforeYouGoGo );</code></pre><p class="p">In Lua, to create an object, you bind functions to a hash table:</p><pre class="pre codeblock lua"><code>function doSomethingFunction( me ) {
+    // Do something here
+}
+
+// Constructor for MyObject
+function newMyObject() {
+    local result = {};
+    result["doSomething"] = doSomethingFunction;
+}</code></pre><p class="p">Neither of these techniques works in Monkey C, because functions are bound to the object they are created in.</p><p class="p">To create a callback in Monkey C, create a <em class="ph i">Method object</em>. Method objects are a combination of the function and the object instance or module they originate from.</p></div></article><article class="topic nested2" aria-labelledby="ariaid-title5" id="ruby-python-and-php"><h3 class="title topictitle3" id="ariaid-title5">Ruby, Python, and PHP</h3><div class="body"><p class="p">Objects in Ruby and Python are hash tables, and have many of the properties of hash tables. Functions and variables can be added to objects at run time.</p><p class="p">Monkey C objects are compiled and cannot be modified at runtime. All variables have to be declared before they can be used, either in the local function, the class instance, or in the parent module.</p><p class="p">When importing a module, all classes inside the module have to be referenced through their parent module. You import modules, not classes, into your namespace.</p></div></article></article><div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>  This is different than Monkey Typing, where a thousand monkeys over infinite time write the works of Shakespeare.
+</div></article></main><footer role="contentinfo"><div>
+<p class="disclaimer">
+Connect IQ System None API 8.2.3 Documentation. Copyright 2025 Garmin International. All Rights Reserved.
+</p>
+</div></footer></body></html>

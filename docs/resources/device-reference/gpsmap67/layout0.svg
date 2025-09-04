@@ -1,0 +1,11 @@
+<svg width="240" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="gpsmap67-2fields-0-mask">
+      <rect width="100%" height="100%" fill="black"/>
+      <rect width="100%" height="100%" style="fill:white"/>
+    </mask>
+  </defs>
+  <rect x="1" y="29" width="118" height="52" mask="url(#gpsmap67-2fields-0-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+  <rect x="121" y="29" width="118" height="52" mask="url(#gpsmap67-2fields-0-mask)" style="stroke-width:2;stroke:rgb(0,0,0);fill:none"/>
+      <rect width="100%" height="100%" style="stroke-width:1;stroke:rgb(0,0,0);fill:none"/>
+</svg>

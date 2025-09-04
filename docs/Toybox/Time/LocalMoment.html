@@ -1,0 +1,974 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Time.LocalMoment </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Time.LocalMoment";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Time.LocalMoment</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Time/LocalMoment.html">Toybox.Time.LocalMoment</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A LocalMoment is an immutable moment in time.
+</p><p>
+LocalMoment represents a single point in time at a specific location.
+It differs from Moment in that it also keeps time zone information in
+addition to the time.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>// This code will print the following
+// to the console:
+// 2018-02-23 18:12:00
+// day_of_week=6 month=2
+// day_of_week=Fri month=Feb
+
+// Saturday Feb 24th, 2018 12:12am UTC
+var options = {
+    :year   =&gt; 2018,
+    :month  =&gt; 2,
+    :day    =&gt; 24,
+    :hour   =&gt; 0,
+    :min    =&gt; 12
+};
+
+var when = Gregorian.moment(options);
+
+var where = new Position.Location({
+    :latitude  =&gt;  38.85391,
+    :longitude =&gt; -94.79630,
+    :format    =&gt; :degrees,
+});
+
+var local = Gregorian.localMoment(where, when);
+
+var info = Gregorian.info(local, Time.FORMAT_SHORT);
+
+// Friday Feb 23th, 2018 6:12pm
+Sys.println(Lang.format("$1$-$2$-$3$ $4$:$5$:$6$", [
+    info.year.format("%04u"),
+    info.month.format("%02u"),
+    info.day.format("%02u"),
+    info.hour.format("%02u"),
+    info.min.format("%02u"),
+    info.sec.format("%02u"),
+]));
+
+Sys.println(Lang.format("day_of_week=$1$ month=$2$", [
+    info.day_of_week,
+    info.month
+]));
+
+info = Gregorian.info(now, Time.FORMAT_LONG);
+
+Sys.println(Lang.format("day_of_week=$1$ month=$2$", [
+    info.day_of_week,
+    info.month
+]));
+</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 745</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Rey™</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li>
+  </ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#add-instance_function" title="add (Instance Function)"><strong>add</strong></a>(addend as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)    as <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add a <a href='../../Toybox/Time/Duration.html'>Duration</a> to a LocalMoment.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#compare-instance_function" title="compare (Instance Function)"><strong>compare</strong></a>(moment as <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Determine if a LocalMoment is before or after another LocalMoment This computes a Number representing the difference between the two LocalMoment objects in seconds.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getDaylightSavingsTimeOffset-instance_function" title="getDaylightSavingsTimeOffset (Instance Function)"><strong>getDaylightSavingsTimeOffset</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the daylight saving time offset from UTC time in seconds.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getOffset-instance_function" title="getOffset (Instance Function)"><strong>getOffset</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the total time offset from UTC time in seconds.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getTimeZoneOffset-instance_function" title="getTimeZoneOffset (Instance Function)"><strong>getTimeZoneOffset</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the time zone offset from UTC time in seconds.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#greaterThan-instance_function" title="greaterThan (Instance Function)"><strong>greaterThan</strong></a>(moment as <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Determine if a LocalMoment is greater than another LocalMoment.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#isDaylightSavingsTime-instance_function" title="isDaylightSavingsTime (Instance Function)"><strong>isDaylightSavingsTime</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get whether the daylight saving time offset is in effect.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#lessThan-instance_function" title="lessThan (Instance Function)"><strong>lessThan</strong></a>(moment as <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>)    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Determine if a LocalMoment is less than another LocalMoment.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#subtract-instance_function" title="subtract (Instance Function)"><strong>subtract</strong></a>(subtrahend as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span> or <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>)    as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span> or <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Subtract a <a href='../../Toybox/Time/Duration.html'>Duration</a> or <a href='../../Toybox/Time/LocalMoment.html'>LocalMoment</a> from a LocalMoment.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#toMoment-instance_function" title="toMoment (Instance Function)"><strong>toMoment</strong></a>()    as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a Moment for this.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#value-instance_function" title="value (Instance Function)"><strong>value</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the UTC value of a LocalMoment.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="add-instance_function">
+    <strong>add(addend as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add a <a href='../../Toybox/Time/Duration.html'>Duration</a> to a LocalMoment.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">addend</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The Duration to add to this LocalMoment.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A LocalMoment object that is the sum of self and the provided Duration object.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="compare-instance_function">
+    <strong>compare(moment as <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Determine if a LocalMoment is before or after another LocalMoment
+</p><p>
+This computes a Number representing the difference between the two
+LocalMoment objects in seconds. The <a href='../../Toybox/Time/LocalMoment.html#subtract-instance_function'>subtract()</a>
+method can also be used to get the absolute Duration between two LocalMoment
+objects.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">moment</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The LocalMoment to compare to this LocalMoment
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.System;
+using Toybox.Time;
+using Toybox.Time.Gregorian;
+using Toybox.Position;
+
+var where = new Position.Location({
+    :latitude  =&gt;  38.85391,
+    :longitude =&gt; -94.79630,
+    :format    =&gt; :degrees,
+});
+var today = Gregorian.localMoment(where, Time.today());
+var oneDay = new Time.Duration(Gregorian.SECONDS_PER_DAY);
+var tomorrow = today.add(oneDay);
+
+System.println(today.compare(tomorrow)); // -86400, or one day in the past
+System.println(tomorrow.compare(today)); //  86400, or one day in the future</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The Number of seconds difference between the two LocalMoment objects, without considering time zone rules. If the LocalMoment supplied for comparison is after this LocalMoment, the value will be negative.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="../../Toybox/Time/LocalMoment.html#subtract-instance_function">LocalMoment.subtract()</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="../../Toybox/Time/Gregorian.html#SECONDS_PER_DAY-const">SECONDS_PER_DAY</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getDaylightSavingsTimeOffset-instance_function">
+    <strong>getDaylightSavingsTimeOffset()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the daylight saving time offset from UTC time in seconds.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The daylight saving time offset in seconds.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getOffset-instance_function">
+    <strong>getOffset()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the total time offset from UTC time in seconds
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The total offset from UTC time in seconds.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getTimeZoneOffset-instance_function">
+    <strong>getTimeZoneOffset()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the time zone offset from UTC time in seconds.
+</p><p>
+This is the time zone offset without the daylight saving time offset.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The time zone offset from UTC in seconds. Positive values are East of UTC.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="greaterThan-instance_function">
+    <strong>greaterThan(moment as <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Determine if a LocalMoment is greater than another LocalMoment.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">moment</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The LocalMoment to compare to this LocalMoment
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if this LocalMoment is greater than the LocalMoment supplied for comparison, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="isDaylightSavingsTime-instance_function">
+    <strong>isDaylightSavingsTime()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get whether the daylight saving time offset is in effect
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+true if daylight saving time is in effect for this time.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="lessThan-instance_function">
+    <strong>lessThan(moment as <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Determine if a LocalMoment is less than another LocalMoment.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">moment</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The LocalMoment to compare to this LocalMoment
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+<code>true</code> if this LocalMoment is less than the LocalMoment supplied for comparison, otherwise <code>false</code>
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="subtract-instance_function">
+    <strong>subtract(subtrahend as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span> or <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span> or <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Subtract a <a href='../../Toybox/Time/Duration.html'>Duration</a> or
+<a href='../../Toybox/Time/LocalMoment.html'>LocalMoment</a> from a LocalMoment.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">subtrahend</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>, <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The LocalMoment or Duration to subtract from this LocalMoment
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Duration.html">Time.Duration</a></span>, <span class="type"><a href="../../Toybox/Time/LocalMoment.html">Time.LocalMoment</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The Duration between the two LocalMoment objects or the LocalMoment offset by a Duration.  When subtracting LocalMoments, the computed Duration is always a positive value. The <a href='../../Toybox/Time/LocalMoment.html#compare-instance_function'>compare()</a> method can be used to determine whether one LocalMoment is before or after another LocalMoment.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="toMoment-instance_function">
+    <strong>toMoment()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a Moment for this.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Time/Moment.html">Time.Moment</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The UTC time of the LocalMoment as a Moment
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="value-instance_function">
+    <strong>value()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the UTC value of a LocalMoment.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The UTC time of the LocalMoment in seconds since the UNIX epoch
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+    <p class="tag_title">See Also:</p>
+    <ul class="see">
+      <li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC Time</a>
+  </div>
+  </li><li>
+  <div class="inline">
+    <a href="https://en.wikipedia.org/wiki/Unix_time">UNIX Time</a>
+  </div>
+  </li>
+    </ul>
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.3.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

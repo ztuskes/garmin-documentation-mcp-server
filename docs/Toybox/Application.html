@@ -1,0 +1,521 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Application </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Application";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Application</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Application module contains the base class for every Connect IQ app.
+</p><p>
+The Application Module includes the <a href='../Toybox/Application/AppBase.html'>AppBase</a> class which is responsible for
+controlling the app life cycle. This module also includes set and get methods
+to control the settings and properties values held in the Object Store and a
+GOAL_TYPE enum that defines the different goal types that can be triggered.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="https://developer.garmin.com/connect-iq/core-topics/persisting-data/">Core Topics - Persisting Data</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+<!-- Child Modules -->
+  <h2>Modules Under Namespace</h2>
+  <p class="children">
+    <strong class="classes">Modules:</strong>
+<span class="type"><a href="../Toybox/Application/Properties.html">Application.Properties</a></span>, <span class="type"><a href="../Toybox/Application/Storage.html">Application.Storage</a></span>, <span class="type"><a href="../Toybox/Application/WatchFaceConfig.html">Application.WatchFaceConfig</a></span>
+  </p>
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/Application/AppBase.html">AppBase</a></span>, <span class="type"><a href="../Toybox/Application/AudioContentProviderApp.html">AudioContentProviderApp</a></span>, <span class="type"><a href="../Toybox/Application/ObjectStoreAccessException.html">ObjectStoreAccessException</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="GoalType-module" class="">
+    <h3>GoalType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="GOAL_TYPE_STEPS-const">
+    <td class="enumTableCell">GOAL_TYPE_STEPS</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="GOAL_TYPE_FLOORS_CLIMBED-const">
+    <td class="enumTableCell">GOAL_TYPE_FLOORS_CLIMBED</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="GOAL_TYPE_ACTIVE_MINUTES-const">
+    <td class="enumTableCell">GOAL_TYPE_ACTIVE_MINUTES</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.3.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+<h2>Typedef Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#PersistableType-named_type" title="PersistableType (Named Type)"><strong>PersistableType</strong></a> as <span class="type"><a href="../Toybox/Application.html#PropertyValueType-named_type">Application.PropertyValueType</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#PropertyKeyType-named_type" title="PropertyKeyType (Named Type)"><strong>PropertyKeyType</strong></a> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span> or <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span> or <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> or <span class="type"><a href="../Toybox/Lang/Char.html">Lang.Char</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#PropertyValueType-named_type" title="PropertyValueType (Named Type)"><strong>PropertyValueType</strong></a> as <span class="type"><a href="../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span> or <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Application.html#PropertyValueType-named_type">Application.PropertyValueType</a></span>&gt; or <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span>, <span class="type"><a href="../Toybox/Application.html#PropertyValueType-named_type">Application.PropertyValueType</a></span>&gt; or <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <b>Null</b>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#ResourceReferenceType-named_type" title="ResourceReferenceType (Named Type)"><strong>ResourceReferenceType</strong></a> as <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span> or <span class="type"><a href="../Toybox/Graphics/FontReference.html">Graphics.FontReference</a></span>
+    </span>
+
+
+
+</li><li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#ResourceType-named_type" title="ResourceType (Named Type)"><strong>ResourceType</strong></a> as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span> or <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/WatchUi/AnimationResource.html">WatchUi.AnimationResource</a></span> or <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/WatchUi/FontResource.html">WatchUi.FontResource</a></span>
+    </span>
+
+
+
+</li>
+</ul>
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getApp-instance_function" title="getApp (Instance Function)"><strong>getApp</strong></a>()    as <span class="type"><a href="../Toybox/Application/AppBase.html">Application.AppBase</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Retrieve the AppBase <a href='../Toybox/Lang/Object.html'>Object</a> that is currently running.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#loadResource-instance_function" title="loadResource (Instance Function)"><strong>loadResource</strong></a>(resource as <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)    as <span class="type"><a href="../Toybox/Application.html#ResourceType-named_type">Application.ResourceType</a></span> or <span class="type"><a href="../Toybox/Application.html#ResourceReferenceType-named_type">Application.ResourceReferenceType</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Load a resource from the executable.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="typedef_details" class="attr_details">
+    <h2>Typedef Details</h2>
+    <div class="details">
+<h3 class="signature" id="PersistableType-named_type">
+
+<strong>PersistableType</strong> as <span class="type"><a href="../Toybox/Application.html#PropertyValueType-named_type">Application.PropertyValueType</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="PropertyKeyType-named_type">
+
+<strong>PropertyKeyType</strong> as <span class="type"><a href="../Toybox/Lang/Number.html">Lang.Number</a></span> or <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span> or <span class="type"><a href="../Toybox/Lang/Long.html">Lang.Long</a></span> or <span class="type"><a href="../Toybox/Lang/Double.html">Lang.Double</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/Lang/Boolean.html">Lang.Boolean</a></span> or <span class="type"><a href="../Toybox/Lang/Char.html">Lang.Char</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="PropertyValueType-named_type">
+
+<strong>PropertyValueType</strong> as <span class="type"><a href="../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span> or <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../Toybox/Application.html#PropertyValueType-named_type">Application.PropertyValueType</a></span>&gt; or <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>&lt;<span class="type"><a href="../Toybox/Application.html#PropertyKeyType-named_type">Application.PropertyKeyType</a></span>, <span class="type"><a href="../Toybox/Application.html#PropertyValueType-named_type">Application.PropertyValueType</a></span>&gt; or <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="ResourceReferenceType-named_type">
+
+<strong>ResourceReferenceType</strong> as <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span> or <span class="type"><a href="../Toybox/Graphics/FontReference.html">Graphics.FontReference</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div><div class="details">
+<h3 class="signature" id="ResourceType-named_type">
+
+<strong>ResourceType</strong> as <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span> or <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span> or <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span> or <span class="type"><a href="../Toybox/WatchUi/AnimationResource.html">WatchUi.AnimationResource</a></span> or <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span> or <span class="type"><a href="../Toybox/WatchUi/FontResource.html">WatchUi.FontResource</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+ </div>
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getApp-instance_function">
+    <strong>getApp()</strong> <span class="type"> as <span class="type"><a href="../Toybox/Application/AppBase.html">Application.AppBase</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Retrieve the AppBase <a href='../Toybox/Lang/Object.html'>Object</a> that is currently
+running.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Application/AppBase.html">Application.AppBase</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The currently running AppBase object
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="loadResource-instance_function">
+    <strong>loadResource(resource as <span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</strong> <span class="type"> as <span class="type"><a href="../Toybox/Application.html#ResourceType-named_type">Application.ResourceType</a></span> or <span class="type"><a href="../Toybox/Application.html#ResourceReferenceType-named_type">Application.ResourceReferenceType</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Load a resource from the executable.
+</p>
+
+
+    </div>
+  </div>
+
+<div class="note">
+  <div class="inline">
+    <span class="noteTitle">Note:
+    </span><p>
+<a href='../Toybox/Graphics/BitmapReference.html'>Toybox::Graphics::BitmapReference</a> and <a href='../Toybox/Graphics/FontReference.html'>Toybox::Graphics::FontReference</a> are returned for <a href='../Toybox/WatchUi/BitmapResource.html'>Toybox::WatchUi::BitmapResource</a> and <a href='../Toybox/WatchUi/FontResource.html'>Toybox::WatchUi::FontResource</a> in CIQ 4.0.0 and later.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">resource</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/ResourceId.html">Lang.ResourceId</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+An identifier for a resource defined in the project's <code>resources.xml</code> file
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Loading a String resource</p>
+</div></p>
+<pre class="example code">
+<code>// The resources.xml file contents:
+// &lt;resources&gt;
+//     &lt;string id="AppName"&gt;APEELingApp&lt;/string&gt;
+// &lt;/resources&gt;
+using Toybox.Application;
+
+var banana = Application.loadResource(Rez.Strings.AppName);</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/Lang/Array.html">Lang.Array</a></span>, <span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>, <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, <span class="type"><a href="../Toybox/WatchUi/AnimationResource.html">WatchUi.AnimationResource</a></span>, <span class="type"><a href="../Toybox/WatchUi/BitmapResource.html">WatchUi.BitmapResource</a></span>, <span class="type"><a href="../Toybox/WatchUi/FontResource.html">WatchUi.FontResource</a></span>, <span class="type"><a href="../Toybox/Graphics/BitmapReference.html">Graphics.BitmapReference</a></span>, <span class="type"><a href="../Toybox/Graphics/FontReference.html">Graphics.FontReference</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

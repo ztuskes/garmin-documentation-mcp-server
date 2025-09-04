@@ -1,0 +1,1896 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.ActivityRecording </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.ActivityRecording";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.ActivityRecording</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The Activity Recording module will allow Apps to access the FIT file recording
+capabilities of the device.
+</p><p>
+Apps can use this module to allow the user to start and stop recordings,
+create laps, and save recorded data. SPORT_* and SUB_SPORT_* constants
+are provided as enums.
+</p><p>
+The SPORT_* defines the type of activity, but is not guaranteed
+to change device behavior. This may cause different algorithms to be applied
+to the sensor data. For example, a device that does not natively
+support SPORT_MULTISPORT recording will not gain SPORT_MULTISPORT transition
+features. However, the FIT file can be defined as SPORT_MULTISPORT and
+MULTI_SPORT algorithms may be applied to the sensor data.
+</p><p>
+SUB_SPORT_* allows for clarification of sport when recording.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- See -->
+  <h2>See Also:</h2>
+  <ul class="see">
+  <li>
+  <div class="inline">
+    <a href="../Toybox/FitContributor.html">Toybox.FitContributor</a>
+  </div>
+  </li>
+  </ul>
+
+
+<div class="tags">
+<!-- Example -->
+<div class="examples">
+<p class="tag_title">Example:</p>
+<pre class="example code">
+<code>using Toybox.ActivityRecording;
+using Toybox.WatchUi
+var session = null;                                             // set up session variable
+
+// use the select Start/Stop or touch for recording
+function onSelect() {
+   if (Toybox has :ActivityRecording) {                         // check device for activity recording
+       if ((session == null) || (session.isRecording() == false)) {
+           session = ActivityRecording.createSession({          // set up recording session
+                 :name=&gt;"Generic",                              // set session name
+                 :sport=&gt;Activity.SPORT_GENERIC,                // set sport type
+                 :subSport=&gt;Activity.SUB_SPORT_GENERIC          // set sub sport type
+           });
+           session.start();                                     // call start session
+       }
+       else if ((session != null) && session.isRecording()) {
+           session.stop();                                      // stop the session
+           session.save();                                      // save the session
+           session = null;                                      // set session control variable to null
+       }
+   }
+   return true;                                                 // return true for onSelect function
+}</code>
+</pre>
+</div>
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+  <!-- App Types -->
+  <p class="tag_title">App Types:</p>
+  <ul class="app_types">
+      <li>
+    <div class="inline">
+      <p>Background</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Glance</p>
+    </div>
+  </li><li>
+    <div class="inline">
+      <p>Watch App</p>
+    </div>
+  </li>
+  </ul>
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Approach® S50</li><li>Approach® S60</li><li>Approach® S62</li><li>Approach® S70 42mm</li><li>Approach® S70 47mm</li><li>Captain Marvel</li><li>D2™ Air X10</li><li>D2™ Air</li><li>D2™ Bravo Titanium</li><li>D2™ Bravo</li><li>D2™ Charlie</li><li>D2™ Delta PX</li><li>D2™ Delta S</li><li>D2™ Delta</li><li>D2™ Mach 1</li><li>Darth Vader™</li><li>Descent™ G1 / G1 Solar</li><li>Descent™ G2</li><li>Descent™ Mk1</li><li>Descent™ Mk2 / Descent™ Mk2i</li><li>Descent™ Mk2 S</li><li>Descent™ Mk3 43mm / Mk3i 43mm</li><li>Descent™ Mk3i 51mm</li><li>Edge® 1000 / Explore</li><li>Edge® 1030 / Bontrager</li><li>Edge® 1030 Plus</li><li>Edge® 1030</li><li>Edge® 1040 / 1040 Solar</li><li>Edge® 1050</li><li>Edge® 130 Plus</li><li>Edge® 130</li><li>Edge® 520 Plus</li><li>Edge® 520</li><li>Edge® 530</li><li>Edge® 540 / 540 Solar</li><li>Edge® 820 / Explore</li><li>Edge® 830</li><li>Edge® 840 / 840 Solar</li><li>Edge® Explore 2</li><li>Edge® Explore</li><li>Enduro™ 3</li><li>Enduro™</li><li>epix™ (Gen 2) / quatix® 7 Sapphire</li><li>epix™ Pro (Gen 2) 42mm</li><li>epix™ Pro (Gen 2) 47mm / quatix® 7 Pro</li><li>epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition</li><li>epix™</li><li>fēnix® 3 / tactix® Bravo / quatix® 3</li><li>fēnix® 3 HR</li><li>fēnix® 5 / quatix® 5</li><li>fēnix® 5 Plus</li><li>fēnix® 5S Plus</li><li>fēnix® 5S</li><li>fēnix® 5X / tactix® Charlie</li><li>fēnix® 5X Plus</li><li>fēnix® 6 / 6 Solar / 6 Dual Power</li><li>fēnix® 6 Pro / 6 Sapphire / 6 Pro Solar / 6 Pro Dual Power / quatix® 6</li><li>fēnix® 6S / 6S Solar / 6S Dual Power</li><li>fēnix® 6S Pro / 6S Sapphire / 6S Pro Solar / 6S Pro Dual Power</li><li>fēnix® 6X Pro / 6X Sapphire / 6X Pro Solar / tactix® Delta Sapphire / Delta Solar / Delta Solar - Ballistics Edition / quatix® 6X / 6X Solar / 6X Dual Power</li><li>fēnix® 7 / quatix® 7</li><li>fēnix® 7 Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7 Pro</li><li>fēnix® 7S Pro</li><li>fēnix® 7S</li><li>fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2</li><li>fēnix® 7X Pro - Solar Edition (no Wi-Fi)</li><li>fēnix® 7X Pro</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® Chronos</li><li>fēnix® E</li><li>First Avenger</li><li>Forerunner® 165 Music</li><li>Forerunner® 165</li><li>Forerunner® 230</li><li>Forerunner® 235</li><li>Forerunner® 245 Music</li><li>Forerunner® 245</li><li>Forerunner® 255 Music</li><li>Forerunner® 255</li><li>Forerunner® 255s Music</li><li>Forerunner® 255s</li><li>Forerunner® 265</li><li>Forerunner® 265s</li><li>Forerunner® 55</li><li>Forerunner® 630</li><li>Forerunner® 645 Music</li><li>Forerunner® 645</li><li>Forerunner® 735xt</li><li>Forerunner® 745</li><li>Forerunner® 920XT</li><li>Forerunner® 935</li><li>Forerunner® 945 LTE</li><li>Forerunner® 945</li><li>Forerunner® 955 / Solar</li><li>Forerunner® 965</li><li>GPSMAP® 66s / 66i / 66sr / 66st</li><li>GPSMAP® 67 / 67i</li><li>GPSMAP® 86s / 86sc / 86i / 86sci</li><li>Instinct® 2 / Solar / Dual Power / dēzl Edition</li><li>Instinct® 2S / Solar / Dual Power</li><li>Instinct® 2X Solar</li><li>Instinct® 3 AMOLED 45mm</li><li>Instinct® 3 AMOLED 50mm</li><li>Instinct® 3 Solar 45mm / 50mm</li><li>Instinct® Crossover</li><li>Instinct® E 40mm</li><li>Instinct® E 45mm</li><li>MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition</li><li>MARQ® (Gen 2) Aviator</li><li>MARQ® Adventurer</li><li>MARQ® Athlete</li><li>MARQ® Aviator</li><li>MARQ® Captain / MARQ® Captain: American Magic Edition</li><li>MARQ® Commander</li><li>MARQ® Driver</li><li>MARQ® Expedition</li><li>MARQ® Golfer</li><li>Montana® 7 Series</li><li>Oregon® 7 Series</li><li>Rey™</li><li>Rino® 7 Series</li><li>Venu® 2 Plus</li><li>Venu® 2</li><li>Venu® 2S</li><li>Venu® 3</li><li>Venu® 3S</li><li>Venu® Mercedes-Benz® Collection</li><li>Venu® Sq 2 Music</li><li>Venu® Sq 2</li><li>Venu® Sq</li><li>Venu® Sq. Music Edition</li><li>Venu®</li><li>vívoactive® 3 Mercedes-Benz® Collection</li><li>vívoactive® 3 Music LTE</li><li>vívoactive® 3 Music</li><li>vívoactive® 3</li><li>vívoactive® 4</li><li>vívoactive® 4S</li><li>vívoactive® 5</li><li>vívoactive® 6</li><li>vívoactive® HR</li><li>vívoactive®</li>
+  </ul>
+
+  <!-- Permissions -->
+  <p class="tag_title">Requires Permission:</p>
+  <ul class="required_permissions">
+      <li>
+    <div class="inline">
+      <p>Fit</p>
+    </div>
+  </li>
+  </ul>
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../Toybox/ActivityRecording/Session.html">Session</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="Sport1-module" class="">
+    <h3>Sport1</h3>
+  </dt>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This enum may be removed after System 8.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+  <div class="tags">
+    <p class="tag_title">See Also:</p>
+    <div class="see"><li>
+  <div class="inline">
+    <a href="../Toybox/Activity.html#Sport-module">Activity::SPORT_*</a>
+  </div>
+  </li></div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SPORT_GENERIC-const">
+    <td class="enumTableCell">SPORT_GENERIC</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for sports not on the list
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_RUNNING-const">
+    <td class="enumTableCell">SPORT_RUNNING</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for running
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_CYCLING-const">
+    <td class="enumTableCell">SPORT_CYCLING</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for multi-sport transitions
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_TRANSITION-const">
+    <td class="enumTableCell">SPORT_TRANSITION</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_FITNESS_EQUIPMENT-const">
+    <td class="enumTableCell">SPORT_FITNESS_EQUIPMENT</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for ANT enabled exercise equipment
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_SWIMMING-const">
+    <td class="enumTableCell">SPORT_SWIMMING</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for swimming
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_BASKETBALL-const">
+    <td class="enumTableCell">SPORT_BASKETBALL</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for basketball
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_SOCCER-const">
+    <td class="enumTableCell">SPORT_SOCCER</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for soccer
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_TENNIS-const">
+    <td class="enumTableCell">SPORT_TENNIS</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for Tennis
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_AMERICAN_FOOTBALL-const">
+    <td class="enumTableCell">SPORT_AMERICAN_FOOTBALL</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for American football
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_TRAINING-const">
+    <td class="enumTableCell">SPORT_TRAINING</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for activities such as strength training, cardio, etc
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_WALKING-const">
+    <td class="enumTableCell">SPORT_WALKING</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for walking
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_CROSS_COUNTRY_SKIING-const">
+    <td class="enumTableCell">SPORT_CROSS_COUNTRY_SKIING</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for cross-country skiing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_ALPINE_SKIING-const">
+    <td class="enumTableCell">SPORT_ALPINE_SKIING</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for alpine skiing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SNOWBOARDING-const">
+    <td class="enumTableCell">SPORT_SNOWBOARDING</td>
+      <td class="enumTableCell">14</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for snowboarding
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_ROWING-const">
+    <td class="enumTableCell">SPORT_ROWING</td>
+      <td class="enumTableCell">15</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for rowing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_MOUNTAINEERING-const">
+    <td class="enumTableCell">SPORT_MOUNTAINEERING</td>
+      <td class="enumTableCell">16</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for mountaineering
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_HIKING-const">
+    <td class="enumTableCell">SPORT_HIKING</td>
+      <td class="enumTableCell">17</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for hiking
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_MULTISPORT-const">
+    <td class="enumTableCell">SPORT_MULTISPORT</td>
+      <td class="enumTableCell">18</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for multi-sport events
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_PADDLING-const">
+    <td class="enumTableCell">SPORT_PADDLING</td>
+      <td class="enumTableCell">19</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for paddling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="Sport2-module" class="">
+    <h3>Sport2</h3>
+  </dt>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This enum may be removed after System 8.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+  <div class="tags">
+    <p class="tag_title">See Also:</p>
+    <div class="see"><li>
+  <div class="inline">
+    <a href="../Toybox/Activity.html#Sport-module">Activity::SPORT_*</a>
+  </div>
+  </li></div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SPORT_FLYING-const">
+    <td class="enumTableCell">SPORT_FLYING</td>
+      <td class="enumTableCell">20</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for flying
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_E_BIKING-const">
+    <td class="enumTableCell">SPORT_E_BIKING</td>
+      <td class="enumTableCell">21</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for riding an e-bike
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_MOTORCYCLING-const">
+    <td class="enumTableCell">SPORT_MOTORCYCLING</td>
+      <td class="enumTableCell">22</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for motorcycling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_BOATING-const">
+    <td class="enumTableCell">SPORT_BOATING</td>
+      <td class="enumTableCell">23</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for boating
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_DRIVING-const">
+    <td class="enumTableCell">SPORT_DRIVING</td>
+      <td class="enumTableCell">24</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for driving
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_GOLF-const">
+    <td class="enumTableCell">SPORT_GOLF</td>
+      <td class="enumTableCell">25</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for golfing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_HANG_GLIDING-const">
+    <td class="enumTableCell">SPORT_HANG_GLIDING</td>
+      <td class="enumTableCell">26</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for hang gliding
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_HORSEBACK_RIDING-const">
+    <td class="enumTableCell">SPORT_HORSEBACK_RIDING</td>
+      <td class="enumTableCell">27</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for horseback riding
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_HUNTING-const">
+    <td class="enumTableCell">SPORT_HUNTING</td>
+      <td class="enumTableCell">28</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for hunting
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_FISHING-const">
+    <td class="enumTableCell">SPORT_FISHING</td>
+      <td class="enumTableCell">29</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for fishing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_INLINE_SKATING-const">
+    <td class="enumTableCell">SPORT_INLINE_SKATING</td>
+      <td class="enumTableCell">30</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for inline skating
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_ROCK_CLIMBING-const">
+    <td class="enumTableCell">SPORT_ROCK_CLIMBING</td>
+      <td class="enumTableCell">31</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for rock climbing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SAILING-const">
+    <td class="enumTableCell">SPORT_SAILING</td>
+      <td class="enumTableCell">32</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for sailing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_ICE_SKATING-const">
+    <td class="enumTableCell">SPORT_ICE_SKATING</td>
+      <td class="enumTableCell">33</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for ice skating
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SKY_DIVING-const">
+    <td class="enumTableCell">SPORT_SKY_DIVING</td>
+      <td class="enumTableCell">34</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for sky diving
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_SNOWSHOEING-const">
+    <td class="enumTableCell">SPORT_SNOWSHOEING</td>
+      <td class="enumTableCell">35</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for showshoeing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SNOWMOBILING-const">
+    <td class="enumTableCell">SPORT_SNOWMOBILING</td>
+      <td class="enumTableCell">36</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for snowmobiling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_STAND_UP_PADDLEBOARDING-const">
+    <td class="enumTableCell">SPORT_STAND_UP_PADDLEBOARDING</td>
+      <td class="enumTableCell">37</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for paddle boarding
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SURFING-const">
+    <td class="enumTableCell">SPORT_SURFING</td>
+      <td class="enumTableCell">38</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for surfing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_WAKEBOARDING-const">
+    <td class="enumTableCell">SPORT_WAKEBOARDING</td>
+      <td class="enumTableCell">39</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for wakeboarding
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_WATER_SKIING-const">
+    <td class="enumTableCell">SPORT_WATER_SKIING</td>
+      <td class="enumTableCell">40</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for water skiing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_KAYAKING-const">
+    <td class="enumTableCell">SPORT_KAYAKING</td>
+      <td class="enumTableCell">41</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for kayaking
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_RAFTING-const">
+    <td class="enumTableCell">SPORT_RAFTING</td>
+      <td class="enumTableCell">42</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for rafting
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_WINDSURFING-const">
+    <td class="enumTableCell">SPORT_WINDSURFING</td>
+      <td class="enumTableCell">43</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for windsurfing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_KITESURFING-const">
+    <td class="enumTableCell">SPORT_KITESURFING</td>
+      <td class="enumTableCell">44</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for kite surfing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_TACTICAL-const">
+    <td class="enumTableCell">SPORT_TACTICAL</td>
+      <td class="enumTableCell">45</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for tactical
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_JUMPMASTER-const">
+    <td class="enumTableCell">SPORT_JUMPMASTER</td>
+      <td class="enumTableCell">46</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for jumpmaster
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_BOXING-const">
+    <td class="enumTableCell">SPORT_BOXING</td>
+      <td class="enumTableCell">47</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for boxing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_FLOOR_CLIMBING-const">
+    <td class="enumTableCell">SPORT_FLOOR_CLIMBING</td>
+      <td class="enumTableCell">48</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for climbing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_BASEBALL-const">
+    <td class="enumTableCell">SPORT_BASEBALL</td>
+      <td class="enumTableCell">49</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for baseball
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SOFTBALL_FAST_PITCH-const">
+    <td class="enumTableCell">SPORT_SOFTBALL_FAST_PITCH</td>
+      <td class="enumTableCell">50</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for fast pitch softball
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_SOFTBALL_SLOW_PITCH-const">
+    <td class="enumTableCell">SPORT_SOFTBALL_SLOW_PITCH</td>
+      <td class="enumTableCell">51</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for slow pitch softball
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SPORT_SHOOTING-const">
+    <td class="enumTableCell">SPORT_SHOOTING</td>
+      <td class="enumTableCell">56</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for shooting
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SPORT_AUTO_RACING-const">
+    <td class="enumTableCell">SPORT_AUTO_RACING</td>
+      <td class="enumTableCell">57</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sport used for auto racing
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="SubSport-module" class="">
+    <h3>SubSport</h3>
+  </dt>
+  <div class="note deprecated">
+  <strong>This has been deprecated</strong>
+  <div class="inline">
+    <p>
+This enum may be removed after System 8.
+</p>
+
+
+  </div>
+</div>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+  <div class="tags">
+    <p class="tag_title">See Also:</p>
+    <div class="see"><li>
+  <div class="inline">
+    <a href="../Toybox/Activity.html#SubSport-module">Activity::SUB_SPORT_*</a>
+  </div>
+  </li></div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="SUB_SPORT_GENERIC-const">
+    <td class="enumTableCell">SUB_SPORT_GENERIC</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport used if no other sub-sport is applicable
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_TREADMILL-const">
+    <td class="enumTableCell">SUB_SPORT_TREADMILL</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Running and Fitness Equipment
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_STREET-const">
+    <td class="enumTableCell">SUB_SPORT_STREET</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Running
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_TRAIL-const">
+    <td class="enumTableCell">SUB_SPORT_TRAIL</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Running
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_TRACK-const">
+    <td class="enumTableCell">SUB_SPORT_TRACK</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Running
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_SPIN-const">
+    <td class="enumTableCell">SUB_SPORT_SPIN</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Cycling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_INDOOR_CYCLING-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_CYCLING</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Cycling and Fitness Equipment
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_ROAD-const">
+    <td class="enumTableCell">SUB_SPORT_ROAD</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Cycling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_MOUNTAIN-const">
+    <td class="enumTableCell">SUB_SPORT_MOUNTAIN</td>
+      <td class="enumTableCell">8</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Cycling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_DOWNHILL-const">
+    <td class="enumTableCell">SUB_SPORT_DOWNHILL</td>
+      <td class="enumTableCell">9</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Cycling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_RECUMBENT-const">
+    <td class="enumTableCell">SUB_SPORT_RECUMBENT</td>
+      <td class="enumTableCell">10</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Cycling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_CYCLOCROSS-const">
+    <td class="enumTableCell">SUB_SPORT_CYCLOCROSS</td>
+      <td class="enumTableCell">11</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Cycling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_HAND_CYCLING-const">
+    <td class="enumTableCell">SUB_SPORT_HAND_CYCLING</td>
+      <td class="enumTableCell">12</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Cycling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_TRACK_CYCLING-const">
+    <td class="enumTableCell">SUB_SPORT_TRACK_CYCLING</td>
+      <td class="enumTableCell">13</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Cycling
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_INDOOR_ROWING-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_ROWING</td>
+      <td class="enumTableCell">14</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Rowing and Fitness Equipment
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_ELLIPTICAL-const">
+    <td class="enumTableCell">SUB_SPORT_ELLIPTICAL</td>
+      <td class="enumTableCell">15</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Fitness Equipment
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_STAIR_CLIMBING-const">
+    <td class="enumTableCell">SUB_SPORT_STAIR_CLIMBING</td>
+      <td class="enumTableCell">16</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Fitness Equipment
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_LAP_SWIMMING-const">
+    <td class="enumTableCell">SUB_SPORT_LAP_SWIMMING</td>
+      <td class="enumTableCell">17</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Swimming
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_OPEN_WATER-const">
+    <td class="enumTableCell">SUB_SPORT_OPEN_WATER</td>
+      <td class="enumTableCell">18</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Swimming
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_FLEXIBILITY_TRAINING-const">
+    <td class="enumTableCell">SUB_SPORT_FLEXIBILITY_TRAINING</td>
+      <td class="enumTableCell">19</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Training
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_STRENGTH_TRAINING-const">
+    <td class="enumTableCell">SUB_SPORT_STRENGTH_TRAINING</td>
+      <td class="enumTableCell">20</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Training
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_WARM_UP-const">
+    <td class="enumTableCell">SUB_SPORT_WARM_UP</td>
+      <td class="enumTableCell">21</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Activity Warm-up
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_MATCH-const">
+    <td class="enumTableCell">SUB_SPORT_MATCH</td>
+      <td class="enumTableCell">22</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Sports with Matches (e.g. Tennis)
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_EXERCISE-const">
+    <td class="enumTableCell">SUB_SPORT_EXERCISE</td>
+      <td class="enumTableCell">23</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Exercise
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_CHALLENGE-const">
+    <td class="enumTableCell">SUB_SPORT_CHALLENGE</td>
+      <td class="enumTableCell">24</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for a Sport Challenge
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="SUB_SPORT_INDOOR_SKIING-const">
+    <td class="enumTableCell">SUB_SPORT_INDOOR_SKIING</td>
+      <td class="enumTableCell">25</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Fitness Equipment
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="SUB_SPORT_CARDIO_TRAINING-const">
+    <td class="enumTableCell">SUB_SPORT_CARDIO_TRAINING</td>
+      <td class="enumTableCell">26</td>
+      <td class="enumTableCell"><p>
+API Level 1.0.0
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Sub-sport for Training
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table><dt id="TimerEventType-module" class="">
+    <h3>TimerEventType</h3>
+  </dt>
+  <div class="tags">
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+  </div>
+<table class="enumTable">
+  <tr>
+    <th class="enumTableHeader">Name</th>
+    <th class="enumTableHeader">Value</th>
+    <th class="enumTableHeader">Since</th>
+    <th class="enumTableHeader">Description</th>
+    <th class="enumTableHeader">See Also</th>
+  </tr>
+  <tr class="enumTableOdd" id="TIMER_EVENT_START-const">
+    <td class="enumTableCell">TIMER_EVENT_START</td>
+      <td class="enumTableCell">0</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Timer start event
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TIMER_EVENT_STOP-const">
+    <td class="enumTableCell">TIMER_EVENT_STOP</td>
+      <td class="enumTableCell">1</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Timer stop event
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TIMER_EVENT_PAUSE-const">
+    <td class="enumTableCell">TIMER_EVENT_PAUSE</td>
+      <td class="enumTableCell">2</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Timer pause event
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TIMER_EVENT_RESUME-const">
+    <td class="enumTableCell">TIMER_EVENT_RESUME</td>
+      <td class="enumTableCell">3</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Timer resume event
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TIMER_EVENT_LAP-const">
+    <td class="enumTableCell">TIMER_EVENT_LAP</td>
+      <td class="enumTableCell">4</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Timer lap event
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TIMER_EVENT_RESET-const">
+    <td class="enumTableCell">TIMER_EVENT_RESET</td>
+      <td class="enumTableCell">5</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Timer reset
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableOdd" id="TIMER_EVENT_WORKOUT_STEP_COMPLETE-const">
+    <td class="enumTableCell">TIMER_EVENT_WORKOUT_STEP_COMPLETE</td>
+      <td class="enumTableCell">6</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Workout step complete
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr><tr class="enumTableEven" id="TIMER_EVENT_NEXT_MULTISPORT_LEG-const">
+    <td class="enumTableCell">TIMER_EVENT_NEXT_MULTISPORT_LEG</td>
+      <td class="enumTableCell">7</td>
+      <td class="enumTableCell"><p>
+API Level 3.0.10
+</p>
+
+</td>
+      <td class="enumTableCell"><p>
+Multisport leg started
+</p>
+
+</td>
+      <td class="enumTableCell"></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+<h2>Typedef Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+
+    <span class="summary_signature summary_signature_link">
+    <a href="#Sport-named_type" title="Sport (Named Type)"><strong>Sport</strong></a> as <span class="type"><a href="../Toybox/ActivityRecording.html#Sport1-module">ActivityRecording.Sport1</a></span> or <span class="type"><a href="../Toybox/ActivityRecording.html#Sport2-module">ActivityRecording.Sport2</a></span>
+    </span>
+
+
+
+</li>
+</ul>
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#createSession-instance_function" title="createSession (Instance Function)"><strong>createSession</strong></a>(options as { :sport as <span class="type"><a href="../Toybox/ActivityRecording.html#Sport-named_type">ActivityRecording.Sport</a></span> or <span class="type"><a href="../Toybox/Activity.html#Sport-module">Activity.Sport</a></span>, :subSport as <span class="type"><a href="../Toybox/ActivityRecording.html#SubSport-module">ActivityRecording.SubSport</a></span> or <span class="type"><a href="../Toybox/Activity.html#SubSport-module">Activity.SubSport</a></span>, :name as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, :poolLength as <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, :sensorLogger as <span class="type"><a href="../Toybox/SensorLogging/SensorLogger.html">SensorLogging.SensorLogger</a></span>, :autoLap as { :type as <span class="type"><a href="../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>, :entry as [ <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span>, <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span> ], :exit as [ <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span>, <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span> ] } })    as <span class="type"><a href="../Toybox/ActivityRecording/Session.html">ActivityRecording.Session</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Create a <a href='../Toybox/ActivityRecording/Session.html'>Session</a> object with options determined by the caller.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="typedef_details" class="attr_details">
+    <h2>Typedef Details</h2>
+    <div class="details">
+<h3 class="signature" id="Sport-named_type">
+
+<strong>Sport</strong> as <span class="type"><a href="../Toybox/ActivityRecording.html#Sport1-module">ActivityRecording.Sport1</a></span> or <span class="type"><a href="../Toybox/ActivityRecording.html#Sport2-module">ActivityRecording.Sport2</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+ </div>
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="createSession-instance_function">
+    <strong>createSession(options as { :sport as <span class="type"><a href="../Toybox/ActivityRecording.html#Sport-named_type">ActivityRecording.Sport</a></span> or <span class="type"><a href="../Toybox/Activity.html#Sport-module">Activity.Sport</a></span>, :subSport as <span class="type"><a href="../Toybox/ActivityRecording.html#SubSport-module">ActivityRecording.SubSport</a></span> or <span class="type"><a href="../Toybox/Activity.html#SubSport-module">Activity.SubSport</a></span>, :name as <span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>, :poolLength as <span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>, :sensorLogger as <span class="type"><a href="../Toybox/SensorLogging/SensorLogger.html">SensorLogging.SensorLogger</a></span>, :autoLap as { :type as <span class="type"><a href="../Toybox/Lang/Symbol.html">Lang.Symbol</a></span>, :entry as [ <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span>, <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span> ], :exit as [ <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span>, <span class="type"><a href="../Toybox/Position/Location.html">Position.Location</a></span> ] } })</strong> <span class="type"> as <span class="type"><a href="../Toybox/ActivityRecording/Session.html">ActivityRecording.Session</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Create a <a href='../Toybox/ActivityRecording/Session.html'>Session</a> object with
+options determined by the caller.
+</p><p>
+Only one Session object is allowed to exist at a time. If there
+is an existing object that has not been closed using the
+<a href='../Toybox/ActivityRecording/Session.html#save-instance_function'>save()</a> or
+<a href='../Toybox/ActivityRecording/Session.html#discard-instance_function'>discard()</a> methods, this method will
+return that object instead of creating a new one. On some products
+running the 1.x virtual machine, creating a Session object requires a
+large memory allocation. To free this memory, the Session must first be
+successfully saved or discarded, and then app references to the Session
+object should be set to <code>null</code>.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">options</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A Dictionary containing session creation options.
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class="name">:sport</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/ActivityRecording.html#Sport-named_type">ActivityRecording.Sport</a></span>, <span class="type"><a href="../Toybox/Activity.html#Sport-module">Activity.Sport</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The primary sport being recorded (SPORT_GENERIC by default).
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:subSport</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/ActivityRecording.html#SubSport-module">ActivityRecording.SubSport</a></span>, <span class="type"><a href="../Toybox/Activity.html#SubSport-module">Activity.SubSport</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The sport subcategory being recorded (SUB_SPORT_GENERIC by default).
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:name</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/String.html">Lang.String</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Required. This is the name that will be associated with the sport being recorded. The suggested maximum length of the name is 15 characters (some devices support longer names).
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:poolLength</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Float.html">Lang.Float</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+This is the length of the pool in meters for this activity. If this session object is configured with <code>:sport=>SPORT_SWIMMING</code> and <code>:subSport=>SUB_SPORT_LAP_SWIMMING</code>, this option is required to configure the system in this mode. If it is not provided, activity data may have undefined behavior. For all other sport modes, this option is ignored.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:autoLap</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/Dictionary.html">Lang.Dictionary</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+A dictionary containing auto-lap detection options. If present, this dictionary must have a <code>:type</code> key; If the value of <code>:type</code> is <code>:lines</code>, the <code>:entry</code> and <code>:exit</code> keys are required. The values associated with <code>:entry</code> and <code>:exit</code> describe the endpoints of the auto lap entry and exit line segments, each being defined as an <a href='../Toybox/Lang/Array.html'>Array</a> of two <a href='../Toybox/Position/Location.html'>Location</a> objects. (added in 3.0.10)
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">:sensorLogger</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../Toybox/SensorLogging/SensorLogger.html">SensorLogging.SensorLogger</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+The SensorLogger to use to record this session.
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+<div class="examples">
+<p class="tag_title">Example:</p>
+<p class="example_title"><div class="inline">
+<p>Create a Session with auto lap detection using entry/exit lines</p>
+</div></p>
+<pre class="example code">
+<code>using Toybox.ActivityRecording;
+function createSession() {
+    var session = ActivityRecording.createSession({  // set up recording session
+        :name=&gt;"Race",                               // set session name
+        :sport=&gt;Activity.SPORT_GENERIC,              // set sport type
+        :subSport=&gt;Activity.SUB_SPORT_GENERIC,       // set sub sport type
+        :autoLap=&gt;{                                  // auto lap configuration
+            :type=&gt;:lines,                           // auto lap using entry/exit lines
+            :exit=&gt;[loc1, loc2],                     // set exit of auto lap staging box (typically the finish line)
+            :entry=&gt;[loc3, loc4],                    // set entrance of auto lap staging box (typically before the finish line)
+            :autoStart=&gt;true                         // auto start using the entry/exit lines
+        }
+    });
+    return session;
+}</code>
+</pre>
+</div>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../Toybox/ActivityRecording/Session.html">ActivityRecording.Session</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+A new Session object, or the existing Session object if a Session is active and has not been saved or discarded.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 1.0.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../Toybox/Lang/InvalidOptionsException.html">Lang.InvalidOptionsException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if required options are missing or provided options are invalid in <code>:autoLap</code> options dictionary
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

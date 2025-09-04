@@ -1,0 +1,63 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="DC.type" content="topic"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="how-do-i-make-a-watch-face-for-amoled-products"><link rel="stylesheet" type="text/css" href="../../branding/commonltr.css"><link rel="stylesheet" type="text/css" href="../../branding/style.css"><title>How do I Make a Watch Face for AMOLED Products?</title></head><body id="how-do-i-make-a-watch-face-for-amoled-products"><header role="banner"><div>
+<link href="../../resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
+<script src="../../resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="../../resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+</div></header><nav role="toc"><ul><li><a href="../../docs/Readme/Intro.html">Introduction</a></li><li><a href="../../docs/Connect_IQ_Basics/Welcome_to_the_Jungle.html">Welcome to Connect IQ</a></li><li><a href="../../docs/Monkey_C/Basic_Syntax.html">Hello Monkey C!</a></li><li><a href="../../docs/Core_Topics/Overview.html">Core Topics</a></li><li><a href="../../docs/User_Experience_Guidelines/Overview.html">User Experience Guidelines</a></li><li><a href="../../docs/Personality_Library/Personality_UI.html">Personality UI</a></li><li><a href="../../docs/Connect_IQ_FAQ/Overview.html">Connect IQ FAQ</a><ul><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Get_My_Watch_Face_to_Update_Every_Second.html">How do I Make My Watch Face Update Every Second?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Use_REST_Services.html">How do I communicate with REST services?</a></li><li class="active"><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Make_a_Watch_Face_for_AMOLED_Products.html">How do I Make a Watch Face for AMOLED Products?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Create_a_Connect_IQ_Background_Service.html">How do I create a Connect IQ Background Service?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Optimize_Bitmaps.html">How do I optimize bitmaps in my app?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Override_the_Goal_Animations.html">How do I Override The Goal Animation?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Use_Custom_Fonts.html">How do I use custom fonts?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Use_a_Mapview.html">How do I use a MapView?</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Use_the_Connect_IQ_Mobile_SDK.html">How do I use the Connect IQ Mobile SDK</a></li><li><a href="../../docs/Connect_IQ_FAQ/How_Do_I_Create_an_Audio_Content_Provider.html">How do I create an Audio Content Provider?</a></li></ul></li><li><a href="../../docs/Reference_Guides/Overview.html">Reference Guides</a></li><li><a href="../../docs/App_Review_Guidelines/Overview.html">Garmin Connect IQ App Review Guidelines</a></li><li><a href="../../docs/Monetization/Overview.html">Connect IQ Monetization System</a></li><li><a href="../../docs/Device_Reference/Overview.html">Device Reference</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">How do I Make a Watch Face for AMOLED Products?</h1><div class="body"><p class="p"><em class="ph i">Since API level 3.1.0</em></p><p class="p">The Venu is the first Garmin watch with an AMOLED screen, AMOLED displays provide vibrant
+colors with a high pixel density, but over time the organic materials used to create the
+display will decay. In order to mitigate the decay and prolong the screen life in general,
+a protective mechanism is deployed to watches that have AMOLED screen, such as Venu.</p></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="what-qualifies-as-burn-in"><h2 class="title topictitle2" id="ariaid-title2">What Qualifies as Burn-In</h2><div class="body"><p class="p">Pixels in an AMOLED display only draw power when illuminated,
+so a pixel is considered on when rendering any color other than black, and is considered
+off when and only when rendering black pixel.</p><p class="p">Burn-in protection is only activated when Connect IQ watch face is in foreground and after system enters sleep mode.
+Under such conditions, if more than 10% of the screen pixels are on or any pixel is on for longer than 3 minutes,
+the system will shut off the screen.</p><p class="p">Most of the existing Connect IQ watch faces will trip the burn-in protector, however there is still hope to have
+an always-on watch face on AMOLED screens.</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title3" id="best-practices-for-amoled-screens"><h2 class="title topictitle2" id="ariaid-title3">Best Practices for AMOLED Screens</h2><div class="body"><p class="p">Now on AMOLED Garmin products, your apps can have breathtaking presentations of information and gorgeous imagery,
+while still retaining days of battery life. However, now that we have given you all these gorgeous colors, could you,
+like, not use them? Please?</p><p class="p">Here is the challenge with AMOLED – every pixel draws power. If you want your apps to fall within the regular amount of battery life,
+you want to have as much black on screen as possible, especially in screens that are showing activity information.
+You'll notice that with most of the native applications, black is the new black. It's okay to work a periodic splash screen
+or gradient into your apps – make the app look great! – but for screens that are supposed to show constantly updating data,
+the blacker the better. Also, if you have header and footer gradients, try to have the darker parts at the outer edges.</p><p class="p">Just remember this handy guide when doing app layouts for AMOLED screens:</p><figure class="fig fignone">
+<img class="image" src="../../resources/programmers-guide/amoled_layout.png"><br>
+</figure></div></article><article class="topic nested1" aria-labelledby="ariaid-title4" id="how-to-create-always-on-watch-faces"><h2 class="title topictitle2" id="ariaid-title4">How to Create Always-On Watch Faces</h2><div class="body"><p class="p">Always On watch faces behave differently from MIP to AMOLED. With MIP screens, you can use <span class="xref"></span> to update a portion of the screen every second. With AMOLED screen, this is no longer allowed. Instead, when <span class="xref"></span> is called, you are allowed to render a watch face that must obey the rules of the AMOLED burn-in protector.</p><p class="p">On the original <a class="xref" href="../Device_Reference/venu.html">Venu®</a> no more than 10% of the screen can be on, and no pixel can be on longer than 3 mins. Ways you can prevent burn in are by drawing the time with a thin font, shifting the time every minute as not to repeatedly leave the same pixels on, and not having static tick marks that leave the same pixels on. The app can detect whether a product has screen protection enforced by checking the value of <a class="xref" href="https://developer.garmin.com/connect-iq/api-docs/Toybox/System/DeviceSettings.html#requiresBurnInProtection-var" target="_blank">DeviceSettings.requiresBurnInProtection</a>.</p><p class="p">Since the <a class="xref" href="../Device_Reference/venu2.html">Venu® 2</a>, the rule for always-on is to use less than 10% of the screen's luminance. You can use <a class="xref" href="https://developer.garmin.com/connect-iq/api-docs/Toybox/System.html#getDisplayMode-instance_function" target="_blank">System.getDisplayMode()</a> to determine if the display is in high power mode, low power mode, or off. See <span class="xref"></span> for tools to measure luminance.</p></div><article class="topic nested2" aria-labelledby="ariaid-title5" id="how-to-test-your-always-on-watchface"><h3 class="title topictitle3" id="ariaid-title5">How to Test Your Always-On WatchFace</h3><div class="body"><p class="p">Waiting for your watch face to run for 3 minutes or longer can be very painful. Luckily, the Connect IQ simulator
+ships with a new feature to simulate a 24-hour run within minutes. Simply go to 'File-&gt;View Screen Heat Map' to open the
+'Screen Burn-in Simulation' dialog, then click the 'Start' button and let the time fly.</p><figure class="fig fignone">
+<img class="image" src="../../resources/programmers-guide/burn-in-sim.png"><br>
+</figure><p class="p">Note: The menu option is only enabled when simulating a <code class="ph codeph">WatchFace</code> on a device that supports screen protection, such as Venu.</p></div></article></article><article class="topic nested1" aria-labelledby="ariaid-title6" id="example"><h2 class="title topictitle2" id="ariaid-title6">Example</h2><div class="body"><p class="p">Here is a code snippet to support drawing a watch face with AMOLED display modes across different devices:</p><pre class="pre codeblock typescript"><code>  if (DeviceSettings has :requiresBurnInProtection) {
+    // For device that use the 10% luminance rule, use
+    // System.getDisplayMode to see which render mode
+    // to use.
+    if (System has :getDisplayMode) {
+      switch(System.getDisplayMode) {
+        case System.DISPLAY_MODE_HIGH_POWER:
+          renderAmoledHighPower(dc);
+          break;
+        case System.DISPLAY_MODE_LOW_POWER:
+          renderAmoledLowPower(dc);
+        case System.DISPLAY_MODE_OFF:
+          break;
+      }
+    } else {
+      // For the original Venu, use requiresBurnInProtection to
+      // detect if you should use high or low power mode
+      var lowPower = System.getDeviceSettings().requiresBurnInProtection();
+      if (lowPower) {
+        renderOriginalVenuLowPower(dc);
+      } else {
+        renderOriginalVenuHighPower(dc);
+      }
+    }
+  } else {
+    // Render MIP
+    renderMIPHighPower(dc);
+  }</code></pre></div></article></article></main><footer role="contentinfo"><div>
+<p class="disclaimer">
+Connect IQ System None API 8.2.3 Documentation. Copyright 2025 Garmin International. All Rights Reserved.
+</p>
+</div></footer></body></html>

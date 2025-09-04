@@ -1,0 +1,353 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Application.WatchFaceConfig </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Application.WatchFaceConfig";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Module: Toybox.Application.WatchFaceConfig</h1>
+
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The WatchFaceConfig module facilitates access to persisted watchface configurations.
+Watchface could have more than one configuration settings, and each setting is represented
+by a unique identifier.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Enduro™ 3</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>vívoactive® 6</li>
+  </ul>
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Color.html">Color</a></span>, <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/ComplicationRef.html">ComplicationRef</a></span>, <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Id.html">Id</a></span>, <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Settings.html">Settings</a></span>
+</p>
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getIds-instance_function" title="getIds (Instance Function)"><strong>getIds</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Id.html">WatchFaceConfig.Id</a></span>&gt; or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Returns ids of all saved watchface config settings.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getSettings-instance_function" title="getSettings (Instance Function)"><strong>getSettings</strong></a>(configId as <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Id.html">WatchFaceConfig.Id</a></span> or <b>Null</b>)    as <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Settings.html">WatchFaceConfig.Settings</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Returns the watchface config settings for the given unique identifier.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setSettings-instance_function" title="setSettings (Instance Function)"><strong>setSettings</strong></a>(configId as <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Id.html">WatchFaceConfig.Id</a></span> or <b>Null</b>, settings as <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Settings.html">WatchFaceConfig.Settings</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set or update watchface config settings with the given unique identifier, <code>configId</code>.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="getIds-instance_function">
+    <strong>getIds()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>&lt;<span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Id.html">WatchFaceConfig.Id</a></span>&gt; or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Returns ids of all saved watchface config settings.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Enduro™ 3</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Array.html">Lang.Array</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+or <code>null</code> if the watchface does not support watchface config.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getSettings-instance_function">
+    <strong>getSettings(configId as <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Id.html">WatchFaceConfig.Id</a></span> or <b>Null</b>)</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Settings.html">WatchFaceConfig.Settings</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Returns the watchface config settings for the given unique identifier.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">configId</span>
+        &mdash;
+        <span class="type">(Id)</span>
+        &mdash;
+        <div class="inline">
+<p>
+unique identifier of the watchface config settings to fetch, if null default or active settings will be returned.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Enduro™ 3</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>vívoactive® 6</li>
+  </ul>
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Settings.html">WatchFaceConfig.Settings</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+or <code>null</code> if the watchface does not support watchface config.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setSettings-instance_function">
+    <strong>setSettings(configId as <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Id.html">WatchFaceConfig.Id</a></span> or <b>Null</b>, settings as <span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Settings.html">WatchFaceConfig.Settings</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set or update watchface config settings with the given unique identifier, <code>configId</code>.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">configId</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/Number.html">Lang.Number</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+unique identifier of the watchface config settings to save or update, if <code>null</code> default settings will be updated.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">settings</span>
+        &mdash;
+        <span class="type">(<span class="type"><a href="../../Toybox/Application/WatchFaceConfig/Settings.html">WatchFaceConfig.Settings</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+watchface config settings to apply.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+  <p class="tag_title">Supported Devices:</p>
+  <ul class="supported_devices" style="display:none">
+      <li>Enduro™ 3</li><li>fēnix® 8 43mm</li><li>fēnix® 8 47mm / 51mm / tactix® 8 47mm / 51mm</li><li>fēnix® 8 Solar 47mm</li><li>fēnix® 8 Solar 51mm / tactix® 8 Solar 51mm</li><li>fēnix® E</li><li>vívoactive® 6</li>
+  </ul>
+
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 5.1.0
+</p>
+
+</div>
+
+    <p class="tag_title">Throws:</p>
+    <ul class="throws">
+      <li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/UnexpectedTypeException.html">Lang.UnexpectedTypeException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if <code>settings</code> is a disallowed data type.
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="type">(<span class="type"><a href="../../Toybox/Lang/InvalidValueException.html">Lang.InvalidValueException</a></span>)</span>
+        &mdash;
+        <div class="inline">
+<p>
+Thrown if settings contain invalid values.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:13 PM
+</p>
+
+</body>

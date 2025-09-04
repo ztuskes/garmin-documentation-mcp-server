@@ -1,0 +1,725 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toybox.Media.ContentIterator </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "Toybox.Media.ContentIterator";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: Toybox.Media.ContentIterator</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Lang/Object.html">Toybox.Lang.Object</a>
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../../Toybox/Media/ContentIterator.html">Toybox.Media.ContentIterator</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A user-defined iterator that returns referenced to media content on the system
+for use by the system media player.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+<!-- Since -->
+<p class="tag_title">Since:</p>
+<div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#canSkip-instance_function" title="canSkip (Instance Function)"><strong>canSkip</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Determine if the the current track can be skipped.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#get-instance_function" title="get (Instance Function)"><strong>get</strong></a>()    as <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current media content object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getPlaybackProfile-instance_function" title="getPlaybackProfile (Instance Function)"><strong>getPlaybackProfile</strong></a>()    as <span class="type"><a href="../../Toybox/Media/PlaybackProfile.html">Media.PlaybackProfile</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current media content playback profile.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#next-instance_function" title="next (Instance Function)"><strong>next</strong></a>()    as <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the next media content object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#peekNext-instance_function" title="peekNext (Instance Function)"><strong>peekNext</strong></a>()    as <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the next media content object without incrementing the iterator.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#peekPrevious-instance_function" title="peekPrevious (Instance Function)"><strong>peekPrevious</strong></a>()    as <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the previous media content object without decrementing the iterator.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#previous-instance_function" title="previous (Instance Function)"><strong>previous</strong></a>()    as <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the previous media content object.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#repeatMode-instance_function" title="repeatMode (Instance Function)"><strong>repeatMode</strong></a>()    as <span class="type"><a href="../../Toybox/Media.html#RepeatMode-module">Media.RepeatMode</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the current repeat state.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#shuffling-instance_function" title="shuffling (Instance Function)"><strong>shuffling</strong></a>()    as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Determine if playback is currently set to shuffle.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="canSkip-instance_function">
+    <strong>canSkip()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Determine if the the current track can be skipped.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+Returns <code>true</code> if the current track can be skipped, otherwise <code>false</code>.
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="get-instance_function">
+    <strong>get()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current media content object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span>
+  &mdash;
+  <div class="inline">
+    <ul>
+<li>
+<p>
+A <a href='../../Toybox/Media/Content.html'>Content</a> object representing the current track
+</p>
+
+</li>
+<li>
+<p>
+<code>null</code> if no tracks remain
+</p>
+
+</li>
+<li>
+<p>
+An error object if an error has occurred. This can be anything that inherits from <a href='../../Toybox/Lang/Object.html'>Object</a>, but it must implement toString()
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getPlaybackProfile-instance_function">
+    <strong>getPlaybackProfile()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Media/PlaybackProfile.html">Media.PlaybackProfile</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current media content playback profile
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Media/PlaybackProfile.html">Media.PlaybackProfile</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="next-instance_function">
+    <strong>next()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the next media content object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span>
+  &mdash;
+  <div class="inline">
+    <ul>
+<li>
+<p>
+A <a href='../../Toybox/Media/Content.html'>Content</a> object representing the next track
+</p>
+
+</li>
+<li>
+<p>
+<code>null</code> if no tracks remain
+</p>
+
+</li>
+<li>
+<p>
+An error object if an error occurred. This can be anything that inherits from <a href='../../Toybox/Lang/Object.html'>Object</a>, but it must implement toString().
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="peekNext-instance_function">
+    <strong>peekNext()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the next media content object without incrementing the iterator.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span>
+  &mdash;
+  <div class="inline">
+    <ul>
+<li>
+<p>
+A <a href='../../Toybox/Media/Content.html'>Content</a> object representing the current track
+</p>
+
+</li>
+<li>
+<p>
+<code>null</code> if no tracks remain
+</p>
+
+</li>
+<li>
+<p>
+An error object if an error has occurred. This can be anything that inherits from <a href='../../Toybox/Lang/Object.html'>Object</a>, but it must implement toString()
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="peekPrevious-instance_function">
+    <strong>peekPrevious()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the previous media content object without decrementing the iterator.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span>
+  &mdash;
+  <div class="inline">
+    <ul>
+<li>
+<p>
+A <a href='../../Toybox/Media/Content.html'>Content</a> object representing the current track
+</p>
+
+</li>
+<li>
+<p>
+<code>null</code> if no tracks remain
+</p>
+
+</li>
+<li>
+<p>
+An error object if an error has occurred. This can be anything that inherits from <a href='../../Toybox/Lang/Object.html'>Object</a>, but it must implement toString()
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="previous-instance_function">
+    <strong>previous()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the previous media content object.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Media/Content.html">Media.Content</a></span>
+  &mdash;
+  <div class="inline">
+    <ul>
+<li>
+<p>
+A <a href='../../Toybox/Media/Content.html'>Content</a> object representing the next track.
+</p>
+
+</li>
+<li>
+<p>
+<code>null</code> if no tracks remain.
+</p>
+
+</li>
+<li>
+<p>
+An error object if an error occurred. This can be anything that inherits from <a href='../../Toybox/Lang/Object.html'>Object</a>, but it must implement toString().
+</p>
+
+</li>
+</ul>
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="repeatMode-instance_function">
+    <strong>repeatMode()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Media.html#RepeatMode-module">Media.RepeatMode</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the current repeat state
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Media.html#RepeatMode-module">Media.RepeatMode</a></span>
+  &mdash;
+  <div class="inline">
+    <p>
+The <a href='../../Toybox/Media.html#REPEAT_MODE_OFF-const'>REPEAT_MODE_*</a> enum value that represents the current repeat state
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="shuffling-instance_function">
+    <strong>shuffling()</strong> <span class="type"> as <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Determine if playback is currently set to shuffle.
+</p><p>
+Returns <code>true</code> if shuffle is on, otherwise <code>false</code>.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <span class="type"><a href="../../Toybox/Lang/Boolean.html">Lang.Boolean</a></span>
+</li>
+    </ul>
+
+
+    <p class="tag_title">Since:</p>
+    <div class="since"><p>
+API Level 3.0.0
+</p>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Aug 11, 2025 2:05:14 PM
+</p>
+
+</body>

@@ -1,0 +1,143 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="DC.type" content="topic"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="color"><link rel="stylesheet" type="text/css" href="../../branding/commonltr.css"><link rel="stylesheet" type="text/css" href="../../branding/style.css"><title>Color</title></head><body id="color"><header role="banner"><div>
+<link href="../../resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet">
+<script src="../../resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="../../resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+</div></header><nav role="toc"><ul><li><a href="../../docs/Readme/Intro.html">Introduction</a></li><li><a href="../../docs/Connect_IQ_Basics/Welcome_to_the_Jungle.html">Welcome to Connect IQ</a></li><li><a href="../../docs/Monkey_C/Basic_Syntax.html">Hello Monkey C!</a></li><li><a href="../../docs/Core_Topics/Overview.html">Core Topics</a></li><li><a href="../../docs/User_Experience_Guidelines/Overview.html">User Experience Guidelines</a></li><li><a href="../../docs/Personality_Library/Personality_UI.html">Personality UI</a><ul><li class="active"><a href="../../docs/Personality_Library/Colors.html">Color</a></li><li><a href="../../docs/Personality_Library/Iconography.html">Iconography</a></li><li><a href="../../docs/Personality_Library/Typography.html">Typography</a></li><li><a href="../../docs/Personality_Library/Input_Hints.html">Input Hints</a></li><li><a href="../../docs/Personality_Library/Prompts.html">Prompts</a></li><li><a href="../../docs/Personality_Library/Confirmations.html">Confirmations</a></li><li><a href="../../docs/Personality_Library/Toasts.html">Toasts</a></li><li><a href="../../docs/Personality_Library/Action_Views.html">Action Views</a></li><li><a href="../../docs/Personality_Library/Page_Loops.html">Page Loops</a></li><li><a href="../../docs/Personality_Library/Progress_Bars.html">Progress Indicators</a></li></ul></li><li><a href="../../docs/Connect_IQ_FAQ/Overview.html">Connect IQ FAQ</a></li><li><a href="../../docs/Reference_Guides/Overview.html">Reference Guides</a></li><li><a href="../../docs/App_Review_Guidelines/Overview.html">Garmin Connect IQ App Review Guidelines</a></li><li><a href="../../docs/Monetization/Overview.html">Connect IQ Monetization System</a></li><li><a href="../../docs/Device_Reference/Overview.html">Device Reference</a></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Color</h1><div class="body"><p class="p">The colors chosen for the product depend on the display technology and the graphic design language for the product.</p></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="using-color-selectors"><h2 class="title topictitle2" id="ariaid-title2">Using Color Selectors</h2><div class="body"><p class="p">Personality UI provides context-specific color selectors that you can use with the resource system and in your code.</p></div><article class="topic nested2" aria-labelledby="ariaid-title3" id="example"><h3 class="title topictitle3" id="ariaid-title3">Example</h3><div class="body"><p class="p">Within layouts, combine the color with other selectors when adding layout components.</p><pre class="pre codeblock xml"><code>&lt;!-- layout.xml --&gt;
+
+        &lt;!-- Prompt Title --&gt;
+        &lt;text-area text="@Strings.mainTitle" personality="
+            system_color_dark__text
+            prompt_size__title
+            prompt_loc__title
+            prompt_font__title
+        "/&gt;</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title4" id="example-1"><h3 class="title topictitle3" id="ariaid-title4">Example</h3><div class="body"><p class="p">In Monkey C source, you can reference the color selector directly in code.</p><pre class="pre codeblock typescript"><code>// View.mc
+
+import Rez.Styles;
+
+dc.setColor(
+    system_color_dark__text.color,
+    system_color_dark__text.background
+);</code></pre></div></article></article><article class="topic nested1" aria-labelledby="ariaid-title5" id="light-and-dark-themes"><h2 class="title topictitle2" id="ariaid-title5">Light and Dark Themes</h2><div class="body"><br><img class="image" src="../../resources/personality-library/personality_ui_light_dark_modeshigh.jpg" alt="Front views of devices in light and dark modes"><br><p class="p">Many Garmin® products have both light and dark themes. Some products allow customers to choose a theme for each activity, while others have day and night modes that determine the theme. Components in the personality design system have all of their colors documented with <code class="ph codeph">color_light</code> and <code class="ph codeph">color_dark</code> selectors. On certain products, especially those with AMOLED displays, these selectors are the same.</p><p class="p">If your app does not take night mode into account or does not run on products that have night mode, use only the <code class="ph codeph">color_dark</code> selectors.</p></div><article class="topic nested2" aria-labelledby="ariaid-title6" id="example-2"><h3 class="title topictitle3" id="ariaid-title6">Example</h3><div class="body"><pre class="pre codeblock xml"><code>&lt;!-- drawables.xml --&gt;
+
+    &lt;drawable-list id="DarkBackground"&gt;
+        &lt;shape type="rectangle" x="0" y="0" personality="
+            system_size__screen
+            system_color_dark__background
+        " /&gt;
+    &lt;/drawable-list&gt;</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title7" id="example-3"><h3 class="title topictitle3" id="ariaid-title7">Example</h3><div class="body"><pre class="pre codeblock xml"><code>&lt;!-- layout.xml --&gt;
+
+    &lt;!-- The Main View for our app --&gt;
+    &lt;layout id="MainLayoutDark"&gt;
+        &lt;!-- Dark Background --&gt;
+        &lt;drawable id="DarkBackground" /&gt;
+
+        &lt;!-- ActionMenu hint --&gt;
+        &lt;bitmap id="actionMenuDark" personality="
+            system_icon_dark__hint_action_menu
+            system_loc__hint_action_menu" /&gt;
+
+        &lt;!-- Prompt Title --&gt;
+        &lt;text-area text="@Strings.mainTitle" personality="
+            system_color_dark__text
+            prompt_size__title
+            prompt_loc__title
+            prompt_font__title
+        "/&gt;
+
+        &lt;!-- Prompt Body --&gt;
+        &lt;text-area text="@Strings.mainPrompt" personality="
+            system_color_dark__text
+            prompt_size__body_with_title
+            prompt_loc__body_with_title
+            prompt_font__body_with_title
+        " /&gt;
+    &lt;/layout&gt;</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title8" id="example-4"><h3 class="title topictitle3" id="ariaid-title8">Example</h3><div class="body"><p class="p">For performance reasons, it is faster to track the day or night mode in your own local variable rather than querying the system on every update. The following example exposes day or night mode as a theme that can be accessed by pages in the app.</p><pre class="pre codeblock typescript"><code>//! Application.mb
+
+import Toybox.Application;
+import Toybox.Lang;
+import Toybox.System;
+import Toybox.WatchUi;
+
+
+enum Theme {
+    THEME_LIGHT,
+    THEME_DARK
+}
+
+class MyApp extends Application {
+    private var _theme as Theme;
+
+    // Theme initialization
+    public function initialize() {
+        AppBase.initialize();
+
+        // Test for night mode
+        if (Styles.device_info.hasNightMode &amp;&amp;
+            System.DeviceSettings has :isNightModeEnabled) {
+            _theme = System.getDeviceSettings().isNightModeEnabled ? THEME_DARK : THEME_LIGHT;
+        } else {
+            _theme = THEME_LIGHT;
+        }
+
+    }
+
+    // Application handler for changes in day/night mode
+    public function onNightModeChanged() {
+        // Handle a change in night mode
+        if (Styles.device_info.hasNightMode &amp;&amp;
+            System.DeviceSettings has :isNightModeEnabled) {
+            _theme = System.getDeviceSettings().isNightModeEnabled ? THEME_DARK : THEME_LIGHT;
+        } else {
+            _theme = THEME_LIGHT;
+        }
+        // Force a screen update.
+        WatchUi.requestUpdate();
+    }
+
+    // Theme accessor
+    public function getTheme() as Theme {
+        return _theme;
+    }
+
+}</code></pre></div></article><article class="topic nested2" aria-labelledby="ariaid-title9" id="example-5"><h3 class="title topictitle3" id="ariaid-title9">Example</h3><div class="body"><p class="p">You can load different layouts based on whether your app is in day or night mode. The following example keeps track of the current mode and changes it if the theme changes.</p><pre class="pre codeblock typescript"><code>// View.mb
+
+//! View that shows the main menu for the app
+class MainView extends WatchUi.View {
+    private var _theme as Theme;
+
+    //! Constructor
+    function initialize() {
+        View.initialize();
+
+        _theme = $.getApp().getTheme();
+    }
+
+    //! Handle layout
+    function onLayout(dc as Dc) as Void {
+        _theme = $.getApp().getTheme();
+        setLayout(
+            _theme == $.THEME_DARK ?
+            Rez.Layouts.MainLayoutDark(dc) :
+            Rez.Layouts.MainLayoutLight(dc)
+        );
+    }
+
+    function onUpdate(dc as Dc) as Void {
+        if ($.getApp().getTheme() != _theme) {
+            onLayout(dc);
+        }
+        View.onUpdate(dc);
+    }
+
+}</code></pre></div></article></article><article class="topic nested1" aria-labelledby="ariaid-title10" id="selectors"><h2 class="title topictitle2" id="ariaid-title10">Selectors</h2><div class="body"><table class="table"><caption></caption><colgroup><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry align-left" id="selectors__entry__1">Selector</th><th class="entry align-left" id="selectors__entry__2">Context</th></tr></thead><tbody class="tbody"><tr class="row"><td class="entry align-left" headers="selectors__entry__1"><code class="ph codeph">system_color_light__background</code>, <code class="ph codeph">system_color_dark__background</code></td><td class="entry align-left" headers="selectors__entry__2">The default system background color.</td></tr><tr class="row"><td class="entry align-left" headers="selectors__entry__1"><code class="ph codeph">system_color_light__text</code>, <code class="ph codeph">system_color_dark__text</code></td><td class="entry align-left" headers="selectors__entry__2">The default system text color.</td></tr><tr class="row"><td class="entry align-left" headers="selectors__entry__1"><code class="ph codeph">activity_color_light__background</code>, <code class="ph codeph">activity_color_dark__background</code></td><td class="entry align-left" headers="selectors__entry__2">The default activity background color.</td></tr><tr class="row"><td class="entry align-left" headers="selectors__entry__1"><code class="ph codeph">activity_color_light__text</code>, <code class="ph codeph">activity_color_dark__text</code></td><td class="entry align-left" headers="selectors__entry__2">The default activity text color.</td></tr><tr class="row"><td class="entry align-left" headers="selectors__entry__1"><code class="ph codeph">prompt_color_light__background</code>, <code class="ph codeph">prompt_color_dark__background</code></td><td class="entry align-left" headers="selectors__entry__2">The default prompt background color.</td></tr><tr class="row"><td class="entry align-left" headers="selectors__entry__1"><code class="ph codeph">prompt_color_light__title</code>, <code class="ph codeph">prompt_color_dark__title</code></td><td class="entry align-left" headers="selectors__entry__2">The text color for a title string in a prompt.</td></tr><tr class="row"><td class="entry align-left" headers="selectors__entry__1"><code class="ph codeph">prompt_color_light__body</code>, <code class="ph codeph">prompt_color_dark__body</code></td><td class="entry align-left" headers="selectors__entry__2">The text color for the body text of a prompt.</td></tr><tr class="row"><td class="entry align-left" headers="selectors__entry__1"><code class="ph codeph">confirmation_color_light__background</code>, <code class="ph codeph">confirmation_color_dark__background</code></td><td class="entry align-left" headers="selectors__entry__2">The default confirmation background color.</td></tr><tr class="row"><td class="entry align-left" headers="selectors__entry__1"><code class="ph codeph">confirmation_color_light__body</code>, <code class="ph codeph">confirmation_color_dark__body</code></td><td class="entry align-left" headers="selectors__entry__2">The default confirmation body text color.</td></tr></tbody></table></div></article></article></main><footer role="contentinfo"><div>
+<p class="disclaimer">
+Connect IQ System None API 8.2.3 Documentation. Copyright 2025 Garmin International. All Rights Reserved.
+</p>
+</div></footer></body></html>
