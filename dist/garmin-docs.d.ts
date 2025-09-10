@@ -11,8 +11,11 @@ export declare class GarminDocumentationService {
     private parser;
     private docIndex;
     private readonly SDK_VERSION;
+    private guideIndex;
     constructor();
     private ensureIndexLoaded;
+    private buildGuideIndex;
+    private indexGuidesRecursively;
     searchDocs(query: string, category?: string): Promise<{
         content: {
             type: string;
@@ -46,5 +49,25 @@ export declare class GarminDocumentationService {
     private formatSearchResults;
     private formatModuleDetails;
     private formatClassDetails;
+    searchDeviceReference(query: string, deviceType?: string): Promise<{
+        content: {
+            type: string;
+            text: string;
+        }[];
+    }>;
+    getProgrammingGuide(topic: string): Promise<{
+        content: {
+            type: string;
+            text: string;
+        }[];
+    }>;
+    searchFaq(query: string): Promise<{
+        content: {
+            type: string;
+            text: string;
+        }[];
+    }>;
+    private formatVersionInfo;
+    private formatGuideResults;
 }
 //# sourceMappingURL=garmin-docs.d.ts.map

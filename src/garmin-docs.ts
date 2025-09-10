@@ -6,6 +6,8 @@ import {
   ParsedClass, 
   ParsedMethod 
 } from './doc-parser.js';
+import * as fs from 'fs';
+import * as path from 'path';
 
 export interface SearchResult {
   type: 'module' | 'class' | 'function' | 'property' | 'constant';
@@ -21,6 +23,7 @@ export class GarminDocumentationService {
   private parser: LocalDocumentationParser;
   private docIndex: DocIndex | null = null;
   private readonly SDK_VERSION = '8.2.3';
+  private guideIndex: Map<string, any> | null = null;
 
   constructor() {
     this.parser = new LocalDocumentationParser('./docs');
@@ -29,6 +32,74 @@ export class GarminDocumentationService {
   private async ensureIndexLoaded(): Promise<void> {
     if (this.docIndex === null) {
       this.docIndex = await this.parser.buildIndex();
+    }
+    if (this.guideIndex === null) {
+      await this.buildGuideIndex();
+    }
+  }
+
+  private async buildGuideIndex(): Promise<void> {
+    this.guideIndex = new Map();
+
+    // Index device reference docs
+    const deviceRefPath = path.join('./docs/resources/device-reference');
+    if (fs.existsSync(deviceRefPath)) {
+      const files = fs.readdirSync(deviceRefPath);
+      for (const file of files) {
+        if (file.endsWith('.png') || file.endsWith('.jpg')) {
+          this.guideIndex.set(`device-reference:${file}`, {
+            type: 'device-reference',
+            title: file.replace(/\.(png|jpg)$/, '').replace(/_/g, ' '),
+            path: path.join(deviceRefPath, file),
+            category: 'device-reference'
+          });
+        }
+      }
+    }
+
+    // Index programming guides
+    const guidesPath = path.join('./docs/docs');
+    if (fs.existsSync(guidesPath)) {
+      await this.indexGuidesRecursively(guidesPath, '');
+    }
+
+    // Index FAQ resources
+    const faqPath = path.join('./docs/resources/faq');
+    if (fs.existsSync(faqPath)) {
+      const files = fs.readdirSync(faqPath);
+      for (const file of files) {
+        this.guideIndex.set(`faq:${file}`, {
+          type: 'faq',
+          title: file.replace(/\.(png|jpg)$/, '').replace(/_/g, ' '),
+          path: path.join(faqPath, file),
+          category: 'faq'
+        });
+      }
+    }
+  }
+
+  private async indexGuidesRecursively(dirPath: string, category: string): Promise<void> {
+    
+    if (!fs.existsSync(dirPath)) return;
+    
+    const items = fs.readdirSync(dirPath);
+    for (const item of items) {
+      const itemPath = path.join(dirPath, item);
+      const stat = fs.statSync(itemPath);
+      
+      if (stat.isFile() && item.endsWith('.html')) {
+        const key = `guide:${category}:${item}`;
+        this.guideIndex!.set(key, {
+          type: 'guide',
+          title: item.replace('.html', '').replace(/_/g, ' '),
+          path: itemPath,
+          category: category || path.basename(dirPath),
+          htmlFile: item
+        });
+      } else if (stat.isDirectory()) {
+        const subCategory = category ? `${category}/${item}` : item;
+        await this.indexGuidesRecursively(itemPath, subCategory);
+      }
     }
   }
 
@@ -50,6 +121,34 @@ export class GarminDocumentationService {
     for (const [term, entries] of this.docIndex.searchIndex) {
       if (term.includes(lowerQuery) || lowerQuery.includes(term)) {
         searchEntries.push(...entries);
+      }
+    }
+
+    // Enhanced fuzzy search - split query into words and search each
+    const queryWords = lowerQuery.split(/\s+/).filter(word => word.length > 2);
+    for (const word of queryWords) {
+      for (const [term, entries] of this.docIndex.searchIndex) {
+        if (term.includes(word) && !searchEntries.some(entry => 
+          entries.some(newEntry => newEntry.fullName === entry.fullName))) {
+          searchEntries.push(...entries);
+        }
+      }
+    }
+
+    // Search in guide index as well for comprehensive results
+    if (this.guideIndex) {
+      for (const [key, item] of this.guideIndex) {
+        if (item.title.toLowerCase().includes(lowerQuery) || 
+            item.category.toLowerCase().includes(lowerQuery)) {
+          searchEntries.push({
+            type: item.type === 'guide' ? 'module' as const : 'property' as const,
+            name: item.title,
+            fullName: `Guide: ${item.title}`,
+            description: `${item.type} resource in ${item.category}`,
+            filePath: item.path,
+            module: item.category
+          });
+        }
       }
     }
     
@@ -93,7 +192,7 @@ export class GarminDocumentationService {
         {
           type: 'text',
           text: results.length > 0 
-            ? `Found ${results.length} result(s) for "${query}" in SDK ${this.SDK_VERSION}:\n\n${this.formatSearchResults(results)}`
+            ? `Found ${results.length} result(s) for "${query}" in SDK ${this.SDK_VERSION}:\n\n${this.formatSearchResults(results)}\n\n💡 **Note**: "API Level" refers to internal Garmin versioning, not SDK version. API Level 4.2.0 ≈ SDK 6.x+, so features are available much earlier than the API Level number suggests.`
             : `No results found for "${query}". Try searching for module names like "System", "Activity", "WatchUi", or general terms like "bluetooth", "sensor", "graphics".`
         }
       ]
@@ -396,7 +495,8 @@ class GpsApp {
     let details = `# ${module.name} Module (SDK ${this.SDK_VERSION})\n\n${module.description}\n\n`;
     
     if (module.since) {
-      details += `📅 **Since**: ${module.since}\n\n`;
+      const versionInfo = this.formatVersionInfo(module.since);
+      details += `📅 **Since**: ${versionInfo}\n\n`;
     }
     
     if (classes.length > 0) {
@@ -429,7 +529,8 @@ class GpsApp {
     
     details += `📦 **Module**: ${cls.module.replace('Toybox.', '')}\n`;
     if (cls.since) {
-      details += `📅 **Since**: ${cls.since}\n`;
+      const versionInfo = this.formatVersionInfo(cls.since);
+      details += `📅 **Since**: ${versionInfo}\n`;
     }
     details += `\n`;
     
@@ -469,5 +570,250 @@ class GpsApp {
     details += `📄 **Full Name**: ${cls.fullName}`;
     
     return details;
+  }
+
+  async searchDeviceReference(query: string, deviceType?: string) {
+    await this.ensureIndexLoaded();
+    if (!this.guideIndex) {
+      return {
+        content: [{ type: 'text', text: 'Device reference index not available' }]
+      };
+    }
+
+    const results: any[] = [];
+    const lowerQuery = query.toLowerCase();
+
+    // Search device reference materials
+    for (const [key, item] of this.guideIndex) {
+      if (item.type === 'device-reference') {
+        const title = item.title.toLowerCase();
+        const path = item.path.toLowerCase();
+        
+        if (title.includes(lowerQuery) || path.includes(lowerQuery)) {
+          if (!deviceType || title.includes(deviceType.toLowerCase()) || path.includes(deviceType.toLowerCase())) {
+            results.push(item);
+          }
+        }
+      }
+    }
+
+    if (results.length === 0) {
+      const availableCategories = Array.from(this.guideIndex.values())
+        .filter(item => item.type === 'device-reference')
+        .map(item => item.title)
+        .slice(0, 10)
+        .join(', ');
+
+      return {
+        content: [
+          {
+            type: 'text',
+            text: `No device reference found for "${query}". Available resources include: ${availableCategories}...`
+          }
+        ]
+      };
+    }
+
+    return {
+      content: [
+        {
+          type: 'text',
+          text: `Found ${results.length} device reference result(s) for "${query}":\n\n${this.formatGuideResults(results)}`
+        }
+      ]
+    };
+  }
+
+  async getProgrammingGuide(topic: string) {
+    await this.ensureIndexLoaded();
+    if (!this.guideIndex) {
+      return {
+        content: [{ type: 'text', text: 'Programming guide index not available' }]
+      };
+    }
+
+    const lowerTopic = topic.toLowerCase();
+    const results: any[] = [];
+
+    // Search programming guides
+    for (const [key, item] of this.guideIndex) {
+      if (item.type === 'guide') {
+        const title = item.title.toLowerCase();
+        const category = item.category.toLowerCase();
+        
+        if (title.includes(lowerTopic) || category.includes(lowerTopic)) {
+          results.push(item);
+        }
+      }
+    }
+
+    // Add predefined guide mappings for common topics
+    const guideTopics: { [key: string]: string } = {
+      'getting started': 'Connect_IQ_Basics/Getting_Started.html',
+      'app types': 'Connect_IQ_Basics/App_Types.html',
+      'first app': 'Connect_IQ_Basics/Your_First_App.html',
+      'debugging': 'Debugging',
+      'testing': 'Testing',
+      'compiler': 'Monkey_C/Compiler_Options.html',
+      'annotations': 'Monkey_C/Annotations.html'
+    };
+
+    if (results.length === 0 && guideTopics[lowerTopic]) {
+      return {
+        content: [
+          {
+            type: 'text',
+            text: `Programming guide for "${topic}" can be found at: docs/docs/${guideTopics[lowerTopic]}\n\nThis covers fundamental concepts for Connect IQ development.`
+          }
+        ]
+      };
+    }
+
+    if (results.length === 0) {
+      const availableTopics = Object.keys(guideTopics).join(', ');
+      return {
+        content: [
+          {
+            type: 'text',
+            text: `No programming guide found for "${topic}". Available topics: ${availableTopics}`
+          }
+        ]
+      };
+    }
+
+    return {
+      content: [
+        {
+          type: 'text',
+          text: `Found ${results.length} programming guide(s) for "${topic}":\n\n${this.formatGuideResults(results)}`
+        }
+      ]
+    };
+  }
+
+  async searchFaq(query: string) {
+    await this.ensureIndexLoaded();
+    if (!this.guideIndex) {
+      return {
+        content: [{ type: 'text', text: 'FAQ index not available' }]
+      };
+    }
+
+    const results: any[] = [];
+    const lowerQuery = query.toLowerCase();
+
+    // Search FAQ resources
+    for (const [key, item] of this.guideIndex) {
+      if (item.type === 'faq') {
+        const title = item.title.toLowerCase();
+        if (title.includes(lowerQuery)) {
+          results.push(item);
+        }
+      }
+    }
+
+    // Add common FAQ topics
+    const faqTopics: { [key: string]: string } = {
+      'font': 'Font rendering and text display issues',
+      'memory': 'Memory management and optimization',
+      'storage': 'Data storage and persistence',
+      'color': 'Color palette and display limitations',
+      'music': 'Music control and audio playback',
+      'map': 'Map integration and navigation',
+      'cake': 'Image rendering and graphics optimization',
+      'glyphs': 'Custom fonts and character rendering',
+      'dithering': 'Image dithering and color reduction',
+      'playback': 'Audio and media playback configuration'
+    };
+
+    if (results.length === 0) {
+      const matchingTopic = Object.keys(faqTopics).find(topic => 
+        lowerQuery.includes(topic) || topic.includes(lowerQuery)
+      );
+
+      if (matchingTopic) {
+        return {
+          content: [
+            {
+              type: 'text',
+              text: `FAQ topic "${matchingTopic}": ${faqTopics[matchingTopic]}\n\nCheck docs/resources/faq/ for visual examples and detailed explanations.`
+            }
+          ]
+        };
+      }
+
+      const availableTopics = Object.keys(faqTopics).join(', ');
+      return {
+        content: [
+          {
+            type: 'text',
+            text: `No FAQ found for "${query}". Common FAQ topics: ${availableTopics}`
+          }
+        ]
+      };
+    }
+
+    return {
+      content: [
+        {
+          type: 'text',
+          text: `Found ${results.length} FAQ result(s) for "${query}":\n\n${this.formatGuideResults(results)}`
+        }
+      ]
+    };
+  }
+
+  private formatVersionInfo(since: string): string {
+    // Handle API Level vs SDK version confusion
+    if (since.includes('API Level')) {
+      const apiLevel = since.match(/API Level ([\d.]+)/)?.[1];
+      if (apiLevel) {
+        // Map known API Levels to approximate SDK versions
+        const apiToSdkMapping: { [key: string]: string } = {
+          '1.0.0': 'SDK 1.x+ (very early)',
+          '1.2.0': 'SDK 2.x+', 
+          '2.0.0': 'SDK 3.x+',
+          '3.0.0': 'SDK 4.x+',
+          '4.0.0': 'SDK 5.x+',
+          '4.2.0': 'SDK 6.x+',
+          '5.0.0': 'SDK 7.x+',
+          '6.0.0': 'SDK 8.x+'
+        };
+        
+        const sdkVersion = apiToSdkMapping[apiLevel];
+        if (sdkVersion) {
+          return `${since} (≈ ${sdkVersion})`;
+        }
+        
+        // For unknown API levels, provide general guidance
+        const majorVersion = parseFloat(apiLevel);
+        if (majorVersion <= 1.0) {
+          return `${since} (≈ SDK 1-2, very early)`;
+        } else if (majorVersion <= 2.0) {
+          return `${since} (≈ SDK 3-4)`;
+        } else if (majorVersion <= 4.0) {
+          return `${since} (≈ SDK 5-6)`;
+        } else if (majorVersion <= 5.0) {
+          return `${since} (≈ SDK 7+)`;
+        } else {
+          return `${since} (≈ SDK 8+)`;
+        }
+      }
+    }
+    
+    return since;
+  }
+
+  private formatGuideResults(results: any[]): string {
+    return results.map(item => {
+      const typeIcons: { [key: string]: string } = {
+        'device-reference': '📱',
+        'guide': '📖',
+        'faq': '❓'
+      };
+      const typeIcon = typeIcons[item.type] || '📄';
+      
+      return `${typeIcon} **${item.title}**\n   📁 Category: ${item.category}\n   📄 Path: ${item.path.replace('./docs/', '')}`;
+    }).join('\n\n');
   }
 }

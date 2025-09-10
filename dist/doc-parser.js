@@ -197,7 +197,11 @@ export class LocalDocumentationParser {
         const signature = $detail.find('.signature').first();
         if (!signature.length)
             return null;
-        const methodName = signature.find('strong').text().trim();
+        const fullSignature = signature.find('strong').text().trim();
+        if (!fullSignature)
+            return null;
+        // Extract just the method name from the signature
+        const methodName = fullSignature.split('(')[0].trim();
         if (!methodName)
             return null;
         // Extract description
@@ -278,7 +282,7 @@ export class LocalDocumentationParser {
     }
     async parseMethodsFromPage($, methods) {
         // Parse module-level methods if any
-        $('.method_details .method_detail').each((_, element) => {
+        $('.method_details.details').each((_, element) => {
             const method = this.parseMethodDetail($, $(element));
             if (method) {
                 methods.push(method);
@@ -304,6 +308,17 @@ export class LocalDocumentationParser {
                     name: constant.name,
                     fullName: `${module.fullName}.${constant.name}`,
                     description: constant.description,
+                    module: module.fullName,
+                    filePath: module.filePath
+                });
+            }
+            // Add module-level methods
+            for (const method of module.methods) {
+                searchEntries.push({
+                    type: 'function',
+                    name: method.name,
+                    fullName: `${module.fullName}.${method.name}`,
+                    description: method.description,
                     module: module.fullName,
                     filePath: module.filePath
                 });

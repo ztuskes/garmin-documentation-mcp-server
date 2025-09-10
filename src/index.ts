@@ -18,7 +18,7 @@ class GarminDocumentationMCPServer {
     this.server = new Server(
       {
         name: 'garmin-documentation-server',
-        version: '1.0.0',
+        version: '1.0.1',
       },
       {
         capabilities: {
@@ -109,6 +109,52 @@ class GarminDocumentationMCPServer {
               required: ['topic'],
             },
           },
+          {
+            name: 'search_device_reference',
+            description: 'Search device-specific reference documentation and capabilities',
+            inputSchema: {
+              type: 'object',
+              properties: {
+                query: {
+                  type: 'string',
+                  description: 'Search term for device capabilities, memory limits, or hardware features',
+                },
+                device_type: {
+                  type: 'string',
+                  description: 'Optional device type filter (e.g., "watch", "bike", "golf")',
+                },
+              },
+              required: ['query'],
+            },
+          },
+          {
+            name: 'get_programming_guide',
+            description: 'Get programming guides and tutorials for Connect IQ development',
+            inputSchema: {
+              type: 'object',
+              properties: {
+                topic: {
+                  type: 'string',
+                  description: 'Programming topic (e.g., "getting started", "app types", "debugging", "testing")',
+                },
+              },
+              required: ['topic'],
+            },
+          },
+          {
+            name: 'search_faq',
+            description: 'Search frequently asked questions and troubleshooting information',
+            inputSchema: {
+              type: 'object',
+              properties: {
+                query: {
+                  type: 'string',
+                  description: 'Search term for FAQ or troubleshooting topics',
+                },
+              },
+              required: ['query'],
+            },
+          },
         ],
       };
     });
@@ -142,6 +188,18 @@ class GarminDocumentationMCPServer {
 
           case 'get_api_examples':
             return await this.garminDocs.getApiExamples(args.topic as string);
+
+          case 'search_device_reference':
+            return await this.garminDocs.searchDeviceReference(
+              args.query as string,
+              args.device_type as string
+            );
+
+          case 'get_programming_guide':
+            return await this.garminDocs.getProgrammingGuide(args.topic as string);
+
+          case 'search_faq':
+            return await this.garminDocs.searchFaq(args.query as string);
 
           default:
             throw new McpError(ErrorCode.MethodNotFound, `Tool not found: ${name}`);

@@ -58,7 +58,7 @@ export interface DocIndex {
     searchIndex: Map<string, SearchEntry[]>;
 }
 export interface SearchEntry {
-    type: 'module' | 'class' | 'method' | 'property' | 'constant';
+    type: 'module' | 'class' | 'method' | 'property' | 'constant' | 'function';
     name: string;
     fullName: string;
     description: string;
