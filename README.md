@@ -234,14 +234,6 @@ The server provides access to all major Garmin Connect IQ modules including:
 ✅ **Proper Mapping**: API Level 4.2.0 correctly mapped to ≈ SDK 6.x+  
 ✅ **SDK 7 Support Confirmed**: Complications, Activity info, round devices all properly supported
 
-## Development
-
-To modify or extend the server:
-
-1. Edit the TypeScript source files in `src/`
-2. Build with `npm run build`
-3. Test your changes with `npm run dev`
-
 ## License
 
 MIT
